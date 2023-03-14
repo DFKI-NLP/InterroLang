@@ -1,0 +1,52 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="DuplicatedCode" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <Languages>
+        <language minSize="243" name="Python" />
+      </Languages>
+    </inspection_tool>
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="27">
+            <item index="0" class="java.lang.String" itemvalue="emoji" />
+            <item index="1" class="java.lang.String" itemvalue="pytest" />
+            <item index="2" class="java.lang.String" itemvalue="summarizer" />
+            <item index="3" class="java.lang.String" itemvalue="pke" />
+            <item index="4" class="java.lang.String" itemvalue="polyjuice" />
+            <item index="5" class="java.lang.String" itemvalue="transformers" />
+            <item index="6" class="java.lang.String" itemvalue="polyjuice_nlp" />
+            <item index="7" class="java.lang.String" itemvalue="scikit-image" />
+            <item index="8" class="java.lang.String" itemvalue="GitPython" />
+            <item index="9" class="java.lang.String" itemvalue="sacremoses" />
+            <item index="10" class="java.lang.String" itemvalue="botocore" />
+            <item index="11" class="java.lang.String" itemvalue="huggingface-hub" />
+            <item index="12" class="java.lang.String" itemvalue="scikit-learn" />
+            <item index="13" class="java.lang.String" itemvalue="nltk" />
+            <item index="14" class="java.lang.String" itemvalue="lime" />
+            <item index="15" class="java.lang.String" itemvalue="sklearn" />
+            <item index="16" class="java.lang.String" itemvalue="sentence-transformers" />
+            <item index="17" class="java.lang.String" itemvalue="pandas" />
+            <item index="18" class="java.lang.String" itemvalue="openai" />
+            <item index="19" class="java.lang.String" itemvalue="shap" />
+            <item index="20" class="java.lang.String" itemvalue="boto3" />
+            <item index="21" class="java.lang.String" itemvalue="s3transfer" />
+            <item index="22" class="java.lang.String" itemvalue="matplotlib" />
+            <item index="23" class="java.lang.String" itemvalue="dice-ml" />
+            <item index="24" class="java.lang.String" itemvalue="statsmodels" />
+            <item index="25" class="java.lang.String" itemvalue="wandb" />
+            <item index="26" class="java.lang.String" itemvalue="Flask" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8NamingInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="N801" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
