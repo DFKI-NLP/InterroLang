@@ -1,0 +1,14 @@
+captum
+datasets
+emoji
+nltk
+git+https://github.com/boudinfl/pke.git
+sentence_transformers
+sklearn
+spacy
+summarizer
+transformers==4.5.1
+polyjuice_nlp
+torch
+tqdm
+pytest
