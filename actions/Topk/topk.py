@@ -63,19 +63,18 @@ def results_with_pattern(results):
     """
     # example: dumb, fucking, and ugly are the most attributed for the hate speech label
     if len(results) == 1:
-        print(results[0][0] + "is the most attributed")
+        return results[0][0] + "is the most attributed"
     else:
         string = ""
         for i in range(len(results) - 1):
             string += results[i][0] + ", "
         string += "and "
         string += results[len(results) - 1][0]
-        print(string + " are the most attributed.")
-    return None
+        return string + " are the most attributed."
 
 
 def topk(explainer, k, threshold=-1, data_path="../../cache/boolq/ig_explainer_boolq_explanation.json",
-         res_path="../../cache/boolq/ig_explainer_boolq_attribution.json", print_with_pattern=False):
+         res_path="../../cache/boolq/ig_explainer_boolq_attribution.json", print_with_pattern=True):
     """
     The operation to get most k important tokens 
 
@@ -166,5 +165,5 @@ def topk(explainer, k, threshold=-1, data_path="../../cache/boolq/ig_explainer_b
         return results
 
 
-if __name__ == "__main__":
-    print(topk("ig_explainer", 10, print_with_pattern=True))
+# if __name__ == "__main__":
+#     print(topk("ig_explainer", 10, print_with_pattern=True))
