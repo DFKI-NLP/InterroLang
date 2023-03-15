@@ -8,7 +8,7 @@ import numpy as np
 import pandas as pd
 from pandas import DataFrame
 
-from explain.logic import ExplainBot
+from logic.core import ExplainBot
 
 
 def get_config_loc(dataset: str) -> str:

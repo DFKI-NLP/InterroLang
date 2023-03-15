@@ -32,16 +32,11 @@ Prompts.prompt_cache_size = 1_000_000
 Prompts.prompt_cache_location = "./cache/boolq-prompts.pkl"
 Prompts.max_values_per_feature = 2
 Prompts.sentence_transformer_model_name = "all-mpnet-base-v2"
-Prompts.prompt_folder = "./explain/prompts"
+Prompts.prompt_folder = "./prompts"
 Prompts.num_per_knn_prompt_template = 1
 Prompts.num_prompt_template = 7
 
 # Explanation Params
-Explanation.max_cache_size = 1_000_000
-
-# MegaExplainer Params
-MegaExplainer.cache_location = "./cache/boolq-mega-explainer-tabular.pkl"
-MegaExplainer.use_selection = False
 
 # Conversation params
 Conversation.class_names = {1: "True", 0: "False"}

@@ -12,7 +12,7 @@ sys.path.append(parent)
 from experiments.get_compositional_queries import run_iid_compositional_accuracies
 from experiments.compute_parsing_accuracy import set_t5_config, compute_accuracy
 from experiments.utils import load_test_data
-from explain.logic import ExplainBot
+from logic.core import ExplainBot
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--pct", required=True, type=float)

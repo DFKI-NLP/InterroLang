@@ -1,16 +1,16 @@
 """The app main."""
+import gin
 import json
 import logging
-from logging.config import dictConfig
 import os
 import traceback
 
 from flask import Flask
 from flask import render_template, request, Blueprint
-import gin
+from logging.config import dictConfig
 
-from explain.logic import ExplainBot
-from explain.sample_prompts_by_action import sample_prompt_for_action
+from logic.core import ExplainBot
+from logic.sample_prompts_by_action import sample_prompt_for_action
 
 
 # gunicorn doesn't have command line flags, using a gin file to pass command line args

@@ -12,8 +12,8 @@ np.random.seed(0)
 parent = dirname(dirname(abspath(__file__)))
 sys.path.append(parent)
 
-from explain.logic import ExplainBot
-from explain.actions.get_action_functions import get_all_action_functions_map
+from logic.core import ExplainBot
+from logic.actions.get_action_functions import get_all_action_functions_map
 
 
 def get_config_loc(parsed_args: argparse.ArgumentParser()) -> str:

@@ -353,7 +353,7 @@ else:
 evaluate(model, test_dataloader, device)
 
 formatted_model = CustomDAModel(model, device)
-test_input = ['This is a very complicated topic','Could you explain it to me?','Sure, I\'ll try.']
+test_input = ['This is a very complicated topic','Could you logic it to me?','Sure, I\'ll try.']
 print(formatted_model.predict_proba(test_input))
 print(formatted_model.predict(test_input))
 #torch.save(formatted_model, "../../../data/da_model.pth")

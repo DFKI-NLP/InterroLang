@@ -150,7 +150,7 @@ def get_predict_func(t5_gin_file: str,
             raise NameError(message)
 
     if guided_decoding and compute_grammar:
-        from explain.logic import ExplainBot
+        from logic.core import ExplainBot
         gin.parse_config_file(bot_gin_file)
         bot = ExplainBot()
     else:

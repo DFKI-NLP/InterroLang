@@ -3,7 +3,6 @@
 #######################
 
 # Model + dataset configuration specific file
-# GlobalArgs.config = "./configs/diabetes-config.gin"
 GlobalArgs.config = "./configs/boolq.gin"
 
 # Set the base url to host the demo, if needed

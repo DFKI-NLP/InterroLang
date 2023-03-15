@@ -23,7 +23,7 @@ sys.path.append(parent)
 
 from experiments.get_compositional_queries import run_iid_compositional_accuracies
 from experiments.utils import load_test_data, check_correctness
-from explain.logic import ExplainBot  # noqa: E402, F401
+from logic.core import ExplainBot  # noqa: E402, F401
 # Needed for gin configs
 from parsing.t5.start_fine_tuning import load_t5_params  # noqa: E402, F401
 from parsing.gpt.few_shot_inference import get_few_shot_predict_f  # noqa: E402, F401
