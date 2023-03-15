@@ -10,7 +10,7 @@ from explained_models.ModelABC.DANetwork import DANetwork
 # https://huggingface.co/uw-hai/polyjuice
 from polyjuice import Polyjuice
 from polyjuice.generations.special_tokens import *
-from da_model_utils import DADataset
+from explained_models.da_classifier.da_model_utils import DADataset
 
 ALL_CTRL_CODES = set([
    LEXCICAL, RESEMANTIC, NEGATION, INSERT,

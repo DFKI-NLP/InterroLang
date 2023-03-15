@@ -1,6 +1,6 @@
 import torch
 from torch.utils.data import DataLoader
-from da_model_utils import DANetwork, DADataset, model_id2label
+from explained_models.da_classifier.da_model_utils import DANetwork, DADataset, model_id2label
 from transformers import BertTokenizer
 import sys
 # https://huggingface.co/uw-hai/polyjuice

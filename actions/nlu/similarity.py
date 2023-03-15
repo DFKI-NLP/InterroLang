@@ -3,6 +3,12 @@ import re
 from sentence_transformers import SentenceTransformer, util
 
 
+def similar_instances_operation(conversation, parse_text, i, **kwargs):
+    # TODO
+    return_s = 'Similar instances operation called.'
+    return return_s, 1
+
+
 def format_training_file(text_file, module_path=''):
     tweets = []
     classes = []

@@ -1,13 +1,18 @@
+import json
 import torch
 from captum.attr import LayerIntegratedGradients
+from tqdm import tqdm
 
 from explained_models.DataLoaderABC.hf_dataloader import HFDataloader
 from explained_models.ModelABC.distilbert_qa_boolq import DistilbertQABoolModel
 from explained_models.Tokenizer.tokenizer import HFTokenizer
 from explained_models.Explainer.explainer import Explainer
 
-from tqdm import tqdm
-import json
+
+def feature_importance_operation(conversation, parse_text, i, **kwargs):
+    # TODO
+    return_s = 'Feature importance operation called.'
+    return return_s, 1
 
 
 class FeatureAttributionExplainer(Explainer):
