@@ -3,7 +3,7 @@ from abc import ABC
 import torch
 
 from explained_models.DataLoaderABC.dataloader import DataloaderABC
-from boolq.data import get_dataset
+from explained_models.boolq.data import get_dataset
 
 
 class HFDataloader(DataloaderABC, ABC):
