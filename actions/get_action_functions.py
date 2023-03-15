@@ -61,5 +61,6 @@ def get_all_action_functions_map():
         'sentiment': sentiment_operation,
         'rationalize': rationalize_operation,
         'feature_importance': feature_importance_operation,
+        'globaltopk': global_top_k
     }
     return actions
