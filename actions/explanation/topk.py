@@ -3,7 +3,7 @@ import json
 import torch
 from tqdm import tqdm
 
-from actions.feature_importance.ig_explainer import FeatureAttributionExplainer
+from actions.explanation.feature_importance import FeatureAttributionExplainer
 from explained_models.DataLoaderABC.hf_dataloader import HFDataloader
 from explained_models.ModelABC.distilbert_qa_boolq import DistilbertQABoolModel
 from explained_models.Tokenizer.tokenizer import HFTokenizer
