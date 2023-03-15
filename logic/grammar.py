@@ -3,7 +3,7 @@ GRAMMAR = r"""
 action: operation done | operation join action | followup done
 operation: explanation | filter | predictions | whatami | lastturnfilter | lastturnop | data | impfeatures | show | whatif | likelihood | modeldescription | function | score | ndatapoints | label | mistakes | fstats | define | labelfilter | predfilter | includes | globaltopk
 
-globaltopk: globaltopkword ( adhocnumvalues  classname ) 
+globaltopk: globaltopkword
 globaltopkword: " globaltopk" 
 classname: " boolq" | " olid" | " dailydialog" 
 

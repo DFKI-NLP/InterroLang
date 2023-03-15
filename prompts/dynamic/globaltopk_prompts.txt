@@ -1,0 +1,14 @@
+User: Please show me topk contributed words.
+Parsed: globaltopk [E]
+
+User: I would like to see topk contributed words.
+Parsed: globaltopk [E]
+
+User: Can you list topk contributed words.
+Parsed: globaltopk [E]
+
+User: Give information of topk contributed words.
+Parsed: globaltopk [E]
+
+User: I want to know topk contributed words.
+Parsed: globaltopk [E]

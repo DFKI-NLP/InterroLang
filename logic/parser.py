@@ -259,5 +259,9 @@ class Parser:
         grammar += self.numerical_feature_names
         grammar += self.all_feature_names
 
+        # grammar += '\n'
+        # grammar += "globaltopk: globaltopkword ( adhocnumvalues  classname )" + "\n" + "globaltopkword: ' globaltopk" \
+        #            + "\n" + " classname: ' boolq' | ' olid' | ' dailydialog'"
+        # print("[yefdsagifue]", grammar)
         return grammar
 
