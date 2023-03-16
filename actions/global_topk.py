@@ -10,11 +10,24 @@ def global_top_k(conversation, parse_text, i, **kwargs):
     #     k = 1
     # finally:
     #     class_name = parse_text[i + 2]
-    k = 3
-    return topk("ig_explainer", k,
-                data_path="cache/boolq/ig_explainer_boolq_explanation.json",
-                res_path="cache/boolq/ig_explainer_boolq_attribution.json",
-                print_with_pattern=True), 1
+    class_name = parse_text[i+1]
+    k = 10
+
+    if class_name == 'true':
+        return topk("ig_explainer", k,
+                    data_path="cache/boolq/ig_explainer_boolq_explanation.json",
+                    res_path="cache/boolq/ig_explainer_boolq_attribution.json",
+                    print_with_pattern=True, class_name=1), 1
+    elif class_name == 'false':
+        return topk("ig_explainer", k,
+                    data_path="cache/boolq/ig_explainer_boolq_explanation.json",
+                    res_path="cache/boolq/ig_explainer_boolq_attribution.json",
+                    print_with_pattern=True, class_name=0), 1
+    else:
+        return topk("ig_explainer", k,
+                    data_path="cache/boolq/ig_explainer_boolq_explanation.json",
+                    res_path="cache/boolq/ig_explainer_boolq_attribution.json",
+                    print_with_pattern=True), 1
 
     # if class_name == "boolq":
     #     return topk("ig_explainer", k,
