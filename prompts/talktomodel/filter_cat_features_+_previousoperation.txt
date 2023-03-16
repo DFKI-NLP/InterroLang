@@ -1,0 +1,20 @@
+User: What about {cat_features}?
+Parsed: filter {cat_features} true and previousoperation [E]
+
+User: Could you do the same for instances that are not {cat_features}?
+Parsed: filter {cat_features} false and previousoperation [E]
+
+User: What about for those who do not have {cat_features}?
+Parsed: filter {cat_features} false and previousoperation [E]
+
+User: Please run the same on all the {cat_features}
+Parsed: filter {cat_features} true and previousoperation [E]
+
+User: What about {cat_features}?
+Parsed: filter {cat_features} true and previousoperation [E]
+
+User: Could you show me the same for {cat_features}?
+Parsed: filter {cat_features} true and previousoperation [E]
+
+User: How about for {cat_features} who have more than {num_features} greater than {num_values}?
+Parsed: filter {cat_features} true and filter {num_features} greater than {num_values} and previousoperation [E]

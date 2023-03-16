@@ -4,9 +4,7 @@ This function is used to generate a dictionary of all the actions and the corres
 This functionality is used later on to determine the set of allowable operations and what functions
 to run when parsing the grammar.
 """
-from actions.about.define import define_operation
 from actions.about.function import function_operation
-from actions.about.model import model_operation
 from actions.about.self import self_operation
 from actions.context.followup import followup_operation
 from actions.context.last_turn_filter import last_turn_filter
@@ -20,8 +18,10 @@ from actions.filter.filter import filter_operation
 from actions.filter.includes_token import includes_operation
 from actions.metadata.count_data_points import count_data_points
 from actions.metadata.data_summary import data_operation
+from actions.metadata.define import define_operation
 from actions.metadata.feature_stats import feature_stats
 from actions.metadata.labels import show_labels_operation
+from actions.metadata.model import model_operation
 from actions.metadata.show_data import show_operation
 from actions.nlu.sentiment import sentiment_operation
 from actions.nlu.similarity import similar_instances_operation

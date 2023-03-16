@@ -1,0 +1,56 @@
+User: What would I need to do to change this prediction?
+Parsed: previousfilter and explain cfe [E]
+
+User: How could I change this prediction?
+Parsed: previousfilter and explain cfe [E]
+
+User: What could I do to get a different prediction?
+Parsed: previousfilter and explain cfe [E]
+
+User: How could I get a better outcome?
+Parsed: previousfilter and explain cfe [E]
+
+User: What needs to happen for this to change?
+Parsed: previousfilter and explain cfe [E]
+
+User: Could you illustrate what one needs to change to get a better outcome?
+Parsed: previousfilter and explain cfe [E]
+
+User: What are the explanations?
+Parsed: previousfilter and explain features [E]
+
+User: Interesting... Why does the model predict this data?
+Parsed: previousfilter and explain features [E]
+
+User: Also, why does the model predict them?
+Parsed: previousfilter and explain features [E]
+
+User: Why do you predict this instance?
+Parsed: previousfilter and explain features [E]
+
+User: Why do you predict these instances?
+Parsed: previousfilter and explain features [E]
+
+User: Why could you possibly predict this instance in this manner?
+Parsed: previousfilter and explain features [E]
+
+User: why?
+Parsed: previousfilter and explain features [E]
+
+User: but what was your rationale for this prediction
+Parsed: previousfilter and explain features [E]
+
+User: but what was your rationale for this prediction?
+Parsed: previousfilter and explain features [E]
+
+User: yet, how did you arrive at this prediction
+Parsed: previousfilter and explain features [E]
+
+User: what's the most important feature for this prediction
+Parsed: previousfilter and important topk 1 [E]
+
+User: what are the top 3 important features for these predictions?
+Parsed: previousfilter and important topk 3 [E]
+
+User: What are the predictions and explanations?
+Parsed: previousfilter and predict and explain features [E]

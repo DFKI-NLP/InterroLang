@@ -1,0 +1,11 @@
+User: For the previous instances, in addition to {cat_features}, why does the model predict them?
+Parsed: previousfilter or filter {cat_features} true and explain features [E]
+
+User: Excluding {cat_features} from that data, what are the model's predictions?
+Parsed: previousfilter and filter {cat_features} false and predict [E]
+
+User: Excluding {cat_features}, what are the model's predictions?
+Parsed: previousfilter and filter {cat_features} true and predict [E]
+
+User: For the previous instances that are not {cat_features}, what are the model's predictions?
+Parsed: previousfilter and filter {cat_features} false and predict [E]

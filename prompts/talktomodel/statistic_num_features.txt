@@ -1,0 +1,77 @@
+User: what is the distribution of {num_features}
+Parsed: statistic {num_features} [E]
+
+User: what is the {num_features} feature like
+Parsed: statistic {num_features} [E]
+
+User: what are the statistics of {num_features}
+Parsed: statistic {num_features} [E]
+
+User: what is the variability of {num_features}
+Parsed: statistic {num_features} [E]
+
+User: describe the variability of {num_features}
+Parsed: statistic {num_features} [E]
+
+User: what is the range of {num_features}
+Parsed: statistic {num_features} [E]
+
+User: what is the max value of {num_features}
+Parsed: statistic {num_features} [E]
+
+User: what is the minimum value of {num_features}
+Parsed: statistic {num_features} [E]
+
+User: what is the mean of {num_features}
+Parsed: statistic {num_features} [E]
+
+User: what is 1 std of {num_features}?
+Parsed: statistic {num_features} [E]
+
+User: what is 1 standard deviation of {num_features}
+Parsed: statistic {num_features} [E]
+
+User: what are the statistics of {num_features} like?
+Parsed: statistic {num_features} [E]
+
+User: for {filter_text}, what is the distribution of {num_features}?
+Parsed: {filter_parse} and statistic {num_features} [E]
+
+User: what's the {num_features} of id 78?
+Parsed: filter id 78 and statistic {num_features} [E]
+
+User: what's the {cat_features} of id 22
+Parsed: filter id 22 and statistic {num_features} [E]
+
+User: what's the value of {num_features} of id 25
+Parsed: filter id 25 and statistic {num_features} [E]
+
+User: for data where {filter_text}, what is the statistics of {num_features}?
+Parsed: {filter_parse} and statistic {num_features} [E]
+
+User: for data where {filter_text}, what is the average values of {num_features}?
+Parsed: {filter_parse} and statistic {num_features} [E]
+
+User: for instances {filter_text}, show statistics for the {num_features} feature
+Parsed: {filter_parse} and statistic {num_features} [E]
+
+User: what's the average {num_features} for people where {filter_text}?
+Parsed: {filter_parse} and statistic {num_features} [E]
+
+User: what's the statistics of {num_features} for data where {filter_text}?
+Parsed: {filter_parse} and statistic {num_features} [E]
+
+User: what's the statistics of {num_features} in this subset?
+Parsed: previousfilter and statistic {num_features} [E]
+
+User: what's the average {num_features} in this subset?
+Parsed: previousfilter and statistic {num_features} [E]
+
+User: what's the max {num_features} in this data?
+Parsed: previousfilter and statistic {num_features} [E]
+
+User: what's the statistics of {num_features} in this slice?
+Parsed: previousfilter and statistic {num_features} [E]
+
+User: for this particular subset, tell me the minimum of {num_features}
+Parsed: previousfilter and statistic {num_features} [E]

@@ -1,0 +1,32 @@
+User: what is 1 standard deviation of the label
+Parsed: statistic target [E]
+
+User: what are the statistics of the labels like?
+Parsed: statistic target [E]
+
+User: what are is the distribution of the target variable?
+Parsed: statistic target [E]
+
+User: what are the label frequencies
+Parsed: statistic target [E]
+
+User: what are the class frequencies
+Parsed: statistic target [E]
+
+User: what are the gold label frequencies
+Parsed: statistic target [E]
+
+User: what are the gold target frequencies
+Parsed: statistic target [E]
+
+User: for {filter_text}, what is the distribution of the labels?
+Parsed: {filter_parse} and statistic target [E]
+
+User: for {filter_text}, what is the distribution of the target variable?
+Parsed: {filter_parse} and statistic target [E]
+
+User: for {filter_text}, what is the distribution of the label?
+Parsed: {filter_parse} and statistic target [E]
+
+User: where {filter_text}, show the distribution of the ground truth values?
+Parsed: {filter_parse} and statistic target [E]

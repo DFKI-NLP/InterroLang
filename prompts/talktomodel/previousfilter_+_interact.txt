@@ -1,0 +1,14 @@
+User: do the features interact at all in this group?
+Parsed: previousfilter and interact [E]
+
+User: are there any interaction effects?
+Parsed: previousfilter and interact [E]
+
+User: how do the features interact?
+Parsed: previousfilter and interact [E]
+
+User: do the features interact in any interesting ways
+Parsed: previousfilter and interact [E]
+
+User: are there any nonlinear interactions between the features
+Parsed: previousfilter and interact [E]

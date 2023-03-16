@@ -1,0 +1,20 @@
+User: how many data points have {num_features} equal to {num_values}
+Parsed: filter {num_features} equal to {num_values} and countdata [E]
+
+User: what's the number of data points where {num_features} is less that {num_values}
+Parsed: filter {num_features} less than {num_values} and countdata [E]
+
+User: what's the number of times {num_features} is greater than {num_values}?
+Parsed: filter {num_features} greater than {num_values} and countdata [E]
+
+User: tell me the grand total for the number of data points where {num_features} is less than {num_values}?
+Parsed: filter {num_features} less than {num_values} and countdata [E]
+
+User: for data points where {num_features} is greater than {num_values}, what's the total num data points fitting this description?
+Parsed: filter {num_features} greater than {num_values} and countdata [E]
+
+User: Within the data set, how many people {num_features}d {num_values} or less?
+Parsed: filter {num_features} less equal than {num_values} and countdata [E]
+
+User: In the data, how many people had {num_features}s below {num_values}?
+Parsed: filter {num_features} less equal than {num_values} and countdata [E]
