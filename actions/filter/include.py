@@ -4,9 +4,11 @@ This operation checks whether the input string appears in the dataset.
 """
 import re
 
-def includes_operation(conversation, text_to_match):
+def includes_operation(conversation, parse_text, i, **kwargs):
+    #includes_operation(conversation, text_to_match):
     """The include operation."""
-    
+    text_to_match = parse_text[i+1]
+    text_to_match = re.escape(text_to_match)
     temp_dataset = conversation.temp_dataset.contents["X"]
     text_inputs = temp_dataset["text"]
     
@@ -34,6 +36,6 @@ def includes_operation(conversation, text_to_match):
     else:
         output_str = f"I found the following matches for <b>{text_to_match}</b>: <br>"+output_str
         
-    return output_str
+    return output_str, 1
 
 

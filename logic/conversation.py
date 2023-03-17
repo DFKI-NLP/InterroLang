@@ -4,6 +4,7 @@ The file contains a representation of the conversation. The conversation
 class contains routines to write variable to the conversation, read those
 variables and print a representation of them.
 """
+import ast
 import copy
 import gin
 import pandas as pd
@@ -136,7 +137,20 @@ class Conversation:
                     y_value: Series,
                     categorical: list[str],
                     numeric: list[str]):
-        """Stores data as the dataset in the conversation."""
+        """Stores data as the dataset in the conversation."""        
+        if not ("text" in data.columns):
+            text_data = []
+            # add the "text" field for each dataset
+            # hate speech data already have it
+            if "dialog" in data.columns:
+                text_data = [" ".join(ast.literal_eval(txt)) for txt in data["dialog"]]
+            elif "question" in data.columns and "passage" in data.columns:
+                for cidx in range(len(data["question"])):
+                    text_data.append(data["question"][cidx]+" "+data["passage"][cidx])
+            else:
+                raise Exception("There is no text column in the data!")
+            data.insert(0, "text", text_data)    
+        
         dataset = {
             'X': data,
             'y': y_value,
