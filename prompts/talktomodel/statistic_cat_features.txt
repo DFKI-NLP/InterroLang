@@ -1,0 +1,17 @@
+User: what is the distribution of {cat_features}
+Parsed: statistic {cat_features} [E]
+
+User: what is the {cat_features} feature like
+Parsed: statistic {cat_features} [E]
+
+User: for {filter_text}, what is the distribution of {cat_features}?
+Parsed: {filter_parse} and statistic {cat_features} [E]
+
+User: where {filter_text}, show the distribution of {cat_features}?
+Parsed: {filter_parse} and statistic {cat_features} [E]
+
+User: what's the value of {cat_features} of id 25
+Parsed: filter id 25 and statistic {cat_features} [E]
+
+User: for data where {filter_text}, what is the statistics of {cat_features}?
+Parsed: {filter_parse} and statistic {cat_features} [E]

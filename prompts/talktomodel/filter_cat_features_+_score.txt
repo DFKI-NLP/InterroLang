@@ -1,0 +1,8 @@
+User: model accuracy on {cat_features}
+Parsed: filter {cat_features} true and score accuracy [E]
+
+User: training accuracy on {cat_features}
+Parsed: filter {cat_features} true and score accuracy [E]
+
+User: recall on instances that aren't {cat_features}
+Parsed: filter {cat_features} false and score recall [E]

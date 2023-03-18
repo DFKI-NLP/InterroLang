@@ -136,12 +136,8 @@ def get_predict_func(t5_gin_file: str,
         t5_params = load_t5_params()
 
     if bot_gin_file is None:
-        if t5_params.dataset_name == "diabetes":
-            bot_gin_file = "./configs/diabetes-config.gin"
-        elif t5_params.dataset_name == "compas":
-            bot_gin_file = "./configs/compas-config.gin"
-        elif t5_params.dataset_name == "german":
-            bot_gin_file = "./configs/german-config.gin"
+        if t5_params.dataset_name == "boolq":
+            bot_gin_file = "./configs/boolq.gin"
         else:
             known_options = "diabetes, compas, or german"
             message = ("Please provide the gin file for the conversation in bot_gin_file, "

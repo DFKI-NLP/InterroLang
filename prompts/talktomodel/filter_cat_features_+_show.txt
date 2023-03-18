@@ -1,0 +1,8 @@
+User: Could you show me all the {cat_features}
+Parsed: filter {cat_features} true and show [E]
+
+User: Please display the feature values of the {cat_features}
+Parsed: filter {cat_features} true and show [E]
+
+User: display data where {cat_features} is {cat_values}
+Parsed: filter {cat_features} {cat_values} and show [E]

@@ -1,0 +1,8 @@
+User: could you show model performance on {num_features} over {num_values}
+Parsed: filter {num_features} greater than {num_values} and score default [E]
+
+User: roc score on {num_features} below {num_values}
+Parsed: filter {num_features} less than {num_values} and score roc [E]
+
+User: accuracy on {cat_features} where {num_features} is {num_values}
+Parsed: filter {num_features} equal to {num_values} and filter {cat_features} true and score accuracy [E]

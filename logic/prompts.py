@@ -302,28 +302,30 @@ class Prompts:
         # Store prompts before filling
         prompts = []
 
-        # Load dynamic prompts
-        dynamic_prompt_file_names = find_csv_filenames(
-            os.path.join(self.prompt_folder, 'dynamic'), suffix='txt')
-
         # Load the prompts that are dynamically generated
         filename_to_prompt_ids = {}
         c_prompt_id = 0
-        for f in dynamic_prompt_file_names:
-            dynamic_fn = os.path.join(self.prompt_folder, 'dynamic', f)
-            with open(dynamic_fn, 'r') as file:
-                temp_prompts = file.read()
-                pre_new_prompt = temp_prompts.split('\n\n')
 
-                new_prompt = self.filter_prompts(pre_new_prompt)
+        # Load dynamic prompts
+        for prompt_type in ['about', 'context', 'explanation', 'filter', 'metadata', 'nlu', 'prediction']:
+            dynamic_prompt_file_names = find_csv_filenames(
+                os.path.join(self.prompt_folder, prompt_type), suffix='txt')
 
-                for prompt in new_prompt:
-                    if len(prompt) == 0:
-                        warnings.warn(f"Empty prompt from file {f}")
+            for f in dynamic_prompt_file_names:
+                dynamic_fn = os.path.join(self.prompt_folder, prompt_type, f)
+                with open(dynamic_fn, 'r') as file:
+                    temp_prompts = file.read()
+                    pre_new_prompt = temp_prompts.split('\n\n')
 
-                filename_to_prompt_ids[dynamic_fn] = list(range(c_prompt_id, c_prompt_id + len(new_prompt)))
-                c_prompt_id += len(filename_to_prompt_ids[dynamic_fn])
-                prompts.extend(new_prompt)
+                    new_prompt = self.filter_prompts(pre_new_prompt)
+
+                    for prompt in new_prompt:
+                        if len(prompt) == 0:
+                            warnings.warn(f"Empty prompt from file {f}")
+
+                    filename_to_prompt_ids[dynamic_fn] = list(range(c_prompt_id, c_prompt_id + len(new_prompt)))
+                    c_prompt_id += len(filename_to_prompt_ids[dynamic_fn])
+                    prompts.extend(new_prompt)
 
         # Validate prompts
         for prompt in prompts:

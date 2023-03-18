@@ -1,0 +1,47 @@
+User: Show me the predictions of all the {cat_features}
+Parsed: filter {cat_features} true and predict [E]
+
+User: What does the model predict on the {cat_features}?
+Parsed: filter {cat_features} true and predict [E]
+
+User: What are the predictions on the {cat_features}?
+Parsed: filter {cat_features} true and predict [E]
+
+User: Could you show me the predictions for instance {cat_features} equal to {cat_values}?
+Parsed: filter {cat_features} {cat_values} and predict [E]
+
+User: Show the predictions of {cat_features} and {cat_features} with {num_features} greater than or equal to {num_values}
+Parsed: filter {cat_features} true and filter {cat_features} true and filter {num_features} greater equal than {num_values} and predict [E]
+
+User: Display the predictions of {cat_features} and {cat_features} with {num_features} less than or equal to {num_values}
+Parsed: filter {cat_features} true and filter {cat_features} true and filter {num_features} less than or equal to {num_values} and predict [E]
+
+User: Reveal the predictions of {cat_features} and {cat_features} with {num_features} greater than or equal to {num_values}
+Parsed: filter {cat_features} true and filter {cat_features} true and filter {num_features} greater equal than {num_values} and predict [E]
+
+User: Reveal the predictions of {cat_features} or {cat_features} with {num_features} greater than or equal to {num_values}
+Parsed: filter {cat_features} true or filter {cat_features} true and filter {num_features} greater equal than {num_values} and predict [E]
+
+User: Show the predictions of {cat_features} {cat_values}, {cat_features} {cat_values}, or {cat_features} {cat_values}
+Parsed: filter {cat_features} {cat_values} or filter {cat_features} {cat_values} or filter {cat_features} {cat_values} predict [E]
+
+User: What are the predictions for {cat_features} that have {num_values} {num_features}?
+Parsed: filter {cat_features} true and filter {num_features} equal to {num_values} and predict [E]
+
+User: What are the model predictions for {cat_features} that have {num_values} {num_features}?
+Parsed: filter {cat_features} true and filter {num_features} equal to {num_values} and predict [E]
+
+User: Show predictions for {cat_features} where {num_features} is {num_values} or less
+Parsed: filter {cat_features} true and filter {num_features} less than or equal to {num_values} and predict [E]
+
+User: Show all predictions for {cat_features} where {num_features} is {num_values} or more
+Parsed: filter {cat_features} true and filter {num_features} greater equal than {num_values} and predict [E]
+
+User: Display predictions for {cat_features} where {num_features} is {num_values} exactly
+Parsed: filter {cat_features} true and filter {num_features} equal to {num_values} and predict [E]
+
+User: Return the model's predictions for {cat_features} where {num_features} is not {num_values}
+Parsed: filter {cat_features} true and filter {num_features} not equal to {num_values} and predict [E]
+
+User: What does the model predict for instances that have a {cat_features} or that have exactly {num_values} {num_features}?
+Parsed: filter {cat_features} true or filter {num_features} equal to {num_values} and predict [E]

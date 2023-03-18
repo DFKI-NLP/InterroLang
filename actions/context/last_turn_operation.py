@@ -1,16 +1,16 @@
 """Last turn operation."""
 from copy import deepcopy
 
-from actions.about.define import define_operation
 from actions.about.function import function_operation
-from actions.about.model import model_operation
 from actions.about.self import self_operation
 from actions.context.followup import followup_operation
 #from actions.explanation.feature_importance import feature_importance_operation
 #from actions.explanation.what_if import what_if_operation
 from actions.metadata.data_summary import data_operation
+from actions.metadata.define import define_operation
 from actions.metadata.feature_stats import feature_stats
 from actions.metadata.labels import show_labels_operation
+from actions.metadata.model import model_operation
 from actions.metadata.show_data import show_operation
 from actions.prediction.mistakes import show_mistakes_operation
 from actions.prediction.predict import predict_operation

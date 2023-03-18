@@ -1,0 +1,35 @@
+User: Can you display the instance with id 2451?
+Parsed: filter id 2451 and show [E]
+
+User: For 3315, please show me the values of the features.
+Parsed: filter id 3315 and show [E]
+
+User: Could you show me data point number 215 and tell me the rationale of the model's predictions?
+Parsed: filter id 215 and show and explain features [E]
+
+User: Please display id 105111
+Parsed: filter id 105111 and show [E]
+
+User: show me people that have {filter_text}
+Parsed: {filter_parse} and show [E]
+
+User: show me instances that are {filter_text}
+Parsed: {filter_parse} and show [E]
+
+User: return the data where {filter_text} people
+Parsed: {filter_parse} and show [E]
+
+User: show me all the data where {filter_text}
+Parsed: {filter_parse} and show [E]
+
+User: for {filter_text}, could you show me the data?
+Parsed: {filter_parse} and show [E]
+
+User: for those where {filter_text} is the case, could you print out the data items
+Parsed: {filter_parse} and show [E]
+
+User: please show the items of {filter_text} in the data
+Parsed: {filter_parse} and show [E]
+
+User: show me this data point
+Parsed: previousfilter and show [E]
