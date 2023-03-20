@@ -74,7 +74,7 @@ def results_with_pattern(results):
 
 
 def topk(explainer, k, threshold=-1, data_path="../../cache/boolq/ig_explainer_boolq_explanation.json",
-         res_path="../../cache/boolq/ig_explainer_boolq_attribution.json", print_with_pattern=True):
+         res_path="../../cache/boolq/ig_explainer_boolq_attribution.json", print_with_pattern=True, class_name=None):
     """
     The operation to get most k important tokens 
 
@@ -84,11 +84,12 @@ def topk(explainer, k, threshold=-1, data_path="../../cache/boolq/ig_explainer_b
         threshold (int, optional): Threshold of #occurance of a single token. Defaults to -1.
         data_path: path to json file
         res_path: path to store attribution scores
-        print_with_pattern: if output the results using the certain patttern
+        print_with_pattern: if output the results using the certain pattern
+        class_name: filter label
     Returns:
         sorted_scores: top k important tokens
     """
-    if os.path.exists(res_path) and threshold == -1:
+    if os.path.exists(res_path) and threshold == -1 and (class_name is None):
         fileObject = open(res_path, "r")
         jsonContent = fileObject.read()
         result_list = json.loads(jsonContent)
@@ -108,13 +109,22 @@ def topk(explainer, k, threshold=-1, data_path="../../cache/boolq/ig_explainer_b
     results, model = get_results(explainer=explainer, data_path=data_path)
     if not ((results is None) and (model is None)):
         tokenizer = model.model.tokenizer
-        pbar = tqdm(results)
 
         # individual tokens
         word_set = set()
         word_counter = {}
         word_attributions = {}
 
+        if class_name:
+            print('class name: ', class_name)
+            temp = []
+            for res in results:
+                if res["label"] == class_name:
+                    temp.append(res)
+        else:
+            temp = results
+
+        pbar = tqdm(temp)
         for result in pbar:
             pbar.set_description('Processing Attribution')
             attribution = result["attributions"]
@@ -163,7 +173,6 @@ def topk(explainer, k, threshold=-1, data_path="../../cache/boolq/ig_explainer_b
     else:
         print("[Error] This explainer is not handled yet!")
         return results
-
 
 # if __name__ == "__main__":
 #     print(topk("ig_explainer", 10, print_with_pattern=True))

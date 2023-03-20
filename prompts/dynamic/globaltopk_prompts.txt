@@ -1,0 +1,17 @@
+User: Please show me topk contributed words with label {classname}.
+Parsed: globaltopk {classname} [E]
+
+User: I would like to see topk contributed words with label {classname}.
+Parsed: globaltopk {classname} [E]
+
+User: Can you list topk contributed words with label {classname}.
+Parsed: globaltopk {classname} [E]
+
+User: Give information of topk contributed words with label {classname}.
+Parsed: globaltopk {classname} [E]
+
+User: I want to know topk contributed words with label {classname}.
+Parsed: globaltopk {classname} [E]
+
+User: I want to know topk contributed words.
+Parsed: globaltopk [E]
