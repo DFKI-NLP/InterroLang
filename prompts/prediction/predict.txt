@@ -43,5 +43,38 @@ Parsed: filter id 34 and predict [E]
 User: predict 22
 Parsed: filter id 22 and predict [E]
 
-User: what does the model predict for {filter_text}?
-Parsed: {filter_parse} and predict [E]
+User: What is the prediction for {tokens}
+Parsed: filter tokens {tokens} and predict [E]
+
+User: Show the prediction on {tokens}
+Parsed: filter tokens {tokens} and predict [E]
+
+User: return prediction on {tokens}
+Parsed: filter tokens {tokens} and predict [E]
+
+User: What is the outcome for the {tokens}
+Parsed: filter tokens {tokens} and predict [E]
+
+User: What is the result for the {tokens}
+Parsed: filter tokens {tokens} and predict [E]
+
+User: What does the model predict for the {tokens}
+Parsed: filter tokens {tokens} and predict [E]
+
+User:  What is your opinion on {tokens}
+Parsed: filter tokens {tokens} and predict [E]
+
+User: Could you tell me what the model predicts for {tokens}
+Parsed: filter tokens {tokens} and predict [E]
+
+User: Please display the prediction of the instance {tokens}
+Parsed: filter tokens {tokens} and predict [E]
+
+User: For {tokens}, please provide the prediction
+Parsed: filter tokens {tokens} and predict [E]
+
+User: Display prediction for {tokens}
+Parsed: filter tokens {tokens} and predict [E]
+
+User: Could you show me the prediction for {tokens}
+Parsed: filter tokens {tokens} and predict [E]

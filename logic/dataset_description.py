@@ -136,11 +136,11 @@ class DatasetDescription:
             return ""
 
         # Loads and processes the testing dataset
-        x_values, y_values, _, _ = read_and_format_data(self.eval_file_path,
-                                                        index_col=self.index_col,
-                                                        target_var_name=self.target_var_name,
-                                                        cat_features=None,
-                                                        num_features=None)
+        x_values, y_values, _, _, _ = read_and_format_data(self.eval_file_path,
+                                                           index_col=self.index_col,
+                                                           target_var_name=self.target_var_name,
+                                                           cat_features=None,
+                                                           num_features=None)
 
         # read_and_format_data returns pandas.df, so convert to numpy for model inference
         x_values = x_values.values

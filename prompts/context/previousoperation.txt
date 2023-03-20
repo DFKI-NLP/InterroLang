@@ -12,6 +12,3 @@ Parsed: filter id 22 and previousoperation [E]
 
 User: 38232
 Parsed: filter id 38232 and previousoperation [E]
-
-User: how about {filter_text}
-Parsed: {filter_parse} and previousoperation [E]

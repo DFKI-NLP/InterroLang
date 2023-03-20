@@ -136,15 +136,18 @@ class Conversation:
                     data: pd.DataFrame,
                     y_value: Series,
                     categorical: list[str],
-                    numeric: list[str]):
+                    numeric: list[str],
+                    textual: list[str]):
         """Stores data as the dataset in the conversation."""        
         if not ("text" in data.columns):
             text_data = []
             # add the "text" field for each dataset
             # hate speech data already have it
             if "dialog" in data.columns:
+                # Dataset: DailyDialog
                 text_data = [" ".join(ast.literal_eval(txt)) for txt in data["dialog"]]
             elif "question" in data.columns and "passage" in data.columns:
+                # Dataset: BoolQ
                 for cidx in range(len(data["question"])):
                     text_data.append(data["question"][cidx]+" "+data["passage"][cidx])
             else:
@@ -156,6 +159,7 @@ class Conversation:
             'y': y_value,
             'cat': categorical,
             'numeric': numeric,
+            'textual': textual,
             'ids_to_regenerate': []
         }
         var = Variable(name='dataset', contents=dataset, kind='dataset')

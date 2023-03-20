@@ -1,0 +1,2 @@
+User: how about {filter_text}
+Parsed: {filter_parse} and previousoperation [E]

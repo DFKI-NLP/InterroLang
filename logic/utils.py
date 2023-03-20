@@ -16,6 +16,7 @@ def read_and_format_data(filepath,
                          remove_underscores=True) -> tuple[DataFrame,
                                                            Series,
                                                            list[str],
+                                                           list[str],
                                                            list[str]]:
     """Reads and processes data.
 
@@ -62,9 +63,11 @@ def read_and_format_data(filepath,
     # Split the dataset into categorical + numeric, this is done by
     # guessing which features are which
     if not cat_features and not num_features:
-        cat_features, num_features = get_numeric_categorical(dataset)
+        cat_features, num_features, text_features = get_feature_types(dataset)
+    else:
+        raise NotImplementedError("cat_features and num_features cannot be specified as of now.")
 
-    return dataset, y_values, cat_features, num_features
+    return dataset, y_values, cat_features, num_features, text_features
 
 
 def setup_gpt3():
@@ -87,20 +90,22 @@ def find_csv_filenames(path_to_dir, suffix=".csv"):
     return [filename for filename in filenames if filename.endswith(suffix)]
 
 
-def get_numeric_categorical(data, threshold=0.95, top_n=10):
-    """Gets the numeric and categorical columns from a pandas dataset.
+def get_feature_types(data, threshold=0.95, top_n=10):
+    """Gets the numeric, categorical and textual columns from a pandas dataset.
 
     This function uses the ratio of unique values to total values"""
-    cat, num = [], []
+    cat, num, textual = [], [], []
 
     for var in data.columns:
         # From https://stackoverflow.com/questions/35826912/
         # what-is-a-good-heuristic-to-detect-if-a-column-in-a-pandas-dataframe-is-categori
         if 1. * data[var].value_counts(normalize=True).head(top_n).sum() > threshold:
             cat.append(var)
-        else:
+        elif data[var].str.isnumeric().all():
             num.append(var)
-    return cat, num
+        else:
+            textual.append(var)
+    return cat, num, textual
 
 
 def add_to_dict_lists(key, value, dictionary):

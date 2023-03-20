@@ -15,7 +15,6 @@ from actions.explanation.rationalize import rationalize_operation
 #from actions.explanation.topk import global_topk_operation
 #from actions.explanation.what_if important what_if_operation
 from actions.filter.filter import filter_operation
-from actions.filter.includes_token import includes_operation
 from actions.metadata.count_data_points import count_data_points
 from actions.metadata.data_summary import data_operation
 from actions.metadata.define import define_operation
@@ -55,7 +54,6 @@ def get_all_action_functions_map():
         'define': define_operation,
         'predictionfilter': filter_operation,
         'labelfilter': filter_operation,
-        'includes': includes_operation,
         'similarity': similar_instances_operation,
         'topic': topic_operation,
         'sentiment': sentiment_operation,

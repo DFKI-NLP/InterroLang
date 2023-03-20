@@ -113,6 +113,7 @@ class ExplainBot:
         self.prompt_metric = prompt_metric
         self.prompt_ordering = prompt_ordering
         self.use_guided_decoding = use_guided_decoding
+        self.skip_prompts = skip_prompts
 
         # A variable used to help file uploads
         self.manual_var_filename = None
@@ -132,7 +133,9 @@ class ExplainBot:
         self.parser = None
 
         # Set up the conversation object
-        self.conversation = Conversation(eval_file_path=dataset_file_path,
+        self.conversation = Conversation(index_col=dataset_index_column,
+                                         target_var_name=target_variable_name,
+                                         eval_file_path=dataset_file_path,
                                          feature_definitions=feature_definitions)
 
         # Load the model into the conversation
@@ -237,21 +240,24 @@ class ExplainBot:
         app.logger.info(f"Loading dataset at path {filepath}...")
 
         # Read the dataset and get categorical and numerical features
-        dataset, y_values, categorical, numeric = read_and_format_data(filepath,
-                                                                       index_col,
-                                                                       target_var_name,
-                                                                       cat_features,
-                                                                       num_features,
-                                                                       remove_underscores)
+        dataset, y_values, categorical, numeric, textual = read_and_format_data(
+            filepath,
+            index_col,
+            target_var_name,
+            cat_features,
+            num_features,
+            remove_underscores
+        )
 
         if store_to_conversation:
 
             # Store the dataset
-            self.conversation.add_dataset(dataset, y_values, categorical, numeric)
+            self.conversation.add_dataset(dataset, y_values, categorical, numeric, textual)
 
             # Set up the parser
             self.parser = Parser(cat_features=categorical,
                                  num_features=numeric,
+                                 text_features=textual,
                                  dataset=dataset,
                                  target=list(y_values))
 
@@ -260,8 +266,10 @@ class ExplainBot:
             # so we generate prompts for this
             self.prompts = Prompts(cat_features=categorical,
                                    num_features=numeric,
+                                   text_features=textual,
                                    target=np.unique(list(y_values)),
                                    feature_value_dict=self.parser.features,
+                                   dataset=dataset,
                                    class_names=self.conversation.class_names,
                                    skip_creating_prompts=skip_prompts)
             app.logger.info("..done")
@@ -324,7 +332,10 @@ class ExplainBot:
         # Do guided-decoding to get the decoded text
         api_response = self.decoder.complete(
             prompted_text, grammar=grammar)
-        decoded_text = api_response['generation']
+        if type(api_response) == dict:
+            decoded_text = api_response['generation']
+        else:
+            decoded_text = api_response[0]
 
         app.logger.info(f'Decoded text {decoded_text}')
 
@@ -403,7 +414,8 @@ class ExplainBot:
         app.logger.info(f'USER INPUT: {text}')
 
         # Parse user input into text abiding by formal grammar
-        if "t5" not in self.decoding_model_name:
+        #if "t5" not in self.decoding_model_name:
+        if not self.skip_prompts:
             parse_tree, parsed_text = self.compute_parse_text(text)
         else:
             parse_tree, parsed_text = self.compute_parse_text_t5(text)

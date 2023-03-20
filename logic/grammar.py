@@ -1,7 +1,7 @@
 GRAMMAR = r"""
 ?start: action
 action: operation done | operation join action | followup done
-operation: explanation | filter | predictions | whatami | lastturnfilter | lastturnop | data | impfeatures | show | whatif | likelihood | modeldescription | function | score | ndatapoints | label | mistakes | fstats | define | labelfilter | predfilter | includes
+operation: explanation | filter | predictions | whatami | lastturnfilter | lastturnop | data | impfeatures | show | likelihood | modeldescription | function | score | ndatapoints | label | mistakes | fstats | define | labelfilter | predfilter
 
 labelfilter: " labelfilter" class
 predfilter: " predictionfilter" class
@@ -30,7 +30,7 @@ or: " or"
 filterword: " filter"
 
 filter: filterword featuretype
-featuretype: {avaliablefeaturetypes}
+featuretype: {availablefeaturetypes}
 
 explanation: explainword explaintype
 explainword: " logic"
@@ -54,9 +54,6 @@ testword: " test"
 
 followup: " followup"
 
-whatif: whatifword ( ( numfeaturenames numupdates adhocnumvalues ) | catnames )
-whatifword: " change"
-
 show: " show"
 
 likelihood: likelihoodword
@@ -73,8 +70,6 @@ topkword: " topk"
 
 impfeaturesword: " important"
 numupdates: " increase" | " set" | " decrease"
-
-includes: " includes"
 
 done: " [e]"
 """  # noqa: E501

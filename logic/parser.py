@@ -52,6 +52,7 @@ class Parser:
     def __init__(self,
                  cat_features: list[str],
                  num_features: list[str],
+                 text_features: list[str],
                  dataset: pd.DataFrame,
                  target: list[str]):
         """
@@ -64,12 +65,12 @@ class Parser:
             target: The class names in a list where the ith index corresponds that class's name
         """
 
-        assert len(cat_features) > 0 or len(num_features) > 0, "There are no features!"
+        assert len(cat_features) > 0 or len(num_features) > 0 or len(text_features) > 0, "There are no features!"
 
         # The nonterminal for the available feature types, i.e., categorical and numeric
         available_feature_types = ""
 
-        self.absolute_number_of_features = len(cat_features) + len(num_features) - 1
+        self.absolute_number_of_features = len(cat_features) + len(num_features) + len(text_features) - 1
 
         # Store features and available values
         self.features = {}
@@ -231,19 +232,23 @@ class Parser:
         """
         if adhoc_grammar_updates is not None:
             final_aval = copy.deepcopy(self.available_feature_types)
+            additional_aval = []
             final_aval_values = ""
             for feat in adhoc_grammar_updates:
                 # add the adhoc grammar updates to the list of avaliable feature types in the
                 # special case of the *id* feature. Other adhoc updates are not considered as
                 # available feature types because they could be anything.
                 if "id" in feat:
-                    final_aval += f" | {feat}"
+                    additional_aval.append(feat)
+                elif "tokens" in feat and adhoc_grammar_updates[feat]:
+                    additional_aval.append(feat)
                 final_aval_values += f"\n{feat}: {adhoc_grammar_updates[feat]}"
-            grammar = GRAMMAR.format(avaliablefeaturetypes=final_aval,
+            final_aval += " | ".join(additional_aval)
+            grammar = GRAMMAR.format(availablefeaturetypes=final_aval,
                                      topkvalues=self.get_topk_grammar_text())
             grammar += final_aval_values
         else:
-            grammar = GRAMMAR.format(avaliablefeaturetypes=self.available_feature_types,
+            grammar = GRAMMAR.format(availablefeaturetypes=self.available_feature_types,
                                      topkvalues=self.get_topk_grammar_text())
         grammar += self.categorical_features_grammar
         grammar += self.numerical_features_grammar

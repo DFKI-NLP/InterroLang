@@ -1,29 +1,29 @@
-User: Show me all instances that include the word {token}.
-Parsed: includes {token} [E]
+User: Show me all instances that include the word {tokens}.
+Parsed: filter tokens {tokens} [E]
 
-User: Can you display all occurrences that contain word {token}.
-Parsed: includes {token} [E]
+User: Can you display all occurrences that contain word {tokens}.
+Parsed: filter tokens {tokens} [E]
 
-User: Please show me all examples that feature word {token}.
-Parsed: includes {token} [E]
+User: Please show me all examples that feature word {tokens}.
+Parsed: filter tokens {tokens} [E]
 
-User: I would like to see all instances that incorporate word {token}.
-Parsed: includes {token} [E]
+User: I would like to see all instances that incorporate word {tokens}.
+Parsed: filter tokens {tokens} [E]
 
-User: Can you provide me with all occurrences that comprise word {token}.
-Parsed: includes {token} [E]
+User: Can you provide me with all occurrences that comprise word {tokens}.
+Parsed: filter tokens {tokens} [E]
 
-User: Show me every example that has word {token}.
-Parsed: includes {token} [E]
+User: Show me every example that has word {tokens}.
+Parsed: filter tokens {tokens} [E]
 
-User: Can you list all the occurrences that involve word {token}.
-Parsed: includes {token} [E]
+User: Can you list all the occurrences that involve word {tokens}.
+Parsed: filter tokens {tokens} [E]
 
-User: I'd like to see all instances that feature word {token}.
-Parsed: includes {token} [E]
+User: I'd like to see all instances that feature word {tokens}.
+Parsed: filter tokens {tokens} [E]
 
-User: I want to know the cases that entail word {token}.
-Parsed: includes {token} [E]
+User: I want to know the cases that entail word {tokens}.
+Parsed: filter tokens {tokens} [E]
 
-User: Give information of the cases that contain word {token}.
-Parsed: includes {token} [E]
+User: Give information of the cases that contain word {tokens}.
+Parsed: filter tokens {tokens} [E]

@@ -8,6 +8,8 @@ import numpy as np
 import pandas as pd
 from pandas.api.types import is_numeric_dtype
 
+from actions.filter.include import includes_operation
+
 
 def filter_dataset(dataset, bools):
     """Selects x and y of dataset by booleans."""
@@ -181,6 +183,9 @@ def filter_operation(conversation, parse_text, i, is_or=False, **kwargs):
             updated_dset['X'] = updated_dset['X'].loc[[feature_value]]
             updated_dset['y'] = updated_dset['y'].loc[[feature_value]]
         interp_parse_text = f"id equal to {feature_value}"
+    elif feature_name == 'tokens':
+        parse_text = parse_text[1:]
+        return includes_operation(conversation, parse_text, i, **kwargs)
     elif operation == "predictionfilter":
         updated_dset, interp_parse_text = prediction_filter(temp_dataset, conversation, feature_name)
     elif operation == "labelfilter":

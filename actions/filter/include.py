@@ -23,7 +23,7 @@ def includes_operation(conversation, parse_text, i, **kwargs):
             after = text_input[match_idx+match_len:]
             before = ' '.join(before.split()[-threshold:])
             after  = ' '.join(after.split()[:threshold])
-            idx = temp_dataset["idx"][inum]
+            idx = temp_dataset.iloc[inum]
             output_str += f"idx {idx}: "
             if len(before)>0:
                 output_str+=f"... {before} "
@@ -37,5 +37,3 @@ def includes_operation(conversation, parse_text, i, **kwargs):
         output_str = f"I found the following matches for <b>{text_to_match}</b>: <br>"+output_str
         
     return output_str, 1
-
-

@@ -50,7 +50,9 @@ class Prompts:
                  prompt_folder: str,
                  cat_features: list[str],
                  num_features: list[str],
+                 text_features: list[str],
                  feature_value_dict: dict,
+                 dataset,
                  target: Union[list[int], list[str]],
                  class_names: dict,
                  skip_creating_prompts: bool = False,
@@ -91,6 +93,7 @@ class Prompts:
 
         self.cat_features = cat_features
         self.num_features = num_features
+        self.text_features = text_features
 
         self.filter_filler_dict_loc = filter_filler_dict_loc
 
@@ -105,10 +108,13 @@ class Prompts:
         self.embedding_dim = self.sentence_emb_model.encode(
             "whoopdadooo", show_progress_bar=False).shape[0]
 
+        # TODO: InterroLang: Create token_dict from dataset
+        self.token_dict = self._create_token_dict(dataset)
+
         self.skip = skip_creating_prompts
 
         if not skip_creating_prompts:
-            self.generate_prompts(cat_features, num_features, target, class_names,
+            self.generate_prompts(cat_features, num_features, text_features, target, class_names,
                                   feature_value_dict, max_values_per_feature)
 
     def set_num_prompts(self, num_prompts):
@@ -158,7 +164,7 @@ class Prompts:
 
         # Encode cache misses, if they exist
         if len(miss_prompts) > 0:
-            app.logger.info(f"Missed {len(miss_prompts)} prompts in cache...")
+            app.logger.debug(f"Missed {len(miss_prompts)} prompts in cache...")
             # Store all prompts on cpu
             encoded_misses = self.sentence_emb_model.encode(miss_prompts)
 
@@ -296,6 +302,13 @@ class Prompts:
                     size=max_values_per_feature)
         return feature_value_dict
 
+    @staticmethod
+    def _create_token_dict(dataset):
+        # TODO: Constrain via max_values_per_feature (?)
+        from collections import Counter
+        most_common_dict = Counter(" ".join(dataset["text"]).split()).most_common(50)
+        return {kv[0]: kv[0] for kv in most_common_dict}
+
     def load_dynamic_prompts(self):
         """Loads the dynamic prompts from file."""
 
@@ -429,6 +442,7 @@ class Prompts:
     def generate_prompts(self,
                          cat_features: list[str],
                          num_features: list[str],
+                         text_features: list[str],
                          target: list[str],
                          class_names: dict,
                          feature_value_dict: dict,
@@ -490,6 +504,7 @@ class Prompts:
             nn: feature_value_dict[nn.lower()] for nn in num_features}
         exp_dict = {
             'feature importance': ['lime', 'shap', 'feature importance']
+            # TODO: InterroLang only allows IG
         }
 
         app.logger.info("Building filter dicts...")
@@ -564,6 +579,13 @@ class Prompts:
                                              '{unused}',
                                              '{class_names}',
                                              class_dict,
+                                             semantic_feature_names=None)
+
+            # TODO: InterroLang: Fill the token(s) wildcards
+            cur_prompt = self._fill_wildcard(cur_prompt,
+                                             '{tokens}',
+                                             '{tokens}',
+                                             self.token_dict,
                                              semantic_feature_names=None)
 
             filled_prompt_set[prompt_id] = cur_prompt
@@ -762,12 +784,12 @@ class Prompts:
         if len(options) == 0:
             return {}
 
-        string = ""
+        temp_string = ""
         for op in options:
-            string += "\" id " + op + "\"" + " |"
-        string = string[:-1]
+            temp_string += "\" id " + op + "\"" + " |"
+        temp_string = temp_string[:-1]
 
-        return {"id": string}
+        return {"id": temp_string}
 
     def _extract_numerical_values(self, query: str):
         """Extracts any numerical values in the string.
@@ -794,6 +816,26 @@ class Prompts:
         temp_string = temp_string[:-1]
 
         return {"adhocnumvalues": temp_string}
+
+    @staticmethod
+    def _extract_tokens(query: str) -> dict:
+        """Extracts any tokens (that appear in the dataset) from the string.
+
+        Arguments:
+            query: The user query
+        Returns:
+            nonterminal: A new nonterminal containing
+        """
+        # TODO: Extract based on semantics
+        #  Current solution: Use tokens between quotation marks
+        quot = query.split('"')[1::2]
+        if quot:
+            temp_string = "\" tokens "
+            temp_string += "".join(quot)
+            temp_string += "\""
+            return {"tokens": temp_string}
+        else:
+            return {}
 
     def get_prompts(self,
                     query: str,
@@ -824,6 +866,9 @@ class Prompts:
         id_adhoc = self._extract_id_nums(query)
         num_adhoc = self._extract_numerical_values(query)
 
+        # InterroLang addition: Extract tokens
+        tokens_adhoc = self._extract_tokens(query)
+
         if error_analysis:
-            return joined_prompts, {**id_adhoc, **num_adhoc}, selected_prompts
-        return joined_prompts, {**id_adhoc, **num_adhoc}
+            return joined_prompts, {**id_adhoc, **num_adhoc, **tokens_adhoc}, selected_prompts
+        return joined_prompts, {**id_adhoc, **num_adhoc, **tokens_adhoc}
