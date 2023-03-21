@@ -4,6 +4,17 @@ import numpy as np
 from actions.utils import gen_parse_op_text, get_parse_filter_text
 
 
+def handle_input(parse_text):
+    num = None
+    for item in parse_text:
+        try:
+            if int(item):
+                num = int(item)
+        except:
+            pass
+    return num
+
+
 def predict_operation(conversation, parse_text, i, max_num_preds_to_print=1, **kwargs):
     """The prediction operation."""
     model = conversation.get_var('model').contents
@@ -12,14 +23,15 @@ def predict_operation(conversation, parse_text, i, max_num_preds_to_print=1, **k
     if len(conversation.temp_dataset.contents['X']) == 0:
         return 'There are no instances that meet this description!', 0
 
-    model_predictions = model.predict(data)
+    text = handle_input(parse_text)
+    model_predictions = model.predict(data, text)
 
     # Format return string
     return_s = ""
 
     filter_string = gen_parse_op_text(conversation)
 
-    if len(model_predictions) == 1:
+    if model_predictions.size == 1:
         return_s += f"The instance with <b>{filter_string}</b> is predicted "
         if conversation.class_names is None:
             prediction_class = str(model_predictions[0])

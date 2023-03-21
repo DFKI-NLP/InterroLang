@@ -41,10 +41,10 @@ from logic.transformers import TransformerModel
 
 
 @gin.configurable
-def load_hf_model(model_id):
+def load_hf_model(model_id, name):
     """ Loads a (local) Hugging Face model from a directory containing a pytorch_model.bin file and a config.json file.
     """
-    return TransformerModel(model_id)
+    return TransformerModel(model_id, name)
     # transformers.AutoModel.from_pretrained(model_id)
 
 
@@ -136,7 +136,7 @@ class ExplainBot:
                                          feature_definitions=feature_definitions)
 
         # Load the model into the conversation
-        self.load_model(model_file_path)
+        self.load_model(model_file_path, name=name)
 
         # Load the dataset into the conversation
         self.load_dataset(dataset_file_path,
@@ -152,7 +152,7 @@ class ExplainBot:
         """Inits a var from manual load."""
         self.manual_var_filename = name.decode("utf-8")
 
-    def load_model(self, filepath: str):
+    def load_model(self, filepath: str, name=None):
         """Loads a model.
 
         This routine loads a model into the conversation
@@ -190,7 +190,7 @@ class ExplainBot:
                                       model.predict_proba,
                                       'prediction_function')
         else:
-            model = load_hf_model(filepath)
+            model = load_hf_model(filepath, name)
             self.conversation.add_var('model', model, 'model')
             # self.conversation.add_var('model_prob_predict', model, 'prediction_function')
         """
