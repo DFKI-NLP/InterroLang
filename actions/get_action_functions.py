@@ -16,6 +16,7 @@ from actions.explanation.rationalize import rationalize_operation
 #from actions.explanation.what_if important what_if_operation
 from actions.filter.filter import filter_operation
 from actions.filter.includes_token import includes_operation
+from actions.explanation.global_topk import global_top_k
 from actions.metadata.count_data_points import count_data_points
 from actions.metadata.data_summary import data_operation
 from actions.metadata.define import define_operation
@@ -61,5 +62,6 @@ def get_all_action_functions_map():
         'sentiment': sentiment_operation,
         'rationalize': rationalize_operation,
         'feature_importance': feature_importance_operation,
+        'globaltopk': global_top_k
     }
     return actions
