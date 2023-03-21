@@ -19,6 +19,9 @@ from tqdm import tqdm
 from typing import Union
 from word2number import w2n
 
+from transformers import AutoAdapterModel, AutoTokenizer
+from transformers import TokenClassificationPipeline
+
 from logic.utils import find_csv_filenames
 
 app = Flask(__name__)
@@ -106,6 +109,17 @@ class Prompts:
             "whoopdadooo", show_progress_bar=False).shape[0]
 
         self.skip = skip_creating_prompts
+        
+        # Load adapter for "includetoken"        
+        adapter_model_name = "bert-base-cased"
+        adapter_model = AutoAdapterModel.from_pretrained(adapter_model_name)
+        adapter_tokenizer = AutoTokenizer.from_pretrained(adapter_model_name)
+        adapter_path = "../intents_and_slots/intent_slot_classification/adapters/includetoken"
+        slot_adapter = adapter_model.load_adapter(adapter_path)
+        adapter_model.load_head(adapter_path)
+        adapter_model.active_adapters = slot_adapter
+        self.device = "cuda" if torch.cuda.is_available() else "cpu"
+        self.include_tagger = TokenClassificationPipeline(model=adapter_model, tokenizer=adapter_tokenizer, device=self.device)
 
         if not skip_creating_prompts:
             self.generate_prompts(cat_features, num_features, target, class_names,
@@ -766,6 +780,29 @@ class Prompts:
         string = string[:-1]
 
         return {"id": string}
+        
+    def _extract_include_tokens(self, query:str):
+        """Runs the slot tagger and extracts the span of the include token.
+        Arguments:
+            query: the user query
+        Returns:
+            nonterminal: a new nonterminal containing the user input that corresponds to the token span for the include operation. Otherweise returns None.
+        
+        """
+        tagged = self.include_tagger(query)
+        start_span = None
+        end_span = None
+        for el in tagged:
+            start = el['start']
+            end = el['end']
+            if start_span is None or start<start_span:
+                start_span = start
+            if end_span is None or end>end_span:    
+                end_span = end
+        if start_span is None:
+            return {}
+        return {"token": query[start_span:end_span]}
+        
 
     def _extract_numerical_values(self, query: str):
         """Extracts any numerical values in the string.
@@ -821,6 +858,7 @@ class Prompts:
 
         id_adhoc = self._extract_id_nums(query)
         num_adhoc = self._extract_numerical_values(query)
+        token_adhoc = self._extract_include_tokens(query)
 
         if error_analysis:
             return joined_prompts, {**id_adhoc, **num_adhoc}, selected_prompts

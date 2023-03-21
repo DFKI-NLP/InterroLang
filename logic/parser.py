@@ -238,6 +238,8 @@ class Parser:
                 # available feature types because they could be anything.
                 if "id" in feat:
                     final_aval += f" | {feat}"
+                if "token" in feat:
+                    final_aval += f" | {feat}"
                 final_aval_values += f"\n{feat}: {adhoc_grammar_updates[feat]}"
             grammar = GRAMMAR.format(avaliablefeaturetypes=final_aval,
                                      topkvalues=self.get_topk_grammar_text())
