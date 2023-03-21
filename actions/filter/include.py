@@ -10,9 +10,9 @@ def includes_operation(conversation, parse_text, i, **kwargs):
     """The include operation."""
     text_to_match = parse_text[i+1]
     # remove the quotes around the text
-    while text_to_match[0] in string.punctuation:
+    while len(text_to_match)>0 and text_to_match[0] in string.punctuation:
         text_to_match = text_to_match[1:]
-    while text_to_match[-1] in string.punctuation:
+    while len(text_to_match)>0 and text_to_match[-1] in string.punctuation:
         text_to_match = text_to_match[:-1]
     text_to_match = re.escape(text_to_match)
     temp_dataset = conversation.temp_dataset.contents["X"]
@@ -29,7 +29,7 @@ def includes_operation(conversation, parse_text, i, **kwargs):
             after = text_input[match_idx+match_len:]
             before = ' '.join(before.split()[-threshold:])
             after  = ' '.join(after.split()[:threshold])
-            idx = temp_dataset["idx"][inum]
+            idx = temp_dataset.iloc[inum]
             output_str += f"idx {idx}: "
             if len(before)>0:
                 output_str+=f"... {before} "
