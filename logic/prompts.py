@@ -861,5 +861,5 @@ class Prompts:
         token_adhoc = self._extract_include_tokens(query)
 
         if error_analysis:
-            return joined_prompts, {**id_adhoc, **num_adhoc}, selected_prompts
-        return joined_prompts, {**id_adhoc, **num_adhoc}
+            return joined_prompts, {**id_adhoc, **num_adhoc, **token_adhoc}, selected_prompts
+        return joined_prompts, {**id_adhoc, **num_adhoc, **token_adhoc}
