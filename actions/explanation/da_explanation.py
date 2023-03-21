@@ -6,7 +6,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import torch
 from captum.attr import LayerIntegratedGradients
 from tqdm import tqdm
-from cfe_code.da_model_utils import DANetwork, DADataset
+from explained_models.da_classifier.da_model_utils import DANetwork, DADataset
 
 MAPPING = {0: "__dummy__" , 1: "inform", 2: "question", 3: "directive", 4: "commissive"}
 
