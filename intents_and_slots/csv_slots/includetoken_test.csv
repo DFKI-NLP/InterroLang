@@ -1,0 +1,36 @@
+,text,labels
+0,"I'd like to see all instances that feature word ""a car loan"".",O O O O O O O O O B I I
+1,"Show me all instances that include the word ""Calle"".",O O O O O O O O B
+2,What are the samples that include us in the data?,O O O O O O B O O O
+3,"What are the samples that include ""an increase"" in the data?",O O O O O O B I O O O
+4,Show me all instances that include the word business transactions.,O O O O O O O O B I
+5,"Where does ""the prizes"" appear?",O O B I O
+6,"Do we have ""us"" in the data?",O O O B O O O
+7,What are the sentences that have a vacation?,O O O O O O B I
+8,"Where does ""a vacation"" appear?",O O B I O
+9,"Can you provide me with all occurrences that comprise word ""the managers offices"".",O O O O O O O O O O B I I
+10,"Do we have ""July"" somewhere in the text?",O O O B O O O O
+11,"Where in the data does ""their flight"" appear?",O O O O O B I O
+12,Show me every example that has word your appointed dealer.,O O O O O O O B I I
+13,What are the sentences containing a blackout?,O O O O O B I
+14,"Where do we have ""a good career""?",O O O O B I I
+15,Please show me all examples that feature word slice.,O O O O O O O O B
+16,Where do we have a relaxed atmosphere?,O O O O B I I
+17,What are the sentences containing trouble?,O O O O O B
+18,What are the sentences that have a targeted preparation?,O O O O O O B I I
+19,"Which sentences have the words ""your prices"" in them?",O O O O O B I O O
+20,I want to know the cases that entail word a blackout.,O O O O O O O O O B I
+21,"Does ""a blackout"" appear in the dataset?",O B I O O O O
+22,Which sentences have the word RIB in them?,O O O O O B O O
+23,Where does a sign appear?,O O B I O
+24,"What are the instances that have ""a targeted preparation"" included?",O O O O O O B I I O
+25,"What are the sentences that have ""a blackout""?",O O O O O O B I
+26,Do we have places somewhere in the text?,O O O B O O O O
+27,"Where in the data does ""a party"" appear?",O O O O O B I O
+28,Do we have your appointed dealer somewhere in the text?,O O O B I I O O O O
+29,Where in the data do we have two kinds?,O O O O O O O B I
+30,Where in the data does You ’ Ve appear?,O O O O O B I I O
+31,"Where do we have ""chicken breasts""?",O O O O B I
+32,Where does this beautiful quilt appear?,O O B I I O
+33,"Do we have ""your social security"" somewhere in the text?",O O O B I I O O O O
+34,I want to know the cases that entail word the reply.,O O O O O O O O O B I

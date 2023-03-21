@@ -1,0 +1,207 @@
+,text,labels
+0,"Show me every example that has word ""it"".",O O O O O O O B
+1,Show me all instances that include the word bright rooms.,O O O O O O O O B I
+2,"Show me all instances with ""25RMB""",O O O O O B
+3,Do we have a vacation in the data?,O O O B I O O O
+4,"What are the sentences that include ""income""?",O O O O O O B
+5,"What are the instances that have ""a targeted preparation"" included?",O O O O O O B I I O
+6,I would like to see all instances that incorporate word bills.,O O O O O O O O O O B
+7,Where does a monster appear?,O O B I O
+8,"Where does ""plans"" appear?",O O B O
+9,Where does slice appear?,O O B O
+10,I'd like to see all instances that feature word a specific title.,O O O O O O O O O B I I
+11,What are the sentences containing bright rooms?,O O O O O B I
+12,"Please show me all examples that feature word ""7 p"".",O O O O O O O O B I
+13,Can you list all the occurrences that involve word Johnson.,O O O O O O O O O B
+14,"I want to know the cases that entail word ""this home"".",O O O O O O O O O B I
+15,"I want to know the cases that entail word ""an exclusive agency"".",O O O O O O O O O B I I
+16,Can you list all the occurrences that involve word the floor.,O O O O O O O O O B I
+17,"Where does ""7 p"" appear?",O O B I O
+18,Can you list all the occurrences that involve word trouble.,O O O O O O O O O B
+19,"Where does ""my clothes"" appear?",O O B I O
+20,Where in the data does the same thing appear?,O O O O O B I I O
+21,I would like to see all instances that incorporate word radio.,O O O O O O O O O O B
+22,I would like to see all instances that incorporate word the basement.,O O O O O O O O O O B I
+23,"What are the sentences that have ""the truth""?",O O O O O O B I
+24,"Please show me all examples that feature word ""an antihistamine"".",O O O O O O O O B I
+25,"What are the sentences containing ""the same questions""?",O O O O O B I I
+26,Does the reply appear in the dataset?,O B I O O O O
+27,"Where in the data do we have ""creativity""?",O O O O O O O B
+28,Does Stefan appear in the dataset?,O B O O O O
+29,"Show me all instances with ""an increase""",O O O O O B I
+30,"Can you list all the occurrences that involve word ""creativity"".",O O O O O O O O O B
+31,Show me all cases with us,O O O O O B
+32,"I would like to see all instances that incorporate word ""the prizes"".",O O O O O O O O O O B I
+33,"Can you provide me with all occurrences that comprise word ""plans"".",O O O O O O O O O O B
+34,"Can you provide me with all occurrences that comprise word ""trouble"".",O O O O O O O O O O B
+35,What are the sentences that have three pounds?,O O O O O O B I
+36,Show me every example that has word plans.,O O O O O O O B
+37,What are the instances that have places included?,O O O O O O B O
+38,"Can you display all occurrences that contain word ""your boarding pass"".",O O O O O O O O B I I
+39,"Are there any instances with ""the meter""?",O O O O O B I
+40,Which sentences have the word young children in them?,O O O O O B I O O
+41,Give information of the cases that contain word radio.,O O O O O O O O B
+42,Can you provide me with all occurrences that comprise word business.,O O O O O O O O O O B
+43,What are the samples that include your intention in the data?,O O O O O O B I O O O
+44,"Do we have ""young children"" somewhere in the text?",O O O B I O O O O
+45,Can you provide me with all occurrences that comprise word desk calendars.,O O O O O O O O O O B I
+46,"Where does ""The lease"" appear?",O O B I O
+47,"Which sentences have the words ""your boarding pass"" in them?",O O O O O B I I O O
+48,"I want to know the cases that entail word ""your keys"".",O O O O O O O O O B I
+49,"Are there any instances with ""7 p""?",O O O O O B I
+50,"What are the samples that include ""the manager"" in the data?",O O O O O O B I O O O
+51,"Does ""your products"" appear in the dataset?",O B I O O O O
+52,"Can you display all occurrences that contain word ""Stefan"".",O O O O O O O O B
+53,I would like to see all instances that incorporate word creativity.,O O O O O O O O O O B
+54,Can you provide me with all occurrences that comprise word the sale.,O O O O O O O O O O B I
+55,"Are there any instances with ""your intention""?",O O O O O B I
+56,Where do we have radio?,O O O O B
+57,Which sentences have the word 20 cents in them?,O O O O O B I O O
+58,"What are the sentences that include ""Jacob""?",O O O O O O B
+59,"Where does ""places"" appear?",O O B O
+60,"Where in the data do we have ""two kinds""?",O O O O O O O B I
+61,What are the instances that have income included?,O O O O O O B O
+62,"Can you list all the occurrences that involve word ""radio"".",O O O O O O O O O B
+63,Does my TEFL certificate appear in the dataset?,O B I I O O O O
+64,"What are the sentences that have ""creativity""?",O O O O O O B
+65,"Please show me all examples that feature word ""the work hour"".",O O O O O O O O B I I
+66,"Can you display all occurrences that contain word ""a vacation"".",O O O O O O O O B I
+67,"Can you list all the occurrences that involve word ""the reply"".",O O O O O O O O O B I
+68,"Are there any instances with ""your intention""?",O O O O O B I
+69,I would like to see all instances that incorporate word almost an hour.,O O O O O O O O O O B I I
+70,"Which sentences have the words ""the managers offices"" in them?",O O O O O B I I O O
+71,Show me all instances with a specific title,O O O O O B I I
+72,"Which sentences have the words ""money"" in them?",O O O O O B O O
+73,"What are the samples that include ""a blackout"" in the data?",O O O O O O B I O O O
+74,"What are the instances that have ""20 cents"" included?",O O O O O O B I O
+75,"Does ""income"" appear in the dataset?",O B O O O O
+76,"Show me all instances with ""the reply""",O O O O O B I
+77,"Are there any instances with ""a good career""?",O O O O O B I I
+78,What are the sentences that have plans?,O O O O O O B
+79,Show me every example that has word a change.,O O O O O O O B I
+80,"Show me all instances that include the word ""the same thing"".",O O O O O O O O B I I
+81,Can you provide me with all occurrences that comprise word this home.,O O O O O O O O O O B I
+82,"Can you list all the occurrences that involve word ""our corporation"".",O O O O O O O O O B I
+83,"What are the sentences that include ""an antihistamine""?",O O O O O O B I
+84,"Which sentences have the words ""the basement"" in them?",O O O O O B I O O
+85,Please show me all examples that feature word an exclusive agency.,O O O O O O O O B I I
+86,"I'd like to see all instances that feature word ""your products"".",O O O O O O O O O B I
+87,"Show me all instances that include the word ""the hospital"".",O O O O O O O O B I
+88,Where do we have 1000 Yuan?,O O O O I I
+89,"Show me every example that has word ""my TEFL certificate"".",O O O O O O O B I I
+90,Show me all cases with chicken breasts,O O O O O B I
+91,Please show me all examples that feature word hasn ’ t.,O O O O O O O O B I I
+92,"Can you provide me with all occurrences that comprise word ""slice"".",O O O O O O O O O O B
+93,I'd like to see all instances that feature word the price.,O O O O O O O O O B I
+94,Which sentences have the words the same questions in them?,O O O O O B I I O O
+95,Where do we have Stefan?,O O O O B
+96,Can you list all the occurrences that involve word slice.,O O O O O O O O O B
+97,Where do we have the basement?,O O O O B I
+98,"Are there any instances with ""20 cents""?",O O O O O B I
+99,Which sentences have the word the job market in them?,O O O O O B I I O O
+100,Where in the data do we have cream?,O O O O O O O B
+101,"Are there any instances with ""distributors""?",O O O O O B
+102,"What are the samples that include ""radio"" in the data?",O O O O O O B O O O
+103,"What are the sentences containing ""your keys""?",O O O O O B I
+104,"What are the sentences that have ""it""?",O O O O O O B
+105,"Where in the data do we have ""the floor""?",O O O O O O O B I
+106,Where in the data do we have you?,O O O O O O O B
+107,Which sentences have the words three pounds in them?,O O O O O B I O O
+108,"Where do we have ""places""?",O O O O B
+109,"Do we have ""His name"" somewhere in the text?",O O O B I O O O O
+110,Where does you appear?,O O B O
+111,"Can you provide me with all occurrences that comprise word ""cream"".",O O O O O O O O O O B
+112,"What are the sentences containing ""trouble""?",O O O O O B
+113,Does bills appear in the dataset?,O B O O O O
+114,"Show me every example that has word ""the same questions"".",O O O O O O O B I I
+115,"Show me all instances with ""cream""",O O O O O B
+116,"Which sentences have the word ""the work hour"" in them?",O O O O O B I I O O
+117,Do we have Stefan in the data?,O O O B O O O
+118,What are the sentences that include money?,O O O O O O B
+119,Where in the data do we have you?,O O O O O O O B
+120,Do we have your products somewhere in the text?,O O O B I O O O O
+121,"Where in the data does ""my clothes"" appear?",O O O O O B I O
+122,Show me all instances that include the word the court.,O O O O O O O O B I
+123,"Where in the data does ""a vacation"" appear?",O O O O O B I O
+124,Where in the data does a change appear?,O O O O O B I O
+125,Please show me all examples that feature word a check.,O O O O O O O O B I
+126,What are the sentences that include 20 cents?,O O O O O O B I
+127,"What are the samples that include ""income"" in the data?",O O O O O O B O O O
+128,"Show me all instances that include the word ""a specific title"".",O O O O O O O O B I I
+129,Give information of the cases that contain word it.,O O O O O O O O B
+130,"I'd like to see all instances that feature word ""radio"".",O O O O O O O O O B
+131,Can you display all occurrences that contain word the prizes.,O O O O O O O O B I
+132,Can you display all occurrences that contain word He.,O O O O O O O O B
+133,"Does ""Some people"" appear in the dataset?",O B I O O O O
+134,"I would like to see all instances that incorporate word ""papers"".",O O O O O O O O O O B
+135,What are the samples that include Stefan in the data?,O O O O O O B O O O
+136,Give information of the cases that contain word a party.,O O O O O O O O B I
+137,"What are the instances that have ""money"" included?",O O O O O O B O
+138,"Which sentences have the word ""desk calendars"" in them?",O O O O O B I O O
+139,"I want to know the cases that entail word ""a political party"".",O O O O O O O O O B I I
+140,What are the sentences that include us?,O O O O O O B
+141,What are the sentences that include our corporation?,O O O O O O B I
+142,"I'd like to see all instances that feature word ""Johnson"".",O O O O O O O O O B
+143,Show me all instances with business,O O O O O B
+144,Show me all cases with a vacation,O O O O O B I
+145,Show me all cases with your intention,O O O O O B I
+146,"Are there any instances with ""a party""?",O O O O O B I
+147,"Give information of the cases that contain word ""your boarding pass"".",O O O O O O O O B I I
+148,"Do we have ""The bank"" in the data?",O O O B I O O O
+149,Can you display all occurrences that contain word your driver's license.,O O O O O O O O B I I
+150,Can you provide me with all occurrences that comprise word bills.,O O O O O O O O O O B
+151,Which sentences have the words a relaxed atmosphere in them?,O O O O O B I I O O
+152,What are the sentences containing an increase?,O O O O O B I
+153,Which sentences have the words a relaxed atmosphere in them?,O O O O O B I I O O
+154,Where does the price appear?,O O B I O
+155,"Give information of the cases that contain word ""speakers"".",O O O O O O O O B
+156,"Are there any instances with ""desk calendars""?",O O O O O B I
+157,"Does ""a TEFL certificate"" appear in the dataset?",O B I I O O O O
+158,Give information of the cases that contain word the sale.,O O O O O O O O B I
+159,I want to know the cases that entail word a relaxed atmosphere.,O O O O O O O O O B I I
+160,"I want to know the cases that entail word ""the same questions"".",O O O O O O O O O B I I
+161,I want to know the cases that entail word young children.,O O O O O O O O O B I
+162,What are the sentences containing the court?,O O O O O B I
+163,I want to know the cases that entail word us.,O O O O O O O O O B
+164,Please show me all examples that feature word your prices.,O O O O O O O O B I
+165,"What are the sentences containing ""my clothes""?",O O O O O B I
+166,"Show me every example that has word ""the heat"".",O O O O O O O B I
+167,"What are the sentences that include ""radio""?",O O O O O O B
+168,Where in the data does trouble appear?,O O O O O B O
+169,Do we have He in the data?,O O O B O O O
+170,I'd like to see all instances that feature word the truth.,O O O O O O O O O B I
+171,"Please show me all examples that feature word ""Jacob"".",O O O O O O O O B
+172,"Show me every example that has word ""25RMB"".",O O O O O O O B
+173,Do we have your keys in the data?,O O O B I O O O
+174,Which sentences have the word bills in them?,O O O O O B O O
+175,"Give information of the cases that contain word ""drink"".",O O O O O O O O B
+176,Do we have the future somewhere in the text?,O O O B I O O O O
+177,"Where in the data do we have ""RIB""?",O O O O O O O B
+178,"Can you display all occurrences that contain word ""an increase"".",O O O O O O O O B I
+179,"Do we have ""the reply"" somewhere in the text?",O O O B I O O O O
+180,"What are the instances that have ""25RMB"" included?",O O O O O O B O
+181,Do we have the manager in the data?,O O O B I O O O
+182,Show me all instances with young children,O O O O O B I
+183,"I would like to see all instances that incorporate word ""distributors"".",O O O O O O O O O O B
+184,Where does the meter appear?,O O B I O
+185,Show me all instances with the truth,O O O O O B I
+186,Show me all instances that include the word His name.,O O O O O O O O B I
+187,Show me every example that has word your products.,O O O O O O O B I
+188,I'd like to see all instances that feature word a change.,O O O O O O O O O B I
+189,What are the instances that have your salary included?,O O O O O O B I O
+190,What are the samples that include Any ideas in the data?,O O O O O O B I O O O
+191,Do we have business somewhere in the text?,O O O B O O O O
+192,"Which sentences have the word ""your keys"" in them?",O O O O O B I O O
+193,"Can you list all the occurrences that involve word ""the sale"".",O O O O O O O O O B I
+194,Can you display all occurrences that contain word their flight.,O O O O O O O O B I
+195,Can you list all the occurrences that involve word a car loan.,O O O O O O O O O B I I
+196,"Can you display all occurrences that contain word ""an increase"".",O O O O O O O O B I
+197,Does money appear in the dataset?,O B O O O O
+198,"What are the sentences that include ""small bills""?",O O O O O O B I
+199,"I would like to see all instances that incorporate word ""it"".",O O O O O O O O O O B
+200,Show me all cases with business,O O O O O B
+201,"Where does ""creativity"" appear?",O O B O
+202,"Do we have ""radio"" in the data?",O O O B O O O
+203,"Show me all instances that include the word ""your social security"".",O O O O O O O O B I I
+204,"Where do we have ""July""?",O O O O B
+205,"Give information of the cases that contain word ""the basement"".",O O O O O O O O B I
