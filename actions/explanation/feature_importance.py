@@ -1,4 +1,6 @@
 import json
+
+import gin
 import torch
 from captum.attr import LayerIntegratedGradients
 from tqdm import tqdm
@@ -17,7 +19,7 @@ def handle_input(parse_text):
     Args:
         parse_text: parse_text from bot
 
-    Returns: num_list, topk
+    Returns: id_list, topk
 
     """
     id_list = []
@@ -81,13 +83,17 @@ def get_return_str(topk, res):
     return return_s
 
 
+@gin.configurable('FeatureImportance')
 def feature_importance_operation(conversation, parse_text, i, **kwargs):
     # filter id 5 or filter id 151 or filter id 315 and nlpattribute topk 10 [E]
     # filter id 213 and nlpattribute all [E]
     # filter id 33 and nlpattribute topk 1 [E]
     id_list, topk = handle_input(parse_text)
 
-    data_path = "./cache/boolq/ig_explainer_boolq_explanation.json"
+    # Get the dataset name
+    name = gin.query_parameter('FeatureImportance.name')
+
+    data_path = f"./cache/{name}/ig_explainer_{name}_explanation.json"
     fileObject = open(data_path, "r")
     jsonContent = fileObject.read()
     json_list = json.loads(jsonContent)
