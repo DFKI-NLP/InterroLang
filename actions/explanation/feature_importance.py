@@ -20,27 +20,27 @@ def handle_input(parse_text):
     Returns: num_list, topk
 
     """
-    num_list = []
+    id_list = []
     topk = None
     for item in parse_text:
         try:
             if int(item):
-                num_list.append(int(item))
+                id_list.append(int(item))
         except:
             pass
     if "topk" in parse_text:
-        topk = num_list[-1]
-        return num_list[:-1], topk
+        topk = id_list[-1]
+        return id_list[:-1], topk
     else:
-        return num_list, topk
+        return id_list, topk
 
 
-def get_res(json_list, num_list, topk, tokenizer, num=0):
+def get_res(json_list, id_list, topk, tokenizer, num=0):
     """
     Get topk tokens from a single sentence
     Args:
         json_list: data source
-        num_list: list of numbers(ids)
+        id_list: list of numbers(ids)
         topk: topk value
         tokenizer: for converting input_ids to sentence
         num: current index
@@ -48,8 +48,8 @@ def get_res(json_list, num_list, topk, tokenizer, num=0):
     Returns:
         topk tokens
     """
-    input_ids = json_list[num_list[num]]["input_ids"]
-    explanation = json_list[num_list[num]]["attributions"]
+    input_ids = json_list[id_list[num]]["input_ids"]
+    explanation = json_list[id_list[num]]["attributions"]
     res = []
 
     # Get corresponding tokens by input_ids
@@ -85,7 +85,7 @@ def feature_importance_operation(conversation, parse_text, i, **kwargs):
     # filter id 5 or filter id 151 or filter id 315 and nlpattribute topk 10 [E]
     # filter id 213 and nlpattribute all [E]
     # filter id 33 and nlpattribute topk 1 [E]
-    num_list, topk = handle_input(parse_text)
+    id_list, topk = handle_input(parse_text)
 
     data_path = "./cache/boolq/ig_explainer_boolq_explanation.json"
     fileObject = open(data_path, "r")
@@ -99,13 +99,13 @@ def feature_importance_operation(conversation, parse_text, i, **kwargs):
     elif topk >= len(json_list[0]["input_ids"]):
         return "Entered topk is larger than input max length", 1
     else:
-        if len(num_list) == 1:
-            res = get_res(json_list, num_list, topk, tokenizer, num=0)
+        if len(id_list) == 1:
+            res = get_res(json_list, id_list, topk, tokenizer, num=0)
             return get_return_str(topk, res), 1
         else:
             return_s = ""
-            for num in num_list:
-                res = get_res(json_list, num_list, topk, tokenizer, num=num)
+            for num in id_list:
+                res = get_res(json_list, id_list, topk, tokenizer, num=num)
                 temp = get_return_str(topk, res)
                 return_s += f"For id {num}: {temp}"
                 return_s += "<br>"
