@@ -23,9 +23,13 @@ class TransformerModel(Module):
             data: Pandas DataFrame containing columns of text data
             text: preprocessed parse_text
         """
-        fileObject = open(f"./cache/{self.dataset_name}/ig_explainer_{self.dataset_name}_explanation.json", "r")
-        jsonContent = fileObject.read()
-        json_list = json.loads(jsonContent)
+        path = f"./cache/{self.dataset_name}/ig_explainer_{self.dataset_name}_explanation.json"
+        try:
+            fileObject = open(path, "r")
+            jsonContent = fileObject.read()
+            json_list = json.loads(jsonContent)
+        except:
+            raise FileNotFoundError(f"The required cache with path {path} doesn't exist!")
 
         if text is None:
             temp = []
