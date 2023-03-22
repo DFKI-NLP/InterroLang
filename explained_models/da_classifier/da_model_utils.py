@@ -20,6 +20,9 @@ class DANetwork(nn.Module):
 
     def forward(self, input_ids, input_mask):
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+        # tensor.to(device) only returns a copy
+        # https://stackoverflow.com/questions/54155969/pytorch-instance-tensor-not-moved-to-gpu-even-with-explicit-cuda-call
         input_ids = input_ids.to(device)
         input_mask = input_mask.to(device)
 
