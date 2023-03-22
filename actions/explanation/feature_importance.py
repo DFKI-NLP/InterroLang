@@ -109,7 +109,7 @@ def feature_importance_operation(conversation, parse_text, i, **kwargs):
                 temp = get_return_str(topk, res)
                 return_s += f"For id {num}: {temp}"
                 return_s += "<br>"
-            return return_s
+            return return_s, 1
 
 
 class FeatureAttributionExplainer(Explainer):
