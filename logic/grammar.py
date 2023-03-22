@@ -75,7 +75,7 @@ topk: topkword ( {topkvalues} )
 topkword: " topk"
 
 
-impfeaturesword: " important"
+impfeaturesword: " nlpattribute"
 numupdates: " increase" | " set" | " decrease"
 
 includes: " includes"

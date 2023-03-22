@@ -2,17 +2,114 @@ import json
 import torch
 from captum.attr import LayerIntegratedGradients
 from tqdm import tqdm
+from transformers import AutoTokenizer
 
 from explained_models.DataLoaderABC.hf_dataloader import HFDataloader
 from explained_models.ModelABC.distilbert_qa_boolq import DistilbertQABoolModel
 from explained_models.Tokenizer.tokenizer import HFTokenizer
 from explained_models.Explainer.explainer import Explainer
+import numpy as np
+
+
+def handle_input(parse_text):
+    """
+    Handle the parse text and return the list of numbers(ids) and topk value if given
+    Args:
+        parse_text: parse_text from bot
+
+    Returns: num_list, topk
+
+    """
+    num_list = []
+    topk = None
+    for item in parse_text:
+        try:
+            if int(item):
+                num_list.append(int(item))
+        except:
+            pass
+    if "topk" in parse_text:
+        topk = num_list[-1]
+        return num_list[:-1], topk
+    else:
+        return num_list, topk
+
+
+def get_res(json_list, num_list, topk, tokenizer, num=0):
+    """
+    Get topk tokens from a single sentence
+    Args:
+        json_list: data source
+        num_list: list of numbers(ids)
+        topk: topk value
+        tokenizer: for converting input_ids to sentence
+        num: current index
+
+    Returns:
+        topk tokens
+    """
+    input_ids = json_list[num_list[num]]["input_ids"]
+    explanation = json_list[num_list[num]]["attributions"]
+    res = []
+
+    # Get corresponding tokens by input_ids
+    tokens = list(tokenizer.decode(input_ids).split(" "))
+
+    idx = np.argsort(explanation)[::-1][:topk]
+
+    for i in idx:
+        res.append(tokens[i])
+
+    return_s = ', '.join(i for i in res)
+    return return_s
+
+
+def get_return_str(topk, res):
+    """
+    Generate return string using template
+    Args:
+        topk: topk value
+        res:  topk tokens
+
+    Returns:
+        object: template string
+    """
+    if topk == 1:
+        return_s = f"The <b>topk {topk}</b> important token is <b>{res}.</b>"
+    else:
+        return_s = f"The <b>topk {topk}</b> important tokens are <b>{res}.</b>"
+    return return_s
 
 
 def feature_importance_operation(conversation, parse_text, i, **kwargs):
-    # TODO
-    return_s = 'Feature importance operation called.'
-    return return_s, 1
+    # filter id 5 or filter id 151 or filter id 315 and nlpattribute topk 10 [E]
+    # filter id 213 and nlpattribute all [E]
+    # filter id 33 and nlpattribute topk 1 [E]
+    num_list, topk = handle_input(parse_text)
+
+    data_path = "./cache/boolq/ig_explainer_boolq_explanation.json"
+    fileObject = open(data_path, "r")
+    jsonContent = fileObject.read()
+    json_list = json.loads(jsonContent)
+
+    tokenizer = AutoTokenizer.from_pretrained("andi611/distilbert-base-uncased-qa-boolq")
+
+    if topk is None:
+        return "topk is not given", 1
+    elif topk >= len(json_list[0]["input_ids"]):
+        return "Entered topk is larger than input max length", 1
+    else:
+        if len(num_list) == 1:
+            res = get_res(json_list, num_list, topk, tokenizer, num=0)
+            return get_return_str(topk, res), 1
+        else:
+            return_s = ""
+            for num in num_list:
+                res = get_res(json_list, num_list, topk, tokenizer, num=num)
+                temp = get_return_str(topk, res)
+                return_s += f"For id {num}: {temp}"
+                return_s += "<br>"
+            return return_s
 
 
 class FeatureAttributionExplainer(Explainer):
@@ -140,11 +237,11 @@ class FeatureAttributionExplainer(Explainer):
             jsonFile.close()
 
 
-if __name__ == "__main__":
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-
-    model_id = "andi611/distilbert-base-uncased-qa-boolq"
-    tokenizer = HFTokenizer(model_id)
-    dataloader = HFDataloader(tokenizer=tokenizer.tokenizer, batch_size=1, number_of_instance=10)
-    model = DistilbertQABoolModel(dataloader, num_labels=2, model_id=model_id)
-    FeatureAttributionExplainer(model, device=device).generate_explanation()
+# if __name__ == "__main__":
+#     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+#
+#     model_id = "andi611/distilbert-base-uncased-qa-boolq"
+#     tokenizer = HFTokenizer(model_id)
+#     dataloader = HFDataloader(tokenizer=tokenizer.tokenizer, batch_size=1, number_of_instance=10)
+#     model = DistilbertQABoolModel(dataloader, num_labels=2, model_id=model_id)
+#     FeatureAttributionExplainer(model, device=device).generate_explanation()
