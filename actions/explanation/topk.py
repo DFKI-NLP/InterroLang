@@ -2,6 +2,7 @@ import os
 import json
 import torch
 from tqdm import tqdm
+from transformers import BertTokenizer
 
 from actions.explanation.feature_importance import FeatureAttributionExplainer
 from explained_models.DataLoaderABC.hf_dataloader import HFDataloader
@@ -76,7 +77,7 @@ def results_with_pattern(results):
 def topk(explainer, k, threshold=-1, data_path="../../cache/boolq/ig_explainer_boolq_explanation.json",
          res_path="../../cache/boolq/ig_explainer_boolq_attribution.json", print_with_pattern=True, class_name=None):
     """
-    The operation to get most k important tokens 
+    The operation to get most k important tokens
 
     Args:
         explainer (string): string of explainer name
@@ -106,73 +107,78 @@ def topk(explainer, k, threshold=-1, data_path="../../cache/boolq/ig_explainer_b
             else:
                 return result_list
 
-    results, model = get_results(explainer=explainer, data_path=data_path)
-    if not ((results is None) and (model is None)):
+    if "boolq" in data_path:
+        results, model = get_results(explainer=explainer, data_path=data_path)
         tokenizer = model.model.tokenizer
-
-        # individual tokens
-        word_set = set()
-        word_counter = {}
-        word_attributions = {}
-
-        if class_name:
-            print('class name: ', class_name)
-            temp = []
-            for res in results:
-                if res["label"] == class_name:
-                    temp.append(res)
-        else:
-            temp = results
-
-        pbar = tqdm(temp)
-        for result in pbar:
-            pbar.set_description('Processing Attribution')
-            attribution = result["attributions"]
-            tokens = list(tokenizer.decode(result["input_ids"]).split(" "))
-            counter = 0
-
-            # count for attributions and #occurance
-            for token in tokens:
-                if not token in word_set:
-                    word_set.add(token)
-                    word_counter[token] = 1
-                    word_attributions[token] = attribution[counter]
-                else:
-                    word_counter[token] += 1
-                    word_attributions[token] += attribution[counter]
-                    counter += 1
-
-        scores = {}
-        if threshold == -1:
-            for word in word_set:
-                scores[word] = (word_attributions[word] / word_counter[word])
-        else:
-            for word in word_set:
-                if word_counter[word] >= threshold:
-                    scores[word] = (word_attributions[word] / word_counter[word])
-
-        sorted_scores = sorted(scores.items(), key=lambda x: x[1], reverse=True)
-
-        if not os.path.exists(res_path):
-            jsonString = json.dumps(sorted_scores)
-            jsonFile = open(res_path, "w")
-            jsonFile.write(jsonString)
-            jsonFile.close()
-
-        if len(sorted_scores) >= k:
-            if print_with_pattern:
-                return results_with_pattern(sorted_scores[:k])
-            else:
-                return sorted_scores[:k]
-        else:
-            print("[Info] The length of score is smaller than k")
-            if print_with_pattern:
-                return results_with_pattern(sorted_scores)
-            else:
-                return sorted_scores
+    elif "daily_dialog" in data_path:
+        tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+        fileObject = open(data_path, "r")
+        jsonContent = fileObject.read()
+        results = json.loads(jsonContent)
     else:
-        print("[Error] This explainer is not handled yet!")
-        return results
+        pass
+
+    # individual tokens
+    word_set = set()
+    word_counter = {}
+    word_attributions = {}
+
+    if class_name:
+        print('class name: ', class_name)
+        temp = []
+        for res in results:
+            if res["label"] == class_name:
+                temp.append(res)
+    else:
+        temp = results
+
+    pbar = tqdm(temp)
+    for result in pbar:
+        pbar.set_description('Processing Attribution')
+        attribution = result["attributions"]
+        tokens = list(tokenizer.decode(result["input_ids"]).split(" "))
+        counter = 0
+
+        # count for attributions and #occurance
+        for token in tokens:
+            if not token in word_set:
+                word_set.add(token)
+                word_counter[token] = 1
+                word_attributions[token] = attribution[counter]
+            else:
+                word_counter[token] += 1
+                word_attributions[token] += attribution[counter]
+                counter += 1
+
+    scores = {}
+    if threshold == -1:
+        for word in word_set:
+            scores[word] = (word_attributions[word] / word_counter[word])
+    else:
+        for word in word_set:
+            if word_counter[word] >= threshold:
+                scores[word] = (word_attributions[word] / word_counter[word])
+
+    sorted_scores = sorted(scores.items(), key=lambda x: x[1], reverse=True)
+
+    if not os.path.exists(res_path):
+        jsonString = json.dumps(sorted_scores)
+        jsonFile = open(res_path, "w")
+        jsonFile.write(jsonString)
+        jsonFile.close()
+
+    if len(sorted_scores) >= k:
+        if print_with_pattern:
+            return results_with_pattern(sorted_scores[:k])
+        else:
+            return sorted_scores[:k]
+    else:
+        print("[Info] The length of score is smaller than k")
+        if print_with_pattern:
+            return results_with_pattern(sorted_scores)
+        else:
+            return sorted_scores
+
 
 # if __name__ == "__main__":
-#     print(topk("ig_explainer", 10, print_with_pattern=True))
+# topk("ig_explainer", 10, data_path="../../cache/ig_explainer_daily_dialog_explanation.json", res_path="../../cache/ig_explainer_daily_dialog_attribution.json")
