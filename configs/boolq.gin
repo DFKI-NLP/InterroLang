@@ -45,3 +45,5 @@ Conversation.class_names = {1: "True", 0: "False"}
 DatasetDescription.dataset_objective = "predict to answer yes/no questions based on text passages"
 DatasetDescription.dataset_description = "Boolean question answering (yes/no)"
 DatasetDescription.model_description = "DistilBERT"
+
+DatasetDescription.name = "boolq"
