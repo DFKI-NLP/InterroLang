@@ -21,7 +21,8 @@ class DatasetDescription:
                  model_description: str = "",
                  eval_file_path: str = None,
                  index_col: int = 0,
-                 target_var_name: str = "y"):
+                 target_var_name: str = "y",
+                 name: str = ""):
         """Init.
 
         Arguments:
@@ -42,6 +43,11 @@ class DatasetDescription:
         self.index_col = index_col
         self.target_var_name = target_var_name
         self.model_description = model_description
+        self.dataset_name = name
+
+    def get_dataset_name(self):
+        """ Gets the dataset name """
+        return self.dataset_name
 
     def get_dataset_objective(self):
         """Gets the objective."""

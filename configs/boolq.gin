@@ -46,4 +46,4 @@ DatasetDescription.dataset_objective = "predict to answer yes/no questions based
 DatasetDescription.dataset_description = "Boolean question answering (yes/no)"
 DatasetDescription.model_description = "DistilBERT"
 
-FeatureImportance.name = "boolq"
+DatasetDescription.name = "boolq"

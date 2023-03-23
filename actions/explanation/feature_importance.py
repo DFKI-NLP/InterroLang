@@ -77,13 +77,13 @@ def get_return_str(topk, res):
         object: template string
     """
     if topk == 1:
-        return_s = f"The <b>topk {topk}</b> important token is <b>{res}.</b>"
+        return_s = f"The <b>most</b> important token is <b>{res}.</b>"
     else:
-        return_s = f"The <b>topk {topk}</b> important tokens are <b>{res}.</b>"
+        return_s = f"The <b>{topk} most</b> important tokens are <b>{res}.</b>"
     return return_s
 
 
-@gin.configurable('FeatureImportance')
+# @gin.configurable('DatasetDescription')
 def feature_importance_operation(conversation, parse_text, i, **kwargs):
     # filter id 5 or filter id 151 or filter id 315 and nlpattribute topk 10 [E]
     # filter id 213 and nlpattribute all [E]
@@ -91,7 +91,8 @@ def feature_importance_operation(conversation, parse_text, i, **kwargs):
     id_list, topk = handle_input(parse_text)
 
     # Get the dataset name
-    name = gin.query_parameter('FeatureImportance.name')
+    # name = gin.query_parameter('DatasetDescription.name')
+    name = conversation.describe.get_dataset_name()
 
     data_path = f"./cache/{name}/ig_explainer_{name}_explanation.json"
     fileObject = open(data_path, "r")
@@ -101,8 +102,9 @@ def feature_importance_operation(conversation, parse_text, i, **kwargs):
     tokenizer = AutoTokenizer.from_pretrained("andi611/distilbert-base-uncased-qa-boolq")
 
     if topk is None:
-        return "topk is not given", 1
-    elif topk >= len(json_list[0]["input_ids"]):
+        topk = 3
+
+    if topk >= len(json_list[0]["input_ids"]):
         return "Entered topk is larger than input max length", 1
     else:
         if len(id_list) == 1:
@@ -222,10 +224,6 @@ class FeatureAttributionExplainer(Explainer):
                 label = detach_to_list(batch['labels'][idx_instance])
                 attrbs = detach_to_list(attribution[idx_instance])
                 preds = detach_to_list(predictions[idx_instance])
-                # ids = batch['input_ids'][idx_instance]
-                # label = batch['labels'][idx_instance]
-                # attrbs = attribution[idx_instance]
-                # preds = predictions[idx_instance]
                 result = {'batch': idx_batch,
                           'instance': idx_instance,
                           'index_running': idx_instance_running,
@@ -242,12 +240,3 @@ class FeatureAttributionExplainer(Explainer):
             jsonFile.write(jsonString)
             jsonFile.close()
 
-
-# if __name__ == "__main__":
-#     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-#
-#     model_id = "andi611/distilbert-base-uncased-qa-boolq"
-#     tokenizer = HFTokenizer(model_id)
-#     dataloader = HFDataloader(tokenizer=tokenizer.tokenizer, batch_size=1, number_of_instance=10)
-#     model = DistilbertQABoolModel(dataloader, num_labels=2, model_id=model_id)
-#     FeatureAttributionExplainer(model, device=device).generate_explanation()
