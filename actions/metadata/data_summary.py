@@ -3,6 +3,16 @@ import nltk
 
 
 def get_frequent_words(conversation, f_names, top=5):
+    """
+
+    Args:
+        conversation: conversation object
+        f_names: list of feature names
+        top: top k frequent words
+
+    Returns:
+        frequent_words: list of tuples in form: (word, freq)
+    """
     df = conversation.temp_dataset.contents['X']
 
     nltk.download("stopwords")
@@ -36,7 +46,6 @@ def data_operation(conversation, parse_text, i, **kwargs):
     # List out the feature names
     f_names = list(conversation.temp_dataset.contents['X'].columns)
 
-    # return str(f_names), 1
     f_string = "<ul>"
     for fn in f_names:
         f_string += f"<li>{fn}</li>"
@@ -80,19 +89,5 @@ def data_operation(conversation, parse_text, i, **kwargs):
         text += f"<td> {frequent_words[i][1]} </td>"
         text += "</tr>"
     text += "</table><br><br>"
-
-    # for i, f in enumerate(f_names):
-    #     mean = round(df[f].mean(), conversation.rounding_precision)
-    #     std = round(df[f].std(), conversation.rounding_precision)
-    #     min_v = round(df[f].min(), conversation.rounding_precision)
-    #     max_v = round(df[f].max(), conversation.rounding_precision)
-    #     new_feature = (f"{f}: The mean is {mean}, one standard deviation is {std},"
-    #                    f" the minimum value is {min_v}, and the maximum value is {max_v}")
-    #     new_feature += "<br><br>"
-    #
-    #     rest_of_text += new_feature
-    #
-    # text += "Let me know if you want to see an in depth description of the dataset statistics.<br><br>"
-    # conversation.store_followup_desc(rest_of_text)
 
     return text, 1
