@@ -43,6 +43,18 @@ def sample_mistakes(y_true, y_pred, conversation, intro_text, ids):
     return return_string
 
 
+def count_mistakes(y_true, y_pred, conversation, intro_text):
+    """"Count number of instances that are predicted wrongly """
+    incorrect_num = np.sum(y_true != y_pred)
+    total_num = len(y_true)
+    error_rate = round(incorrect_num / total_num, conversation.rounding_precision)
+
+    return_string = (f"{intro_text} the model is incorrect {incorrect_num} out of {total_num} "
+                     f"times (error rate {error_rate}).")
+
+    return return_string
+
+
 def train_tree(data, target, depth: int = 1):
     """Trains a decision tree"""
     dt_string = []
@@ -120,12 +132,17 @@ def show_mistakes_operation(conversation, parse_text, i, n_features_to_show=floa
         else:
             return f"{intro_text} the model predicts correctly on all the instances in the data!<br><br>", 1
 
-    if parse_text[i+1] == "sample":
+    if parse_text[i + 1] == "sample":
         return_string = sample_mistakes(y_true,
                                         y_pred,
                                         conversation,
                                         intro_text,
                                         ids)
+    elif parse_text[i + 1] == "count":
+        return_string = count_mistakes(y_true,
+                                       y_pred,
+                                       conversation,
+                                       intro_text)
     # elif parse_text[i+1] == "typical":
     #     return_string = typical_mistakes(data,
     #                                      y_true,
@@ -134,7 +151,7 @@ def show_mistakes_operation(conversation, parse_text, i, n_features_to_show=floa
     #                                      intro_text,
     #                                      ids)
     else:
-        raise NotImplementedError(f"No mistake type {parse_text[i+1]}")
+        raise NotImplementedError(f"No mistake type {parse_text[i + 1]}")
 
     return_string += "<br><br>"
     return return_string, 1
