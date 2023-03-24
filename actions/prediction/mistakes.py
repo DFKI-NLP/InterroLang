@@ -1,9 +1,8 @@
 """Show model mistakes"""
-from copy import deepcopy
+import json
 
 import gin
 import numpy as np
-import pandas as pd
 from sklearn.tree import DecisionTreeClassifier
 
 from actions.utils import get_parse_filter_text, get_rules
@@ -77,21 +76,37 @@ def typical_mistakes(data, y_true, y_pred, conversation, intro_text, ids):
     return return_string
 
 
+def get_predictions_and_labels(name):
+    """
+    Args:
+        name: dataset name
+    Returns:
+        predictions and labels
+    """
+    data_path = f"./cache/{name}/ig_explainer_{name}_explanation.json"
+    fileObject = open(data_path, "r")
+    jsonContent = fileObject.read()
+    json_list = json.loads(jsonContent)
+    y_pred, y_true = [], []
+
+    for item in json_list:
+        y_pred.append(np.argmax(item["predictions"]))
+        y_true.append(item["label"])
+
+    y_pred = np.array(y_pred)
+    y_true = np.array(y_true)
+
+    return y_pred, y_true, len(json_list)
+
+
 @gin.configurable
 def show_mistakes_operation(conversation, parse_text, i, n_features_to_show=float("+inf"), **kwargs):
     """Generates text that shows the model mistakes."""
-    data = conversation.temp_dataset.contents['X']
-    y_true_pd = deepcopy(conversation.temp_dataset.contents['y'])
 
-    if isinstance(y_true_pd, pd.Series):
-        y_true = y_true_pd.to_numpy()
-    elif isinstance(y_true_pd, list):
-        y_true = np.array(y_true_pd)
-
-    # Get ids
-    ids = np.array(list(data.index))
-
-    model = conversation.get_var('model').contents
+    # Get dataset name
+    name = conversation.describe.get_dataset_name()
+    y_pred, y_true, length = get_predictions_and_labels(name)
+    ids = np.array([i for i in range(length)])
 
     # The filtering text
     intro_text = get_parse_filter_text(conversation)
@@ -99,7 +114,6 @@ def show_mistakes_operation(conversation, parse_text, i, n_features_to_show=floa
     if len(y_true) == 0:
         return "There are no instances in the data that meet this description.<br><br>", 0
 
-    y_pred = model.predict(data)
     if np.sum(y_true == y_pred) == len(y_true):
         if len(y_true) == 1:
             return f"{intro_text} the model predicts correctly!<br><br>", 1
@@ -112,13 +126,13 @@ def show_mistakes_operation(conversation, parse_text, i, n_features_to_show=floa
                                         conversation,
                                         intro_text,
                                         ids)
-    elif parse_text[i+1] == "typical":
-        return_string = typical_mistakes(data,
-                                         y_true,
-                                         y_pred,
-                                         conversation,
-                                         intro_text,
-                                         ids)
+    # elif parse_text[i+1] == "typical":
+    #     return_string = typical_mistakes(data,
+    #                                      y_true,
+    #                                      y_pred,
+    #                                      conversation,
+    #                                      intro_text,
+    #                                      ids)
     else:
         raise NotImplementedError(f"No mistake type {parse_text[i+1]}")
 
