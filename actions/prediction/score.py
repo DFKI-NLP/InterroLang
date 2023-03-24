@@ -2,7 +2,37 @@
 
 This operation computes a score metric on the data or the eval data.
 """
+import json
+
+import numpy as np
+
 from actions.utils import gen_parse_op_text
+
+
+def get_predictions_and_labels(dataset_name):
+    """
+
+    Args:
+        dataset_name: The name of dataset
+
+    Returns:
+        Arrays of predictions and actual labels
+    """
+    data_path = f"./cache/{dataset_name}/ig_explainer_{dataset_name}_explanation.json"
+    fileObject = open(data_path, "r")
+    jsonContent = fileObject.read()
+    json_list = json.loads(jsonContent)
+
+    predictions = []
+    labels = []
+
+    for item in json_list:
+        labels.append(item["label"])
+        predictions.append(np.argmax(item["predictions"]))
+
+    y_true = np.array(labels)
+    y_pred = np.array(predictions)
+    return y_true, y_pred
 
 
 def score_operation(conversation, parse_text, i, **kwargs):
@@ -14,11 +44,14 @@ def score_operation(conversation, parse_text, i, **kwargs):
     if metric == "default":
         metric = conversation.default_metric
 
-    model = conversation.get_var('model').contents
+    # model = conversation.get_var('model').contents
+    #
+    # data = conversation.temp_dataset.contents['X']
 
-    data = conversation.temp_dataset.contents['X']
-    y_true = conversation.temp_dataset.contents['y']
-    y_pred = model.predict(data)
+    # Get the dataset name
+    dataset_name = conversation.describe.get_dataset_name()
+
+    y_true, y_pred = get_predictions_and_labels(dataset_name)
 
     filter_string = gen_parse_op_text(conversation)
     if len(filter_string) <= 0:

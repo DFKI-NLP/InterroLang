@@ -83,7 +83,6 @@ def get_return_str(topk, res):
     return return_s
 
 
-# @gin.configurable('DatasetDescription')
 def feature_importance_operation(conversation, parse_text, i, **kwargs):
     # filter id 5 or filter id 151 or filter id 315 and nlpattribute topk 10 [E]
     # filter id 213 and nlpattribute all [E]
@@ -91,7 +90,6 @@ def feature_importance_operation(conversation, parse_text, i, **kwargs):
     id_list, topk = handle_input(parse_text)
 
     # Get the dataset name
-    # name = gin.query_parameter('DatasetDescription.name')
     name = conversation.describe.get_dataset_name()
 
     data_path = f"./cache/{name}/ig_explainer_{name}_explanation.json"
