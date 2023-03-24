@@ -3,9 +3,12 @@
 These descriptions are called in different ways when generating responses in the conversation to
 provide more tailored dataset specified feedback
 """
+import json
+
 import gin
 from typing import Any
 
+import numpy as np
 from sklearn.metrics import accuracy_score, confusion_matrix, roc_auc_score, f1_score, precision_score, recall_score
 
 from logic.utils import read_and_format_data
@@ -152,6 +155,46 @@ class DatasetDescription:
         x_values = x_values.values
         y_pred = model.predict(x_values)
         # Get performance summary
+        performance_summary = self.get_score_text(y_values,
+                                                  y_pred,
+                                                  metric_name,
+                                                  rounding_precision,
+                                                  "the data")
+        return performance_summary
+
+    def get_eval_performance_for_hf_model(self,
+                                          dataset_name,
+                                          metric_name: str = "accuracy",
+                                          rounding_precision: int = 3):
+        """Computes the eval performance.
+
+        Arguments:
+            dataset_name: The name of dataset
+            metric_name: The name of the metric used, e.g., accuracy. The currently supported
+                         metrics are accuracy, roc, f1, recall, and precision.
+            rounding_precision: The number of decimal places to present in the result
+        Returns:
+            performance_summary: A string describing the performance summary of the model.
+        """
+
+        # If no eval dataset is specified, ignore providing
+        # performance summary
+        if self.eval_file_path is None:
+            return ""
+
+        data_path = f"./cache/{dataset_name}/ig_explainer_{dataset_name}_explanation.json"
+        fileObject = open(data_path, "r")
+        jsonContent = fileObject.read()
+        json_list = json.loads(jsonContent)
+
+        y_values, y_pred = [], []
+        for item in json_list:
+            y_pred.append(np.argmax(item["predictions"]))
+            y_values.append(item["label"])
+
+        y_pred = np.array(y_pred)
+        y_values = np.array(y_values)
+
         performance_summary = self.get_score_text(y_values,
                                                   y_pred,
                                                   metric_name,
