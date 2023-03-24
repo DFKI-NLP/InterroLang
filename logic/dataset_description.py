@@ -168,14 +168,14 @@ class DatasetDescription:
                                           rounding_precision: int = 3):
         """Computes the eval performance.
 
-                Arguments:
-                    dataset_name: The name of dataset
-                    metric_name: The name of the metric used, e.g., accuracy. The currently supported
-                                 metrics are accuracy, roc, f1, recall, and precision.
-                    rounding_precision: The number of decimal places to present in the result
-                Returns:
-                    performance_summary: A string describing the performance summary of the model.
-                """
+        Arguments:
+            dataset_name: The name of dataset
+            metric_name: The name of the metric used, e.g., accuracy. The currently supported
+                         metrics are accuracy, roc, f1, recall, and precision.
+            rounding_precision: The number of decimal places to present in the result
+        Returns:
+            performance_summary: A string describing the performance summary of the model.
+        """
 
         # If no eval dataset is specified, ignore providing
         # performance summary
