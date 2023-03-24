@@ -31,7 +31,7 @@ def handle_input(parse_text):
     return instance_id
 
 
-def get_predicitions_and_probabilities(name, instance_id):
+def get_predictions_and_probabilities(name, instance_id):
     """
 
     Args:
@@ -61,10 +61,12 @@ def predict_likelihood(conversation, parse_text, i, **kwargs):
     # Get the dataset name
     name = conversation.describe.get_dataset_name()
     instance_id = handle_input(parse_text)
-    model_predictions, model_prediction_probabilities = get_predicitions_and_probabilities(name, instance_id)
+    model_predictions, model_prediction_probabilities = get_predictions_and_probabilities(name, instance_id)
 
     return_s = f"For instance with id <b>{instance_id}</b>: "
     return_s += "<ul>"
+
+    # Go through all classes
     for _class in range(len(model_prediction_probabilities)):
         classs_name = conversation.get_class_name_from_label(_class)
         prob = round(model_prediction_probabilities[_class] * 100, conversation.rounding_precision)
