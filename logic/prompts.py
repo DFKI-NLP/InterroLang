@@ -817,25 +817,28 @@ class Prompts:
 
         return {"adhocnumvalues": temp_string}
 
-    @staticmethod
-    def _extract_tokens(query: str) -> dict:
-        """Extracts any tokens (that appear in the dataset) from the string.
-
+    def _extract_tokens(self, query: str) -> dict:
+        """Runs the slot tagger and extracts the span of the include token.
         Arguments:
-            query: The user query
+            query: the user query
         Returns:
-            nonterminal: A new nonterminal containing
+            nonterminal: a new nonterminal containing the user input that corresponds to the token span for the include
+                operation. Otherweise returns None.
+
         """
-        # TODO: Extract based on semantics
-        #  Current solution: Use tokens between quotation marks
-        quot = query.split('"')[1::2]
-        if quot:
-            temp_string = "\" tokens "
-            temp_string += "".join(quot)
-            temp_string += "\""
-            return {"tokens": temp_string}
-        else:
+        tagged = self.include_tagger(query)
+        start_span = None
+        end_span = None
+        for el in tagged:
+            start = el['start']
+            end = el['end']
+            if start_span is None or start<start_span:
+                start_span = start
+            if end_span is None or end>end_span:
+                end_span = end
+        if start_span is None:
             return {}
+        return {"token": query[start_span:end_span]}
 
     def get_prompts(self,
                     query: str,
@@ -865,7 +868,6 @@ class Prompts:
 
         id_adhoc = self._extract_id_nums(query)
         num_adhoc = self._extract_numerical_values(query)
-
         # InterroLang addition: Extract tokens
         tokens_adhoc = self._extract_tokens(query)
 

@@ -232,18 +232,16 @@ class Parser:
         """
         if adhoc_grammar_updates is not None:
             final_aval = copy.deepcopy(self.available_feature_types)
-            additional_aval = []
             final_aval_values = ""
             for feat in adhoc_grammar_updates:
                 # add the adhoc grammar updates to the list of avaliable feature types in the
                 # special case of the *id* feature. Other adhoc updates are not considered as
                 # available feature types because they could be anything.
                 if "id" in feat:
-                    additional_aval.append(feat)
-                elif "tokens" in feat and adhoc_grammar_updates[feat]:
-                    additional_aval.append(feat)
+                    final_aval += f" | {feat}"
+                if "token" in feat:
+                    final_aval += f" | {feat}"
                 final_aval_values += f"\n{feat}: {adhoc_grammar_updates[feat]}"
-            final_aval += " | ".join(additional_aval)
             grammar = GRAMMAR.format(availablefeaturetypes=final_aval,
                                      topkvalues=self.get_topk_grammar_text())
             grammar += final_aval_values
