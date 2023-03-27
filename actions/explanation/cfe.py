@@ -1,6 +1,31 @@
-from counterfactuals.cfe_generation_refactor import CFEExplainer, ALL_CTRL_CODES
+import torch
+from transformers import BertTokenizer
+
+from actions.counterfactuals.cfe_generation_refactor import CFEExplainer, ALL_CTRL_CODES
+from explained_models.da_classifier.da_model_utils import DADataset
+from torch.utils.data import (DataLoader, RandomSampler, SequentialSampler)
 
 model_id2label = {0: 'dummy', 1: 'inform', 2: 'question', 3: 'directive', 4: 'commissive'}
+
+
+def get_dataloader(data, batch_size, dtype):
+    samples = []
+    for i in range(len(data)):
+        d_texts = data[i]['dialog']
+        d_labels = data[i]['act']
+        assert(len(d_texts)==len(d_labels))
+        for j in range(len(d_texts)):
+            if j==0:
+                prev_text = 'start'
+            else:
+                prev_text = d_texts[j-1]
+            samples.append((prev_text+' [SEP] '+d_texts[j], d_labels[j]))
+    dataset = DADataset(samples)
+    if dtype=='train':# or dtype=='val':
+        dataloader = DataLoader(dataset, sampler = RandomSampler(dataset), batch_size = batch_size, num_workers = 4)
+    else:
+        dataloader = DataLoader(dataset, sampler = SequentialSampler(dataset), batch_size = 1)
+    return dataloader
 
 
 def extract_id_cfe_number(parse_text):
@@ -32,9 +57,27 @@ def get_text_by_id(conversation, _id):
 def counterfactuals_operation(conversation, parse_text, i, **kwargs):
     # Parsed: filter id 54 and nlpcfe [E]
 
+    import nltk
+    nltk.download('omw-1.4')
+
+    import spacy
+    # spacy.load("en_core_web_sm")
+    spacy.load('en_core_web_sm')
+
     _id, cfe_num = extract_id_cfe_number(parse_text)
 
-    instance = get_text_by_id(conversation, _id)
+    from datasets import load_dataset
+    test_data = load_dataset('daily_dialog', split='test')
+    test_dataloader = get_dataloader(test_data, 1, "test")
+
+    # instance = get_text_by_id(conversation, _id)
+    # test_dataloader = torch.load('./explained_models/da_classifier/test_dataloader.pth')
+    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+    tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+    for b_input in test_dataloader:
+        input_ids = b_input[0].to(device)
+        instance = tokenizer.convert_tokens_to_string(tokenizer.convert_ids_to_tokens(input_ids[0], skip_special_tokens=True))
+        break
 
     cfe_explainer = CFEExplainer()
     same, diff = cfe_explainer.cfe(instance, cfe_num, ctrl_code=ALL_CTRL_CODES, id2label=model_id2label)
@@ -48,7 +91,7 @@ def counterfactuals_operation(conversation, parse_text, i, **kwargs):
     return_s = ""
     if len(diff) > 0:
         # [('oh , god , no thanks .', 'dummy'), ('oh , good boy , no thanks .', 'dummy')]
-        return_s += "If you change the input as shown below, you will get a different class prediction. <br>"
+        return_s += "If you change the input as shown below, you will get a different class prediction. <br><br>"
         flipped_label = diff[0][1]
         return_s += f"The model will predict label <b>{flipped_label}</b>, " \
                     f"where the true label is <b>{predicted_label}</b>: <br>"
@@ -60,4 +103,6 @@ def counterfactuals_operation(conversation, parse_text, i, **kwargs):
             return_s += '</li>'
         return_s += "</ul>"
     else:
-        return_s += f"This sentence is always classified as {predicted_label}!"
+        return_s += f"This sentence is always classified as <b>{predicted_label}</b>!"
+
+    return return_s, 1
