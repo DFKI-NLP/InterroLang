@@ -1,10 +1,12 @@
+import torch
 from torch import nn
 from transformers import BertForSequenceClassification
 
 DEFAULT_MODEL_ID = "bert-base-uncased"
 
+
 class DANetwork(nn.Module):
-    def __init__(self, bert_emb_size = 768, hidden_dim = 128, model_id=DEFAULT_MODEL_ID, num_labels=5):
+    def __init__(self, bert_emb_size=768, hidden_dim=128, model_id=DEFAULT_MODEL_ID, num_labels=5):
         super(DANetwork, self).__init__()
         self.bert_emb_size = bert_emb_size
         self.hidden_dim = hidden_dim

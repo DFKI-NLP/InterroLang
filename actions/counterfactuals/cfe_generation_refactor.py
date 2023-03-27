@@ -72,6 +72,7 @@ class CFEExplainer(Explainer):
             else:
                 same_label_samples.append((new_sample, prediction))
         return same_label_samples[:number], diff_label_samples[:number]
+
     def check_cuda(self):
         if torch.cuda.is_available():
             self.is_cuda = True
@@ -98,37 +99,37 @@ class CFEExplainer(Explainer):
             print('different label predictions:', diff)
 
             ### testing with the DA test dataloader ###
-            test_dataloader = torch.load('../../explained_models/da_classifier/test_dataloader.pth')
-            for b_input in test_dataloader:
-                input_ids = b_input[0].to(self.device)
-                instance_text = self.tokenizer.convert_tokens_to_string(self.tokenizer.convert_ids_to_tokens(input_ids[0], skip_special_tokens=True))
-                same, diff = self.cfe(instance_text, number=4, id2label=model_id2label)
-                print('original text:', instance_text)
-                print('same label predictions:', same)
-                print('different label predictions:', diff)
-                input_mask = b_input[1].to(self.device)
-                labels = b_input[2].to(self.device)
-
-                with torch.no_grad():
-                    result = self.model(input_ids, input_mask)
-                    predicted_label_id = torch.argmax(result.detach().cpu()).item() # result.logits...
-                    true_label_id = labels.to('cpu').numpy()[0]
-                    print('predicted label:', model_id2label[predicted_label_id])
-                    print('true label:', model_id2label[true_label_id])
-                print()
-
-                json_list.append({
-                    "instance_text": instance_text,
-                    "same_label_predictions": same,
-                    "different_label_predictions": diff,
-                    "predicted_label": model_id2label[predicted_label_id],
-                    "true_label": model_id2label[true_label_id]
-                })
-
-            jsonString = json.dumps(json_list)
-            jsonFile = open(data_path, "w")
-            jsonFile.write(jsonString)
-            jsonFile.close()
+            # test_dataloader = torch.load('../../explained_models/da_classifier/test_dataloader.pth')
+            # for b_input in test_dataloader:
+            #     input_ids = b_input[0].to(self.device)
+            #     instance_text = self.tokenizer.convert_tokens_to_string(self.tokenizer.convert_ids_to_tokens(input_ids[0], skip_special_tokens=True))
+            #     same, diff = self.cfe(instance_text, number=4, id2label=model_id2label)
+            #     print('original text:', instance_text)
+            #     print('same label predictions:', same)
+            #     print('different label predictions:', diff)
+            #     input_mask = b_input[1].to(self.device)
+            #     labels = b_input[2].to(self.device)
+            #
+            #     with torch.no_grad():
+            #         result = self.model(input_ids, input_mask)
+            #         predicted_label_id = torch.argmax(result.detach().cpu()).item() # result.logits...
+            #         true_label_id = labels.to('cpu').numpy()[0]
+            #         print('predicted label:', model_id2label[predicted_label_id])
+            #         print('true label:', model_id2label[true_label_id])
+            #     print()
+            #
+            #     json_list.append({
+            #         "instance_text": instance_text,
+            #         "same_label_predictions": same,
+            #         "different_label_predictions": diff,
+            #         "predicted_label": model_id2label[predicted_label_id],
+            #         "true_label": model_id2label[true_label_id]
+            #     })
+            #
+            # jsonString = json.dumps(json_list)
+            # jsonFile = open(data_path, "w")
+            # jsonFile.write(jsonString)
+            # jsonFile.close()
 
 
 if __name__ == "__main__":

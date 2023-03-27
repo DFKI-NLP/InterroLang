@@ -1,7 +1,10 @@
 GRAMMAR = r"""
 ?start: action
 action: operation done | operation join action | followup done
-operation: explanation | filter | predictions | whatami | lastturnfilter | lastturnop | data | impfeatures | show | whatif | likelihood | modeldescription | function | score | ndatapoints | label | mistakes | fstats | define | labelfilter | predfilter | includes | globaltopk
+operation: explanation | filter | predictions | whatami | lastturnfilter | lastturnop | data | impfeatures | show | whatif | likelihood | modeldescription | function | score | ndatapoints | label | mistakes | fstats | define | labelfilter | predfilter | includes | globaltopk | nlpcfe
+
+nlpcfe: " cfe" cfefeature
+cfefeature: {avaliablefeaturetypes} | " "
 
 globaltopk: globaltopkword
 globaltopkword: " globaltopk" classname
@@ -37,7 +40,7 @@ filter: filterword featuretype
 featuretype: {avaliablefeaturetypes}
 
 explanation: explainword explaintype
-explainword: " logic"
+explainword: " explain"
 explaintype: featureimportance | lime | cfe
 featureimportance: " features"
 lime: " lime"
