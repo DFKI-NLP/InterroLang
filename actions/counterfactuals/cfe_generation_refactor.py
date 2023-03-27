@@ -13,11 +13,11 @@ from polyjuice.generations.special_tokens import *
 from explained_models.da_classifier.da_model_utils import DADataset
 
 ALL_CTRL_CODES = set([
-   LEXCICAL, RESEMANTIC, NEGATION, INSERT,
-   DELETE, QUANTIFIER, RESTRUCTURE, SHUFFLE
+    LEXCICAL, RESEMANTIC, NEGATION, INSERT,
+    DELETE, QUANTIFIER, RESTRUCTURE, SHUFFLE
 ])
 
-model_id2label = {0:'dummy', 1:'inform', 2:'question', 3:'directive', 4:'commissive'}
+model_id2label = {0: 'dummy', 1: 'inform', 2: 'question', 3: 'directive', 4: 'commissive'}
 
 
 class CFEExplainer(Explainer):
@@ -28,7 +28,8 @@ class CFEExplainer(Explainer):
         self.check_cuda()
 
         self.model = DANetwork()
-        self.explainer = Polyjuice(model_path="uw-hai/polyjuice", is_cuda=self.is_cuda) if explainer == 'polyjuice' else explainer
+        self.explainer = Polyjuice(model_path="uw-hai/polyjuice",
+                                   is_cuda=self.is_cuda) if explainer == 'polyjuice' else explainer
         self.tokenizer = HFTokenizer('bert-base-uncased', mode='bert').tokenizer if tokenizer == 'bert' else tokenizer
 
     def encode_sample(self, sample):
@@ -38,10 +39,10 @@ class CFEExplainer(Explainer):
     def get_samples_from_pj(self, instance, ctrl_code):
         try:
             generated_samples = self.explainer.perturb(instance, ctrl_code=ctrl_code, num_perturbations=None,
-                                           perplex_thred=10)  # , num_beams=5)
+                                                       perplex_thred=10)  # , num_beams=5)
         except:
             generated_samples = self.explainer.perturb(instance, ctrl_code=ALL_CTRL_CODES, num_perturbations=None,
-                                           perplex_thred=None)
+                                                       perplex_thred=None)
         return generated_samples
 
     # instance: input string
@@ -81,7 +82,8 @@ class CFEExplainer(Explainer):
             self.is_cuda = False
             self.device = 'cpu'
 
-    def generate_explanation(self, store_data=False, data_path="../../cache/dailydialog/cfe_daily_dialog_explanation.json"):
+    def generate_explanation(self, store_data=False,
+                             data_path="../../cache/dailydialog/cfe_daily_dialog_explanation.json"):
         if os.path.exists(data_path):
             fileObject = open(data_path, "r")
             jsonContent = fileObject.read()
@@ -134,5 +136,3 @@ class CFEExplainer(Explainer):
 
 if __name__ == "__main__":
     CFEExplainer().generate_explanation()
-
-
