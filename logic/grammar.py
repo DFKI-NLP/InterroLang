@@ -34,7 +34,7 @@ or: " or"
 filterword: " filter"
 
 filter: filterword featuretype
-featuretype: {avaliablefeaturetypes}
+featuretype: {availablefeaturetypes}
 
 explanation: explainword explaintype
 explainword: " logic"

@@ -1,8 +1,8 @@
 /*This code is based on the script provided in https://studygyaan.com/python/create-web-based-chatbot-in-python-django-flask */
 :root {
-  --body-bg: #fff;
-  --ttm-bg: #fff;
-  --pins-bg: #fff;
+  --body-bg: #2C2C2C;
+  --ttm-bg: #2C2C2C;
+  --pins-bg: #2C2C2C;
   --border: 2px solid #ddd;
   --left-msg-bg: #ececec;
   --right-msg-bg: #579ffb;
@@ -10,7 +10,7 @@
 }
 
 body {
-  background: #ADD8E6;
+  background: #2C2C2C;
   height: 100vh;
   background-size: 400% 400%;
 }
@@ -388,7 +388,7 @@ parse {
 }
 
 .ttm-chat {
-  background-color: #fcfcfe;
+  background-color: #2C2C2C;
 }
 
 .graphresponse {
