@@ -11,7 +11,6 @@ from logging.config import dictConfig
 
 from logic.core import ExplainBot
 from logic.sample_prompts_by_action import sample_prompt_for_action
-from explained_models.da_classifier.da_model_utils import DADataset
 
 
 # gunicorn doesn't have command line flags, using a gin file to pass command line args
