@@ -114,11 +114,11 @@ class Prompts:
         adapter_model_name = "bert-base-cased"
         adapter_model = AutoAdapterModel.from_pretrained(adapter_model_name)
         adapter_tokenizer = AutoTokenizer.from_pretrained(adapter_model_name)
-        adapter_path = "../intents_and_slots/intent_slot_classification/adapters/includetoken"
+        adapter_path = "./intents_and_slots/intent_slot_classification/adapters/includetoken"
         slot_adapter = adapter_model.load_adapter(adapter_path)
         adapter_model.load_head(adapter_path)
         adapter_model.active_adapters = slot_adapter
-        self.device = "cuda" if torch.cuda.is_available() else "cpu"
+        self.device = 0 if torch.cuda.is_available() else -1
         self.include_tagger = TokenClassificationPipeline(model=adapter_model, tokenizer=adapter_tokenizer, device=self.device)
 
         if not skip_creating_prompts:
