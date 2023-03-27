@@ -5,8 +5,6 @@ from actions.counterfactuals.cfe_generation_refactor import CFEExplainer, ALL_CT
 from explained_models.da_classifier.da_model_utils import DADataset
 from torch.utils.data import (DataLoader, RandomSampler, SequentialSampler)
 
-model_id2label = {0: 'dummy', 1: 'inform', 2: 'question', 3: 'directive', 4: 'commissive'}
-
 
 def get_dataloader(data, batch_size, dtype):
     samples = []
@@ -54,6 +52,14 @@ def get_text_by_id(conversation, _id):
     return filtered_text
 
 
+def get_text_by_id_from_csv(_id):
+    import pandas as pd
+
+    df = pd.read_csv('./data/daily_dialog_test.csv')
+    text = df["dialog"][_id]
+    label = df["act"][_id]
+    return text, label
+
 def counterfactuals_operation(conversation, parse_text, i, **kwargs):
     # Parsed: filter id 54 and nlpcfe [E]
 
@@ -71,15 +77,18 @@ def counterfactuals_operation(conversation, parse_text, i, **kwargs):
     test_dataloader = get_dataloader(test_data, 1, "test")
 
     # instance = get_text_by_id(conversation, _id)
+    instance, label = get_text_by_id_from_csv(_id)
+    # return instance, 1
     # test_dataloader = torch.load('./explained_models/da_classifier/test_dataloader.pth')
-    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-    tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
-    for b_input in test_dataloader:
-        input_ids = b_input[0].to(device)
-        instance = tokenizer.convert_tokens_to_string(tokenizer.convert_ids_to_tokens(input_ids[0], skip_special_tokens=True))
-        break
+    # device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+    # tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+    # for b_input in test_dataloader:
+    #     input_ids = b_input[0].to(device)
+    #     instance = tokenizer.convert_tokens_to_string(tokenizer.convert_ids_to_tokens(input_ids[0], skip_special_tokens=True))
+    #     break
 
     cfe_explainer = CFEExplainer()
+    model_id2label = {0: 'dummy', 1: 'inform', 2: 'question', 3: 'directive', 4: 'commissive'}
     same, diff = cfe_explainer.cfe(instance, cfe_num, ctrl_code=ALL_CTRL_CODES, id2label=model_id2label)
 
     if len(same) > 0:
@@ -91,17 +100,19 @@ def counterfactuals_operation(conversation, parse_text, i, **kwargs):
     return_s = ""
     if len(diff) > 0:
         # [('oh , god , no thanks .', 'dummy'), ('oh , good boy , no thanks .', 'dummy')]
-        return_s += "If you change the input as shown below, you will get a different class prediction. <br><br>"
+        return_s += f"If the original text: <b>{instance}</b>. <br><br>"
+        return_s += "is changed to <br>"
         flipped_label = diff[0][1]
-        return_s += f"The model will predict label <b>{flipped_label}</b>, " \
-                    f"where the true label is <b>{predicted_label}</b>: <br>"
 
         return_s += "<ul>"
         for i in range(len(diff)):
             return_s += '<li>'
             return_s += diff[i][0]
             return_s += '</li>'
-        return_s += "</ul>"
+        return_s += "</ul><br>"
+
+        return_s += f"the predicted label <b>{predicted_label}</b> changes to <b>{flipped_label}</b>. <br>"
+
     else:
         return_s += f"This sentence is always classified as <b>{predicted_label}</b>!"
 

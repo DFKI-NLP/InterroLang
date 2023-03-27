@@ -9,7 +9,7 @@ from actions.about.self import self_operation
 from actions.context.followup import followup_operation
 from actions.context.last_turn_filter import last_turn_filter
 from actions.context.last_turn_operation import last_turn_operation
-from counterfactuals.cfe import counterfactuals_operation
+from actions.counterfactuals.cfe import counterfactuals_operation
 from actions.explanation.feature_importance import feature_importance_operation
 from actions.explanation.rationalize import rationalize_operation
 #from actions.explanation.topk import global_topk_operation
