@@ -19,10 +19,15 @@ def includes_operation(conversation, parse_text, i, **kwargs):
     text_inputs = temp_dataset["text"]
     
     threshold = 5 # num of words before and after the match
+    max_num_of_matches = 20 # max num of words that we output as matches
     output_str = ""
     match_len = len(text_to_match)
+    total_matches = 0
     for inum, text_input in enumerate(text_inputs):
+        if total_matches >= max_num_of_matches:
+            break
         matched_indices = [m.start() for m in re.finditer(text_to_match, text_input, re.IGNORECASE)]
+        total_matches += len(matched_indices)
         for match_idx in matched_indices:
             before = text_input[:match_idx] 
             match = text_to_match
