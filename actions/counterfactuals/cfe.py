@@ -70,18 +70,11 @@ def counterfactuals_operation(conversation, parse_text, i, **kwargs):
     nltk.download('omw-1.4')
 
     import spacy
-    # spacy.load("en_core_web_sm")
     spacy.load('en_core_web_sm')
 
     _id, cfe_num = extract_id_cfe_number(parse_text)
-
-    # from datasets import load_dataset
-    # test_data = load_dataset('daily_dialog', split='test')
-    # test_dataloader = get_dataloader(test_data, 1, "test")
-
     dataset_name = conversation.describe.get_dataset_name()
 
-    # dataset_name = 'daily_dialog'
     if dataset_name == "boolq":
         instance = get_text_by_id(conversation, _id)
     elif dataset_name == 'daily_dialog':
@@ -89,16 +82,6 @@ def counterfactuals_operation(conversation, parse_text, i, **kwargs):
     else:
         pass
 
-    # return instance, 1
-    # test_dataloader = torch.load('./explained_models/da_classifier/test_dataloader.pth')
-    # device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-    # tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
-    # for b_input in test_dataloader:
-    #     input_ids = b_input[0].to(device)
-    #     instance = tokenizer.convert_tokens_to_string(tokenizer.convert_ids_to_tokens(input_ids[0], skip_special_tokens=True))
-    #     break
-
-    # cfe_explainer = CFEExplainer(dataset_name=dataset_name)
     cfe_explainer = CFEExplainer(dataset_name=dataset_name)
     same, diff = cfe_explainer.cfe(instance, cfe_num, ctrl_code=ALL_CTRL_CODES, _id=_id)
 
@@ -110,14 +93,17 @@ def counterfactuals_operation(conversation, parse_text, i, **kwargs):
 
     return_s = ""
     if len(diff) > 0:
-        # [('oh , god , no thanks .', 'dummy'), ('oh , good boy , no thanks .', 'dummy')]
-        return_s += f"If the original text: <b>{instance}</b>. <br><br>"
-        return_s += "is changed to <br>"
+        return_s += "<ul>"
+        return_s += '<li>'
+        return_s += f"<b>[The original text]:</b> "
+        return_s += f"{instance}"
+        return_s += '</li>'
+
         flipped_label = diff[0][1]
 
-        return_s += "<ul>"
         for i in range(len(diff)):
             return_s += '<li>'
+            return_s += f"<b>[Counterfactual {i+1}]:</b> "
             return_s += diff[i][0]
             return_s += '</li>'
         return_s += "</ul><br>"
