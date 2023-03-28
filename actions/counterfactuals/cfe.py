@@ -1,11 +1,15 @@
-import torch
-from transformers import BertTokenizer
-
 from actions.counterfactuals.cfe_generation_refactor import CFEExplainer, ALL_CTRL_CODES
-from explained_models.da_classifier.da_model_utils import DADataset
 
 
 def extract_id_cfe_number(parse_text):
+    """
+
+    Args:
+        parse_text: parsed text from conversation
+
+    Returns:
+        id of text and number of cfe instances
+    """
     num_list = []
     for item in parse_text:
         try:
@@ -22,6 +26,15 @@ def extract_id_cfe_number(parse_text):
 
 
 def get_text_by_id(conversation, _id):
+    """
+
+    Args:
+        conversation: the current conversation
+        _id: filtered id
+
+    Returns:
+        text from conversation with given id
+    """
     f_names = list(conversation.temp_dataset.contents['X'].columns)
     texts = conversation.temp_dataset.contents['X']
     filtered_text = ''
@@ -34,6 +47,13 @@ def get_text_by_id(conversation, _id):
 
 
 def get_text_by_id_from_csv(_id):
+    """
+    Args:
+        _id: filtered id
+
+    Returns:
+        text from csv file with given id
+    """
     import pandas as pd
 
     df = pd.read_csv('./data/daily_dialog_test.csv')
@@ -43,8 +63,19 @@ def get_text_by_id_from_csv(_id):
 
 
 def counterfactuals_operation(conversation, parse_text, i, **kwargs):
-    # Parsed: filter id 54 and nlpcfe [E]
+    """
+    nlpcfe operation
+    Args:
+        conversation: the current conversation
+        parse_text: parsed text from parser
+        i: current counter
+        **kwargs: additional args
 
+    Returns:
+
+    """
+
+    # Needed for polyjuice
     import nltk
     nltk.download('omw-1.4')
 
