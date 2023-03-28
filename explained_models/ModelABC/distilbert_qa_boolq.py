@@ -6,6 +6,7 @@ from transformers import AutoModelForSequenceClassification
 
 DEFAULT_MODEL_ID = "andi611/distilbert-base-uncased-qa-boolq"
 
+
 class DistilbertQABoolModel(Model, ABC):
     def __init__(self, dataloader, num_labels, model_id=DEFAULT_MODEL_ID):
         super(Model).__init__()
