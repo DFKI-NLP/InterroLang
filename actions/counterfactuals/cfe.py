@@ -3,27 +3,6 @@ from transformers import BertTokenizer
 
 from actions.counterfactuals.cfe_generation_refactor import CFEExplainer, ALL_CTRL_CODES
 from explained_models.da_classifier.da_model_utils import DADataset
-from torch.utils.data import (DataLoader, RandomSampler, SequentialSampler)
-
-
-def get_dataloader(data, batch_size, dtype):
-    samples = []
-    for i in range(len(data)):
-        d_texts = data[i]['dialog']
-        d_labels = data[i]['act']
-        assert (len(d_texts) == len(d_labels))
-        for j in range(len(d_texts)):
-            if j == 0:
-                prev_text = 'start'
-            else:
-                prev_text = d_texts[j - 1]
-            samples.append((prev_text + ' [SEP] ' + d_texts[j], d_labels[j]))
-    dataset = DADataset(samples)
-    if dtype == 'train':  # or dtype=='val':
-        dataloader = DataLoader(dataset, sampler=RandomSampler(dataset), batch_size=batch_size, num_workers=4)
-    else:
-        dataloader = DataLoader(dataset, sampler=SequentialSampler(dataset), batch_size=1)
-    return dataloader
 
 
 def extract_id_cfe_number(parse_text):
