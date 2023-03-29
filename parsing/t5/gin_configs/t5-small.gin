@@ -1,6 +1,6 @@
-load_t5_params.model_name = "t5-small"
+load_t5_params.model_name = "google/flan-t5-small"
 load_t5_params.regenerate_dataset = False
-load_t5_params.device = "cpu"
+load_t5_params.device = "cuda"
 load_t5_params.seed = 0
 
 load_t5_params.n_epochs = 25
@@ -15,8 +15,8 @@ load_t5_params.target_text = "parsed_utterance"
 load_t5_params.verbose = True
 load_t5_params.append_text = "Convert the question into an SQL parse: "
 
-load_t5_params.train_batch_size = 32
-load_t5_params.val_batch_size = 16
+load_t5_params.train_batch_size = 4
+load_t5_params.val_batch_size = 4
 
 load_t5_params.learning_rate = 1e-4
 load_t5_params.optimizer = "adamw"
