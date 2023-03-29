@@ -9,7 +9,6 @@ from flask import Flask
 from flask import render_template, request, Blueprint
 from logging.config import dictConfig
 
-from explained_models.da_classifier.da_model_utils import DADataset
 from logic.core import ExplainBot
 from logic.sample_prompts_by_action import sample_prompt_for_action
 

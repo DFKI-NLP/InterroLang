@@ -1,4 +1,4 @@
-from actions.counterfactuals.cfe_generation_refactor import CFEExplainer, ALL_CTRL_CODES
+from actions.explanation.counterfactuals.cfe_generation import CFEExplainer, ALL_CTRL_CODES
 
 
 def extract_id_cfe_number(parse_text):
