@@ -8,12 +8,16 @@ the functions to get the responses to user inputs.
 import gin
 import numpy as np
 import os
+import re
 import pickle
 import secrets
 import sys
 import torch
 from flask import Flask
 from random import seed as py_random_seed
+
+from word2number import w2n
+import string
 
 from logic.action import run_action
 from logic.conversation import Conversation
@@ -23,6 +27,8 @@ from logic.prompts import Prompts
 from logic.utils import read_and_format_data
 from logic.write_to_log import log_dialogue_input
 
+from transformers import AutoAdapterModel, AutoTokenizer
+from transformers import TextClassificationPipeline, TokenClassificationPipeline
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -147,6 +153,35 @@ class ExplainBot:
                           remove_underscores,
                           store_to_conversation=True,
                           skip_prompts=skip_prompts)
+                          
+        self.adapter_model = AutoAdapterModel.from_pretrained("bert-base-cased")
+        self.adapter_tokenizer = AutoTokenizer.from_pretrained("bert-base-cased")
+        self.device = 0 if torch.cuda.is_available() else -1
+        
+        self.include_adapter = self.adapter_model.load_adapter("./intents_and_slots/intent_slot_classification/adapters/include")
+        self.nlpcfe_adapter = self.adapter_model.load_adapter("./intents_and_slots/intent_slot_classification/adapters/nlpcfe")
+        self.similar_adapter = self.adapter_model.load_adapter("./intents_and_slots/intent_slot_classification/adapters/similar")
+        self.predict_adapter = self.adapter_model.load_adapter("./intents_and_slots/intent_slot_classification/adapters/predict")
+        self.adapters = {
+            "include":self.include_adapter,
+            "nlpcfe":self.nlpcfe_adapter,
+            "similar":self.similar_adapter,
+            "predict":self.predict_adapter,
+        }
+
+        self.quote_pattern = r'(\"|\')[^\"\']*(\"|\')'
+
+        self.tagger_model = AutoAdapterModel.from_pretrained("bert-base-cased")
+        includetoken_path = "./intents_and_slots/intent_slot_classification/adapters/includetoken"
+        self.includetoken_adapter = self.tagger_model.load_adapter(includetoken_path)
+        number_path = "./intents_and_slots/intent_slot_classification/adapters/number"
+        self.number_adapter = self.tagger_model.load_adapter(number_path)
+        id_path = "./intents_and_slots/intent_slot_classification/adapters/id"
+        self.id_adapter = self.tagger_model.load_adapter(id_path)
+        # load heads
+        self.tagger_model.load_head(includetoken_path)
+        self.tagger_model.load_head(number_path)
+        self.tagger_model.load_head(id_path)
 
     def init_loaded_var(self, name: bytes):
         """Inits a var from manual load."""
@@ -302,6 +337,42 @@ class ExplainBot:
             'parsed_text': parsed_text,
             'system_response': system_response
         }
+        
+    def check_heuristics(self, decoded_text: str, orig_text: str):
+        """Checks heuristics for those intents/actions that were identified but their core slots are missing.
+        """
+        if "includes" in decoded_text and "{includetoken}" in decoded_text:
+            indicators = ["word ", "words ", "token ", "tokens "]
+            for indicator in indicators:
+                if indicator in orig_text:
+                    word_start = orig_text.index(indicator)+len(indicator)
+                    if word_start<len(orig_text):
+                        includeword = orig_text[word_start:]
+                        decoded_text = decoded_text.replace("{includetoken}", includeword)
+                        break
+            # check for quotes
+            if "{includetoken}" in decoded_text:
+                in_quote = re.search(self.quote_pattern, orig_text)
+                if  in_quote is not None:
+                   decoded_text = decoded_text.replace("{includetoken}", in_quote.group()) 
+        if "{id}" in decoded_text:
+            if "id" in text:
+                splitted = text[text.index("id ")+2:].strip().split()
+                if len(splitted)>0:
+                    decoded_text = decoded_text.replace("{id}", splitted[0])
+        return decoded_text
+
+    def get_num_value(self, text: str):
+        """Converts text to number if possible"""
+        for ch in string.punctuation:
+            if ch in text:
+                text = text.replace(ch,"")
+        if len(text)>0 and not(text.isdigit()):
+            converted_num = w2n.word_to_num(text)
+            if converted_num is not None:
+                text = str(converted_num)
+        return text
+
 
     def compute_parse_text(self, text: str, error_analysis: bool = False):
         """Computes the parsed text from the user text input.
@@ -325,6 +396,7 @@ class ExplainBot:
         api_response = self.decoder.complete(
             prompted_text, grammar=grammar)
         decoded_text = api_response['generation']
+        decoded_text = self.check_heuristics(decoded_text, text)
 
         app.logger.info(f'Decoded text {decoded_text}')
 
@@ -345,9 +417,101 @@ class ExplainBot:
         """
         grammar, prompted_text = self.compute_grammar(text)
         decoded_text = self.decoder.complete(text, grammar)
+        decoded_text = self.check_heuristics(decoded_text, text)
         app.logger.info(f"t5 decoded text {decoded_text}")
         parse_tree, parse_text = get_parse_tree(decoded_text[0])
         return parse_tree, parse_text
+
+    def switch_case(self, best_intent):
+        switch = { "include": "includes {includetoken} [e]",
+                   "nlpcfe":  "nlpcfe {number} {id} [e]", 
+                   "predict": "predict {id} [e]", 
+                   "similar": "similar {number} {id} [e]",
+                 }
+        return switch.get(best_intent, "")
+
+    def get_tagged_span(self, tagged: list[dict], text: str):
+        """Extracts the longest contiguous span from the tagger.
+        """
+        if len(tagged)>0:
+            start_span = None
+            end_span = None
+            for el in tagged:
+                start = el['start']
+                end = el['end']
+                if start_span is None or start<start_span:
+                    start_span = start
+                if end_span is None or end>end_span:    
+                    end_span = end
+            token_string = text[start_span:end_span]
+        return token_string
+
+    def compute_parse_text_adapters(self, text: str):
+        """Computes the parsed text for the input using intent classifier model.
+        """
+        parse_text = ""
+        max_score = 0
+        best_intent = ""
+        for intent in self.adapters.keys():
+            intent_score = self.get_score(text, intent)
+            if intent_score > max_score:
+                max_score = intent_score
+                best_intent = intent
+        decoded_text = self.switch_case(best_intent)
+        text = text.strip()
+        # fill in the slots
+        if "includetoken" in decoded_text:
+            # run the includetoken tagger
+            self.tagger_model.set_active_adapters(self.includetoken_adapter)
+            tagger = TokenClassificationPipeline(model=self.tagger_model, tokenizer=self.adapter_tokenizer, task="includetoken", device=self.device)
+            tagged = tagger(text)
+            if len(tagged)>0:
+                token_string = self.get_tagged_span(tagged, text)
+                if len(token_string)==1: # in case a quote was extracted
+                    decoded_text = self.check_heuristics(decoded_text, text)
+                else:
+                    decoded_text = decoded_text.replace("{includetoken}", token_string)
+            else:
+                decoded_text = self.check_heuristics(decoded_text, text)            
+        if "number" in decoded_text:
+            # run the number tagger
+            self.tagger_model.set_active_adapters(self.number_adapter)
+            tagger = TokenClassificationPipeline(model=self.tagger_model, tokenizer=self.adapter_tokenizer, task="number", device=self.device)
+            tagged = tagger(text)
+            if len(tagged)>0:
+                token_string = self.get_tagged_span(tagged, text)
+                decoded_text = decoded_text.replace("{number}", self.get_num_value(token_string))
+            else:
+                decoded_text = decoded_text.replace("{number}", "")
+        if "id" in decoded_text:
+            # run the id tagger
+            self.tagger_model.set_active_adapters(self.id_adapter)
+            tagger = TokenClassificationPipeline(model=self.tagger_model, tokenizer=self.adapter_tokenizer, task="id", device=self.device)
+            tagged = tagger(text)
+            if len(tagged)>0:
+                token_string = self.get_tagged_span(tagged, text)
+                decoded_text = decoded_text.replace("{id}", self.get_num_value(token_string))
+            else:
+                decoded_text = self.check_heuristics(decoded_text, text)
+                if ("{id}" in decoded_text):
+                    decoded_text = decoded_text.replace("{id}", "")
+            
+        app.logger.info(f"adapters decoded text {decoded_text}")      
+        return None, decoded_text
+
+
+    def get_score(self, text: str, intent: str):
+        """Extracts the score from the intent classifier.
+        """    
+        self.adapter_model.set_active_adapters(self.adapters[intent])
+        intent_classifier = TextClassificationPipeline(model=self.adapter_model, tokenizer=self.adapter_tokenizer, task=intent, device=self.device)
+        out = intent_classifier(text)
+        if len(out)>0 and out[0]['label'].replace("LABEL_","")=="1":
+            score = out[0]['score']
+        else:
+            score = 0 
+        return score
+        
 
     def compute_grammar(self, text, error_analysis: bool = False):
         """Computes the grammar from the text.
@@ -403,7 +567,9 @@ class ExplainBot:
         app.logger.info(f'USER INPUT: {text}')
 
         # Parse user input into text abiding by formal grammar
-        if "t5" not in self.decoding_model_name:
+        if self.decoding_model_name=="adapters":
+            parse_tree, parsed_text = self.compute_parse_text_adapters(text)
+        elif "t5" not in self.decoding_model_name:
             parse_tree, parsed_text = self.compute_parse_text(text)
         else:
             parse_tree, parsed_text = self.compute_parse_text_t5(text)

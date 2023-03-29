@@ -74,7 +74,7 @@ topkword: " topk"
 impfeaturesword: " important"
 numupdates: " increase" | " set" | " decrease"
 
-includes: " includes"
+includes: " includes ( includetoken )"
 
 done: " [e]"
 """  # noqa: E501

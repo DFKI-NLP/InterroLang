@@ -725,8 +725,7 @@ class Prompts:
         if query.endswith("."):
             query = query[:-1]
 
-        words_to_check_as_nums = []
-        words_to_check_as_nums.extend(query.split(' '))
+        words_to_check_as_nums = query.split(' ')
 
         # Get cases that have letters attached to numbers
         for item in query.split(' '):
@@ -734,7 +733,6 @@ class Prompts:
                 remove_text = item.replace(char, "")
                 if remove_text != "":
                     words_to_check_as_nums.append(remove_text)
-
         for word in words_to_check_as_nums:
             # Note(dylan): Is there a cleaner way to do these checks?
             # Feels somewhat ugly to me, but ¯\_(ツ)_/¯
@@ -789,9 +787,11 @@ class Prompts:
             nonterminal: a new nonterminal containing the user input that corresponds to the token span for the include operation. Otherweise returns None.
         
         """
-        tagged = self.include_tagger(query)
+        tagged = self.include_tagger(query.strip())
         start_span = None
         end_span = None
+        if len(tagged)==0:
+            return {"includetoken": "\" unknowntoken \""}
         for el in tagged:
             start = el['start']
             end = el['end']
@@ -799,9 +799,9 @@ class Prompts:
                 start_span = start
             if end_span is None or end>end_span:    
                 end_span = end
-        if start_span is None:
-            return {}
-        return {"token": query[start_span:end_span]}
+        token_string = "\" " + "unknowntoken "+ "\""+"| "
+        token_string += "\" " + query[start_span:end_span] + "\""
+        return {"includetoken": token_string}
         
 
     def _extract_numerical_values(self, query: str):
@@ -843,8 +843,18 @@ class Prompts:
             selected_prompts = self.get_k_nearest_prompts(
                 query, metric=metric, ordering=ordering)
 
-        app.logger.info(f'Selected prompts {selected_prompts}')
+        id_adhoc = self._extract_id_nums(query)
+        num_adhoc = self._extract_numerical_values(query)
+        token_adhoc = self._extract_include_tokens(query)
 
+        app.logger.info(f'Selected prompts {selected_prompts}')
+        token_adhoc_splitted = token_adhoc["includetoken"].split("|")
+        if len(token_adhoc_splitted)>1:
+            includetoken_val = token_adhoc_splitted[1].replace('"','').strip()
+            for pi, prompt in enumerate(selected_prompts):
+                selected_prompts[pi] = prompt.replace("{includetoken}", includetoken_val)
+            app.logger.info(f'Filled prompts {selected_prompts}')
+        
         # Format query
         if len(selected_prompts) > 0:
             joined_prompts = '\n\n'.join(selected_prompts)
@@ -855,11 +865,7 @@ class Prompts:
         joined_prompts += f'User: {query}\nParsed:'
         joined_prompts = joined_prompts.lower()
         joined_prompts = joined_prompts.replace("user:", "input:")
-
-        id_adhoc = self._extract_id_nums(query)
-        num_adhoc = self._extract_numerical_values(query)
-        token_adhoc = self._extract_include_tokens(query)
-
+        
         if error_analysis:
             return joined_prompts, {**id_adhoc, **num_adhoc, **token_adhoc}, selected_prompts
         return joined_prompts, {**id_adhoc, **num_adhoc, **token_adhoc}
