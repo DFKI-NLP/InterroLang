@@ -3,10 +3,52 @@ import re
 from sentence_transformers import SentenceTransformer, util
 
 
+def handle_input(parse_text):
+    num = None
+    for item in parse_text:
+        try:
+            if int(item):
+                num = int(item)
+        except:
+            pass
+    return num
+
 def similar_instances_operation(conversation, parse_text, i, **kwargs):
-    # TODO
-    return_s = 'Similar instances operation called.'
-    return return_s, 1
+
+    model = conversation.get_var('model').contents
+    data = conversation.temp_dataset.contents['X']
+    number = 1
+    if len(conversation.temp_dataset.contents['X']) == 0:
+        return 'There are no instances that meet this description!', 0
+
+    text = handle_input(parse_text)
+    text =1
+    final_results = filter_similarity(parse_text,text)
+
+
+def filter_similarity(query_sentence,query_label):
+    number =3
+    if query_label == 1:
+        # if qeury label is 'none' or 'same class'
+        results = get_similars(query_sentence=query_sentence, query_label=1)
+        if number == 1:
+
+            return results[0]
+        else:
+
+            return results[:3]
+
+
+    else:
+    # if qeury label is 'other class, oposite class, etc.'
+    results = get_similars(query_sentence=query_sentence, query_label=0)
+    if number == 1:
+
+        return results[0]
+    else:
+
+        return results[:3]
+
 
 
 def format_training_file(text_file, module_path=''):

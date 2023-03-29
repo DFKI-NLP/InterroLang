@@ -1,7 +1,7 @@
 GRAMMAR = r"""
 ?start: action
 action: operation done | operation join action | followup done
-operation: explanation | filter | predictions | whatami | lastturnfilter | lastturnop | data | impfeatures | show | whatif | likelihood | modeldescription | function | score | ndatapoints | label | mistakes | fstats | define | labelfilter | predfilter | includes | globaltopk
+operation: explanation | filter | predictions | whatami | lastturnfilter | lastturnop | data | impfeatures | show | whatif | likelihood | modeldescription | function | score | ndatapoints | label | mistakes | fstats | define | labelfilter | predfilter | includes | globaltopk | similarity
 
 globaltopk: globaltopkword
 globaltopkword: " globaltopk" classname
@@ -74,6 +74,7 @@ allfeaturesword: " all"
 topk: topkword ( {topkvalues} )
 topkword: " topk"
 
+similarity: " similar"
 
 impfeaturesword: " nlpattribute"
 numupdates: " increase" | " set" | " decrease"
