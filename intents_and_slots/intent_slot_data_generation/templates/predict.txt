@@ -1,0 +1,35 @@
+Show me the predictions for {id}.
+What are the predictions for {id}?
+Show me the results for {id}.
+What does the model predict for the instance {id}?
+What are the model's predictions for {id}?
+What is the predicted label for instance {id}?
+What is the predicted label for sample {id}?
+What is the predicted label for {id}?
+Show the prediction for {id} please.
+Can you tell me what is being predicted for {id}?
+Show me the predictions for id {id}.
+What are the predictions for id {id}?
+Show me the results for id {id}.
+What does the model predict for the instance id {id}?
+What are the model's predictions for id {id}?
+What is the predicted label for instance id {id}?
+What is the predicted label for sample id {id}?
+What is the predicted label for id {id}?
+Show the prediction for id {id} please.
+Can you tell me what is being predicted for id {id}?
+Show me the prediction for {id}.
+What is the model's prediction for {id}?
+What is the model's prediction for id {id}?
+What does the model predict for id {id}?
+What does the model predict for the instance with id {id}?
+What do we get for id {id}?
+What does the model predict for {id}?
+What do we predict for instance with id {id}?
+What do we predict for id {id}?
+What is the prediction for id {id}?
+What is the resulting label for id {id}?
+What is the resulting label for instance with is {id}?
+What is the final label for id {id}?
+What is the predicted label for id {id}?
+What is the predicted label for sample {id}?

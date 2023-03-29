@@ -1,0 +1,30 @@
+Show me similar examples to {id}.
+Show me examples that are similar to {id}.
+Show me examples that are similar to id {id}.
+Show me examples similar to {id}.
+Show me examples similar to id {id}.
+Show me examples similar to instance {id}.
+What are the similar instances for {id}?
+Show me {number} similar examples to {id}.
+Are there any other {number} samples that are similar to {id}?
+Show me more samples similar to {id}.
+Show me more examples that resemble {id}.
+What about examples that look like {id}.
+Please provide more examples that are similar to {id}.
+I would like to see more instances like {id}.
+Could you show me more samples similar to {id}?
+Show me similar examples to id {id}.
+What are the similar instances for id {id}?
+Show me {number} similar examples to id {id}.
+Are there any other {number} samples that are similar to id {id}?
+Show me more samples similar to id {id}.
+Show me more examples that resemble id {id}.
+What about examples that look like id {id}.
+Please provide more examples that are similar to id {id}.
+I would like to see more instances like id {id}.
+Could you show me more samples similar to id {id}?
+What instances are similar to id {id}?
+What instances are similar to {id}?
+What instances are very close to id {id}?
+What instances are almost like id {id}?
+Show me the instances that are almost like id {id}

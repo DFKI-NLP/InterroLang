@@ -1,0 +1,35 @@
+Show me {number} counterfactuals for instance {id}.
+Show me {number} counterfactual for instance {id}.
+What are the counterfactual examples for instance {id}.
+What are the counterfactuals for {id}.
+What are counterfactuals for {id}.
+What are cfes for {id}.
+Some counterfactuals for {id}.
+What about counterfactuals for {id}.
+Could you please show me {number} counterfactual examples for {id}?
+Could you please show me {number} counterfactuals for {id}?
+Which counterfactual examples do we have for {id}?
+What are the cfes for {id}?
+Please show {number} cfes for sample {id}.
+Please show {number} cfes for {id}.
+Show me how to flip predictions for {id}.
+Show me how to change predictions for {id}.
+Show me how to flip model's predictions for {id}.
+Show me how to make the model output a different prediction for {id}.
+Show me how to make the model output a different prediction for instance {id}.
+Show me {number} counterfactuals for instance id {id}.
+Show me {number} counterfactual for instance id {id}.
+What are the counterfactual examples for instance id {id}.
+Some counterfactuals for id {id}.
+What about counterfactuals for id {id}.
+Could you please show me {number} counterfactual examples for id {id}?
+Could you please show me {number} counterfactuals for id {id}?
+Which counterfactual examples do we have for id {id}?
+What are the cfes for id {id}?
+Please show {number} cfes for sample with id {id}.
+Please show {number} cfes for id {id}.
+Show me how to flip predictions for id {id}.
+Show me how to change predictions for id {id}.
+Show me how to flip model's predictions for id {id}.
+Show me how to make the model output a different prediction for id {id}.
+Show me how to make the model output a different prediction for instance id {id}.
