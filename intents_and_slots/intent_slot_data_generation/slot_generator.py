@@ -25,6 +25,11 @@ def convert_to_token_level(txt, annotations):
         tokens = []
         cur_token = []
         cur_annotation = []
+        if len(txt)!=len(annotation):
+            print(txt, ">", len(txt))
+            print(annotation, ">", len(annotation))
+            print(annotations, ak)
+            raise Exception("Different length of the text and the annotation!")
         assert(len(txt)==len(annotation))
         for ci, ch in enumerate(txt):
             if ch in non_token_chars:
@@ -54,6 +59,7 @@ def fill_template(template_file, slots2values, fill_rounds=2, augmentation_round
             txt = template.strip()
             slot_to_fill = re.search("\{[a-z]+\}", txt)
             annotations = dict()
+            incomplete_slot_annotations = []
             while slot_to_fill:
                 annotation = ["O"]*len(txt)
                 slot = txt[slot_to_fill.start()+1:slot_to_fill.end()-1]
@@ -62,7 +68,7 @@ def fill_template(template_file, slots2values, fill_rounds=2, augmentation_round
                 else:
                     # get a random slot value and add char-wise annotation
                     # TA: shall we use weights to get more likely slot values more often?
-                    slot_value = random.choice(slots2values[slot])
+                    slot_value = str(random.choice(slots2values[slot]))
                     mstart = slot_to_fill.start()
                     mend = slot_to_fill.end()
                     slot_anno = []
@@ -71,13 +77,22 @@ def fill_template(template_file, slots2values, fill_rounds=2, augmentation_round
                             slot_anno.append("B")
                         else:
                             slot_anno.append("I")
+                    for islot in incomplete_slot_annotations:
+                        new_annotation = annotations[islot]
+                        new_annotation = new_annotation[:mstart]+["O"]*len(slot_anno)+new_annotation[mend:]
+                        annotations[islot] = new_annotation
                     if mend<len(annotation):
                         annotation = annotation[:mstart]+slot_anno+annotation[mend:]
                     else:
                         annotation = annotation[:mstart]+slot_anno
-                    annotations[slot] = annotation
-                    txt = txt[:mstart] + str(slot_value) + txt[mend:]
+                    
+                    txt = txt[:mstart] + slot_value + txt[mend:]
+                    annotations[slot] = annotation    
+
                     slot_to_fill = re.search("\{[a-z]+\}", txt)
+                    if slot_to_fill:
+                        incomplete_slot_annotations.append(slot)
+                        
             tokens, annotations = convert_to_token_level(txt, annotations)
             filled_templates.append((tokens, annotations))
             if augmentation_rounds>0:
@@ -89,7 +104,7 @@ def fill_template(template_file, slots2values, fill_rounds=2, augmentation_round
                     # make sure we have the same amount of tokens
                     if len(new_tokens)==len(tokens):
                         filled_templates.append((new_tokens, annotations))
-
+                        
     return filled_templates
 
 
@@ -99,7 +114,8 @@ f.close()
 
 dtypes = ["train", "dev", "test"]
 template_dir = "templates/"
-template_files = ["include.txt"]#, "nlpcfe.txt", "predict.txt"]
+#all_slots = {"include":["includetoken"], "nlpcfe":["id", "number"], "similar":["id","number"], "predict":["id"]}
+template_files = ["include.txt", "nlpcfe.txt", "predict.txt", "similar.txt"]
 generated_samples = dict()
 for template_file in template_files:
     filled_templates = fill_template(template_dir+template_file, slots2values, fill_rounds=5, augmentation_rounds=0)
@@ -111,9 +127,8 @@ for template_file in template_files:
                 generated_samples[anno_type] = {"text":[], "labels":[]}
             generated_samples[anno_type]["text"].append(" ".join(txt))
             generated_samples[anno_type]["labels"].append(" ".join(anno))            
-            #for i in range(len(txt)):
-            #    if "Generally" in txt:
-            #        print(txt[i], anno[i])
+
+
 for anno_type in generated_samples.keys():
     data_splits = {"train":dict(), "dev":dict(), "test":dict()}
     total_samples = len(generated_samples[anno_type]["text"])
@@ -139,5 +154,5 @@ for anno_type in generated_samples.keys():
     for dtype in dtypes:
         df = pd.DataFrame.from_dict(data_splits[dtype])
         df.to_csv("../csv_slots/"+anno_type+"_"+dtype+".csv", sep=',', encoding='utf-8')
-             
+
              

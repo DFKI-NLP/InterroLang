@@ -18,7 +18,7 @@ os.environ["WANDB_DISABLED"] = "true"
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 max_len_bio = 128
 do_train = True
-num_epochs = 6
+num_epochs = 8
 
 def encode_labels(example):
     r_tags = []
@@ -50,7 +50,7 @@ def encode_data(data):
     return (encoded)
 
 if do_train:
-    for slot in ['includetoken']:
+    for slot in ['number']: # 'includetoken', 'id', 'number'
         labels = ['B', 'I', 'O']#, '[PAD]']
         id2label = {id_: label for id_, label in enumerate(labels)}
         label2id = {label: id_ for id_, label in enumerate(labels)}
@@ -62,17 +62,17 @@ if do_train:
         model.add_adapter(slot)
         model.add_tagging_head(slot, num_labels=len(labels), id2label=id2label)
 
-        train_dataset = datasets.Dataset.from_csv('../csv_slots/'+slot+'_train.csv')
+        train_dataset = datasets.Dataset.from_csv('csv_slots/'+slot+'_train.csv')
         train_dataset = train_dataset.map(encode_labels)
-        train_slot_dataset = train_dataset.map(encode_data, batched=True, batch_size=16)#10)
+        train_slot_dataset = train_dataset.map(encode_data, batched=True, batch_size=32)#10)
 
-        dev_dataset = datasets.Dataset.from_csv('../csv_slots/'+slot+'_dev.csv')
+        dev_dataset = datasets.Dataset.from_csv('csv_slots/'+slot+'_dev.csv')
         dev_dataset = dev_dataset.map(encode_labels)
-        dev_slot_dataset = dev_dataset.map(encode_data, batched=True, batch_size=16)#10)
+        dev_slot_dataset = dev_dataset.map(encode_data, batched=True, batch_size=32)#10)
 
-        test_slot_dataset = datasets.Dataset.from_csv('../csv_slots/'+slot+'_test.csv')
+        test_slot_dataset = datasets.Dataset.from_csv('csv_slots/'+slot+'_test.csv')
         test_slot_dataset = test_slot_dataset.map(encode_labels)
-        test_slot_dataset = test_slot_dataset.map(encode_data, batched=True, batch_size=16)#10)
+        test_slot_dataset = test_slot_dataset.map(encode_data, batched=True, batch_size=32)#10)
 
         train_slot_dataset.set_format(type='torch', columns=['input_ids', 'token_type_ids', 'attention_mask', 'labels'])
         dev_slot_dataset.set_format(type='torch', columns=['input_ids', 'token_type_ids', 'attention_mask', 'labels'])
@@ -181,26 +181,4 @@ if do_train:
         intext = "Do we have word Christmas somewhere in the data?"
         res = tagger(intext)
         print(res)
-
-# check that slot adapter works correctly
-# TA: note that we need to load the head separately!
-slot = "includetoken"
-model_name = "bert-base-cased"
-model = AutoAdapterModel.from_pretrained(model_name)
-tokenizer = AutoTokenizer.from_pretrained(model_name)
-slot_adapter = model.load_adapter("adapters/"+slot)
-model.load_head("adapters/"+slot)
-model.active_adapters = slot_adapter
-
-labels = ['B', 'I', 'O']#, '[PAD]']
-id2label = {id_: label for id_, label in enumerate(labels)}
-label2id = {label: id_ for id_, label in enumerate(labels)}
-
-print(id2label)
-tagger = TokenClassificationPipeline(model=model, tokenizer=tokenizer, device=0)
-print(tagger)
-#intext = "Where do we have word \"thes strange stuff\"?"
-intext = "Show me all instances that include the word \"spider\""
-res = tagger(intext)
-print(res)
 
