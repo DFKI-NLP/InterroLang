@@ -1,0 +1,19 @@
+{
+  "config": {
+    "activation_function": "tanh",
+    "head_type": "tagging",
+    "label2id": {
+      "B": 0,
+      "I": 1,
+      "O": 2
+    },
+    "layers": 1,
+    "num_labels": 3
+  },
+  "hidden_size": 768,
+  "model_class": "BertAdapterModel",
+  "model_name": "bert-base-cased",
+  "model_type": "bert",
+  "name": "id",
+  "version": "3.1.0"
+}
