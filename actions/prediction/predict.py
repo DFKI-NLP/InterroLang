@@ -1,5 +1,6 @@
 """Prediction operation."""
 import numpy as np
+import string
 
 from actions.utils import gen_parse_op_text, get_parse_filter_text
 
@@ -7,7 +8,16 @@ from actions.utils import gen_parse_op_text, get_parse_filter_text
 def predict_operation(conversation, parse_text, i, max_num_preds_to_print=1, **kwargs):
     """The prediction operation."""
     model = conversation.get_var('model').contents
-    data = conversation.temp_dataset.contents['X']
+    filter_string = gen_parse_op_text(conversation)
+    parsed_id = ""
+    if len(parse_text)>0:
+        parsed_id = parse_text[i+1].strip()
+    if parsed_id.isdigit():
+        id_val = int(parsed_id)
+        data = conversation.get_var('dataset').contents["X"].iloc[[id_val]]
+        filter_string = parsed_id
+    else:
+        data = conversation.temp_dataset.contents['X']
 
     if len(conversation.temp_dataset.contents['X']) == 0:
         return 'There are no instances that meet this description!', 0
@@ -16,8 +26,6 @@ def predict_operation(conversation, parse_text, i, max_num_preds_to_print=1, **k
 
     # Format return string
     return_s = ""
-
-    filter_string = gen_parse_op_text(conversation)
 
     if len(model_predictions) == 1:
         return_s += f"The instance with <b>{filter_string}</b> is predicted "
