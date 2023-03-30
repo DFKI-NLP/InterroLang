@@ -1,35 +1,45 @@
 import json
+import numpy as np
 import os
-
 import torch
-from explained_models.Explainer.explainer import Explainer
-
-from explained_models.Tokenizer.tokenizer import HFTokenizer
-from explained_models.ModelABC.DANetwork import DANetwork
-
-# https://huggingface.co/uw-hai/polyjuice
 from polyjuice import Polyjuice
 from polyjuice.generations.special_tokens import *
-from explained_models.da_classifier.da_model_utils import DADataset
+from transformers import AutoModelForSequenceClassification
+
+from explained_models.Explainer.explainer import Explainer
+from explained_models.ModelABC.DANetwork import DANetwork
+from explained_models.Tokenizer.tokenizer import HFTokenizer
+
+# https://huggingface.co/uw-hai/polyjuice
 
 ALL_CTRL_CODES = set([
-   LEXCICAL, RESEMANTIC, NEGATION, INSERT,
-   DELETE, QUANTIFIER, RESTRUCTURE, SHUFFLE
+    LEXCICAL, RESEMANTIC, NEGATION, INSERT,
+    DELETE, QUANTIFIER, RESTRUCTURE, SHUFFLE
 ])
-
-model_id2label = {0:'dummy', 1:'inform', 2:'question', 3:'directive', 4:'commissive'}
 
 
 class CFEExplainer(Explainer):
-    def __init__(self, explainer="polyjuice", tokenizer="bert"):
+    def __init__(self, dataset_name=None):
         super(CFEExplainer, self).__init__()
         self.device = None
         self.is_cuda = None
         self.check_cuda()
+        self.explainer = Polyjuice(model_path="uw-hai/polyjuice", is_cuda=self.is_cuda)
+        self.dataset_name = dataset_name
 
-        self.model = DANetwork()
-        self.explainer = Polyjuice(model_path="uw-hai/polyjuice", is_cuda=self.is_cuda) if explainer == 'polyjuice' else explainer
-        self.tokenizer = HFTokenizer('bert-base-uncased', mode='bert').tokenizer if tokenizer == 'bert' else tokenizer
+        if dataset_name == 'boolq':
+            self.model = AutoModelForSequenceClassification.from_pretrained("andi611/distilbert-base-uncased-qa-boolq", num_labels=2)
+            self.tokenizer = HFTokenizer("andi611/distilbert-base-uncased-qa-boolq").tokenizer
+        elif dataset_name == 'daily_dialog':
+            self.model = DANetwork()
+            self.tokenizer = HFTokenizer('bert-base-uncased', mode='bert').tokenizer
+        elif dataset_name == 'olid':
+            pass
+        else:
+            raise NotImplementedError(f"The dataset {self.dataset_name} is not supported!")
+
+        if self.is_cuda:
+            self.model.to(self.device)
 
     def encode_sample(self, sample):
         encoded = self.tokenizer.encode_plus(sample, return_tensors='pt').to(self.device)
@@ -38,10 +48,10 @@ class CFEExplainer(Explainer):
     def get_samples_from_pj(self, instance, ctrl_code):
         try:
             generated_samples = self.explainer.perturb(instance, ctrl_code=ctrl_code, num_perturbations=None,
-                                           perplex_thred=10)  # , num_beams=5)
+                                                       perplex_thred=10)  # , num_beams=5)
         except:
             generated_samples = self.explainer.perturb(instance, ctrl_code=ALL_CTRL_CODES, num_perturbations=None,
-                                           perplex_thred=None)
+                                                       perplex_thred=None)
         return generated_samples
 
     # instance: input string
@@ -52,26 +62,54 @@ class CFEExplainer(Explainer):
     # e.g.:
     # same label: [('i also have blow if you prefer to do a few shots.', 'directive'), ('i also have blow if you prefer to do this.', 'directive')]
     # diff label: [('also blew me away with his single second.', 'inform')]
-    def cfe(self, instance, number, ctrl_code=ALL_CTRL_CODES, id2label=None):
+    def cfe(self, instance, number, ctrl_code=ALL_CTRL_CODES, _id=None):
         new_samples = self.get_samples_from_pj(instance, ctrl_code)
-        encoded_instance = self.encode_sample(instance)
-        orig_prediction = self.model(encoded_instance['input_ids'], encoded_instance['attention_mask'])
-        orig_prediction = torch.argmax(orig_prediction).item()
-        if id2label is not None:
-            orig_prediction = id2label[orig_prediction]
+
+        if self.dataset_name == 'boolq':
+            if _id is not None:
+                import json
+                fileObject = open("./cache/boolq/ig_explainer_boolq_explanation.json", "r")
+                jsonContent = fileObject.read()
+                json_list = json.loads(jsonContent)
+                item = json_list[_id]
+                orig_prediction = np.argmax(item["predictions"])
+
+            model_id2label = {0: 'False', 1: 'True'}
+        elif self.dataset_name == "daily_dialog":
+            encoded_instance = self.encode_sample(instance)
+            orig_prediction = self.model(encoded_instance['input_ids'], encoded_instance['attention_mask'])
+            orig_prediction = torch.argmax(orig_prediction).item()
+            model_id2label = {0: 'dummy', 1: 'inform', 2: 'question', 3: 'directive', 4: 'commissive'}
+        elif self.dataset_name == 'olid':
+            pass
+        else:
+            pass
+
+        orig_prediction = model_id2label[orig_prediction]
         same_label_samples = []
         diff_label_samples = []
         for new_sample in new_samples:
             encoded_new_sample = self.encode_sample(new_sample)
+
+            # using Polyjuice output on the model.
             prediction = self.model(encoded_new_sample['input_ids'], encoded_new_sample['attention_mask'])
-            prediction = torch.argmax(prediction).item()
-            if id2label is not None:
-                prediction = id2label[prediction]
+
+            if self.dataset_name == 'boolq':
+                prediction = np.argmax(prediction.logits[0].cpu().detach().numpy())
+            elif self.dataset_name == "daily_dialog":
+                prediction = torch.argmax(prediction).item()
+            elif self.dataset_name == 'olid':
+                pass
+            else:
+                pass
+
+            prediction = model_id2label[prediction]
             if prediction != orig_prediction:
                 diff_label_samples.append((new_sample, prediction))
             else:
                 same_label_samples.append((new_sample, prediction))
         return same_label_samples[:number], diff_label_samples[:number]
+
     def check_cuda(self):
         if torch.cuda.is_available():
             self.is_cuda = True
@@ -80,7 +118,8 @@ class CFEExplainer(Explainer):
             self.is_cuda = False
             self.device = 'cpu'
 
-    def generate_explanation(self, store_data=False, data_path="../../cache/dailydialog/cfe_daily_dialog_explanation.json"):
+    def generate_explanation(self, store_data=False,
+                             data_path="../../cache/dailydialog/cfe_daily_dialog_explanation.json"):
         if os.path.exists(data_path):
             fileObject = open(data_path, "r")
             jsonContent = fileObject.read()
@@ -133,5 +172,3 @@ class CFEExplainer(Explainer):
 
 if __name__ == "__main__":
     CFEExplainer().generate_explanation()
-
-
