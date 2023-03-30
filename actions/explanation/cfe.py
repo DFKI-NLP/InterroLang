@@ -76,11 +76,11 @@ def counterfactuals_operation(conversation, parse_text, i, **kwargs):
     """
 
     # Needed for polyjuice
-    import nltk
-    nltk.download('omw-1.4')
-
-    import spacy
-    spacy.load('en_core_web_sm')
+    # import nltk
+    # nltk.download('omw-1.4')
+    #
+    # import spacy
+    # spacy.load('en_core_web_sm')
 
     _id, cfe_num = extract_id_cfe_number(parse_text)
     dataset_name = conversation.describe.get_dataset_name()
