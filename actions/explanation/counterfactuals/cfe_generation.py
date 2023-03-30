@@ -1,19 +1,16 @@
 import json
-import os
-
 import numpy as np
+import os
 import torch
+from polyjuice import Polyjuice
+from polyjuice.generations.special_tokens import *
 from transformers import AutoModelForSequenceClassification
 
 from explained_models.Explainer.explainer import Explainer
-
-from explained_models.Tokenizer.tokenizer import HFTokenizer
 from explained_models.ModelABC.DANetwork import DANetwork
+from explained_models.Tokenizer.tokenizer import HFTokenizer
 
 # https://huggingface.co/uw-hai/polyjuice
-from polyjuice import Polyjuice
-from polyjuice.generations.special_tokens import *
-from explained_models.da_classifier.da_model_utils import DADataset
 
 ALL_CTRL_CODES = set([
     LEXCICAL, RESEMANTIC, NEGATION, INSERT,
@@ -40,6 +37,9 @@ class CFEExplainer(Explainer):
             pass
         else:
             raise NotImplementedError(f"The dataset {self.dataset_name} is not supported!")
+
+        if self.is_cuda:
+            self.model.to(self.device)
 
     def encode_sample(self, sample):
         encoded = self.tokenizer.encode_plus(sample, return_tensors='pt').to(self.device)
@@ -95,7 +95,7 @@ class CFEExplainer(Explainer):
             prediction = self.model(encoded_new_sample['input_ids'], encoded_new_sample['attention_mask'])
 
             if self.dataset_name == 'boolq':
-                prediction = np.argmax(prediction.logits[0].detach().numpy())
+                prediction = np.argmax(prediction.logits[0].cpu().detach().numpy())
             elif self.dataset_name == "daily_dialog":
                 prediction = torch.argmax(prediction).item()
             elif self.dataset_name == 'olid':
