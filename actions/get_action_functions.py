@@ -57,7 +57,7 @@ def get_all_action_functions_map():
         'predictionfilter': filter_operation,
         'labelfilter': filter_operation,
         'includes': includes_operation,
-        'similarity': similar_instances_operation,
+        'similar': similar_instances_operation,
         'topic': topic_operation,
         'sentiment': sentiment_operation,
         'rationalize': rationalize_operation,

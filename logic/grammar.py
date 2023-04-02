@@ -44,7 +44,7 @@ lime: " lime"
 cfe: " cfe"
 
 predictions: " predict"
-
+similarity: " similar"
 whatami: " self"
 
 data: " data"
@@ -74,7 +74,7 @@ allfeaturesword: " all"
 topk: topkword ( {topkvalues} )
 topkword: " topk"
 
-similarity: " similar"
+
 
 impfeaturesword: " nlpattribute"
 numupdates: " increase" | " set" | " decrease"

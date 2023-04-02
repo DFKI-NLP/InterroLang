@@ -16,6 +16,7 @@ def get_parse_tree(decoded_text: str) -> tuple[Any, str]:
 
     # Trim off generation
     trimmed_response = decoded_text.split("[e]")[-2].split('parsed:')[-1]
+    #trimmed_response ="filter id 1 and similar 1 "
     trimmed_response += "[e]"
 
     # text_parser = Lark(self.g, parser="lalr")

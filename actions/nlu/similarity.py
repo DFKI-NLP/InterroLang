@@ -3,51 +3,79 @@ import re
 from sentence_transformers import SentenceTransformer, util
 
 
-def handle_input(parse_text):
-    num = None
+def extract_id_number(parse_text):
+    """
+    Args:
+        parse_text: parsed text from conversation
+    Returns:
+        id of text and number of cfe instances
+    """
+    num_list = []
     for item in parse_text:
         try:
             if int(item):
-                num = int(item)
+                num_list.append(int(item))
         except:
             pass
-    return num
+    if len(num_list) == 1:
+        return num_list[0], 1
+    elif len(num_list) == 2:
+        return num_list[0], num_list[1]
+    else:
+        raise ValueError("Too many numbers in parse text!")
 
 def similar_instances_operation(conversation, parse_text, i, **kwargs):
 
+    """
+    Args:
+        conversation: conversation object
+        parse_text: parsed text from conversation
+        i: index of operation
+    Returns:
+        final_results  matched results
+    """
     model = conversation.get_var('model').contents
-    data = conversation.temp_dataset.contents['X']
-    number = 1
+    data = conversation.temp_dataset.contents['X'].values
+    labels = conversation.temp_dataset.contents['y'].values
+    dataset = data,labels
+
+
     if len(conversation.temp_dataset.contents['X']) == 0:
         return 'There are no instances that meet this description!', 0
 
-    text = handle_input(parse_text)
-    text =1
-    final_results = filter_similarity(parse_text,text)
+    id,number = extract_id_number(parse_text)
+
+    final_results = filter_similarity(dataset,parse_text,id,number)
+
+    return final_results
 
 
-def filter_similarity(query_sentence,query_label):
-    number =3
-    if query_label == 1:
+def filter_similarity(dataset, query_sentence, query_label, number):
+        """
+        Args:
+            dataset: dataset from the conversation
+            query_sentence: query sentence to be matched
+            query_label: label to search for in the dataset
+            number: number of hits to be returned
+        Returns:
+            filtered similarity response to a maximum of specified number
+        """
+
         # if qeury label is 'none' or 'same class'
-        results = get_similars(query_sentence=query_sentence, query_label=1)
-        if number == 1:
+        results = get_similars(dataset = dataset, query_sentence = query_sentence, query_label = query_label)
 
-            return results[0]
+        if len(results) == 0:
+            return " cannot find any instance",1
+        elif number == 1:
+            return " ".join(results[0][0]),1
         else:
+            if len(results)< number:
+                parsed_result = " \n".join([ " ".join(ele[0][0]) for ele in results[:number]])
+                return parsed_result,1
+            else :
+                parsed_result = " \n".join([ " ".join(ele[0][0]) for ele in results])
+                return parsed_result,1
 
-            return results[:3]
-
-
-    else:
-    # if qeury label is 'other class, oposite class, etc.'
-    results = get_similars(query_sentence=query_sentence, query_label=0)
-    if number == 1:
-
-        return results[0]
-    else:
-
-        return results[:3]
 
 
 
@@ -70,14 +98,24 @@ def format_training_file(text_file, module_path=''):
 
 
 
-def get_similars(query_sentence, query_label):
+def get_similars(dataset, query_sentence, query_label):
+    """
+    Args:
+        dataset: dataset from the conversation
+        query_sentence: query sentence to be matched
+        query_label: label to search for in the dataset
+    Returns:
+        filtered similarity response
+    """
+
     #model = SentenceTransformer('all-MiniLM-L6-v2')
     model = SentenceTransformer('clips/mfaq')
-    data, labels = format_training_file('offenseval_train.csv')
+    data, labels = dataset
+    # format_training_file('offenseval_train.csv')
 
     considered_samples = []
     for sample, label in zip(data, labels):
-        if label == str(query_label):
+        if str(label) == str(query_label):
             considered_samples.append(sample)
 
 
