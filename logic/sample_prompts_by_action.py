@@ -17,7 +17,8 @@ ACTION_2_FILENAME = {
     "description": "dataset_description.txt",
     "interactions": "interactions.txt",
     "mistake": "mistakes.txt",
-    "labels": "label_prompts.txt"
+    "labels": "label_prompts.txt",
+    "random_predict": "random_predict.txt"
 }
 
 

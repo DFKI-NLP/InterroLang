@@ -1,0 +1,2 @@
+User: show me a random prediction
+Parsed: predict random [E]
