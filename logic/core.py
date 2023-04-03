@@ -75,7 +75,8 @@ class ExplainBot:
                  t5_config: str = None,
                  use_guided_decoding: bool = True,
                  feature_definitions: dict = None,
-                 skip_prompts: bool = False):
+                 skip_prompts: bool = False,
+                 ):
         """The init routine.
 
         Arguments:
@@ -152,7 +153,8 @@ class ExplainBot:
                           numerical_features,
                           remove_underscores,
                           store_to_conversation=True,
-                          skip_prompts=skip_prompts)
+                          skip_prompts=skip_prompts,
+                          dataset_name=name)
                           
         self.adapter_model = AutoAdapterModel.from_pretrained("bert-base-cased")
         self.adapter_tokenizer = AutoTokenizer.from_pretrained("bert-base-cased")
@@ -247,7 +249,8 @@ class ExplainBot:
                      num_features: list[str],
                      remove_underscores: bool,
                      store_to_conversation: bool,
-                     skip_prompts: bool = False):
+                     skip_prompts: bool = False,
+                     dataset_name: str = ""):
         """Loads a dataset, creating parser and prompts.
 
         This routine loads a dataset. From this dataset, the parser
@@ -265,6 +268,7 @@ class ExplainBot:
             remove_underscores: Whether to remove underscores from feature names
             store_to_conversation: Whether to store the dataset to the conversation.
             skip_prompts: whether to skip prompt generation.
+            dataset_name: dailydialog, boolq, olid
         Returns:
             success: Returns success if completed and store_to_conversation is set to true. Otherwise,
                      returns the dataset.
@@ -282,7 +286,7 @@ class ExplainBot:
         if store_to_conversation:
 
             # Store the dataset
-            self.conversation.add_dataset(dataset, y_values, categorical, numeric)
+            self.conversation.add_dataset(dataset, y_values, categorical, numeric, dataset_name)
 
             # Set up the parser
             self.parser = Parser(cat_features=categorical,
@@ -572,7 +576,7 @@ class ExplainBot:
         elif "t5" not in self.decoding_model_name:
             parse_tree, parsed_text = self.compute_parse_text(text)
         else:
-            parse_tree, parsed_text = self.compute_parse_text_t5(text)
+            parse_tree, parsed_text = self.compute_parse_text_t5(text)            
 
         # Run the action in the conversation corresponding to the formal grammar
         returned_item = run_action(

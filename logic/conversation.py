@@ -136,7 +136,8 @@ class Conversation:
                     data: pd.DataFrame,
                     y_value: Series,
                     categorical: list[str],
-                    numeric: list[str]):
+                    numeric: list[str],
+                    dataset_name: str):
         """Stores data as the dataset in the conversation."""        
         if not ("text" in data.columns):
             text_data = []
@@ -151,12 +152,22 @@ class Conversation:
                 raise Exception("There is no text column in the data!")
             data.insert(0, "text", text_data)    
         
+        if dataset_name=="dailydialog":
+            id2label = {0:'dummy', 1:'inform', 2:'question', 3:'directive', 4:'commissive'}
+        elif dataset_name=="boolq":
+            id2label = {0:"False", 1:"True"}
+        elif dataset_name=="olid":
+            id2label = {0:"NO", 1:"OFF"} # TODO: check with CO
+        else:
+            id2label = dict()
+        
         dataset = {
             'X': data,
             'y': y_value,
             'cat': categorical,
             'numeric': numeric,
-            'ids_to_regenerate': []
+            'ids_to_regenerate': [],
+            'id2label': id2label,
         }
         var = Variable(name='dataset', contents=dataset, kind='dataset')
         self._store_var(var)
