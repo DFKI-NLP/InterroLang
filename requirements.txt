@@ -97,3 +97,4 @@ wandb==0.13.2
 Werkzeug==2.0.3
 word2number==1.1
 wordninja==2.0.0
+nlpaug==1.1.10

@@ -11,7 +11,10 @@ from actions.about.self import self_operation
 from actions.context.followup import followup_operation
 from actions.context.last_turn_filter import last_turn_filter
 from actions.context.last_turn_operation import last_turn_operation
+
 #from actions.explanation.counterfactuals import counterfactuals_operation
+from actions.counterfactuals.nlpcfe import nlpcfe_operation
+
 from actions.explanation.feature_importance import feature_importance_operation
 from actions.explanation.rationalize import rationalize_operation
 #from actions.explanation.topk import global_topk_operation
@@ -61,5 +64,6 @@ def get_all_action_functions_map():
         'sentiment': sentiment_operation,
         'rationalize': rationalize_operation,
         'feature_importance': feature_importance_operation,
+        'nlpcfe': nlpcfe_operation,
     }
     return actions
