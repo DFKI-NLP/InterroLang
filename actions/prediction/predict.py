@@ -61,12 +61,14 @@ def predict_operation(conversation, parse_text, i, max_num_preds_to_print=1, **k
         return_s += "<br>"
     else:
         if parse_text[i+1] == "random":
-            np.random.seed(0)
+            import random
+            import time
 
+            random.seed(time.time())
             f_names = list(data.columns)
 
             # Using random.randint doesn't work here somehow
-            random_num = int(np.random.randint(0, len(data[f_names[0]]), size=1)[0])
+            random_num = random.randint(0, len(data[f_names[0]]))
             filtered_text = ''
 
             dataset_name = conversation.describe.get_dataset_name()
