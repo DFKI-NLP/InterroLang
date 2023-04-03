@@ -160,30 +160,29 @@ def nlpcfe_operation(conversation, parse_text, i, max_num_preds_to_print=1, **kw
         id2label = conversation.get_var('dataset').contents["id2label"]
         instance_text = conversation.get_var('dataset').contents["X"].iloc[id_val]["text"]
         same, diff = CFEExplainer("nlpaug").cfe(instance=instance_text, model=model, number=number, id2label=id2label)
-        return_s = "The original sample was: " + instance_text + "<br>"
+        return_s = "The <b>original</b> sample was: " + instance_text + "<br>"
         if len(same)>0:
-            return_s += "I found the following counterfactuals that results in the same prediction:<br>"
+            return_s += '<br>I found the following counterfactuals that results in <font color="green"><b>the same</b></font> prediction:<br>'
             for same_pred in same:
-                return_s+=str(same_pred[1])+": "
+                return_s+="<br><b>"+str(id2label[same_pred[1][0]])+"</b>: "
                 out_str = same_pred[2]
                 if len(out_str)>0:
                     return_s+=out_str+"<br>"
         else:
-            return_s += "I couldn't generate any samples that result in the same prediction"
+            return_s += "<br>I couldn't generate any samples that result in the same prediction"
         if len(diff)>0:
-            return_s += "I found the following counterfactuals that results in a different prediction:<br>"        
+            return_s += '<br>I found the following counterfactuals that results in <font color="red"><b>a different</b></font> prediction:<br>'
             for diff_pred in diff:
-                return_s+=str(diff_pred[1])+": "
+                return_s+="<br><b>"+str(id2label[diff_pred[1][0]])+"</b>: "
                 out_str = diff_pred[2]
                 if len(out_str)>0:
                     return_s+=out_str+"<br>"
         else:
-            return_s += "I couldn't generate any sampels that result in a different prediction"
+            return_s += "<br>I couldn't generate any sampels that result in a different prediction"
     else:
         return_s = "Sorry, I don't know for which instance I should provide counterfactuals, please try again."
     
     return return_s, 1
-
 
 
 #if __name__ == "__main__":
