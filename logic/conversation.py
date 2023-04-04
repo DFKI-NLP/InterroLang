@@ -168,6 +168,7 @@ class Conversation:
             'numeric': numeric,
             'ids_to_regenerate': [],
             'id2label': id2label,
+            'index': data.index,
         }
         var = Variable(name='dataset', contents=dataset, kind='dataset')
         self._store_var(var)

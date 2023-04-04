@@ -430,7 +430,7 @@ class ExplainBot:
         switch = { "include": "includes {includetoken} [e]",
                    "nlpcfe":  "nlpcfe {number} {id} [e]", 
                    "predict": "predict {id} [e]", 
-                   "similar": "similar {number} {id} [e]",
+                   "similar": "similarity {number} {id} [e]",
                  }
         return switch.get(best_intent, "")
 
