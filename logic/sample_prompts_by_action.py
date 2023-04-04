@@ -10,7 +10,6 @@ ACTION_2_FILENAME = {
     "important": "global_feature_importance.txt",
     "logic": "explanation_prompts.txt",
     "predict": "predict.txt",
-    "whatif": "whatif_prompts.txt",
     "cfe": "cfe.txt",
     "function": "describe_function.txt",
     "show": "show.txt",

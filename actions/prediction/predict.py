@@ -16,6 +16,7 @@ def handle_input(parse_text):
 
 
 def random_prediction(model, data, conversation, text):
+    """randomly pick an instance from the dataset and make the prediction"""
     return_s = ''
     import random
     import time
@@ -64,6 +65,7 @@ def random_prediction(model, data, conversation, text):
 
 
 def prediction_with_id(model, data, conversation, text):
+    """Get the prediction of an instance with ID"""
     return_s = ''
     model_predictions = model.predict(data, text)
 
@@ -99,7 +101,7 @@ def prediction_with_id(model, data, conversation, text):
     return return_s
 
 
-def predict_operation(conversation, parse_text, i, max_num_preds_to_print=1, **kwargs):
+def predict_operation(conversation, parse_text, i, **kwargs):
     """The prediction operation."""
     model = conversation.get_var('model').contents
     data = conversation.temp_dataset.contents['X']
