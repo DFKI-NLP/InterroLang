@@ -1,5 +1,6 @@
 """Prediction operation."""
 import numpy as np
+from transformers import AutoModelForSequenceClassification, AutoTokenizer
 
 from actions.utils import gen_parse_op_text, get_parse_filter_text
 
@@ -13,6 +14,93 @@ def handle_input(parse_text):
         except:
             pass
     return num
+
+
+def prediction_with_custom_input(parse_text, conversation):
+    """
+    Predict the custom input from user that is not contained in the dataset
+    Args:
+        parse_text: parsed text from parse
+        conversation: Conversation object
+
+    Returns:
+        format string with inputs and predictions
+    """
+    # beginspan token token ... token endspan
+    begin_idx = [i for i, x in enumerate(parse_text) if x == 'beginspan']
+    end_idx = [i for i, x in enumerate(parse_text) if x == 'endspan']
+
+    if begin_idx == [] or end_idx == []:
+        return None
+
+    if len(begin_idx) != len(end_idx):
+        return None
+
+    inputs = []
+    for i in list(zip(begin_idx, end_idx)):
+        temp = " ".join(parse_text[i[0] + 1: i[1]])
+
+        if temp != '':
+            inputs.append(temp)
+
+    if len(inputs) == 0:
+        return None
+
+    predictions = []
+
+    dataset_name = conversation.describe.get_dataset_name()
+    if dataset_name == "boolq":
+        model = AutoModelForSequenceClassification.from_pretrained("andi611/distilbert-base-uncased-qa-boolq",
+                                                                   num_labels=2)
+        tokenizer = AutoTokenizer.from_pretrained("andi611/distilbert-base-uncased-qa-boolq")
+
+        for string in inputs:
+            encoding = tokenizer.encode_plus(string, return_tensors='pt')
+            input_ids = encoding["input_ids"]
+            attention_mask = encoding["attention_mask"]
+            input_model = {
+                'input_ids': input_ids.long(),
+                'attention_mask': attention_mask.long(),
+            }
+            output_model = model(**input_model)[0]
+
+            # Get logit
+            output_model = np.argmax(output_model.cpu().detach().numpy())
+            predictions.append(output_model)
+
+    elif dataset_name == "daily_dialog":
+        pass
+    elif dataset_name == "olid":
+        pass
+    else:
+        raise NotImplementedError(f"The dataset {dataset_name} is not supported!")
+
+    class_name = conversation.class_names
+
+    return_s = ""
+    if class_name is not None:
+        for i in range(len(predictions)):
+            return_s += "<ul>"
+            return_s += "<li>"
+            return_s += f"Your input is: <b>{inputs[i]}</b>"
+            return_s += "</li>"
+
+            return_s += "<li>"
+            return_s += f"The prediction is: <b>{class_name[predictions[i]]}</b>"
+            return_s += "</li>"
+            return_s += "</ul><br><br>"
+    else:
+        return_s += "<ul>"
+        return_s += "<li>"
+        return_s += f"Your input is: {inputs[i]}"
+        return_s += "</li>"
+
+        return_s += "<li>"
+        return_s += f"The prediction is: {predictions[i]}"
+        return_s += "</li>"
+        return_s += "</ul>"
+
+    return return_s
 
 
 def random_prediction(model, data, conversation, text):
@@ -108,6 +196,11 @@ def predict_operation(conversation, parse_text, i, **kwargs):
 
     if len(conversation.temp_dataset.contents['X']) == 0:
         return 'There are no instances that meet this description!', 0
+
+    parse_text = ["predict", "beginspan", "is", "a", "wolverine", "the", "same", "as", "a", "badger", "endspan", "beginspan", "is", "a", "wolverine", "the", "same", "as", "a", "badger", "endspan"]
+    predictions = prediction_with_custom_input(parse_text, conversation)
+    if predictions is not None:
+        return predictions, 1
 
     text = handle_input(parse_text)
 
