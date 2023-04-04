@@ -197,7 +197,10 @@ def predict_operation(conversation, parse_text, i, **kwargs):
     if len(conversation.temp_dataset.contents['X']) == 0:
         return 'There are no instances that meet this description!', 0
 
-    parse_text = ["predict", "beginspan", "is", "a", "wolverine", "the", "same", "as", "a", "badger", "endspan", "beginspan", "is", "a", "wolverine", "the", "same", "as", "a", "badger", "endspan"]
+    # For testing custom input
+    # parse_text = ["predict", "beginspan", "is", "a", "wolverine", "the", "same", "as", "a", "badger", "endspan",
+    # "beginspan", "is", "a", "wolverine", "the", "same", "as", "a", "badger", "endspan"]
+
     predictions = prediction_with_custom_input(parse_text, conversation)
     if predictions is not None:
         return predictions, 1
