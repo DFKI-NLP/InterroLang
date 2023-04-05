@@ -1,4 +1,8 @@
 """Prediction operation."""
+import os
+import csv
+import random
+import time
 import numpy as np
 from transformers import AutoModelForSequenceClassification, AutoTokenizer
 
@@ -14,6 +18,52 @@ def handle_input(parse_text):
         except:
             pass
     return num
+
+
+def store_results(inputs, predictions, cache_path):
+    """
+    Store custom inputs and its predictions in csv file
+    Args:
+        inputs: custom input
+        predictions: corresponding predictions
+        cache_path: path to cache/csv
+    """
+    if not os.path.exists(cache_path):
+        with open(cache_path, 'w', newline='') as file:
+            writer = csv.writer(file)
+
+            # Write header
+            writer.writerow(["idx", "Input text", "Prediction"])
+            for i in range(len(inputs)):
+                writer.writerow([i, inputs[i], predictions[i]])
+            file.close()
+
+    else:
+        rows = []
+        with open(cache_path, 'r', ) as file:
+            fieldnames = ["idx", "Input text", "Prediction"]
+            reader = csv.DictReader(file, fieldnames=fieldnames)
+
+            for row in reader:
+                rows.append(row)
+            file.close()
+        length = len(rows)
+
+        with open(cache_path, 'w', newline='') as file:
+            fieldnames = ["idx", "Input text", "Prediction"]
+            writer = csv.DictWriter(file, fieldnames=fieldnames)
+            writer.writeheader()
+
+            for i in range(1, length):
+                writer.writerow(rows[i])
+
+            for i in range(len(inputs)):
+                writer.writerow({
+                    "idx": i + length - 1,
+                    "Input text": inputs[i],
+                    "Prediction": predictions[i]
+                })
+            file.close()
 
 
 def prediction_with_custom_input(parse_text, conversation):
@@ -47,26 +97,56 @@ def prediction_with_custom_input(parse_text, conversation):
         return None
 
     predictions = []
-
     dataset_name = conversation.describe.get_dataset_name()
+
+    cache_path = f"./cache/{dataset_name}/{dataset_name}_custom_input.csv"
+
     if dataset_name == "boolq":
         model = AutoModelForSequenceClassification.from_pretrained("andi611/distilbert-base-uncased-qa-boolq",
                                                                    num_labels=2)
         tokenizer = AutoTokenizer.from_pretrained("andi611/distilbert-base-uncased-qa-boolq")
 
-        for string in inputs:
-            encoding = tokenizer.encode_plus(string, return_tensors='pt')
-            input_ids = encoding["input_ids"]
-            attention_mask = encoding["attention_mask"]
-            input_model = {
-                'input_ids': input_ids.long(),
-                'attention_mask': attention_mask.long(),
-            }
-            output_model = model(**input_model)[0]
+        if os.path.exists(cache_path):
+            with open(cache_path, 'r') as file:
+                fieldnames = ["idx", "Input text", "Prediction"]
+                reader = csv.DictReader(file, fieldnames=fieldnames)
 
-            # Get logit
-            output_model = np.argmax(output_model.cpu().detach().numpy())
-            predictions.append(output_model)
+                for string in inputs:
+                    flag = False
+                    for row in reader:
+                        if row["Input text"] == string:
+                            predictions.append(int(row["Prediction"]))
+                            flag = True
+                            break
+                    if flag:
+                        continue
+
+                    encoding = tokenizer.encode_plus(string, return_tensors='pt')
+                    input_ids = encoding["input_ids"]
+                    attention_mask = encoding["attention_mask"]
+                    input_model = {
+                        'input_ids': input_ids.long(),
+                        'attention_mask': attention_mask.long(),
+                    }
+                    output_model = model(**input_model)[0]
+
+                    # Get logit
+                    output_model = np.argmax(output_model.cpu().detach().numpy())
+                    predictions.append(output_model)
+        else:
+            for string in inputs:
+                encoding = tokenizer.encode_plus(string, return_tensors='pt')
+                input_ids = encoding["input_ids"]
+                attention_mask = encoding["attention_mask"]
+                input_model = {
+                    'input_ids': input_ids.long(),
+                    'attention_mask': attention_mask.long(),
+                }
+                output_model = model(**input_model)[0]
+
+                # Get logit
+                output_model = np.argmax(output_model.cpu().detach().numpy())
+                predictions.append(output_model)
 
     elif dataset_name == "daily_dialog":
         pass
@@ -100,14 +180,14 @@ def prediction_with_custom_input(parse_text, conversation):
         return_s += "</li>"
         return_s += "</ul>"
 
+    store_results(inputs, predictions, cache_path)
+
     return return_s
 
 
 def random_prediction(model, data, conversation, text):
     """randomly pick an instance from the dataset and make the prediction"""
     return_s = ''
-    import random
-    import time
 
     random.seed(time.time())
     f_names = list(data.columns)
@@ -199,7 +279,7 @@ def predict_operation(conversation, parse_text, i, **kwargs):
 
     # For testing custom input
     # parse_text = ["predict", "beginspan", "is", "a", "wolverine", "the", "same", "as", "a", "badger", "endspan",
-    # "beginspan", "is", "a", "wolverine", "the", "same", "as", "a", "badger", "endspan"]
+    # "beginspan", "is", "this", "a", "good", "book", "endspan"]
 
     predictions = prediction_with_custom_input(parse_text, conversation)
     if predictions is not None:
