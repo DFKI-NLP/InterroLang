@@ -2,7 +2,7 @@
 
 
 def pytest_addoption(parser):
-    parser.addoption("--global", action="store_true", help="run all combinations")
+    parser.addoption("--global", action="store_true", help="run all tests globally")
 
 
 def pytest_generate_tests(metafunc):
