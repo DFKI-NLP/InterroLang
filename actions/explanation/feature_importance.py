@@ -147,9 +147,11 @@ def explanation_with_custom_input(parse_text, conversation, topk, for_test):
     for res in res_list:
         original_text = res["text"]
 
-        return_s += "The original text is:  "
+        return_s += "The original text is:  <br>"
+        return_s += "<i>"
         return_s += original_text
-        return_s += "<br>"
+        return_s += "</i>"
+        return_s += "<br><br>"
 
         text = "[CLS] " + original_text + " [SEP]"
         attr = res["attributions"]
@@ -187,7 +189,7 @@ def explanation_with_custom_input(parse_text, conversation, topk, for_test):
             return_s += "</span>"
             return_s += ' '
 
-        return_s += '<br><br>'
+        return_s += '<br><br><br>'
 
     return return_s
 
