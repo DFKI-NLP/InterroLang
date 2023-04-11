@@ -11,11 +11,11 @@ import gin
 def create_conversation(class_names, dataset_objective, dataset_description,
                         model_description, name,
                         dataset_file_path,
-                        dataset_index_column="idx",
-                        target_variable_name="label",
-                        categorical_features=None,
-                        numerical_features=None,
-                        remove_underscores=False):
+                        dataset_index_column,
+                        target_variable_name,
+                        categorical_features,
+                        numerical_features,
+                        remove_underscores):
 
     conversation = Conversation(class_names=class_names)
     datasetDescription = DatasetDescription(
