@@ -1,16 +1,14 @@
 import json
 
-import gin
 import torch
 from captum.attr import LayerIntegratedGradients
 from tqdm import tqdm
-from transformers import AutoTokenizer
+from transformers import AutoTokenizer, AutoModelForSequenceClassification
 
-from explained_models.DataLoaderABC.hf_dataloader import HFDataloader
-from explained_models.ModelABC.distilbert_qa_boolq import DistilbertQABoolModel
-from explained_models.Tokenizer.tokenizer import HFTokenizer
 from explained_models.Explainer.explainer import Explainer
 import numpy as np
+
+from utils.custom_input import get_dataloader, generate_explanation
 
 
 def handle_input(parse_text):
@@ -24,25 +22,41 @@ def handle_input(parse_text):
     """
     id_list = []
     topk = None
+
     for item in parse_text:
         try:
             if int(item):
                 id_list.append(int(item))
         except:
             pass
+
     if "topk" in parse_text:
-        topk = id_list[-1]
-        return id_list[:-1], topk
+        try:
+            topk = id_list[-1]
+        except:
+            raise ValueError("There is no numerical value in the parsed text!")
+
+        # If at least one id is given
+        if len(id_list) > 1:
+            return id_list[:-1], topk
+        else:
+            return None, topk
     else:
-        return id_list, topk
+        # at least one id is given
+        if len(id_list) >= 1:
+            if "all" in parse_text:
+                return id_list, 1
+            return id_list, topk
+        else:
+            # No id and topk -> custom input
+            return None, topk
 
 
-def get_res(json_list, id_list, topk, tokenizer, num=0):
+def get_res(json_list, topk, tokenizer, num=0):
     """
     Get topk tokens from a single sentence
     Args:
         json_list: data source
-        id_list: list of numbers(ids)
         topk: topk value
         tokenizer: for converting input_ids to sentence
         num: current index
@@ -50,8 +64,8 @@ def get_res(json_list, id_list, topk, tokenizer, num=0):
     Returns:
         topk tokens
     """
-    input_ids = json_list[id_list[num]]["input_ids"]
-    explanation = json_list[id_list[num]]["attributions"]
+    input_ids = json_list[num]["input_ids"]
+    explanation = json_list[num]["attributions"]
     res = []
 
     # Get corresponding tokens by input_ids
@@ -83,35 +97,145 @@ def get_return_str(topk, res):
     return return_s
 
 
-def feature_importance_operation(conversation, parse_text, i, **kwargs):
+def explanation_with_custom_input(parse_text, conversation, topk, for_test):
+    """
+    Get explanation of custom inputs from users
+    Args:
+        for_test: test path
+        parse_text: parsed text
+        conversation: conversation object
+        topk: most top k important tokens
+
+    Returns:
+        formatted string
+    """
+    # beginspan token token ... token endspan
+    begin_idx = [i for i, x in enumerate(parse_text) if x == 'beginspan']
+    end_idx = [i for i, x in enumerate(parse_text) if x == 'endspan']
+
+    if begin_idx == [] or end_idx == []:
+        return None
+
+    if len(begin_idx) != len(end_idx):
+        return None
+
+    inputs = []
+    for i in list(zip(begin_idx, end_idx)):
+        temp = " ".join(parse_text[i[0] + 1: i[1]])
+
+        if temp != '':
+            inputs.append(temp)
+
+    if len(inputs) == 0:
+        return None
+
+    dataset_name = conversation.describe.get_dataset_name()
+
+    if dataset_name == "boolq":
+        model = AutoModelForSequenceClassification.from_pretrained("andi611/distilbert-base-uncased-qa-boolq",
+                                                                   num_labels=2)
+    elif dataset_name == "daily_dialog":
+        pass
+    elif dataset_name == "olid":
+        pass
+    else:
+        raise NotImplementedError(f"The dataset {dataset_name} is not supported!")
+
+    res_list = generate_explanation(model, dataset_name, inputs, for_test)
+
+    return_s = ""
+    for res in res_list:
+        original_text = res["text"]
+
+        return_s += "The original text is:  "
+        return_s += original_text
+        return_s += "<br>"
+
+        text = "[CLS] " + original_text + " [SEP]"
+        attr = res["attributions"]
+        text_list = text.split()
+
+        # Get indices according to absolute attribution scores ascending
+        idx = np.argsort(np.absolute(np.copy(attr)))
+
+        # Get topk tokens
+        topk_tokens = []
+        for i in np.argsort(attr)[-topk:][::-1]:
+            topk_tokens.append(text_list[i])
+
+        score_ranking = []
+        for i in range(len(idx)):
+            score_ranking.append(list(idx).index(i))
+        # fraction = 1.0 / (len(text_list) + 1)
+        fraction = 1.0 / (len(text_list) - 1)
+
+        return_s += f"Top {topk} token(s): "
+        for i in topk_tokens:
+            return_s += f"<b>{i}</b>"
+            return_s += " "
+        return_s += '<br>'
+
+        return_s += "The visualization: "
+        for i in range(1, len(text_list)-1):
+            if attr[i] >= 0:
+                # Assign red to tokens with positive attribution
+                return_s += f"<span style='background-color:rgba(255,0,0,{round(fraction * score_ranking[i], conversation.rounding_precision)});padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 2; border-radius: 0.35em; box-decoration-break: clone; -webkit-box-decoration-break: clone'>"
+            else:
+                # Assign blue to tokens with negative attribution
+                return_s += f"<span style='background-color:rgba(0,0,255,{round(fraction * score_ranking[i], conversation.rounding_precision)});padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 2; border-radius: 0.35em; box-decoration-break: clone; -webkit-box-decoration-break: clone'>"
+            return_s += text_list[i]
+            return_s += "</span>"
+            return_s += ' '
+
+        return_s += '<br><br>'
+
+    return return_s
+
+
+def feature_importance_operation(conversation, parse_text, i, for_test="./", **kwargs):
     # filter id 5 or filter id 151 or filter id 315 and nlpattribute topk 10 [E]
     # filter id 213 and nlpattribute all [E]
     # filter id 33 and nlpattribute topk 1 [E]
+
+    # parse_text = ["predict", "beginspan", "is", "a", "wolverine", "the", "same", "as", "a", "badger", "endspan",
+    #               "beginspan", "is", "this", "a", "good", "book", "endspan"]
+
     id_list, topk = handle_input(parse_text)
+
+    if topk is None:
+        topk = 3
+
+    # If id is not given
+    if id_list is None:
+        # Check the custom input
+        explanation = explanation_with_custom_input(parse_text, conversation, topk, for_test)
+
+        # Handle custom input
+        if explanation is not None:
+            return explanation, 1
+        else:
+            raise ValueError("ID or custom input is not given!")
 
     # Get the dataset name
     name = conversation.describe.get_dataset_name()
 
-    data_path = f"./cache/{name}/ig_explainer_{name}_explanation.json"
+    data_path = f"{for_test}cache/{name}/ig_explainer_{name}_explanation.json"
     fileObject = open(data_path, "r")
     jsonContent = fileObject.read()
     json_list = json.loads(jsonContent)
 
     tokenizer = AutoTokenizer.from_pretrained("andi611/distilbert-base-uncased-qa-boolq")
 
-    if topk is None:
-        topk = 3
-
     if topk >= len(json_list[0]["input_ids"]):
         return "Entered topk is larger than input max length", 1
     else:
         if len(id_list) == 1:
-            res = get_res(json_list, id_list, topk, tokenizer, num=0)
+            res = get_res(json_list, topk, tokenizer, num=id_list[0])
             return get_return_str(topk, res), 1
         else:
             return_s = ""
             for num in id_list:
-                res = get_res(json_list, id_list, topk, tokenizer, num=num)
+                res = get_res(json_list, topk, tokenizer, num=num)
                 temp = get_return_str(topk, res)
                 return_s += f"For id {num}: {temp}"
                 return_s += "<br>"
@@ -237,4 +361,3 @@ class FeatureAttributionExplainer(Explainer):
             jsonFile = open(data_path, "w")
             jsonFile.write(jsonString)
             jsonFile.close()
-
