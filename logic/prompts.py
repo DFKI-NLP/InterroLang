@@ -529,6 +529,8 @@ class Prompts:
         for prompt_id in tqdm(prompt_set):
             cur_prompt = [prompt_set[prompt_id]]
 
+            """Not applicable for InterroLang:
+            
             if len(cat_features) > 0:
                 # Fill the categorical feature wildcards
                 cur_prompt = self._fill_wildcard(cur_prompt,
@@ -559,6 +561,7 @@ class Prompts:
                                              '{exp_name}',
                                              exp_dict,
                                              semantic_feature_names=None)
+            """
 
             cur_prompt = self._fill_wildcard(cur_prompt,
                                              '{unused}',

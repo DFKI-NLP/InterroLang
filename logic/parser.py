@@ -240,11 +240,11 @@ class Parser:
                 if "id" in feat:
                     final_aval += f" | {feat}"
                 final_aval_values += f"\n{feat}: {adhoc_grammar_updates[feat]}"
-            grammar = GRAMMAR.format(avaliablefeaturetypes=final_aval,
+            grammar = GRAMMAR.format(availablefeaturetypes=final_aval,
                                      topkvalues=self.get_topk_grammar_text())
             grammar += final_aval_values
         else:
-            grammar = GRAMMAR.format(avaliablefeaturetypes=self.available_feature_types,
+            grammar = GRAMMAR.format(availablefeaturetypes=self.available_feature_types,
                                      topkvalues=self.get_topk_grammar_text())
         grammar += self.categorical_features_grammar
         grammar += self.numerical_features_grammar

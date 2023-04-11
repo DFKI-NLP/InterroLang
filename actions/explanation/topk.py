@@ -3,6 +3,7 @@ import json
 import torch
 from tqdm import tqdm
 from transformers import BertTokenizer
+from transformers import AutoTokenizer
 
 from actions.explanation.feature_importance import FeatureAttributionExplainer
 from explained_models.DataLoaderABC.hf_dataloader import HFDataloader
@@ -112,6 +113,11 @@ def topk(explainer, k, threshold=-1, data_path="../../cache/boolq/ig_explainer_b
         tokenizer = model.model.tokenizer
     elif "daily_dialog" in data_path:
         tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+        fileObject = open(data_path, "r")
+        jsonContent = fileObject.read()
+        results = json.loads(jsonContent)
+    elif "olid" in data_path:
+        tokenizer = AutoTokenizer.from_pretrained("sinhala-nlp/mbert-olid-en")
         fileObject = open(data_path, "r")
         jsonContent = fileObject.read()
         results = json.loads(jsonContent)

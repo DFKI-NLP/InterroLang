@@ -1,0 +1,32 @@
+User: Show me all cases that involve the term {token}.
+Parsed: includes {token} [E]
+
+Can you give me a list of all the examples that contain the word {token}?
+Parsed: includes {token} [E]
+
+Please display all instances that have the token {token}.
+Parsed: includes {token} [E]
+
+Show me all occurrences that feature the token {token}.
+Parsed: includes {token} [E]
+
+Can you provide me with all examples that have the term {token}?
+Parsed: includes {token} [E]
+
+Please list all cases that contain the token {token}.
+Parsed: includes {token} [E]
+
+I want to see all instances that include the word {token}.
+Parsed: includes {token} [E]
+
+Give me a list of all examples that include the token {token}.
+Parsed: includes {token} [E]
+
+Show me all occurrences that have the term {token}.
+Parsed: includes {token} [E]
+
+Can you display all cases that comprise the term {token}?
+Parsed: includes {token} [E]
+
+Please provide me with all examples that involve the token {token}.
+Parsed: includes {token} [E]

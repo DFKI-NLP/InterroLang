@@ -99,7 +99,7 @@ def make_safe(string):
 def t5_trainer(t5_params, down_sample_pct: float = None, model_id: int = None, seed: int = 0):
     """T5 Training loop"""
 
-    run = wandb.init(project="project-ttm", entity="dslack")
+    run = wandb.init(project="InterroLang", entity="nfel")
     wandb.run.name = f"{make_safe(t5_params.model_name)}-{make_safe(t5_params.dataset_name)}-training-debug-{t5_params.debug}"
 
     if t5_params.verbose:

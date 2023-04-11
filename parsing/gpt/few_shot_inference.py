@@ -38,7 +38,8 @@ def get_few_shot_predict_f(model: str, device: str = "cpu", use_guided_decoding:
             guided_preprocessor = GuidedDecodingLogitsProcessor(parser, input_ids.shape[1])
             generation = model.greedy_search(input_ids,
                                              logits_processor=guided_preprocessor,
-                                             eos_token_id=parser.eos_token)
+                                             eos_token_id=parser.eos_token,
+                                             pad_token_id=model.config.pad_token_id)
         else:
             stopping_criteria = MaxLengthCriteria(max_length=200)
             generation = model.greedy_search(input_ids,
