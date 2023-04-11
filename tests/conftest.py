@@ -3,6 +3,7 @@
 
 def pytest_addoption(parser):
     parser.addoption("--global", action="store_true", help="run all tests globally")
+    parser.addoption("--root", action="store_true", help="run all tests globally")
 
 
 def pytest_generate_tests(metafunc):
@@ -12,3 +13,10 @@ def pytest_generate_tests(metafunc):
         else:
             path = '../'
         metafunc.parametrize("for_test", [path])
+
+    if "root_path" in metafunc.fixturenames:
+        if metafunc.config.getoption("root"):
+            roots = './tests'
+        else:
+            roots = '.'
+        metafunc.parametrize("root_path", [roots])
