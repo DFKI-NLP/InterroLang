@@ -4,7 +4,7 @@ import os
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from utils.output_test import create_conversation, TEXT, CONVERSATION
+from utils.conversation_simulator import create_conversation, TEXT, CONVERSATION
 from actions.metadata.data_summary import data_operation
 
 conversation = CONVERSATION

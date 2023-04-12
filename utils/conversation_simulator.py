@@ -1,3 +1,6 @@
+"""
+This file is needed for creating a conversation object for testing.
+"""
 from logic.conversation import Conversation
 from logic.dataset_description import DatasetDescription
 from logic.utils import read_and_format_data

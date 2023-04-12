@@ -3,7 +3,7 @@ import os
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from utils.output_test import create_conversation, TEXT, CONVERSATION
+from utils.conversation_simulator import create_conversation, TEXT, CONVERSATION
 from actions.prediction.prediction_likelihood import predict_likelihood
 
 conversation = CONVERSATION

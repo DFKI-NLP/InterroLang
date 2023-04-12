@@ -3,7 +3,7 @@ import os
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from utils.output_test import create_conversation, TEXT, CONVERSATION
+from utils.conversation_simulator import create_conversation, TEXT, CONVERSATION
 from actions.metadata.show_data import show_operation
 
 conversation = CONVERSATION
