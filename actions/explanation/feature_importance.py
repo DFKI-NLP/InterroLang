@@ -97,11 +97,10 @@ def get_return_str(topk, res):
     return return_s
 
 
-def explanation_with_custom_input(parse_text, conversation, topk, for_test):
+def explanation_with_custom_input(parse_text, conversation, topk):
     """
     Get explanation of custom inputs from users
     Args:
-        for_test: test path
         parse_text: parsed text
         conversation: conversation object
         topk: most top k important tokens
@@ -141,7 +140,7 @@ def explanation_with_custom_input(parse_text, conversation, topk, for_test):
     else:
         raise NotImplementedError(f"The dataset {dataset_name} is not supported!")
 
-    res_list = generate_explanation(model, dataset_name, inputs, for_test)
+    res_list = generate_explanation(model, dataset_name, inputs)
 
     return_s = ""
     for res in res_list:
@@ -194,7 +193,7 @@ def explanation_with_custom_input(parse_text, conversation, topk, for_test):
     return return_s
 
 
-def feature_importance_operation(conversation, parse_text, i, for_test="./", **kwargs):
+def feature_importance_operation(conversation, parse_text, i, **kwargs):
     # filter id 5 or filter id 151 or filter id 315 and nlpattribute topk 10 [E]
     # filter id 213 and nlpattribute all [E]
     # filter id 33 and nlpattribute topk 1 [E]
@@ -210,7 +209,7 @@ def feature_importance_operation(conversation, parse_text, i, for_test="./", **k
     # If id is not given
     if id_list is None:
         # Check the custom input
-        explanation = explanation_with_custom_input(parse_text, conversation, topk, for_test)
+        explanation = explanation_with_custom_input(parse_text, conversation, topk)
 
         # Handle custom input
         if explanation is not None:
@@ -221,7 +220,7 @@ def feature_importance_operation(conversation, parse_text, i, for_test="./", **k
     # Get the dataset name
     name = conversation.describe.get_dataset_name()
 
-    data_path = f"{for_test}cache/{name}/ig_explainer_{name}_explanation.json"
+    data_path = f"./cache/{name}/ig_explainer_{name}_explanation.json"
     fileObject = open(data_path, "r")
     jsonContent = fileObject.read()
     json_list = json.loads(jsonContent)

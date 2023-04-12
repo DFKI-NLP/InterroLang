@@ -2,7 +2,7 @@
 If you want to run a single test file, then:
 ```bash
 cd test
-pytest test_xxx.py
+pytest tests/test_xxx.py --global --root
 ```
 
 Otherwise, if you want to test all test files contained in the **test** folder, then:

@@ -15,16 +15,16 @@ pytest -q test_feature_importance.py --global  (under root folder)
 conversation = CONVERSATION
 
 
-def test_feature_importance(for_test, root_path):
+def test_feature_importance():
     """
     Test feature importance for a single instance with given id
     """
 
     parse_text = ["filter", "id", "33", "and", "nlpattribute", "topk", "1", "[E]"]
 
-    return_s, status_code = feature_importance_operation(conversation, parse_text, 1, for_test)
+    return_s, status_code = feature_importance_operation(conversation, parse_text, 1)
 
-    file_html = open(f"{root_path}/html/feature_importance/feature_importance.html", "w")
+    file_html = open(f"./tests/html/feature_importance/feature_importance.html", "w")
     text = TEXT
     text += return_s
     text += "</html>"
@@ -36,16 +36,16 @@ def test_feature_importance(for_test, root_path):
     assert status_code == 1
 
 
-def test_multiple_feature_importance(for_test, root_path):
+def test_multiple_feature_importance():
     """
     Test feature importance for multiple instances with given ids
     """
 
     parse_text = ["filter", "id", "33", "or", "id", "151", "and", "nlpattribute", "topk", "2", "[E]"]
 
-    return_s, status_code = feature_importance_operation(conversation, parse_text, 1, for_test)
+    return_s, status_code = feature_importance_operation(conversation, parse_text, 1)
 
-    file_html = open(f"{root_path}/html/feature_importance/multiple_feature_importance.html", "w")
+    file_html = open(f"./tests/html/feature_importance/multiple_feature_importance.html", "w")
     text = TEXT
     text += return_s
     text += "</html>"
@@ -57,7 +57,7 @@ def test_multiple_feature_importance(for_test, root_path):
     assert status_code == 1
 
 
-def test_feature_importance_with_custom_input(for_test, root_path):
+def test_feature_importance_with_custom_input():
     """
     Test feature importance for custom input
     """
@@ -65,9 +65,9 @@ def test_feature_importance_with_custom_input(for_test, root_path):
     parse_text = ["predict", "beginspan", "is", "a", "wolverine", "the", "same", "as", "a", "badger", "endspan",
                   "beginspan", "is", "this", "a", "good", "book", "endspan"]
 
-    return_s, status_code = feature_importance_operation(conversation, parse_text, 1, for_test)
+    return_s, status_code = feature_importance_operation(conversation, parse_text, 1)
 
-    file_html = open(f"{root_path}/html/feature_importance/feature_importance_with_custom_input.html", "w")
+    file_html = open(f"./tests/html/feature_importance/feature_importance_with_custom_input.html", "w")
     text = TEXT
     text += return_s
     text += "</html>"
@@ -79,16 +79,16 @@ def test_feature_importance_with_custom_input(for_test, root_path):
     assert status_code == 1
 
 
-def test_feature_importance_all(for_test, root_path):
+def test_feature_importance_all():
     """
     Test feature importance for a single instance with given id
     """
 
     parse_text = ["filter", "id", "53", "and", "nlpattribute", "all", "[E]"]
 
-    return_s, status_code = feature_importance_operation(conversation, parse_text, 1, for_test)
+    return_s, status_code = feature_importance_operation(conversation, parse_text, 1)
 
-    file_html = open(f"{root_path}/html/feature_importance/feature_importance_all.html", "w")
+    file_html = open(f"./tests/html/feature_importance/feature_importance_all.html", "w")
     text = TEXT
     text += return_s
     text += "</html>"

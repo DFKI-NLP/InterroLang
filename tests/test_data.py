@@ -10,13 +10,13 @@ from actions.metadata.data_summary import data_operation
 conversation = CONVERSATION
 
 
-def test_data_summary(root_path):
-    """Test whatami functionality"""
+def test_data_summary():
+    """Test data summary functionality"""
     parse_text = ["data", "[E]"]
 
     return_s, status_code = data_operation(conversation, parse_text, 1)
 
-    file_html = open(f"{root_path}/html/data/data_summary.html", "w")
+    file_html = open(f"./tests/html/data/data_summary.html", "w")
     text = TEXT
     text += return_s
     text += "</html>"

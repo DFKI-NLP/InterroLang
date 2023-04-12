@@ -61,7 +61,12 @@ def predict_likelihood(conversation, parse_text, i, **kwargs):
     # Get the dataset name
     name = conversation.describe.get_dataset_name()
     instance_id = extract_id_from_parse_text(parse_text)
-    model_predictions, model_prediction_probabilities = get_predictions_and_probabilities(name, instance_id)
+
+    if instance_id is not None:
+        model_predictions, model_prediction_probabilities = get_predictions_and_probabilities(name, instance_id)
+    else:
+        # TODO: likelihood for a certain class
+        raise ValueError("ID is not given")
 
     return_s = f"For instance with id <b>{instance_id}</b>: "
     return_s += "<ul>"
