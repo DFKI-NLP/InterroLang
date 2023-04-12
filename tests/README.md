@@ -1,13 +1,10 @@
 # pytest framework 
 If you want to run a single test file, then:
 ```bash
-cd test
-pytest tests/test_xxx.py --global --root
+pytest tests/test_xxx.py 
 ```
 
-Otherwise, if you want to test all test files contained in the **test** folder, then:
+Otherwise, it will run all test files containing in the **test** folder:
 ```bash 
-At root:
-
-pytest tests --global --root
+pytest tests 
 ```
