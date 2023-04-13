@@ -7,7 +7,7 @@ cfe: " cfe" cfefeature
 cfefeature: {availablefeaturetypes} | " "
 
 globaltopk: globaltopkword
-globaltopkword: " globaltopk" classname
+globaltopkword: " important" classname
 classname: " true" | " false" | " "
 
 labelfilter: " labelfilter" class
