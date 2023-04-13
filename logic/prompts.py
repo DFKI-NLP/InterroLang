@@ -483,15 +483,6 @@ class Prompts:
         # Set filename to prompt id as class method
         self.filename_to_prompt_id = filename_to_prompt_ids
 
-        # Build dictionaries that contain the wildcard name and value
-        cat_filler_dict = {
-            cn: feature_value_dict[cn.lower()] for cn in cat_features}
-        num_filler_dict = {
-            nn: feature_value_dict[nn.lower()] for nn in num_features}
-        exp_dict = {
-            'feature importance': ['lime', 'shap', 'feature importance']
-        }
-
         app.logger.info("Building filter dicts...")
 
         non_semantic_classes = list(class_names.keys())
@@ -499,26 +490,6 @@ class Prompts:
         class_dict = {
             'class': [class_names[f] for f in non_semantic_classes]
         }
-
-        full_class_dict = {str(ns_name): [class_names[ns_name]] for ns_name in class_names}
-
-        # add id to categorical values
-        cat_filler_dict['id'] = list(np.random.choice(
-            len(target), size=max_values_per_feature))
-
-        semantic_cat_names = build_semantic_dict(cat_filler_dict)
-        semantic_num_names = build_semantic_dict(num_filler_dict)
-        semantic_class_names = build_semantic_dict(full_class_dict)
-
-        # This filler dict contains filtering text and parse info
-        filter_filler_dict = self.build_filter_filler_dict(cat_features,
-                                                           num_features,
-                                                           cat_filler_dict,
-                                                           num_filler_dict,
-                                                           class_dict=full_class_dict,
-                                                           semantic_cat_names=semantic_cat_names,
-                                                           semantic_num_names=semantic_num_names,
-                                                           semantic_class_names=semantic_class_names)
 
         # Will contain prompt ids -> prompts with wildcards enumerated
         filled_prompt_set = {}
@@ -528,40 +499,6 @@ class Prompts:
         # Enumerate the wildcards for each prompt
         for prompt_id in tqdm(prompt_set):
             cur_prompt = [prompt_set[prompt_id]]
-
-            """Not applicable for InterroLang:
-            
-            if len(cat_features) > 0:
-                # Fill the categorical feature wildcards
-                cur_prompt = self._fill_wildcard(cur_prompt,
-                                                 '{cat_features}',
-                                                 '{cat_values}',
-                                                 cat_filler_dict,
-                                                 semantic_cat_names)
-
-            if len(num_features) > 0:
-                # Fill the numerical feature wildcards
-                cur_prompt = self._fill_wildcard(cur_prompt,
-                                                 '{num_features}',
-                                                 '{num_values}',
-                                                 num_filler_dict,
-                                                 semantic_num_names)
-
-            if len(filter_filler_dict) > 0:
-                # Add the filter text
-                cur_prompt = self._fill_wildcard(cur_prompt,
-                                                 '{filter_text}',
-                                                 '{filter_parse}',
-                                                 filter_filler_dict,
-                                                 semantic_feature_names=None)
-
-            # Fill the explanation type wildcards
-            cur_prompt = self._fill_wildcard(cur_prompt,
-                                             '{exp_type}',
-                                             '{exp_name}',
-                                             exp_dict,
-                                             semantic_feature_names=None)
-            """
 
             cur_prompt = self._fill_wildcard(cur_prompt,
                                              '{unused}',
