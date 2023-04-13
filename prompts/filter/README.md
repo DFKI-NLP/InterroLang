@@ -1,3 +1,6 @@
 # filter
-### includes_token.txt
-* 10x `includes {token} [E]`
+### includes.txt
+* 15x `includes {span} [E]`
+
+### includes_chatgpt.txt
+* 20x `includes {span} [E]`

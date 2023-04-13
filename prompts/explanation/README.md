@@ -26,7 +26,21 @@ Action defined in explanation/cfe_generation.py (WIP)
 Action defined in explanation/topk.py
 
 ### local_feature_importance.txt
-* 2x `filter id and important all [E]`
-* 6x `filter id and important topk [E]`
+* 2x `filter id and nlpattribute all [E]`
+* 6x `filter id and nlpattribute topk [E]`
+
+### local_feature_importance_chatgpt.txt
+* 6x `filter id and nlpattribute all [E]`
+* 9x `filter id and nlpattribute topk [E]`
+* 3x `filter id or filter id and nlpattribute topk [E]`
+* 2x `filter id or filter id or filter id and nlpattribute topk [E]`
 
 Action defined in explanation/feature_importance.py
+
+### rationalize.txt
+* 4x `filter id and rationalize [E]`
+
+### rationalize_chatgpt.txt
+* 20x `filter id and rationalize [E]`
+
+Action defined in explanation/rationalize.py

@@ -40,8 +40,8 @@ Parsed: filter id 324 and likelihood [E]
 User: probability that id 44 is predicted as "{class_names}" from the model
 Parsed: filter id 44 and likelihood [E]
 
-User: show me the prediction probabilities for {filter_text}
-Parsed: {filter_parse} and likelihood [E]
+User: show me the prediction probabilities for instances with {span}
+Parsed: includes {span} and likelihood [E]
 
-User: what are the class probabilities on your predictions for {filter_text}?
-Parsed: {filter_parse} and likelihood [E]
+User: what are the class probabilities on your predictions for texts including {span}?
+Parsed: includes {span} and likelihood [E]

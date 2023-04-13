@@ -63,6 +63,6 @@ def get_all_action_functions_map():
         'rationalize': rationalize_operation,
         'nlpattribute': feature_importance_operation,
         'globaltopk': global_top_k,
-        'newcfe': counterfactuals_operation
+        'cfe': counterfactuals_operation
     }
     return actions
