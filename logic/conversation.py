@@ -162,6 +162,7 @@ class Conversation:
             id2label = dict()
         
         dataset = {
+            'dataset_name': dataset_name,
             'X': data,
             'y': y_value,
             'cat': categorical,

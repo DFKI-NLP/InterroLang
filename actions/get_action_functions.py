@@ -34,6 +34,8 @@ from actions.prediction.predict import predict_operation
 from actions.prediction.prediction_likelihood import predict_likelihood
 from actions.prediction.score import score_operation
 
+from actions.explanation.topk import topk_operation
+
 
 def get_all_action_functions_map():
     """Gets a dictionary mapping all the names of the actions in the parse tree to their functions."""
@@ -65,5 +67,6 @@ def get_all_action_functions_map():
         'rationalize': rationalize_operation,
         'feature_importance': feature_importance_operation,
         'nlpcfe': nlpcfe_operation,
+        'topk': topk_operation,
     }
     return actions

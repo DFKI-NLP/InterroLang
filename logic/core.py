@@ -372,9 +372,14 @@ class ExplainBot:
             if ch in text:
                 text = text.replace(ch,"")
         if len(text)>0 and not(text.isdigit()):
-            converted_num = w2n.word_to_num(text)
+            try:
+                converted_num = w2n.word_to_num(text)
+            except:
+                converted_num = None
             if converted_num is not None:
                 text = str(converted_num)
+        if not(text.isdigit()):
+            text = ""
         return text
 
 
@@ -431,6 +436,7 @@ class ExplainBot:
                    "nlpcfe":  "nlpcfe {number} {id} [e]", 
                    "predict": "predict {id} [e]", 
                    "similar": "similarity {number} {id} [e]",
+                   "topk": "topk {number} {id} [e]",
                  }
         return switch.get(best_intent, "")
 
@@ -461,6 +467,8 @@ class ExplainBot:
             if intent_score > max_score:
                 max_score = intent_score
                 best_intent = intent
+        if ("top k" in text) or ("topk " in text) or ("top " in text):#TODO use intent classifier for this, temporary solution for topk
+            best_intent = "topk"
         decoded_text = self.switch_case(best_intent)
         text = text.strip()
         # fill in the slots
@@ -572,6 +580,7 @@ class ExplainBot:
 
         # Parse user input into text abiding by formal grammar
         if self.decoding_model_name=="adapters":
+            parse_tree = ""
             parse_tree, parsed_text = self.compute_parse_text_adapters(text)
         elif "t5" not in self.decoding_model_name:
             parse_tree, parsed_text = self.compute_parse_text(text)
