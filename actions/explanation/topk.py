@@ -167,7 +167,7 @@ class FeatureAttributionExplainer():
                 all_scores.append(sorted_scores)
                 all_html.append(html)
                 
-            return all_predictions, all_scores, all_html
+        return all_predictions, all_scores, all_html
 
 
 
