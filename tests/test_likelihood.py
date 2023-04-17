@@ -18,7 +18,7 @@ def test_prediction_likelihood():
     file_html = open(f"./tests/html/likelihood/prediction_likelihood.html", "w")
     text = TEXT
     text += return_s
-    text += "</html>"
+    text += "</body></html>"
     file_html.write(text)
 
     # Saving the data into the HTML file

@@ -18,7 +18,7 @@ def test_show_data():
     file_html = open(f"./tests/html/show/show_data.html", "w")
     text = TEXT
     text += return_s
-    text += "</html>"
+    text += "</body></html>"
     file_html.write(text)
 
     # Saving the data into the HTML file

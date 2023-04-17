@@ -20,7 +20,7 @@ def test_score_accuracy():
     file_html = open(f"./tests/html/score/score_accuracy.html", "w")
     text = TEXT
     text += return_s
-    text += "</html>"
+    text += "</body></html>"
     file_html.write(text)
 
     # Saving the data into the HTML file
@@ -37,7 +37,7 @@ def test_score_default():
     file_html = open(f"./tests/html/score/score_default.html", "w")
     text = TEXT
     text += return_s
-    text += "</html>"
+    text += "</body></html>"
     file_html.write(text)
 
     # Saving the data into the HTML file
@@ -54,7 +54,7 @@ def test_score_f1():
     file_html = open(f"./tests/html/score/score_f1.html", "w")
     text = TEXT
     text += return_s
-    text += "</html>"
+    text += "</body></html>"
     file_html.write(text)
 
     # Saving the data into the HTML file
@@ -71,7 +71,7 @@ def test_score_precision():
     file_html = open(f"./tests/html/score/score_precision.html", "w")
     text = TEXT
     text += return_s
-    text += "</html>"
+    text += "</body></html>"
     file_html.write(text)
 
     # Saving the data into the HTML file
@@ -88,7 +88,7 @@ def test_score_recall():
     file_html = open(f"./tests/html/score/score_recall.html", "w")
     text = TEXT
     text += return_s
-    text += "</html>"
+    text += "</body></html>"
     file_html.write(text)
 
     # Saving the data into the HTML file
@@ -105,7 +105,7 @@ def test_score_roc():
     file_html = open(f"./tests/html/score/score_roc.html", "w")
     text = TEXT
     text += return_s
-    text += "</html>"
+    text += "</body></html>"
     file_html.write(text)
 
     # Saving the data into the HTML file

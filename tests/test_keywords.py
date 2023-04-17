@@ -18,7 +18,7 @@ def test_data_summary():
     file_html = open(f"./tests/html/keywords/data_summary.html", "w")
     text = TEXT
     text += return_s
-    text += "</html>"
+    text += "</body></html>"
     file_html.write(text)
 
     # Saving the data into the HTML file

@@ -4,18 +4,18 @@ import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from utils.conversation_simulator import create_conversation, TEXT, CONVERSATION
-from actions.metadata.labels import show_labels_operation
+from actions.explanation.global_topk import global_top_k
 
 conversation = CONVERSATION
 
 
-def test_labels():
-    """Test label functionality"""
-    parse_text = ["label", "[E]"]
+def test_topk():
+    """Test topk functionality"""
+    parse_text = ["important", "all", "[E]"]
 
-    return_s, status_code = show_labels_operation(conversation, parse_text, 0)
+    return_s, status_code = global_top_k(conversation, parse_text, 0)
 
-    file_html = open(f"./tests/html/labels/labels.html", "w")
+    file_html = open(f"./tests/html/topk/topk.html", "w")
     text = TEXT
     text += return_s
     text += "</body></html>"

@@ -18,7 +18,7 @@ def test_mistake_sample():
     file_html = open(f"./tests/html/mistake/mistake_sample.html", "w")
     text = TEXT
     text += return_s
-    text += "</html>"
+    text += "</body></html>"
     file_html.write(text)
 
     # Saving the data into the HTML file
@@ -35,7 +35,7 @@ def test_mistake_count():
     file_html = open(f"./tests/html/mistake/mistake_count.html", "w")
     text = TEXT
     text += return_s
-    text += "</html>"
+    text += "</body></html>"
     file_html.write(text)
 
     # Saving the data into the HTML file

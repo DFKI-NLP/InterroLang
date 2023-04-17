@@ -27,7 +27,7 @@ def test_feature_importance():
     file_html = open(f"./tests/html/feature_importance/feature_importance.html", "w")
     text = TEXT
     text += return_s
-    text += "</html>"
+    text += "</body></html>"
     file_html.write(text)
 
     # Saving the data into the HTML file
@@ -48,7 +48,7 @@ def test_multiple_feature_importance():
     file_html = open(f"./tests/html/feature_importance/multiple_feature_importance.html", "w")
     text = TEXT
     text += return_s
-    text += "</html>"
+    text += "</body></html>"
     file_html.write(text)
 
     # Saving the data into the HTML file
@@ -70,7 +70,7 @@ def test_feature_importance_with_custom_input():
     file_html = open(f"./tests/html/feature_importance/feature_importance_with_custom_input.html", "w")
     text = TEXT
     text += return_s
-    text += "</html>"
+    text += "</body></html>"
     file_html.write(text)
 
     # Saving the data into the HTML file
@@ -91,7 +91,7 @@ def test_feature_importance_all():
     file_html = open(f"./tests/html/feature_importance/feature_importance_all.html", "w")
     text = TEXT
     text += return_s
-    text += "</html>"
+    text += "</body></html>"
     file_html.write(text)
 
     # Saving the data into the HTML file
