@@ -12,4 +12,3 @@ Parsed: includes {span} [E]
 
 User: Can you provide me with all occurrences that comprise the words {span}?
 Parsed: includes {span} [E]
-

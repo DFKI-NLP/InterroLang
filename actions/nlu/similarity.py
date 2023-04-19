@@ -40,10 +40,12 @@ def similar_instances_operation(conversation, parse_text, i, **kwargs):
     dataset = conversation.stored_vars["dataset"]
 
     idx,number = extract_id_number(parse_text)
-    query = dataset.contents["X"]["text"][idx]
+    query = " ".join(dataset.contents["X"].loc[[idx]].values.tolist()[0])
+
+
     final_results = get_similar_str(query, idx, number, dataset)
 
-    return final_results
+    return final_results,1
 
 
 def get_similar_str(query, idx, number, dataset):
@@ -85,10 +87,10 @@ def get_similars(query, query_idx, dataset, number):
     # computing similarities
     indices = []
     texts = []
-    for idx in dataset.contents["index"]:
+    for idx in list(dataset.contents["X"].index):
         if idx!=query_idx:
             indices.append(idx)
-            texts.append(dataset.contents["X"]["text"][idx])
+            texts.append(" ".join(dataset.contents["X"].loc[[idx]].values.tolist()[0]))
     #TA use caching if the dataset is too big?
     query_embedding = similarity_model.encode(query)
     sent_embeddings = similarity_model.encode(texts)
