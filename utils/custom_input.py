@@ -161,8 +161,9 @@ def generate_explanation(model, dataset_name, inputs):
         res_list = json.loads(jsonContent)
 
         if len(inputs) == 1:
-            if res_list["text"] == inputs[0]:
-                return res_list
+            for res in res_list:
+                if res["text"] == inputs[0]:
+                    return [res]
         else:
             cache_text = [i["text"] for i in res_list]
             cache_text_set = set(cache_text)

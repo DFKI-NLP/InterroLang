@@ -109,21 +109,24 @@ def explanation_with_custom_input(parse_text, conversation, topk):
         formatted string
     """
     # beginspan token token ... token endspan
-    begin_idx = [i for i, x in enumerate(parse_text) if x == 'beginspan']
-    end_idx = [i for i, x in enumerate(parse_text) if x == 'endspan']
+    # begin_idx = [i for i, x in enumerate(parse_text) if x == 'beginspan']
+    # end_idx = [i for i, x in enumerate(parse_text) if x == 'endspan']
+    #
+    # if begin_idx == [] or end_idx == []:
+    #     return None
+    #
+    # if len(begin_idx) != len(end_idx):
+    #     return None
+    #
+    # inputs = []
+    # for i in list(zip(begin_idx, end_idx)):
+    #     temp = " ".join(parse_text[i[0] + 1: i[1]])
+    #
+    #     if temp != '':
+    #         inputs.append(temp)
 
-    if begin_idx == [] or end_idx == []:
-        return None
-
-    if len(begin_idx) != len(end_idx):
-        return None
-
-    inputs = []
-    for i in list(zip(begin_idx, end_idx)):
-        temp = " ".join(parse_text[i[0] + 1: i[1]])
-
-        if temp != '':
-            inputs.append(temp)
+    inputs = [conversation.custom_input]
+    conversation.used = True
 
     if len(inputs) == 0:
         return None
@@ -177,7 +180,7 @@ def explanation_with_custom_input(parse_text, conversation, topk):
         return_s += '<br>'
 
         return_s += "The visualization: "
-        for i in range(1, len(text_list)-1):
+        for i in range(1, len(text_list) - 1):
             if attr[i] >= 0:
                 # Assign red to tokens with positive attribution
                 return_s += f"<span style='background-color:rgba(255,0,0,{round(fraction * score_ranking[i], conversation.rounding_precision)});padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 2; border-radius: 0.35em; box-decoration-break: clone; -webkit-box-decoration-break: clone'>"
@@ -207,7 +210,7 @@ def feature_importance_operation(conversation, parse_text, i, **kwargs):
         topk = 3
 
     # If id is not given
-    if id_list is None:
+    if id_list is None or (conversation.used != True and conversation.custom_input is not None):
         # Check the custom input
         explanation = explanation_with_custom_input(parse_text, conversation, topk)
 

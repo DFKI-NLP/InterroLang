@@ -95,6 +95,9 @@ class Conversation:
 
         self.default_metric = default_metric
 
+        self.custom_input = None
+        self.used = True
+
     def get_feature_definition(self, feature_name):
         """Gets semantic feature definition."""
         if feature_name not in self.feature_definitions or self.feature_definitions is None:
