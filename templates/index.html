@@ -187,8 +187,6 @@
         let dataPackage = {custom_input: custom_input, thisUserName: username}
         let jsonDataPackage = JSON.stringify(dataPackage)
 
-        // let button_div = document.getElementById("")
-
         const result = $.ajax({
             type: 'POST',
             url: "{{ url_for('.custom_input') }}",
@@ -196,9 +194,6 @@
             processData: false,
             contentType: false,
             cache: false,
-            // success: function (data) {
-            //     ttmInput.value = data;
-            // }
         });
     }
 
@@ -212,7 +207,6 @@
         if (inputs != "") {
             handle_custom_input(inputs);
         }
-        // console.log(inputs == '');
     });
 
 

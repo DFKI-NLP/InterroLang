@@ -133,16 +133,10 @@ def custom_input():
     custom_input = data["custom_input"]
     username = data["thisUserName"]
 
-    # prompt = sample_prompt_for_action(action,
-    #                                   BOT.prompts.filename_to_prompt_id,
-    #                                   BOT.prompts.final_prompt_set,
-    #                                   real_ids=BOT.conversation.get_training_data_ids())
     BOT.conversation.custom_input = custom_input
     BOT.conversation.used = False
     logging_info = {
         "username": username,
-        # "requested_action_generation": action,
-        # "generated_prompt": prompt
         "custom_input": custom_input
     }
     BOT.log(logging_info)
