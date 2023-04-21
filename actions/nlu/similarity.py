@@ -2,7 +2,7 @@ import re
 #import emoji
 from sentence_transformers import SentenceTransformer, util
 
-similarity_model = SentenceTransformer("all-MiniLM-L6-v2")
+
 
 def extract_id_number(parse_text):
     """
@@ -69,7 +69,7 @@ def get_similar_str(query, idx, number, dataset):
     for cossim, similar_id, similar in found_similars:
         similar_tokens = similar.split()
         similar_preview = " ".join(similar_tokens[:16])
-        out_str+="<b>"+str(similar_id)+"</b> (cossim "+str(round(cossim,3))+"):  <summary>"+similar_preview+"...</summary><details>"+similar+"</details><br>"
+        out_str+="<b> id "+str(similar_id)+"</b> (cossim "+str(round(cossim,3))+"):  <summary>"+similar_preview+"...</summary><details>"+similar+"</details><br>"
     return out_str
 
 
@@ -92,6 +92,7 @@ def get_similars(query, query_idx, dataset, number):
             indices.append(idx)
             texts.append(" ".join(dataset.contents["X"].loc[[idx]].values.tolist()[0]))
     #TA use caching if the dataset is too big?
+    similarity_model = SentenceTransformer("all-MiniLM-L6-v2")
     query_embedding = similarity_model.encode(query)
     sent_embeddings = similarity_model.encode(texts)
     cos_sim = util.cos_sim(query_embedding, sent_embeddings)[0].tolist()
