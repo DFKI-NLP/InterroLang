@@ -9,13 +9,13 @@ from actions.nlu.similarity import similar_instances_operation
 conversation = CONVERSATION
 
 
-def test_topk():
-    """Test topk functionality"""
+def test_similarity():
+    """Test similarity functionality"""
     parse_text = ["filter", "id", "1", "and", "similar", "2", "[E]"]
 
     return_s, status_code = similar_instances_operation(conversation, parse_text, 0)
 
-    file_html = open(f"./tests/html/similar/simlar.html", "w")
+    file_html = open(f"./tests/html/similar/similar.html", "w")
     text = TEXT
     text += return_s
     text += "</body></html>"
