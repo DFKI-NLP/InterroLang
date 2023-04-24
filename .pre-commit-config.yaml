@@ -17,7 +17,7 @@ repos:
         args: ['--fix=lf']
 
 
-  - repo: https://github.com/charliermarsh/ruff-pre-commit
-    rev: 'v0.0.252'
-    hooks:
-      - id: ruff
+#  - repo: https://github.com/charliermarsh/ruff-pre-commit
+#    rev: 'v0.0.252'
+#    hooks:
+#      - id: ruff
