@@ -67,16 +67,50 @@
             </div>
         </div>
     </section>
+
     <div>
-        <div class="form-row align-items-center">
+        <!-- Displaying data -->
+        <!-- Referring jinja2 syntax -->
+        <div id="show_data" style="border: thick #32a1ce double">
+            <h1 style="font: small-caps bold 24px/1 sans-serif">Displaying {{dataset}} dataset: </h1>
+            {% for entry in entries %}
+                {% if dataset == 'boolq' %}
+                    <details>
+                        <summary style="font-weight: bold;">Question: </summary>
+                        <p style="font-style: italic ">{{entry["question"]}}</p>
+                    </details>
+
+                    <details>
+                        <summary style="font-weight: bold;">Passage: </summary>
+                        <p style="font-style: italic">{{entry["passage"]}}</p>
+                    </details>
+                {% elif dataset == 'daily_dialog' %}
+                    <details>
+                        <summary style="font-weight: bold;">Dialog: </summary>
+                        <p style="font-style: italic ">{{entry["dialog"]}}</p>
+                    </details>
+                {% else %}
+                    <details>
+                        <summary style="font-weight: bold;">Text: </summary>
+                        <p style="font-style: italic ">{{entry["text"]}}</p>
+                    </details>
+                {% endif %}
+                <br>
+            {% endfor %}
+        </div>
+
+        <!-- custom input -->
+        <div class="form-row align-items-center" style="margin-top: 50px">
             <div class="col-auto">
                 <label class="sr-only" for="inlineFormInput">Name</label>
-                <input type="text" class="form-control mb-2" id="custom_input" placeholder="Enter your custom input:">
+                <input type="text" class="form-control mb-2" id="custom_input" placeholder="Enter your custom input:" style="width: 300px">
                 <button type="button" class="btn btn-primary" id="submit_btn">Submit</button>
             </div>
         </div>
-        <div style="margin-top: 10px">
-            <button type="button" class="btn btn-outline-primary" id="reset_temp_dataset">Click me to reset the temp
+
+        <!-- Reset temp dataset -->
+        <div style="margin-top: 50px">
+            <button type="button" class="btn btn-outline-primary" id="reset_temp_dataset" style="width: 300px">Click me to reset the temp
                 dataset
             </button>
         </div>
@@ -197,6 +231,21 @@
         });
     }
 
+    function reset_temp_dataset(){
+        let username = '{{ currentUserId }}'
+        let dataPackage = {thisUserName: username}
+        let jsonDataPackage = JSON.stringify(dataPackage)
+
+        const result = $.ajax({
+            type: 'POST',
+            url: "{{ url_for('.reset_temp_dataset') }}",
+            data: jsonDataPackage,
+            processData: false,
+            contentType: false,
+            cache: false,
+        });
+    }
+
 
     const custom_input = document.getElementById("custom_input");
     const submit_btn = document.getElementById("submit_btn");
@@ -209,6 +258,9 @@
         }
     });
 
+    reset_btn.addEventListener("click", () => {
+        reset_temp_dataset();
+    });
 
 </script>
 <script>

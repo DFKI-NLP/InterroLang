@@ -59,7 +59,22 @@ def home():
     """Load the explanation interface."""
     app.logger.info("Loaded Login")
     objective = BOT.conversation.describe.get_dataset_objective()
-    return render_template("index.html", currentUserId="user", datasetObjective=objective)
+
+    BOT.conversation.build_temp_dataset()
+    df = BOT.conversation.temp_dataset.contents['X']
+    f_names = list(BOT.conversation.temp_dataset.contents['X'].columns)
+
+    # only for boolq
+    entries = []
+    for j in range(5):
+        temp = {}
+        for f in f_names:
+            temp[f] = df[f][j]
+        entries.append(temp)
+
+    dataset = BOT.conversation.describe.get_dataset_name()
+
+    return render_template("index.html", currentUserId="user", datasetObjective=objective, entries= entries, dataset=dataset)
 
 
 @bp.route("/log_feedback", methods=['POST'])
@@ -135,13 +150,22 @@ def custom_input():
 
     BOT.conversation.custom_input = custom_input
     BOT.conversation.used = False
-    logging_info = {
-        "username": username,
-        "custom_input": custom_input
-    }
-    BOT.log(logging_info)
+
+    app.logger.info("custom_input: " + custom_input)
 
     return custom_input
+
+@bp.route("/reset_temp_dataset", methods=["Post"])
+def reset_temp_dataset():
+    data = json.loads(request.data)
+    username = data["thisUserName"]
+
+    # Reset the tempdataset
+    BOT.conversation.build_temp_dataset()
+
+    app.logger.info("Reset temp dataset succeessfully!")
+
+    return "reset temp_dataset"
 
 
 app = Flask(__name__)
