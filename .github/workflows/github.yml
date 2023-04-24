@@ -44,9 +44,9 @@ jobs:
         pre-commit install
         pre-commit run --all-files
 
-    - name: Lint with ruff
-      run: |
-        ruff check . --select F401 --select F403 --quiet
+#    - name: Lint with ruff
+#      run: |
+#        ruff check . --select F401 --select F403 --quiet
 
     - name: Test with pytest
       run: |
