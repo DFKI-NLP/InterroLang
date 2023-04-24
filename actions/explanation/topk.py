@@ -65,7 +65,7 @@ def results_with_pattern(results):
     """
     # example: dumb, fucking, and ugly are the most attributed for the hate speech label
     if len(results) == 1:
-        return results[0][0] + "is the most attributed"
+        return results[0][0] + " is the most attributed"
     else:
         string = ""
         for i in range(len(results) - 1):
