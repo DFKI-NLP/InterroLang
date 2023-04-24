@@ -4,7 +4,7 @@ emoji
 nltk
 git+https://github.com/boudinfl/pke.git
 sentence_transformers
-sklearn
+# sklearn
 spacy
 summarizer
 transformers==4.18.0
