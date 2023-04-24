@@ -144,13 +144,11 @@ def topk(conversation, explainer, k, threshold=-1, data_path="../../cache/boolq/
     for result in pbar:
         pbar.set_description('Processing Attribution')
         attribution = result["attributions"]
-        # tokens = list(tokenizer.decode(result["input_ids"]).split(" "))
-        tokens = list(tokenizer.tokenize(tokenizer.decode(result["input_ids"])))
-
+        tokens = list(tokenizer.convert_ids_to_tokens(result["input_ids"]))
         counter = 0
 
         # count for attributions and #occurance
-        for token in tokens[:len(attribution)]:
+        for token in tokens:
             if not token in word_set:
                 word_set.add(token)
                 word_counter[token] = 1
