@@ -35,7 +35,12 @@
         </main>
 
         <form class="ttm-inputarea">
-            <input type="text" class="ttm-input" id="textInput"
+            <select id="input_source" class="form-select" style="width: 150px; text-align:center; font-family: Calibri;">
+                <option style="text-align:center; " selected value="0">input</option>
+                <option style="text-align:center;" value="1">customed input</option>
+            </select>
+
+            <input style='margin-left: 10px'type="text" class="ttm-input" id="textInput"
                    placeholder="Enter your command! Use the ↑ arrow and ↓ arrow to cycle previous commands.">
             <button type="submit" class="ttm-send-btn">Send</button>
         </form>
@@ -100,13 +105,13 @@
         </div>
 
         <!-- custom input -->
-        <div class="form-row align-items-center" style="margin-top: 50px">
-            <div class="col-auto">
-                <label class="sr-only" for="inlineFormInput">Name</label>
-                <input type="text" class="form-control mb-2" id="custom_input" placeholder="Enter your custom input:" style="width: 300px">
-                <button type="button" class="btn btn-primary" id="submit_btn">Submit</button>
-            </div>
-        </div>
+<!--        <div class="form-row align-items-center" style="margin-top: 50px">-->
+<!--            <div class="col-auto">-->
+<!--                <label class="sr-only" for="inlineFormInput">Name</label>-->
+<!--                <input type="text" class="form-control mb-2" id="custom_input" placeholder="Enter your custom input:" style="width: 300px">-->
+<!--                <button type="button" class="btn btn-primary" id="submit_btn">Submit</button>-->
+<!--            </div>-->
+<!--        </div>-->
 
         <!-- Reset temp dataset -->
         <div style="margin-top: 50px">
@@ -273,14 +278,23 @@
 
     // text box command
     ttmForm.addEventListener("submit", event => {
-        event.preventDefault();
+        var idx = document.getElementById("input_source").selectedIndex;
         const msgText = ttmInput.value;
-        if (!msgText) return;
-        addToChat("right", msgText, "");
-        insertLoadingDots();
-        ttmChat.scrollTop += 200;
-        ttmInput.value = "";
-        botResponse(msgText);
+        if(document.getElementsByTagName("option")[idx].value == '0'){
+            event.preventDefault();
+
+            if (!msgText) return;
+            addToChat("right", msgText, "");
+            insertLoadingDots();
+            ttmChat.scrollTop += 200;
+            ttmInput.value = "";
+            botResponse(msgText);
+        } else {
+            if (msgText != "") {
+                handle_custom_input(msgText);
+            }
+        }
+
     });
 
     function answeredNo(logText) {
