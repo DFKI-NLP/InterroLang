@@ -24,3 +24,20 @@ def test_topk():
     # Saving the data into the HTML file
     file_html.close()
     assert status_code == 1
+
+
+def test_topk_with_value():
+    """Test topk functionality"""
+    parse_text = ["important", "10", "[E]"]
+
+    # return_s, status_code = global_top_k(conversation, parse_text, 0)
+    return_s, status_code = global_top_k(conversation, parse_text, 0)
+    file_html = open(f"./tests/html/topk/topk_with_value.html", "w")
+    text = TEXT
+    text += return_s
+    text += "</body></html>"
+    file_html.write(text)
+
+    # Saving the data into the HTML file
+    file_html.close()
+    assert status_code == 1

@@ -2,18 +2,18 @@ from actions.explanation.topk import topk
 
 
 def global_top_k(conversation, parse_text, i, **kwargs):
+
+    # Set k 3 by default
+    k = 3
+
     if "all" in parse_text:
         k = 1
     else:
         for item in parse_text:
             try:
-                if int(item):
-                    k = int(item)
+                k = int(item)
             except:
                 pass
-
-        # Set k 3 by default
-        k = 3
 
     class_name = parse_text[i + 1]
 
