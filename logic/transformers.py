@@ -1,9 +1,9 @@
 import json
 
 import numpy as np
-# import torch
+import torch
 from torch.nn import Module
-# from tqdm import tqdm
+#from tqdm import tqdm
 from transformers import AutoModelForSequenceClassification, AutoTokenizer
 
 
@@ -58,3 +58,24 @@ class TransformerModel(Module):
         #     pred = int(torch.argmax(out.logits, axis=1))
         #     predictions.append(pred)
         # return np.array(predictions)
+
+    def predict_raw(self, data, dataset):
+        """ Mirrors the sklearn predict function https://scikit-learn.org/stable/glossary.html#term-predict
+        Arguments:
+            data: Pandas DataFrame containing columns of text data
+            dataset: string indicating which dataset is used
+        """
+        predictions = []
+        for i, instance in enumerate(data):
+            if dataset=="boolq":
+                encodings = self.tokenizer(
+                    instance['question'],  # TODO: Automatically get info about columns and make dynamic
+                    instance['passage'],
+                    padding=True,
+                    truncation=True,
+                    return_tensors='pt'
+                )
+                out = self.model(**encodings)
+                pred = int(torch.argmax(out.logits, axis=1))
+                predictions.append(pred)
+        return np.array(predictions)
