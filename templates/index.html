@@ -80,7 +80,8 @@
             <h1 style="font: small-caps bold 24px/1 sans-serif">Displaying {{dataset}} dataset: </h1>
             {% for entry in entries %}
                 {% if dataset == 'boolq' %}
-                    <details>
+                    <div><b>ID:</b> {{loop.index}}</div>
+                    <details style="margin-top: 1px">
                         <summary style="font-weight: bold;">Question: </summary>
                         <p style="font-style: italic ">{{entry["question"]}}</p>
                     </details>
@@ -90,12 +91,14 @@
                         <p style="font-style: italic">{{entry["passage"]}}</p>
                     </details>
                 {% elif dataset == 'daily_dialog' %}
-                    <details>
+                    <div><b>ID:</b> {{loop.index}}</div>
+                    <details style="margin-top: 1px">
                         <summary style="font-weight: bold;">Dialog: </summary>
                         <p style="font-style: italic ">{{entry["dialog"]}}</p>
                     </details>
                 {% else %}
-                    <details>
+                    <div><b>ID:</b> {{loop.index}}</div>
+                    <details style="margin-top: 1px">
                         <summary style="font-weight: bold;">Text: </summary>
                         <p style="font-style: italic ">{{entry["text"]}}</p>
                     </details>
