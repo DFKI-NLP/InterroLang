@@ -1,0 +1,410 @@
+,text,labels
+0,some counterfactuals for 645.,O O O B-id
+1,what does the model predict for six hundred and fifteen?,O O O O O O B-id I-id I-id I-id
+2,what are some mistakes on a super deal the model typically makes,O O O O O B-includetoken I-includetoken I-includetoken O O O O
+3,how likely it is that 0 is predicted?,O O O O O B-class_names O O
+4,could you please show me 1 counterfactual examples for 209?,O O O O O B-number O O O B-id
+5,show me every example that has word food.,O O O O O O O B-includetoken
+6,are there any other 9 samples that are similar to id 664?,O O O O B-number O O O O O O B-id
+7,most influential feature for data point 263?,O O O O O O B-id
+8,could you tell me what this is,O O O O O O O
+9,what does the model predict for the instance 396?,O O O O O O O O B-id
+10,which counterfactual examples do we have for 340?,O O O O O O O B-id
+11,what set of factors do you leverage on the down payment appearances to figure out if the texts are commissive,O O O O O O O O B-includetoken I-includetoken I-includetoken O O O O O O O O B-class_names
+12,what are the sentences that include a separation?,O O O O O O B-includetoken I-includetoken
+13,what's the accuracy on this data?,O O B-metric O O O
+14,most important feature for id 139,O O O O O B-id
+15,describe id 520 with an understandable explanation,O O B-id O O O O
+16,what are cfes for 85.,O O O O B-id
+17,can you list the most important words in the whole dataset with label false.,O O O O O O O O O O O O O B-class_names
+18,can you show me the accuracy on the data?,O O O O O B-metric O O O
+19,i would like to see the top attributed tokens with label directive.,O O O O O O O O O O O B-class_names
+20,"for those where twenty cents is part of the input, could you tell me the total number of items in the data",O O O B-includetoken I-includetoken O O O O O O O O O O O O O O O O O
+21,what are counterfactuals for 322.,O O O O B-id
+22,need a description of the model,O O O O O O
+23,show me how to change predictions for id 767.,O O O O O O O O B-id
+24,show me the data point with id 229,O O O O O O O B-id
+25,show me 8 similar examples to id 177.,O O B-number O O O O B-id
+26,expound on id 68 with an explanation,O O O B-id O O O
+27,5 most important features,O O O O
+28,could you show me an instance that is similar to id six hundred and fifteen?,O O O O O O O O O O O B-id I-id I-id I-id
+29,what's the chance instance id 404 is scored as commissive,O O O O O B-id O O O B-class_names
+30,show me all instances that contain the phrase The position.,O O O O O O O O B-includetoken I-includetoken
+31,show me how to flip model's predictions for 873.,O O O O O O O O B-id
+32,can you show me the negative predictive value on the data?,O O O O O B-metric I-metric I-metric O O O
+33,please provide some instructions on how to use this,O O O O O O O O O
+34,what's the data,O O O
+35,explain the reasoning and how to flip the predictions for data point id 743,O O O O O O O O O O O O O B-id
+36,what are the most important features for the model's predictions on all instances that include a replacement?,O O O O O O O O O O O O O O O B-includetoken I-includetoken
+37,please state the number of Flies in the data,O O O O O B-includetoken O O O
+38,show me the results for id 820.,O O O O O O B-id
+39,what are the model's predictions for 201?,O O O O O O B-id
+40,what data points does the model typically predict mistakenly on texts with the White House?,O O O O O O O O O O O O B-includetoken I-includetoken I-includetoken
+41,classes for the instances that include Time?,O O O O O O I-includetoken
+42,shed light on id 957 in simple terms,O O O O B-id O O O
+43,show me how to change predictions for id 396.,O O O O O O O O B-id
+44,what is the resulting label for id 196?,O O O O O O O B-id
+45,give an account for id 443 with justification,O O O O O B-id O O
+46,explain this is natural language,O O O O O
+47,what are the 3 most important features in the texts that include about twenty people?,O O O O O O O O O O O O B-includetoken I-includetoken I-includetoken
+48,show me all cases with a relaxed atmosphere,O O O O O B-includetoken I-includetoken I-includetoken
+49,please show me all examples that feature word a senior executive.,O O O O O O O O B-includetoken I-includetoken I-includetoken
+50,can you provide me with all occurrences that comprise word the rooms.,O O O O O O O O O O B-includetoken I-includetoken
+51,please tell me how many items are in the data,O O O O O O O O O O
+52,why do you predict instance id 564,O O O O O O B-id
+53,what is the likelihood that id 694 is predicted as 1 by the model?,O O O O O O B-id O O O B-class_names O O O
+54,what are the frequencies for the labels?,O O O O O O O
+55,please provide a description for the dataset,O O O O O O O
+56,what functions are you capable of?,O O O O O O
+57,what is the predicted label for instance 960?,O O O O O O O B-id
+58,how many instances did that consider?,O O O O O O
+59,please display id 704,O O O B-id
+60,please provide me with all examples that incorporate the words photocopies.,O O O O O O O O O O B-includetoken
+61,how many data points are in this group?,O O O O O O O O
+62,how does the sample with id 234 look like,O O O O O O B-id O O
+63,what are the top five most important features for the models predictions?,O O O O O O O O O O O O
+64,how many data points are in the training data set,O O O O O O O O O O
+65,give me an example that is similar to id one hundred and forty-seven.,O O O O O O O O O B-id I-id I-id I-id
+66,These documents show bad predictions,B-includetoken I-includetoken O O O
+67,what's the number of instances with a man,O O O O O O B-includetoken I-includetoken
+68,i want to see id 115,O O O O O B-id
+69,where in the data does a replacement appear?,O O O O O B-includetoken I-includetoken O
+70,distribution for samples with the change?,O O O O B-includetoken I-includetoken
+71,"where in the data does ""a super deal"" appear?",O O O O O B-includetoken I-includetoken I-includetoken O
+72,"which sentences have the word ""a relaxed atmosphere"" in them?",O O O O O B-includetoken I-includetoken I-includetoken O O
+73,could you show me a few examples of data that you get wrong?,O O O O O O O O O O O O O
+74,tell me the number data the model predicts falsely?,O O O O O O O O O
+75,could you show me more samples similar to id 251?,O O O O O O O O O B-id
+76,sample mistakes,O O
+77,"i want you to tell me the probability of the instance with id 488 being predicted in the ""1"" class by the model",O O O O O O O O O O O O O B-id O O O O B-class_names O O O O
+78,please show nine cfes for sample 704.,O O B-number O O O B-id
+79,what does the model predict for the instance id eight hundred and forty-four?,O O O O O O O O O B-id I-id I-id I-id
+80,what are the class frequencies,O O O O O
+81,"what are the instances that have ""the agency"" included?",O O O O O O B-includetoken I-includetoken O
+82,please tell me what you are and what you do!,O O O O O O O O O O
+83,testing recall,O B-metric
+84,what would it take to change how instance 692 is predicted?,O O O O O O O O B-id O O
+85,i would like to see all instances that incorporate the phrase a picture.,O O O O O O O O O O O B-includetoken I-includetoken
+86,show me the features,O O O O
+87,show the prediction of id 240,O O O O O B-id
+88,"i'd like to see all instances that feature word ""15 yuan"".",O O O O O O O O O B-includetoken I-includetoken
+89,how would you flip the prediction for id 591?,O O O O O O O O B-id
+90,give me 8 examples that are analogous to id seven hundred and forty-one.,O O B-number O O O O O O B-id I-id I-id I-id
+91,"for a separation, what are the nine most important features for the model's predictions?",O B-includetoken I-includetoken O O O O O O O O O O O
+92,give me an example that is similar to id 509.,O O O O O O O O O B-id
+93,how does the sample with id 864 look like,O O O O O O B-id O O
+94,could you show me a few examples with a steady market you get incorrect,O O O O O O O O B-includetoken I-includetoken I-includetoken O O O
+95,describe your typical mistakes over the dataset,O O O O O O O
+96,what can i do?,O O O O
+97,my keys show bad predictions,B-includetoken I-includetoken O O O
+98,tell me a bit more about the data please.,O O O O O O O O O
+99,what about examples that look like id 222.,O O O O O O O B-id
+100,could you tell me the recall on the developement data for present,O O O O O B-metric O O B-data_type O O B-includetoken
+101,9 most important features for ids 670 and 322,B-number O O O O O B-id O B-id
+102,i want to know topk contributed words with label true.,O O O O O O O O O B-class_names
+103,explain id 820,O O B-id
+104,show me examples similar to id 296.,O O O O O O B-id
+105,please show eight cfes for 296.,O O B-number O O B-id
+106,what do we predict for id 987?,O O O O O O B-id
+107,display most important features,O O O O
+108,what are the sentences containing This machine?,O O O O O B-includetoken I-includetoken
+109,"for instances that include stand-by, what is the distribution of the target variable?",O O O O B-includetoken O O O O O O O O
+110,which 10 words occur the most in the data?,O B-number O O O O O O O
+111,what features are not that important,O O O O O O
+112,can you provide me with all occurrences that comprise word a steady market.,O O O O O O O O O O B-includetoken I-includetoken I-includetoken
+113,show the keywords please,O O O O
+114,what shall i do to analyze the data?,O O O O O O O O
+115,what does the data look like?,O O O O O O
+116,show me how to make the model output a different prediction for id 651.,O O O O O O O O O O O O O B-id
+117,does the model predict texts that include What time correctly?,O O O O O O O B-includetoken I-includetoken O
+118,stand-by show mistakes,B-includetoken O O
+119,what are the label frequencies,O O O O O
+120,what about the labels predicted for the samples with These documents?,O O O O O O O O O B-includetoken I-includetoken
+121,what are the predictions for id 873?,O O O O O O B-id
+122,why do you predict instance 25?,O O O O O B-id
+123,could you show me a few examples with a delicious dessert you get incorrect,O O O O O O O O B-includetoken I-includetoken I-includetoken O O O
+124,which sentences have the words this apartment in them?,O O O O O B-includetoken I-includetoken O O
+125,how frequently do you get it correct?,O O O O O O O
+126,justify the prediction for id 234 please,O O O O O B-id O
+127,i want to know the cases that entail word the steak.,O O O O O O O O O B-includetoken I-includetoken
+128,top 1 keywords,O B-number O
+129,flip prediction class data point 159,O O O O O B-id
+130,"7 most crucial features for ids 340, 987, and 222",B-number O O O O O B-id B-id O B-id
+131,what's your motivation for deciding the predictions of a separation,O O O O O O O O B-includetoken I-includetoken
+132,how can i analyze the model with this?,O O O O O O O O
+133,what is this chat?,O O O O
+134,is it possible to retrieve an instance that is analogous to id 635?,O O O O O O O O O O O O B-id
+135,can you show me 1 instances that are similar to id 645?,O O O O B-number O O O O O O B-id
+136,show me how to make the model output a different prediction for 114.,O O O O O O O O O O O O B-id
+137,what are the top 8 features for the model's prediction on data point 114?,O O O O B-number O O O O O O O O B-id
+138,how many items are there in the data?,O O O O O O O O
+139,what about examples that look like id 139.,O O O O O O O B-id
+140,most influential feature for data point 488?,O O O O O O B-id
+141,what are the cfes for 209?,O O O O O B-id
+142,tell me about the model,O O O O O
+143,what's the reason the model predicts this label for id 472,O O O O O O O O O O B-id
+144,show common keywords,O O O
+145,show me the evaluation set performance,O O O B-data_type O O
+146,can you please introduce yourself,O O O O O
+147,what are the reasoning strategies you leverage?,O O O O O O O
+148,why is id 683 predicted commissive,O O O B-id O B-class_names
+149,could you show me more samples similar to 820?,O O O O O O O O B-id
+150,what is this about?,O O O O
+151,give me a list of all examples that include the token the smart one.,O O O O O O O O O O O B-includetoken I-includetoken I-includetoken
+152,show faulty predictions,O O O
+153,show the predictions across all the instances,O O O O O O O
+154,how do you figure out if some text having a change will be non-offensive?,O O O O O O O O O B-includetoken I-includetoken O O B-class_names
+155,total number of elements in the data,O O O O O O O
+156,what methods do you use to come to predict directive?,O O O O O O O O O B-class_names
+157,what are the functions?,O O O O
+158,give an account for id 139 with justification,O O O O O B-id O O
+159,can you provide me with all occurrences that comprise the words a relaxed atmosphere?,O O O O O O O O O O O B-includetoken I-includetoken I-includetoken
+160,show me how to flip model's predictions for id 591.,O O O O O O O O O B-id
+161,"what are the sentences that have ""the bulletin""?",O O O O O O B-includetoken I-includetoken
+162,what features are not that important,O O O O O O
+163,do you have a manual?,O O O O O
+164,can you list the most important words in the whole dataset with label directive.,O O O O O O O O O O O O O B-class_names
+165,show me a data point that is analogous to id 692.,O O O O O O O O O O B-id
+166,show top 6 most frequently occurring tokens in the data,O O B-number O O O O O O O
+167,what are the sentences that include social benefits?,O O O O O O B-includetoken I-includetoken
+168,clarify id 670 with a reason,O O B-id O O O
+169,what is the predicted label for id 222?,O O O O O O O B-id
+170,clarify the reasoning behind id eight hundred and fifty-six,O O O O O B-id I-id I-id I-id
+171,please provide me with all examples that incorporate the words 100 percent chance.,O O O O O O O O O O B-includetoken I-includetoken I-includetoken
+172,do you have a manual?,O O O O O
+173,please show me how the labels are distributed,O O O O O O O O
+174,justify the prediction for id 196 please,O O O O O B-id O
+175,explain id one hundred and forty-seven in natural language,O O B-id I-id I-id I-id O O O
+176,could you tell me what this is,O O O O O O O
+177,probability of id 670 predicted commissive?,O O O B-id O B-class_names
+178,can you show me how many data the model predicts incorrectly?,O O O O O O O O O O O
+179,please show me how the labels are distributed,O O O O O O O O
+180,can you show me how many data the model predicts incorrectly?,O O O O O O O O O O O
+181,"for the data point with id 987, how could we change the prediction, what is the model's rationale, and what does it predict?",O O O O O O B-id O O O O O O O O O O O O O O O O
+182,"when scoring hate speech, what's the model's roc?",O O B-class_names I-class_names O O O B-metric
+183,please display the class freqs,O O O O O
+184,could you show me how to change the prediction for the data point 240?,O O O O O O O O O O O O O B-id
+185,which feature is most significant for data point 820?,O O O O O O O O B-id
+186,what are the 6 most relevant features for the model's decision on data point 591?,O O O B-number O O O O O O O O O O B-id
+187,what is this bot...,O O O O
+188,show me more examples that resemble 980.,O O O O O O B-id
+189,what do we predict for instance with id 25?,O O O O O O O O B-id
+190,how can i use this interface?,O O O O O O
+191,what instances are similar to 516?,O O O O O B-id
+192,"do we have ""What time"" somewhere in the text?",O O O B-includetoken I-includetoken O O O O
+193,what about the labels predicted for the samples with the table?,O O O O O O O O O B-includetoken I-includetoken
+194,"what are the instances that have ""passengers"" included?",O O O O O O B-includetoken O
+195,i want to see all the cases that contain the span nine different cockroaches.,O O O O O O O O O O O B-includetoken I-includetoken I-includetoken
+196,what are the top 3 features for the model's prediction on data point 645?,O O O O B-number O O O O O O O O B-id
+197,show me how to flip predictions for id 820.,O O O O O O O O B-id
+198,i would like to see more instances like id 743.,O O O O O O O O O B-id
+199,"does ""How many years"" appear in the dataset?",O B-includetoken I-includetoken I-includetoken O O O O
+200,could you show me a few examples of data that you get wrong?,O O O O O O O O O O O O O
+201,show me top 3 frequent tokens,O O O B-number O O
+202,what features most influence the model's predictions,O O O O O O O
+203,what are the sentences that have The position?,O O O O O O B-includetoken I-includetoken
+204,need a description of the model,O O O O O O
+205,show me examples that are similar to 979.,O O O O O O O B-id
+206,what is the model's prediction for 755?,O O O O O O B-id
+207,"give information of the cases that contain word ""the nurse administer"".",O O O O O O O O B-includetoken I-includetoken I-includetoken
+208,furnish a justification for id 629,O O O O O B-id
+209,can you please retrieve an instance that is similar to id two hundred and forty-two?,O O O O O O O O O O O B-id I-id I-id I-id
+210,give a rationale for id 68,O O O O O B-id
+211,"please show me all examples that feature word ""100 percent chance"".",O O O O O O O O B-includetoken I-includetoken I-includetoken
+212,"what are the samples that include ""seemingly unrelated countries"" in the data?",O O O O O O B-includetoken I-includetoken I-includetoken O O O
+213,what are the main characteristics of the model?,O O O O O O O O
+214,testing acc please,O B-metric O
+215,show me more samples similar to 362.,O O O O O O B-id
+216,show the most frequent keywords in the dataset,O O O O O O O O
+217,show me the class frequencies please,O O O O O O
+218,which functions do you have?,O O O O O
+219,nice! could you give me the test positive predictive value?,O O O O O O O B-metric I-metric I-metric
+220,show me 8 similar examples to id 987.,O O B-number O O O O B-id
+221,what aspects of the data do you consider when reasoning about examples containing the span a replacement to make decisions,O O O O O O O O O O O O O O O B-includetoken I-includetoken O O O
+222,"i would like to see all instances that incorporate word ""the corner-stone"".",O O O O O O O O O O B-includetoken I-includetoken
+223,what's the most important feature for the model when it sees Class?,O O O O O O O O O O O B-includetoken
+224,who are you?,O O O
+225,how are the classes distributed for the samples with a replacement?,O O O O O O O O O B-includetoken I-includetoken
+226,show me cfe's for the instance with id 716,O O O O O O O O B-id
+227,"what are the sentences that have ""the police""?",O O O O O O B-includetoken I-includetoken
+228,please show the top few features for the predictions,O O O O O O O O O
+229,sample mistakes,O O
+230,show me the prediction for 957.,O O O O O B-id
+231,i would like to have a look at id 362,O O O O O O O O O B-id
+232,what are the most frequent keywords in the data?,O O O O O O O O O
+233,what 5 features most influence the model's predictions for ids 461 and 362,O B-number O O O O O O O O B-id O B-id
+234,give me the sensitivity on the eval data,O O O B-metric O O B-data_type O
+235,i would like to see all instances that incorporate word your flight number.,O O O O O O O O O O B-includetoken I-includetoken I-includetoken
+236,what are the functions?,O O O O
+237,explain my model's prediction for data 263 and then follow up with the rationale for the prediction!,O O O O O O B-id O O O O O O O O O O
+238,describe your typical mistakes over the dataset,O O O O O O O
+239,please show 7 cfes for sample with id 208.,O O B-number O O O O O B-id
+240,testing prec score,O B-metric O
+241,total number of elements in the data,O O O O O O O
+242,flip the classification for sample 440?,O O O O O B-id
+243,stats of the labels?,O O O O
+244,what's the distribution?,O O O
+245,i would like to see some keywords from the dataset,O O O O O O O O O O
+246,what are the model's predictions for id 979?,O O O O O O O B-id
+247,i was wondering what are the most important features for instance 114?,O O O O O O O O O O O B-id
+248,can you show me the specificity on the test data?,O O O O O B-metric O O B-data_type O
+249,show me some data you predict incorrectly,O O O O O O O
+250,what are cfes for 387.,O O O O B-id
+251,"for a change, what is the distribution of the label?",O B-includetoken I-includetoken O O O O O O O
+252,what is the prediction for id 312?,O O O O O O B-id
+253,i'd like to know about the underlying dataset,O O O O O O O O
+254,i would like to see more instances like id 704.,O O O O O O O O O B-id
+255,labels please,O O
+256,show me 2 data points that are analogous to id 664.,O O B-number O O O O O O O B-id
+257,what are the gold target frequencies,O O O O O O
+258,give a rationale for id 819,O O O O O B-id
+259,how do the labels look like?,O O O O O O
+260,likelihood for inform to be predicted?,O O B-class_names O O O
+261,what's the testing recall for examples including a party,O O O B-metric O O O B-includetoken I-includetoken
+262,could you tell me the sensitivity on the dev data for the interview,O O O O O B-metric O O B-data_type O O B-includetoken I-includetoken
+263,which model makes the prediction?,O O O O O
+264,shed light on id 251 in simple terms,O O O O B-id O O O
+265,what are the reasons why 25 is predicted and what you have to do to flip the prediction?,O O O O O B-id O O O O O O O O O O O O
+266,please display all instances that have the token How many years.,O O O O O O O O B-includetoken I-includetoken I-includetoken
+267,do we have town in the data?,O O O B-includetoken O O O
+268,show me more examples that resemble id 115.,O O O O O O O B-id
+269,does the model predict texts that include Time correctly?,O O O O O O O I-includetoken O
+270,i don't understand how this works,O O O O O O
+271,i need id 139,O O O B-id
+272,give me a list of all examples that include the token Rubella.,O O O O O O O O O O O B-includetoken
+273,testing sensitivity,O B-metric
+274,explain id 767 and provide a rationale,O O B-id O O O O
+275,nice! could you give me the test recall on the train data?,O O O O O O O B-metric O O B-data_type O
+276,i would like to see some keywords from the dataset,O O O O O O O O O O
+277,show me the 8 most important features for data point 487,O O O B-number O O O O O O B-id
+278,show top 2 most frequently occurring tokens in the data,O O B-number O O O O O O O
+279,what about counterfactuals for 472.,O O O O B-id
+280,why was this label predicted for id 325?,O O O O O O O B-id
+281,how does the data look like?,O O O O O O
+282,how often are you right?,O O O O O
+283,simplify the explanation for id 283,O O O O O B-id
+284,show me 1 counterfactual for instance 767.,O O B-number O O O B-id
+285,please show id 850,O O O B-id
+286,can you tell me the main features for instance nine hundred and seventy-seven?,O O O O O O O O O B-id I-id I-id I-id
+287,"seven most important features for id's 322, 340, 635",B-number O O O O O B-id B-id B-id
+288,testing sensitivity,O B-metric
+289,show me a data point that is analogous to id 114.,O O O O O O O O O O B-id
+290,how likely is it id 759 is no hate speeech?,O O O O O B-id O B-class_names I-class_names I-class_names
+291,what are the reasons for predicting id 477 and why do you predict this instance?,O O O O O O O B-id O O O O O O O
+292,a member show mistakes,B-includetoken I-includetoken O O
+293,who are you?,O O O
+294,what about counterfactuals for 283.,O O O O B-id
+295,what are the most important features in the data when reasoning about twenty cents to make decisions?,O O O O O O O O O O O O B-includetoken I-includetoken O O O
+296,what are the top 1 features for the model's prediction on data point 404?,O O O O B-number O O O O O O O O B-id
+297,what's the gold label for twenty cents,O O O O O B-includetoken I-includetoken
+298,what about the model?,O O O O
+299,classes for the instances that have the nurse administer in them?,O O O O O O B-includetoken I-includetoken I-includetoken O O
+300,how do i change the prediction for the data point with id number 322?,O O O O O O O O O O O O O B-id
+301,what can you show me?,O O O O O
+302,what about sample 488?,O O O B-id
+303,provide an explanation for id 605 in everyday language,O O O O O B-id O O O
+304,is it possible to retrieve 4 data points that are analogous to id 704?,O O O O O B-number O O O O O O O B-id
+305,can you tell me how many data points is the model predicting incorrectly?,O O O O O O O O O O O O O
+306,i would like to see more instances like 960.,O O O O O O O O B-id
+307,return prediction id 864,O O O B-id
+308,what instances are very close to id 546?,O O O O O O O B-id
+309,how do the labels look like?,O O O O O O
+310,could you show which features are most critical for the predictions of the model,O O O O O O O O O O O O O O
+311,can you display all occurrences that contain the words a cabinet?,O O O O O O O O O B-includetoken I-includetoken
+312,likelihood for 0 to be predicted?,O O B-class_names O O O
+313,what are the most frequent tokens here?,O O O O O O O
+314,what is the predicted label for id 523?,O O O O O O O B-id
+315,how did the model predict this?,O O O O O O
+316,show me at least 9 keywords,O O O O B-number O
+317,what are the frequencies for the labels?,O O O O O O O
+318,please display the prediction of the instance with id eight hundred and fifty-six,O O O O O O O O O B-id I-id I-id I-id
+319,"when determining offensive, what is your rec score?",O O B-class_names O O O B-metric O
+320,what is the model's prediction for id 670?,O O O O O O O B-id
+321,who are you?,O O O
+322,what does the model predict for 987?,O O O O O O B-id
+323,can you list all the occurrences that involve word increases.,O O O O O O O O O B-includetoken
+324,could you describe the data a bit more?,O O O O O O O O
+325,where do we have any night tours?,O O O O B-includetoken I-includetoken I-includetoken
+326,how do you decide whether examples with the words four dollars will be commissive,O O O O O O O O O B-includetoken I-includetoken O O B-class_names
+327,what are the samples that include ESL in the data?,O O O O O O B-includetoken O O O
+328,what is the way to change the prediction for the data point with the id number 564?,O O O O O O O O O O O O O O O O B-id
+329,"are there any instances with ""15 yuan""?",O O O O O B-includetoken I-includetoken
+330,can you please tell me the prediction for id 743?,O O O O O O O O O B-id
+331,which words are common?,O O O O
+332,show me a data point that is analogous to id 664.,O O O O O O O O O O B-id
+333,please provide the 2 most critical features for data point 694,O O O B-number O O O O O O B-id
+334,show the feature importances,O O O O
+335,explain me what is the model please,O O O O O O O
+336,what features most influence the model's predictions,O O O O O O O
+337,show me how to make the model output a different prediction for instance id nine hundred and seventy-seven.,O O O O O O O O O O O O O O B-id I-id I-id I-id
+338,could you please tell me the predictions for id 651 and what you have to do to flip the prediction?,O O O O O O O O O B-id O O O O O O O O O O
+339,tell me a bit more about the data please.,O O O O O O O O O
+340,what are the keywords?,O O O O
+341,show me the model's rationale for making predictions on all the data,O O O O O O O O O O O O
+342,give information of topk contributed words with label neutral.,O O O O O O O O B-class_names
+343,"for instances that include Time, what is the distribution of the target variable?",O O O O I-includetoken O O O O O O O O
+344,least important features,O O O
+345,show me the prediction probabilities for instances with the next step,O O O O O O O O B-includetoken I-includetoken I-includetoken
+346,display npv,O B-metric
+347,show me the results for id 827.,O O O O O O B-id
+348,show me how to flip predictions for id 487.,O O O O O O O O B-id
+349,could you please tell me the predictions for id 564 and what you have to do to flip the prediction?,O O O O O O O O O B-id O O O O O O O O O O
+350,what aspects of the subset featuring that problem are important when making decisions?,O O O O O O B-includetoken I-includetoken O O O O O
+351,could you please show me 5 counterfactuals for 898?,O O O O O B-number O O B-id
+352,least important features,O O O
+353,please display the class freqs,O O O O O
+354,explain my model's prediction for data 635 and then follow up with the rationale for the prediction!,O O O O O O B-id O O O O O O O O O O
+355,which feature is most significant for data point 820?,O O O O O O O O B-id
+356,what are the cfes for id 739?,O O O O O O B-id
+357,most important features for predictions,O O O O O
+358,could you show me some data the model predicts incorrectly?,O O O O O O O O O O
+359,classes for the instances that have present in them?,O O O O O O B-includetoken O O
+360,would it be possible for you to tell me how to change the prediction for the data point with the id number 25?,O O O O O O O O O O O O O O O O O O O O O O B-id
+361,i don't understand how this works,O O O O O O
+362,"what are the sentences that include ""photocopies""?",O O O O O O B-includetoken
+363,show me examples similar to instance 234.,O O O O O O B-id
+364,could you show me more samples similar to id 664?,O O O O O O O O O B-id
+365,how did the model predict this?,O O O O O O
+366,show the predictions on all the data,O O O O O O O
+367,i would like to have a look at id 240,O O O O O O O O O B-id
+368,"what are the sentences containing ""your right""?",O O O O O B-includetoken I-includetoken
+369,i need an explanation,O O O O
+370,tell me about the model,O O O O O
+371,what are the labels for texts with The next step,O O O O O O O B-includetoken I-includetoken I-includetoken
+372,what about sample 664?,O O O B-id
+373,"please show me all examples that feature word ""a vacation"".",O O O O O O O O B-includetoken I-includetoken
+374,any suggestion on what i can do?,O O O O O O O
+375,show me gold classes for the data,O O O O O O O
+376,please provide the 5 most critical features for data point 850,O O O B-number O O O O O O B-id
+377,show me 5 counterfactual for instance 523.,O O B-number O O O B-id
+378,id nine hundred and seventy-seven please,O B-id I-id I-id I-id O
+379,"does ""the change"" appear in the dataset?",O B-includetoken I-includetoken O O O O
+380,what is the chance that the data point with id 651 is directive,O O O O O O O O O O B-id O B-class_names
+381,"what does my model predict for data 66? next, once you've completed this, could you tell me why the model predicts it?",O O O O O O O B-id O O O O O O O O O O O O O O
+382,do you have a manual?,O O O O O
+383,what is the predicted label for sample id 755?,O O O O O O O O B-id
+384,what do we get for id 234?,O O O O O O B-id
+385,what's the f1 on this data?,O O B-metric O O O
+386,show me all occurrences that have the term your prepared contents.,O O O O O O O O B-includetoken I-includetoken I-includetoken
+387,please give me 1 examples that are similar to id 322.,O O O B-number O O O O O O B-id
+388,clarify id 694 with a reason,O O B-id O O O
+389,what data points does the model typically predict wrongly on texts with other cultures?,O O O O O O O O O O O O B-includetoken I-includetoken
+390,can you provide me with all occurrences that comprise word other cultures.,O O O O O O O O O O B-includetoken I-includetoken
+391,explain me what is the model please,O O O O O O O
+392,show faulty predictions,O O O
+393,could you please show me 8 counterfactuals for 645?,O O O O O B-number O O B-id
+394,please provide me with all examples that incorporate the words passengers.,O O O O O O O O O O B-includetoken
+395,clarify the reasoning behind id one hundred and forty-nine,O O O O O B-id I-id I-id I-id
+396,i would like to see more instances like 645.,O O O O O O O O B-id
+397,are there any other nine samples that are similar to id nine hundred and seventy-seven?,O O O O B-number O O O O O O B-id I-id I-id I-id
+398,which counterfactual examples do we have for 694?,O O O O O O O B-id
+399,give an account for id 139 with justification,O O O O O B-id O O
+400,which sentences have the word an announcement in them?,O O O O O B-includetoken I-includetoken O O
+401,rationalize the prediction for id 66,O O O O O B-id
+402,probability data point 115 is predicted by the model hate speech,O O O B-id O O O O O B-class_names I-class_names
+403,what's the testing f 1 for examples including seemingly unrelated countries,O O O B-metric I-metric O O O B-includetoken I-includetoken I-includetoken
+404,data labels?,O O
+405,what's the likelihood of inform?,O O O O B-class_names
+406,what is the statistics of the labels,O O O O O O O
+407,likelihood for neutral to be predicted?,O O B-class_names O O O
+408,what are the 3 most important features in the texts that include acute insight?,O O O O O O O O O O O O B-includetoken I-includetoken
