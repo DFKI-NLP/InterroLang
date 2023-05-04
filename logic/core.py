@@ -152,31 +152,28 @@ class ExplainBot:
                           numerical_features,
                           remove_underscores,
                           store_to_conversation=True,
-                          skip_prompts=skip_prompts)
-
+                          skip_prompts=skip_prompts,
+                          dataset_name=name)
+        # Adding adapters
         bert_model = "bert-base-uncased"
         self.intent_adapter_model = AutoAdapterModel.from_pretrained(bert_model)
         self.slot_adapter_model = AutoAdapterModel.from_pretrained(bert_model)
         self.adapter_tokenizer = AutoTokenizer.from_pretrained(bert_model)
         self.device = 0 if torch.cuda.is_available() else -1
-
         intent_adapter_path = "./intents_and_slots/intent_slot_classification/adapters/all"
         intent_adapter = self.intent_adapter_model.load_adapter(intent_adapter_path)
         self.intent_adapter_model.load_head(intent_adapter_path)
         self.intent_adapter_model.set_active_adapters([intent_adapter])
         self.slot_adapter_model = AutoAdapterModel.from_pretrained(bert_model)
-
         slot_adapter_path = "./intents_and_slots/intent_slot_classification/adapters/slots"
         slot_adapter = self.slot_adapter_model.load_adapter(slot_adapter_path)
         self.slot_adapter_model.load_head(slot_adapter_path)
         self.slot_adapter_model.set_active_adapters([slot_adapter])
-
         self.intent_classifier = TextClassificationPipeline(model=self.intent_adapter_model, tokenizer=self.adapter_tokenizer, return_all_scores=True, task="all", device=self.device)
-
         self.slot_tagger = TokenClassificationPipeline(model=self.slot_adapter_model, tokenizer=self.adapter_tokenizer, task="slots", device=self.device)
-
+        
         self.quote_pattern = r'(\"|\')[^\"\']*(\"|\')'
-
+        
         self.all_intents = ["includes", "newcfe", "similarity", "predict", "self", "data", "show", "likelihood", "model", "function", "score", "countdata", "label", "mistake", "keywords", "nlpattribute", "rationalize", "global_topk", "statistic"]
         self.id2label_str = dict()
         for i, intent_name in enumerate(self.all_intents):
@@ -224,7 +221,6 @@ class ExplainBot:
                     span_end = span_start[2]
                 span_start = span_start[1]
                 final_slot2spans[slot_type].append("".join(intext_chars[span_start:span_end]))
-
         return final_slot2spans
 
 
@@ -293,7 +289,8 @@ class ExplainBot:
                      num_features: list[str],
                      remove_underscores: bool,
                      store_to_conversation: bool,
-                     skip_prompts: bool = False):
+                     skip_prompts: bool = False,
+                     dataset_name: str = ""):
         """Loads a dataset, creating parser and prompts.
 
         This routine loads a dataset. From this dataset, the parser
@@ -311,6 +308,7 @@ class ExplainBot:
             remove_underscores: Whether to remove underscores from feature names
             store_to_conversation: Whether to store the dataset to the conversation.
             skip_prompts: whether to skip prompt generation.
+            dataset_name: dailydialog, boolq, olid
         Returns:
             success: Returns success if completed and store_to_conversation is set to true. Otherwise,
                      returns the dataset.
@@ -328,7 +326,7 @@ class ExplainBot:
         if store_to_conversation:
 
             # Store the dataset
-            self.conversation.add_dataset(dataset, y_values, categorical, numeric)
+            self.conversation.add_dataset(dataset, y_values, categorical, numeric, dataset_name)
 
             # Set up the parser
             self.parser = Parser(cat_features=categorical,
@@ -386,6 +384,7 @@ class ExplainBot:
             'parsed_text': parsed_text,
             'system_response': system_response
         }
+
 
     def check_heuristics(self, decoded_text: str, orig_text: str):
         """Checks heuristics for those intents/actions that were identified but their core slots are missing.
@@ -480,7 +479,6 @@ class ExplainBot:
         """
         anno_intents = self.get_intent_annotations(text)
         anno_slots = self.get_slot_annotations(text)
-
         decoded_text = ""
         best_intent = anno_intents[0][0] # TODO if the score is too low, ask for clarification
         decoded_text += best_intent
