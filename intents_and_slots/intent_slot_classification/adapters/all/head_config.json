@@ -1,0 +1,37 @@
+{
+  "config": {
+    "activation_function": "tanh",
+    "bias": true,
+    "head_type": "classification",
+    "label2id": {
+      "LABEL_0": 0,
+      "LABEL_1": 1,
+      "LABEL_10": 10,
+      "LABEL_11": 11,
+      "LABEL_12": 12,
+      "LABEL_13": 13,
+      "LABEL_14": 14,
+      "LABEL_15": 15,
+      "LABEL_16": 16,
+      "LABEL_17": 17,
+      "LABEL_18": 18,
+      "LABEL_2": 2,
+      "LABEL_3": 3,
+      "LABEL_4": 4,
+      "LABEL_5": 5,
+      "LABEL_6": 6,
+      "LABEL_7": 7,
+      "LABEL_8": 8,
+      "LABEL_9": 9
+    },
+    "layers": 2,
+    "num_labels": 19,
+    "use_pooler": true
+  },
+  "hidden_size": 768,
+  "model_class": "BertAdapterModel",
+  "model_name": "bert-base-uncased",
+  "model_type": "bert",
+  "name": "all",
+  "version": "3.1.0"
+}
