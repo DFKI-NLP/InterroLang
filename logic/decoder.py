@@ -91,6 +91,9 @@ class Decoder:
             def complete(text, grammar):
                 output = predict_f([text], provided_grammar=grammar)
                 return output
+        elif "adapters" in parsing_model_name:
+            def complete(text, _):
+                return text
         else:
             raise NotImplementedError
 

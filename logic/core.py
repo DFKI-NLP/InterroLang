@@ -8,12 +8,16 @@ the functions to get the responses to user inputs.
 import gin
 import numpy as np
 import os
+import re
 import pickle
 import secrets
 import sys
 import torch
 from flask import Flask
 from random import seed as py_random_seed
+
+from word2number import w2n
+import string
 
 from logic.action import run_action
 from logic.conversation import Conversation
@@ -23,6 +27,8 @@ from logic.prompts import Prompts
 from logic.utils import read_and_format_data
 from logic.write_to_log import log_dialogue_input
 
+from transformers import AutoAdapterModel, AutoTokenizer
+from transformers import TextClassificationPipeline, TokenClassificationPipeline
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -148,6 +154,81 @@ class ExplainBot:
                           store_to_conversation=True,
                           skip_prompts=skip_prompts)
 
+        bert_model = "bert-base-uncased"
+        self.intent_adapter_model = AutoAdapterModel.from_pretrained(bert_model)
+        self.slot_adapter_model = AutoAdapterModel.from_pretrained(bert_model)
+        self.adapter_tokenizer = AutoTokenizer.from_pretrained(bert_model)
+        self.device = 0 if torch.cuda.is_available() else -1
+
+        intent_adapter_path = "./intents_and_slots/intent_slot_classification/adapters/all"
+        intent_adapter = self.intent_adapter_model.load_adapter(intent_adapter_path)
+        self.intent_adapter_model.load_head(intent_adapter_path)
+        self.intent_adapter_model.set_active_adapters([intent_adapter])
+        self.slot_adapter_model = AutoAdapterModel.from_pretrained(bert_model)
+
+        slot_adapter_path = "./intents_and_slots/intent_slot_classification/adapters/slots"
+        slot_adapter = self.slot_adapter_model.load_adapter(slot_adapter_path)
+        self.slot_adapter_model.load_head(slot_adapter_path)
+        self.slot_adapter_model.set_active_adapters([slot_adapter])
+
+        self.intent_classifier = TextClassificationPipeline(model=self.intent_adapter_model, tokenizer=self.adapter_tokenizer, return_all_scores=True, task="all", device=self.device)
+
+        self.slot_tagger = TokenClassificationPipeline(model=self.slot_adapter_model, tokenizer=self.adapter_tokenizer, task="slots", device=self.device)
+
+        self.quote_pattern = r'(\"|\')[^\"\']*(\"|\')'
+
+        self.all_intents = ["includes", "newcfe", "similarity", "predict", "self", "data", "show", "likelihood", "model", "function", "score", "countdata", "label", "mistake", "keywords", "nlpattribute", "rationalize", "global_topk", "statistic"]
+        self.id2label_str = dict()
+        for i, intent_name in enumerate(self.all_intents):
+            self.id2label_str[i] = intent_name
+        self.intent2slot_pattern = {"includes":["includetoken"], "newcfe":["id", "number"], "similarity":["id", "number"], "self":[], "predict":["id"], "data":[], "show":["id"], "likelihood":["class_names", "includetoken", "id"], "model":[], "function":[], "score":["includetoken", "metric", "class_names", "data_type"], "countdata":["include_token"], "label":["includetoken"], "mistake":["includetoken"], "keywords":["number"], "nlpattribute":["number", "class_names", "id"], "rationalize":["id"], "global_topk":["class_names", "include_token"], "statistic":["includetoken"]}
+
+
+    def get_intent_annotations(self, intext):
+        """Returns intent annotations for user input (using adapters)"""
+        text_anno = self.intent_classifier(intext)[0]
+        labels = []
+        for entry in text_anno:
+            labels.append((self.id2label_str[int(entry["label"].replace("LABEL_",""))], entry["score"]))
+        labels.sort(key=lambda x: x[1], reverse=True)
+        return labels[:5]
+
+
+    def get_slot_annotations(self, intext):
+        """Returns slot annotations for user input (using adapters)"""
+        text_anno = self.slot_tagger(intext)
+        intext_chars = list(intext)
+        slot_types = ["class_names", "data_type", "id", "includetoken", "metric", "number"]
+        slot2spans = dict()
+        for anno in text_anno:
+            slot_type = anno["entity"][2:]
+            if not(slot_type) in slot2spans:
+                slot2spans[slot_type] = []
+            slot2spans[slot_type].append((anno["word"], anno["start"], anno["end"], anno["entity"]))
+        final_slot2spans = dict()
+        for slot_type in slot2spans:
+            final_slot2spans[slot_type] = []
+            span_starts = [s for s in slot2spans[slot_type] if s[-1].startswith("B-")]
+            span_starts.sort(key=lambda x: x[1])
+            span_ends = [s for s in slot2spans[slot_type] if s[-1].startswith("I-")]
+            span_ends.sort(key=lambda x: x[1])
+            for i, span_start in enumerate(span_starts):
+                if i<len(span_starts)-1:
+                    next_span_start = span_starts[i+1]
+                else:
+                    next_span_start = None
+                selected_ends = [s[2] for s in span_ends if s[1]>=span_start[1] and (next_span_start is None or s[1]<next_span_start[1])]
+                if len(selected_ends)>0:
+                    span_end = max(selected_ends)
+                else:
+                    span_end = span_start[2]
+                span_start = span_start[1]
+                final_slot2spans[slot_type].append("".join(intext_chars[span_start:span_end]))
+
+        return final_slot2spans
+
+
+
     def init_loaded_var(self, name: bytes):
         """Inits a var from manual load."""
         self.manual_var_filename = name.decode("utf-8")
@@ -258,12 +339,15 @@ class ExplainBot:
             # Generate the available prompts
             # make sure to add the "incorrect" temporary feature
             # so we generate prompts for this
-            self.prompts = Prompts(cat_features=categorical,
-                                   num_features=numeric,
-                                   target=np.unique(list(y_values)),
-                                   feature_value_dict=self.parser.features,
-                                   class_names=self.conversation.class_names,
-                                   skip_creating_prompts=skip_prompts)
+            if "adapters" in self.decoding_model_name:
+                self.prompts = None
+            else:
+                self.prompts = Prompts(cat_features=categorical,
+                                       num_features=numeric,
+                                       target=np.unique(list(y_values)),
+                                       feature_value_dict=self.parser.features,
+                                       class_names=self.conversation.class_names,
+                                       skip_creating_prompts=skip_prompts)
             app.logger.info("..done")
 
             return "success"
@@ -302,6 +386,47 @@ class ExplainBot:
             'parsed_text': parsed_text,
             'system_response': system_response
         }
+
+    def check_heuristics(self, decoded_text: str, orig_text: str):
+        """Checks heuristics for those intents/actions that were identified but their core slots are missing.
+        """
+        if "includes" in decoded_text and "{includetoken}" in decoded_text:
+            indicators = ["word ", "words ", "token ", "tokens "]
+            for indicator in indicators:
+                if indicator in orig_text:
+                    word_start = orig_text.index(indicator)+len(indicator)
+                    if word_start<len(orig_text):
+                        includeword = orig_text[word_start:]
+                        decoded_text = decoded_text.replace("{includetoken}", includeword)
+                        break
+            # check for quotes
+            if "{includetoken}" in decoded_text:
+                in_quote = re.search(self.quote_pattern, orig_text)
+                if  in_quote is not None:
+                   decoded_text = decoded_text.replace("{includetoken}", in_quote.group())
+        if "{id}" in decoded_text:
+            if "id" in orig_text:
+                splitted = orig_text[orig_text.index("id ")+2:].strip().split()
+                if len(splitted)>0:
+                    decoded_text = decoded_text.replace("{id}", splitted[0])
+        return decoded_text
+
+    def get_num_value(self, text: str):
+        """Converts text to number if possible"""
+        for ch in string.punctuation:
+            if ch in text:
+                text = text.replace(ch,"")
+        if len(text)>0 and not(text.isdigit()):
+            try:
+                converted_num = w2n.word_to_num(text)
+            except:
+                converted_num = None
+            if converted_num is not None:
+                text = str(converted_num)
+        if not(text.isdigit()):
+            text = ""
+        return text
+
 
     def compute_parse_text(self, text: str, error_analysis: bool = False):
         """Computes the parsed text from the user text input.
@@ -348,6 +473,33 @@ class ExplainBot:
         app.logger.info(f"t5 decoded text {decoded_text}")
         parse_tree, parse_text = get_parse_tree(decoded_text[0])
         return parse_tree, parse_text
+
+
+    def compute_parse_text_adapters(self, text: str):
+        """Computes the parsed text for the input using intent classifier model.
+        """
+        anno_intents = self.get_intent_annotations(text)
+        anno_slots = self.get_slot_annotations(text)
+
+        decoded_text = ""
+        best_intent = anno_intents[0][0] # TODO if the score is too low, ask for clarification
+        decoded_text += best_intent
+        slot_pattern = self.intent2slot_pattern[best_intent]
+        for slot in slot_pattern:
+            if slot in anno_slots:
+                slot_value = anno_slots[slot][0] #TODO decide how to handle multiple values, keeping only one for now
+                if slot in ["id", "number"] and not(slot_value.isdigit()):
+                    try:
+                        slot_value = w2n.word_to_num(slot_value)
+                    except:
+                        slot_value = "{"+slot+"}"
+                decoded_text += " " + str(slot_value)
+            else:
+                decoded_text += " {"+slot+"}"
+        decoded_text = self.check_heuristics(decoded_text, text)
+        app.logger.info(f"adapters decoded text {decoded_text}")
+        return None, decoded_text
+
 
     def compute_grammar(self, text, error_analysis: bool = False):
         """Computes the grammar from the text.
@@ -397,13 +549,16 @@ class ExplainBot:
             output: The response to the user input.
         """
 
-        if any([text is None, self.prompts is None, self.parser is None]):
+        if any([text is None, (self.decoding_model_name!="adapters" and self.prompts is None), self.parser is None]):
             return ''
 
         app.logger.info(f'USER INPUT: {text}')
 
         # Parse user input into text abiding by formal grammar
-        if "t5" not in self.decoding_model_name:
+        if self.decoding_model_name=="adapters":
+            parse_tree = ""
+            parse_tree, parsed_text = self.compute_parse_text_adapters(text)
+        elif "t5" not in self.decoding_model_name:
             parse_tree, parsed_text = self.compute_parse_text(text)
         else:
             parse_tree, parsed_text = self.compute_parse_text_t5(text)

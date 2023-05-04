@@ -37,13 +37,13 @@ def get_all_action_functions_map():
     """Gets a dictionary mapping all the names of the actions in the parse tree to their functions."""
     actions = {
         'countdata': count_data_points,
-        'filter': filter_operation,
+        'filter': filter_operation,# NA for adapters
         'predict': predict_operation,
         'self': self_operation,
-        'previousfilter': last_turn_filter,
-        'previousoperation': last_turn_operation,
+        'previousfilter': last_turn_filter,# NA for adapters
+        'previousoperation': last_turn_operation,# NA for adapters
         'data': data_operation,
-        'followup': followup_operation,
+        'followup': followup_operation,# NA for adapters
         'show': show_operation,
         #'change': what_if_operation,
         'likelihood': predict_likelihood,
@@ -53,13 +53,13 @@ def get_all_action_functions_map():
         'label': show_labels_operation,
         'mistake': show_mistakes_operation,
         'statistic': feature_stats,
-        'define': define_operation,
-        'predictionfilter': filter_operation,
-        'labelfilter': filter_operation,
+        'define': define_operation,# Do we need this one? We don't have any cat/num features
+        'predictionfilter': filter_operation,# NA for adapters
+        'labelfilter': filter_operation,# NA for adapters
         'includes': includes_operation,
         'similarity': similar_instances_operation,
-        'topic': topic_operation,
-        'sentiment': sentiment_operation,
+        'topic': topic_operation,# Not used? (No prompts available)
+        'sentiment': sentiment_operation,# Not used? (No prompts available)
         'rationalize': rationalize_operation,
         'nlpattribute': feature_importance_operation,
         'globaltopk': global_top_k,
