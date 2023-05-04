@@ -15,6 +15,8 @@ def global_top_k(conversation, parse_text, i, **kwargs):
             except:
                 pass
 
+    dataset_name = conversation.describe.get_dataset_name()
+
     class_name = parse_text[i + 1]
 
     if class_name == 'true':
@@ -29,8 +31,8 @@ def global_top_k(conversation, parse_text, i, **kwargs):
                     print_with_pattern=True, class_name=0), 1
     else:
         return topk(conversation, "ig_explainer", k,
-                    data_path="cache/boolq/ig_explainer_boolq_explanation.json",
-                    res_path="./cache/boolq/ig_explainer_boolq_attribution.json",
+                    data_path=f"./cache/{dataset_name}/ig_explainer_{dataset_name}_explanation.json",
+                    res_path=f"./cache/{dataset_name}/ig_explainer_{dataset_name}_attribution.json",
                     print_with_pattern=True), 1
 
     # if class_name == "boolq":

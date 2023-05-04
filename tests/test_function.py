@@ -7,6 +7,7 @@ from utils.conversation_simulator import create_conversation, TEXT, CONVERSATION
 from actions.about.function import function_operation
 
 conversation = CONVERSATION
+dataset_name = conversation.describe.get_dataset_name()
 
 
 def test_function():
@@ -15,7 +16,7 @@ def test_function():
 
     return_s, status_code = function_operation(conversation, parse_text, 1)
 
-    file_html = open(f"./tests/html/function/function.html", "w")
+    file_html = open(f"./tests/html/function/{dataset_name}_function.html", "w")
     text = TEXT
     text += return_s
     text += "</body></html>"

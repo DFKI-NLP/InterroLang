@@ -7,6 +7,7 @@ from utils.conversation_simulator import create_conversation, TEXT, CONVERSATION
 from actions.prediction.mistakes import show_mistakes_operation
 
 conversation = CONVERSATION
+dataset_name = conversation.describe.get_dataset_name()
 
 
 def test_mistake_sample():
@@ -15,7 +16,7 @@ def test_mistake_sample():
 
     return_s, status_code = show_mistakes_operation(conversation, parse_text, 0)
 
-    file_html = open(f"./tests/html/mistake/mistake_sample.html", "w")
+    file_html = open(f"./tests/html/mistake/{dataset_name}_mistake_sample.html", "w")
     text = TEXT
     text += return_s
     text += "</body></html>"
@@ -32,7 +33,7 @@ def test_mistake_count():
 
     return_s, status_code = show_mistakes_operation(conversation, parse_text, 0)
 
-    file_html = open(f"./tests/html/mistake/mistake_count.html", "w")
+    file_html = open(f"./tests/html/mistake/{dataset_name}_mistake_count.html", "w")
     text = TEXT
     text += return_s
     text += "</body></html>"

@@ -11,4 +11,3 @@ create_conversation.remove_underscores = False
 create_conversation.dataset_objective = "predict to answer yes/no questions based on text passages"
 create_conversation.dataset_description = "Boolean question answering (yes/no)"
 create_conversation.model_description = "DistilBERT"
-create_conversation.name = "boolq"

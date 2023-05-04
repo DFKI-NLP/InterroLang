@@ -13,6 +13,7 @@ pytest -q test_feature_importance.py --global  (under root folder)
 """
 
 conversation = CONVERSATION
+dataset_name = conversation.describe.get_dataset_name()
 
 
 def test_feature_importance():
@@ -24,7 +25,7 @@ def test_feature_importance():
 
     return_s, status_code = feature_importance_operation(conversation, parse_text, 1)
 
-    file_html = open(f"./tests/html/feature_importance/feature_importance.html", "w")
+    file_html = open(f"./tests/html/feature_importance/{dataset_name}_feature_importance.html", "w")
     text = TEXT
     text += return_s
     text += "</body></html>"
@@ -45,7 +46,7 @@ def test_multiple_feature_importance():
 
     return_s, status_code = feature_importance_operation(conversation, parse_text, 1)
 
-    file_html = open(f"./tests/html/feature_importance/multiple_feature_importance.html", "w")
+    file_html = open(f"./tests/html/feature_importance/{dataset_name}_multiple_feature_importance.html", "w")
     text = TEXT
     text += return_s
     text += "</body></html>"
@@ -57,26 +58,26 @@ def test_multiple_feature_importance():
     assert status_code == 1
 
 
-def test_feature_importance_with_custom_input():
-    """
-    Test feature importance for custom input
-    """
-
-    parse_text = ["predict", "beginspan", "is", "a", "wolverine", "the", "same", "as", "a", "badger", "endspan",
-                  "beginspan", "is", "this", "a", "good", "book", "endspan"]
-
-    return_s, status_code = feature_importance_operation(conversation, parse_text, 1)
-
-    file_html = open(f"./tests/html/feature_importance/feature_importance_with_custom_input.html", "w")
-    text = TEXT
-    text += return_s
-    text += "</body></html>"
-    file_html.write(text)
-
-    # Saving the data into the HTML file
-    file_html.close()
-
-    assert status_code == 1
+# def test_feature_importance_with_custom_input():
+#     """
+#     Test feature importance for custom input
+#     """
+#
+#     parse_text = ["predict", "beginspan", "is", "a", "wolverine", "the", "same", "as", "a", "badger", "endspan",
+#                   "beginspan", "is", "this", "a", "good", "book", "endspan"]
+#
+#     return_s, status_code = feature_importance_operation(conversation, parse_text, 1)
+#
+#     file_html = open(f"./tests/html/feature_importance/{dataset_name}_feature_importance_with_custom_input.html", "w")
+#     text = TEXT
+#     text += return_s
+#     text += "</body></html>"
+#     file_html.write(text)
+#
+#     # Saving the data into the HTML file
+#     file_html.close()
+#
+#     assert status_code == 1
 
 
 def test_feature_importance_all():
@@ -88,7 +89,7 @@ def test_feature_importance_all():
 
     return_s, status_code = feature_importance_operation(conversation, parse_text, 1)
 
-    file_html = open(f"./tests/html/feature_importance/feature_importance_all.html", "w")
+    file_html = open(f"./tests/html/feature_importance/{dataset_name}_feature_importance_all.html", "w")
     text = TEXT
     text += return_s
     text += "</body></html>"

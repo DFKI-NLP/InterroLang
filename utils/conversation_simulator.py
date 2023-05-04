@@ -19,7 +19,6 @@ def create_conversation(class_names, dataset_objective, dataset_description,
                         categorical_features,
                         numerical_features,
                         remove_underscores):
-
     conversation = Conversation(class_names=class_names)
     datasetDescription = DatasetDescription(
         dataset_objective=dataset_objective,
@@ -40,6 +39,7 @@ def create_conversation(class_names, dataset_objective, dataset_description,
     return conversation
 
 
-gin.parse_config_file('./configs/tests.gin')
+# gin.parse_config_file('./configs/test_boolq.gin')
+gin.parse_config_file('./configs/test_olid.gin')
 
 CONVERSATION = create_conversation()
