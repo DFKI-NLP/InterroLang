@@ -1,0 +1,50 @@
+Can you show me {number} instances that are similar to id {id}?
+Retrieve a data point that is analogous to id {id}.
+Please give me {number} examples that are similar to id {id}.
+Show me a similar data point to id {id}.
+Can you provide me an instance that is analogous to id {id}?
+Retrieve {number} examples that are similar to id {id}.
+Could you show me an instance that is similar to id {id}?
+Is it possible to retrieve {number} data points that are analogous to id {id}?
+Give me an example that is similar to id {id}.
+Show me {number} data points that are analogous to id {id}.
+Can you please retrieve an instance that is similar to id {id}?
+Give me {number} examples that are analogous to id {id}.
+Could you show me a data point that is similar to id {id}?
+Is it possible to retrieve an instance that is analogous to id {id}?
+Please provide me with {number} examples that are similar to id {id}.
+Show me a data point that is analogous to id {id}.
+Retrieve an instance that is similar to id {id}.
+Could you give me {number} examples that are analogous to id {id}?
+Is it possible to show me {number} data points that are similar to id {id}?
+Can you please retrieve an example that is analogous to id {id}?
+Show me similar examples to {id}.
+Show me examples that are similar to {id}.
+Show me examples that are similar to id {id}.
+Show me examples similar to {id}.
+Show me examples similar to id {id}.
+Show me examples similar to instance {id}.
+What are the similar instances for {id}?
+Show me {number} similar examples to {id}.
+Are there any other {number} samples that are similar to {id}?
+Show me more samples similar to {id}.
+Show me more examples that resemble {id}.
+What about examples that look like {id}.
+Please provide more examples that are similar to {id}.
+I would like to see more instances like {id}.
+Could you show me more samples similar to {id}?
+Show me similar examples to id {id}.
+What are the similar instances for id {id}?
+Show me {number} similar examples to id {id}.
+Are there any other {number} samples that are similar to id {id}?
+Show me more samples similar to id {id}.
+Show me more examples that resemble id {id}.
+What about examples that look like id {id}.
+Please provide more examples that are similar to id {id}.
+I would like to see more instances like id {id}.
+Could you show me more samples similar to id {id}?
+What instances are similar to id {id}?
+What instances are similar to {id}?
+What instances are very close to id {id}?
+What instances are almost like id {id}?
+Show me the instances that are almost like id {id}

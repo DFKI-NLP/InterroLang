@@ -1,0 +1,20 @@
+what are the labels for texts with {includetoken}
+what's the gold label for {includetoken}
+for {includetoken}, what are the ground truth labels
+what are the ground truth labels in the data for {includetoken}
+what are the data labels for {includetoken}
+just on instances with {includetoken}, show me the labels?
+just on instances with {includetoken}, show me the gold labels?
+what are the labels for all the data
+available labels pelase
+show me the labels
+what are the classes that the model predicts
+labels please
+what classes do we have?
+data labels?
+classes for the instances that include {includetoken}?
+classes for the instances that have {includetoken} in them?
+what about the labels predicted for the samples with {includetoken}?
+how do the labels look like?
+show me gold classes for the data
+I'd like to know what are the ground truth labels

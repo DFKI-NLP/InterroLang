@@ -1,0 +1,42 @@
+explain id {id} in natural language
+explain id {id} with rationale
+generate a natural language explanation for id {id}
+rationalize the prediction for id {id}
+provide an explanation for id {id} in everyday language
+clarify id {id} with a reason
+give a detailed explanation of id {id}
+elucidate id {id} with supporting rationale
+interpret id {id} in plain language
+furnish a justification for id {id}
+deliver a natural language description for id {id}
+expound on id {id} with an explanation
+shed light on id {id} in simple terms
+give a rationale for id {id}
+provide a plain language interpretation for id {id}
+clarify the reasoning behind id {id}
+describe id {id} with an understandable explanation
+give an account for id {id} with justification
+present a comprehensible explanation for id {id}
+explain id {id} and provide a rationale
+offer a plain-English interpretation for id {id}
+simplify the explanation for id {id}
+provide reasoning for id {id} in layman's terms
+break down id {id} with a clear explanation
+please provide explanation for id {id}
+how can you explain the prediction for id {id}
+what's the reason the model predicts this label for id {id}
+why was this label predicted for id {id}?
+justify the prediction for id {id} please
+I want to know why the model predited this
+How would you rationalize this?
+Any rational explanation for this prediction?
+Please explain
+I don't understand why the model predicted this label
+How did the model predict this?
+Please explain
+Explain this is natural language
+i need an explanation
+tell me how this was predicted
+explan me in English the reason the model made this prediction
+need an explanation for this
+need an explanation for id {id}

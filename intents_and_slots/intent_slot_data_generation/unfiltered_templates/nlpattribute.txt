@@ -1,0 +1,41 @@
+most important features for data point {id}
+I was wondering what are the most important features for instance {id}?
+Why do you predict instance {id}?
+For {id}, why do you predict it?
+why do you predict instance id {id}
+why do you predict instance sample id {id}
+explain id {id}
+why is id {id} predicted {class_names}
+why does the model predict id {id}
+why does the model predict id {id}
+What are the reasons for predicting id {id} and why do you predict this instance?
+Why does the model predict data {id}? What does it predict for this instance?
+What is the prediction for id {id} and why do you predict it?
+What does my model predict for data {id}? Next, once you've completed this, could you tell me why the model predicts it?
+Explain my model's prediction for data {id} and then follow up with the rationale for the prediction!
+what's the most important feature for data point {id}?
+what {number} features most influence the model's predictions for ids {id} and {id}
+Could you show top {number} most important features for the data point {id}
+what are the top {number} features for the model's prediction on data point {id}?
+most important feature for id {id}
+{number} most important features for id's {id}, {id}, {id}
+what are the key features for data point {id}
+Can you tell me the main features for instance {id}?
+primary features of data point {id}
+what are the major features for instance {id}?
+key features for data point {id}
+what are the main attributes for instance {id}?
+most influential feature for data point {id}?
+which feature is most significant for data point {id}?
+most impactful feature for data point {id}?
+most significant feature for instance {id}
+most critical feature for id {id}
+top {number} features influencing the model's prediction on data point {id}?
+what are the {number} most relevant features for the model's decision on data point {id}?
+Please provide the {number} most critical features for data point {id}
+Show me the {number} most important features for data point {id}
+{number} most important features for ids {id} and {id}
+what are the top {number} influential features for ids {id} and {id}
+top {number} features affecting the predictions for ids {id} and {id}
+{number} most crucial features for ids {id}, {id}, and {id}
+{number} most important features for ids {id}, {id}, and {id}

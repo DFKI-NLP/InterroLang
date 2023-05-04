@@ -1,0 +1,20 @@
+what is the statistics of the labels
+what are the statistics of the labels like?
+what are is the distribution of the target variables?
+what are the label frequencies
+what are the class frequencies
+what are the gold label frequencies
+what are the gold target frequencies
+for {includetoken}, what is the distribution of the labels?
+for instances that include {includetoken}, what is the distribution of the target variable?
+for {includetoken}, what is the distribution of the label?
+when {includetoken} is in the text, show the distribution of the ground truth values
+stats of the labels?
+please show me how the labels are distributed
+what are the frequencies for the labels?
+please display the class freqs
+I'd like to know the class freqs
+what's the distribution?
+distribution for samples with {includetoken}?
+how are the classes distributed for the samples with {includetoken}?
+show me the class frequencies please

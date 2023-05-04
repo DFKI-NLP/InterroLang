@@ -1,0 +1,58 @@
+can you show me how many data the model predicts incorrectly?
+tell me the number data the model predicts falsely?
+Can you demonstrate how many data points are predicted wrongly?
+can you tell me how many data points is the model predicting incorrectly?
+show me the number data the model forecasts inaccurately?
+could you show me some data the model predicts incorrectly?
+show me data the model gets wrong
+show me some data you predict incorrectly
+what are some data points you get incorrect?
+could you show me a few examples of data that you get wrong?
+what are some typical mistakes the model makes?
+how would you characterize the mistakes you make on all the data?
+describe your typical mistakes over the dataset
+what errors does the model typically make on the data?
+does the model predict texts that include {includetoken} correctly?
+what are some mistakes on examples with {includetoken} that the model makes
+could you show me a few examples with {includetoken} you get incorrect
+for {includetoken}, could you show me if the model predicts the data correctly for some examples?
+{includetoken} show mistakes
+{includetoken} sample mistakes
+{includetoken} return incorrect predictions
+{includetoken} show faulty predictions
+{includetoken} show bad predictions
+for {includetoken}, what are some mistakes you typically make?
+what are some typical mistakes on {includetoken}
+how would you characterize the mistakes you make on {includetoken}?
+what are some common mistakes you make for texts which include {includetoken}?
+what are some mistakes on {includetoken} examples the model typically makes
+what data points does the model typically predict wrongly on texts with {includetoken}?
+what data points does the model typically predict mistakenly on texts with {includetoken}?
+can you show me how many data the model predicts incorrectly?
+tell me the number data the model predicts falsely?
+Can you demonstrate how many data points are predicted wrongly?
+can you tell me how many data points is the model predicting incorrectly?
+show me the number data the model forecasts inaccurately?
+could you show me some data the model predicts incorrectly?
+show me data the model gets wrong
+show me some data you predict incorrectly
+what are some data points you get incorrect?
+could you show me a few examples of data that you get wrong?
+what are some typical mistakes the model makes?
+how would you characterize the mistakes you make on all the data?
+describe your typical mistakes over the dataset
+what errors does the model typically make on the data?
+does the model predict {includetoken} correctly?
+what are some mistakes on {includetoken} that the model makes
+could you show me a few examples you get incorrect for {includetoken}
+for {includetoken}, could you show me if the model predicts the data correctly for some examples?
+show mistakes
+sample mistakes
+return incorrect predictions
+show faulty predictions
+show bad predictions
+for {includetoken}, what are some mistakes you typically make?
+what are some typical mistakes on {includetoken}
+how would you characterize the mistakes you make on {includetoken}?
+what are some common mistakes you make when predicting {includetoken}?
+what are some mistakes on {includetoken} the model typically makes

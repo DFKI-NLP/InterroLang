@@ -1,0 +1,60 @@
+What does instance with id {id} need to do to change the prediction?
+show me cfe's for the instance with id {id}
+What does instance with id {id} have to do in order to change the prediction?
+Hmm... I was wondering what it would take to flip the prediction of instance with id {id}?
+Nice. I'm pretty satisfied with the prediction of id {id}. But could you tell me how to change the prediction?
+What would it take to change how instance {id} is predicted?
+How would you flip the prediction for id {id}?
+flip the classification for sample {id}?
+flip prediction class data point {id}
+How do I change the prediction for the data point with id number {id}?
+Could you tell me how to change the prediction point for data point {id}?
+How can I change the prediction for the data point with an id of {id}?
+Could you show me how to change the prediction for the data point {id}?
+How do I change the prediction for the data point with the id number {id}?
+Would it be possible for you to tell me how to change the prediction for the data point with the id number {id}?
+For data point id {id}, how would I change the prediction?
+What is the way to change the prediction for the data point with the id number {id}?
+Could you please tell me the predictions for id {id} and what you have to do to flip the prediction?
+What are the rationale's for the model's prediction of data sample {id} and how could one change the prediction?
+for data point number {id}, how did the model arrive at the prediction decision and what could I do to change this predictions?
+How did you decide what to predict for id {id} and what could someone do to change this prediction?
+Explain the reasoning and how to flip the predictions for data point id {id}
+Explain my model's rationale for predict data number {id} and how to flip this prediction
+What are the reasons why {id} is predicted and what you have to do to flip the prediction?
+For the data point with id {id}, how could we change the prediction, what is the model's rationale, and what does it predict?
+Show me {number} counterfactuals for instance {id}.
+Show me {number} counterfactual for instance {id}.
+What are the counterfactual examples for instance {id}.
+What are the counterfactuals for {id}.
+What are counterfactuals for {id}.
+What are cfes for {id}.
+Some counterfactuals for {id}.
+What about counterfactuals for {id}.
+Could you please show me {number} counterfactual examples for {id}?
+Could you please show me {number} counterfactuals for {id}?
+Which counterfactual examples do we have for {id}?
+What are the cfes for {id}?
+Please show {number} cfes for sample {id}.
+Please show {number} cfes for {id}.
+Show me how to flip predictions for {id}.
+Show me how to change predictions for {id}.
+Show me how to flip model's predictions for {id}.
+Show me how to make the model output a different prediction for {id}.
+Show me how to make the model output a different prediction for instance {id}.
+Show me {number} counterfactuals for instance id {id}.
+Show me {number} counterfactual for instance id {id}.
+What are the counterfactual examples for instance id {id}.
+Some counterfactuals for id {id}.
+What about counterfactuals for id {id}.
+Could you please show me {number} counterfactual examples for id {id}?
+Could you please show me {number} counterfactuals for id {id}?
+Which counterfactual examples do we have for id {id}?
+What are the cfes for id {id}?
+Please show {number} cfes for sample with id {id}.
+Please show {number} cfes for id {id}.
+Show me how to flip predictions for id {id}.
+Show me how to change predictions for id {id}.
+Show me how to flip model's predictions for id {id}.
+Show me how to make the model output a different prediction for id {id}.
+Show me how to make the model output a different prediction for instance id {id}.
