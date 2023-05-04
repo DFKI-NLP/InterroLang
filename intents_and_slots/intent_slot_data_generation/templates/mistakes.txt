@@ -1,0 +1,40 @@
+how would you characterize the mistakes you make on {includetoken}?
+{includetoken} show faulty predictions
+what are some mistakes on {includetoken} that the model makes
+what are some mistakes on examples with {includetoken} that the model makes
+show faulty predictions
+does the model predict texts that include {includetoken} correctly?
+how would you characterize the mistakes you make on all the data?
+show me some data you predict incorrectly
+{includetoken} show mistakes
+can you demonstrate how many data points are predicted wrongly?
+can you tell me how many data points is the model predicting incorrectly?
+what are some data points you get incorrect?
+what data points does the model typically predict wrongly on texts with {includetoken}?
+does the model predict {includetoken} correctly?
+what are some mistakes on {includetoken} the model typically makes
+what are some mistakes on {includetoken} examples the model typically makes
+{includetoken} show bad predictions
+what errors does the model typically make on the data?
+could you show me a few examples with {includetoken} you get incorrect
+tell me the number data the model predicts falsely?
+can you show me how many data the model predicts incorrectly?
+could you show me a few examples you get incorrect for {includetoken}
+could you show me a few examples of data that you get wrong?
+for {includetoken}, what are some mistakes you typically make?
+return incorrect predictions
+show me data the model gets wrong
+what are some common mistakes you make when predicting {includetoken}?
+{includetoken} sample mistakes
+show mistakes
+describe your typical mistakes over the dataset
+show me the number data the model forecasts inaccurately?
+what data points does the model typically predict mistakenly on texts with {includetoken}?
+could you show me some data the model predicts incorrectly?
+{includetoken} return incorrect predictions
+what are some typical mistakes the model makes?
+what are some common mistakes you make for texts which include {includetoken}?
+for {includetoken}, could you show me if the model predicts the data correctly for some examples?
+what are some typical mistakes on {includetoken}
+show bad predictions
+sample mistakes

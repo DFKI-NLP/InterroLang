@@ -1,0 +1,20 @@
+which words are common?
+show me at least {number} keywords
+what are the most frequent keywords in the data?
+show top {number} most frequently occurring tokens in the data 
+what are the key tokens in the data?
+which {number} words occur the most in the data?
+display {number} most frequent keywords
+top {number} keywords
+which keywords does the dataset have?
+what are the keywords?
+show the most frequent keywords in the dataset
+please show {number} most frequent tokens in the data
+i would like to see some keywords from the dataset
+show me top {number} frequent tokens
+show the keywords please
+what are {number} most common words here?
+which token are the modet frequent in the data?
+what are the {number} most frequent keywords?
+show common keywords
+what are the most frequent tokens here?

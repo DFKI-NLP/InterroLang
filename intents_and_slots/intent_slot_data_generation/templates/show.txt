@@ -1,0 +1,20 @@
+can you display the instance with id {id}?
+i want to see the instance with id {id}
+what about id {id}?
+i want to see id {id}
+need to see id {id}
+for {id}, please show me the values of the features.
+display instances 
+show me id {id} please
+could you show me data point number {id}?
+how does id {id} look like?
+please show me id {id}
+show me the data point with id {id}
+display id {id} please
+please show id {id}
+please display id {id}
+what about sample {id}?
+how does the sample with id {id} look like
+i would like to have a look at id {id}
+id {id} please
+i need id {id}

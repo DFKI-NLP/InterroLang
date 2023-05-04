@@ -1,0 +1,20 @@
+could you describe the data a bit more?
+what's the data
+how does the data look like?
+what's the data like and what can you do?
+please provide a description for the dataset
+what are the features
+could you describe the data and model?
+what does the data look like?
+more info about the data and model
+what is the datset here?
+which data is used for training the model?
+which data does the model use?
+how does the dataset look like?
+tell me a bit more about the data please.
+give an overview of the data.
+what are the features in the data?
+show me the features
+i'd like to know about the underlying dataset
+describe data
+please tell moe more about the data

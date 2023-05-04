@@ -1,0 +1,48 @@
+please display the prediction of the instance with id {id}
+for id {id}, please provide the prediction.
+what do you predict for {id}?
+what is the resulting label for id {id}?
+what does the model predict for {id}?
+what is the predicted label for instance {id}?
+what is the predicted label for instance id {id}?
+show the prediction for id {id} please.
+what does the model predict on all the training data
+predict {id}
+show prediction of id {id}
+show me the predictions for id {id}.
+what is the final label for id {id}?
+could you show me the predictions on all the data?
+what are the predictions for {id}?
+what is the prediction for data point number {id}?
+what do we get for id {id}?
+what does the model predict for {id}?
+what do we predict for instance with id {id}?
+what do we predict for id {id}?
+show me the results for id {id}.
+what is the prediction for id {id}?
+show the prediction of id {id}
+what is the predicted label for sample id {id}?
+what is the model's prediction for {id}?
+can you tell me what is being predicted for id {id}?
+can you please tell me the prediction for id {id}?
+super cool system you got here.... could you show me the predictions across all the data?
+what is the predicted label for sample {id}?
+return prediction id {id}
+what does the model predict for the instance with id {id}?
+what does the model predict for the instance id {id}?
+show the prediction for {id} please.
+show me the prediction for {id}.
+show me the results for {id}.
+show me the predictions for {id}.
+what are the predictions for id {id}?
+what does the model predict for the instance {id}?
+what are the model's predictions for {id}?
+what does the model predict for id {id}?
+show the predictions across all the instances
+what is the resulting label for instance with is {id}?
+what is the model's prediction for id {id}?
+what is the predicted label for {id}?
+what are the model's predictions for id {id}?
+can you tell me what is being predicted for {id}?
+show the predictions on all the data
+what is the predicted label for id {id}?

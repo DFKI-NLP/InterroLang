@@ -1,0 +1,60 @@
+what are the cfes for id {id}?
+for the data point with id {id}, how could we change the prediction, what is the model's rationale, and what does it predict?
+how do i change the prediction for the data point with the id number {id}?
+show me {number} counterfactual for instance {id}.
+what are counterfactuals for {id}.
+what is the way to change the prediction for the data point with the id number {id}?
+show me how to make the model output a different prediction for instance {id}.
+could you please show me {number} counterfactual examples for {id}?
+show me {number} counterfactuals for instance id {id}.
+explain my model's rationale for predict data number {id} and how to flip this prediction
+how did you decide what to predict for id {id} and what could someone do to change this prediction?
+what are the cfes for {id}?
+show me how to change predictions for id {id}.
+what are the rationale's for the model's prediction of data sample {id} and how could one change the prediction?
+show me how to flip predictions for {id}.
+show me how to make the model output a different prediction for instance id {id}.
+how can i change the prediction for the data point with an id of {id}?
+which counterfactual examples do we have for {id}?
+hmm... i was wondering what it would take to flip the prediction of instance with id {id}?
+please show {number} cfes for sample with id {id}.
+show me how to flip model's predictions for id {id}.
+explain the reasoning and how to flip the predictions for data point id {id}
+what are the counterfactual examples for instance {id}.
+flip the classification for sample {id}?
+please show {number} cfes for sample {id}.
+could you please show me {number} counterfactuals for {id}?
+what about counterfactuals for id {id}.
+what does instance with id {id} need to do to change the prediction?
+nice. i'm pretty satisfied with the prediction of id {id}. but could you tell me how to change the prediction?
+what are the counterfactuals for {id}.
+what about counterfactuals for {id}.
+for data point id {id}, how would i change the prediction?
+what are cfes for {id}.
+could you tell me how to change the prediction point for data point {id}?
+would it be possible for you to tell me how to change the prediction for the data point with the id number {id}?
+could you show me how to change the prediction for the data point {id}?
+show me how to make the model output a different prediction for {id}.
+show me {number} counterfactual for instance id {id}.
+for data point number {id}, how did the model arrive at the prediction decision and what could i do to change this predictions?
+could you please tell me the predictions for id {id} and what you have to do to flip the prediction?
+what are the reasons why {id} is predicted and what you have to do to flip the prediction?
+show me {number} counterfactuals for instance {id}.
+what would it take to change how instance {id} is predicted?
+show me how to flip predictions for id {id}.
+show me how to flip model's predictions for {id}.
+flip prediction class data point {id}
+how would you flip the prediction for id {id}?
+show me how to change predictions for {id}.
+some counterfactuals for {id}.
+what are the counterfactual examples for instance id {id}.
+some counterfactuals for id {id}.
+could you please show me {number} counterfactuals for id {id}?
+how do i change the prediction for the data point with id number {id}?
+show me cfe's for the instance with id {id}
+please show {number} cfes for {id}.
+what does instance with id {id} have to do in order to change the prediction?
+which counterfactual examples do we have for id {id}?
+please show {number} cfes for id {id}.
+could you please show me {number} counterfactual examples for id {id}?
+show me how to make the model output a different prediction for id {id}.

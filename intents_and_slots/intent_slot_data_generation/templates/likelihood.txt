@@ -1,0 +1,20 @@
+show the probability that id {id} is {class_names}
+return the probability that instance {id} is predicted in the {class_names} class
+what is the likelihood that id {id} is predicted as {class_names} by the model?
+what is the probability that id {id} is predicted as {class_names} by the model?
+how likely it is that {class_names} is predicted?
+chances of {class_names} to be predicted?
+show me the prediction probabilities for instances with {includetoken}
+how likely is it id {id} is {class_names}?
+i want you to tell me the probability of the instance with id {id} being predicted in the "{class_names}" class by the model
+what's the chance instance id {id} is scored as {class_names}
+what is the probability of id {id} being predicted {class_names}?
+what's the likelihood of {class_names}?
+what is the chance that the data point with id {id} is {class_names}
+what's the probability of {class_names}?
+probability that id {id} is predicted as "{class_names}" from the model
+probability of {class_names}?
+probability data point {id} is predicted by the model {class_names}
+what are the class probabilities on your predictions for texts including {includetoken}?
+likelihood for {class_names} to be predicted?
+probability of id {id} predicted {class_names}?

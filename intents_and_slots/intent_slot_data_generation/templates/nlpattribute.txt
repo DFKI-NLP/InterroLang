@@ -1,0 +1,40 @@
+for {id}, why do you predict it?
+what does my model predict for data {id}? next, once you've completed this, could you tell me why the model predicts it?
+why do you predict instance id {id}
+which feature is most significant for data point {id}?
+{number} most important features for id's {id}, {id}, {id}
+most important feature for id {id}
+what are the major features for instance {id}?
+what are the {number} most relevant features for the model's decision on data point {id}?
+what are the main attributes for instance {id}?
+explain id {id}
+most impactful feature for data point {id}?
+most influential feature for data point {id}?
+key features for data point {id}
+what are the top {number} features for the model's prediction on data point {id}?
+primary features of data point {id}
+could you show top {number} most important features for the data point {id}
+what are the key features for data point {id}
+what are the reasons for predicting id {id} and why do you predict this instance?
+{number} most important features for ids {id}, {id}, and {id}
+most critical feature for id {id}
+why do you predict instance {id}?
+please provide the {number} most critical features for data point {id}
+top {number} features affecting the predictions for ids {id} and {id}
+what is the prediction for id {id} and why do you predict it?
+why does the model predict id {id}
+top {number} features influencing the model's prediction on data point {id}?
+{number} most crucial features for ids {id}, {id}, and {id}
+what {number} features most influence the model's predictions for ids {id} and {id}
+most important features for data point {id}
+what are the top {number} influential features for ids {id} and {id}
+why do you predict instance sample id {id}
+explain my model's prediction for data {id} and then follow up with the rationale for the prediction!
+what's the most important feature for data point {id}?
+most significant feature for instance {id}
+show me the {number} most important features for data point {id}
+why is id {id} predicted {class_names}
+why does the model predict data {id}? what does it predict for this instance?
+can you tell me the main features for instance {id}?
+{number} most important features for ids {id} and {id}
+i was wondering what are the most important features for instance {id}?

@@ -1,0 +1,62 @@
+what features are not that important
+what methods do you use to come to predict {class_names}?
+please show the ranking of features by importance
+what features most influence the model's predictions
+feature importance
+what aspects of the data do you consider when reasoning about examples containing the span {includetoken} to make decisions
+display most important features
+what set of reasoning do you use to determine if instances with {includetoken} in them are {class_names}
+what are the most important features for the predictions
+i want to know highest attributed words.
+could you let me know why you predicted {includetoken}?
+thirty most important features
+show me the model's rationale for making predictions on all the data
+how do you decide whether sentences containing the word {includetoken} will be {class_names}
+how do you figure out if data points are {class_names}
+give information of topk contributed words with label {class_names}.
+what set of reasoning do you use to determine if instances containing {includetoken} are {class_names}?
+what are the most important features?
+in what ways do you determine if data will be predicted {class_names}?
+please show the top few features for the predictions
+feature importances
+what set of factors do you take into consideration when determining if instances with {includetoken} are {class_names}
+how do you decide whether examples with the words {includetoken} will be {class_names}
+features that are not important for predictions
+i would like to see the top attributed tokens with label {class_names}.
+how do you figure out if some text having {includetoken} will be {class_names}?
+most important features for predictions
+top three most important features
+how do you figure out if texts which mention {includetoken} will be {class_names}
+what set of factors do you take into consideration when determining if texts containing {includetoken} are {class_names}?
+what are the top two most important features for the models predictions?
+in cases where the word {includetoken} is present, how do you determine the outcome {class_names}
+what set of factors do you leverage on texts including {includetoken} to figure out if they are {class_names}?
+please show me the most contributing words with label {class_names}.
+i want to know topk contributed words with label {class_names}.
+what are the highest 15 features by importance
+display the 42 most important features
+what are the 3 most important features in the texts that include {includetoken}?
+what set of factors do you leverage on {includetoken} appearances to figure out if the texts are {class_names}
+for {includetoken}, what are the nine most important features for the model's predictions?
+explain the model's predictions on the data
+please show the most important feature for the predictions
+what aspects of the subset featuring {includetoken} are important when making decisions?
+show the feature importances
+least important features
+5 most important features
+what are the reasoning strategies you leverage?
+can you list the most important words in the whole dataset with label {class_names}.
+can you provide me with reasoning for the model's predictions on the subset of examples containing {includetoken}?
+what features are the most important?
+most important feature
+what are the top 2 most important features
+what aspects of the data make you more confident in your predictions?
+could you show which features are most critical for the predictions of the model
+what are the top five most important features for the models predictions?
+what's your motivation for deciding the predictions of {includetoken}
+what features most influence model predictions
+what's the most important feature for the model when it sees {includetoken}?
+in those situations where {includetoken} is included, what are the strategies you use to figure out if the correct prediction is {class_names}
+how do you decide whether some text is {class_names}
+what are the most important features in the data when reasoning about {includetoken} to make decisions?
+what are the most important features for the model's predictions on all instances that include {includetoken}?

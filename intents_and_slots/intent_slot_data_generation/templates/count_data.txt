@@ -1,0 +1,22 @@
+how many instances did that consider?
+tell me how many instances in the data include {includetoken}
+how many data points have {includetoken} in it
+please tell me how many items are in the data
+how many rows are there across all the items in the data
+tell me how many items there are in the data
+show me the item ids on the training data
+for those where {includetoken} is part of the input, could you tell me the total number of items in the data
+number of rows in the data
+how many items are there in the data?
+what's the number of data points that operation took into consideration?
+total number of training items in the data
+count the total number of data points
+how many data points are in the training data set
+total number of elements in the data
+what's the number of instances with {includetoken}
+what are the id's of all the items
+for {includetoken}, how many instances in the data are there?
+how many data points are in this group?
+please state the number of {includetoken} in the data
+number of data points
+how many data points are there?

@@ -1,0 +1,33 @@
+display {metric}
+for {includetoken}, how well, in terms of {metric}, does the model do on the {data_type} data
+can you show me the {metric} score on the {data_type} data?
+can you show me the {metric} on the {data_type} data?
+when determining {class_names}, what is your {metric} score?
+how accurate is the model over all the instances in the data?
+what's the testing {metric} for examples including {includetoken}
+testing {metric}
+how often are you right?
+what's the {metric} performance of the model on the {data_type} data for texts with {includetoken}
+how accurate are you in predicting the class {class_names}?
+testing {metric} score
+could you tell me the {metric} on the {data_type} data for {includetoken}
+testing {metric} please
+nice! could you give me the test {metric}?
+show me the {data_type} set performance
+what's the {metric} on this data?
+when scoring {class_names}, what's the model's {metric}?
+what's the {metric} score
+i meant what is the {metric} score on the {data_type} data
+give the {metric} score
+give me the {metric} on the {data_type} data
+can you show me the {metric} on the data?
+what's the rate you do correct predictions?
+how frequently do you get it correct?
+what's the {metric} on {includetoken}?
+training {metric} please
+what is the {metric} score on the {data_type} data
+how often are you correct?
+nice! could you give me the test {metric} on the {data_type} data?
+what's the {metric} for instances containing {includetoken}?
+how accurate is the model on all the data?
+give me the {metric} on the data

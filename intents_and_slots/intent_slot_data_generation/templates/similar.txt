@@ -1,0 +1,50 @@
+show me similar examples to {id}.
+what are the similar instances for {id}?
+show me examples similar to id {id}.
+show me more samples similar to {id}.
+show me more examples that resemble {id}.
+retrieve a data point that is analogous to id {id}.
+could you show me more samples similar to {id}?
+show me {number} similar examples to id {id}.
+i would like to see more instances like id {id}.
+please provide more examples that are similar to {id}.
+are there any other {number} samples that are similar to {id}?
+i would like to see more instances like {id}.
+what instances are similar to id {id}?
+is it possible to retrieve an instance that is analogous to id {id}?
+show me the instances that are almost like id {id}
+can you please retrieve an example that is analogous to id {id}?
+what instances are almost like id {id}?
+show me examples similar to {id}.
+please provide more examples that are similar to id {id}.
+can you please retrieve an instance that is similar to id {id}?
+could you give me {number} examples that are analogous to id {id}?
+can you show me {number} instances that are similar to id {id}?
+show me more samples similar to id {id}.
+show me more examples that resemble id {id}.
+show me similar examples to id {id}.
+show me {number} similar examples to {id}.
+please give me {number} examples that are similar to id {id}.
+are there any other {number} samples that are similar to id {id}?
+what instances are very close to id {id}?
+show me examples that are similar to id {id}.
+please provide me with {number} examples that are similar to id {id}.
+give me an example that is similar to id {id}.
+show me examples that are similar to {id}.
+give me {number} examples that are analogous to id {id}.
+could you show me a data point that is similar to id {id}?
+what are the similar instances for id {id}?
+what about examples that look like {id}.
+show me a similar data point to id {id}.
+what instances are similar to {id}?
+show me examples similar to instance {id}.
+could you show me more samples similar to id {id}?
+can you provide me an instance that is analogous to id {id}?
+what about examples that look like id {id}.
+could you show me an instance that is similar to id {id}?
+retrieve {number} examples that are similar to id {id}.
+show me {number} data points that are analogous to id {id}.
+retrieve an instance that is similar to id {id}.
+is it possible to retrieve {number} data points that are analogous to id {id}?
+is it possible to show me {number} data points that are similar to id {id}?
+show me a data point that is analogous to id {id}.

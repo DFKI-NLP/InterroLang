@@ -1,0 +1,78 @@
+can you display all occurrences that contain word "{includetoken}".
+show me all cases with {includetoken}
+show me all instances with "{includetoken}"
+which sentences have the word {includetoken} in them?
+can you provide me with all occurrences that comprise word "{includetoken}".
+please show me all examples that feature word "{includetoken}".
+please show me all examples that feature the phrase {includetoken}.
+can you give me a list of all the examples that contain the word {includetoken}?
+which sentences have the words {includetoken} in them?
+please provide me with all examples that incorporate the words {includetoken}.
+what are the sentences that include {includetoken}?
+i want to see all the cases that contain the span {includetoken}.
+do we have {includetoken} somewhere in the text?
+i want to see all instances that include the word {includetoken}.
+show me every example that has word "{includetoken}".
+please list all cases that contain the token {includetoken}.
+can you display all occurrences that contain the words {includetoken}?
+where do we have "{includetoken}"?
+i want to know the cases that entail word "{includetoken}".
+do we have "{includetoken}" somewhere in the text?
+show me all occurrences that have the term {includetoken}.
+where in the data do we have "{includetoken}"?
+where do we have {includetoken}?
+give information of the cases that contain word {includetoken}.
+does {includetoken} appear in the dataset?
+does "{includetoken}" appear in the dataset?
+i would like to see all instances that incorporate the phrase {includetoken}.
+i would like to see all instances that incorporate word "{includetoken}".
+do we have {includetoken} in the data?
+what are the instances that have "{includetoken}" included?
+can you list all cases that have the span {includetoken}?
+can you provide me with all occurrences that comprise word {includetoken}.
+show me all instances with {includetoken}
+what are the sentences that include "{includetoken}"?
+what are the samples that include "{includetoken}" in the data? 
+show me every example that has word {includetoken}.
+what are the sentences that have {includetoken}?
+can you display all cases that comprise the term {includetoken}?
+show me all instances that include the word {includetoken}.
+i want to know the cases that entail word {includetoken}.
+what are the instances that have {includetoken} included?
+can you give me all the cases that incorporate the phrase {includetoken}?
+give me all the occurrences that feature the phrase {includetoken}.
+show me all cases that involve the term {includetoken}.
+i'd like to see all instances that feature word "{includetoken}".
+please display all occurrences that include the words {includetoken}.
+i would like to see all instances that incorporate word {includetoken}.
+show me all instances that include the span {includetoken}.
+are there any instances with "{includetoken}"? 
+what are the sentences containing "{includetoken}"?
+can you list all the occurrences that involve word "{includetoken}".
+what are the sentences that have "{includetoken}"?
+please display all instances that have the token {includetoken}.
+what are the sentences containing {includetoken}?
+can you list all the occurrences that involve word {includetoken}.
+where in the data do we have {includetoken}?
+can you provide me with all occurrences that comprise the words {includetoken}?
+can you display all occurrences that contain word {includetoken}.
+show me all instances that contain the phrase {includetoken}.
+please provide me with all examples that involve the token {includetoken}.
+which sentences have the words "{includetoken}" in them?
+show me all instances that include the word "{includetoken}".
+are there any instances with "{includetoken}"?
+where does "{includetoken}" appear?
+give information of the cases that contain word "{includetoken}".
+i'd like to see all instances that feature word {includetoken}.
+which sentences have the word "{includetoken}" in them?
+where does {includetoken} appear?
+what are the samples that include {includetoken} in the data?
+can you provide me with all examples that have the term {includetoken}?
+show me all occurrences that feature the token {includetoken}.
+please show me all examples that feature word {includetoken}.
+give me a list of all examples that include the token {includetoken}.
+do we have "{includetoken}" in the data?
+i would like to see all the examples that contain the phrase {includetoken}.
+where in the data does "{includetoken}" appear?
+show me all instances that comprise the phrase {includetoken}.
+where in the data does {includetoken} appear?
