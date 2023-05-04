@@ -130,7 +130,6 @@ def topk(explainer, k, threshold=-1, data_path="../../cache/boolq/ig_explainer_b
     word_attributions = {}
 
     if class_name:
-        print('class name: ', class_name)
         temp = []
         for res in results:
             if res["label"] == class_name:
@@ -168,6 +167,7 @@ def topk(explainer, k, threshold=-1, data_path="../../cache/boolq/ig_explainer_b
     sorted_scores = sorted(scores.items(), key=lambda x: x[1], reverse=True)
 
     if not os.path.exists(res_path):
+        print("[Info] Writing to:", res_path)
         jsonString = json.dumps(sorted_scores)
         jsonFile = open(res_path, "w")
         jsonFile.write(jsonString)

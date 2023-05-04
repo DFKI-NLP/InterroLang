@@ -10,7 +10,7 @@ def global_top_k(conversation, parse_text, i, **kwargs):
     #     k = 1
     # finally:
     #     class_name = parse_text[i + 2]
-    class_name = parse_text[i+1]
+    class_name = parse_text[i+1].lower()
     k = 10
 
     if class_name == 'true':
