@@ -1,0 +1,29 @@
+predict [predict(id)]
+describe_self [describe_self] aka self
+describe_data [describe_data] aka data
+show [show(id)]
+likelihood [likelihood(class_names*, incudetoken*, id)]
+describe_model [describe_model] aka modeldescription
+describe_function [describe_function] aka function
+score [score(includetoken*, metric=accuracy|f1|roc|precision|recall|sensitivity|specificity|ppv|npv, class_names*, data_type=training|testing|developement|evaluation|train|test)] // negative/positive predictive value
+count_data [count_data(includetoken*)] aka ndatapoints
+label [label(includetoken*)]
+mistakes [mistakes(includetoken*)]
+include [include(includetoken)] aka includes
+keywords [keywords(number*)]
+nlpattribute [nlpattribute(number*, class_names*, id)] aka local_feature_importance
+nlpcfe [nlpcfe(id, number)]
+rationalize [rationalize(id)]
+similar [similar(id, number*)]
+global_topk [global_topk(class_names*, includetoken*)] aka global_feature_importance
+stats [stats(includetoken*)] aka statistic_target
+
+Argument with * means that it is optional.
+
+#followup operation: just use the dialogue history for this!
+
+NB: id can be a list, also several labels are possible [several intents]
+
+Use parallel adapters for intents + slot tagger for each type (tagger for [id, class_names, number, includetoken, metric, data_type]). Note that class_names, metric and data_type are closed (limited number of values) others are open.
+
+TODO: store previous operation [intent+slots] in the conversation object, ask clarification question if some values for core arguments are missing
