@@ -4,20 +4,21 @@ import numpy as np
 from logic.prompts import get_user_part_of_prompt
 
 ACTION_2_FILENAME = {
-    "self": None,
-    "score": "score_prompts.txt",
-    "likelihood": "likelihood_prompts.txt",
-    "important": "most_important_feature_prompts.txt",
+    "self": "describe_self.txt",
+    "score": "score.txt",
+    "likelihood": "likelihood.txt",
+    "important": "global_feature_importance.txt",
     "logic": "explanation_prompts.txt",
-    "predict": "predict_prompts.txt",
-    "whatif": "whatif_prompts.txt",
-    "cfe": "cfe_prompts.txt",
-    "function": None,
-    "show": "show_data_prompts.txt",
-    "description": "dataset_description.txt",
+    "predict": "predict.txt",
+    "cfe": "cfe.txt",
+    "function": "describe_function.txt",
+    "show": "show.txt",
+    "description": "describe_data.txt",
     "interactions": "interactions.txt",
     "mistake": "mistakes.txt",
-    "labels": "label_prompts.txt"
+    "labels": "label.txt",
+    "random_predict": "random_predict.txt",
+    "explain": "explain.txt"
 }
 
 

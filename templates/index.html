@@ -24,53 +24,44 @@
         </header>
         <main class="ttm-chat">
             <div class="msg left-msg">
-                <div class="msg-bubble">
-                    <div class="msg-text">
-                        Hello 😊, I'm a machine learning model trained to {{ datasetObjective }}.
-                        <br><br>
-                        Let's get started. Ask me something!
-                    </div>
+              <div class="msg-bubble">
+                <div class="msg-text">
+                  Hello 😊, I'm a machine learning model trained to {{ datasetObjective }}.
+                  <br><br>
+                  Let's get started. Ask me something!
+                </div>
+              </div>
+            </div>
+          </main>
+
+          <form class="ttm-inputarea">
+            <input type="text" class="ttm-input" id="textInput" placeholder="Enter your command! Use the ↑ arrow and ↓ arrow to cycle previous commands.">
+              <button type="submit" class="ttm-send-btn">Send</button>
+          </form>
+            <span class="genOptions">👇Help me generate a question about...👇</span>
+
+            <div class="slideDown">
+                <div class="dots-cont", id="generation-loading"> <span class="dot dot-1"></span> <span class="dot dot-2"></span> <span class="dot dot-3"></span> </div>
+                <div class="buttons", id="generation-buttons">
+                    <button id="idea-important" class="idea-button" onclick="sampleImportant()">important features</button>
+                    <button id="idea-why" class="idea-button" onclick="sampleWhy()">explanations</button>
+                    <button id="idea-predict" class="idea-button" onclick="samplePredict()">predictions</button>
+
+                    <button id="idea-random-predict" class="idea-button" onclick="sampleRandomPredict()">random predictions</button>
+
+                    <button id="idea-likelihood" class="idea-button" onclick="sampleLikelihood()">prediction likelihood</button>
+                    <button id="idea-show" class="idea-button" onclick="sampleShow()">showing data</button>
+                    <button id="idea-capabilities" class="idea-button" onclick="sampleCapabilities()">system capabilities</button>
+                    <button id="idea-performance" class="idea-button" onclick="samplePerformance()">performance</button>
+                    <button id="idea-flip" class="idea-button" onclick="sampleFlip()">how to change a prediction</button>
+                    <button id="idea-description" class="idea-button" onclick="sampleDataDescription()">dataset description</button>
+                    <button id="idea-interaction" class="idea-button" onclick="sampleInteractions()">feature interaction effects</button>
+                    <button id="idea-interaction" class="idea-button" onclick="sampleMistakes()">mistakes</button>
+                    <button id="idea-interaction" class="idea-button" onclick="sampleLabels()">data labels</button>
                 </div>
             </div>
         </main>
 
-        <form class="ttm-inputarea">
-            <select id="input_source" class="form-select" style="width: 150px; text-align:center; font-family: Calibri;">
-                <option style="text-align:center; " selected value="0">Input</option>
-                <option style="text-align:center;" value="1">Custom input</option>
-            </select>
-
-            <input style='margin-left: 10px'type="text" class="ttm-input" id="textInput"
-                   placeholder="Enter your command! Use the ↑ arrow and ↓ arrow to cycle previous commands.">
-            <button type="submit" class="ttm-send-btn">Send</button>
-        </form>
-        <span class="genOptions">👇Help me generate a question about...👇</span>
-
-        <div class="slideDown">
-            <div class="dots-cont" , id="generation-loading"><span class="dot dot-1"></span> <span
-                    class="dot dot-2"></span> <span class="dot dot-3"></span></div>
-            <div class="buttons" , id="generation-buttons">
-                <button id="idea-important" class="idea-button" onclick="sampleImportant()">important features</button>
-                <button id="idea-why" class="idea-button" onclick="sampleWhy()">explanations</button>
-                <button id="idea-predict" class="idea-button" onclick="samplePredict()">predictions</button>
-                <button id="idea-likelihood" class="idea-button" onclick="sampleLikelihood()">prediction likelihood
-                </button>
-                <button id="idea-show" class="idea-button" onclick="sampleShow()">showing data</button>
-                <button id="idea-capabilities" class="idea-button" onclick="sampleCapabilities()">system capabilities
-                </button>
-                <button id="idea-performance" class="idea-button" onclick="samplePerformance()">performance</button>
-                <button id="idea-whatif" class="idea-button" onclick="sampleWhatIf()">what if scenario</button>
-                <button id="idea-flip" class="idea-button" onclick="sampleFlip()">how to change a prediction</button>
-                <button id="idea-description" class="idea-button" onclick="sampleDataDescription()">dataset
-                    description
-                </button>
-                <button id="idea-interaction" class="idea-button" onclick="sampleInteractions()">feature interaction
-                    effects
-                </button>
-                <button id="idea-interaction" class="idea-button" onclick="sampleMistakes()">mistakes</button>
-                <button id="idea-interaction" class="idea-button" onclick="sampleLabels()">data labels</button>
-            </div>
-        </div>
     </section>
 
     <div>
@@ -168,16 +159,16 @@
         });
     }
 
+    function sampleRandomPredict() {
+        doSample("random_predict");
+    }
+
     function sampleDataDescription() {
         doSample("description");
     }
 
     function samplePerformance() {
         doSample("score");
-    }
-
-    function sampleWhatIf() {
-        doSample("whatif");
     }
 
     function sampleMistakes() {
