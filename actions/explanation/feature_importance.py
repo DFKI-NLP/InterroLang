@@ -8,7 +8,7 @@ from transformers import AutoTokenizer, AutoModelForSequenceClassification
 from explained_models.Explainer.explainer import Explainer
 import numpy as np
 
-from utils.custom_input import get_dataloader, generate_explanation
+from utils.custom_input import generate_explanation
 
 
 def handle_input(parse_text):

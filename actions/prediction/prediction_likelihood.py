@@ -4,7 +4,7 @@ import numpy as np
 import torch
 from torch import nn
 
-from actions.utils import gen_parse_op_text
+from actions.util_functions import gen_parse_op_text
 
 SINGLE_INSTANCE_TEMPLATE = """
 The model predicts the instance with <b>{filter_string}</b> as:

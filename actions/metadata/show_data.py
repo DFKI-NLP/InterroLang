@@ -5,7 +5,7 @@ it returns the mean.
 """
 import gin
 
-from actions.utils import gen_parse_op_text
+from actions.util_functions import gen_parse_op_text
 
 
 @gin.configurable
