@@ -30,7 +30,7 @@ from actions.nlu.sentiment import sentiment_operation
 from actions.nlu.similarity import similar_instances_operation
 from actions.nlu.topic import topic_operation
 from actions.prediction.mistakes import show_mistakes_operation
-from actions.prediction.predict import predict_operation
+from actions.prediction.simple_predict import predict_operation
 from actions.prediction.prediction_likelihood import predict_likelihood
 from actions.prediction.score import score_operation
 
