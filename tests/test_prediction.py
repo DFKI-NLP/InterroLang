@@ -42,3 +42,6 @@ def test_prediction_all():
     # Saving the data into the HTML file
     file_html.close()
     assert status_code == 1
+
+
+# TODO: test for custom input

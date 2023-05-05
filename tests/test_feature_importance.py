@@ -57,7 +57,7 @@ def test_multiple_feature_importance():
 
     assert status_code == 1
 
-
+# TODO: test for custom input
 # def test_feature_importance_with_custom_input():
 #     """
 #     Test feature importance for custom input
