@@ -7,6 +7,7 @@ from utils.conversation_simulator import create_conversation, TEXT, CONVERSATION
 from actions.about.self import self_operation
 
 conversation = CONVERSATION
+dataset_name = conversation.describe.get_dataset_name()
 
 
 def test_whatami():
@@ -15,7 +16,7 @@ def test_whatami():
 
     return_s, status_code = self_operation(conversation, parse_text, 1)
 
-    file_html = open(f"./tests/html/self/whatami.html", "w")
+    file_html = open(f"./tests/html/self/{dataset_name}_whatami.html", "w")
     text = TEXT
     text += return_s
     text += "</body></html>"

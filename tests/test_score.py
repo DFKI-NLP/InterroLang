@@ -9,6 +9,7 @@ from utils.conversation_simulator import create_conversation, TEXT, CONVERSATION
 from actions.prediction.score import score_operation
 
 conversation = CONVERSATION
+dataset_name = conversation.describe.get_dataset_name()
 
 
 def test_score_accuracy():
@@ -17,7 +18,7 @@ def test_score_accuracy():
 
     return_s, status_code = score_operation(conversation, parse_text, 0)
 
-    file_html = open(f"./tests/html/score/score_accuracy.html", "w")
+    file_html = open(f"./tests/html/score/{dataset_name}_score_accuracy.html", "w")
     text = TEXT
     text += return_s
     text += "</body></html>"
@@ -34,7 +35,7 @@ def test_score_default():
 
     return_s, status_code = score_operation(conversation, parse_text, 0)
 
-    file_html = open(f"./tests/html/score/score_default.html", "w")
+    file_html = open(f"./tests/html/score/{dataset_name}_score_default.html", "w")
     text = TEXT
     text += return_s
     text += "</body></html>"
@@ -51,7 +52,7 @@ def test_score_f1():
 
     return_s, status_code = score_operation(conversation, parse_text, 0)
 
-    file_html = open(f"./tests/html/score/score_f1.html", "w")
+    file_html = open(f"./tests/html/score/{dataset_name}_score_f1.html", "w")
     text = TEXT
     text += return_s
     text += "</body></html>"
@@ -68,7 +69,7 @@ def test_score_precision():
 
     return_s, status_code = score_operation(conversation, parse_text, 0)
 
-    file_html = open(f"./tests/html/score/score_precision.html", "w")
+    file_html = open(f"./tests/html/score/{dataset_name}_score_precision.html", "w")
     text = TEXT
     text += return_s
     text += "</body></html>"
@@ -85,7 +86,7 @@ def test_score_recall():
 
     return_s, status_code = score_operation(conversation, parse_text, 0)
 
-    file_html = open(f"./tests/html/score/score_recall.html", "w")
+    file_html = open(f"./tests/html/score/{dataset_name}_score_recall.html", "w")
     text = TEXT
     text += return_s
     text += "</body></html>"
@@ -102,7 +103,7 @@ def test_score_roc():
 
     return_s, status_code = score_operation(conversation, parse_text, 0)
 
-    file_html = open(f"./tests/html/score/score_roc.html", "w")
+    file_html = open(f"./tests/html/score/{dataset_name}_score_roc.html", "w")
     text = TEXT
     text += return_s
     text += "</body></html>"

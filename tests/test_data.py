@@ -8,6 +8,7 @@ from utils.conversation_simulator import create_conversation, TEXT, CONVERSATION
 from actions.metadata.data_summary import data_operation
 
 conversation = CONVERSATION
+dataset_name = conversation.describe.get_dataset_name()
 
 
 def test_data_summary():
@@ -16,7 +17,7 @@ def test_data_summary():
 
     return_s, status_code = data_operation(conversation, parse_text, 1)
 
-    file_html = open(f"./tests/html/data/data_summary.html", "w")
+    file_html = open(f"./tests/html/data/{dataset_name}_data_summary.html", "w")
     text = TEXT
     text += return_s
     text += "</body></html>"

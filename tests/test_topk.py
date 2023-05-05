@@ -7,6 +7,7 @@ from utils.conversation_simulator import create_conversation, TEXT, CONVERSATION
 from actions.explanation.global_topk import global_top_k
 
 conversation = CONVERSATION
+dataset_name = conversation.describe.get_dataset_name()
 
 
 def test_topk():
@@ -15,7 +16,7 @@ def test_topk():
 
     return_s, status_code = global_top_k(conversation, parse_text, 0)
 
-    file_html = open(f"./tests/html/topk/topk.html", "w")
+    file_html = open(f"./tests/html/topk/{dataset_name}_topk.html", "w")
     text = TEXT
     text += return_s
     text += "</body></html>"
@@ -32,7 +33,7 @@ def test_topk_with_value():
 
     # return_s, status_code = global_top_k(conversation, parse_text, 0)
     return_s, status_code = global_top_k(conversation, parse_text, 0)
-    file_html = open(f"./tests/html/topk/topk_with_value.html", "w")
+    file_html = open(f"./tests/html/topk/{dataset_name}_topk_with_value.html", "w")
     text = TEXT
     text += return_s
     text += "</body></html>"

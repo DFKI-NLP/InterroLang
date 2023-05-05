@@ -7,6 +7,7 @@ from utils.conversation_simulator import create_conversation, TEXT, CONVERSATION
 from actions.metadata.labels import show_labels_operation
 
 conversation = CONVERSATION
+dataset_name = conversation.describe.get_dataset_name()
 
 
 def test_labels():
@@ -15,7 +16,7 @@ def test_labels():
 
     return_s, status_code = show_labels_operation(conversation, parse_text, 0)
 
-    file_html = open(f"./tests/html/labels/labels.html", "w")
+    file_html = open(f"./tests/html/labels/{dataset_name}_labels.html", "w")
     text = TEXT
     text += return_s
     text += "</body></html>"

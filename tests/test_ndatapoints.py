@@ -7,6 +7,7 @@ from utils.conversation_simulator import create_conversation, TEXT, CONVERSATION
 from actions.metadata.count_data_points import count_data_points
 
 conversation = CONVERSATION
+dataset_name = conversation.describe.get_dataset_name()
 
 
 def test_countdata():
@@ -15,7 +16,7 @@ def test_countdata():
 
     return_s, status_code = count_data_points(conversation, parse_text, 0)
 
-    file_html = open(f"./tests/html/ndatapoints/ndatapoints.html", "w")
+    file_html = open(f"./tests/html/ndatapoints/{dataset_name}_ndatapoints.html", "w")
     text = TEXT
     text += return_s
     text += "</body></html>"

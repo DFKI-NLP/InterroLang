@@ -2,6 +2,7 @@
 This file is needed for creating a conversation object for testing.
 """
 from logic.conversation import Conversation
+from logic.core import load_hf_model
 from logic.dataset_description import DatasetDescription
 from logic.utils import read_and_format_data
 
@@ -18,8 +19,8 @@ def create_conversation(class_names, dataset_objective, dataset_description,
                         target_variable_name,
                         categorical_features,
                         numerical_features,
-                        remove_underscores):
-
+                        remove_underscores,
+                        model_file_path):
     conversation = Conversation(class_names=class_names)
     datasetDescription = DatasetDescription(
         dataset_objective=dataset_objective,
@@ -37,9 +38,14 @@ def create_conversation(class_names, dataset_objective, dataset_description,
     conversation.add_dataset(dataset, y_values, categorical, numeric)
 
     conversation.build_temp_dataset()
+
+    model = load_hf_model(model_file_path, name)
+    conversation.add_var('model', model, 'model')
+
     return conversation
 
 
-gin.parse_config_file('./configs/tests.gin')
+# gin.parse_config_file('./configs/test_boolq.gin')
+gin.parse_config_file('./configs/test_olid.gin')
 
 CONVERSATION = create_conversation()

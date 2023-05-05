@@ -7,6 +7,7 @@ from utils.conversation_simulator import create_conversation, TEXT, CONVERSATION
 from actions.metadata.model import model_operation
 
 conversation = CONVERSATION
+dataset_name = conversation.describe.get_dataset_name()
 
 
 def test_model_description():
@@ -15,7 +16,7 @@ def test_model_description():
 
     return_s, status_code = model_operation(conversation, parse_text, 1)
 
-    file_html = open(f"./tests/html/model/model_description.html", "w")
+    file_html = open(f"./tests/html/model/{dataset_name}_model_description.html", "w")
     text = TEXT
     text += return_s
     text += "</body></html>"

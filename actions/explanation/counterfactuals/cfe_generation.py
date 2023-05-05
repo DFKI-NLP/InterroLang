@@ -4,7 +4,7 @@ import os
 import torch
 from polyjuice import Polyjuice
 from polyjuice.generations.special_tokens import *
-from transformers import AutoModelForSequenceClassification
+from transformers import AutoModelForSequenceClassification, AutoTokenizer
 
 from explained_models.Explainer.explainer import Explainer
 from explained_models.ModelABC.DANetwork import DANetwork
@@ -34,7 +34,8 @@ class CFEExplainer(Explainer):
             self.model = DANetwork()
             self.tokenizer = HFTokenizer('bert-base-uncased', mode='bert').tokenizer
         elif dataset_name == 'olid':
-            pass
+            self.model = AutoModelForSequenceClassification.from_pretrained("sinhala-nlp/mbert-olid-en")
+            self.tokenizer = AutoTokenizer.from_pretrained("sinhala-nlp/mbert-olid-en")
         else:
             raise NotImplementedError(f"The dataset {self.dataset_name} is not supported!")
 
@@ -81,7 +82,14 @@ class CFEExplainer(Explainer):
             orig_prediction = torch.argmax(orig_prediction).item()
             model_id2label = {0: 'dummy', 1: 'inform', 2: 'question', 3: 'directive', 4: 'commissive'}
         elif self.dataset_name == 'olid':
-            pass
+            if _id is not None:
+                import json
+                fileObject = open("./cache/olid/ig_explainer_olid_explanation.json", "r")
+                jsonContent = fileObject.read()
+                json_list = json.loads(jsonContent)
+                item = json_list[_id]
+                orig_prediction = item["predictions"]
+            model_id2label = {0: 'False', 1: 'True'}
         else:
             pass
 
@@ -99,7 +107,7 @@ class CFEExplainer(Explainer):
             elif self.dataset_name == "daily_dialog":
                 prediction = torch.argmax(prediction).item()
             elif self.dataset_name == 'olid':
-                pass
+                prediction = np.argmax(prediction.logits[0].cpu().detach().numpy())
             else:
                 pass
 
