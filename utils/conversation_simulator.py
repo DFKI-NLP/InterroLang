@@ -39,13 +39,13 @@ def create_conversation(class_names, dataset_objective, dataset_description,
 
     conversation.build_temp_dataset()
 
-    model = load_hf_model(model_file_path, name)
-    conversation.add_var('model', model, 'model')
+    # model = load_hf_model(model_file_path, name)
+    # conversation.add_var('model', model, 'model')
 
     return conversation
 
 
-# gin.parse_config_file('./configs/test_boolq.gin')
-gin.parse_config_file('./configs/test_olid.gin')
+gin.parse_config_file('./configs/test_boolq.gin')
+# gin.parse_config_file('./configs/test_olid.gin')
 
 CONVERSATION = create_conversation()
