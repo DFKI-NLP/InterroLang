@@ -1,8 +1,6 @@
 """
 This file is needed for creating a conversation object for testing.
 """
-import nltk
-
 from logic.conversation import Conversation
 from logic.core import load_hf_model
 from logic.dataset_description import DatasetDescription
@@ -28,7 +26,6 @@ def create_conversation(class_names, dataset_objective, dataset_description,
         dataset_objective=dataset_objective,
         dataset_description=dataset_description,
         model_description=model_description, name=name)
-    nltk.download('omw-1.4')
 
     conversation.describe = datasetDescription
 
@@ -50,7 +47,5 @@ def create_conversation(class_names, dataset_objective, dataset_description,
 
 # gin.parse_config_file('./configs/test_boolq.gin')
 gin.parse_config_file('./configs/test_olid.gin')
-
-
 
 CONVERSATION = create_conversation()

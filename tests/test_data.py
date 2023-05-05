@@ -1,6 +1,7 @@
 import sys
 import os
 
+import nltk
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -13,6 +14,8 @@ dataset_name = conversation.describe.get_dataset_name()
 
 def test_data_summary():
     """Test data summary functionality"""
+    nltk.download('omw-1.4')
+
     parse_text = ["data", "[E]"]
 
     return_s, status_code = data_operation(conversation, parse_text, 1)
