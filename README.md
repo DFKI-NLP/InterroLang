@@ -52,3 +52,27 @@ python flask_app.py
 - BoolQ model: https://huggingface.co/andi611/distilbert-base-uncased-qa-boolq
 - OLID model: https://huggingface.co/sinhala-nlp/mbert-olid-en
 
+## How to use custom input?
+### Supported operations
+1. nlpattribute
+2. prediction
+
+### Process
+#### 1. Enter your custom input in the text area and then click send button. Be aware: you have to choose **"Custom input"** in the selection box.
+![](./templates/images/custom_input.png)
+
+#### 2. After clicking the button, you could see your custom input in the terminal
+![](./templates/images/terminal.png)
+
+#### 3. Then you should enter prompts for operations mentioned above. Here, as example, we choose nlpattribute.
+![](./templates/images/input.png)
+
+#### 4. In the end, click the send button and you will get the result.
+![](./templates/images/result.png)
+
+
+
+## How to get used models?
+- BoolQ model: https://huggingface.co/andi611/distilbert-base-uncased-qa-boolq
+- OLID model: https://huggingface.co/sinhala-nlp/mbert-olid-en
+
