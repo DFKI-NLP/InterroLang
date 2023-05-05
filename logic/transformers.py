@@ -62,7 +62,7 @@ class TransformerModel(Module):
     def predict_raw(self, data, dataset):
         """ Mirrors the sklearn predict function https://scikit-learn.org/stable/glossary.html#term-predict
         Arguments:
-            data: Pandas DataFrame containing columns of text data
+            data: list of strings
             dataset: string indicating which dataset is used
         """
         predictions = []

@@ -32,7 +32,7 @@ class CFEExplainer(): #Explainer
         if explainer=="polyjuice":
             self.explainer = Polyjuice(model_path="uw-hai/polyjuice", is_cuda=self.is_cuda)
         elif explainer=="nlpaug":
-            self.explainer = CustomContextualWordEmbsAug(action="substitute", device=self.device, model_path="bert-base-cased", aug_max=3)
+            self.explainer = CustomContextualWordEmbsAug(action="substitute", device=self.device, model_path="bert-base-cased", aug_max=10)
             #self.explainer = naw.ContextualWordEmbsAug(model_path="bert-base-cased", action="substitute")
         else:
             self.explainer = explainer
@@ -60,7 +60,7 @@ class CFEExplainer(): #Explainer
         return [generated_samples, aug_tokens, orig_tokens]
 
     def get_samples_from_nlpaug(self, instances):
-        aug_results = self.explainer.augment(instances, n=5)
+        aug_results = self.explainer.augment(instances, n=10)
         generated_samples = []
         aug_tokens = []
         orig_tokens = []
@@ -80,7 +80,7 @@ class CFEExplainer(): #Explainer
     # e.g.:
     # same label: [('i also have blow if you prefer to do a few shots.', 'directive'), ('i also have blow if you prefer to do this.', 'directive')]
     # diff label: [('also blew me away with his single second.', 'inform')]
-    def cfe(self, instance, model, number, dataset, after_sep="", ctrl_code=['lexical', 'shuffle', 'insert', 'delete'], id2label=None):
+    def cfe(self, instance, model, number, dataset, question="", ctrl_code=['lexical', 'shuffle', 'insert', 'delete'], id2label=None):
         if self.explainer_name=="polyjuice":
              new_samples, aug_tokens, orig_tokens = self.get_samples_from_pj(instance, ctrl_code=ctrl_code)
         elif self.explainer_name=="nlpaug":
@@ -88,11 +88,11 @@ class CFEExplainer(): #Explainer
             new_samples, aug_tokens, orig_tokens = self.get_samples_from_nlpaug(instances)
         else:
             raise Exception("Unknown explainer:", self.explainer_name)
-        if len(after_sep)>0 and dataset=="boolq":
-            instance_to_predict = {"question":instance, "passage":after_sep}
+        if len(question)>0 and dataset=="boolq":
+            instance_to_predict = {"question":question, "passage":instance}
         else:
             instance_to_predict = instance
-        orig_prediction = model.predict_raw([instance_to_predict], dataset)
+        orig_prediction = model.predict_raw([instance_to_predict], dataset)[0]
         same_label_samples = []
         diff_label_samples = []
         for si, new_sample in enumerate(new_samples):
@@ -100,11 +100,11 @@ class CFEExplainer(): #Explainer
                 new_sample = new_sample[0]
             if new_sample==instance:
                 continue
-            if len(after_sep)>0 and dataset=="boolq":
-                new_sample_to_predict = {"question":new_sample, "passage":after_sep}
+            if len(question)>0 and dataset=="boolq":
+                new_sample_to_predict = {"question":question, "passage":new_sample}
             else:
                 new_sample_to_predict = new_sample
-            prediction = model.predict_raw([new_sample_to_predict], dataset)
+            prediction = model.predict_raw([new_sample_to_predict], dataset)[0]
             out_str = self.get_changed_tokens(orig_tokens[si], aug_tokens[si])
             if prediction != orig_prediction:
                 diff_label_samples.append((new_sample, prediction, out_str))
@@ -174,19 +174,22 @@ def nlpcfe_operation(conversation, parse_text, i, max_num_preds_to_print=1, **kw
         dataset = conversation.get_var('dataset').contents["dataset_name"]
 
         if dataset=="boolq":
-            after_sep = conversation.get_var('dataset').contents["X"].iloc[id_val]["passage"]
-            instance_text = conversation.get_var('dataset').contents["X"].iloc[id_val]["question"]
+            instance_text = conversation.get_var('dataset').contents["X"].iloc[id_val]["passage"]
+            question = conversation.get_var('dataset').contents["X"].iloc[id_val]["question"]
         else:
-            after_sep = ""
             instance_text = conversation.get_var('dataset').contents["X"].iloc[id_val]["text"]
-        same, diff = CFEExplainer("nlpaug").cfe(instance=instance_text, model=model, number=number, dataset=dataset, after_sep=after_sep, id2label=id2label)
-        return_s = "The <b>original</b> sample was: " + instance_text + "<br>"
+            question = ""
+        same, diff = CFEExplainer("nlpaug").cfe(instance=instance_text, model=model, number=number, dataset=dataset, question=question, id2label=id2label)
+        return_s = "The <b>original</b> sample was:<br>"
         if dataset=="boolq":
-            return_s += "<b>Passage:</b>\n" + after_sep + "<br>"
+            return_s += "<br><b>Question:</b>\n" + question + "<br>"
+            return_s += "<b>Passage:</b>\n" + instance_text + "<br>"
+        else:
+            return_s += "<br><b>Text:</b>\n" + instance_text + "<br>"
         if len(same)>0:
             return_s += '<br>I found the following counterfactuals that results in <font color="green"><b>the same</b></font> prediction:<br>'
             for same_pred in same:
-                return_s+="<br><b>"+str(id2label[same_pred[1][0]])+"</b>: "
+                return_s+="<br><b>"+str(id2label[same_pred[1]])+"</b>: "
                 out_str = same_pred[2]
                 if len(out_str)>0:
                     return_s+=out_str+"<br>"
@@ -195,7 +198,7 @@ def nlpcfe_operation(conversation, parse_text, i, max_num_preds_to_print=1, **kw
         if len(diff)>0:
             return_s += '<br>I found the following counterfactuals that results in <font color="red"><b>a different</b></font> prediction:<br>'
             for diff_pred in diff:
-                return_s+="<br><b>"+str(id2label[diff_pred[1][0]])+"</b>: "
+                return_s+="<br><b>"+str(id2label[diff_pred[1]])+"</b>: "
                 out_str = diff_pred[2]
                 if len(out_str)>0:
                     return_s+=out_str+"<br>"
