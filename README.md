@@ -48,3 +48,7 @@ python flask_app.py
 ## Data modules
 * Filtering (utils)
 
+## How to get used models?
+- BoolQ model: https://huggingface.co/andi611/distilbert-base-uncased-qa-boolq
+- OLID model: https://huggingface.co/sinhala-nlp/mbert-olid-en
+
