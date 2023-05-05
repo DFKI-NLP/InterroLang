@@ -11,3 +11,5 @@ create_conversation.remove_underscores = False
 create_conversation.dataset_objective = "predict to answer offensive/non-offensive attitude based on tweets"
 create_conversation.dataset_description = "identify the type and the target of offensive texts in social media"
 create_conversation.model_description = "mbert-olid-en"
+
+create_conversation.model_file_path = "./data/olid_model"
