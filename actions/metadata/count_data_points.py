@@ -1,5 +1,5 @@
 """Count the number of elements in the data."""
-from actions.utils import gen_parse_op_text
+from actions.util_functions import gen_parse_op_text
 
 
 def count_data_points(conversation, parse_text, i, **kwargs):

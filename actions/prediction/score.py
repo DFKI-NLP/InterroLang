@@ -6,7 +6,7 @@ import json
 
 import numpy as np
 
-from actions.utils import gen_parse_op_text
+from actions.util_functions import gen_parse_op_text
 
 
 def get_predictions_and_labels(dataset_name):
