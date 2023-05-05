@@ -46,7 +46,9 @@ featureimportance: " features"
 lime: " lime"
 cfe: " cfe"
 
-predictions: " predict"
+predictions: prediction flag
+prediction: " predict"
+flag: " random" | " "
 
 whatami: " self"
 
