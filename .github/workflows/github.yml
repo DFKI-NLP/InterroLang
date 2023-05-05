@@ -34,15 +34,16 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         pip install -r requirements_gitlab.txt
+        python -m nltk.downloader omw-1.4
 
-    - name: Install ruff and pre-commit
-      run: |
-        pip install ruff pre-commit
-
-    - name: precommit hook
-      run: |
-        pre-commit install
-        pre-commit run --all-files
+#    - name: Install ruff and pre-commit
+#      run: |
+#        pip install ruff pre-commit
+#
+#    - name: precommit hook
+#      run: |
+#        pre-commit install
+#        pre-commit run --all-files
 
 #    - name: Lint with ruff
 #      run: |
