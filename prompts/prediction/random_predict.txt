@@ -2,10 +2,10 @@ User: show me a random prediction
 Parsed: predict random [E]
 
 User: predict one instance from the data at random
-Parsed: predict random [E] 
+Parsed: predict random [E]
 
 User: could you randomly select an example and predict it?
-Parsed: predict random [E] 
+Parsed: predict random [E]
 
 User: please choose one input text and show the model's outcome
 Parsed: predict random [E]
