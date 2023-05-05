@@ -11,7 +11,8 @@ from actions.context.last_turn_filter import last_turn_filter
 from actions.context.last_turn_operation import last_turn_operation
 #from actions.explanation.cfe import counterfactuals_operation
 from actions.explanation.nlpcfe import nlpcfe_operation
-from actions.explanation.feature_importance import feature_importance_operation
+#from actions.explanation.feature_importance import feature_importance_operation
+from actions.explanation.local_topk import topk_operation
 from actions.explanation.rationalize import rationalize_operation
 #from actions.explanation.topk import global_topk_operation
 #from actions.explanation.what_if important what_if_operation
@@ -62,7 +63,8 @@ def get_all_action_functions_map():
         'topic': topic_operation,# Not used? (No prompts available)
         'sentiment': sentiment_operation,# Not used? (No prompts available)
         'rationalize': rationalize_operation,
-        'nlpattribute': feature_importance_operation,
+        'nlpattribute': topk_operation,
+        #'nlpattribute': feature_importance_operation,
         'globaltopk': global_top_k,
         'newcfe': nlpcfe_operation #counterfactuals_operation
     }
