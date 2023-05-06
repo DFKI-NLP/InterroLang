@@ -17,6 +17,7 @@ class CustomInputDataset(Dataset):
             self.tokenizer = AutoTokenizer.from_pretrained("andi611/distilbert-base-uncased-qa-boolq")
 
             for string in inputs:
+                print(string)
                 encoding = self.tokenizer.encode_plus(string, add_special_tokens=True, return_tensors='pt')
                 input_ids = encoding["input_ids"][0]
                 attention_mask = encoding["attention_mask"][0]

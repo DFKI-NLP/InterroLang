@@ -69,7 +69,8 @@ def get_res(json_list, topk, tokenizer, num=0):
     res = []
 
     # Get corresponding tokens by input_ids
-    tokens = list(tokenizer.decode(input_ids).split(" "))
+    # tokens = list(tokenizer.decode(input_ids).split(" "))
+    tokens = list(tokenizer.convert_ids_to_tokens(input_ids))
 
     idx = np.argsort(explanation)[::-1][:topk]
 
@@ -278,7 +279,12 @@ def feature_importance_operation(conversation, parse_text, i, **kwargs):
     jsonContent = fileObject.read()
     json_list = json.loads(jsonContent)
 
-    tokenizer = AutoTokenizer.from_pretrained("andi611/distilbert-base-uncased-qa-boolq")
+    if name == 'boolq':
+        tokenizer = AutoTokenizer.from_pretrained("andi611/distilbert-base-uncased-qa-boolq")
+    elif name == "daily_dialog":
+        pass
+    else:
+        tokenizer = AutoTokenizer.from_pretrained("sinhala-nlp/mbert-olid-en")
 
     if topk >= len(json_list[0]["input_ids"]):
         return "Entered topk is larger than input max length", 1

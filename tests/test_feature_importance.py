@@ -57,27 +57,28 @@ def test_multiple_feature_importance():
 
     assert status_code == 1
 
-# TODO: test for custom input
-# def test_feature_importance_with_custom_input():
-#     """
-#     Test feature importance for custom input
-#     """
-#
-#     parse_text = ["predict", "beginspan", "is", "a", "wolverine", "the", "same", "as", "a", "badger", "endspan",
-#                   "beginspan", "is", "this", "a", "good", "book", "endspan"]
-#
-#     return_s, status_code = feature_importance_operation(conversation, parse_text, 1)
-#
-#     file_html = open(f"./tests/html/feature_importance/{dataset_name}_feature_importance_with_custom_input.html", "w")
-#     text = TEXT
-#     text += return_s
-#     text += "</body></html>"
-#     file_html.write(text)
-#
-#     # Saving the data into the HTML file
-#     file_html.close()
-#
-#     assert status_code == 1
+
+def test_feature_importance_with_custom_input():
+    """
+    Test feature importance for custom input
+    """
+
+    parse_text = ["nlpattribute", "topk", "3"]
+
+    conversation.custom_input = "conservatives left frustrated as Congress passes big spending bills"
+    conversation.used = False
+    return_s, status_code = feature_importance_operation(conversation, parse_text, 1)
+
+    file_html = open(f"./tests/html/feature_importance/{dataset_name}_feature_importance_with_custom_input.html", "w")
+    text = TEXT
+    text += return_s
+    text += "</body></html>"
+    file_html.write(text)
+
+    # Saving the data into the HTML file
+    file_html.close()
+
+    assert status_code == 1
 
 
 def test_feature_importance_all():
