@@ -19,14 +19,14 @@ Parsed: statistic target [E]
 User: what are the gold target frequencies
 Parsed: statistic target [E]
 
-User: for {filter_text}, what is the distribution of the labels?
-Parsed: {filter_parse} and statistic target [E]
+User: for {span}, what is the distribution of the labels?
+Parsed: includes {span} and statistic target [E]
 
-User: for {filter_text}, what is the distribution of the target variable?
-Parsed: {filter_parse} and statistic target [E]
+User: for instances that include {span}, what is the distribution of the target variable?
+Parsed: includes {span} and statistic target [E]
 
-User: for {filter_text}, what is the distribution of the label?
-Parsed: {filter_parse} and statistic target [E]
+User: for {span}, what is the distribution of the label?
+Parsed: includes {span} and statistic target [E]
 
-User: where {filter_text}, show the distribution of the ground truth values?
-Parsed: {filter_parse} and statistic target [E]
+User: when {span} is in the text, show the distribution of the ground truth values
+Parsed: includes {span} and statistic target [E]

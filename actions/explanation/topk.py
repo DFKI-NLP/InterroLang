@@ -65,7 +65,7 @@ def results_with_pattern(results):
     """
     # example: dumb, fucking, and ugly are the most attributed for the hate speech label
     if len(results) == 1:
-        return results[0][0] + "is the most attributed"
+        return results[0][0] + " is the most attributed"
     else:
         string = ""
         for i in range(len(results) - 1):
@@ -75,12 +75,13 @@ def results_with_pattern(results):
         return string + " are the most attributed."
 
 
-def topk(explainer, k, threshold=-1, data_path="../../cache/boolq/ig_explainer_boolq_explanation.json",
+def topk(conversation, explainer, k, threshold=-1, data_path="../../cache/boolq/ig_explainer_boolq_explanation.json",
          res_path="../../cache/boolq/ig_explainer_boolq_attribution.json", print_with_pattern=True, class_name=None):
     """
     The operation to get most k important tokens
 
     Args:
+        conversation: conversation object
         explainer (string): string of explainer name
         k (int): number of tokens
         threshold (int, optional): Threshold of #occurance of a single token. Defaults to -1.
@@ -139,10 +140,11 @@ def topk(explainer, k, threshold=-1, data_path="../../cache/boolq/ig_explainer_b
         temp = results
 
     pbar = tqdm(temp)
+
     for result in pbar:
         pbar.set_description('Processing Attribution')
         attribution = result["attributions"]
-        tokens = list(tokenizer.decode(result["input_ids"]).split(" "))
+        tokens = list(tokenizer.convert_ids_to_tokens(result["input_ids"]))
         counter = 0
 
         # count for attributions and #occurance
@@ -154,7 +156,7 @@ def topk(explainer, k, threshold=-1, data_path="../../cache/boolq/ig_explainer_b
             else:
                 word_counter[token] += 1
                 word_attributions[token] += attribution[counter]
-                counter += 1
+            counter += 1
 
     scores = {}
     if threshold == -1:
@@ -184,7 +186,6 @@ def topk(explainer, k, threshold=-1, data_path="../../cache/boolq/ig_explainer_b
             return results_with_pattern(sorted_scores)
         else:
             return sorted_scores
-
 
 # if __name__ == "__main__":
 # topk("ig_explainer", 10, data_path="../../cache/ig_explainer_daily_dialog_explanation.json", res_path="../../cache/ig_explainer_daily_dialog_attribution.json")

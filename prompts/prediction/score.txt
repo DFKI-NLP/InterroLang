@@ -79,38 +79,38 @@ Parsed: score roc [E]
 User: what's the roc score
 Parsed: score roc [E]
 
-User: what's the accuracy for people {filter_text}?
-Parsed: {filter_parse} and score accuracy [E]
+User: what's the accuracy for instances containing {span}?
+Parsed: includes {span} and score accuracy [E]
 
-User: what's the testing accuracy for people {filter_text}
-Parsed: {filter_parse} and score accuracy [E]
+User: what's the testing accuracy for examples including {span}
+Parsed: includes {span} and score accuracy [E]
 
-User: what's the accuracy performance of the model on the training data for individuals with {filter_text}
-Parsed: {filter_parse} and score accuracy [E]
+User: what's the accuracy performance of the model on the training data for texts with {span}
+Parsed: includes {span} and score accuracy [E]
 
-User: for {filter_text}, how well, in terms of accuracy, does the model do on the training and test data
-Parsed: {filter_parse} and score accuracy and score accuracy [E]
+User: for {span}, how well, in terms of accuracy, does the model do on the training and test data
+Parsed: includes {span} and score accuracy and score accuracy [E]
 
-User: what's the npv on {filter_text}?
-Parsed: {filter_parse} and score npv [E]
+User: what's the npv on {span}?
+Parsed: includes {span} and score npv [E]
 
-User: what's the negative predictive value on {filter_text}?
-Parsed: {filter_parse} and score npv [E]
+User: what's the negative predictive value on {span}?
+Parsed: includes {span} and score npv [E]
 
-User: could you tell me the precision on the training data for {filter_text}
-Parsed: {filter_parse} and score precision [E]
+User: could you tell me the precision on the training data for {span}
+Parsed: includes {span} and score precision [E]
 
-User: what's the positive predictive value on {filter_text}?
-Parsed: {filter_parse} and score ppv [E]
+User: what's the positive predictive value on {span}?
+Parsed: includes {span} and score ppv [E]
 
-User: what's the ppv on {filter_text}?
-Parsed: {filter_parse} and score ppv [E]
+User: what's the ppv on {span}?
+Parsed: includes {span} and score ppv [E]
 
-User: what's the sensitivity on {filter_text}?
-Parsed: {filter_parse} and score sensitivity [E]
+User: what's the sensitivity on {span}?
+Parsed: includes {span} and score sensitivity [E]
 
-User: what's the specificity on {filter_text}?
-Parsed: {filter_parse} and score specificity [E]
+User: what's the specificity on {span}?
+Parsed: includes {span} and score specificity [E]
 
 User: what's the npv on this data?
 Parsed: previousfilter and score npv [E]

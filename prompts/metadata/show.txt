@@ -10,26 +10,17 @@ Parsed: filter id 215 and show and explain features [E]
 User: Please display id 105111
 Parsed: filter id 105111 and show [E]
 
-User: show me people that have {filter_text}
-Parsed: {filter_parse} and show [E]
+User: show me instances that include {span}
+Parsed: includes {span} and show [E]
 
-User: show me instances that are {filter_text}
-Parsed: {filter_parse} and show [E]
+User: return the data with {span}
+Parsed: includes {span} and show [E]
 
-User: return the data where {filter_text} people
-Parsed: {filter_parse} and show [E]
+User: show me all the data where {span} is present
+Parsed: includes {span} and show [E]
 
-User: show me all the data where {filter_text}
-Parsed: {filter_parse} and show [E]
-
-User: for {filter_text}, could you show me the data?
-Parsed: {filter_parse} and show [E]
-
-User: for those where {filter_text} is the case, could you print out the data items
-Parsed: {filter_parse} and show [E]
-
-User: please show the items of {filter_text} in the data
-Parsed: {filter_parse} and show [E]
+User: please show the items with {span} in the data
+Parsed: includes {span} and show [E]
 
 User: show me this data point
 Parsed: previousfilter and show [E]

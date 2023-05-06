@@ -7,6 +7,7 @@ from utils.conversation_simulator import create_conversation, TEXT, CONVERSATION
 from actions.nlu.similarity import similar_instances_operation
 
 conversation = CONVERSATION
+dataset_name = conversation.describe.get_dataset_name()
 
 
 def test_similarity():
@@ -15,7 +16,7 @@ def test_similarity():
 
     return_s, status_code = similar_instances_operation(conversation, parse_text, 0)
 
-    file_html = open(f"./tests/html/similar/similar.html", "w")
+    file_html = open(f"./tests/html/similar/{dataset_name}_similar.html", "w")
     text = TEXT
     text += return_s
     text += "</body></html>"

@@ -1,3 +1,6 @@
 # filter
-### includes_token.txt
-* 10x `includes {token} [E]`
+### includes.txt
+* 15x `includes {span} [E]`
+
+**GPT-4 generated**
+* 20x `includes {span} [E]`
