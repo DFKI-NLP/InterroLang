@@ -1,5 +1,6 @@
 """Count the number of elements in the data."""
 from actions.util_functions import gen_parse_op_text
+from actions.metadata.show_data import summarize_consecutive_ids
 
 
 def count_data_points(conversation, parse_text, i, **kwargs):
@@ -26,6 +27,6 @@ def count_data_points(conversation, parse_text, i, **kwargs):
     message += "<br><br>"
     message += "Let me know if you want to see their ids."
     ids = list(data.index)
-    rest_of_text = str(ids)
+    rest_of_text = summarize_consecutive_ids(ids)
     conversation.store_followup_desc(rest_of_text)
     return message, 1

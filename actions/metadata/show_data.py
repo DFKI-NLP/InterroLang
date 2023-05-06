@@ -6,6 +6,41 @@ it returns the mean.
 import gin
 
 from actions.util_functions import gen_parse_op_text
+from typing import List
+
+
+def summarize_consecutive_ids(instance_ids: List[int]):
+    if not instance_ids:
+        return ""
+
+        # Sort the list
+    instance_ids = sorted(instance_ids)
+
+    # Initialize variables
+    summary = []
+    start = instance_ids[0]
+    end = instance_ids[0]
+
+    # Iterate through the list
+    for i in range(1, len(instance_ids)):
+        if instance_ids[i] == end + 1:
+            end = instance_ids[i]
+        else:
+            if start == end:
+                summary.append(str(start))
+            else:
+                summary.append(f"{start}-{end}")
+
+            start = end = instance_ids[i]
+
+    # Add the last range or single integer
+    if start == end:
+        summary.append(str(start))
+    else:
+        summary.append(f"{start}-{end}")
+
+    # Return the summarized string
+    return ", ".join(summary)
 
 
 @gin.configurable
@@ -33,19 +68,10 @@ def show_operation(conversation, parse_text, i, n_features_to_show=float("+inf")
             else:
                 rest_of_info_string += text
     else:
-        """
-        return_string = f"{intro_text} the feature values are on average:<br><br>"
-        for i, feature_name in enumerate(data.columns):
-            feature_value = round(data[feature_name].mean(), conversation.rounding_precision)
-            text = f"{feature_name}: {feature_value}<br>"
-            if i < n_features_to_show:
-                return_string += text
-            else:
-                rest_of_info_string += text
-        """
-        instance_ids = str(list(data.index))
+        instance_ids = list(data.index)
+        str_instance_ids = summarize_consecutive_ids(instance_ids)
         return_string = f"{intro_text} the instance id's are:<br><br>"
-        return_string += instance_ids
+        return_string += str_instance_ids
         return_string += "<br><br>Which one do you want to see?<br><br>"
 
     # If we've written additional info to this string

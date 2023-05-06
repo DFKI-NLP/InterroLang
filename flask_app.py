@@ -142,7 +142,7 @@ def get_bot_response():
                 BOT.conversation.custom_input = user_text
                 BOT.conversation.used = False
                 app.logger.info(f"[CUSTOM INPUT] {user_text}")
-                response = "You have given a custom input. Please then enter a corresponding prompt!" + "<>" + "Entered custom input: " + user_text
+                response = "You have given a custom input. Please enter a follow-up question or prompt!" + "<>" + "Entered custom input: " + user_text
         except Exception as ext:
             app.logger.info(f"Traceback getting bot response: {traceback.format_exc()}")
             app.logger.info(f"Exception getting bot response: {ext}")
