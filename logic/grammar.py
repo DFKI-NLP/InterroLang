@@ -1,7 +1,7 @@
 GRAMMAR = r"""
 ?start: action
 action: operation done | operation join action | followup done
-operation: explanation | filter | predictions | whatami | lastturnfilter | lastturnop | data | impfeatures | show | whatif | likelihood | modeldescription | function | score | ndatapoints | label | mistakes | fstats | define | labelfilter | predfilter | includes | globaltopk | cfe
+operation: explanation | filter | predictions | whatami | lastturnfilter | lastturnop | data | impfeatures | show | whatif | likelihood | modeldescription | function | score | ndatapoints | label | mistakes | fstats | define | labelfilter | predfilter | includes | globaltopk | cfe | similarity
 
 cfe: " cfe" cfefeature
 cfefeature: {availablefeaturetypes} | " "
@@ -41,10 +41,10 @@ featuretype: {availablefeaturetypes}
 
 explanation: explainword explaintype
 explainword: " explain"
-explaintype: featureimportance | lime | cfe
+explaintype: featureimportance
 featureimportance: " features"
-lime: " lime"
-cfe: " cfe"
+
+similarity: " similar"
 
 predictions: prediction flag
 prediction: " predict"
