@@ -139,7 +139,7 @@ def explanation_with_custom_input(parse_text, conversation, topk):
     elif dataset_name == "daily_dialog":
         pass
     elif dataset_name == "olid":
-        pass
+        model = AutoModelForSequenceClassification.from_pretrained("sinhala-nlp/mbert-olid-en")
     else:
         raise NotImplementedError(f"The dataset {dataset_name} is not supported!")
 
@@ -147,51 +147,101 @@ def explanation_with_custom_input(parse_text, conversation, topk):
 
     return_s = ""
     for res in res_list:
-        original_text = res["text"]
+        if dataset_name == "boolq":
+            original_text = res["text"]
 
-        return_s += "The original text is:  <br>"
-        return_s += "<i>"
-        return_s += original_text
-        return_s += "</i>"
-        return_s += "<br><br>"
+            return_s += "The original text is:  <br>"
+            return_s += "<i>"
+            return_s += original_text
+            return_s += "</i>"
+            return_s += "<br><br>"
 
-        text = "[CLS] " + original_text + " [SEP]"
-        attr = res["attributions"]
-        text_list = text.split()
+            text = "[CLS] " + original_text + " [SEP]"
+            attr = res["attributions"]
+            text_list = text.split()
 
-        # Get indices according to absolute attribution scores ascending
-        idx = np.argsort(np.absolute(np.copy(attr)))
+            # Get indices according to absolute attribution scores ascending
+            idx = np.argsort(np.absolute(np.copy(attr)))
 
-        # Get topk tokens
-        topk_tokens = []
-        for i in np.argsort(attr)[-topk:][::-1]:
-            topk_tokens.append(text_list[i])
+            # Get topk tokens
+            topk_tokens = []
+            for i in np.argsort(attr)[-topk:][::-1]:
+                topk_tokens.append(text_list[i])
 
-        score_ranking = []
-        for i in range(len(idx)):
-            score_ranking.append(list(idx).index(i))
-        # fraction = 1.0 / (len(text_list) + 1)
-        fraction = 1.0 / (len(text_list) - 1)
+            score_ranking = []
+            for i in range(len(idx)):
+                score_ranking.append(list(idx).index(i))
+            fraction = 1.0 / (len(text_list) - 1)
 
-        return_s += f"Top {topk} token(s): "
-        for i in topk_tokens:
-            return_s += f"<b>{i}</b>"
-            return_s += " "
-        return_s += '<br>'
+            return_s += f"Top {topk} token(s): "
+            for i in topk_tokens:
+                return_s += f"<b>{i}</b>"
+                return_s += " "
+            return_s += '<br>'
 
-        return_s += "The visualization: "
-        for i in range(1, len(text_list) - 1):
-            if attr[i] >= 0:
-                # Assign red to tokens with positive attribution
-                return_s += f"<span style='background-color:rgba(255,0,0,{round(fraction * score_ranking[i], conversation.rounding_precision)});padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 2; border-radius: 0.35em; box-decoration-break: clone; -webkit-box-decoration-break: clone'>"
-            else:
-                # Assign blue to tokens with negative attribution
-                return_s += f"<span style='background-color:rgba(0,0,255,{round(fraction * score_ranking[i], conversation.rounding_precision)});padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 2; border-radius: 0.35em; box-decoration-break: clone; -webkit-box-decoration-break: clone'>"
-            return_s += text_list[i]
-            return_s += "</span>"
-            return_s += ' '
+            return_s += "The visualization: "
+            for i in range(1, len(text_list) - 1):
+                if attr[i] >= 0:
+                    # Assign red to tokens with positive attribution
+                    return_s += f"<span style='background-color:rgba(255,0,0,{round(fraction * score_ranking[i], conversation.rounding_precision)});padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 2; border-radius: 0.35em; box-decoration-break: clone; -webkit-box-decoration-break: clone'>"
+                else:
+                    # Assign blue to tokens with negative attribution
+                    return_s += f"<span style='background-color:rgba(0,0,255,{round(fraction * score_ranking[i], conversation.rounding_precision)});padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 2; border-radius: 0.35em; box-decoration-break: clone; -webkit-box-decoration-break: clone'>"
+                return_s += text_list[i]
+                return_s += "</span>"
+                return_s += ' '
 
-        return_s += '<br><br><br>'
+            return_s += '<br><br><br>'
+        elif dataset_name == "olid":
+            original_text = res["text"]
+            _input = res["original_text"]
+
+            return_s += "The original text is:  <br>"
+            return_s += "<i>"
+            return_s += _input
+            return_s += "</i>"
+            return_s += "<br><br>"
+
+            attr = res["attributions"]
+
+            assert len(attr) == len(original_text)
+
+            # Get indices according to absolute attribution scores ascending
+            idx = np.argsort(np.absolute(np.copy(attr)))
+
+            # Get topk tokens
+            topk_tokens = []
+            # print(text_list)
+            for i in np.argsort(attr)[-topk:][::-1]:
+                print("i: ", i)
+                topk_tokens.append(original_text[i])
+
+            score_ranking = []
+            for i in range(len(idx)):
+                score_ranking.append(list(idx).index(i))
+            fraction = 1.0 / (len(original_text) - 1)
+
+            return_s += f"Top {topk} token(s): "
+            for i in topk_tokens:
+                return_s += f"<b>{i}</b>"
+                return_s += " "
+            return_s += '<br>'
+
+            return_s += "The visualization: "
+            # for i in range(1, len(text_list) - 1):
+            for i in range(1, len(original_text) - 1):
+                if attr[i] >= 0:
+                    # Assign red to tokens with positive attribution
+                    return_s += f"<span style='background-color:rgba(255,0,0,{round(fraction * score_ranking[i], conversation.rounding_precision)});padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 2; border-radius: 0.35em; box-decoration-break: clone; -webkit-box-decoration-break: clone'>"
+                else:
+                    # Assign blue to tokens with negative attribution
+                    return_s += f"<span style='background-color:rgba(0,0,255,{round(fraction * score_ranking[i], conversation.rounding_precision)});padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 2; border-radius: 0.35em; box-decoration-break: clone; -webkit-box-decoration-break: clone'>"
+                # return_s += text_list[i]
+                return_s += original_text[i]
+                return_s += "</span>"
+                return_s += ' '
+
+            return_s += '<br><br><br>'
 
     return return_s
 

@@ -28,7 +28,19 @@ class CustomInputDataset(Dataset):
         elif dataset_name == "daily_dialog":
             pass
         elif dataset_name == 'olid':
-            pass
+            self.tokenizer = AutoTokenizer.from_pretrained("sinhala-nlp/mbert-olid-en")
+            for string in inputs:
+                encoding = self.tokenizer.encode_plus(
+                    string,
+                    truncation=True,
+                    return_tensors='pt',
+                )
+                input_ids, attention_mask = encoding['input_ids'], encoding['attention_mask']
+                input_model = {
+                    'input_ids': input_ids.long(),
+                    'attention_mask': attention_mask.long(),
+                }
+                self.data.append(input_model)
         else:
             raise NotImplementedError(f"The dataset {dataset_name} is not supported!")
 
@@ -62,8 +74,8 @@ def get_inputs_and_additional_args(batch, dataset_name):
         input_ids = batch[0]
         additional_forward_args = (batch[1].to(device))
     else:
-        input_ids = batch[0]
-        additional_forward_args = (batch[1].to(device))
+        input_ids = batch['input_ids']
+        additional_forward_args = (batch['attention_mask'].to(device))
 
     return input_ids, additional_forward_args
 
@@ -86,8 +98,8 @@ def get_forward_func(dataset_name, model):
             }
         else:
             input_model = {
-                'input_ids': input_ids.long(),
-                'attention_mask': attention_masks.long()[None, :],
+                'input_ids': input_ids.long()[0],
+                'attention_mask': attention_masks.long(),
             }
 
         output_model = model(**input_model)
@@ -126,10 +138,11 @@ def compute_feature_attribution_scores(batch, model, dataset_name):
         special_tokens_mask[0][-1] = 1
         baseline = batch[0] * special_tokens_mask
     else:
-        special_tokens_mask = batch[0] * 0
-        special_tokens_mask[0][0] = 1
-        special_tokens_mask[0][-1] = 1
-        baseline = batch[0] * special_tokens_mask
+        # special_tokens_mask = batch["input_ids"] * 0
+        # special_tokens_mask[0][0] = 1
+        # special_tokens_mask[0][-1] = 1
+        # baseline = batch["input_ids"] * special_tokens_mask
+        baseline = torch.zeros(batch["input_ids"].shape)
 
     explainer = LayerIntegratedGradients(forward_func=forward_func,
                                          layer=get_embedding_layer(model, dataset_name))
@@ -183,24 +196,42 @@ def generate_explanation(model, dataset_name, inputs):
     model.to(device=device)
 
     if dataset_name == 'boolq':
+        # tokenizer = AutoTokenizer.from_pretrained("andi611/distilbert-base-uncased-qa-boolq")
         for idx_batch, b in enumerate(dataloader):
             attribution, predictions = compute_feature_attribution_scores(b, model, dataset_name)
 
-            # ids = detach_to_list(b)
-            # label = b['labels'][idx_instance]
             attrbs = detach_to_list(attribution[0])
-            # preds = predictions[idx_instance]
-            # ids = batch['input_ids'][idx_instance]
-            # label = batch['labels'][idx_instance]
-            # attrbs = attribution[idx_instance]
             preds = torch.argmax(predictions, dim=1)
             result = {
                 'input_ids': detach_to_list(b["input_ids"]),
                 "text": inputs[idx_batch],
+                # "text": tokenizer.convert_ids_to_tokens(b["input_ids"][0]),
                 'attributions': attrbs,
                 'predictions': preds.item()
             }
             json_list.append(result)
+    elif dataset_name == "daily_dialog":
+        pass
+    elif dataset_name == "olid":
+        tokenizer = AutoTokenizer.from_pretrained("sinhala-nlp/mbert-olid-en")
+        for idx_batch, b in enumerate(dataloader):
+            attribution, predictions = compute_feature_attribution_scores(b, model, device)
+
+            ids = detach_to_list(b["input_ids"][0])
+            preds = torch.argmax(predictions, dim=1)
+            print(attribution)
+            print(b)
+            attrbs = detach_to_list(attribution[0])
+            result = {
+                      "original_text": inputs[idx_batch],
+                      'text': tokenizer.convert_ids_to_tokens(b["input_ids"][0][0]),
+                      'input_ids': ids,
+                      'attributions': attrbs,
+                      'predictions': preds.item()
+                      }
+            json_list.append(result)
+    else:
+        pass
 
     # Store the chat history
     if not os.path.exists(cache_path):
