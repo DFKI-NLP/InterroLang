@@ -1,13 +1,13 @@
 GRAMMAR = r"""
 ?start: action
 action: operation done | operation join action | followup done
-operation: explanation | filter | predictions | whatami | lastturnfilter | lastturnop | data | impfeatures | show | whatif | likelihood | modeldescription | function | score | ndatapoints | label | mistakes | fstats | define | labelfilter | predfilter | includes | globaltopk | newcfe
+operation: explanation | filter | predictions | whatami | lastturnfilter | lastturnop | data | impfeatures | show | whatif | likelihood | modeldescription | function | score | ndatapoints | label | mistakes | fstats | define | labelfilter | predfilter | includes | globaltopk | cfe
 
-newcfe: " newcfe" cfefeature
+cfe: " cfe" cfefeature
 cfefeature: {availablefeaturetypes} | " "
 
 globaltopk: globaltopkword
-globaltopkword: " globaltopk" classname
+globaltopkword: " important" classname
 classname: " true" | " false" | " "
 
 labelfilter: " labelfilter" class
