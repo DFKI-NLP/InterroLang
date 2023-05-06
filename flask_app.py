@@ -59,7 +59,22 @@ def home():
     """Load the explanation interface."""
     app.logger.info("Loaded Login")
     objective = BOT.conversation.describe.get_dataset_objective()
-    return render_template("index.html", currentUserId="user", datasetObjective=objective)
+
+    BOT.conversation.build_temp_dataset()
+    df = BOT.conversation.temp_dataset.contents['X']
+    f_names = list(BOT.conversation.temp_dataset.contents['X'].columns)
+
+    # only for boolq
+    entries = []
+    for j in range(5):
+        temp = {}
+        for f in f_names:
+            temp[f] = df[f][j]
+        entries.append(temp)
+
+    dataset = BOT.conversation.describe.get_dataset_name()
+
+    return render_template("index.html", currentUserId="user", datasetObjective=objective, entries= entries, dataset=dataset)
 
 
 @bp.route("/log_feedback", methods=['POST'])
@@ -114,17 +129,52 @@ def sample_prompt():
 def get_bot_response():
     """Load the box response."""
     if request.method == "POST":
-        app.logger.info("generating the bot response")
+
         try:
             data = json.loads(request.data)
-            user_text = data["userInput"]
-            conversation = BOT.conversation
-            response = BOT.update_state(user_text, conversation)
+            if data['custom_input'] == '0':
+                app.logger.info("generating the bot response")
+                user_text = data["userInput"]
+                conversation = BOT.conversation
+                response = BOT.update_state(user_text, conversation)
+            else:
+                user_text = data["userInput"]
+                BOT.conversation.custom_input = user_text
+                BOT.conversation.used = False
+                app.logger.info(f"[CUSTOM INPUT] {user_text}")
+                response = "You have given a custom input. Please enter a follow-up question or prompt!" + "<>" + "Entered custom input: " + user_text
         except Exception as ext:
             app.logger.info(f"Traceback getting bot response: {traceback.format_exc()}")
             app.logger.info(f"Exception getting bot response: {ext}")
             response = "Sorry! I couldn't understand that. Could you please try to rephrase?"
         return response
+
+
+@bp.route("/custom_input", methods=["Post"])
+def custom_input():
+    data = json.loads(request.data)
+    custom_input = data["custom_input"]
+    username = data["thisUserName"]
+
+    BOT.conversation.custom_input = custom_input
+    BOT.conversation.used = False
+
+    app.logger.info("custom_input: " + custom_input)
+
+    return custom_input
+
+
+@bp.route("/reset_temp_dataset", methods=["Post"])
+def reset_temp_dataset():
+    data = json.loads(request.data)
+    username = data["thisUserName"]
+
+    # Reset the tempdataset
+    BOT.conversation.build_temp_dataset()
+
+    app.logger.info("Reset temp dataset succeessfully!")
+
+    return "reset temp_dataset"
 
 
 app = Flask(__name__)

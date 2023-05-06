@@ -6,7 +6,7 @@ import time
 import numpy as np
 from transformers import AutoModelForSequenceClassification, AutoTokenizer
 
-from actions.utils import gen_parse_op_text, get_parse_filter_text
+from actions.util_functions import gen_parse_op_text, get_parse_filter_text
 
 
 def handle_input(parse_text):

@@ -77,16 +77,16 @@ def data_operation(conversation, parse_text, i, **kwargs):
 
     frequent_words = get_frequent_words(conversation, f_names, top=top)
 
-    text += "<table>"
-    text += "<tr>"
+    text += "<table style='border: 1px solid black;'>"
+    text += "<tr style='border: 1px solid black;'>"
     text += "<th> Word </th>"
     text += "<th> Frequence </th>"
     text += "</tr>"
 
     for i in range(len(frequent_words)):
-        text += "<tr>"
-        text += f"<td> {frequent_words[i][0]} </td>"
-        text += f"<td> {frequent_words[i][1]} </td>"
+        text += "<tr style='border: 1px solid black;'>"
+        text += f"<td style='border: 1px solid black;'> {frequent_words[i][0]} </td>"
+        text += f"<td style='border: 1px solid black;'> {frequent_words[i][1]} </td>"
         text += "</tr>"
     text += "</table><br><br>"
 

@@ -4,7 +4,7 @@ import numpy as np
 import torch
 from torch import nn
 
-from actions.utils import gen_parse_op_text
+from actions.util_functions import gen_parse_op_text
 
 SINGLE_INSTANCE_TEMPLATE = """
 The model predicts the instance with <b>{filter_string}</b> as:
@@ -31,7 +31,7 @@ def extract_id_from_parse_text(parse_text):
     return instance_id
 
 
-def get_predictions_and_probabilities(name, instance_id):
+def get_predictions_and_probabilities(name, instance_id, dataset_name):
     """
 
     Args:
@@ -49,7 +49,14 @@ def get_predictions_and_probabilities(name, instance_id):
     prediction = json_list[instance_id]["predictions"]
 
     model_predictions = np.argmax(prediction)
-    model_prediction_probabilities = (nn.Softmax(dim=0)(torch.tensor(prediction))).detach().numpy()
+    if dataset_name == "boolq":
+        model_prediction_probabilities = (nn.Softmax(dim=0)(torch.tensor(prediction))).detach().numpy()
+    elif dataset_name == "daily_dialog":
+        pass
+    elif dataset_name == 'olid':
+        model_prediction_probabilities = (nn.Softmax(dim=0)(torch.Tensor(prediction).float())).detach().numpy()
+    else:
+        raise NotImplementedError(f"{dataset_name} is not supported!");
 
     return model_predictions, model_prediction_probabilities
 
@@ -61,7 +68,14 @@ def predict_likelihood(conversation, parse_text, i, **kwargs):
     # Get the dataset name
     name = conversation.describe.get_dataset_name()
     instance_id = extract_id_from_parse_text(parse_text)
-    model_predictions, model_prediction_probabilities = get_predictions_and_probabilities(name, instance_id)
+
+    dataset_name = conversation.describe.get_dataset_name()
+
+    if instance_id is not None:
+        model_predictions, model_prediction_probabilities = get_predictions_and_probabilities(name, instance_id, dataset_name)
+    else:
+        # TODO: likelihood for a certain class
+        raise ValueError("ID is not given")
 
     return_s = f"For instance with id <b>{instance_id}</b>: "
     return_s += "<ul>"

@@ -5,7 +5,7 @@ import gin
 import numpy as np
 from sklearn.tree import DecisionTreeClassifier
 
-from actions.utils import get_parse_filter_text, get_rules
+from actions.util_functions import get_parse_filter_text, get_rules
 
 
 def one_mistake(y_true, y_pred, conversation, intro_text):
