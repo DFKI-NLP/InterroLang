@@ -35,8 +35,8 @@
           </main>
 
           <form class="ttm-inputarea">
-            <select id="input_source" class="form-select" style="width: 150px; text-align:center; font-family: Calibri;">
-                <option style="text-align:center; " selected value="0">Input</option>
+            <select id="input_source" class="form-select" style="width: 150px; text-align:center; font-family: Calibri; margin-right: 10px" id="input_select">
+                <option style="text-align:center; " value="0">Input</option>
                 <option style="text-align:center;" value="1">Custom input</option>
             </select>
             <input type="text" class="ttm-input" id="textInput" placeholder="Enter your command! Use the ↑ arrow and ↓ arrow to cycle previous commands.">
@@ -59,9 +59,9 @@
                     <button id="idea-performance" class="idea-button" onclick="samplePerformance()">performance</button>
                     <button id="idea-flip" class="idea-button" onclick="sampleFlip()">how to change a prediction</button>
                     <button id="idea-description" class="idea-button" onclick="sampleDataDescription()">dataset description</button>
-                    <button id="idea-interaction" class="idea-button" onclick="sampleInteractions()">feature interaction effects</button>
-                    <button id="idea-interaction" class="idea-button" onclick="sampleMistakes()">mistakes</button>
-                    <button id="idea-interaction" class="idea-button" onclick="sampleLabels()">data labels</button>
+                    <button class="idea-button" onclick="sampleInteractions()">feature interaction effects</button>
+                    <button class="idea-button" onclick="sampleMistakes()">mistakes</button>
+                    <button class="idea-button" onclick="sampleLabels()">data labels</button>
                 </div>
             </div>
         </main>
@@ -219,20 +219,20 @@
 
 <script src='https://use.fontawesome.com/releases/v5.0.13/js/all.js'></script>
 <script>
-    function handle_custom_input(custom_input) {
-        let username = '{{ currentUserId }}'
-        let dataPackage = {custom_input: custom_input, thisUserName: username}
-        let jsonDataPackage = JSON.stringify(dataPackage)
-
-        const result = $.ajax({
-            type: 'POST',
-            url: "{{ url_for('.custom_input') }}",
-            data: jsonDataPackage,
-            processData: false,
-            contentType: false,
-            cache: false,
-        });
-    }
+    // function handle_custom_input(custom_input) {
+    //     let username = '{{ currentUserId }}'
+    //     let dataPackage = {custom_input: custom_input, thisUserName: username}
+    //     let jsonDataPackage = JSON.stringify(dataPackage)
+    //
+    //     const result = $.ajax({
+    //         type: 'POST',
+    //         url: "{{ url_for('.custom_input') }}",
+    //         data: jsonDataPackage,
+    //         processData: false,
+    //         contentType: false,
+    //         cache: false,
+    //     });
+    // }
 
     function reset_temp_dataset(){
         let username = '{{ currentUserId }}'
@@ -250,20 +250,20 @@
     }
 
 
-    const custom_input = document.getElementById("custom_input");
-    const submit_btn = document.getElementById("submit_btn");
-    const reset_btn = document.getElementById("reset_temp_dataset");
-
-    submit_btn.addEventListener("click", () => {
-        let inputs = custom_input.value;
-        if (inputs != "") {
-            handle_custom_input(inputs);
-        }
-    });
-
-    reset_btn.addEventListener("click", () => {
-        reset_temp_dataset();
-    });
+    // const custom_input = document.getElementById("custom_input");
+    // const submit_btn = document.getElementById("submit_btn");
+    // const reset_btn = document.getElementById("reset_temp_dataset");
+    //
+    // submit_btn.addEventListener("click", () => {
+    //     let inputs = custom_input.value;
+    //     if (inputs != "") {
+    //         handle_custom_input(inputs);
+    //     }
+    // });
+    //
+    // reset_btn.addEventListener("click", () => {
+    //     reset_temp_dataset();
+    // });
 
 </script>
 <script>
@@ -278,21 +278,21 @@
     ttmForm.addEventListener("submit", event => {
         var idx = document.getElementById("input_source").selectedIndex;
         const msgText = ttmInput.value;
-        if(document.getElementsByTagName("option")[idx].value == '0'){
-            event.preventDefault();
+        let custom_input;
 
-            if (!msgText) return;
-            addToChat("right", msgText, "");
-            insertLoadingDots();
-            ttmChat.scrollTop += 200;
-            ttmInput.value = "";
-            botResponse(msgText);
+        event.preventDefault();
+
+        if (!msgText) return;
+        addToChat("right", msgText, "");
+        insertLoadingDots();
+        ttmChat.scrollTop += 200;
+        ttmInput.value = "";
+
+        if (document.getElementsByTagName("option")[idx].value === '0') {
+            botResponse(msgText, custom_input = '0');
         } else {
-            if (msgText != "") {
-                handle_custom_input(msgText);
-            }
+            botResponse(msgText, custom_input = '1');
         }
-
     });
 
     function answeredNo(logText) {
@@ -430,8 +430,9 @@
         ttmChat.scrollTop += 500;
     }
 
-    function botResponse(rawText) {
-        let dataPackage = {userInput: rawText, userName: "{{ currentUserId }}"};
+    function botResponse(rawText, custom_input) {
+
+        let dataPackage = {userInput: rawText, userName: "{{ currentUserId }}", custom_input: custom_input}
         dataPackage = JSON.stringify(dataPackage)
         $('.all-feedback').fadeOut(250, function () {
             $('.all-feedback').remove();
