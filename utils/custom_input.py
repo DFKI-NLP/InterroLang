@@ -125,7 +125,6 @@ def compute_feature_attribution_scores(batch, model, dataset_name):
     )
     pred_id = torch.argmax(predictions, dim=1)
 
-    # baseline = torch.zeros(batch["input_ids"].shape)
 
     if dataset_name == 'boolq':
         special_tokens_mask = batch["input_ids"] * 0
@@ -196,7 +195,6 @@ def generate_explanation(model, dataset_name, inputs):
     model.to(device=device)
 
     if dataset_name == 'boolq':
-        # tokenizer = AutoTokenizer.from_pretrained("andi611/distilbert-base-uncased-qa-boolq")
         for idx_batch, b in enumerate(dataloader):
             attribution, predictions = compute_feature_attribution_scores(b, model, dataset_name)
 
@@ -205,7 +203,6 @@ def generate_explanation(model, dataset_name, inputs):
             result = {
                 'input_ids': detach_to_list(b["input_ids"]),
                 "text": inputs[idx_batch],
-                # "text": tokenizer.convert_ids_to_tokens(b["input_ids"][0]),
                 'attributions': attrbs,
                 'predictions': preds.item()
             }
@@ -219,8 +216,6 @@ def generate_explanation(model, dataset_name, inputs):
 
             ids = detach_to_list(b["input_ids"][0])
             preds = torch.argmax(predictions, dim=1)
-            print(attribution)
-            print(b)
             attrbs = detach_to_list(attribution[0])
             result = {
                       "original_text": inputs[idx_batch],

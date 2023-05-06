@@ -407,7 +407,6 @@ class FeatureAttributionExplainer(Explainer):
                           'label': label,
                           'attributions': attrbs,
                           'predictions': preds}
-                print(result)
                 if store_data:
                     json_list.append(result)
         if store_data:
