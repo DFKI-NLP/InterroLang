@@ -62,7 +62,7 @@ def get_all_action_functions_map():
         'sentiment': sentiment_operation,
         'rationalize': rationalize_operation,
         'nlpattribute': feature_importance_operation,
-        'globaltopk': global_top_k,
+        'important': global_top_k,
         'cfe': counterfactuals_operation
     }
     return actions
