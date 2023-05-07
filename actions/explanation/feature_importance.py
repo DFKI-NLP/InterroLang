@@ -261,7 +261,11 @@ def get_sentence_level_feature_importance(conversation, parse_text, i):
 
     for res in res_list:
         attr = res["attributions"]
-        text = res["text"]
+
+        if dataset_name == 'boolq':
+            text = res["text"]
+        elif dataset_name == 'olid':
+            text = res["original_text"]
 
         return_s += "<ul>"
         return_s += "<li>"
