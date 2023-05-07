@@ -176,7 +176,6 @@ def prediction_with_custom_input(conversation):
                     'input_ids': input_ids.long(),
                     'attention_mask': attention_mask.long(),
                 }
-                print(input_model)
                 output_model = model(**input_model)[0]
 
                 # Get logit
@@ -251,10 +250,10 @@ def random_prediction(model, data, conversation, text):
     return_s += "<li>"
     model_predictions = model.predict(data, text)
     if conversation.class_names is None:
-        prediction_class = str(model_predictions[0])
+        prediction_class = str(model_predictions[random_num])
         return_s += f"The class name is not given, the prediction class is <b>{prediction_class}</b>"
     else:
-        class_text = conversation.class_names[model_predictions[0]]
+        class_text = conversation.class_names[model_predictions[random_num]]
         return_s += f"The prediction is <b>{class_text}</b>."
     return_s += "</li>"
     return_s += "</ul>"
@@ -315,11 +314,14 @@ def predict_operation(conversation, parse_text, i, **kwargs):
 
     text = handle_input(parse_text)
 
-    if text is not None:
+    # for random prediction
+    if parse_text[i + 1] == "random":
+        return_s = random_prediction(model, data, conversation, text)
+        return return_s, 1
+
+    # if id is given or predictions on whole dataset
+    if text is not None or len(parse_text) == 2:
         return_s = prediction_with_id(model, data, conversation, text)
+        return return_s, 1
     else:
-        if parse_text[i + 1] == "random":
-            return_s = random_prediction(model, data, conversation, text)
-        else:
-            raise NotImplementedError(f"The flag {parse_text[i+1]} is not supported!")
-    return return_s, 1
+        raise NotImplementedError(f"The flag {parse_text[i+1]} is not supported!")
