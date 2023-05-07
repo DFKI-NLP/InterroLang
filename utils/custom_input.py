@@ -163,10 +163,10 @@ def detach_to_list(t):
     return t.detach().cpu().numpy().tolist() if type(t) == torch.Tensor else t
 
 
-def generate_explanation(model, dataset_name, inputs):
+def generate_explanation(model, dataset_name, inputs, file_name="custom_input"):
     print(device)
 
-    cache_path = f"./cache/{dataset_name}/{dataset_name}_custom_input_explanation.json"
+    cache_path = f"./cache/{dataset_name}/{dataset_name}_{file_name}_explanation.json"
 
     if os.path.exists(cache_path):
         fileObject = open(cache_path, "r")
