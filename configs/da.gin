@@ -14,7 +14,7 @@ ExplainBot.t5_config = "./parsing/t5/gin_configs/t5-large.gin"
 ExplainBot.seed = 0
 ExplainBot.background_dataset_file_path = "./data/daily_dialog_test_with_idx.csv"
 ExplainBot.model_file_path = "./explained_models/da_classifier/saved_model/5e_5e-06lr"
-ExplainBot.dataset_file_path = "./data/daily_dialog_test_with_idx.csv"
+ExplainBot.dataset_file_path = "./data/da_test_set_with_indices.csv"
 
 ExplainBot.name = "daily_dialog"
 

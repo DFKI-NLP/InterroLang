@@ -1,7 +1,7 @@
 create_conversation.class_names = {0: 'dummy', 1: 'inform', 2: 'question', 3: 'directive', 4: 'commissive'}
 
 
-create_conversation.dataset_file_path = "./data/daily_dialog_test_with_idx.csv"
+create_conversation.dataset_file_path = "./data/da_test_set_with_indices.csv"
 create_conversation.name = "daily_dialog"
 create_conversation.dataset_index_column = "idx"
 create_conversation.target_variable_name = "act"
