@@ -8,6 +8,8 @@ from transformers import AutoTokenizer, AutoModelForSequenceClassification
 from explained_models.Explainer.explainer import Explainer
 import numpy as np
 
+from explained_models.ModelABC.DANetwork import DANetwork
+from explained_models.Tokenizer.tokenizer import HFTokenizer
 from utils.custom_input import generate_explanation
 
 
@@ -138,7 +140,7 @@ def explanation_with_custom_input(parse_text, conversation, topk):
         model = AutoModelForSequenceClassification.from_pretrained("andi611/distilbert-base-uncased-qa-boolq",
                                                                    num_labels=2)
     elif dataset_name == "daily_dialog":
-        pass
+        model = DANetwork()
     elif dataset_name == "olid":
         model = AutoModelForSequenceClassification.from_pretrained("sinhala-nlp/mbert-olid-en")
     else:
@@ -282,7 +284,7 @@ def feature_importance_operation(conversation, parse_text, i, **kwargs):
     if name == 'boolq':
         tokenizer = AutoTokenizer.from_pretrained("andi611/distilbert-base-uncased-qa-boolq")
     elif name == "daily_dialog":
-        pass
+        tokenizer = HFTokenizer('bert-base-uncased', mode='bert').tokenizer
     else:
         tokenizer = AutoTokenizer.from_pretrained("sinhala-nlp/mbert-olid-en")
 

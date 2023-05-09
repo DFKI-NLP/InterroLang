@@ -126,7 +126,6 @@ def compute_feature_attribution_scores(batch, model, dataset_name):
     )
     pred_id = torch.argmax(predictions, dim=1)
 
-
     if dataset_name == 'boolq':
         special_tokens_mask = batch["input_ids"] * 0
         special_tokens_mask[0][0] = 1
@@ -219,12 +218,12 @@ def generate_explanation(model, dataset_name, inputs):
             preds = torch.argmax(predictions, dim=1)
             attrbs = detach_to_list(attribution[0])
             result = {
-                      "original_text": inputs[idx_batch],
-                      'text': tokenizer.convert_ids_to_tokens(b["input_ids"][0][0]),
-                      'input_ids': ids,
-                      'attributions': attrbs,
-                      'predictions': preds.item()
-                      }
+                "original_text": inputs[idx_batch],
+                'text': tokenizer.convert_ids_to_tokens(b["input_ids"][0][0]),
+                'input_ids': ids,
+                'attributions': attrbs,
+                'predictions': preds.item()
+            }
             json_list.append(result)
     else:
         pass

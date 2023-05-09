@@ -127,7 +127,7 @@ class CFEExplainer(Explainer):
             self.device = 'cpu'
 
     def generate_explanation(self, store_data=False,
-                             data_path="../../cache/dailydialog/cfe_daily_dialog_explanation.json"):
+                             data_path="../../cache/daily_dialog/cfe_daily_dialog_explanation.json"):
         if os.path.exists(data_path):
             fileObject = open(data_path, "r")
             jsonContent = fileObject.read()

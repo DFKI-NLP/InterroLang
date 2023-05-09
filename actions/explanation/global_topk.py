@@ -40,10 +40,10 @@ def global_top_k(conversation, parse_text, i, **kwargs):
     #                 data_path="../../cache/boolq/ig_explainer_boolq_explanation.json",
     #                 res_path="../../cache/boolq/ig_explainer_boolq_attribution.json",
     #                 print_with_pattern=True)
-    # elif class_name == "dailydialog":
+    # elif class_name == "daily_dialog":
     #     return topk("ig_explainer", k,
-    #                 data_path="../../cache/dailydialog/ig_explainer_dailydialog_explanation.json",
-    #                 res_path="../../cache/dailydialog/ig_explainer_dailydialog_attribution.json",
+    #                 data_path="../../cache/daily_dialog/ig_explainer_dailydialog_explanation.json",
+    #                 res_path="../../cache/daily_dialog/ig_explainer_dailydialog_attribution.json",
     #                 print_with_pattern=True)
     # elif class_name == "olid":
     #     return topk("ig_explainer", k,
