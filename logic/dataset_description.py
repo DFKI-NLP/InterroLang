@@ -75,10 +75,12 @@ class DatasetDescription:
                        y_pred: Any,
                        metric_name: str,
                        rounding_precision: int,
-                       data_name: str) -> str:
+                       data_name: str,
+                       multi_class: bool) -> str:
         """Computes model score and returns text describing the outcome.
 
         Arguments:
+            multi_class: for multi label classification
             data_name: The name of the data split, e.g. testing data
             y_true: The true y values
             y_pred: The predicted y values
@@ -92,13 +94,31 @@ class DatasetDescription:
             # sklearn defaults to accuracy represented as decimal. convert this to %
             score *= 100
         elif metric_name == "roc":
-            score = roc_auc_score(y_true, y_pred)
+            if not multi_class:
+                score = roc_auc_score(y_true, y_pred)
+            else:
+                from scipy.special import softmax
+                y_pred = y_pred[:, 1:]
+                y_pred = softmax(y_pred, axis=1)
+                score = roc_auc_score(y_true, y_pred, multi_class='ovr')
         elif metric_name == "f1":
-            score = f1_score(y_true, y_pred)
+            if not multi_class:
+                score = f1_score(y_true, y_pred)
+            else:
+                y_pred = np.argmax(y_pred, axis=1)
+                score = f1_score(y_true, y_pred, average="micro")
         elif metric_name == "recall":
-            score = recall_score(y_true, y_pred)
+            if not multi_class:
+                score = recall_score(y_true, y_pred)
+            else:
+                y_pred = np.argmax(y_pred, axis=1)
+                score = recall_score(y_true, y_pred, average="micro")
         elif metric_name == "precision":
-            score = precision_score(y_true, y_pred)
+            if not multi_class:
+                score = precision_score(y_true, y_pred)
+            else:
+                y_pred = np.argmax(y_pred, axis=1)
+                score = precision_score(y_true, y_pred, average="micro")
         elif metric_name == "sensitivity":
             tn, fp, fn, tp = confusion_matrix(y_true, y_pred).ravel()
             score = tp / (tp + fn)
