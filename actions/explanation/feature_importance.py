@@ -150,7 +150,7 @@ def explanation_with_custom_input(parse_text, conversation, topk):
 
     return_s = ""
     for res in res_list:
-        if dataset_name == "boolq":
+        if dataset_name == "boolq" or dataset_name == "daily_dialog":
             original_text = res["text"]
 
             return_s += "The original text is:  <br>"
