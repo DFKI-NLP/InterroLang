@@ -20,6 +20,7 @@ Action defined in explanation/topk.py
 
 ### local_feature_importance.txt
 * 10x `filter id and nlpattribute all [E]`
+* 4x `filter id and nlpattribute sentence [E]`
 * 5x `filter id and predict and nlpattribute all [E]`
 * 6x `filter id and nlpattribute topk [E]`
 
