@@ -122,7 +122,7 @@ if __name__ == "__main__":
                   'input_ids': ids,
                   'label': MAPPING[b[2][0].item()],
                   'attributions': attrbs,
-                  'predictions': MAPPING[preds.item()]
+                  'predictions': preds
                   }
         print(result)
         if store_data:

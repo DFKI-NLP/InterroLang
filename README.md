@@ -51,6 +51,7 @@ python flask_app.py
 ## How to get used models?
 - BoolQ model: https://huggingface.co/andi611/distilbert-base-uncased-qa-boolq
 - OLID model: https://huggingface.co/sinhala-nlp/mbert-olid-en
+- Daily Dialog model: https://cloud.dfki.de/owncloud/index.php/s/m72HGNLW2TyCABr
 
 ## How to use custom input?
 ### Supported operations
@@ -69,10 +70,4 @@ python flask_app.py
 
 #### 4. In the end, click the send button and you will get the result.
 ![](./templates/images/result.png)
-
-
-
-## How to get used models?
-- BoolQ model: https://huggingface.co/andi611/distilbert-base-uncased-qa-boolq
-- OLID model: https://huggingface.co/sinhala-nlp/mbert-olid-en
 
