@@ -64,7 +64,8 @@ def score_operation(conversation, parse_text, i, **kwargs):
 
     if metric == "default" or metric == 'accuracy':
         metric = conversation.default_metric
-        y_pred = np.argmax(y_pred, axis=1)
+        if dataset_name == 'daily_dialog':
+            y_pred = np.argmax(y_pred, axis=1)
     # else:
     #     y_pred = y_pred[:, 1:]
 
