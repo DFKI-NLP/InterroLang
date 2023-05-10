@@ -320,7 +320,7 @@ def feature_importance_operation(conversation, parse_text, i, **kwargs):
             for f in f_names[:1]:
                 filtered_text += texts[f][_id]
                 filtered_text += " "
-
+            return_s += f'ID {_id}: '
             return_s += get_sentence_level_feature_importance(conversation, sentences=filtered_text)
             return_s += '<br><br>'
         return return_s, 1
