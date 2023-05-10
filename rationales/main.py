@@ -31,7 +31,8 @@ class Text2TextForMultiChoice(torch.nn.Module):
 
         outputs = self.model(
             input_ids=input_ids,
-            attention_mask=attention_mask
+            attention_mask=attention_mask,
+            labels=target_ids,
         )
 
         log_probs = - F.cross_entropy(outputs.logits.view(-1, outputs.logits.size(-1)), target_ids.view(-1),
@@ -51,7 +52,7 @@ def evaluate(dataset, model, args):
     output_scores = []
     for step, batch in enumerate(epoch_iterator):
 
-        input_ids, attention_mask, target_ids, labels = tuple(t.to(args.device) for t in batch)
+        input_ids, attention_mask, target_ids = tuple(t.to(args.device) for t in batch)
         with torch.no_grad():
             outputs = model(
                 input_ids=input_ids,
@@ -59,12 +60,13 @@ def evaluate(dataset, model, args):
                 target_ids=target_ids,
             )
             logits = outputs
+            print(logits)
 
             _, predictions = logits.max(dim=1)
             probs = F.softmax(logits, dim=-1)
-            answer_probs = torch.gather(probs, 1, labels.unsqueeze(1)).squeeze(1)
+            answer_probs = torch.gather(probs, 1, target_ids.unsqueeze(1)).squeeze(1)
 
-        accuracy += predictions.eq(labels).sum().item()
+        accuracy += predictions.eq(target_ids).sum().item()
         output_predictions.extend(predictions.tolist())
         output_scores.extend(answer_probs.tolist())
 
@@ -86,6 +88,7 @@ def main(args, seed):
     # model
     tokenizer = AutoTokenizer.from_pretrained(args.model_name, cache_dir='../cache/')
     model = Text2TextForMultiChoice(args.model_name)
+    print(args.device)
     model.to(args.device)
 
     # ----------------------------------------------------- #
@@ -152,11 +155,12 @@ def main(args, seed):
                               total=num_update_steps_per_epoch)
         for step, batch_list in enumerate(epoch_iterator):
 
-            input_ids, attention_mask, target_ids, labels, _ = tuple(t.to(args.device) for t in batch_list[0])
+            input_ids, attention_mask, target_ids = tuple(t.to(args.device) for t in batch_list[0])
 
             outputs = model(
                 input_ids=input_ids,
                 attention_mask=attention_mask,
+                target_ids=target_ids
             )
 
             loss = outputs[0]
@@ -272,7 +276,7 @@ if __name__ == "__main__":
     parser.add_argument("--overwrite_output", action='store_true')
 
     # gpu and workers option
-    parser.add_argument('--gpu_device', type=str, default='0')
+    parser.add_argument('--gpu_device', type=str, default='1')
 
     args = parser.parse_args()
 
