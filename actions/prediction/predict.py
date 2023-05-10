@@ -66,32 +66,18 @@ def store_results(inputs, predictions, cache_path):
             file.close()
 
 
-def prediction_with_custom_input(parse_text, conversation):
+def prediction_with_custom_input(conversation):
     """
     Predict the custom input from user that is not contained in the dataset
     Args:
-        parse_text: parsed text from parse
         conversation: Conversation object
 
     Returns:
         format string with inputs and predictions
     """
-    # beginspan token token ... token endspan
-    begin_idx = [i for i, x in enumerate(parse_text) if x == 'beginspan']
-    end_idx = [i for i, x in enumerate(parse_text) if x == 'endspan']
 
-    if begin_idx == [] or end_idx == []:
-        return None
-
-    if len(begin_idx) != len(end_idx):
-        return None
-
-    inputs = []
-    for i in list(zip(begin_idx, end_idx)):
-        temp = " ".join(parse_text[i[0] + 1: i[1]])
-
-        if temp != '':
-            inputs.append(temp)
+    inputs = [conversation.custom_input]
+    conversation.used = True
 
     if len(inputs) == 0:
         return None
@@ -151,7 +137,50 @@ def prediction_with_custom_input(parse_text, conversation):
     elif dataset_name == "daily_dialog":
         pass
     elif dataset_name == "olid":
-        pass
+        tokenizer = AutoTokenizer.from_pretrained("sinhala-nlp/mbert-olid-en")
+        model = AutoModelForSequenceClassification.from_pretrained("sinhala-nlp/mbert-olid-en")
+
+        if os.path.exists(cache_path):
+            with open(cache_path, 'r') as file:
+                fieldnames = ["idx", "Input text", "Prediction"]
+                reader = csv.DictReader(file, fieldnames=fieldnames)
+
+                for string in inputs:
+                    flag = False
+                    for row in reader:
+                        if row["Input text"] == string:
+                            predictions.append(int(row["Prediction"]))
+                            flag = True
+                            break
+                    if flag:
+                        continue
+
+                    encoding = tokenizer.encode_plus(string, return_tensors='pt')
+                    input_ids = encoding["input_ids"]
+                    attention_mask = encoding["attention_mask"]
+                    input_model = {
+                        'input_ids': input_ids.long(),
+                        'attention_mask': attention_mask.long(),
+                    }
+                    output_model = model(**input_model)[0]
+
+                    # Get logit
+                    output_model = np.argmax(output_model.cpu().detach().numpy())
+                    predictions.append(output_model)
+        else:
+            for string in inputs:
+                encoding = tokenizer.encode_plus(string, return_tensors='pt')
+                input_ids = encoding["input_ids"]
+                attention_mask = encoding["attention_mask"]
+                input_model = {
+                    'input_ids': input_ids.long(),
+                    'attention_mask': attention_mask.long(),
+                }
+                output_model = model(**input_model)[0]
+
+                # Get logit
+                output_model = np.argmax(output_model.cpu().detach().numpy())
+                predictions.append(output_model)
     else:
         raise NotImplementedError(f"The dataset {dataset_name} is not supported!")
 
@@ -221,10 +250,10 @@ def random_prediction(model, data, conversation, text):
     return_s += "<li>"
     model_predictions = model.predict(data, text)
     if conversation.class_names is None:
-        prediction_class = str(model_predictions[0])
+        prediction_class = str(model_predictions[random_num])
         return_s += f"The class name is not given, the prediction class is <b>{prediction_class}</b>"
     else:
-        class_text = conversation.class_names[model_predictions[0]]
+        class_text = conversation.class_names[model_predictions[random_num]]
         return_s += f"The prediction is <b>{class_text}</b>."
     return_s += "</li>"
     return_s += "</ul>"
@@ -271,27 +300,28 @@ def prediction_with_id(model, data, conversation, text):
 
 def predict_operation(conversation, parse_text, i, **kwargs):
     """The prediction operation."""
+    if conversation.custom_input is not None and conversation.used is False:
+        predictions = prediction_with_custom_input(conversation)
+
+        if predictions is not None:
+            return predictions, 1
+
     model = conversation.get_var('model').contents
     data = conversation.temp_dataset.contents['X']
 
     if len(conversation.temp_dataset.contents['X']) == 0:
         return 'There are no instances that meet this description!', 0
 
-    # For testing custom input
-    # parse_text = ["predict", "beginspan", "is", "a", "wolverine", "the", "same", "as", "a", "badger", "endspan",
-    # "beginspan", "is", "this", "a", "good", "book", "endspan"]
-
-    predictions = prediction_with_custom_input(parse_text, conversation)
-    if predictions is not None:
-        return predictions, 1
-
     text = handle_input(parse_text)
 
-    if text is not None:
+    # for random prediction
+    if parse_text[i + 1] == "random":
+        return_s = random_prediction(model, data, conversation, text)
+        return return_s, 1
+
+    # if id is given or predictions on whole dataset
+    if text is not None or len(parse_text) == 2:
         return_s = prediction_with_id(model, data, conversation, text)
+        return return_s, 1
     else:
-        if parse_text[i + 1] == "random":
-            return_s = random_prediction(model, data, conversation, text)
-        else:
-            raise NotImplementedError(f"The flag {parse_text[i+1]} is not supported!")
-    return return_s, 1
+        raise NotImplementedError(f"The flag {parse_text[i+1]} is not supported!")
