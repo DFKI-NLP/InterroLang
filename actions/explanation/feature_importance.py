@@ -293,7 +293,7 @@ def feature_importance_operation(conversation, parse_text, i, **kwargs):
             conversation.used = True
             return return_s, 1
         else:
-            explanation = explanation_with_custom_input(parse_text, conversation, topk)
+            explanation = explanation_with_custom_input(conversation, topk)
             conversation.used = True
             return explanation, 1
 
