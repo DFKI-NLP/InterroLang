@@ -33,7 +33,6 @@ def handle_input(parse_text):
         except:
             pass
 
-
     if "topk" in parse_text:
         if len(id_list) >= 1:
             topk = id_list[-1]
@@ -302,8 +301,13 @@ def feature_importance_operation(conversation, parse_text, i, **kwargs):
 
     # If id is not given
     if conversation.used is False and conversation.custom_input is not None:
-        explanation = explanation_with_custom_input(parse_text, conversation, topk)
-        return explanation, 1
+        if "sentence" in parse_text:
+            return_s = get_sentence_level_feature_importance(conversation, sentences=conversation.custom_input)
+            conversation.used = True
+            return return_s, 1
+        else:
+            explanation = explanation_with_custom_input(parse_text, conversation, topk)
+            return explanation, 1
 
     if topk == -1:
         return_s = ''
