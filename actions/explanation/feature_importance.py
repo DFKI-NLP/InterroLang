@@ -28,30 +28,34 @@ def handle_input(parse_text):
     for item in parse_text:
         try:
             if int(item):
-                id_list.append(int(item))
+                if int(item) > 0:
+                    id_list.append(int(item))
         except:
             pass
 
-    if "topk" in parse_text:
-        try:
-            topk = id_list[-1]
-        except:
-            raise ValueError("There is no numerical value in the parsed text!")
 
-        # If at least one id is given
+    if "topk" in parse_text:
+        if len(id_list) >= 1:
+            topk = id_list[-1]
+
+        # filter id 5 or filter id 151 or filter id 315 and nlpattribute topk 10 [E]
         if len(id_list) > 1:
             return id_list[:-1], topk
         else:
+            # nlpattribute topk 3 [E]
             return None, topk
     else:
-        # at least one id is given
         if len(id_list) >= 1:
+            # filter id 213 and nlpattribute all [E]
             if "all" in parse_text:
                 return id_list, 1
-            return id_list, topk
-        else:
-            # No id and topk -> custom input
-            return None, topk
+
+            # filter id 213 and nlpattribute sentence [E]
+            if "sentence" in parse_text:
+                return id_list, -1
+
+        # nlpattribute [E]
+        return id_list, topk
 
 
 def get_res(json_list, topk, tokenizer, num=0):
@@ -250,8 +254,8 @@ def explanation_with_custom_input(parse_text, conversation, topk):
     return return_s
 
 
-def get_sentence_level_feature_importance(conversation, parse_text, i):
-    sentences = parse_text[i+1]
+def get_sentence_level_feature_importance(conversation, sentences):
+    # sentences = parse_text[i+1]
     inputs = sent_tokenize(sentences)
     dataset_name = conversation.describe.get_dataset_name()
     res_list = get_explanation(dataset_name, inputs, file_name="sentence_level")
@@ -301,12 +305,21 @@ def feature_importance_operation(conversation, parse_text, i, **kwargs):
         explanation = explanation_with_custom_input(parse_text, conversation, topk)
         return explanation, 1
 
-    if id_list is None:
-        if len(parse_text) == 3:
-            return_s = get_sentence_level_feature_importance(conversation, parse_text, i)
-            return return_s, 1
-        else:
-            raise ValueError("")
+    if topk == -1:
+        return_s = ''
+        for _id in id_list:
+            f_names = list(conversation.temp_dataset.contents['X'].columns)
+            texts = conversation.temp_dataset.contents['X']
+            filtered_text = ''
+
+            # Get the first column, also for boolq, we only need question column not passage
+            for f in f_names[:1]:
+                filtered_text += texts[f][_id]
+                filtered_text += " "
+
+            return_s += get_sentence_level_feature_importance(conversation, sentences=filtered_text)
+            return_s += '<br><br>'
+        return return_s, 1
 
     # Get the dataset name
     name = conversation.describe.get_dataset_name()

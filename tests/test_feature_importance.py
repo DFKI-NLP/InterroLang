@@ -107,13 +107,14 @@ def test_feature_importance_sentence_level():
     Test feature importance sentence level
     """
 
-    parse_text = ["nlpattribute", "Good muffins cost $3.88 in New York. Please buy me two of them. Thanks.", "[E]"]
+    parse_text = ["filter", "id", "15", 'or', 'filter', 'id', '20', "nlpattribute", "sentence", "[E]"]
 
     return_s, status_code = feature_importance_operation(conversation, parse_text, 0)
 
     file_html = open(f"./tests/html/feature_importance/{dataset_name}_feature_importance_sentence_level.html", "w")
     text = TEXT
     text += return_s
+
     text += "</body></html>"
     file_html.write(text)
 
