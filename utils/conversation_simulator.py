@@ -4,6 +4,7 @@ This file is needed for creating a conversation object for testing.
 from logic.conversation import Conversation
 from logic.core import load_hf_model
 from logic.dataset_description import DatasetDescription
+from logic.decoder import Decoder
 from logic.utils import read_and_format_data
 
 TEXT = "<!DOCTYPE html><html><head></head><body>"
@@ -39,6 +40,9 @@ def create_conversation(class_names, dataset_objective, dataset_description,
 
     conversation.build_temp_dataset()
 
+    # decoder = Decoder(parsing_model_name="EleutherAI/gpt-neo-2.7B")
+    # conversation.decoder = decoder
+    #
     # model = load_hf_model(model_file_path, name)
     # conversation.add_var('model', model, 'model')
 
