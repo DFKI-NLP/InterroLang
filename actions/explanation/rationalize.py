@@ -7,8 +7,53 @@ from tqdm import tqdm
 
 
 def rationalize_operation(conversation, parse_text, i, **kwargs):
-    # TODO
-    return_s = 'Rationalization operation called.'
+    id_list = []
+    for item in parse_text:
+        try:
+            if int(item):
+                id_list.append(int(item))
+        except ValueError:
+            pass
+
+    dataset_name = conversation.describe.get_dataset_name()
+    dataset = conversation.temp_dataset.contents['X']
+    model = conversation.get_var('model').contents
+
+    return_s = ''
+    for idx in id_list:
+        instance = dataset.loc[[idx]].values.tolist()[0]
+
+        if dataset_name == "boolq":
+            text = 'Question: ' + instance[0] + '\nPassage: ' + instance[1]
+            label_dict = {0: 'false', 1: 'true'}
+            text_description = 'question and passage'
+            fields = ['question', 'passage']
+            fields_enum = ', '.join([f"'{f}'" for f in fields])
+            output_description = 'answer'
+            model_predictions = model.predict(dataset, idx)
+            pred_str = label_dict[model_predictions[0]]
+        else:
+            return f"Dataset {dataset_name} currently not supported by rationalize operation", 1
+
+        prompt = f"{text}\n" \
+                 f"Based on {text_description}, the {output_description} is {pred_str}. " \
+                 f"Without using {fields_enum}, or revealing the answer or outcome in your response, " \
+                 f"explain why: "
+
+        input_ids = conversation.decoder.gpt_tokenizer(prompt, return_tensors="pt").input_ids
+        input_ids = input_ids.to(device = "cpu")
+        generation = conversation.decoder.gpt_model.generate(
+            input_ids,
+            max_length=350,
+            no_repeat_ngram_size=2,
+        )
+        decoded_generation = conversation.decoder.gpt_tokenizer.decode(generation[0], skip_special_tokens=True)
+
+        inputs = decoded_generation.split("Based on ")[0]
+        explanation = decoded_generation.split("explain why: ")[1]
+
+        return_s += inputs + "<br><b>Explanation:</b> " + explanation
+
     return return_s, 1
 
 
