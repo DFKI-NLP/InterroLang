@@ -19,6 +19,9 @@ def rationalize_operation(conversation, parse_text, i, **kwargs):
     dataset = conversation.temp_dataset.contents['X']
     model = conversation.get_var('model').contents
 
+    if len(conversation.temp_dataset.contents['X']) == 0:
+        return 'There are no instances that meet this description!', 0
+
     return_s = ''
     for idx in id_list:
         instance = dataset.loc[[idx]].values.tolist()[0]
