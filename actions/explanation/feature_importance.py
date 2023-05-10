@@ -98,33 +98,16 @@ def get_return_str(topk, res):
     return return_s
 
 
-def explanation_with_custom_input(parse_text, conversation, topk):
+def explanation_with_custom_input(conversation, topk):
     """
     Get explanation of custom inputs from users
     Args:
-        parse_text: parsed text
         conversation: conversation object
         topk: most top k important tokens
 
     Returns:
         formatted string
     """
-    # beginspan token token ... token endspan
-    # begin_idx = [i for i, x in enumerate(parse_text) if x == 'beginspan']
-    # end_idx = [i for i, x in enumerate(parse_text) if x == 'endspan']
-    #
-    # if begin_idx == [] or end_idx == []:
-    #     return None
-    #
-    # if len(begin_idx) != len(end_idx):
-    #     return None
-    #
-    # inputs = []
-    # for i in list(zip(begin_idx, end_idx)):
-    #     temp = " ".join(parse_text[i[0] + 1: i[1]])
-    #
-    #     if temp != '':
-    #         inputs.append(temp)
 
     inputs = [conversation.custom_input]
     conversation.used = True
@@ -252,9 +235,6 @@ def feature_importance_operation(conversation, parse_text, i, **kwargs):
     # filter id 213 and nlpattribute all [E]
     # filter id 33 and nlpattribute topk 1 [E]
 
-    # parse_text = ["predict", "beginspan", "is", "a", "wolverine", "the", "same", "as", "a", "badger", "endspan",
-    #               "beginspan", "is", "this", "a", "good", "book", "endspan"]
-
     id_list, topk = handle_input(parse_text)
 
     if topk is None:
@@ -263,7 +243,7 @@ def feature_importance_operation(conversation, parse_text, i, **kwargs):
     # If id is not given
     if id_list is None or (conversation.used != True and conversation.custom_input is not None):
         # Check the custom input
-        explanation = explanation_with_custom_input(parse_text, conversation, topk)
+        explanation = explanation_with_custom_input(conversation, topk)
 
         # Handle custom input
         if explanation is not None:
