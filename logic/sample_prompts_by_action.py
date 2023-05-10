@@ -19,7 +19,8 @@ ACTION_2_FILENAME = {
     "labels": "label.txt",
     "random_predict": "random_predict.txt",
     "explain": "explain.txt",
-    "similar": "similar_prompts.txt"
+    "similar": "similar_prompts.txt",
+    "rationalization": "rationalize.txt",
 }
 
 

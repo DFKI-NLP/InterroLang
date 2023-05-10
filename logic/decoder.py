@@ -4,6 +4,7 @@ This class 'decodes' natural language inputs into the grammar. There are several
 supported, such as fine-tuned t5 models, few-shot gpt-j models, and KNN.
 """
 import gin
+from transformers import AutoModelForCausalLM, AutoTokenizer
 
 
 @gin.configurable
@@ -36,6 +37,9 @@ class Decoder:
         """
         self.gen_completions = None
         self.use_guided_dec = use_guided_decoding
+        self.gpt_parser_initialized = False
+        self.gpt_model = None
+        self.gpt_tokenizer = None
         self.init_model(parsing_model_name,
                         config_file=t5_gin_config_file,
                         no_init=no_init,
@@ -63,8 +67,16 @@ class Decoder:
             return
 
         if "gpt" in parsing_model_name:
+            if not self.gpt_parser_initialized:
+                self.gpt_tokenizer = AutoTokenizer.from_pretrained(parsing_model_name)
+                self.gpt_model = AutoModelForCausalLM.from_pretrained(parsing_model_name)
+                self.gpt_model.to(device="cpu")
+                self.gpt_model.config.pad_token_id = self.gpt_model.config.eos_token_id
+                self.gpt_parser_initialized = True
+
             from parsing.gpt.few_shot_inference import get_few_shot_predict_f
-            predict_f = get_few_shot_predict_f(model=parsing_model_name,
+            predict_f = get_few_shot_predict_f(model=self.gpt_model,
+                                               tokenizer=self.gpt_tokenizer,
                                                use_guided_decoding=self.use_guided_dec)
 
             def complete(prompt, grammar):
