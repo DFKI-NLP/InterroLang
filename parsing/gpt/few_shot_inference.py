@@ -3,9 +3,7 @@ import sys
 from os.path import dirname, abspath
 
 import gin
-from transformers import (
-    AutoTokenizer,
-    AutoModelForCausalLM, StoppingCriteriaList, MaxLengthCriteria)
+from transformers import MaxLengthCriteria
 
 parent = dirname(dirname(abspath(__file__)))
 sys.path.append(parent)
@@ -14,19 +12,20 @@ from parsing.guided_decoding.gd_logits_processor import GuidedParser, GuidedDeco
 
 
 @gin.configurable
-def get_few_shot_predict_f(model: str, device: str = "cpu", use_guided_decoding: bool = True):
+def get_few_shot_predict_f(
+        model,
+        tokenizer,
+        device: str = "cpu",
+        use_guided_decoding: bool = True
+    ):
     """Gets the few shot prediction model.
 
     Args:
+        model: the gpt series model for few shot prediction
+        tokenizer: the gpt tokenizer for the chosen model
+        device:
         use_guided_decoding: whether to use guided decoding
-        device: The device to load the model onto
-        model: the name of the gpt series model for few shot prediction
     """
-
-    tokenizer = AutoTokenizer.from_pretrained(model)
-    model = AutoModelForCausalLM.from_pretrained(model)
-    model = model.to(device)
-    model.config.pad_token_id = model.config.eos_token_id
 
     def predict_f(text: str, grammar: str):
         """The function to get guided decoding."""

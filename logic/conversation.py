@@ -59,7 +59,9 @@ class Conversation:
                  target_var_name: str = "y",
                  default_metric: str = "accuracy",
                  eval_file_path: str = None,
-                 feature_definitions: dict = None):
+                 feature_definitions: dict = None,
+                 decoder = None,
+        ):
         """
 
         Args:
@@ -77,6 +79,8 @@ class Conversation:
 
         self.rounding_precision = rounding_precision
         self.feature_definitions = feature_definitions
+
+        self.decoder = decoder
 
         # Unique per session
         self.parse_operation = []
