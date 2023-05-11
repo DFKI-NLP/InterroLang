@@ -32,6 +32,17 @@ Action defined in explanation/topk.py
 
 Action defined in explanation/feature_importance.py
 
+### custom_input_feature_importance.txt
+* 1x `nlpattribute [E]`
+* 1x `nlpattribute sentence [E]`
+* 1x `nlpattribute topk [E]`
+
+**GPT-4 generated**
+* 7x `nlpattribute [E]`
+* 7x `nlpattribute sentence [E]`
+* 6x `nlpattribute topk [E]`
+
+
 ### rationalize.txt
 * 4x `filter id and rationalize [E]`
 
