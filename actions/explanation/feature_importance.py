@@ -103,6 +103,7 @@ def get_return_str(topk, res):
     return return_s
 
 
+
 def get_explanation(dataset_name, inputs, file_name="sentence_level"):
     if dataset_name == "boolq":
         model = AutoModelForSequenceClassification.from_pretrained("andi611/distilbert-base-uncased-qa-boolq",
@@ -119,11 +120,10 @@ def get_explanation(dataset_name, inputs, file_name="sentence_level"):
     return res_list
 
 
-def explanation_with_custom_input(parse_text, conversation, topk):
+def explanation_with_custom_input(conversation, topk):
     """
     Get explanation of custom inputs from users
     Args:
-        parse_text: parsed text
         conversation: conversation object
         topk: most top k important tokens
 
@@ -138,18 +138,6 @@ def explanation_with_custom_input(parse_text, conversation, topk):
         return None
 
     dataset_name = conversation.describe.get_dataset_name()
-    #
-    # if dataset_name == "boolq":
-    #     model = AutoModelForSequenceClassification.from_pretrained("andi611/distilbert-base-uncased-qa-boolq",
-    #                                                                num_labels=2)
-    # elif dataset_name == "daily_dialog":
-    #     pass
-    # elif dataset_name == "olid":
-    #     model = AutoModelForSequenceClassification.from_pretrained("sinhala-nlp/mbert-olid-en")
-    # else:
-    #     raise NotImplementedError(f"The dataset {dataset_name} is not supported!")
-    #
-    # res_list = generate_explanation(model, dataset_name, inputs)
 
     res_list = get_explanation(dataset_name, inputs)
     return_s = ""
@@ -292,21 +280,21 @@ def feature_importance_operation(conversation, parse_text, i, **kwargs):
     # filter id 213 and nlpattribute all [E]
     # filter id 33 and nlpattribute topk 1 [E]
 
-    # parse_text = ["nlpattribute", "Good muffins cost $3.88 in New York. Please buy me two of them. Thanks.", "[E]"]
-    # i = 0
     id_list, topk = handle_input(parse_text)
 
     if topk is None:
         topk = 3
 
     # If id is not given
+
     if conversation.used is False and conversation.custom_input is not None:
         if "sentence" in parse_text:
             return_s = get_sentence_level_feature_importance(conversation, sentences=conversation.custom_input)
             conversation.used = True
             return return_s, 1
         else:
-            explanation = explanation_with_custom_input(parse_text, conversation, topk)
+            explanation = explanation_with_custom_input(conversation, topk)
+            conversation.used = True
             return explanation, 1
 
     if topk == -1:
