@@ -3,3 +3,6 @@ Parsed: predict [E]
 
 User: What do you predict for this input?
 Parsed: predict [E]
+
+User: What does the model predict here?
+Parsed: predict [E]

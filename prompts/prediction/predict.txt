@@ -42,6 +42,3 @@ Parsed: filter id 34 and predict [E]
 
 User: predict 22
 Parsed: filter id 22 and predict [E]
-
-User: what does the model predict for {span}?
-Parsed: includes {span} and predict [E]

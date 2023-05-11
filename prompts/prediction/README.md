@@ -17,10 +17,12 @@ Action defined in prediction/mistakes.py
 
 ### predict.txt
 * 5x `predict [E]`
+* 3x `predict [E]` (custom_input_prediction.txt)
+* 10x `predict [E]` (custom_input_prediction_chatgpt.txt) [GPT-4 generated]
 * 10x `filter id and predict [E]`
-* 1x `includes {span} and predict [E]` 
 
 Action defined in prediction/predict.py
+
 
 ### score.txt
 * 14x `score accuracy [E]`
