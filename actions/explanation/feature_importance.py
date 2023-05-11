@@ -132,7 +132,6 @@ def explanation_with_custom_input(conversation, topk):
     """
 
     inputs = [conversation.custom_input]
-    conversation.used = True
 
     if len(inputs) == 0:
         return None
@@ -290,11 +289,9 @@ def feature_importance_operation(conversation, parse_text, i, **kwargs):
     if conversation.used is False and conversation.custom_input is not None:
         if "sentence" in parse_text:
             return_s = get_sentence_level_feature_importance(conversation, sentences=conversation.custom_input)
-            conversation.used = True
             return return_s, 1
         else:
             explanation = explanation_with_custom_input(conversation, topk)
-            conversation.used = True
             return explanation, 1
 
     if topk == -1:

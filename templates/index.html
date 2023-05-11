@@ -64,6 +64,9 @@
                     <button class="idea-button" onclick="sampleLabels()">data labels</button>
                     <button class="idea-button" onclick="sampleSimilar()">find a similar instance</button>
                     <button class="idea-button" onclick="sampleRationalization()">rationalization</button>
+                    <button class="idea-button" onclick="sampleCustomInputPrediction()">custom input prediction</button>
+                    <button class="idea-button" onclick="sampleCustomInputFeatureImportance()">custom input feature importance</button>
+                    <button class="idea-button" onclick="sampleCustomInputFeatureImportanceOnSentenceLevel()">custom input feature importance on sentence level</button>
                 </div>
             </div>
         </main>
@@ -163,6 +166,18 @@
                 ttmInput.value = data;
             }
         });
+    }
+
+    function sampleCustomInputFeatureImportanceOnSentenceLevel(){
+        doSample("custom_input_feature_importance_on_sentence_level");
+    }
+
+    function sampleCustomInputFeatureImportance(){
+        doSample("custom_input_feature_importance");
+    }
+
+    function sampleCustomInputPrediction(){
+        doSample("custom_input_prediction");
     }
 
     function sampleRandomPredict() {

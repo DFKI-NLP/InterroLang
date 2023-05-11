@@ -74,7 +74,8 @@ def home():
 
     dataset = BOT.conversation.describe.get_dataset_name()
 
-    return render_template("index.html", currentUserId="user", datasetObjective=objective, entries= entries, dataset=dataset)
+    return render_template("index.html", currentUserId="user", datasetObjective=objective, entries=entries,
+                           dataset=dataset)
 
 
 @bp.route("/log_feedback", methods=['POST'])
@@ -133,16 +134,25 @@ def get_bot_response():
         try:
             data = json.loads(request.data)
             if data['custom_input'] == '0':
-                app.logger.info("generating the bot response")
                 user_text = data["userInput"]
                 conversation = BOT.conversation
-                response = BOT.update_state(user_text, conversation)
+                if user_text == "quit":
+                    app.logger.info("remove the custom input!")
+                    response = f"<b>{conversation.custom_input}</b> is not available anymore!"
+                    conversation.custom_input = None
+                    conversation.used = True
+                else:
+                    app.logger.info("generating the bot response")
+                    response = BOT.update_state(user_text, conversation)
             else:
                 user_text = data["userInput"]
                 BOT.conversation.custom_input = user_text
                 BOT.conversation.used = False
                 app.logger.info(f"[CUSTOM INPUT] {user_text}")
-                response = "You have given a custom input. Please enter a follow-up question or prompt!" + "<>" + "Entered custom input: " + user_text
+                response = "You have given a custom input. " \
+                           "Please enter a follow-up question or prompt! <br><br>" \
+                           "<b>[ATTENTION]</b> The entered custom input will be kept until you PRESS <b>'quit'</b>"\
+                           + "<>" + "Entered custom input: " + user_text
         except Exception as ext:
             app.logger.info(f"Traceback getting bot response: {traceback.format_exc()}")
             app.logger.info(f"Exception getting bot response: {ext}")

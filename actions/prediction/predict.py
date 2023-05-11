@@ -77,7 +77,6 @@ def prediction_with_custom_input(conversation):
     """
 
     inputs = [conversation.custom_input]
-    conversation.used = True
 
     if len(inputs) == 0:
         return None
