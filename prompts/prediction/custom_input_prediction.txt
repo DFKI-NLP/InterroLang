@@ -1,0 +1,5 @@
+User: What is the prediction of this given input?
+Parsed: predict [E]
+
+User: What do you predict for this input?
+Parsed: predict [E]
