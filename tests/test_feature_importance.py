@@ -83,7 +83,7 @@ def test_feature_importance_with_custom_input():
 
 def test_feature_importance_all():
     """
-    Test feature importance for a single instance with given id
+    Test feature importance
     """
 
     parse_text = ["filter", "id", "53", "and", "nlpattribute", "all", "[E]"]
@@ -91,6 +91,51 @@ def test_feature_importance_all():
     return_s, status_code = feature_importance_operation(conversation, parse_text, 1)
 
     file_html = open(f"./tests/html/feature_importance/{dataset_name}_feature_importance_all.html", "w")
+    text = TEXT
+    text += return_s
+    text += "</body></html>"
+    file_html.write(text)
+
+    # Saving the data into the HTML file
+    file_html.close()
+
+    assert status_code == 1
+
+
+def test_feature_importance_sentence_level():
+    """
+    Test feature importance sentence level
+    """
+
+    parse_text = ["filter", "id", "15", 'or', 'filter', 'id', '20', "nlpattribute", "sentence", "[E]"]
+
+    return_s, status_code = feature_importance_operation(conversation, parse_text, 0)
+
+    file_html = open(f"./tests/html/feature_importance/{dataset_name}_feature_importance_sentence_level.html", "w")
+    text = TEXT
+    text += return_s
+
+    text += "</body></html>"
+    file_html.write(text)
+
+    # Saving the data into the HTML file
+    file_html.close()
+
+    assert status_code == 1
+
+
+def test_feature_importance_with_custom_input_at_sentence_level():
+    """
+    Test feature importance for custom input at sentence level
+    """
+
+    parse_text = ["nlpattribute", "sentence"]
+
+    conversation.custom_input = "conservatives left frustrated as Congress passes big spending bills. he left the house and go to the bank."
+    conversation.used = False
+    return_s, status_code = feature_importance_operation(conversation, parse_text, 1)
+
+    file_html = open(f"./tests/html/feature_importance/{dataset_name}_feature_importance_with_custom_inputat_sentence_level.html", "w")
     text = TEXT
     text += return_s
     text += "</body></html>"

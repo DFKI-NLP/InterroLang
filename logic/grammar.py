@@ -76,10 +76,11 @@ likelihoodword: " likelihood"
 lastturnfilter: " previousfilter"
 lastturnop: " previousoperation"
 
-impfeatures: impfeaturesword (allfeaturenames | allfeaturesword | topk)
+impfeatures: impfeaturesword (allfeaturenames | allfeaturesword | topk | impsentence)
 allfeaturesword: " all"
 topk: topkword ( {topkvalues} )
 topkword: " topk"
+impsentence: " sentence" 
 
 
 impfeaturesword: " nlpattribute"

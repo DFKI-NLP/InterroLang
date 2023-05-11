@@ -18,7 +18,7 @@ ACTION_2_FILENAME = {
     "mistake": "mistakes.txt",
     "labels": "label.txt",
     "random_predict": "random_predict.txt",
-    "explain": "explain.txt",
+    "explain": "local_feature_importance.txt",
     "similar": "similar_prompts.txt",
     "rationalization": "rationalize.txt",
 }

@@ -10,6 +10,8 @@ import numpy as np
 
 from utils.custom_input import generate_explanation
 
+from nltk.tokenize import sent_tokenize
+
 
 def handle_input(parse_text):
     """
@@ -26,30 +28,33 @@ def handle_input(parse_text):
     for item in parse_text:
         try:
             if int(item):
-                id_list.append(int(item))
+                if int(item) > 0:
+                    id_list.append(int(item))
         except:
             pass
 
     if "topk" in parse_text:
-        try:
+        if len(id_list) >= 1:
             topk = id_list[-1]
-        except:
-            raise ValueError("There is no numerical value in the parsed text!")
 
-        # If at least one id is given
+        # filter id 5 or filter id 151 or filter id 315 and nlpattribute topk 10 [E]
         if len(id_list) > 1:
             return id_list[:-1], topk
         else:
+            # nlpattribute topk 3 [E]
             return None, topk
     else:
-        # at least one id is given
         if len(id_list) >= 1:
+            # filter id 213 and nlpattribute all [E]
             if "all" in parse_text:
                 return id_list, 1
-            return id_list, topk
-        else:
-            # No id and topk -> custom input
-            return None, topk
+
+            # filter id 213 and nlpattribute sentence [E]
+            if "sentence" in parse_text:
+                return id_list, -1
+
+        # nlpattribute [E]
+        return id_list, topk
 
 
 def get_res(json_list, topk, tokenizer, num=0):
@@ -98,6 +103,23 @@ def get_return_str(topk, res):
     return return_s
 
 
+
+def get_explanation(dataset_name, inputs, file_name="sentence_level"):
+    if dataset_name == "boolq":
+        model = AutoModelForSequenceClassification.from_pretrained("andi611/distilbert-base-uncased-qa-boolq",
+                                                                   num_labels=2)
+    elif dataset_name == "daily_dialog":
+        pass
+    elif dataset_name == "olid":
+        model = AutoModelForSequenceClassification.from_pretrained("sinhala-nlp/mbert-olid-en")
+    else:
+        raise NotImplementedError(f"The dataset {dataset_name} is not supported!")
+
+    res_list = generate_explanation(model, dataset_name, inputs, file_name=file_name)
+
+    return res_list
+
+
 def explanation_with_custom_input(conversation, topk):
     """
     Get explanation of custom inputs from users
@@ -117,18 +139,7 @@ def explanation_with_custom_input(conversation, topk):
 
     dataset_name = conversation.describe.get_dataset_name()
 
-    if dataset_name == "boolq":
-        model = AutoModelForSequenceClassification.from_pretrained("andi611/distilbert-base-uncased-qa-boolq",
-                                                                   num_labels=2)
-    elif dataset_name == "daily_dialog":
-        pass
-    elif dataset_name == "olid":
-        model = AutoModelForSequenceClassification.from_pretrained("sinhala-nlp/mbert-olid-en")
-    else:
-        raise NotImplementedError(f"The dataset {dataset_name} is not supported!")
-
-    res_list = generate_explanation(model, dataset_name, inputs)
-
+    res_list = get_explanation(dataset_name, inputs)
     return_s = ""
     for res in res_list:
         if dataset_name == "boolq":
@@ -230,6 +241,40 @@ def explanation_with_custom_input(conversation, topk):
     return return_s
 
 
+def get_sentence_level_feature_importance(conversation, sentences):
+    # sentences = parse_text[i+1]
+    inputs = sent_tokenize(sentences)
+    dataset_name = conversation.describe.get_dataset_name()
+    res_list = get_explanation(dataset_name, inputs, file_name="sentence_level")
+
+    return_s = f'The original text is: <i>{sentences}</i> <br><br>'
+    counter = 1
+
+    for res in res_list:
+        attr = res["attributions"]
+
+        if dataset_name == 'boolq':
+            text = res["text"]
+        elif dataset_name == 'olid':
+            text = res["original_text"]
+
+        return_s += "<ul>"
+        return_s += "<li>"
+        return_s += f"Sentence {counter}: <i>{text}</i>"
+        return_s += "</li>"
+
+        return_s += "<li>"
+        return_s += f"Average saliency score: <b>{round(sum(attr) / len(attr), conversation.rounding_precision)}</b>"
+        return_s += "</li>"
+
+        return_s += "<li>"
+        return_s += f"Prediction: <b>{conversation.class_names[res['predictions']]}</b>"
+        return_s += "</li>"
+        return_s += "</ul>"
+        counter += 1
+    return return_s
+
+
 def feature_importance_operation(conversation, parse_text, i, **kwargs):
     # filter id 5 or filter id 151 or filter id 315 and nlpattribute topk 10 [E]
     # filter id 213 and nlpattribute all [E]
@@ -241,15 +286,32 @@ def feature_importance_operation(conversation, parse_text, i, **kwargs):
         topk = 3
 
     # If id is not given
-    if id_list is None or (conversation.used != True and conversation.custom_input is not None):
-        # Check the custom input
-        explanation = explanation_with_custom_input(conversation, topk)
 
-        # Handle custom input
-        if explanation is not None:
-            return explanation, 1
+    if conversation.used is False and conversation.custom_input is not None:
+        if "sentence" in parse_text:
+            return_s = get_sentence_level_feature_importance(conversation, sentences=conversation.custom_input)
+            conversation.used = True
+            return return_s, 1
         else:
-            raise ValueError("ID or custom input is not given!")
+            explanation = explanation_with_custom_input(conversation, topk)
+            conversation.used = True
+            return explanation, 1
+
+    if topk == -1:
+        return_s = ''
+        for _id in id_list:
+            f_names = list(conversation.temp_dataset.contents['X'].columns)
+            texts = conversation.temp_dataset.contents['X']
+            filtered_text = ''
+
+            # Get the first column, also for boolq, we only need question column not passage
+            for f in f_names[:1]:
+                filtered_text += texts[f][_id]
+                filtered_text += " "
+            return_s += f'ID {_id}: '
+            return_s += get_sentence_level_feature_importance(conversation, sentences=filtered_text)
+            return_s += '<br><br>'
+        return return_s, 1
 
     # Get the dataset name
     name = conversation.describe.get_dataset_name()
