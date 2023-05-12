@@ -160,20 +160,6 @@ def get_bot_response():
         return response
 
 
-@bp.route("/custom_input", methods=["Post"])
-def custom_input():
-    data = json.loads(request.data)
-    custom_input = data["custom_input"]
-    username = data["thisUserName"]
-
-    BOT.conversation.custom_input = custom_input
-    BOT.conversation.used = False
-
-    app.logger.info("custom_input: " + custom_input)
-
-    return custom_input
-
-
 @bp.route("/reset_temp_dataset", methods=["Post"])
 def reset_temp_dataset():
     data = json.loads(request.data)

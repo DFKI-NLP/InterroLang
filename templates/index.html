@@ -107,15 +107,6 @@
             {% endfor %}
         </div>
 
-        <!-- custom input -->
-<!--        <div class="form-row align-items-center" style="margin-top: 50px">-->
-<!--            <div class="col-auto">-->
-<!--                <label class="sr-only" for="inlineFormInput">Name</label>-->
-<!--                <input type="text" class="form-control mb-2" id="custom_input" placeholder="Enter your custom input:" style="width: 300px">-->
-<!--                <button type="button" class="btn btn-primary" id="submit_btn">Submit</button>-->
-<!--            </div>-->
-<!--        </div>-->
-
         <!-- Reset temp dataset -->
         <div style="margin-top: 50px">
             <button type="button" class="btn btn-outline-primary" id="reset_temp_dataset" style="width: 300px">Click me to reset the temp
@@ -244,21 +235,6 @@
 
 <script src='https://use.fontawesome.com/releases/v5.0.13/js/all.js'></script>
 <script>
-    // function handle_custom_input(custom_input) {
-    //     let username = '{{ currentUserId }}'
-    //     let dataPackage = {custom_input: custom_input, thisUserName: username}
-    //     let jsonDataPackage = JSON.stringify(dataPackage)
-    //
-    //     const result = $.ajax({
-    //         type: 'POST',
-    //         url: "{{ url_for('.custom_input') }}",
-    //         data: jsonDataPackage,
-    //         processData: false,
-    //         contentType: false,
-    //         cache: false,
-    //     });
-    // }
-
     function reset_temp_dataset(){
         let username = '{{ currentUserId }}'
         let dataPackage = {thisUserName: username}
@@ -273,22 +249,6 @@
             cache: false,
         });
     }
-
-
-    // const custom_input = document.getElementById("custom_input");
-    // const submit_btn = document.getElementById("submit_btn");
-    // const reset_btn = document.getElementById("reset_temp_dataset");
-    //
-    // submit_btn.addEventListener("click", () => {
-    //     let inputs = custom_input.value;
-    //     if (inputs != "") {
-    //         handle_custom_input(inputs);
-    //     }
-    // });
-    //
-    // reset_btn.addEventListener("click", () => {
-    //     reset_temp_dataset();
-    // });
 
 </script>
 <script>
