@@ -146,13 +146,32 @@ def get_bot_response():
                     response = BOT.update_state(user_text, conversation)
             else:
                 user_text = data["userInput"]
-                BOT.conversation.custom_input = user_text
+
+                if BOT.conversation.describe.get_dataset_name() == 'boolq':
+                    if "|" in user_text:
+                        idx = user_text.find("|")
+                        if idx == 0:
+                            return "No question is given!"
+                        elif idx == len(user_text) - 1:
+                            return "No passage is given!"
+                        elif user_text[idx-1] == ' ' and user_text[idx+1] == '':
+                            new_str = user_text.replace('|', '')
+                            custom_input = ''
+                            for i in range(len(new_str)):
+                                if i != idx-1:
+                                    custom_input = custom_input + new_str[i]
+                        else:
+                            custom_input = user_text.replace('|', '')
+                    else:
+                        return "The separate character '|' is not included!"
+
+                BOT.conversation.custom_input = custom_input
                 BOT.conversation.used = False
-                app.logger.info(f"[CUSTOM INPUT] {user_text}")
+                app.logger.info(f"[CUSTOM INPUT] {custom_input}")
                 response = "You have given a custom input. " \
                            "Please enter a follow-up question or prompt! <br><br>" \
                            "<b>[ATTENTION]</b> The entered custom input will be kept until you PRESS <b>'quit'</b>"\
-                           + "<>" + "Entered custom input: " + user_text
+                           + "<>" + "Entered custom input: " + custom_input
         except Exception as ext:
             app.logger.info(f"Traceback getting bot response: {traceback.format_exc()}")
             app.logger.info(f"Exception getting bot response: {ext}")
