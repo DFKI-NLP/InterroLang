@@ -74,9 +74,17 @@
     </section>
 
     <div>
+        <div style="border: thick red double; width: 400px">
+            <h1 style="color: #ff1238">Instruction:</h1>
+            <ul style="color: indianred">
+                In selection box:
+                <li><b>"Input"</b>: enter <b>"quit"</b> can delete the entered custom input if available.</li>
+                <li><b>"Custom input"</b>: enter any custom input.</li>
+            </ul>
+        </div>
         <!-- Displaying data -->
         <!-- Referring jinja2 syntax -->
-        <div id="show_data" style="border: thick #32a1ce double">
+        <div id="show_data" style="border: thick #32a1ce double; margin-top: 50px">
             <h1 style="font: small-caps bold 24px/1 sans-serif">Displaying {{dataset}} dataset: </h1>
             {% for entry in entries %}
                 {% if dataset == 'boolq' %}
