@@ -35,7 +35,6 @@ def get_predictions_and_labels(dataset_name):
     labels = []
 
     if dataset_name == 'daily_dialog':
-        # MAPPING = {'dummy': 0, 'inform': 1, 'question': 2, 'directive': 3, 'commissive': 4}
         for i in range(len(json_list)):
             labels.append(MAPPING[json_list[i]["label"]])
             predictions.append(pred_list[i]["predictions"])
@@ -65,8 +64,9 @@ def score_operation(conversation, parse_text, i, **kwargs):
             average = parse_text[i + 2]
         except ValueError:
             pass
-        if average not in flags:
-            raise NotImplementedError(f"Flag {average} is not supported!")
+        if metric not in ["default", "accuracy", "roc"]:
+            if average not in flags:
+                raise NotImplementedError(f"Flag {average} is not supported!")
 
     y_true, y_pred = get_predictions_and_labels(dataset_name)
 
