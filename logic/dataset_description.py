@@ -76,10 +76,12 @@ class DatasetDescription:
                        metric_name: str,
                        rounding_precision: int,
                        data_name: str,
-                       multi_class: bool) -> str:
+                       multi_class: bool,
+                       average: str) -> str:
         """Computes model score and returns text describing the outcome.
 
         Arguments:
+            average: average flag
             multi_class: for multi label classification
             data_name: The name of the data split, e.g. testing data
             y_true: The true y values
@@ -106,19 +108,19 @@ class DatasetDescription:
                 score = f1_score(y_true, y_pred)
             else:
                 y_pred = np.argmax(y_pred, axis=1)
-                score = f1_score(y_true, y_pred, average="micro")
+                score = f1_score(y_true, y_pred, average=average)
         elif metric_name == "recall":
             if not multi_class:
                 score = recall_score(y_true, y_pred)
             else:
                 y_pred = np.argmax(y_pred, axis=1)
-                score = recall_score(y_true, y_pred, average="micro")
+                score = recall_score(y_true, y_pred, average=average)
         elif metric_name == "precision":
             if not multi_class:
                 score = precision_score(y_true, y_pred)
             else:
                 y_pred = np.argmax(y_pred, axis=1)
-                score = precision_score(y_true, y_pred, average="micro")
+                score = precision_score(y_true, y_pred, average=average)
         elif metric_name == "sensitivity":
             tn, fp, fn, tp = confusion_matrix(y_true, y_pred).ravel()
             score = tp / (tp + fn)

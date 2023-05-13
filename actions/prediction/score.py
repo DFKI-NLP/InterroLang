@@ -8,7 +8,9 @@ import numpy as np
 
 from actions.util_functions import gen_parse_op_text
 
-MAPPING = {'dummy':0, 'inform':1, 'question':2, 'directive':3, 'commissive':4}
+MAPPING = {'dummy': 0, 'inform': 1, 'question': 2, 'directive': 3, 'commissive': 4}
+
+
 def get_predictions_and_labels(dataset_name):
     """
 
@@ -51,14 +53,20 @@ def score_operation(conversation, parse_text, i, **kwargs):
     """Self description."""
 
     # Get the name of the metric
-    metric = parse_text[i+1]
-
-
-    # model = conversation.get_var('model').contents
-    # data = conversation.temp_dataset.contents['X']
+    metric = parse_text[i + 1]
 
     # Get the dataset name
     dataset_name = conversation.describe.get_dataset_name()
+
+    average = None
+    if dataset_name == "daily_dialog":
+        flags = ["micro", "macro", "weighted"]
+        try:
+            average = parse_text[i + 2]
+        except ValueError:
+            pass
+        if average not in flags:
+            raise NotImplementedError(f"Flag {average} is not supported!")
 
     y_true, y_pred = get_predictions_and_labels(dataset_name)
 
@@ -66,8 +74,6 @@ def score_operation(conversation, parse_text, i, **kwargs):
         metric = conversation.default_metric
         if dataset_name == 'daily_dialog':
             y_pred = np.argmax(y_pred, axis=1)
-    # else:
-    #     y_pred = y_pred[:, 1:]
 
     filter_string = gen_parse_op_text(conversation)
     if len(filter_string) <= 0:
@@ -80,7 +86,8 @@ def score_operation(conversation, parse_text, i, **kwargs):
                                                 metric,
                                                 conversation.rounding_precision,
                                                 data_name,
-                                                multi_class)
+                                                multi_class,
+                                                average)
 
     text += "<br><br>"
     return text, 1
