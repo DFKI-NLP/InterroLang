@@ -16,8 +16,8 @@ Parsed: includes {span} [E]
 User: Please list all cases that contain the token {span}.
 Parsed: includes {span} [E]
 
-User: I want to see all instances that include the word {span}.
-Parsed: includes {span} [E]
+User: I want to see all instances that include the word.
+Parsed: includes [E]
 
 User: Give me a list of all examples that include the token {span}.
 Parsed: includes {span} [E]

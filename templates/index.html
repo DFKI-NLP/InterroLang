@@ -38,6 +38,7 @@
             <select id="input_source" class="form-select" style="width: 150px; text-align:center; font-family: Calibri; margin-right: 10px">
                 <option style="text-align:center; " value="0">Input</option>
                 <option style="text-align:center;" value="1">Custom input</option>
+                <option style="text-align:center;" value="2">Include</option>
             </select>
             <input type="text" class="ttm-input" id="textInput" placeholder="Enter your command! Use the ↑ arrow and ↓ arrow to cycle previous commands.">
               <button type="submit" class="ttm-send-btn">Send</button>
@@ -80,6 +81,7 @@
                 In selection box:
                 <li><b>"Input"</b>: enter <b>"quit"</b> can delete the entered custom input if available.</li>
                 <li><b>"Custom input"</b>: enter any custom input. For BoolQ, please use <b>"|"</b> to separate text and passage!</li>
+                <li><b>"Include"</b>: enter a single word for include operation.</li>
             </ul>
         </div>
         <!-- Displaying data -->
@@ -281,13 +283,16 @@
         ttmChat.scrollTop += 200;
         ttmInput.value = "";
 
+        const selectBox = document.getElementById("input_source");
+
         if (document.getElementsByTagName("option")[idx].value === '0') {
             botResponse(msgText, custom_input = '0');
-        } else {
-            const selectBox = document.getElementById("input_source");
+        } else if (document.getElementsByTagName("option")[idx].value === '1'){
             selectBox.selectedIndex = "0";
             botResponse(msgText, custom_input = '1');
-
+        } else {
+            selectBox.selectedIndex = "0";
+            botResponse(msgText, custom_input = '2');
         }
     });
 

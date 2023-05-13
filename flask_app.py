@@ -144,7 +144,7 @@ def get_bot_response():
                 else:
                     app.logger.info("generating the bot response")
                     response = BOT.update_state(user_text, conversation)
-            else:
+            elif data['custom_input'] == '1':
                 user_text = data["userInput"]
 
                 if BOT.conversation.describe.get_dataset_name() == 'boolq':
@@ -172,6 +172,12 @@ def get_bot_response():
                            "Please enter a follow-up question or prompt! <br><br>" \
                            "<b>[ATTENTION]</b> The entered custom input will be kept until you PRESS <b>'quit'</b>"\
                            + "<>" + "Entered custom input: " + custom_input
+            else:
+                user_text = data["userInput"]
+                BOT.conversation.include_word = user_text
+                app.logger.info(f"[INCLUDE_WORD]: {user_text}")
+                response = f"You have given the include word {user_text}. " \
+                           "Please enter a follow-up question or prompt related to include operation! <br><br>"
         except Exception as ext:
             app.logger.info(f"Traceback getting bot response: {traceback.format_exc()}")
             app.logger.info(f"Exception getting bot response: {ext}")
