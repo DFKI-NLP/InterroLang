@@ -8,9 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/static/styles/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -75,18 +75,18 @@
     </section>
 
     <div>
-        <div style="border: thick red double; width: 400px">
-            <h1 style="color: #ff1238">Instruction:</h1>
-            <ul style="color: indianred">
-                In selection box:
-                <li><b>"Input"</b>: enter <b>"quit"</b> can delete the entered custom input if available.</li>
-                <li><b>"Custom input"</b>: enter any custom input. For BoolQ, please use <b>"|"</b> to separate text and passage!</li>
-                <li><b>"Include"</b>: enter a single word for include operation.</li>
-            </ul>
+        <div class="container" style="width: 500px">
+            <h2 class="display-3"><mark style="color: red">Instructions:</mark></h2>
+            <div class="panel panel-danger">
+                <div class="panel-heading"><b>"Input"</b>: enter <b>"quit"</b> can delete the entered custom input if available.</div>
+                <div class="panel-heading"><b>"Custom input"</b>: enter any custom input. For BoolQ, please use <b>"|"</b> to separate text and passage!</div>
+                <div class="panel-heading"><b>"Include"</b>: enter a single word for include operation.</div>
+            </div>
         </div>
+
         <!-- Displaying data -->
         <!-- Referring jinja2 syntax -->
-        <div id="show_data" style="border: thick #32a1ce double; margin-top: 50px">
+        <div id="show_data" style="border: thick #32a1ce double; margin-top: 20px">
             <h1 style="font: small-caps bold 24px/1 sans-serif">Displaying {{dataset}} dataset: </h1>
             {% for entry in entries %}
                 {% if dataset == 'boolq' %}
@@ -119,7 +119,7 @@
 
         <!-- Reset temp dataset -->
         <div style="margin-top: 50px">
-            <button type="button" class="btn btn-outline-primary" id="reset_temp_dataset" style="width: 300px">Click me to reset the temp
+            <button type="button" class="btn btn-primary" id="reset_temp_dataset" style="width: 300px" onclick="reset_temp_dataset()">Click me to reset the temp
                 dataset
             </button>
         </div>
