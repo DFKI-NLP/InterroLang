@@ -35,7 +35,7 @@
           </main>
 
           <form class="ttm-inputarea">
-            <select id="input_source" class="form-select" style="width: 150px; text-align:center; font-family: Calibri; margin-right: 10px" id="input_select">
+            <select id="input_source" class="form-select" style="width: 150px; text-align:center; font-family: Calibri; margin-right: 10px">
                 <option style="text-align:center; " value="0">Input</option>
                 <option style="text-align:center;" value="1">Custom input</option>
             </select>
@@ -284,7 +284,10 @@
         if (document.getElementsByTagName("option")[idx].value === '0') {
             botResponse(msgText, custom_input = '0');
         } else {
+            const selectBox = document.getElementById("input_source");
+            selectBox.selectedIndex = "0";
             botResponse(msgText, custom_input = '1');
+
         }
     });
 
