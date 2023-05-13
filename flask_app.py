@@ -74,7 +74,7 @@ def home():
 
     dataset = BOT.conversation.describe.get_dataset_name()
 
-    return render_template("index.html", currentUserId="user", datasetObjective=objective, entries= entries, dataset=dataset)
+    return render_template("index.html", currentUserId="user", datasetObjective=objective, entries=entries, dataset=dataset)
 
 
 @bp.route("/log_feedback", methods=['POST'])
@@ -164,6 +164,20 @@ def custom_input():
     return custom_input
 
 
+@bp.route("/filter_dataset", methods=["POST"])
+def filter_dataset():
+    filter_text = json.loads(request.data)["filterMsgText"]
+    if len(filter_text) > 2:
+        df = BOT.conversation.stored_vars["dataset"].contents["X"]
+        filtered_df = df[df[BOT.text_fields].apply(lambda row: row.str.contains(filter_text)).any(axis=1)]
+
+        BOT.conversation.temp_dataset = filtered_df
+        return f"{len(filtered_df)} instances of {BOT.conversation.describe.dataset_name} " \
+               f"include the filter string '{filter_text}'"
+    else:
+        return ""
+
+
 @bp.route("/reset_temp_dataset", methods=["Post"])
 def reset_temp_dataset():
     data = json.loads(request.data)
@@ -172,7 +186,7 @@ def reset_temp_dataset():
     # Reset the tempdataset
     BOT.conversation.build_temp_dataset()
 
-    app.logger.info("Reset temp dataset succeessfully!")
+    app.logger.info("Reset temp dataset successfully!")
 
     return "reset temp_dataset"
 

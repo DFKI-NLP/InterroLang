@@ -71,6 +71,12 @@
     </section>
 
     <div>
+        <div>
+            <!-- Filter dataset by string ("includes") -->
+            <form class="filterdata-inputarea">
+              <input type="text" class="filterdata-input" id="filterdataInput" placeholder="Filter dataset">
+            </form>
+        </div>
         <!-- Displaying data -->
         <!-- Referring jinja2 syntax -->
         <div id="show_data" style="border: thick #32a1ce double">
@@ -511,4 +517,26 @@
             ttmInput.value = userInputs[userInputIndex];
         }
     }
+</script>
+<script>
+    // Filter dataset
+    const filterDataForm = get(".filterdata-inputarea");
+    const filterDataInput = get(".filterdata-input");
+    filterDataForm.addEventListener("keyup", event => {
+      event.preventDefault();
+      const filterMsgText = filterDataInput.value;
+      result = $.ajax({
+        type: 'POST',
+        url: "{{ url_for('.filter_dataset') }}",
+        data: JSON.stringify({
+          'filterMsgText': filterMsgText,
+        }),
+        processData: false,
+        contentType: false,
+        cache: false,
+        success: function(text) {
+          console.log(text)
+        }
+      })
+    });
 </script>
