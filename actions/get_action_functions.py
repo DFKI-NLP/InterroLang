@@ -31,6 +31,7 @@ from actions.prediction.mistakes import show_mistakes_operation
 from actions.prediction.predict import predict_operation
 from actions.prediction.prediction_likelihood import predict_likelihood
 from actions.prediction.score import score_operation
+from actions.attacks.simple_attack import attack_operation
 
 
 def get_all_action_functions_map():
@@ -63,6 +64,7 @@ def get_all_action_functions_map():
         'rationalize': rationalize_operation,
         'nlpattribute': feature_importance_operation,
         'important': global_top_k,
-        'cfe': counterfactuals_operation
+        'cfe': counterfactuals_operation,
+        'attack': attack_operation
     }
     return actions
