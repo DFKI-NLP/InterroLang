@@ -60,7 +60,8 @@ class Conversation:
                  target_var_name: str = "y",
                  default_metric: str = "accuracy",
                  eval_file_path: str = None,
-                 feature_definitions: dict = None):
+                 feature_definitions: dict = None,
+                 decoder = None):
         """
 
         Args:
@@ -142,7 +143,7 @@ class Conversation:
                     y_value: Series,
                     categorical: list[str],
                     numeric: list[str],
-                    dataset_name: str):
+                    dataset_name: str = "boolq"):
         """Stores data as the dataset in the conversation."""
         if not ("text" in data.columns):
             text_data = []
