@@ -167,15 +167,18 @@ def custom_input():
 @bp.route("/filter_dataset", methods=["POST"])
 def filter_dataset():
     filter_text = json.loads(request.data)["filterMsgText"]
+    df = BOT.conversation.stored_vars["dataset"].contents["X"]
     if len(filter_text) > 2:
-        df = BOT.conversation.stored_vars["dataset"].contents["X"]
         filtered_df = df[df[BOT.text_fields].apply(lambda row: row.str.contains(filter_text)).any(axis=1)]
 
-        BOT.conversation.temp_dataset = filtered_df
-        return f"{len(filtered_df)} instances of {BOT.conversation.describe.dataset_name} " \
-               f"include the filter string '{filter_text}'"
+        BOT.conversation.temp_dataset.contents["X"] = filtered_df
+        app.logger.info(f"{len(filtered_df)} instances of {BOT.conversation.describe.dataset_name} include the filter string '{filter_text}'")
+        final_df = filtered_df
     else:
-        return ""
+        final_df = df
+    return {'jsonData': final_df.to_json(orient="index"),
+            'totalDataLen': len(df)
+            }
 
 
 @bp.route("/reset_temp_dataset", methods=["Post"])
