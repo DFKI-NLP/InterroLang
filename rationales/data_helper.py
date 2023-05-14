@@ -30,7 +30,7 @@ class TrainingDataset(Dataset):
         return self.features[i]
 
 
-def load_raw_dataset(split, args):
+def load_raw_dataset(split):
     #data_path = os.path.join('./data', args.dataset, '{}.jsonl'.format(split))
     #ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
     #print
