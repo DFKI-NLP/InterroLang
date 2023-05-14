@@ -41,49 +41,49 @@ User: what errors does the model typically make on the data?
 Parsed: mistake typical [E]
 
 User: does the model predict texts that include {span} correctly?
-Parsed: includes {span} and mistake sample [E]
+Parsed: includes and mistake sample [E]
 
 User: what are some mistakes on examples with {span} that the model makes
-Parsed: includes {span} and mistake sample [E]
+Parsed: includes and mistake sample [E]
 
 User: could you show me a few examples with {span} you get incorrect
-Parsed: includes {span} and mistake sample [E]
+Parsed: includes and mistake sample [E]
 
 User: for {span}, could you show me if the model predicts the data correctly for some examples?
-Parsed: includes {span} and mistake sample [E]
+Parsed: includes and mistake sample [E]
 
 User: {span} show mistakes
-Parsed: includes {span} and mistake sample [E]
+Parsed: includes and mistake sample [E]
 
 User: {span} sample mistakes
-Parsed: includes {span} and mistake sample [E]
+Parsed: includes and mistake sample [E]
 
 User: {span} return incorrect predictions
-Parsed: includes {span} and mistake sample [E]
+Parsed: includes and mistake sample [E]
 
 User: {span} show faulty predictions
-Parsed: includes {span} and mistake sample [E]
+Parsed: includes and mistake sample [E]
 
 User: {span} show bad predictions
-Parsed: includes {span} and mistake sample [E]
+Parsed: includes and mistake sample [E]
 
 User: for {span}, what are some mistakes you typically make?
-Parsed: includes {span} and mistake typical [E]
+Parsed: includes and mistake typical [E]
 
 User: what are some typical mistakes on {span}
-Parsed: includes {span} and mistake typical [E]
+Parsed: includes and mistake typical [E]
 
 User: how would you characterize the mistakes you make on {span}?
-Parsed: includes {span} and mistake typical [E]
+Parsed: includes and mistake typical [E]
 
 User: what are some common mistakes you make for texts which include {span}?
-Parsed: includes {span} and mistake typical [E]
+Parsed: includes and mistake typical [E]
 
 User: what are some mistakes on {span} examples the model typically makes
-Parsed: includes {span} and mistake typical [E]
+Parsed: includes and mistake typical [E]
 
 User: what data points does the model typically predict wrongly on texts with {span}?
-Parsed: includes {span} and mistake typical [E]
+Parsed: includes and mistake typical [E]
 
 User: what data points does the model typically predict mistakenly on texts with {span}?
-Parsed: includes {span} and mistake typical [E]
+Parsed: includes and mistake typical [E]
