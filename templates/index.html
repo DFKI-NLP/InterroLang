@@ -70,44 +70,18 @@
 
     </section>
 
-    <div>
+    <div style="width: 500px; justify-content: start;">
         <div>
             <!-- Filter dataset by string ("includes") -->
+            <b>🔍 Filter dataset by text:</b>
             <form class="filterdata-inputarea">
               <input type="text" class="filterdata-input" id="filterdataInput" placeholder="Filter dataset">
             </form>
         </div>
         <!-- Displaying data -->
         <!-- Referring jinja2 syntax -->
-        <h1 style="font: small-caps bold 24px/1 sans-serif">Displaying {{dataset}} dataset: </h1>
-        <div id="show_data" style="border: thick #32a1ce double">
-            {% for entry in entries %}
-                {% if dataset == 'boolq' %}
-                    <div><b>ID:</b> {{loop.index}}</div>
-                    <details style="margin-top: 1px">
-                        <summary style="font-weight: bold;">Question: </summary>
-                        <p style="font-style: italic ">{{entry["question"]}}</p>
-                    </details>
-
-                    <details>
-                        <summary style="font-weight: bold;">Passage: </summary>
-                        <p style="font-style: italic">{{entry["passage"]}}</p>
-                    </details>
-                {% elif dataset == 'daily_dialog' %}
-                    <div><b>ID:</b> {{loop.index}}</div>
-                    <details style="margin-top: 1px">
-                        <summary style="font-weight: bold;">Dialog: </summary>
-                        <p style="font-style: italic ">{{entry["dialog"]}}</p>
-                    </details>
-                {% else %}
-                    <div><b>ID:</b> {{loop.index}}</div>
-                    <details style="margin-top: 1px">
-                        <summary style="font-weight: bold;">Text: </summary>
-                        <p style="font-style: italic ">{{entry["text"]}}</p>
-                    </details>
-                {% endif %}
-                <br>
-            {% endfor %}
+        <h1 style="font: small-caps bold 20px/1 sans-serif">{{dataset}} dataset viewer: </h1>
+        <div id="show_data" style="border: thick #32a1ce double; width: 300px; border-radius: 15px; padding: 5px; overflow-y: scroll;">
         </div>
 
         <!-- custom input -->
@@ -542,12 +516,19 @@
             var numDisplayed = 0;
 
             for (let [id, entry] of Object.entries(data)) {
-                msgHTML += "<details style='margin-top: 1px'><summary style='font-weight: bold;'>ID:" + id + "</summary>";
+                msgHTML += "<details style='margin-top: 1px;'"
+                if (numDisplayed == 0) {
+                    msgHTML += " open='true';"
+                }
+                msgHTML += "><summary>";
+                msgHTML += "<b>ID:" + id + "</b></summary>";
+
                 for (let [field_name, field_content] of Object.entries(entry)) {
                     msgHTML += "<b>" + field_name + ": </b>"
-                    msgHTML += "<div style='font-style: italic'>" + field_content + "</div>"
+                    msgHTML += "<div style='font-style: italic; font-size: 0.75em;'>" + field_content + "</div>"
                 }
                 msgHTML += "</details>"
+
                 numDisplayed += 1;
                 if (numDisplayed >= 10) {
                     msgHTML += "<br>(Showing first 10)";
