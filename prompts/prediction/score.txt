@@ -58,11 +58,29 @@ Parsed: score f1 [E]
 User: what is the f1 score on the evaluation data
 Parsed: score f1 [E]
 
+User: What is the micro-F1 score?
+Parsed: score f1 micro [E]
+
+User: What is the macro-F1 score?
+Parsed: score f1 macro [E]
+
+User: What is the weighted F1 score?
+Parsed: score f1 weighted [E]
+
 User: can you show me the precision on the data?
 Parsed: score precision [E]
 
 User: can you show me the precision on the training data?
 Parsed: score precision [E]
+
+User: What is the micro precision?
+Parsed: score precision micro [E]
+
+User: What is the macro precision?
+Parsed: score precision macro [E]
+
+User: What is the weighted precision?
+Parsed: score precision weighted [E]
 
 User: give the recall score
 Parsed: score recall [E]
@@ -72,6 +90,15 @@ Parsed: score recall [E]
 
 User: when determining {class_names}, what is your recall score?
 Parsed: score recall [E]
+
+User: What is the micro recall?
+Parsed: score recall micro [E]
+
+User: What is the macro recall?
+Parsed: score recall macro [E]
+
+User: What is the weighted recall?
+Parsed: score recall weighted [E]
 
 User: can you show me the roc score on the testing data?
 Parsed: score roc [E]

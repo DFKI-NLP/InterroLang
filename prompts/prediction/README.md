@@ -29,8 +29,17 @@ Action defined in prediction/predict.py
 * 1x `score accuracy f1 [E]`
 * 2x `score default [E]`
 * 3x `score f1 [E]`
+* 1x `score f1 micro [E]`
+* 1x `score f1 macro [E]`
+* 1x `score f1 weighted [E]`
 * 2x `score precision [E]`
+* 1x `score precision micro [E]`
+* 1x `score precision macro [E]`
+* 1x `score precision weighted [E]`
 * 3x `score recall [E]`
+* 1x `score recall micro [E]`
+* 1x `score recall macro [E]`
+* 1x `score recall weighted [E]`
 * 2x `score roc [E]`
 * 3x `includes {span} and score accuracy [E]`
 * 1x `includes {span} and score accuracy and score accuracy [E]`
