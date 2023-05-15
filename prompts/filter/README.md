@@ -1,6 +1,5 @@
 # filter
-### includes.txt
-* 15x `includes {span} [E]`
 
-**GPT-4 generated**
-* 20x `includes {span} [E]`
+### includes.txt
+* 18x `includes [E]`
+* 20x `includes [E]` (**GPT-4 generated**)

@@ -4,23 +4,23 @@ Parsed: filter id 2451 and show [E]
 User: For 3315, please show me the values of the features.
 Parsed: filter id 3315 and show [E]
 
-User: Could you show me data point number 215 and tell me the rationale of the model's predictions?
-Parsed: filter id 215 and show and explain features [E]
+User: Could you show me data point number 215?
+Parsed: filter id 215 and show [E]
 
 User: Please display id 105111
 Parsed: filter id 105111 and show [E]
 
 User: show me instances that include {span}
-Parsed: includes {span} and show [E]
+Parsed: includes and show [E]
 
 User: return the data with {span}
-Parsed: includes {span} and show [E]
+Parsed: includes and show [E]
 
 User: show me all the data where {span} is present
-Parsed: includes {span} and show [E]
+Parsed: includes and show [E]
 
 User: please show the items with {span} in the data
-Parsed: includes {span} and show [E]
+Parsed: includes and show [E]
 
 User: show me this data point
 Parsed: previousfilter and show [E]
