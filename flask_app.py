@@ -150,6 +150,7 @@ def get_bot_response():
                 if BOT.conversation.describe.get_dataset_name() == 'boolq':
                     if "|" in user_text:
                         idx = user_text.find("|")
+
                         if idx == 0:
                             return "No question is given!"
                         elif idx == len(user_text) - 1:
@@ -162,16 +163,17 @@ def get_bot_response():
                                     custom_input = custom_input + new_str[i]
                         else:
                             custom_input = user_text.replace('|', '')
+                            user_text = custom_input
                     else:
                         return "The separate character '|' is not included!"
 
-                BOT.conversation.custom_input = custom_input
+                BOT.conversation.custom_input = user_text
                 BOT.conversation.used = False
-                app.logger.info(f"[CUSTOM INPUT] {custom_input}")
+                app.logger.info(f"[CUSTOM INPUT] {user_text}")
                 response = "You have given a custom input. " \
                            "Please enter a follow-up question or prompt! <br><br>" \
                            "<b>[ATTENTION]</b> The entered custom input will be kept until you PRESS <b>'quit'</b>"\
-                           + "<>" + "Entered custom input: " + custom_input
+                           + "<>" + "Entered custom input: " + user_text
             else:
                 user_text = data["userInput"]
                 BOT.conversation.include_word = user_text
