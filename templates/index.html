@@ -87,22 +87,7 @@
 
     </section>
 
-    <div>
-        <!--        <div class="container" style="width: 500px">-->
-        <!--            <h2 class="display-3">-->
-        <!--                <mark style="color: red">Instructions:</mark>-->
-        <!--            </h2>-->
-        <!--            <div class="panel panel-danger">-->
-        <!--                <div class="panel-heading"><b>"Input"</b>: enter <b>"quit"</b> can delete the entered custom input if-->
-        <!--                    available.-->
-        <!--                </div>-->
-        <!--                <div class="panel-heading"><b>"Custom input"</b>: enter any custom input. For BoolQ, please use-->
-        <!--                    <b>"|"</b> to separate text and passage!-->
-        <!--                </div>-->
-        <!--                <div class="panel-heading"><b>"Include"</b>: enter a single word for include operation.</div>-->
-        <!--            </div>-->
-        <!--        </div>-->
-
+    <div style="width: 500px; justify-content: start;">
         <div id="accordion">
             <div class="card">
                 <div class="card-header" id="headingOne">
@@ -133,42 +118,20 @@
             </div>
 
         </div>
-
+        <div>
+            <!-- Filter dataset by string ("includes") -->
+            <b>🔍 Filter dataset by text:</b>
+            <form class="filterdata-inputarea">
+              <input type="text" class="filterdata-input" id="filterdataInput" placeholder="Filter dataset">
+            </form>
+        </div>
         <!-- Displaying data -->
         <!-- Referring jinja2 syntax -->
-        <div id="show_data" style="border: thick #32a1ce double; margin-top: 20px">
-            <h1 style="font: small-caps bold 24px/1 sans-serif">Displaying {{dataset}} dataset: </h1>
-            {% for entry in entries %}
-            {% if dataset == 'boolq' %}
-            <div><b>ID:</b> {{loop.index}}</div>
-            <details style="margin-top: 1px">
-                <summary style="font-weight: bold;">Question:</summary>
-                <p style="font-style: italic ">{{entry["question"]}}</p>
-            </details>
-
-            <details>
-                <summary style="font-weight: bold;">Passage:</summary>
-                <p style="font-style: italic">{{entry["passage"]}}</p>
-            </details>
-            {% elif dataset == 'daily_dialog' %}
-            <div><b>ID:</b> {{loop.index}}</div>
-            <details style="margin-top: 1px">
-                <summary style="font-weight: bold;">Dialog:</summary>
-                <p style="font-style: italic ">{{entry["dialog"]}}</p>
-            </details>
-            {% else %}
-            <div><b>ID:</b> {{loop.index}}</div>
-            <details style="margin-top: 1px">
-                <summary style="font-weight: bold;">Text:</summary>
-                <p style="font-style: italic ">{{entry["text"]}}</p>
-            </details>
-            {% endif %}
-            <br>
-            {% endfor %}
-        </div>
-
+        <h1 style="font: small-caps bold 20px/1 sans-serif">🗃️ {{dataset}} dataset viewer </h1>
+        <div id="show_data" style="border: thick #32a1ce double; width: 300px; border-radius: 15px; padding: 5px; overflow-y: scroll; height: 450px;"></div>
+    <div style="margin-top: 10px;">
         <!-- Reset temp dataset -->
-        <div style="margin-top: 50px">
+        <div style="margin-top: 10px">
             <button type="button" class="btn btn-primary" id="reset_temp_dataset" style="width: 300px"
                     onclick="reset_temp_dataset()">Click me to reset the temp
                 dataset
@@ -572,4 +535,117 @@
             ttmInput.value = userInputs[userInputIndex];
         }
     }
+</script>
+<script>
+    function getAllIndexes(arr, val) {
+        let indexes = [], i;
+        for(i = 0; i < arr.length; i++)
+            if (arr[i].includes(val))
+                indexes.push(i);
+        return indexes;
+    }
+
+    // Filter dataset
+    const filterDataForm = get(".filterdata-inputarea");
+    const filterDataInput = get(".filterdata-input");
+    filterDataForm.addEventListener("keyup", event => {
+      event.preventDefault();
+      const filterMsgText = filterDataInput.value;
+      result = $.ajax({
+        type: 'POST',
+        url: "{{ url_for('.filter_dataset') }}",
+        data: JSON.stringify({
+          'filterMsgText': filterMsgText,
+        }),
+        processData: false,
+        contentType: 'application/json',
+        cache: false,
+        success: function(info) {
+            var data = JSON.parse(info["jsonData"]);
+            var data_size = Object.keys(data).length;
+
+            var msgHTML = data_size + " out of " + info["totalDataLen"] + " data points:<br>";
+            var numDisplayed = 0;
+            const span_start = "<span style='background-color: yellow'>";
+            const span_end = "</span>";
+
+            for (let [id, entry] of Object.entries(data)) {
+                msgHTML += "<details style='margin-top: 1px;'"
+                if (numDisplayed == 0) {
+                    msgHTML += " open='true';"
+                }
+                msgHTML += "><summary>";
+                msgHTML += "<b>ID:" + id + "</b></summary>";
+
+                for (let [field_name, field_content] of Object.entries(entry)) {
+                    msgHTML += "<b>" + field_name + ": </b>"
+                    msgHTML += "<div style='font-style: italic; font-size: 0.75em;'>";
+                        // + field_content
+                    if (field_content.includes(filterMsgText) && filterMsgText.length > 0) {
+                        let field_content_arr = field_content.split(" ");
+                        let idx = getAllIndexes(field_content_arr, filterMsgText);
+
+                        let last_pointer = 0;
+                        for(let i = 0; i < idx.length; i++){
+                            if(idx[i] == 0) {
+                                msgHTML += span_start;
+                                msgHTML += field_content_arr[idx[i]];
+                                msgHTML += span_end;
+                                msgHTML += " ";
+                                last_pointer = 1;
+                            } else if(idx.length > 1 && idx[i] == field_content_arr.length - 1){
+                                msgHTML += span_start;
+                                msgHTML += field_content_arr[idx[i]];
+                                msgHTML += span_end;
+                                msgHTML += " ";
+                                last_pointer = 1;
+                            } else if(idx.length == 1 && idx[i] == field_content_arr.length - 1){
+                                for(let i = 0; i < idx[0]; i++){
+                                    msgHTML += field_content_arr[i];
+                                    msgHTML += " ";
+                                }
+
+                                msgHTML += span_start;
+                                msgHTML += field_content_arr[idx[i]];
+                                msgHTML += span_end;
+                                msgHTML += " ";
+                                last_pointer = idx[i];
+                            }else {
+
+                                for(let j = last_pointer; j < idx[i]; j++){
+                                    msgHTML += field_content_arr[j];
+                                    msgHTML += " ";
+                                }
+
+                                msgHTML += span_start;
+                                msgHTML += field_content_arr[idx[i]];
+                                msgHTML += span_end;
+                                msgHTML += " ";
+                                last_pointer = idx[i] + 1;
+                            }
+                        }
+
+                        if(idx[idx.length - 1] < field_content_arr.length){
+                            for(let i = idx[idx.length - 1] + 1; i < field_content_arr.length; i++){
+                                msgHTML += field_content_arr[i];
+                                msgHTML += " ";
+                            }
+                        }
+                    } else {
+                        msgHTML += field_content;
+                    }
+                    msgHTML += "</div>";
+                }
+                msgHTML += "</details>"
+
+                numDisplayed += 1;
+                if (numDisplayed >= 10) {
+                    msgHTML += "<br>(Showing first 10)";
+                    break
+                }
+            }
+            document.getElementById("show_data").innerHTML = msgHTML;
+        }
+      })
+    });
 </script>

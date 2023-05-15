@@ -61,21 +61,10 @@ def home():
     objective = BOT.conversation.describe.get_dataset_objective()
 
     BOT.conversation.build_temp_dataset()
-    df = BOT.conversation.temp_dataset.contents['X']
-    f_names = list(BOT.conversation.temp_dataset.contents['X'].columns)
-
-    # only for boolq
-    entries = []
-    for j in range(5):
-        temp = {}
-        for f in f_names:
-            temp[f] = df[f][j]
-        entries.append(temp)
 
     dataset = BOT.conversation.describe.get_dataset_name()
 
-    return render_template("index.html", currentUserId="user", datasetObjective=objective, entries=entries,
-                           dataset=dataset)
+    return render_template("index.html", currentUserId="user", datasetObjective=objective, dataset=dataset)
 
 
 @bp.route("/log_feedback", methods=['POST'])
@@ -187,6 +176,38 @@ def get_bot_response():
         return response
 
 
+@bp.route("/custom_input", methods=["Post"])
+def custom_input():
+    data = json.loads(request.data)
+    custom_input = data["custom_input"]
+    username = data["thisUserName"]
+
+    BOT.conversation.custom_input = custom_input
+    BOT.conversation.used = False
+
+    app.logger.info("custom_input: " + custom_input)
+
+    return custom_input
+
+
+@bp.route("/filter_dataset", methods=["POST"])
+def filter_dataset():
+    filter_text = json.loads(request.data)["filterMsgText"]
+    df = BOT.conversation.stored_vars["dataset"].contents["X"]
+    if len(filter_text) > 0:
+        filtered_df = df[df[BOT.text_fields].apply(lambda row: row.str.contains(filter_text)).any(axis=1)]
+
+        BOT.conversation.temp_dataset.contents["X"] = filtered_df
+        app.logger.info(f"{len(filtered_df)} instances of {BOT.conversation.describe.dataset_name} include the filter string '{filter_text}'")
+        final_df = filtered_df
+    else:
+        final_df = df
+    return {
+        'jsonData': final_df.to_json(orient="index"),
+        'totalDataLen': len(df)
+    }
+
+
 @bp.route("/reset_temp_dataset", methods=["Post"])
 def reset_temp_dataset():
     data = json.loads(request.data)
@@ -195,7 +216,7 @@ def reset_temp_dataset():
     # Reset the tempdataset
     BOT.conversation.build_temp_dataset()
 
-    app.logger.info("Reset temp dataset succeessfully!")
+    app.logger.info("Reset temp dataset successfully!")
 
     return "reset temp_dataset"
 
