@@ -1,6 +1,6 @@
 import ast
 
-from OpenAttack import attackers, AttackEval
+from OpenAttack import attackers
 from OpenAttack.victim import classifiers
 from torch.utils.data import Dataset
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
@@ -9,6 +9,7 @@ import numpy as np
 
 from explained_models.ModelABC.DANetwork import DANetwork
 from explained_models.Tokenizer.tokenizer import HFTokenizer
+from utils.attack_eval import AttackEval
 
 
 class AdversarialDataset(Dataset):

@@ -6,13 +6,13 @@ import sys
 from typing import Any, Dict, Generator, Iterable, List, Optional, Union
 import logging
 from tqdm import tqdm
-from ..utils import visualizer, result_visualizer, get_language, language_by_name
-from .utils import worker_process, worker_init, attack_process
-from ..tags import *
-from ..text_process.tokenizer import Tokenizer, get_default_tokenizer
-from ..victim.base import Victim
-from ..attackers.base import Attacker
-from ..metric import AttackMetric, MetricSelector
+from OpenAttack.utils import visualizer, result_visualizer, get_language, language_by_name
+from OpenAttack.attack_eval.utils import worker_process, worker_init, attack_process
+from OpenAttack.tags import *
+from OpenAttack.text_process.tokenizer import Tokenizer, get_default_tokenizer
+from OpenAttack.victim.base import Victim
+from OpenAttack.attackers.base import Attacker
+from OpenAttack.metric import AttackMetric, MetricSelector
 
 import multiprocessing as mp
 
