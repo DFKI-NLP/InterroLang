@@ -1,0 +1,20 @@
+User: Please, can you show the sentence level feature importance for this input?
+Parsed: nlpattribute sentence [E]
+
+User: Could you provide the sentence-level attribution for the provided sentence?
+Parsed: nlpattribute sentence [E]
+
+User: Show me the sentence-wise feature importance for the given text.
+Parsed: nlpattribute sentence [E]
+
+User: Can you perform a sentence-level feature importance analysis on this text?
+Parsed: nlpattribute sentence [E]
+
+User: I need a sentence-level breakdown of feature importance for the provided document.
+Parsed: nlpattribute sentence [E]
+
+User: I'm interested in the sentence-wise saliency scores for this text.
+Parsed: nlpattribute sentence [E]
+
+User: Can you provide a sentence-level feature attribution for the given data?
+Parsed: nlpattribute sentence [E]
