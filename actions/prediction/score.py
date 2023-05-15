@@ -65,7 +65,9 @@ def score_operation(conversation, parse_text, i, **kwargs):
         except ValueError:
             pass
         if metric not in ["default", "accuracy", "roc"]:
-            if average not in flags:
+            if parse_text[i + 2] == '[e]':
+                average = "macro"
+            else:
                 raise NotImplementedError(f"Flag {average} is not supported!")
 
     y_true, y_pred = get_predictions_and_labels(dataset_name)

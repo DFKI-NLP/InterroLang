@@ -1,4 +1,5 @@
 """Prediction operation."""
+import json
 import os
 import csv
 import random
@@ -208,7 +209,9 @@ def random_prediction(model, data, conversation, text):
             filtered_text += data[f][random_num]
             filtered_text += " "
     elif dataset_name == "olid":
-        pass
+        for f in f_names[:1]:
+            filtered_text += data[f][random_num]
+            filtered_text += " "
     else:
         raise NotImplementedError(f"The dataset {dataset_name} is not supported!")
 
@@ -219,7 +222,10 @@ def random_prediction(model, data, conversation, text):
     return_s += "</li>"
 
     return_s += "<li>"
-    model_predictions = model.predict(data, text)
+    if conversation.describe.get_dataset_name() != "daily_dialog":
+        model_predictions = model.predict(data, text)
+    else:
+        model_predictions = get_prediction_by_id_da(random_num)
     if conversation.class_names is None:
         prediction_class = str(model_predictions[0])
         return_s += f"The class name is not given, the prediction class is <b>{prediction_class}</b>"
@@ -232,10 +238,23 @@ def random_prediction(model, data, conversation, text):
     return return_s
 
 
+def get_prediction_by_id_da(_id):
+    name = 'daily_dialog'
+    data_path = f"./cache/{name}/ig_explainer_{name}_prediction.json"
+    fileObject = open(data_path, "r")
+    jsonContent = fileObject.read()
+    json_list = json.loads(jsonContent)
+
+    return np.array([np.argmax(json_list[_id])])
+
+
 def prediction_with_id(model, data, conversation, text):
     """Get the prediction of an instance with ID"""
     return_s = ''
-    model_predictions = model.predict(data, text)
+    if conversation.describe.get_dataset_name() != 'daily_dialog':
+        model_predictions = model.predict(data, text)
+    else:
+        model_predictions = get_prediction_by_id_da(text)
 
     filter_string = gen_parse_op_text(conversation)
 
