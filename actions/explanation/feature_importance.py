@@ -257,6 +257,9 @@ def feature_importance_operation(conversation, parse_text, i, **kwargs):
     # parse_text = ["predict", "beginspan", "is", "a", "wolverine", "the", "same", "as", "a", "badger", "endspan",
     #               "beginspan", "is", "this", "a", "good", "book", "endspan"]
 
+    if len(conversation.temp_dataset.contents['X']) == 0:
+        return 'There are no instances that meet this description!', 0
+
     id_list, topk = handle_input(parse_text)
 
     if topk is None:
