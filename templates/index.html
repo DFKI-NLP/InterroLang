@@ -493,6 +493,14 @@
     }
 </script>
 <script>
+    function getAllIndexes(arr, val) {
+        let indexes = [], i;
+        for(i = 0; i < arr.length; i++)
+            if (arr[i].includes(val))
+                indexes.push(i);
+        return indexes;
+    }
+
     // Filter dataset
     const filterDataForm = get(".filterdata-inputarea");
     const filterDataInput = get(".filterdata-input");
@@ -514,6 +522,8 @@
 
             var msgHTML = data_size + " out of " + info["totalDataLen"] + " data points:<br>";
             var numDisplayed = 0;
+            const span_start = "<span style='background-color: yellow'>";
+            const span_end = "</span>";
 
             for (let [id, entry] of Object.entries(data)) {
                 msgHTML += "<details style='margin-top: 1px;'"
@@ -525,7 +535,62 @@
 
                 for (let [field_name, field_content] of Object.entries(entry)) {
                     msgHTML += "<b>" + field_name + ": </b>"
-                    msgHTML += "<div style='font-style: italic; font-size: 0.75em;'>" + field_content + "</div>"
+                    msgHTML += "<div style='font-style: italic; font-size: 0.75em;'>";
+                        // + field_content
+                    if(field_content.includes(filterMsgText)){
+                        let field_content_arr = field_content.split(" ");
+                        let idx = getAllIndexes(field_content_arr, filterMsgText);
+
+                        let last_pointer = 0;
+                        for(let i = 0; i < idx.length; i++){
+                            if(idx[i] == 0) {
+                                msgHTML += span_start;
+                                msgHTML += field_content_arr[idx[i]];
+                                msgHTML += span_end;
+                                msgHTML += " ";
+                                last_pointer = 1;
+                            } else if(idx.length > 1 && idx[i] == field_content_arr.length - 1){
+                                msgHTML += span_start;
+                                msgHTML += field_content_arr[idx[i]];
+                                msgHTML += span_end;
+                                msgHTML += " ";
+                                last_pointer = 1;
+                            } else if(idx.length == 1 && idx[i] == field_content_arr.length - 1){
+                                for(let i = 0; i < idx[0]; i++){
+                                    msgHTML += field_content_arr[i];
+                                    msgHTML += " ";
+                                }
+
+                                msgHTML += span_start;
+                                msgHTML += field_content_arr[idx[i]];
+                                msgHTML += span_end;
+                                msgHTML += " ";
+                                last_pointer = idx[i];
+                            }else {
+
+                                for(let j = last_pointer; j < idx[i]; j++){
+                                    msgHTML += field_content_arr[j];
+                                    msgHTML += " ";
+                                }
+
+                                msgHTML += span_start;
+                                msgHTML += field_content_arr[idx[i]];
+                                msgHTML += span_end;
+                                msgHTML += " ";
+                                last_pointer = idx[i] + 1;
+                            }
+                        }
+
+                        if(idx[idx.length - 1] < field_content_arr.length){
+                            for(let i = idx[idx.length - 1] + 1; i < field_content_arr.length; i++){
+                                msgHTML += field_content_arr[i];
+                                msgHTML += " ";
+                            }
+                        }
+                    } else {
+                        msgHTML += field_content;
+                    }
+                    msgHTML += "</div>";
                 }
                 msgHTML += "</details>"
 
