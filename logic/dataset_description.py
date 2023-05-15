@@ -217,9 +217,18 @@ class DatasetDescription:
         y_pred = np.array(y_pred)
         y_values = np.array(y_values)
 
-        performance_summary = self.get_score_text(y_values,
-                                                  y_pred,
-                                                  metric_name,
-                                                  rounding_precision,
-                                                  "the data")
+        if self.dataset_name != "daily_dialog":
+            performance_summary = self.get_score_text(y_values,
+                                                      y_pred,
+                                                      metric_name,
+                                                      rounding_precision,
+                                                      "the data")
+        else:
+            performance_summary = self.get_score_text(y_values,
+                                                      y_pred,
+                                                      metric_name,
+                                                      rounding_precision,
+                                                      "the data",
+                                                      True,
+                                                      "macro")
         return performance_summary
