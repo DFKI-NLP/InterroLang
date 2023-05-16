@@ -58,4 +58,9 @@ def includes_operation(conversation, parse_text, i, **kwargs):
     else:
         output_str = f"I found the following matches for <b>{text_to_match}</b>: <br>" + output_str
 
+    # Filter temp dataset for subsequent actions
+    filtered_df = temp_dataset[temp_dataset[conversation.text_fields].apply(
+        lambda row: row.str.contains(text_to_match)).any(axis=1)]
+    conversation.temp_dataset.contents["X"] = filtered_df
+
     return output_str, 1
