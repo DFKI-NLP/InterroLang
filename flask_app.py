@@ -62,9 +62,24 @@ def home():
 
     BOT.conversation.build_temp_dataset()
 
+    # dataset = BOT.conversation.describe.get_dataset_name()
+    #
+    # return render_template("index.html", currentUserId="user", datasetObjective=objective, dataset=dataset)
+    df = BOT.conversation.temp_dataset.contents['X']
+    f_names = list(BOT.conversation.temp_dataset.contents['X'].columns)
+
+    # only for boolq
+    entries = []
+    for j in range(10):
+        temp = {}
+        for f in f_names:
+            temp[f] = df[f][j]
+        entries.append(temp)
+
     dataset = BOT.conversation.describe.get_dataset_name()
 
-    return render_template("index.html", currentUserId="user", datasetObjective=objective, dataset=dataset)
+    return render_template("index.html", currentUserId="user", datasetObjective=objective, entries=entries,
+                           dataset=dataset)
 
 
 @bp.route("/log_feedback", methods=['POST'])
