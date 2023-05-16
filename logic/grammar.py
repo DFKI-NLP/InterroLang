@@ -7,7 +7,7 @@ cfe: " cfe" cfefeature
 cfefeature: {availablefeaturetypes} | " "
 
 globaltopk: globaltopkword
-globaltopkword: " important" (classname)
+globaltopkword: " important" (classname | " all" | topk)
 classname: " true" | " false"
 
 labelfilter: " labelfilter" class
@@ -48,9 +48,9 @@ similarity: " similar"
 
 rationalize: " rationalize"
 
-predictions: prediction flag
+predictions: prediction (predictrandom)
 prediction: " predict"
-flag: " random" | " "
+predictrandom: " random"
 
 whatami: " self"
 
