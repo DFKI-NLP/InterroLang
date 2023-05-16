@@ -315,7 +315,11 @@ def predict_operation(conversation, parse_text, i, **kwargs):
 
     # for random prediction
     if parse_text[i + 1] == "random":
-        return_s = random_prediction(model, data, conversation, text)
+
+        if len(data) != 1:
+            return_s = random_prediction(model, data, conversation, text)
+        else:  # if filter id already applied, random cannot be used
+            return_s = prediction_with_id(model, data, conversation, text)
         return return_s, 1
 
     # if id is given or predictions on whole dataset
