@@ -58,15 +58,13 @@ data: " data"
 modeldescription: " model"
 function: " function"
 
-score: scoreword metricword
+score: scoreword metricword (scoresetting)
 scoreword: " score"
 metricword: " default" | " accuracy" | " f1" | " roc" | " precision" | " recall" | " sensitivity" | " specificity" | " ppv" | " npv"
+scoresetting: " micro" | " macro" | " weighted"
 testword: " test"
 
 followup: " followup"
-
-whatif: whatifword ( ( numfeaturenames numupdates adhocnumvalues ) | catnames )
-whatifword: " change"
 
 show: " show"
 
