@@ -1,6 +1,7 @@
 """
 This file is needed for creating a conversation object for testing.
 """
+from explained_models.ModelABC.DANetwork import DANetwork
 from logic.conversation import Conversation
 from logic.core import load_hf_model
 from logic.dataset_description import DatasetDescription
@@ -40,10 +41,14 @@ def create_conversation(class_names, dataset_objective, dataset_description,
 
     conversation.build_temp_dataset()
 
+
+    # if conversation.describe.get_dataset_name() == 'daily_dialog':
+    #     model = DANetwork()
+    # else:
+    #     model = load_hf_model(model_file_path, name)
     # decoder = Decoder(parsing_model_name="EleutherAI/gpt-neo-2.7B")
     # conversation.decoder = decoder
-    #
-    # model = load_hf_model(model_file_path, name)
+
     # conversation.add_var('model', model, 'model')
 
     return conversation
@@ -51,5 +56,6 @@ def create_conversation(class_names, dataset_objective, dataset_description,
 
 gin.parse_config_file('./configs/test_boolq.gin')
 # gin.parse_config_file('./configs/test_olid.gin')
+# gin.parse_config_file('./configs/test_da.gin')
 
 CONVERSATION = create_conversation()

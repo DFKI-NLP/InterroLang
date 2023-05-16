@@ -56,7 +56,7 @@ def get_text_by_id_from_csv(_id):
     """
     import pandas as pd
 
-    df = pd.read_csv('./data/daily_dialog_test.csv')
+    df = pd.read_csv('./data/da_test_set_with_indices.csv')
     text = df["dialog"][_id]
     label = df["act"][_id]
     return text, label

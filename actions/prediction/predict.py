@@ -1,4 +1,5 @@
 """Prediction operation."""
+import json
 import os
 import csv
 import numpy as np
@@ -215,10 +216,23 @@ def prediction_with_custom_input(conversation):
     return return_s
 
 
+def get_prediction_by_id_da(_id):
+    name = 'daily_dialog'
+    data_path = f"./cache/{name}/ig_explainer_{name}_prediction.json"
+    fileObject = open(data_path, "r")
+    jsonContent = fileObject.read()
+    json_list = json.loads(jsonContent)
+
+    return np.array([np.argmax(json_list[_id])])
+
+
 def prediction_with_id(model, data, conversation, text):
     """Get the prediction of an instance with ID"""
     return_s = ''
-    model_predictions = model.predict(data, text)
+    if conversation.describe.get_dataset_name() != 'daily_dialog':
+        model_predictions = model.predict(data, text)
+    else:
+        model_predictions = get_prediction_by_id_da(text)
 
     filter_string = gen_parse_op_text(conversation)
 

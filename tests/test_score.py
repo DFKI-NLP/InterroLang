@@ -48,7 +48,10 @@ def test_score_default():
 
 def test_score_f1():
     """Test score f1 functionality"""
-    parse_text = ["score", "f1", "[E]"]
+    if dataset_name != 'daily_dialog':
+        parse_text = ["score", "f1", "[E]"]
+    else:
+        parse_text = ["score", "f1", "weighted", "[E]"]
 
     return_s, status_code = score_operation(conversation, parse_text, 0)
 
@@ -65,8 +68,10 @@ def test_score_f1():
 
 def test_score_precision():
     """Test score precision functionality"""
-    parse_text = ["score", "precision", "[E]"]
-
+    if dataset_name != 'daily_dialog':
+        parse_text = ["score", "precision", "[E]"]
+    else:
+        parse_text = ["score", "precision", "weighted", "[E]"]
     return_s, status_code = score_operation(conversation, parse_text, 0)
 
     file_html = open(f"./tests/html/score/{dataset_name}_score_precision.html", "w")
@@ -82,8 +87,10 @@ def test_score_precision():
 
 def test_score_recall():
     """Test score recall functionality"""
-    parse_text = ["score", "recall", "[E]"]
-
+    if dataset_name != 'daily_dialog':
+        parse_text = ["score", "recall", "[E]"]
+    else:
+        parse_text = ["score", "recall", "weighted", "[E]"]
     return_s, status_code = score_operation(conversation, parse_text, 0)
 
     file_html = open(f"./tests/html/score/{dataset_name}_score_recall.html", "w")

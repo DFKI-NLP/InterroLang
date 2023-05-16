@@ -4,6 +4,11 @@
 
 Action defined in context/followup.py
 
+
+## Outdated!
+
+WIP: Currently moved to talktomodel folder.
+
 ### previousfilter_+_explanation.txt
 * 6x `previousfilter and explain cfe [E]`
 * 10x `previousfilter and explain features [E]`

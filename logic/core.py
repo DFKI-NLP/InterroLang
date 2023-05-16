@@ -15,6 +15,7 @@ import torch
 from flask import Flask
 from random import seed as py_random_seed
 
+from explained_models.ModelABC.DANetwork import DANetwork
 from logic.action import run_action
 from logic.conversation import Conversation
 from logic.decoder import Decoder
@@ -140,7 +141,7 @@ class ExplainBot:
         self.conversation = Conversation(eval_file_path=dataset_file_path,
                                          feature_definitions=feature_definitions,
                                          decoder=self.decoder,
-                                         text_fields=text_fields)
+                                         text_fields=self.text_fields)
 
         # Load the model into the conversation
         self.load_model(model_file_path, name=name)
@@ -196,10 +197,12 @@ class ExplainBot:
             self.conversation.add_var('model_prob_predict',
                                       model.predict_proba,
                                       'prediction_function')
+        elif "da_classifier" in filepath:
+            model = DANetwork()
+            self.conversation.add_var('model', model, 'model')
         else:
             model = load_hf_model(filepath, name)
             self.conversation.add_var('model', model, 'model')
-            # self.conversation.add_var('model_prob_predict', model, 'prediction_function')
         """
         else:
             # No other types of models implemented yet

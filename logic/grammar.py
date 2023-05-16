@@ -1,13 +1,17 @@
 GRAMMAR = r"""
 ?start: action
 action: operation done | operation join action | followup done
+<<<<<<< HEAD
 operation: explanation | filter | predictions | whatami | lastturnfilter | lastturnop | data | impfeatures | show | whatif | likelihood | modeldescription | function | score | ndatapoints | label | mistakes | fstats | define | labelfilter | predfilter | includes | globaltopk | cfe | similarity | rationalize | randomprediction
+=======
+operation: explanation | filter | predictions | whatami | lastturnfilter | lastturnop | data | impfeatures | show | likelihood | modeldescription | function | score | ndatapoints | label | mistakes | fstats | define | labelfilter | predfilter | includes | globaltopk | cfe | similarity | rationalize
+>>>>>>> main
 
 cfe: " cfe" cfefeature
 cfefeature: {availablefeaturetypes} | " "
 
 globaltopk: globaltopkword
-globaltopkword: " important" (classname)
+globaltopkword: " important" (classname | " all" | topk)
 classname: " true" | " false"
 
 labelfilter: " labelfilter" class
@@ -57,15 +61,13 @@ data: " data"
 modeldescription: " model"
 function: " function"
 
-score: scoreword metricword
+score: scoreword metricword (scoresetting)
 scoreword: " score"
 metricword: " default" | " accuracy" | " f1" | " roc" | " precision" | " recall" | " sensitivity" | " specificity" | " ppv" | " npv"
+scoresetting: " micro" | " macro" | " weighted"
 testword: " test"
 
 followup: " followup"
-
-whatif: whatifword ( ( numfeaturenames numupdates adhocnumvalues ) | catnames )
-whatifword: " change"
 
 show: " show"
 

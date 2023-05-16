@@ -64,7 +64,7 @@ class Parser:
             target: The class names in a list where the ith index corresponds that class's name
         """
 
-        assert len(cat_features) > 0 or len(num_features) > 0, "There are no features!"
+        #assert len(cat_features) > 0 or len(num_features) > 0, "There are no features!"
 
         # The nonterminal for the available feature types, i.e., categorical and numeric
         available_feature_types = ""
@@ -207,7 +207,7 @@ class Parser:
     def get_topk_grammar_text(self):
         """Gets text for the available top k features."""
         grammar_text = ""
-        for num in range(1, self.absolute_number_of_features + 1):
+        for num in range(1, 50):  # self.absolute_number_of_features + 1
             grammar_text = add_terminal_or(str(num), grammar_text)
         return grammar_text
 

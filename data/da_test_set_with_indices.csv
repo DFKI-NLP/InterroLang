@@ -1,0 +1,2388 @@
+idx,dialog,act
+0,"hey man, you wanna buy some weed?",3
+1,some what?,2
+2,"weed! you know? pot, ganja, mary jane some chronic!",3
+3,"oh, umm, no thanks.",4
+4,i also have blow if you prefer to do a few lines.,3
+5,"no, i am ok, really.",4
+6,come on man! i even got dope and acid! try some!,3
+7,do you really have all of these drugs? where do you get them from?,2
+8,i got my connections! just tell me what you want and i ’ ll even give you one ounce for free.,3
+9,"sounds good! let ’ s see, i want.",4
+10,yeah?,2
+11,i want you to put your hands behind your head! you are under arrest!,3
+12,the taxi drivers are on strike again.,1
+13,what for?,2
+14,they want the government to reduce the price of the gasoline.,1
+15,it is really a hot potato.,1
+16,we've managed to reduce our energy consumption in our factory by about 15 per cent in the last two years.,1
+17,that's excellent. how have you managed that?,2
+18,mainly because we've invested in a heat recovery system.,1
+19,what does that mean exactly?,2
+20,"well, we use the exhaust gases from our printing presses to provide energy to heat our dryers.",1
+21,what other sources of energy do you use?,2
+22,we don't use any fossil fuels. most of our power comes from hydro - electric plants. we're hoping to use even more energy from alternative sources in the future - perhaps even wind power.,1
+23,"believe it or not, tea is the most popular beverage in the world after water.",1
+24,"well, people from asia to europe all enjoy tea.",1
+25,right. and china is the homeland of tea.,1
+26,"yes, chinese people love drinking tea so much. some even claim they can't live without tea.",1
+27,do you know there are several catagories of chinese tea?,2
+28,"yes, i believe there are green teas, black teas and scented teas. any others?",2
+29,"well, have you ever heard of oulong tea and compressed tea?",2
+30,"oh, yeah. oulong tea is good for one's health. isn't it?",2
+31,you surely know a lot about chinese tea.,1
+32,"sure, i like drinking tea at teahouses.",1
+33,"oh, so do i.",1
+34,why don't we go for one now?,3
+35,great. we can chat while enjoying a cup there.,4
+36,let's go!,3
+37,what are your personal weaknesses?,2
+38,"i ’ m afraid i ’ m a poor talker. i ’ m not comfortable talking with the people whom i have just met for the first time. that is not very good for business, so i have been studying public speaking.",1
+39,are you more of a leader or a follower?,2
+40,"i don ’ t try to lead people. i ’ d rather cooperate with everybody, and get the job done by working together.",1
+41,do you think you can make yourself easily understood in english?,2
+42,"yes, in most circumstances.",1
+43,are you available for travel?,2
+44,"yes, i like travelling. i am young, and unmarried. it ’ s no problem for me to travel frequently.",1
+45,how long will it take us to drive to london?,2
+46,"i think it ’ s a distance of 180 kilometers from here to london, so it should be a two - hour drive on the motorway.",1
+47,that ’ s unless there is a traffic jam. it could take three hours.,1
+48,"you ’ re right. we will be able to travel at high speeds at the beginning and end of the journey, because we will be in built - up areas.",1
+49,"so, shall we allow three hours to cover the distance?",3
+50,"ok. you haven ’ t seen my company car, have you?",3
+51,no. let me take a look... it ’ s longer than my car.,4
+52,i think it ’ s over five meters long. i can ’ t remember exactly. it has a maximum speed of over 200 kilometers an hour.,1
+53,wow! that ’ s fast! i don ’ t think we will be traveling that fast on the motorway.,3
+54,"we can ’ t. if we went that fast, we would break the speed limit.",4
+55,so how did i do on my driving test?,2
+56,do you want the truth?,2
+57,"of course, i do.",1
+58,"well, you really didn't do all that well.",1
+59,how bad did i do?,2
+60,"to be completely honest, you failed your test.",1
+61,how?,2
+62,there were a number of reasons.,1
+63,what were they?,2
+64,"basically, you just can't drive.",1
+65,can i have another try?,3
+66,you can take it in a couple weeks.,4
+67,good morning. what's the matter with you?,2
+68,"good morning, doctor. i have a terrible headache.",1
+69,"all right, young man. tell me how it got started.",2
+70,yesterday i had a runny nose. now my nose is stuffed up. i have a sore throat. and i ’ m afraid i've got a temperature. i feel terrible.,1
+71,"don't worry, young man. lat me give you an examination. first let me take a look at your throat. open your mouth and say'ah '.",3
+72,ah.,4
+73,your throat is inflamed. and your tongue is heavily coated. you have all the symptoms of influenza.,1
+74,what am i supposed to do then?,2
+75,"a good rest is all you need, and drink more water. i'll write you a prescription.",3
+76,thank you very much.,4
+77,"my dear, what's for supper?",2
+78,red cooked carp and rape with fresh mushrooms.,1
+79,what about soup?,2
+80,sour - peppery soup.,1
+81,which condiment do you use for?,2
+82,"i'll use ginger, garlic scallion, hot pepper and vinegar.",1
+83,"very good, need i help you?",2
+84,"no, don't need, i can do myself.",1
+85,thanks. i can watch tv now.,1
+86,but you must cook that dinner next time.,3
+87,"okay, i'll do it next time.",4
+88,"hello, this is mike, kara.",1
+89,mike! good to hear from you. how are you?,2
+90,"everything is fine, and how are you?",2
+91,things are going well with me.,1
+92,"kara, i had fun the other night at the movies and was wondering if you would like to go out again this friday.",3
+93,"mike, i don't think that it's a good idea to go out again. i really need to focus on getting packed and ready to move back home.",4
+94,maybe we could just meet for coffee or something.,3
+95,"i can't really deal with any distractions right now, but i appreciate the nice evening we spent together.",4
+96,sun - set hotel. may i help you?,2
+97,"yes, i have booked a room for 24th. it's a double room.",1
+98,"hold on, please. let me check it for you. yes, you're right. you will keep it for 3 days.",3
+99,"well, now i want to change the date from 24th to 28th.",4
+100,"ok, that shall be arranged.",3
+101,are you busy tomorrow morning?,2
+102,i'm free. what's up?,2
+103,someone has to pick up the boss at the airport.,3
+104,"oh, i just remembered i've got a report to write.",4
+105,i'm sorry i'm so late. i had a really bad day.,1
+106,it's ten after six. we're late. but dinner is at six thirty.,1
+107,i know. i know. i'm really sorry. i lost my bag.,1
+108,i'll call the lost and found office.,3
+109,i didn't think of it. thank you. and i do apologize for being late.,4
+110,nani book store. how can i help you?,2
+111,do you have the'the man and the sea'by ernest hemingway?,2
+112,"yes, we have one copy left.",1
+113,can you hold it for me?,3
+114,do you have maps of downtown area?,2
+115,"yes, here you are.",1
+116,how much is it?,2
+117,it's free of charge.,1
+118,thanks so much.,1
+119,"hi there, i want to reserve a hotel room.",3
+120,"no problem at all. could i have your full name, please?",3
+121,"sure, john sandals.",4
+122,"hi, mr. sandals. i'm michelle, at your service. when do you need the room?",2
+123,my plans are to be there april 14th to the 17th.,1
+124,"we have new room rates, sir. will that be acceptable to you?",3
+125,"well, it depends on the price, of course. what is it?",2
+126,it's $ 308 a night.,1
+127,i have no problem with that.,4
+128,great! would you prefer smoking or nonsmoking?,2
+129,definitely nonsmoking. i can't handle that smell.,3
+130,"nonsmoking. now, is a queen - size bed okay?",3
+131,no problem.,4
+132,"great, mr. sandals. your reservation is confirmed. now all i need is your phone number.",3
+133,of course! it's area code 626 - 555 - 1739.,4
+134,"thank you so much, mr. sandals. we look forward to seeing you!",1
+135,"could i have my bill, please?",3
+136,"certainly, sir.",4
+137,i'm afraid there's been a mistake.,1
+138,"i'm sorry, sir. what seems to be the trouble?",2
+139,"i believe you have charged me twice for the same thing. look, the figure of 6. 5 dollar appears here, then again here.",3
+140,"i'll just go and check it for you, sir.",4
+141,"good evening, madam. can i help you?",2
+142,yes. i bought this sheet here yesterday.,1
+143,anything wrong with it?,2
+144,"yes. when i spread it out back home, i found this hole.",1
+145,"oh, how awful! may i have a look at the invoice?",3
+146,here it is.,4
+147,"well. please accept our sincere apologies, i'll be glad to change it for another one if you wish.",3
+148,that's very kind of you. thank you.,4
+149,"we're sorry that this has happened, and i guarantee that the same mistake won't happen again.",1
+150,i need to buy some flowers for my wife.,3
+151,perhaps you'd be interested in red roses.,3
+152,what would the roses cost me?,2
+153,they're only $ 20 a dozen.,1
+154,i like the sound of that.,4
+155,"yes, that is today's sale price.",1
+156,a dozen will be fine.,1
+157,is there anything else you'd like to get?,2
+158,"no, thank you.",1
+159,these roses should make your wife very happy.,4
+160,"room service, is there anything i can do for you?",1
+161,"yes, i am afraid there are not enough outlets.",1
+162,"well, we have 6 for each room.",1
+163,"yes, but 4 of them are broken. can you send someone here?",3
+164,"ok sir, please wait a minute.",4
+165,why'd you pull me over?,2
+166,are you aware that you drove through a red light?,2
+167,i ran a red light?,2
+168,"yes, you did.",1
+169,"i apologize, but i didn't realize that i did.",1
+170,"weren't you taught that yellow means slow down, not speed up?",2
+171,i did learn that.,1
+172,"so, then why did you speed up?",2
+173,i don't know what to tell you.,1
+174,i'm going to have to write you a ticket.,3
+175,i understand.,4
+176,here you go. don't do that again.,3
+177,can i have the roll of film developed here?,3
+178,surely of course.,4
+179,here is the film. can i get my pictures tomorrow?,3
+180,sure.,4
+181,besides i want two copies of all the photos.,3
+182,"tell me a little bit about yourself, please.",3
+183,my name is dunlin and i live in beijing. i was born in 1980. i will graduate from peking university this july. i have majored in accounting.,1
+184,would you tell me something about your family?,3
+185,"there are three in my family, my parents and myself. my father is a teacher and my mother is a worker.",1
+186,i really need to start eating healthier.,1
+187,i have to start eating better too.,1
+188,what kind of food do you usually eat?,2
+189,"i try my best to eat only fruits, vegetables, and chicken.",1
+190,is that really all that you eat?,2
+191,that's basically it.,1
+192,how do you stick to only those foods?,2
+193,"actually, fruits and veggies are really good for you.",1
+194,"yeah, i know, but what about the chicken?",2
+195,"i mainly eat baked chicken, because there's not a lot of fat.",1
+196,that does sound pretty good.,1
+197,"i know it does, and that's because it is.",1
+198,good afternoon! can i help you?,2
+199,could you show me where the chinesc - style clothing is located? i want to buy a silk coat.,3
+200,"this way, please. here they are. they're all handmade.",4
+201,"oh, they look nice. may i try that black one on?",3
+202,of course. the fitting room is right over there.,4
+203,do you have a medium in the same color? this one is a little tight.,2
+204,l'm sorry. all the black of that size are sold out. would you like a red one?,3
+205,ok. let me try it on. what do you think?,2
+206,"oh, that suits you very well. besides it is believed in china that the red color brings happiness and good luck.",1
+207,really? i'ii take it and i'm leaving here tomorrow. is it possible for you to send one in black to me by mail when you get it in?,2
+208,"our pleasure. please fill out this form, leaving your address and telephone number.",1
+209,thanks. how much would that come to?,2
+210,let me see...,1
+211,how are you today?,2
+212,"great, thanks.",1
+213,can i help you?,2
+214,i would actually like to view the apartment for rent today.,3
+215,"i ’ m sorry, but you won ’ t be able to view it today.",4
+216,why not?,2
+217,you have to make an appointment first.,1
+218,"oh, okay. can i do that right now?",3
+219,is this friday okay?,2
+220,is 6 o ’ clock friday evening okay?,2
+221,"yes, i will schedule you for that time.",1
+222,thank you very much. see you then.,1
+223,today i want to invite you to talk about insurance you ’ re interested in.,3
+224,thank you. i wonder whether i can enjoy the life insurance and health insurance.,3
+225,"of course. a two - week paid vacation a year, a five - day workweek.",1
+226,good. anything else?,2
+227,"yes, all the insurance will be linked with your work. we will issue an insurance policy.",1
+228,"next, please. hello, may i help you, sir?",2
+229,"yes, i want to send a registered airmail letter to france.",3
+230,"ok, it comes four dollars twenty cents.",4
+231,here is five dollars.,1
+232,here is your change. please wait for your receipt of the registered mail.,3
+233,i also want to pack up my package. this is the notes.,3
+234,let me see. en.. just a minute. here it is. i need your signature on this note.,4
+235,"oh, one more thing, where can i mail this letter?",2
+236,drop it in the mail box mark out of town. at that corner.,1
+237,thank you very much.,1
+238,you ‘ re welcome.,1
+239,we really were lucky. we got the last available table for two - - - and we didn't even have a reservation! did you see the long lines behind us?,2
+240,"yeah, i'm glad that we didn't have to wait long. i'm starving!",1
+241,let's take a look at the menu so we can order. do you want to choose an appetizer for us to share?,2
+242,"what would you rather have, samosas or poppadoms?",2
+243,i heard that one of their specialities is the samosa.,1
+244,"well, let's get a plate of those then.",3
+245,sounds good. what are you going to have for your main course?,2
+246,i think i might have a dahl.,1
+247,what's in a dahl?,2
+248,it's got chickpeas and vegetables in a spicy curry sauce with rice.,1
+249,that sounds nice. do you want to share some kebabs as well?,2
+250,ok. how about some lamb kebabs?,3
+251,that's my favourite. do you want to have some wine or beer?,2
+252,i think i'll have a beer.,1
+253,"ok, shall i flag down the waitress?",3
+254,i wouldn't recommend it. i think we should wait until she comes round.,4
+255,you're right. that might seem a bit rude. it's a good thing i've got you with me!,1
+256,what would you do without me?,2
+257,"this position demands a higher writing ability, so please say something about your writing ability.",2
+258,"of course. i've loved writing since i was a very little boy. i won the first prize in a national composition contest when i was in middle school. after attending nanjing university, i never give up writing. my works, such as father's tobacco pipe, open air cinema, the old city were respectively published china youth daily, yangzi evening news, and new beijing. during the period of studying for my degrees of master and doctor, i paid more attention to developing my research ability and published several papers. the impact of internet in chinese political participation, the discipline of remold, the historical direction of chinese administration reform, bribery cases of self governance in chinese villages are respectively published in chinese publish administration, beijing due xuebao, theory and society and chinese reform. i joined in yangzi evening news to work as a part - time journalist in 2006. during this period, i've written a lot of comments, which improved my writing ability to a new level, i have full confidence in my writing ability, and i believe i can do the job well.",1
+259,pompous. how may i help you?,2
+260,"yes, i'd like to reserve a table for dinner.",3
+261,how large a group are you expecting?,2
+262,six couples.,1
+263,would you like to reserve a private dining room?,3
+264,that sounds like a good idea.,4
+265,"all right. may i have your name, sir?",2
+266,my name is ron kollwitz.,1
+267,"ms. wang, this is mr. cooper, president of ivy publishing.",1
+268,"it's nice to meet you, mr. cooper.",1
+269,"nice to meet you, ms. wang. you must be exhausted after your long trip from canada.",1
+270,"yes, it was quite a long flight. i'm glad to finally be here.",1
+271,can you help me now?,3
+272,"no, but i'll be able to tomorrow.",4
+273,that'll be too late.,1
+274,why don't you ask bill if he can help?,3
+275,"i did, but he wasn't able to either.",4
+276,have you got any experience in advertising?,2
+277,"yes, i have been working in the public relations section of a company in the past two years. i plan the advertising campaign and cooperate the work of artists and typographers. sometimes i have to do the work of a specialist when there ’ s something urgent.",1
+278,do you have any practical experience as a secretary?,2
+279,"yes, sir. i acted as a secretary in an insurance company.",1
+280,would you tell me the essential qualities a secretary should maintain?,3
+281,"well, to begin with, i would say she needs to be diligent, and the second point is that she has to do a lot of things on her own initiative. finally, she can make notes in shorthand and types and has the skills in report writing, summary writing, keep minutes at meetings, and so on. most important of all is that she seems to have a better memory than average.",1
+282,have you had any experience with computer?,2
+283,"yes, i studied in a computer training program, and can process data through the computer.",1
+284,that's fine. what about operating the fax and duplicator?,2
+285,i can handle them without any trouble,1
+286,what have you learned from jobs you have held?,2
+287,"above all, i have learned that what is good for the company is good for me. so i follow the instructions strictly and always keep my boss informed.",1
+288,very good.,1
+289,"hi, dan. what's new?",2
+290,where have you been? i've been trying to get in touch with you for two days.,2
+291,i went to salt lake city on business. what's up?,2
+292,i got fired.,1
+293,"how come? last time i saw you. you told me it was a good job, and you'd like to take it as a career. that was only one month ago. why this sudden change?",2
+294,"it's a long story. in a word, i didn't do a good job of it. i messed up a business deal, a deal that would have made ten million dollars and i messed it up.",1
+295,what are you going to do now?,2
+296,"i am trying to find a job asap. lily doesn't know yet. i didn't tell her. i spent the past three days at the coffee shop next to your office, and she thought i went to work as usual.",1
+297,that's not the way to solve the problem. did you look in the classified advertisements column?,2
+298,"yes, i did. but i wasn't qualified for most of the jobs that i was interested in.",1
+299,"listen. i will see what i can do, ok? you go home and tell lily about this problem you have now. she is your wife and i am sure she will understand.",3
+300,"i just don't know how to bring it up. well, all right. she has the right to know anyways.",4
+301,have you ever gotten a parking ticket?,2
+302,i've never gotten one. have you?,2
+303,i got a ticket yesterday.,1
+304,really? what did you get one for?,2
+305,i parked in the red zone.,1
+306,why did you do that?,2
+307,i needed to get something really quick.,1
+308,where did you park at?,2
+309,at my apartment building.,1
+310,don't you have your own parking spot?,2
+311,i needed to be fast.,1
+312,that was very lazy of you.,1
+313,how may i help you?,2
+314,i ’ m having a problem.,1
+315,what problem are you having?,2
+316,there have been charges made on my debit card that i didn ’ t make.,1
+317,do you have the statement for your card?,2
+318,here it is.,1
+319,what are the charges you ’ re referring to?,2
+320,the last four charges on the page.,3
+321,i ’ m afraid we ’ re going to have to investigate these charges.,1
+322,how long will an investigation take?,2
+323,"i honestly don ’ t know, but we will freeze payment on these charges.",1
+324,that sounds absolutely fantastic.,1
+325,good afternoon. can i be of service?,2
+326,i don't know. can i purchase treasury certificates here at this counter?,3
+327,"yes, of course. we have treasury notes with two, three and five - year terms available.",4
+328,"two years is fine, with a value of 1, 000 rib.",3
+329,"ok, could i take a look at some id please, like a passport?",3
+330,"here you go. by the way, is it possible to cash them before the maturity comes up?",3
+331,"no, i'm afraid that isn't possible. you must wait until maturity before you cash them.",4
+332,hey. why did you take that money? you are such a cheater! i should send you to jail!,2
+333,"i am not cheating. when you pass go, you collect $ 200, everyone knows that!",1
+334,well you can ’ t just take the money. you have to ask the bank for money. and i ’ m the banker.,3
+335,banker?,2
+336,yes...,1
+337,can i have my $ 200 please?,3
+338,"sure. here you are, $ 200, thank you, please come again! now it ’ s my turn to roll the dice.",4
+339,"hi, is this professor clark ’ s office?",2
+340,this is professor clark speaking.,1
+341,"hi, this is kalina from your morning literature class.",1
+342,"yes, what can i do for you?",2
+343,i had a skydiving accident over the weekend and won ’ t be able to come to school today.,3
+344,my goodness! are you ok?,2
+345,"i broke my leg, but it is healing.",1
+346,how long will you be out of class?,2
+347,i should be able to return by next monday.,1
+348,"fine. well, thanks for calling and letting me know you will be absent. i hope you feel better soon.",1
+349,good afternoon! did you call for a plumber?,2
+350,"yes, yes i did. please come in! i ’ m so glad you came! this old house is falling apart! come on into the bathroom. see, here, there ’ s water leaking everywhere!",3
+351,"i see. let me have a look. it seems that your toilet is clogged, and that ’ s why it won ’ t flush. let me just get my plunger. no, that ’ s not working either. i suspect that there ’ s some sort of foreign object in the pipes that ‘ s causing a blockage. that ’ s what ’ s making your toilet overflow.",4
+352,"oh, that must be because of my four - year - old daughter. she is always flushing things down the toilet. you know how kids are.",1
+353,"yeah, i have a little one myself. anyway, these water pipes are really rusty, so they also should be changed. thatcould be causing water to not drain completely, that might lead to more problems in the future. i would also suggest fixing this faucet that isn ’ t shutting off properly. i could have it all finished by today if it ’ s urgent.",1
+354,that would be great! is it expensive?,2
+355,let ’ s see... i would say about eight hundred dollars.,1
+356,"listen, karen, i need your help. i don't know anyone here yet.",3
+357,i'm glad to help you. what's wrong?,2
+358,my mother - in - law just went into the hospital in l. a. hank and i will be flying there tonight.,1
+359,i'm sorry to hear it. what's wrong with her?,2
+360,"doctors aren't sure yet. but the real problem is suzy. she has a bad cold, and we don't want to take her with us. but we don't know who can stay with her.",1
+361,you need a babysitter.,3
+362,"yes, i'd ask jill, the girl i've had before, but i need someone overnight. maybe even for two nights.",4
+363,i could have suzy stay at my place.,1
+364,"i don't want to do that to you, karen.",1
+365,why not?,2
+366,your own kids would get suzy's cold. i think it would be better to have a good babysitter here. but i don't know who to ask. i need someone more mature than jill. it might even be for two or three days.,1
+367,"i know who we can ask. there is a girl i know, sara ralston. she is 17, and she will usually take this kind of job. i know her from my church, and i trust her completely.",1
+368,"i'd like to talk with her. this is short notice, i know. but hank and i are leaving tonight.",1
+369,i'll get you her number. i hope she can do it. she is very responsible.,1
+370,i'm glad you know someone. i knew you would be the best person to ask about this. i don't want to insult jill or her mother. i think jill maybe could do it. but i'd rather have someone a little older.,1
+371,i'll go home and get sara's number. i'll call her first myself.,1
+372,great. then call me and let me know if she's free.,3
+373,good evening. what'll you have?,2
+374,i'd like a beer. what kind of beer do you have?,2
+375,draft beer and cans beer. which do you prefer?,2
+376,a draft beer please.,1
+377,ok. here you are.,1
+378,could i have some fruit?,3
+379,"of course. wait for a moment, please.",4
+380,"hello, mr. black, how are you?",2
+381,"fine, thank you, and how are you?",2
+382,"very well, thank you. it's nice to meet you again. i am awfully sorry for not being able to meet you at the airport, as i was busy yesterday. i do hope you had a very enjoyable trip from new york.",1
+383,"yes, a very pleasant journey indeed. thank you.",1
+384,how are you getting along with your business?,2
+385,"not bad. the fur market is not very brisk lately, but the selling season is advancing near. i hope there will be more buyers in the market this year.",1
+386,"i hope we can do more business together. though we are satisfied with our past trade record, there are still possibilities for more business. in the meantime, let's discuss other spheres of cooperation, such as investment, technology transfer and technical assistance.",3
+387,"by the way miss, where is the toilet?",2
+388,"toilets are in the rear, i am afraid all the toilets are fully occupied at the moment.",1
+389,"what? oh, what we live! thank you very much for your help, miss.",2
+390,you are welcome.,1
+391,"excuse me, could you tell me which line i ’ m supposed to stand in to buy bubble wrap and to post a package?",3
+392,"you can buy the bubble wrap here, but you ’ ll have to stand in line over here to post your passage.",4
+393,that ’ s a really long line. how long do you think it ’ ll take to get through all those people?,2
+394,"it takes about 3 minutes per person, so it ’ ll probably be about an hour ’ s wait.",1
+395,can i buy stamps here?,3
+396,sure. how many would you like?,2
+397,i need 30 for my christmas cards.,1
+398,are you sending them abroad?,2
+399,twenty of them are going abroad to china and america.,1
+400,"do you have any going anywhere in the eu? if you do, those are less expensive.",2
+401,no.,1
+402,"ok, here you go. that will be 18 pounds and seventy two pence.",1
+403,and the bubble wrap?,2
+404,that ’ s another quid.,1
+405,thanks a lot. you ’ ve been very helpful.,1
+406,"good evening, saliva. what's that wonderful aroma from your kitchen? what are you doing now?",2
+407,i am cooking now!,1
+408,are you good at cooking?,2
+409,"i have studied its skills recently at a training school. i plan to run a restaurant, so i have to practise cooking!",1
+410,it is a good idea. what dish are you cooking now?!,2
+411,i am steaming fish in a pressure cooker. have you ever tried steamed fish?,2
+412,"yes, i have. but the taste of steamed fish at that restaurant is not delicious. the fish is not well - done and too salty.",1
+413,that's the case. i think there is not enough time to steam it and soy sauce is too much.,1
+414,i have the same idea as yours.,1
+415,it's ok. please have a taste of it.,3
+416,"thank you. oh, it's very delicious.",4
+417,thank you for your praise.,1
+418,"besides steamed fish, what else are you good at cooking?",2
+419,"i am good at stewing beef with potato, frying chicken, hot and sour soup etc.",1
+420,"so many dishes. next friday week is my birthday. i would like to invite you to cook for my dinner party, ok?",3
+421,why not? it is a good opportunity for me to practise cooking.,4
+422,thanks a lot.,1
+423,it's my pleasure.,1
+424,room service. what can i do for you?,2
+425,this is room 2012. where is my laundry? you promised to send to me this morning.,2
+426,"well, let me check for you. i am sorry, sir. they mistook your order as a normal one. actualty it's an express laundry, is that right?",2
+427,"yes, i ordered the express service.",1
+428,"sir, we are terribly sorry for that. we will refund the charge and send your laundry to your room 3 hours later. is that all right?",3
+429,that's fine.,4
+430,i'd like you to do me a favor.,3
+431,what is it?,2
+432,can you mail this at the post office for me? i have to go to the doctor for an appointment and i don't have enough time to go to the post office.,3
+433,sure. and i'd like you to get some cold medicine for me when you go to the doctor's.,4
+434,"excuse me, may i help you?",2
+435,would you please fill some gas for me?,3
+436,sure. which kind of gas do you want?,2
+437,"unleaded, please.",1
+438,ok.,4
+439,i'll be willing to come and talk about the financing of our imports.,3
+440,it can be solved by drawing a draft on us at 90 days sight.,1
+441,what about a draft at 120 days sight?,3
+442,all right. but we demand the draft be accepted by a bank acceptable to us.,3
+443,a bank's acceptance will add to the costs of our imports. you can rest assured that we will accept the draft and honour it when it comes due.,4
+444,then we will be in a position to arrange for a loan from our bank. you know we exports would like to have our investments returned as early as possible.,3
+445,i hope this transaction will pave the way for further business relations between our two countries.,4
+446,so do i.,1
+447,"there's a new girl in school, have you seen her yet?",2
+448,i haven't seen her yet.,1
+449,i think that she is very pretty.,1
+450,tell me how she looks.,1
+451,she's kind of short.,1
+452,what height is she?,2
+453,she's probably about five feet.,1
+454,"that's nice, but tell me what she looks like.",2
+455,the first thing i noticed was her beautiful brown eyes.,1
+456,i think i might've bumped into her before.,1
+457,are you telling me that you've seen her before?,2
+458,i believe so.,1
+459,"take a seat inside and see what you think. so you will take the porsche then, sir?",2
+460,"yes, and i want to buy the insurance too. i think it's necessary.",1
+461,"you're smart to buy it. at 45 dollars for three days, it is a good deal.",1
+462,can i return the car in san francisco?,3
+463,"san francisco? no, sir. we only have this office here. you will have to return it here.",4
+464,really? i heard in america you can return rental cars in different cities.,2
+465,"no, sir. that's only with the very big companies. i'm sorry, but this car must be returned to this lot.",1
+466,"well, i guess i will have to drive back down then. hmm. i didn't think of that.",1
+467,"do you still want the car, sir?",2
+468,yes. it will be fun. driving back down the coast. my girlfriend will like it.,1
+469,it's a beautiful drive.,1
+470,where are the keys?,2
+471,"just a moment, sir. we have to finish filling out the forms.",1
+472,gary. could you type up this report for me? i have to take off early this afternoon.,3
+473,sure. just leave it to me. i'll finish it.,4
+474,look at the show on tv. i am watching a food show at a very famous seafood restaurant. i really want to eat at that restaurant. i am a seafood lover.,1
+475,"speaking of seafood, my mouth is watering. let's go to the seafood restaurant in our neighborhood.",3
+476,sound great. let's go!,4
+477,look at the crystal clear fridge. you can see so many kinds of seafood in it. they all look very fresh and delicious.,3
+478,true. i would like to have some salmon sashimi and a roast salmon head.,4
+479,you sound like a seafood expert. i would like to have some stir - fried squids and steamed shrimps.,1
+480,you are not too bad as well. i also want to have a steamed lobster. it is really taste like heaven.,1
+481,let's go into the restaurant and find a table to order some food.,3
+482,wait. let me tell the lady what we would like to order in front of the seafood fridge first.,4
+483,ok. i will wait for you inside the restaurant,1
+484,do you think we should try some deep fried oysters?,2
+485,where do you want to go?,2
+486,i'm going to the hospital.,1
+487,get in. i'll take you.,3
+488,about how much will it cost?,2
+489,it will cost you $ 10.,1
+490,"by the way, what's the time?",2
+491,"you can see the time on the meter. i have radio time, you know.",1
+492,it's a quarter to 12. could you please drive a little faster?,3
+493,certainly.,4
+494,you're made a good choice. this china tea set is unusual.,1
+495,where was it from?,2
+496,it was made in jingdezhen.,1
+497,jingdezhen? isn't it called'the capital of porcelain '?,2
+498,you are right.,1
+499,this is the very thing i've been dreaming of.,1
+500,it is the best quality porcelain - the famous egg - shell china.,1
+501,it must be most precious.,1
+502,but it is really worth the price.,1
+503,"hello, miao li, where are you going?",2
+504,"hello, i am going to the store to buy some fruit.",1
+505,"oh, would you do me a favor?",3
+506,yes?,2
+507,please mail this letter for me on your way to the store.,3
+508,sure. do you want it to be registered?,2
+509,"yes, i think so. there are some pictures in it. it would be a great pity if they were lost.",1
+510,"yes, i will be glad to mail your letter.",1
+511,thanks.,1
+512,you are welcome.,1
+513,"i have a cell phone in my car. now it's probably on the floor on the passenger side. why don't you get it for me, and then i can call the police?",2
+514,alright.,1
+515,it doesn't work. it looks like it's broken. i need to get to a hospital. you should drive me there.,3
+516,"oh, yeah? it's better if we make a police report first. then you can go to the hospital.",3
+517,damn it! i'm injured here. we could wait all day for the police.,4
+518,"well, you'll just have to wait. i'm not going to move my car until the police arrive. i'll go into one of those houses over there and use their phone. don't worry. you'll get to the hospital in time.",3
+519,it really hurts.,4
+520,"yes, maybe it does. but if you're going to drive like you did just now, you will have to get used to a little physical pain. you know what i mean?",2
+521,to hell with you. the accident was your fault.,1
+522,"i'm afraid it wasn't. and when the police get here, you will also see that it wasn't. but enough of this bickering. i'm going to go find a phone. don't move that arm while i'm gone. alright?",2
+523,to hell with you.,1
+524,"good morning. vane theater, at your service.",1
+525,hello. i'm thinking about watching a chinese traditional opera with a foreign girl. what's on this weekend?,2
+526,"well, there will be charity performance on saturday night. and also, there will be a solo concert by an opera star on sunday night.",1
+527,it's a good thing that i have choices here. can you tell me about the one on saturday?,3
+528,sure. it's to raise money for the homeless.,4
+529,what about the performance itself?,2
+530,"oh, it's a reserved opera named the monkey creates havoc in heaven.",1
+531,"wow, a story about the clever monkey king. it's a classic and children's favorite.",1
+532,it surely is. and the cast is really the best.,1
+533,wonderful! how much is the ticket?,2
+534,"the price varies according to the seats. 300 for the front, 200 for the middle, and 50 for the back.",1
+535,all right. i want to bring everybody back on this subject. when can we start working on this?,2
+536,"well, we could probably get started with a preparatory meeting this afternoon at 2 : 00.",3
+537,"i tell you what, 2 : 00 is not available for me, but you can get started and i'll come by at around 3 : 00",4
+538,that's fine with me. how much time are we going to have to work on this?,2
+539,"perhaps one year, i'm not sure.",1
+540,what dressing would you like on the salad?,2
+541,"french dressing, please.",1
+542,i beg your pardon?,2
+543,"oh, french dressing.",1
+544,"sorry, it's not available now. anything else?",2
+545,we still prefer french dressing.,1
+546,could i have some fish?,3
+547,certainly. and what vegetables would you like?,2
+548,"oh, spinach, i think.",1
+549,"fine, and what about something to drink?",3
+550,"just a beer, please.",4
+551,good. thank you. sir.,1
+552,would you like to have some more beer?,3
+553,"no, thanks. i've had enough. i'll have my bill, please.",4
+554,of course. please wait a moment. i'll go and get it.,3
+555,thank you.,4
+556,"hi, george. i'm going to have a job interview next week. could you give me some advice?",3
+557,"sure. first of all, it ’ s very important for you not to be late. job interviewers usually don ’ t think very highly of a candidate who arrives ten minutes after the appointed time, only to explain that he could not find the place or that there was heavy traffic.",3
+558,"yeah, that's very important.",4
+559,"so you ’ d better explore the place the day before and at the same time, look around to see what the employees are wearing. so the next day you will arrive early for the appointment.",3
+560,i ’ ll try my best to make a good impression on the interviewer.,4
+561,"that ’ s right. you need to create a good image in a limited time, usually about 30 to 45 minutes.",3
+562,it ’ s always easier to say something than to do it.,4
+563,"it ’ s not too difficult to make a good impression. for example, you should take care to appear well - groomed and modestly dressed. avoid the extremes of a too elaborate or too casual style. this will put you on the same level as other applicants and make the interviewer consider more important qualifications.",3
+564,but i love wearing t - shirts and jeans.,4
+565,"i advise you not to wear a too casual style when going to an interview. informal clothes as well as torn jeans and dirty shoes convey the impression that you are not serious about the job, or that you may be casual about your work as you are about your clothes.",3
+566,it ’ s a pity that i cannot afford more expensive clothes.,4
+567,"you misunderstood me. clothes which are too colorful or too expensive suggest that you do not understand what behavior is appropriate for the job, or that you are snobbish or frivolous.",3
+568,i know what you mean. i ought to wear right clothes at the right time.,4
+569,you got it. only in this way can you gain the respect of the interviewer and his confidence in your judgement.,3
+570,it seems that'clothes make the man '.,4
+571,"it may not be true, but the first and lasting impression of you is determined by your clothes and behavior.",3
+572,"the boss announces the pay raise today, right? how much do you think we'll get?",2
+573,no idea. your guess is as good as mine.,1
+574,it better be more than last year.,1
+575,"well, anything is better than nothing. wait and see.",1
+576,"i'm sorry, our appointment has to be changed.",3
+577,what a pity!,1
+578,"if you don't mind, may we put it off to the next day?",3
+579,that's ok.,4
+580,"good day! welcome to lincoln bank, how may we assist you?",2
+581,hello. i need to find out if a receipt of proceeds has arrived. i'm from felix wasserman associates.,3
+582,thanks. have you got the l / c number?,2
+583,it's nx567822100007.,1
+584,hang on a tick and i'll check for you. i'm sorry ; we have no record of that arriving.,4
+585,"ok, thanks for checking. could you give me a ring when it arrives, please?",3
+586,no problem. i'll be in touch as soon as it comes in.,4
+587,may i help you?,2
+588,"yes. i have to stay in your cry for just one day, can you suggest a short tour?",2
+589,are you interested in the natural landscape or the human landscape?,2
+590,i would prefer the first one.,1
+591,sure. we have a one - day trip along the river. it's quite beautiful.,3
+592,"hello, sir. how can we help you today?",2
+593,"i need to find out some more information for l / c. i would like an outline of responsibilities, both ours, yours and the beneficiary, please.",3
+594,"ok, to start, the conditions are specified by the buyer and may include insurance forms, way bills, bills of lading, customs forms, various certificates.",1
+595,"ok, got it. is there anything else i need to know before we go ahead?",2
+596,"just that in effect, a basic letter of credit is a financial contract between the bank, the bank's customer, and the beneficiary, and this contract involves the transfer of goods or services against funds.",1
+597,"that sounds fine, thanks for that. let's go ahead!",3
+598,911 emergency. what is the problem?,2
+599,i would like to report a break - in.,3
+600,when was this break - in?,2
+601,i believe it happened last night.,1
+602,where was the break - in?,2
+603,it happened at my house.,1
+604,was anything stolen?,2
+605,i haven't checked yet.,1
+606,why do you think there was a break - in?,2
+607,my front window was broken.,1
+608,we'll send a squad car shortly.,3
+609,i'd appreciate that.,4
+610,excuse me. how much is the chocolate bar?,2
+611,one dollar.,1
+612,"so, i can have five for five dollars?",2
+613,"actually, you can only have four.",1
+614,"oh, yeah. i forgot tax. give me four then, please.",3
+615,okay. thanks.,4
+616,house keeping. may i come in?,3
+617,come in please.,4
+618,"good evening, sir. i come to make the bed. shall i do it now or later?",2
+619,"well, since you have come, do it now please?",3
+620,that's all. have a nice stay here.,4
+621,thank you. please get some soap for us.,3
+622,just a moment. i will do it right now.,4
+623,"ms. montgomery? this is richard thomas. i ’ m sorry to bother you at home, but i ’ ve got a bit of a problem.",1
+624,oh? what ’ s wrong?,2
+625,my daughter ’ s just banged up her knee pretty badly and i ’ m going to have to take her to the hospital. i ’ ll be about two hours late.,3
+626,excuse me. i have an appointment with mr. li at nine. may i come in?,3
+627,"yes, come in please. i am mr. li. you must be my liu, right?",2
+628,"yes, i am my liu. thanks.",1
+629,i'd like to start this interview with some questions. why do you think you are qualified for this position?,2
+630,"according to your advertisement, you want an experienced software engineer. i think my background meets the requirement of this position.",1
+631,then tell me something about your background.,3
+632,"my major was computer science when i was at college, and i am quite familiar with visual c + + and java language.",1
+633,"well, what do you think about the development in computers?",2
+634,"the developments in software are going ahead very quickly and more and more problems are resolved by software. in some regions, the hardware is completely replaced by software. so i think the software industry has a great future.",1
+635,have you ever designed any programs concerning network?,2
+636,"yes, i have designed some programs for the network with visual c + + and i have passed the test for programmers - muse.",1
+637,have you got anything to ask me?,2
+638,"yes, can you tell me what's my responsibility in this position?",2
+639,"yes, of course. you would be responsible for the development of software products.",1
+640,i see. this is my advantage.,1
+641,good. have you got any other questions?,2
+642,no.,1
+643,"ok, i will contact you in a week. see you.",3
+644,"thank you, bye - bye.",4
+645,"tom, is jenny crying?",2
+646,can you take he away from me?,3
+647,i ’ m just coming for that.,4
+648,she kept bothering me.,1
+649,she ’ s your sister. what she asked was only duck soup for you. why can ’ t you be good to her?,2
+650,"but i am her brother, not her servant.",1
+651,"hello, where can i buy an inexpensive cashmere sweater?",2
+652,maybe you should look around for an outlet.,3
+653,that is a wonderful idea.,4
+654,outlets have more reasonable prices.,1
+655,thank you for your help.,1
+656,no problem. good luck,1
+657,wow! your fruit looks really fresh! how much are these apples?,2
+658,the apples are 30nt each. how many would you like?,2
+659,"let's see, 30nt is about... almost a dollar us. what?! how about these pineapples?",2
+660,"they're 250nt each, but they're not edible. they're only used for worship.",1
+661,"hmm, 250nt is... 8 dollars?!! and you can't even eat them? you're crazy!",2
+662,wait! don't go just yet. these bananas are pretty cheap - - only 35nt for this bunch.,1
+663,"now that's more like it! bananas have lots of potassium, too!",1
+664,"they're also good for your digestion! would you like some kiwis, too?",3
+665,are they from taiwan?,2
+666,they're imported from new zealand. four for 50nt. nine for a hundred.,1
+667,ok. i'll take four kiwis.,4
+668,"amelia, could you spare a few minutes?",3
+669,sure. what do you need?,2
+670,"well, i wanted to let you know that i've put in my notice.",1
+671,really? why?,2
+672,it's complicated. but basically it boils down to one thing. this company is downsizing and i can't continue working for a company that may let me go.,1
+673,but surely they won't fire you! you're one of the most experienced managers here!,1
+674,"well, to be honest, there's another reason. i've got a better offer.",1
+675,well that's great news! congratulations! where will you be located?,2
+676,"the head office is in new york, but i'll be dealing with overseas companies and flying to this side of the world from time to time.",1
+677,"it'll be sad to see you go, but it sounds like you're found yourself a great opportunity.",1
+678,i have. i feel lucky. i look forward to dealing with overseas companies and at the same time having a chance to use english more.,1
+679,"i'm sorry to bring this up, but would it be possible for you to write me a letter of recommendation before you go?",3
+680,"of course i can. in fact, if there are other job opportunities at this new company, i'll recommend you personally.",4
+681,thanks. i appreciate that.,1
+682,what can i show you?,2
+683,do you have this shirt in a small?,2
+684,"let me check. yes, we have.",1
+685,may i try it on?,3
+686,sure. let me help you.,4
+687,"the james ’ s file, christine?",2
+688,"i had it right here a minute ago, mr. emory. umm. just a minute...",1
+689,"christine, i know you ’ re new here and there ’ s a lot to learn, but you are going to have to learn to keep your work in better order. we can ’ t afford to lose an important document.",3
+690,"yes, sir. i apologize for that. here ’ s the file you were looking for, mr. emory.",3
+691,i wonder whether i could possibly borrow your new bicycle now.,3
+692,"sorry, i'm using it myself. but you can use it this afternoon.",4
+693,thank you very much.,1
+694,"thanks for inviting me to work out with you, joan.",1
+695,"don't mention it, let's go in.",1
+696,"yeah, this place looks great. wow, look at her, she can certainly get down, can't she?",2
+697,"she sure can. are you jealous, leslie?",2
+698,"a little, i wish i could do that.",1
+699,you can! with a little practice.,1
+700,"look at him, he's buff.",1
+701,i think he's hot too.,1
+702,how do they all get in such tiptop shape?,2
+703,exercised over and over. exercise is a key.,1
+704,that's it. i decided to turn over a new leaf. i'm going to exercise every single day.,1
+705,"good for you, leslie!",1
+706,excuse me. check please.,3
+707,"ok, how was everything?",2
+708,very nice. thank you.,1
+709,would you like this to - go?,2
+710,"yes, can you put it in a plastic bag?",3
+711,"sure, no problem. here you are. that'll be 25 dollars.",4
+712,do you take credit cards?,2
+713,"yes, we accept visa and mastercard.",1
+714,"ok, here you are.",3
+715,thanks. i'll be right back.,4
+716,ok.,1
+717,here's your receipt.,3
+718,thank you.,4
+719,you're welcome. please come again.,1
+720,"you look upset, anything wrong?",2
+721,i'm going to quit the job.,1
+722,why?,2
+723,the task is tough.,1
+724,you'd look before you leap.,3
+725,thanks for your concern.,4
+726,how long will you stay in new york?,2
+727,just tor three days. i won't need these luggages. couid i put them here?,3
+728,"i am sorry. if you have here more than 24 hours between connecting flights, we can't check your luggage through london.",4
+729,"well, maybe i can put them in the airport storage there.",3
+730,that's right. it's over there.,4
+731,eat some more.,3
+732,"no, thanks. i'm on a diet.",4
+733,excuse me. do you know where the admiral hotel is?,3
+734,"that's over on callaway street, isn't it?",2
+735,"yes, but i can't find callaway street.",1
+736,walk that way for about four blocks. the hotel's about two blocks north of there.,3
+737,thanks a lot.,4
+738,not at all.,1
+739,i'm sorry i'm late.,1
+740,better late than never.,1
+741,"professor li, do you know where to buy art supplies?",2
+742,for what? are you taking up painting?,2
+743,no. i can't paint. i'm asking for my niece. she is really into it.,1
+744,"oh, good. how old is your niece?",2
+745,"she is eight. actually, i'm buying a good set of art supplies for her as a birthday gift.",1
+746,it's a wise thing to do. art will do a child a world of good.,1
+747,hello?,2
+748,"hi, mr. smith. this is mary. is jenny there?",2
+749,"no, i ’ m afraid not, mary. may i take a message for her?",3
+750,"yes, please tell her that band practice has been moved to tuesday night at eight thirty.",3
+751,o. k. no problem. anything else?,2
+752,"no, but if she has any questions, she can call me at 555 - 2345.",3
+753,"all right, i ’ ll leave her the message, mary. thanks for calling.",4
+754,thank you. bye.,1
+755,goodbye.,1
+756,do you speak english?,2
+757,"yes, a little.",1
+758,can you tell me how to get to the jade buddha temple?,3
+759,i'm sorry. i can't quite follow you. would you mind speaking slowly?,3
+760,how do you get road news?,2
+761,i've a driver mate in my car!,1
+762,so you have all the news on broadcast?,2
+763,"yes, it's so helpful.",1
+764,can i help you?,2
+765,"yes, i'm in a bit of a rush. could i have a piece of apple pie please?",3
+766,certainly. would you like it with ice cream?,2
+767,"no, thanks.",1
+768,i'd like to make an appointment with dr. cooper. could you arrange it for me?,3
+769,yes. would tomorrow morning be all right with you?,3
+770,"sorry, i've got a meeting from nine to ten. what about monday afternoon?",3
+771,i'm afraid he's fully engaged. could you make it another time?,3
+772,hey! what are you doing here?,2
+773,i'm just shopping.,1
+774,what are you shopping for?,2
+775,some new clothes. how about you?,2
+776,same here.,1
+777,have you found anything nice yet?,2
+778,i found a few pairs of pants.,1
+779,where'd you get those?,2
+780,i found them at jc pennies.,1
+781,those are really cute.,1
+782,do you want me to show you where i found them?,2
+783,i would like that. thank you.,1
+784,"hello, is that xiaogang li who applied for the solar studio of our college?",2
+785,"yes, speaking.",1
+786,i want to know whether you will come to the interview. so have you accepted offers from other companies?,2
+787,"no, i haven't got one by now. i will go to the interview of yours.",3
+788,i need help with the office party.,3
+789,"yes, of course. we could split it. what part would you like to do, the food or the entertainment?",2
+790,i have no idea what the entertainment should be.,1
+791,let's make sure we are on the same page. do we want a formal or informal gathering?,2
+792,let's make it a formal affair.,3
+793,"yes, that would be best. now, for food should we have chinese or american food?",2
+794,american food would be the best choice.,3
+795,"that would be great. what kind of music would you like, a band or recorded music?",2
+796,we should bring in a really good dj.,3
+797,that works for me. let's see what we can each do about planning our part and meet again on friday.,4
+798,help! help!,1
+799,what's the matter?,2
+800,"what would you like to eat, sir?",2
+801,"scrambled egg, bacon, three pieces of bread and a cup of tea.",1
+802,would you care for some lemon for your tea?,2
+803,"no, thank you.",1
+804,where's the toilet?,2
+805,over there.,1
+806,only one. but i wanted to make sure i'd get it.,1
+807,"yeah, i really wanted that chanel bag, too. but just in case you should bid low.",1
+808,but there are only two more days until the bidding closes!,1
+809,"i bid on a chanel watch at the last minute, and got it sixty percent off!",1
+810,oh... i'm such a newbie. but at least i'm sure i'll get that tennis racket.,1
+811,"don't count on it, babe. ebay is always full of surprises.",3
+812,well... guess how low the bidding starts on the tennis racket?,2
+813,can you tell me where the pots and pans are?,3
+814,pots and pans are right over there.,4
+815,"oh, thank you.",1
+816,could i interest you in our store credit card?,2
+817,"no, thanks. i already have credit cards.",1
+818,but our credit card saves you 10 percent.,1
+819,that's a nice discount.,1
+820,here. let me give you an application form.,1
+821,"thank you, but i'm just browsing today.",1
+822,okay. enjoy your browsing.,1
+823,here is the fish counter. look at the lobsters and crabs. shall we have some?,3
+824,"i'm allergic to these things, you know.",4
+825,"sorry, i forgot. i don ’ t like seafood, neither.",1
+826,"let ’ s go over there and get some milk, a couple dozen eggs and some orange juice.",3
+827,let's get frozen juice. it is really good. we ’ ve got enough food. let ’ s go over to the check - out stand.,3
+828,ok. but just let me pick up a bottle of cooking wine and oil as we go by.,4
+829,"good morning, may i speak with professor clark, please?",3
+830,you are speaking with professor clark.,1
+831,"professor, i am kalina from your morning literature class.",1
+832,"yes, how can i help you?",2
+833,i ran my car into a tree yesterday and need to miss a few days of school.,3
+834,"oh, my god! i hope you are all right.",1
+835,"i have a concussion, but i will be ok.",1
+836,how much school will you miss?,2
+837,i only need to take this week off.,1
+838,i appreciate you calling and telling me that you won ’ t be in class. see you next week!,1
+839,"hello, parker. how ’ s everything?",2
+840,can ’ t complain. and you?,2
+841,business is booming. i understand you want to meet up with me next week. how ’ s your schedule looking?,2
+842,let me see. i can come out and see you first thing wednesday.,3
+843,great.,4
+844,how come it is slow as a snail today?,2
+845,you mean the network connection?,2
+846,"yes, i wanted to look for some information on the company page just now. it took me almost one minute to open it. then there is no response to any click.",1
+847,i have the same question. i can ’ t send out mails. we ’ d better call the it department and ask them to check it immediately.,3
+848,ok.,4
+849,"honey, i need to have a talk with you.",3
+850,"dad, i have to do my homework.",4
+851,"no, honey, why didn't you go to cram school last night?",2
+852,"dad, i don't want to talk about it now.",1
+853,"honey, if you don't want to go to cram school, you should tell me the reason why.",3
+854,"i'm sorry, dad. but i would rather stay at school than go to cram school.",4
+855,"what's wrong with you, young man?",2
+856,"doctor, i have a bad cough and a headache.",1
+857,do you have a fever?,2
+858,"i don't know, but i feel terrible.",1
+859,let me examine you. don't worry. it's nothing serious.,1
+860,do you think i should lie in bed?,2
+861,"yes, stay in bed and drink a lot of water. your fever will be gone in a day or two.",3
+862,ok. do you think i can play football tomorrow?,2
+863,of course not. you need a good rest.,3
+864,"ok, i'll listen to you.",4
+865,i want something sweet after dinner.,1
+866,what do you have in mind?,2
+867,a dessert sounds nice.,1
+868,what kind are you thinking of getting?,2
+869,i want to get some pie.,1
+870,what kind of pie do you want?,2
+871,i have no idea.,1
+872,do you want to know what kind of pie i like?,2
+873,"sure, what kind do you like?",2
+874,i love apple pie.,1
+875,"oh, i love apple pie too.",1
+876,there you go. problem solved.,1
+877,let's go now.,3
+878,i'll be with you in a minute.,4
+879,may i help you?,2
+880,yes. do you exchange foreign money here?,3
+881,yes. our bank is authorized to deal with foreign exchange.,4
+882,what kinds of currency do you change?,2
+883,"we can change only three kinds of currency, usd, japanese yen and hk dollar in our savings office.",1
+884,could you tell me what the exchange rate for usd is today?,3
+885,the buying rate is 826. 44 yuan for 100 dollars.,1
+886,i want to change some us dollars to cover my expense here.,3
+887,"please go to counter no. 2, the foreign exchange counter. it's over there.",3
+888,thank you.,4
+889,i want to see the man responsible for selling typewriters.,3
+890,my name is steven. i'm the sales manager of this company.,1
+891,"well, look here. ten new typewriters were delivered to my company yesterday afternoon and only five of them work properly.",3
+892,"oh, i'm sorry about that.",1
+893,"never mind being sorry, what are you going to do about it?",2
+894,"don't worry, we'll soon fix them.",3
+895,"good, i hope you'll make sure that it won't happen again.",3
+896,i'll certainly look into that.,4
+897,thank you. goodbye.,1
+898,i'm looking for a string of pearls for my wife.,1
+899,"yes, sir. what price range do you have in mind?",2
+900,i'm not sure. i don't know very much about the price of pearls.,1
+901,i see. let me show you some samples of various qualities. this one is very nice. it's three hundred and fifty dollars.,3
+902,is there a price reduction?,2
+903,we are having a sale now. the price has already gone down.,1
+904,how much is that one?,2
+905,it's two hundred and eighty dollars.,1
+906,ok. i'll take it. thank you.,4
+907,can i help you?,2
+908,"yes, i would like to buy a walkman. can you tell me about the models you have?",3
+909,"well, we have a lot of models here. did you want to listen to cd's or cassettes or the radio?",2
+910,mostly cassette tapes.,1
+911,alright. there are several models you may want to look at. this kreng portable cassette player is very good.,3
+912,kreng? i've never heard of that company.,2
+913,"it's a german company. this unit has auto - reverse, recording capability, and an am / fm radio band. it also has a built - in microphone.",1
+914,i suppose i don't want that one then. i don't like auto - reverse. it breaks too easily.,4
+915,really? have you had an auto - reverse break before?,2
+916,"yes, twice now. i think it's too high - tech, and so it's the first part that breaks.",1
+917,"hmm. you know, the problem might be dust. did you clean the unit often?",2
+918,"well. no, i didn't clean it. but still, i only had the last one two months, and it broke. i don't trust auto - reverse.",1
+919,"alright. well. we have many units without auto - reverse. here is a good unit. very reliable. it has an am / fm band, built - in microphone, recording capability, and no auto - reverse.",3
+920,how much is it?,2
+921,this one sells for $ 39. 99.,1
+922,can i test it out?,3
+923,of course.,4
+924,it sounds great. i'll take it.,4
+925,fine. i think you'll be happy with it. it's a very good unit. very reliable. i'll go get you a new one in a box. i will be back in just a moment.,3
+926,thanks.,4
+927,tell me about yourself.,3
+928,i was born and raised in beijing. i attended peking university and received my bachelor's degree in economics. i have worked for 2 years as a financial consultant in beijing for china pacific insurance co. ltd.,1
+929,what type of position are you looking for?,2
+930,i'm looking for a position in which i can utilize my experience.,1
+931,are you interested in a full - time or part - time position?,2
+932,"i am more interested in a full - time position. however, i would also consider a part - time position.",1
+933,can you tell me about your responsibilities at your last job?,2
+934,"i advised customers on financial matters. after i consulted the customer, i completed a customer inquiry form and catalogued the information in our database. i then collaborated with colleagues to prepare the best possible package for the client. the clients were then presented with a summarized report on their financial activities that i formulated on a quarterly basis.",1
+935,what is your greatest strength?,2
+936,"i am an excellent communicator. people trust me and come to me for advice. one afternoon, my colleague was involved with a troublesome customer who felt he was not being served well. i made the customer a cup of coffee and invited both my colleague and the client to my desk where we solved the problem together.",1
+937,what is your greatest weakness?,2
+938,"i tend to spend too much time making sure the customer is satisfied. however, i began setting time - limits for myself.",1
+939,why do you want to work for our company?,2
+940,"after following your firm's progress for the last 3 years, i am convinced that your company is becoming one of the market leaders and i would like to be a part of that team.",1
+941,when can you begin?,2
+942,immediately.,1
+943,please tell me how to file things according to the concerned rules.,3
+944,"well, all right. there are four points you should keep in mind when you file documents, information and other things.",1
+945,what are they?,2
+946,"they are keep the documents in chronological order, remove all the chips and pins, punch the documents evenly and place them in the folder.",1
+947,and what is the most important point?,2
+948,you should always remember that one customer one file is the rule.,1
+949,"yeah, look at all those new buildings going up! mr. zhang, the traffic is pretty smooth. but we were told the roads from the airport to downtown were quite crowded and traffic jams could be as long as half an hour.",1
+950,"yes, they were. but it has already past. the traffic from the airport to downtown has been relieved after the completion of yan'an aerial road.",1
+951,"we've never expected that shanghai is such a big metropolis, same as new york city. david, would it be a good idea to rent a car here? i've got an international driver's license with a pretty good record in the states.",3
+952,"that's wonderful. ok. i'll remember that. but i have to warn you that you must drive very carefully in the downtown area, for there're no separate lanes for motor vehicles and bicycles in some places, and still quite a few people don't take road regulations seriously.",4
+953,this house is not looking all that great from here,1
+954,you can ’ t really tell everything about a house from the outside. let ’ s go inside.,3
+955,i don ’ t think that it is looking any better inside here.,4
+956,i think that fresh paint and cleaning would help it look a little better.,1
+957,it is just too dark in here with so few windows.,1
+958,i hear that the kitchen is quite large. let ’ s go check it out.,3
+959,"the kitchen may be large, but it doesn ’ t have any storage space.",4
+960,the master suite is supposed to be quite elegant. maybe it will be a little better.,1
+961,how many dogs live in this house?,2
+962,i think that we have seen all that we need to see here. let ’ s go look at another house.,3
+963,"excuse me, waiter, i would like to have some wine before the main course.",3
+964,have you decided what wine you would like?,2
+965,i have no idea. maybe you can give me some advice.,3
+966,i recommend you the white wine. it will wake up your appetite.,4
+967,"that's great, bring me a bottle of that please.",3
+968,come on! it's time to go!,3
+969,"wait a minute! just hold your horses! what's your hurry, anyway?",2
+970,"well, i've got to stop and get gas in the car, first.",1
+971,that won't take long.,1
+972,"well, it won't if there no line at the pump.",1
+973,"well, i'm not quite ready.",1
+974,"i'll give you five more minutes, then i'm going on without you!",3
+975,you wouldn't do a thing like that!,3
+976,"oh, yes, i would!",4
+977,"i wonder if i can see your mother, little boy. is she engaged?",2
+978,engaged? she ’ s married.,1
+979,"johnny, i wish you ’ d stop reaching for things. haven ’ t you a tongue?",2
+980,"yes, mother, but my arm is longer.",1
+981,hello! tomorrow i'm going to need a wake - up call.,3
+982,not a problem. what time shall we call you?,2
+983,"i always hit the snooze button, so give me two calls, one at 7 and another at 7 fifteen.",3
+984,it'll be our pleasure. we'll call you at 7 and then at 7 fifteen.,4
+985,"oops, cancel that. change the second call to 7 thirty will you, please?",3
+986,no sooner said than done. can i help you with anything else?,3
+987,"no, that's about it for now. thanks.",4
+988,"okay, sir. have a pleasant evening.",1
+989,have you seen our new packing specifications?,2
+990,"yes, i have, mr. thomas. we'll pack them two dozen to one carton, and the gross weight is around 25 kilos a carton.",1
+991,i'm really in a flap about the interview.,1
+992,take it easy. you've made enough preparations.,1
+993,i'm in such a need of the job that i can't afford any mistakes.,1
+994,i'm sure you'll pass it.,1
+995,do you think my briefcase is big enough to put in all these stuff?,2
+996,"let me see. laptop, flash disk, a ballpoint pen, a pencil, a notebook, a pair of glasses, cell phone, charger, moisture lotion,... oh, that is too much. you are not going to a business trip.",1
+997,i guess i need all of them.,1
+998,"actually, the company will provide you with all of these supplies. so, you can leave this very thick notebook at home.",3
+999,i know. but it is my lucky charm. i carry it all the time.,3
+1000,suit yourself. don ’ t forget to set the alarm clock.,3
+1001,may i know where you are going?,3
+1002,yes. i want to go to beijing hotel.,4
+1003,i'm sorry. you are going in the wrong direction.,1
+1004,oh no! what shall i do?,2
+1005,don't worry. you can get off at the next stop and go across the street through the overpass. the bus stop is right there.,1
+1006,thank you very much.,1
+1007,my pleasure.,1
+1008,"steven, shall we go shopping tomorrow?",3
+1009,hum... why not go shopping the day after tomorrow? tomorrow is saturday. i hate all the hustle and bustle of saturday shopping.,3
+1010,"but sunday is the same with saturday. if you don ’ t mind, that's ok.",4
+1011,hum. maybe it will be better. the most important thing is that i can have a day to relax after a week's work.,1
+1012,i see. we will go the day after tomorrow.,1
+1013,"by the way, what kind of stores do we need to go?",2
+1014,"i want to buy some clothes in clothing store. when we are going back, go to the butcher's shop and buy some chicken.",1
+1015,let ’ s also go to the jewelry store to buy a crystal necklace. i want to buy one for you as your birthday present.,3
+1016,"thank you, darling.",4
+1017,have you seen the tower in front of us. that's the famous eiffel tower. it was built in 1889 for the world's fair.,2
+1018,how tall is this building?,2
+1019,it stands 320m ( 1050ft ) high and held the record as the world's tallest structure until 1930.,1
+1020,"i have heard its name is connected with someone, is that right?",2
+1021,"yes, the towel was named after its designer gustave eiffel.",1
+1022,good afternoon! trans pacific airline. how can i help you?,3
+1023,i ’ m calling to cancel my reservation for trans pacific flight 8 on july 19 from taipei to minneapolis. could you please make it for the same flight on august 2 instead of july 19?,3
+1024,"what ’ s your name, please?",2
+1025,my name is judy wang.,1
+1026,"how do you spell your name, please?",2
+1027,"my first name is j - u - d - y, and my last name is w - a - n - g.",1
+1028,please note that this ticket has a penalty of $ 75 for any change or cancellation.,3
+1029,it ’ s ok. where should i pay for the penalty?,2
+1030,"at the airport. ok, miss. wang, your flight 8 on july 19 from taipei to minneapolis is canceled. your new reservation is trans pacific flight 8 from taipei to minneapolis at 9 thirty a. m. on august 2.",1
+1031,that ’ s 1poj7403.,1
+1032,that ’ s correct.,1
+1033,thank you!,1
+1034,is there anything else i can do for you?,2
+1035,"no, thanks. i ’ m all set. good - bye.",1
+1036,is this supply?,2
+1037,yeah. this is supply. what can i do for you?,2
+1038,"this is rachel in human resources. i need two boxes of company letterhead, one box of ball - point pens, and a box of envelopes.",3
+1039,all right. no problem. what ’ s your extension?,2
+1040,"john, i ’ d like you to meet charles brown, our new manager at the airport.",3
+1041,"yes, certainly. how can i recognize him?",2
+1042,"he is short, well - built, and he ’ s got light blond hair.",1
+1043,is there anything else?,2
+1044,"he has a mustache, if i remember correctly, and a light complexion.",1
+1045,how old is he?,2
+1046,he is in his late thirties.,1
+1047,well. i shouldn ’ t have any trouble recognizing him. what time does his flight arrive?,2
+1048,at 2 thirty.,1
+1049,what can i get for you today?,2
+1050,"could i get a hamburger, please?",3
+1051,would you like cheese on that?,3
+1052,"no, thank you.",4
+1053,would you like a drink?,2
+1054,let me have a soda.,3
+1055,what kind of soda would you like?,2
+1056,"may i have a sprite, please?",3
+1057,"sure, no problem.",4
+1058,i would also like a bag of chips.,3
+1059,will that be all?,2
+1060,that's everything.,1
+1061,please tell me something about your insurance background.,3
+1062,i majored in international banking at college so i took many insurance courses. and i worked at an insurance company for my graduation field work.,1
+1063,why do you want to be an insurance agent?,2
+1064,i care about people and i know the importance of insurance.,1
+1065,do you have any work experience in promotion?,2
+1066,"yes, i do. i have worked as a salesman for p & g company ltd.",1
+1067,do people respond well to you?,2
+1068,"yes, i'm good with people.",1
+1069,"ah, here we are.",1
+1070,this is the place i was telling you about.,1
+1071,would you like to sit near the window?,3
+1072,good.,4
+1073,"let's have a look at the menu. oh, there isn't a menu. do you think you could ask the people at the next table if we could look at their menu?",2
+1074,"yes, of course. excuse me. could you possibly let us see your menu? oh. they haven't got one either.",3
+1075,are you going to buy a bicycle?,2
+1076,i ’ m thinking about it. how much is it?,2
+1077,¥ 350.,1
+1078,"oh, dear. it ’ s too expensive. can you give me a better price?",3
+1079,"your discount is already included. normally we charge ¥ 400, but now we can give you a special price. this is our sale period.",4
+1080,it ’ s still too much. can ’ t you make it any cheaper than that?,3
+1081,"sorry, but this is the best price. you can ’ t get it any cheaper than here.",4
+1082,i see. can i pay by traveler ’ s checks?,3
+1083,i'm afraid you can ’ t. you ’ re welcome to pay in cash.,4
+1084,do you have a free moment?,3
+1085,sure. what do you need?,3
+1086,i'm having some trouble. how do you use this printer?,2
+1087,"well, first you have to turn this switch on.",3
+1088,silly me.,1
+1089,now press this button.,3
+1090,"oh, and it's out of paper. do you have any more?",3
+1091,just a second. i'll go get some.,4
+1092,i need help using the washer and dryer.,3
+1093,tell me what the problem is.,3
+1094,i can't figure out how to turn them on.,4
+1095,do you have some quarters?,2
+1096,i didn't know i needed change.,1
+1097,the washer costs 50 cents and the dryer costs a dollar.,1
+1098,where do i put the change?,2
+1099,"the quarters go into the slot. you have to push the slot in, and the machine will turn on.",1
+1100,is that everything that i have to do?,2
+1101,that's all there is.,1
+1102,i appreciate you helping me with this.,1
+1103,"if you need anything else, just let me know.",3
+1104,do you have any questions?,2
+1105,"yes, do i have to work a whole year before i can take a vacation?",2
+1106,"yes, after you ’ ve been here a year, you qualify for a three - day vacation",1
+1107,only three days?,2
+1108,that's the company policy.,1
+1109,"what happens if i use up my sick days before the end of the year? if i ’ m sick an extra day or two, will my pay be deducted?",2
+1110,yes. that's the company policy.,1
+1111,it was the same as the last place i worked at. i was hoping you ’ d be different.,1
+1112,i am absolutely famished.,1
+1113,yeah. i am too.,1
+1114,where did you want to go for lunch?,2
+1115,i was thinking we should just go to the cafeteria.,3
+1116,i don't think i ever got food from the cafeteria.,4
+1117,i actually like the food there.,1
+1118,does the cafeteria sell a lot of different food?,2
+1119,they have anything you want.,1
+1120,i was thinking about getting some chinese food.,3
+1121,i bought some chow mein at the cafeteria. it tasted great.,4
+1122,we can eat at the cafeteria.,3
+1123,i think you'll really like the food there.,4
+1124,"here is the draft contract, mr. brown. let's discuss the clauses to see if we agree on all of them. then i will make out an original of the contract. after that, what's left is to fill out the contract and sign our names.",3
+1125,that's ok.,4
+1126,the contract is to be written in chinese and english. both languages are equally effective.,1
+1127,"fine. if you'll excuse me, i'd like to go it over first. ( after about 15 minutes ) hmm, you've done a pretty good job. it's well prepared.",1
+1128,thank you.,1
+1129,"well, i suggest that we discuss only the clauses and points where we have different opinions just to save time.",3
+1130,that's a good idea.,4
+1131,"first, let's read clause two about packing. it's our usual practice to ship our products in containers. that'll save time and money, but your contract stipulates the use of wooden cases. so, we'd like to have the words containers are allowed in the contract.",3
+1132,agreed.,4
+1133,"for shipment, you know we are producing a complete set of equipment for you and it won't all be finished at one time. so would you allow us to make partial shipments.",3
+1134,i understand your position.,4
+1135,i want to buy a black suit.,3
+1136,certainty. do you want double breasted suit or single breasted suit?,2
+1137,i prefer single breasted suit.,1
+1138,what about this one? it's a very nice 3 - piece suit.,3
+1139,that looks great. do you have ties here?,2
+1140,"how do you do? nice to meet you, diane.",1
+1141,"how do you do, jack. nice to meet you.",1
+1142,"well, i think you've reconsidered our proposal, diane.",1
+1143,"yes, you are right. after all, the quality of your air conditioners is good. the only problem is price.",1
+1144,"i should not be surprised, many customers have the same opinion. do you have any suggestion in mind? our salesman told your secretary that the price could be negotiable.",2
+1145,"that's why i came to your office today. we think for your model we - 506 $ 590 would be reasonable, because air conditioners of the same kind sold by other companies are usually about 579 - 649.",3
+1146,"that's true. but if you understand that quality is the most important aspect of a product, you'll agree that 679 is not high, especially when we allow you a 10 % discount.",3
+1147,"i see your point. that's to say s 611 each set. still it's much higher than the market price. could you see your way to reduce the price, jack?",3
+1148,"well, considering the quantity of your order we could further reduce the price to 600. that's the best we can do. what do you think of that?",3
+1149,all right. we accept it. so $ 600 for each set.,4
+1150,very well. thank you.,1
+1151,don't i know you?,2
+1152,i'm not sure. you look familiar.,1
+1153,"you're mr. stevenson, right?",2
+1154,"yes. and you're mr. jones, i remember.",1
+1155,that's all the general information of our company. i think you already have good knowledge about our company.,1
+1156,"yes, i have an overall understanding.",1
+1157,"when we have the final results, we will call you.",3
+1158,then when will i get a reply at the latest?,2
+1159,"if you pass the interview, the personnel department will inform you within two weeks.",1
+1160,"but if i don't pass, will you call me?",2
+1161,"i'm sorry we won't. you can wait for two weeks. if you don't get a telephone call, it means that you weren't successful.",1
+1162,then do i have the chance to get this job?,2
+1163,"i'm sorry but i can't make the final decision myself, and i have to discuss it with other interviewers.",3
+1164,"i know. no matter what the result will be, i have learned a lot from our conversation.",1
+1165,your mentality is very good and that's great.,1
+1166,thanks for giving me the opportunity of this interview.,1
+1167,my pleasure.,1
+1168,i have a stomachache.,1
+1169,"well, you'd better lie down now. you need a good rest.",3
+1170,all right. i'll do that.,4
+1171,what kind of personality do you think you have?,2
+1172,i'm quite active and energetic. i approach things enthusiastically and i don't like to leave things half - done.,1
+1173,do you think you are introverted or extroverted?,2
+1174,i'm quite outgoing i think. i enjoy mixing and doing things with others.,1
+1175,what do you think is the most important thing for you to be happy?,2
+1176,"i maintain that the most important thing is having good friends. a person can't live all by himself i think. a friend in need is a friend in deed. the more really close friends i have, the better.",1
+1177,what kind of people do you like to work with?,2
+1178,"people who are honest, dedicated to their work and having integrity.",1
+1179,"i would like to take this opportunity to welcome monica to our company and introduce her to her department and colleagues. for all of you, we hired monica because she is a very professional accountant and we are very happy to have her in the finance department. she has lots of working experiences as an accountant and i am sure everybody in the department can benefit from this.",1
+1180,"hello, everybody. i am monica and this is my first day at work. i am working in the finance department. i am very happy to meet everyone and i am looking forward to working well with all of you. i am very happy to be one of the team and i will do my best to get into the working situation as soon as possible. by the way, call me monica. everybody calls me so.",1
+1181,were you in a leadership position when you were a college student?,2
+1182,yes. i was president of the student council of our university.,1
+1183,did you get any honors or awards at your university?,2
+1184,yes. i was elected excellent party member for four academic years.,1
+1185,were you involved in any club activities at your university?,2
+1186,yes. i was a member of the student poetry society. i like writing poems in my spare time.,1
+1187,what extracurricular activities did you usually take part in at your college?,2
+1188,i sometimes played table tennis and sometimes played basketball.,1
+1189,"margaret, i'd like to follow up with the arrangements for our company retreat, to take place next month. we need to book the venue, make arrangements for speakers and door prizes, and set up all the activities and accommodations. also, very important, we need to determine which of our staff will be eligible and will be available to go. we've got to get a head count in order to make reservations.",3
+1190,what's the criteria for staff to attend? are we only including our management team in this affair? or will we be extending invitations to lower level employees to attend?,2
+1191,"lower level employees need not attend. the purpose of this retreat is for training, especially for our management team. we want to develop a well - oiled machine on our executive level. in order to get everyone to jell together, we've got to include some fun. that's the reason for the retreat.",3
+1192,i think yoga might be suitable for me.,1
+1193,why?,2
+1194,because it doesn't require a lot of energy and thus easy to keep up.,1
+1195,but i see people sweat a lot doing yoga too.,1
+1196,i don't know. i just need to try it once. i'm in urgent need of some exercise to lose some weight.,1
+1197,you should try swimming then. it helps you to keep fit.,3
+1198,we are looking for a bilingual secretary. do you think you are proficient in both written and spoken english?,2
+1199,"i think my english is fairly good. as you can see from my cv, i graduated from university with a b. a. degree in english. i studied the english language and english literature systematically.",1
+1200,how are your typing and shorthand skills?,2
+1201,"i can type 80 words a minute, basically no mistake, and can take dictation in english at 120 words per minute.",1
+1202,are these the clothes you want to have washed?,2
+1203,yes. when can i get them back?,2
+1204,"well, if they are collected right now, you can get them back tonight.",1
+1205,"that's fine. by the way, please have that suit dry cleaned.",3
+1206,ok. please fill in the form first.,3
+1207,"what's the matter with me, doctor? i feel so tired these days.",2
+1208,"is your blood pressure, i'm afraid. it's far too high.",1
+1209,and what's the cause of that?,2
+1210,overwork - amongst other things. you can't work 24 hours a day. you've got to slow down.,3
+1211,but i can't just slow down.,4
+1212,"you've got to, i'm afraid. and look at this. you weigh 200 stones. that's too much for a man of your size.",3
+1213,you mean i've got to lose weight?,3
+1214,yes. you've got to cut down on bread and potatoes and take more exercise.,4
+1215,"you are an early bird, tom. what do you do in the morning then?",2
+1216,exercise. the morning hours are the most precious period within a single day. we should not pass them up easily. seize the time and do something useful.,1
+1217,"so, you choose to spend it on bodybuilding. where do you exercise?",2
+1218,"usually, i run to the black bamboo park as a warm - up. admission is free. then i start my activities.",1
+1219,do you do the same exercises every day?,2
+1220,"no, i've deliberately kept a balance between various exercises ; parallel bars, push - ups, sit - ups, bunny - hops, five - kilometer run, and so on. i alternate them over the weekdays. sometimes, when i find myself in a bad state, i will simply idle about in the park.",1
+1221,why don't you just stay in bed when you are feeling unfit for exercising?,2
+1222,"it's not easy to keep a good habit, you know. i fear that if i fail to get up early one day, i may find it still more difficult to rise early the next. besides, a mere walk in the early morning is much fun, too. here and there in the park, you meet whole gangs of senior citizens who might be singing operas or old songs, playing er'hu, chess, or just chatting and gossiping. it's interesting to join them.",1
+1223,"oh, yes. singing is also a good way of keeping fit, at least mentally.",1
+1224,i want some cosmetics. could you recommend some?,3
+1225,i think pond's is the best.,4
+1226,"and they're very dear, too.",1
+1227,they're on special offer today.,3
+1228,"oh, that's ideal.",4
+1229,"steven, i'm going abroad by plane for the first time tomorrow. can you give me some advice? and what should i pay attention to?",2
+1230,"first, you should have enough sleep to get over the jet lag before the departure. most people will suffer from jet lag for a few days after a long flight.",1
+1231,i will go to bed early tonight.,1
+1232,do you have an airsickness?,2
+1233,i don't know. but i have a carsickness.,1
+1234,you'd better bring some medicine for airsickness.,3
+1235,thank you.,4
+1236,can we choose a time to look at houses together?,3
+1237,"can you do that in the mornings, or would the afternoons be best?",2
+1238,either way is good for me.,1
+1239,there are a number of open houses this weekend in your area. would that okay with you?,2
+1240,"i can take a little time off of work, or i can go on a weekend, also.",1
+1241,"we could meet at the real estate office, or i could pick you up at your home.",2
+1242,"i am leaving from work, so maybe i could just meet you at the first house that we will look at.",1
+1243,i can think of five houses that we should look at. it will take most of the day.,1
+1244,i would like to see as many as possible.,1
+1245,"when i have confirmed the times with the owners, i will e - mail you our plans for the day.",1
+1246,do you have a package tour to hollywood?,2
+1247,"yes, here is the table, which plans do you like best?",2
+1248,the seven - days trip shall be fine. how much is this tour?,2
+1249,$ 300.,1
+1250,we will take the trip. could you give us a pamphlet?,3
+1251,here you are.,4
+1252,what ’ s the problem? things are getting out of hand. you keep sticking your nose where it doesn ’ t belong.,2
+1253,what do you mean?,2
+1254,"now, i am responsible for training new staff, but you keep overriding my authority by trying to pose your methods. i know you are a hotshot college graduate with something to prove. but i don ’ t like your way.",1
+1255,"mom, when you come home, please buy a coat, a skirt, a sweater...",3
+1256,enough is enough. i know.,4
+1257,"mr. chen, do you mind if i smoke?",3
+1258,"i'm sorry, mrs. lin. we don't allow smoking in the office.",4
+1259,"good morning, can i help you?",2
+1260,i want to american breakfast with fried eggs sunny side up.,3
+1261,"what kind of juice do you prefer, sir?",2
+1262,breakfast juice and please make my coffee very strong.,1
+1263,"yes, sir. american breakfast with fried eggs sunny side up. breakfast juice and black coffee. and my correct, sir?",2
+1264,"yes, that ’ s right.",1
+1265,"is there anything else, sir?",2
+1266,"no, that ’ s all.",1
+1267,"good morning, sir. i ’ ve got breakfast your ordered.",1
+1268,just put it on the table please.,3
+1269,"do you need anything else, sir?",2
+1270,"no, thanks. oh, yes, could i have some juice for the mini bar?",3
+1271,what kind of juice do you like sir?,2
+1272,"tomato or orange juice, please.",1
+1273,"yes, sir. i ’ ll get them for you right away. would you please sign this bill first? thank you, sir.",3
+1274,should we tip? this service is pretty good.,2
+1275,"yeah, we probably should. how much is normal?",2
+1276,how about 10 percent? that's about 6 dollars.,3
+1277,that sounds about right.,4
+1278,what time does the train for tibet leave?,2
+1279,it will leave at 3 : 00 p. m.,1
+1280,when does it arrive?,2
+1281,it should be due in at 7 : 30 a. m. tomorrow.,1
+1282,how much is the ticket?,2
+1283,it's 86 coach and 175 berths,1
+1284,"one berth, please.",3
+1285,"hey, taxi.",3
+1286,"where to, sir?",2
+1287,beijing library.,1
+1288,"hop in, please.",4
+1289,is it a long ride to beijing library?,2
+1290,it will take about thirty minutes because it is the rush hour.,1
+1291,"thirty minutes, that will be all right. there are still fifty minutes to go before the library is open. look, what are they doing on the square?",2
+1292,it is an exhibition of chinese jades. it is held each year. a nice collection jades of are on display and sold.,1
+1293,sounds great! can you stop somewhere here for a minute? i will get some souvenirs for my friends.,3
+1294,no problem.,4
+1295,"how many pieces of luggage would you like to check in, sir?",2
+1296,three bags and a suitcase. this is my luggage to check.,1
+1297,do you have any carry - on luggage?,2
+1298,no.,1
+1299,"put your luggage on the scale, please. oh, your luggage is overweight.",1
+1300,how much is the excess baggage part charge?,2
+1301,twenty - two dollars,1
+1302,here you are.,1
+1303,"this is your voucher, and you can get your luggage back on this. have a good trip!",1
+1304,thank you!,1
+1305,"what date would you like to depart, sir?",2
+1306,do you have any seats for september 16th?,2
+1307,let's see... i'm afraid the 16th is fully booked. but i have seats for the 17th.,3
+1308,the 17th will be fine.,4
+1309,and what date will you be returning?,2
+1310,"hmm, i guess on the 28th.",1
+1311,"okay, you're booked on american airlines flight 710, departing jfk at 6",1
+1312,sounds good. thanks a lot.,1
+1313,i would like to buy a black suit.,3
+1314,do you have any special brand in your mind?,2
+1315,"no, i never wear suit in my everyday life. i just want one to take part in my sister ’ s wedding ceremony.",1
+1316,i see. have a look at this one. it ’ s very cheap because it ’ s not very durable.,4
+1317,but it looks good. let me try it on.,3
+1318,"ok, the mirror is over there.",4
+1319,"what can i do for you, miss?",2
+1320,i am looking for a pair of shoes.,1
+1321,do you like high heels or flat shoes?,2
+1322,"high hells, please. i want to wear them in formal situations.",1
+1323,hi jim. do you have a minute?,2
+1324,"sure, what ’ s up?",2
+1325,some of us are going to start a soccer team. would you like to join us?,3
+1326,i don ’ t know anything about it. soccer isn ’ t as popular in my country as it is here.,4
+1327,that ’ s all right. we ’ ll teach you.,1
+1328,is it anything like american football?,2
+1329,"not very much. it ’ s something like hockey, except that you use a big ball and no stick.",1
+1330,"i ’ ll come down and watch you play some day, and see what it ’ s like.",1
+1331,good idea. i think you ’ ll like it if you give it a chance.,1
+1332,do you remember what the ratings of movies stand for?,2
+1333,"yes, g stands for general audiences, pg means parental guidance suggested, r is restricted to audiences under 18 and x means explicit content.",1
+1334,does anyone pay any attention to those ratings anymore?,2
+1335,remember when we were kids? theaters wouldn't let kids in to pg moves without a parent.,2
+1336,i remember that i never saw an x moves even displayed.,1
+1337,now with video rentals it's all a personal matter.,1
+1338,"yea, i never see theaters turn people away for their age anymore either.",1
+1339,now we have to make a choice about what we will see and what we won't.,3
+1340,why aren't you doing well in the class?,2
+1341,the material is so abstract that i have trouble understanding it.,1
+1342,"reservation, can i help you?",2
+1343,"yes, i would like to reserve a room for next monday.",3
+1344,"wait a moment, please. let me check it.",4
+1345,"by the way, i want a large room.",3
+1346,"right now we have a suite for 4 people, do you want to book it?",3
+1347,"yes, that's what i am looking for. i will take the room for 2 days.",4
+1348,hey mel! are you up for some tennis today?,2
+1349,"sorry, i can ’ t! i have to go to work, pick up jake and maddie from school, and make them an afternoon snack, then take jake to soccer practice and maddie to dance class.",1
+1350,"you sound exhausted. maybe you should hire a nanny to help you out! she can pick the kids up and take them to their after - school activities. she can also help you do some household chores, and run so",3
+1351,"oh, i don ’ t know... it ’ s hard to find the right nanny. you have to consider her previous work experience, the responsibilities you give her, and how she interacts with the kids. i would love to have",4
+1352,"i think you should definitely consider it! this way you won ’ t have to juggle such a busy schedule, and you ’ ll still get to spend time with the kids in the evenings. i can refer you this great",3
+1353,"oh, that ’ s great. thanks grace. can you give me her number? i ’ ll talk it over with dan and give her a call tomorrow. maybe this way i won ’ t be so tired every day, and dan and i might even get to go",4
+1354,can you tell that i ’ m excited?,2
+1355,what are you excited about?,2
+1356,i voted today.,1
+1357,was this your first time?,2
+1358,i just turned 18 a month ago.,1
+1359,you ’ re lucky.,1
+1360,what do you mean?,2
+1361,because you turned 18 in an election year.,1
+1362,i didn ’ t even think of that.,1
+1363,you didn ’ t?,2
+1364,"i really didn ’ t, but i ’ m still excited.",1
+1365,"you should be, because you ’ re a part of history.",1
+1366,can i help you?,2
+1367,yes. i want to buy a pair of shoes.,1
+1368,have you a pattern in your mind?,2
+1369,"well, maybe sneakers or rubber shoes.",1
+1370,is there any special brand you would like?,2
+1371,could i have look at that pair of canvas shoes? they look nice.,3
+1372,"look, how grand magnificent the tiananmen gate tour is!",1
+1373,what's tiananmen famous for?,2
+1374,"it is largest pop square in the world. you see that is monument for the people's hero, and the chairman mao memorial hall on the south. there is great hall of the people on the west. there are two museums on the east.",1
+1375,what's that?,2
+1376,that's the forbidden city on the north of gate building.,1
+1377,"all the sightseeing in china is very attractive and crescive. travelling to china is very worth one. thank you so much for your guides, and i'll miss you.",1
+1378,"i ran it against that fence pole as i crashed. what do you think? damn, it hurts!",2
+1379,we'll have to get you to a hospital. i can ride you on the back of my bike.,3
+1380,i'm lucky i wasn't killed. i must have been going around forty - five miles an hour. there was too much gravel on that corner. i slid out.,1
+1381,"yes, i almost slid too. alright. this tourniquet is tight. how does it feel?",2
+1382,make it tighter. i want the blood stopped. then wrap some bandages around the cut. then we can go. ouch! i hope i can walk.,3
+1383,"alright, i'm twisting it around. you tell me when to stop.",3
+1384,there. stop!,4
+1385,"mr. james. i know that office hour is up now, but could you work during the weekend and finish the translations?",3
+1386,"well, unfortunately i have got something to do this weekend. but let me see...",4
+1387,"oh, i'm sorry. however, if you could help me out, i'll double the pay for the hours worked.",3
+1388,that's very kind of you. how soon do you really need them?,2
+1389,i'll need them for the conference on monday afternoon. do you think it can be done by then?,2
+1390,i'll try.,1
+1391,"thank you very much, mr. james.",1
+1392,"don't worry, your baby is in my home.",1
+1393,how can i ever thank you? i owe you a big favor.,1
+1394,"i'm very sorry, sir. my car has broken down.",1
+1395,sorry to hear that. can we do anything about it?,3
+1396,i'm afraid not.,4
+1397,"then i have to call another taxi, or i'll be late.",1
+1398,hi. i need to have my shoes repaired.,3
+1399,what ’ s the matter with them?,2
+1400,look at the heels. they are slanting.,1
+1401,"ah, i can do it perfectly.",4
+1402,how much does it cost?,2
+1403,6 yuan. and i can make them as new as before.,1
+1404,i think it ’ s too expensive. i can just give you 4 yuan. or i ’ ll go to another b.,3
+1405,all right. i ’ ll repair them for you.,4
+1406,how long will it take? could you repair them while i wait?,3
+1407,yes. they will be ready in a few minutes.,4
+1408,great! i ’ ll just sit here and wait.,1
+1409,hello!,1
+1410,"hello, is that stefan?",2
+1411,"i'm sorry, but i'm afraid you've dialed the wrong number. there is no stefan here.",1
+1412,really? are you sure? i called before and he was there.,2
+1413,yes. i'm sure. you have the wrong number. i have used this number for more than 20 years.,1
+1414,that can't be true. i remember the number clearly. is your number 1199886?,2
+1415,"no, it isn't. it's 1199866. it seems that you have misdialed.",1
+1416,"oh, i'm sorry i bothered you. i'm really sorry.",1
+1417,it doesn't matter. it happens to everyone.,1
+1418,sorry again for bothering you.,1
+1419,that's all right.,1
+1420,good morning. can i help you?,2
+1421,"good morning. i ’ m here to see rochelle davis, the human resources manager.",3
+1422,do you have an appointment with her?,2
+1423,"yes, i do. i have a 10 : 00 appointment with her this morning.",1
+1424,"okay. what ’ s your name, please?",3
+1425,my name is bruce green.,1
+1426,thanks. please sit down. she ’ ll be with you shortly.,3
+1427,thank you.,4
+1428,"excuse me, sir, do you know what time it is?",3
+1429,"oh, it ’ s almost eleven twenty.",4
+1430,thank you.,1
+1431,"you ’ re welcome. the rain is quite heavy, isn ’ t it?",1
+1432,yeah. i was in a hurry and i forgot my umbrella today.,1
+1433,i have one. we could share it. which way are you going?,2
+1434,"oh, that ’ s very kind of you. i am going to the garden hotel.",1
+1435,"i am going there, too. we can walk together.",3
+1436,sure.,4
+1437,i'm interested in chinese antiques.,1
+1438,"we have a great variety of chinese antiques. besides, we have landscape painting, figure painting and flower - and - bird painting.",1
+1439,i'd like a flower - and - bird painting.,1
+1440,how about this picture of cranes with pine trees? it was painted by a famous chinese painter in king dynasty.,3
+1441,"oh, they look just like live cranes.",4
+1442,"and what is more, in traditional chinese thinking, cranes and pine trees symbolize longevity.",1
+1443,"i have to check out now. my name is ruth carson. can i have my bill, please?",3
+1444,"yes, it's $ 167.",4
+1445,thank you.,1
+1446,"well, mitzuko - san, i hope you like it here. this is my favourite restaurant in taipei. it reminds me of my youth when i traveled around europe.",1
+1447,it looks wonderful. very authentic.,1
+1448,the chef trained in florence. the pasta is very good here.,1
+1449,"ok. so, what can you recommend?",2
+1450,hum... you should try the mushroom fettucine. it's really good.,3
+1451,is it salty?,2
+1452,not at all. it has a very delicate flavor.,1
+1453,what does'duppa del giono'mean? i'm sorry i don't know how to pronounce that.,2
+1454,"oh, that means soup of the day. i'll ask the waiter what they have today. have you tried mussels cooked the italian way? they're really delicious.",2
+1455,no. i'll try them. sounds good.,4
+1456,i am calling to ask about the position of an usher.,3
+1457,anything you would like to know?,2
+1458,what qualities do you expect the applicants to have?,2
+1459,"we expect the usher girl to be good - looking, no less than 165 centimeters high, and love smiling.",3
+1460,"hello, ma ’ am, can i help you find something?",2
+1461,"yes, actually i ’ m looking to buy a camera.",3
+1462,"we ’ ve got a wide selection do you know if you ’ d like a point - and - shoot, or something a little fancier? are you shopping for yourself or for someone else?",2
+1463,actually i ’ m buying a camera for my husband.,1
+1464,"ah, well then i ’ d recommend a nice entry - level digital slr.",3
+1465,yeah? can i take a look at the sirs you carry?,3
+1466,"sure thing, follow me. this here is the.",4
+1467,"the canon eos. yeah it ’ s ok, but i ’ m looking for something that performs better in low light, has a better display panel, and longer battery life.",4
+1468,"oh, ah, um the nikon d60 is a nice option.",3
+1469,"yeah, but what kit lens does this camera come with? i don ’ t want some bulky telephoto lens.",4
+1470,"oh, well this one has the, uh.",3
+1471,"looks to me like an 18 - 55 mm lens. pretty standard, that will do. not like my husband will be stalking celebrities or anything!",4
+1472,"so, ahem, can i interest you in any acc...",3
+1473,accessories? do you carry polarizing filters?,2
+1474,"polarizing filter um we should! i ’ m sorry, ma ’ am. it looks like we ’ re sold out.",1
+1475,no you ’ re not! there are some right here!,1
+1476,"oh, well, would you look at that! polarizing filters.",3
+1477,"thanks for your help, ralph!",4
+1478,"no problem, ma ’ am.",1
+1479,"may i help you, ma'ma?",2
+1480,"please, where do i catch the plane for new york?",2
+1481,first you must check in at counter no. 4.,3
+1482,that one there?,2
+1483,that's right. then you will follow the signs to gate 85.,3
+1484,thank you. you've been very helpful.,4
+1485,"mr. crandall, i ’ m sorry, but i really don ’ t see the value in doing this entire project over from scratch. it would take a lot of work.",3
+1486,"that ’ s certainly true. but, that ’ s what this job is all about, maria. there's no doubt that this project is unacceptable.",3
+1487,i agree. but i think that we can handle the problem by making a few major changes. i ’ d appreciate it if you would give me a chance.,3
+1488,"all right, maria. i ’ ll give you until tomorrow at 4 : 00 to produce a satisfactory piece of work, but otherwise, you ’ ll have to re - do it.",4
+1489,i think it's time for me to meet my admirer and make him face the music.,1
+1490,you do? how are you going to contact him?,2
+1491,i'm leaving him a message taped to my computer screen.,1
+1492,what does it say? do you think he'll see it?,2
+1493,"he'll see it. it says, i like sweets. meet me at two thirty in the parking lot.",1
+1494,can i spy on you guys from the window?,3
+1495,no. but i'll fill you in later. right now i have to find vince.,4
+1496,there's plenty left. would you like another helping?,2
+1497,i'd like to have some more. it's really good.,1
+1498,"excuse me, does this bus go to the new bookstore?",2
+1499,"no, you'll have to get off at the bank, and take a no. 50.",1
+1500,thank you. how much is the fare to that stop?,2
+1501,one dollar.,1
+1502,how many stops are there?,2
+1503,two stops after this one.,1
+1504,could you please tell me when we get there?,3
+1505,sure.,4
+1506,"by the way, do i need a transfer again after no. 50?",2
+1507,"no, a no. 50 will take you right there.",1
+1508,thank you.,1
+1509,how are you wedding plans going?,2
+1510,very well. we started organizing everything early to avoid a last minute rush to get things done. the only thing that isn ’ t ready yet is my wedding dress.,1
+1511,when will that be ready?,2
+1512,the dressmakers said that is would be ready in two weeks.,1
+1513,"you ’ re getting married in three weeks. so that should be ok. so, you ’ ve prepared the church, catering, transport, hotel - everything.",1
+1514,yes. we ’ ve taken care of all of that. we decided not to get married in a church though. neither of us is very religious.,1
+1515,which hotel will the reception be held at?,2
+1516,"the palace hotel they ’ re taking care of the catering, including the wedding cake. i ’ m sure they ’ ll do a good job.",1
+1517,"oh, yes. it ’ s and excellent hotel. a friend of mine had her wedding reception there and said it was perfect, though very expensive.",1
+1518,"yes. it will be expensive, but we think it will be worth it. it gives us great peace of mind to know that our reception is in the hands of experienced people.",1
+1519,i think you make the right decision.,1
+1520,have you any round - neck sweater?,2
+1521,yes. actually our range of sweaters is the most comprehensive available.,1
+1522,can i try this one on?,3
+1523,"sure, go ahead.",4
+1524,"the color is too bright. for my age, i would prefer a lighter color.",1
+1525,"so dick, how about getting some coffee for tonight?",3
+1526,coffee? i don ’ t honestly like that kind of stuff.,4
+1527,"come on, you can at least try a little, besides your cigarette.",3
+1528,what ’ s wrong with that? cigarette is the thing i go crazy for.,1
+1529,"not for me, dick.",1
+1530,you guys are charging me $ 10 for a movie that i never ordered or saw.,1
+1531,"let's see, sir. according to your file, you watched'titanic'monday evening.",1
+1532,"well, the wrong information is in my file. i was at a concert monday night.",1
+1533,"well, your word overrules the file, sir. one moment, please.",3
+1534,i knew you'd see it my way.,4
+1535,"sir, i deleted the $ 10, but i had to add a $ 2 service charge to your bill.",3
+1536,am i in the twilight zone? you're charging me for a movie i never saw?,4
+1537,"please don't blame me, sir. blame the computer programmer.",3
+1538,this is highway robbery. i've got a good mind to call the police!,4
+1539,"if it makes you feel any better, other guests feel the same way.",1
+1540,mr. carter has asked me to come over to invite you to the banquet held in your honor at the shangri - la hotel at 7 : 00 this evening. here's an invitation for you.,3
+1541,how nice of him. i'll be delighted to go. but what time would be convenient?,2
+1542,"if you could be ready by, say 6 : 30 o'clock, i'll be at the hotel to pick you up.",3
+1543,"that's great. it's most thoughtful of you to do this, miss rose.",4
+1544,"it's my pleasure. well, then. i'll say goodbye.",1
+1545,goodbye and see you tonight. miss rose.,1
+1546,i'd like to speak dr. johnson.,3
+1547,"sorry, but he's not in. may i take a message for you?",3
+1548,"this is robert jordan. would you ask him to call me back, please?",3
+1549,"ok, i'll tell him.",4
+1550,"good morning, sir. may i see your passport?",3
+1551,"yes, of course. here it is.",4
+1552,thank you. are all these yours?,2
+1553,"no, some of them are my friend's. do you want her passport, too?",2
+1554,"yes, please. do you have any carry - on items?",2
+1555,"do you want me to put it on the belt, too?",2
+1556,"yes, please. would you please open this big suitcase?",3
+1557,ok. just a moment. it's just some clothes and toiletries.,4
+1558,ok. do you have anything to declare?,2
+1559,i think there is nothing.,1
+1560,"any fresh food, live plants, or animals?",2
+1561,"oh, no. none of that.",1
+1562,thank you. you may lock up your suitcase. here are your passports.,1
+1563,thanks a lot.,1
+1564,hello. i bought a china dress in your shop this morning.,1
+1565,yes?,2
+1566,i bought it one size up by mistake.,1
+1567,"oh, did you?",2
+1568,i wonder if you can change it to one size down.,3
+1569,"yes, of course. will you come with the receipt?",2
+1570,"then i'll come to your place later in the evening, and how late is your shop open?",2
+1571,"until 8 o'clock, ma'am. we are looking forward to seeing you.",1
+1572,"the boss announces the pay raise today, right? how much do you think we'll get?",2
+1573,no idea. your guess is as good as mine.,1
+1574,it better be more than last year.,1
+1575,"well, anything is better than nothing. wait and see.",1
+1576,i'm going to go shopping for groceries in a little bit.,3
+1577,"why, do we need groceries?",2
+1578,i believe we are all out of food.,1
+1579,do you know what to get?,2
+1580,i don't know what we need.,1
+1581,why don't you go and check the refrigerator?,3
+1582,i would appreciate it if you would do that for me.,3
+1583,why don't you just get the basics?,3
+1584,what do you mean?,2
+1585,"eggs, milk, bread. things like that.",3
+1586,go make that list.,3
+1587,"sure, no problem.",4
+1588,"hello, take a seat please. let's get straight to the point. this is our contract. please read it carefully before signing.",3
+1589,"since we have reached an agreement on all terms, there shouldn't be any problems for the contract.",4
+1590,may we once more remind you that the contract should be canceled by one month notice.,3
+1591,"yes, i got it. thanks.",4
+1592,"excuse me, is this the baggage claim area from kl17?",2
+1593,"yes, can i help you?",2
+1594,"well, this is my baggage claim tag. can you get my baggage now?",3
+1595,"ok, here you are.",4
+1596,thanks a lot.,1
+1597,were you able to attend friday night's basketball game?,2
+1598,i was unable to make it.,1
+1599,you should have been there. it was intense.,1
+1600,is that right. who ended up winning?,2
+1601,our team was victorious.,1
+1602,i wish i was free that night. i'm kind of mad that i didn't go.,1
+1603,it was a great game.,1
+1604,what was the score at the end of the game?,2
+1605,our team won 101 - 98.,1
+1606,sounds like it was a close game.,1
+1607,that's the reason it was such a great game.,1
+1608,"the next game, i will definitely be there.",1
+1609,have you ever tried shopping online?,2
+1610,"no, never. i prefer to actually see and touch what i'm buying before i pay for it, especially for clothes and shoes.",1
+1611,that's right. seeing is believing.,1
+1612,"i've heard some friends say when they get the article, it's quite different from what they see on the website advertisement.",1
+1613,"that happens. without close quality examination, we may encounter fraud, and the e - shop may suddenly disappear.",1
+1614,"what's more, it's not always so safe for us to pay online as hackers might steal the user name and password.",1
+1615,"it's said that some measures have been taken to deal with this problem. paying online is much safer than before, but i still have the feeling that it's not safe enough.",1
+1616,i can't agree more. that's why i only do street shopping.,1
+1617,"me too. sometimes i surf online shops to check some related information, and then go to a physical store to do the actual shopping.",1
+1618,that's a good idea.,1
+1619,how long does it take to get to downtown from here?,2
+1620,it is 15 minutes ’ drive.,1
+1621,what companies do we have in our neighborhood?,2
+1622,"mitsubishi, hp, ibm and many other famous corporations.",1
+1623,does the 7th floor belong to our company too?,2
+1624,"yes, our company has two floors, the 6th and 7th floor in this building.",1
+1625,it ’ s such a large firm. do we have our own staff restaurant?,2
+1626,"yes, at the end of the hall.",1
+1627,"good morning, sir. may i help you?",2
+1628,"good morning, i have an appointment with mr. johnson at 10 : 00",3
+1629,"excuse me, sir, but are you mr. richard of world trading company?",2
+1630,yes. that ’ s right.,1
+1631,"i ’ m sorry, mr. richard. mr. johnson is on his way to the office. he had just called and asked you to wait a minute.",3
+1632,"well, i ’ ll wait.",4
+1633,"would you like something to drink, sir? do you prefer coffee or tea?",2
+1634,"thank you. coffee, please.",3
+1635,"here you are, mr. richard. this is the cream and this is the sugar. if there ’ s anything else you ’ d like, please don ’ t hesitate to tell me.",3
+1636,thank you very much.,4
+1637,911. how may i help you?,2
+1638,i need to report a break - in.,1
+1639,when did this break - in occur?,2
+1640,last night.,1
+1641,where did the break - in happen?,2
+1642,it happened at my house.,1
+1643,was anything taken?,2
+1644,i'm not sure yet.,1
+1645,what makes you think there was a break - in?,2
+1646,my front window was busted.,1
+1647,i'll send a squad car.,3
+1648,please hurry.,4
+1649,"good morning, everyone. let me introduce myself to you...",1
+1650,"you don't need to introduce yourself, yang. you're famous.",1
+1651,"well, thank you very much but i thought l'd try and chair the meeting by the rule — at least for a while.",3
+1652,"ok, ok!",4
+1653,"now, i'd like to get things under way. the main topic on today's agenda is the development of a u. s. sales strategy for the new ebb. i'd like to hear all of your ideas, mr. wall, you seem in top form today. could you start the ball rolling?",3
+1654,"uh, oh, sure. well, i think we should keep in mind that the key to good sales is advertising.",1
+1655,"well, that's kind of obvious.",1
+1656,"give me a break, mr yang.",3
+1657,"uh, let's keep this going, shall we?",4
+1658,"i'm sorry, but i don't think this damage is our fault.",1
+1659,what do you mean?,2
+1660,it looks like the shipping company did this.,1
+1661,"we'd better take it up with them, in that case.",3
+1662,"i ’ m glad you could find time to meet with me, mr. johnson. i can ’ t think of a nicer environment for our meeting today, the ambiance here is lovely!",1
+1663,"no problem, if possible i always combine business with pleasure. now, let ’ s hear more about these chocolates you ’ re offering.",3
+1664,"well, as you know, i have recently become the sole distributor for grangers gourmet bon - bons here in the united states. they ’ re a new manufacturer and are looking to break into the luxury market. naturally, your restaurant sprang into my mind immediately. i think your brand exemplifies many of the same traits as grangers and serving these chocolates would really add to your reputation for providing elegant, luxurious, first class dining.",1
+1665,"mmmm, sounds interesting... gourmet chocolates, where are they produced? belgium?",2
+1666,"actually, the factory is located in scotland.",1
+1667,really? i didn ’ t think they were known for their luxury chocolate production,1
+1668,"that ’ s what makes this such a fantastic opportunity! the government is one hundred percent supportive of creating new export markets and has guaranteed a low tariff for all wholesale orders of over one thousand units. they ’ ve also reduced the red tape involved at customs as well. here, i brought these especially for you, try one!",3
+1669,"oh, thanks. mmm, hmm, creamy texture, very smooth...",4
+1670,"unique, aren ’ t they? i bet you ’ ve never tasted anything like it! quality is assured as i personally visit the factory to make sure no one ’ s cutting corners with the ingredients. only the creme make it through inspection.",1
+1671,"yes, very interesting flavors... slightly spicy, very unique, that ’ s for sure. exactly what are the ingredients?",2
+1672,"i have it on highest authority that this traditional secret recipe has been handed down in the granger family for generations. i ’ m sure you can keep a secret. buttermilk, cacao beans, sugar and haggis.",1
+1673,haggis? what ’ s haggis?,2
+1674,"it ’ s a traditional scottish delicacy, you take sheep ’ s liver, heart and lung and stuff it inside of the sheep ’ s stomach.",1
+1675,"ah, get back to you.",4
+1676,mr. johnson? mr. johnson?,2
+1677,do you need a guide?,3
+1678,"yes, we are just looking for one. what's the charge per day?",2
+1679,"it's $ 20. if you are staying for more than 3 days in the city, the charge is $ 16 per day.",1
+1680,that's reasonable.,4
+1681,aren't you jim green?,2
+1682,"yes, that's right.",1
+1683,i believe we met at a concert last year. i'm taylor.,1
+1684,"oh, yes. i remember.",1
+1685,"lucy, i ’ d like to fix the light in the corridor, it keeps flashing, which drives me crazy. would you like to help me with the ladder?",3
+1686,"monica, wait a moment. i think we ’ d better call the repair man to do it.",3
+1687,i think i can handle it by myself.,3
+1688,i ’ d like you to have a look at the safety manual of our company.,3
+1689,"i see. if i got hurt when fixing the light, even during office hours, i wouldn ’ t get compensation from our company since repairing is not my responsibility.",1
+1690,other company rules also need your attention.,3
+1691,"like this one? never wear loose clothes or hair when operating the shredder. yeah, thank you for telling me.",1
+1692,don ’ t mention it.,1
+1693,thank god! i am finished writing that service guide! it took me forever!,1
+1694,when did you finish?,2
+1695,"this morning! no more overtime, and no more headaches!",1
+1696,"well, i ’ m glad to hear it. have a cup of coffee!",1
+1697,i didn ’ t receive an unemployment check this week and need to know why.,3
+1698,did you mail us your last continued claim form?,2
+1699,i am afraid that i forgot to send it in.,1
+1700,we cannot pay you unless you turn that form in every two weeks.,3
+1701,is it too late to mail the continued claim form in now?,2
+1702,it can ’ t be more than fourteen days late for us to accept it.,1
+1703,i will mail it in a little early next time to avoid this problem.,4
+1704,"you can ’ t possibly know in advance how much you will be working. if you mail it in too soon, we will reject it!",1
+1705,will my paycheck arrive late because i messed up on my form?,2
+1706,"your check will be arriving late, but the next one will come right on time.",1
+1707,i should tell you that i'm checking out in about 30 minutes.,3
+1708,"i'm ready when you are, sir.",4
+1709,"very good! now, it's still morning here in new york.",1
+1710,"you are so right, sir. the clock just struck nine.",1
+1711,i'm going to spend some time exploring the city. what can i do with my luggage?,2
+1712,"sir, right here we have a storage site. its only $ 5 an hour, but you need to leave a deposit.",3
+1713,a deposit? isn't my luggage a deposit?,2
+1714,"i'm sorry, sir, but it isn't. your mastercard or visa will take care of things nicely.",1
+1715,okay. let me think about this.,1
+1716,"okay, sir. but don't take too long. you only have 30 minutes.",1
+1717,may i take your order?,3
+1718,yes. i'd like a cup of onion soup.,4
+1719,and what would you like after that?,2
+1720,"i'd like the roast chicken, please.",1
+1721,it's the latest and quite popular among young people.,1
+1722,"yes, i know and i like it very much. i will take it.",3
+1723,sure. here is your receipt.,4
+1724,how long is this cell phone guaranteed?,2
+1725,you can refund it in 7 days and exchange it in one year.,1
+1726,"hey honey, how was your day?",2
+1727,it was alright. i ran into bill and we got to talking for a while. he ’ s in a bit of a jam.,1
+1728,why? what happened?,2
+1729,"well, his son had an accident and bill doesn ’ t have health insurance. this really got me thinking, and i wondered if we shouldn ’ t look into a couple of different hmo ’ s.",3
+1730,"yeah, you ’ re right. we aren ’ t getting any younger and our kids are getting older.",4
+1731,"exactly! i searched on the web and found a couple of hmo ’ s with low co - pays and good coverage. the deductibles are low, too.",1
+1732,"sounds good, although, do you think we can qualify for insurance? those insurance companies are real pirates when it comes to money.",2
+1733,"well, we don ’ t have any pre - existing illnesses or conditions, so we should be fine.",1
+1734,i wish our company or country provided us with healthcare.,1
+1735,not in a million years!,1
+1736,hello. can you tell me what the procedures of applying for a job are?,2
+1737,"yes, of course. there are many steps. you can apply for the job on the internet and then send your resume to the e - mail address of the company. and wail the feedback of the company.",3
+1738,what is the qualification needed by the position?,2
+1739,you must have over 2 years'experience first.,1
+1740,what did you do today?,2
+1741,played poker with my work friends.,1
+1742,did you win?,2
+1743,of course.,1
+1744,i'd like to withdraw some money from my account.,3
+1745,"can i see your passbook and the withdrawal slip, please?",3
+1746,sure.,4
+1747,let me just make sure. you want to withdraw one thousand dollars?,2
+1748,that's right.,1
+1749,can i have a look at that digital camera please?,3
+1750,yes of course. this is a really good one actually.,4
+1751,how much does it cost?,2
+1752,this one is 1500 yuan.,1
+1753,it looks pretty good. i think i'll take it.,1
+1754,would you like anything else?,2
+1755,that's all thank you.,1
+1756,i need something to wash this down. is there any juice in the fridge?,2
+1757,what is that? it looks like something from a swamp!,2
+1758,it's a green drink. it's supposed to be full of vitamins and minerals.,1
+1759,"you know, healthy eating doesn't have to make you gag.",1
+1760,"the sales lady said that even if i eat right, i wouldn't get enough vitamins.",1
+1761,have you ever tried it? or are you just going to believe the sales lady?,2
+1762,it's easier to drink this once a day than eat fruit and vegetables all day.,1
+1763,"it may take less time, but i don't know about easier. yuck.",1
+1764,"billy, you are late again.",1
+1765,i'm sorry i'm late. i overslept. is the manager here today?,2
+1766,yes he's in his office.,1
+1767,"oh, i hope he didn't notice me.",1
+1768,don't take any chances. it'd be best if you told him and promised not to be late again. he's already mad at you for last 2 times. any more and he might fire you.,1
+1769,you said it. it won't happen again. do you really think he'd fire me?,2
+1770,i think he might. you'd better go to his office.,3
+1771,you are probably right. i'll go right now and apologize. i try hard not to be late but it is difficult with beijing traffic.,4
+1772,good luck!,1
+1773,how much is the rent?,2
+1774,the rent is $ 1500 per month.,1
+1775,and how much is the deposit?,2
+1776,the deposit is $ 500.,1
+1777,"is there anything else, apart from the credit rating and debt to asset ratio?",2
+1778,there is the balance of net liabilities. this must not exceed its net assets and no business loss can be shown during the past two years.,1
+1779,"right, ok. that, again, shouldn't be a problem.",1
+1780,"and the total ratio of return on assets should not be lower than the average, for that particular industry, for the first two quarters of the year.",1
+1781,"well, as far as i can tell, we qualify.",1
+1782,"of course we will need proof, originals and duplicate of everything. as soon as you bring in the proof and we assess it, it should be very quick indeed.",3
+1783,do you understand any other foreign languages besides english?,2
+1784,"yes, i know a little about japanese which is similar to chinese not only in culture but in language itself.",1
+1785,what band did you pass in japanese language proficiency test?,2
+1786,"i passed the band two in lpt, but i will try to achieve band one which is the highest level.",1
+1787,what seems to the trouble mr brown?,2
+1788,"i ’ m in pretty bad shape, doctor ford.",1
+1789,"oh, in what way.",3
+1790,"no appetite, always unaged and i can ’ t sleep well.",1
+1791,did you lose any weight?,2
+1792,yes. i ’ ve lost quite a few pounds since last month.,1
+1793,when was the last time you have track up?,2
+1794,about two month ago.,1
+1795,"let me take your blood pressure. you look anilic. well, mr. brown. i ’ m happy to say it ’ s nothing serious. you just a little run down from overwork.",3
+1796,what am i suppose to do?,2
+1797,i think you ’ ll needs just vacation. try to get out doors more. i ’ ll be sure if you get more rest.,3
+1798,"thank you, doctor. i ’ ll do what you say.",4
+1799,"may i see your passport, please?",3
+1800,certainly. here it is.,4
+1801,"you are here on business, i think?",2
+1802,that's right. a german company has invited me for business talks.,1
+1803,how long will you be staying?,2
+1804,just two weeks.,1
+1805,how many pieces of baggage have you got?,2
+1806,"only one. in this case, i have a camera.",1
+1807,do you intend to take it out on your departure?,2
+1808,"yes, i do.",1
+1809,"according to the regulations, the camera you've brought along for personal use can be passed for the time being duty free, but you will have to take it out with you when you leave the country.",3
+1810,i will.,4
+1811,well. have a pleasant stay in germany.,1
+1812,thank you.,1
+1813,excuse me. what should be included in my cv?,2
+1814,"generally speaking, a cv or resume is made up of 6 parts, personal information, educational experience, practical experience, personal skills, self - evaluation and job intentions.",1
+1815,what kind of personal information?,2
+1816,"including your name, sex, date of birth, height, phone number, and so on.",1
+1817,may i come in?,3
+1818,"yes, please. i ’ m mr. peter, the director of personnel. what can i do for you?",4
+1819,"nice to meet you, mr. peter. i ’ m wang sian. i ’ ve come for an interview as requested.",3
+1820,"oh, yes. how do you do, miss wang? sit down, please.",3
+1821,thank you.,4
+1822,what was your major in school?,2
+1823,i majored in public relations.,1
+1824,have you done any work in this field?,2
+1825,"yes, after my graduation, i worked in a trade company in macao for one year.",1
+1826,what section did you work in?,2
+1827,the export business section.,1
+1828,so you must be very familiar with export procedures.,2
+1829,"yes, very much.",1
+1830,that's good.,1
+1831,"where to, ma'am?",2
+1832,the grand hotel.,1
+1833,the grand hotel?,2
+1834,yes. do you know where it is?,2
+1835,"no, madam. i don't think i do.",1
+1836,"it's the 11th avenue, park street.",1
+1837,"oh, yes. i know where it is.",1
+1838,would you like to order now?,2
+1839,yes. i'll have the shrimp cocktail to start.,1
+1840,what would you like for your main course?,3
+1841,"i'll have a steak, medium rare.",4
+1842,do you have something to read?,2
+1843,"yes, i do.",1
+1844,could you lend me one?,3
+1845,ok. here you are.,4
+1846,"thanks. it's rather cold this morning, wouldn't you say?",2
+1847,you're right.,1
+1848,do you know the news?,2
+1849,which one?,2
+1850,brazil wins the world cup.,1
+1851,"yes, i see.",1
+1852,we have the orientation this afternoon.,1
+1853,what ’ s going to be covered in the orientation?,2
+1854,"the company introduction, our mission, vision, various policies, insurances, pension plan, company id, batch, telephone, e - mail set - up and training.",1
+1855,quite a lot. all them one afternoon?,2
+1856,"yes, it is not easy.",1
+1857,it is ok with me. i enjoy being busy and learning new things.,1
+1858,"excuse me, could you please show me the way to the human resource department?",3
+1859,"yeah, but have you made an appointment ahead?",2
+1860,"yes, of course. i am monica. i have made an appointment with your hr manager.",1
+1861,"just a minute please. i ’ ll make a call to the hr office. yes, they confirm your appointment. please come in. it is on the 3rd floor, room 3106. you can take the right elevator as the left on is in maintenance today.",3
+1862,thank you very much.,4
+1863,you ’ re welcome.,1
+1864,when can you get the finished product to me?,2
+1865,we should have it put together by the end of next week.,1
+1866,great! that ’ ll be ahead of schedule! good work.,1
+1867,"well, as the saying goes – we aim to please!",1
+1868,have you got any cheaper ones?,2
+1869,here are some. they're on special sale these days.,1
+1870,that's more reasonable. i'll take this one.,3
+1871,good morning. what can i do for you?,2
+1872,i'm looking for some earrings for my wife as a wedding anniversary gift.,3
+1873,you've come to the right store. we've got a beautiful and wide selection of earrings for you to choose from.,4
+1874,i saw a pair of earrings outside your window. can you show them to me?,3
+1875,do you mean the exquisite pearl earrings?,2
+1876,exactly. how much do you want for them?,2
+1877,they're only three thousand yuan.,1
+1878,what is this setting made of?,2
+1879,"well, it's specially made of a platinum alloy, sir, and the lustre will never fade out.",1
+1880,i'ii take them. please wrap them up tor me and give me the receipt.,3
+1881,"you've made an excellent choice, sir.",4
+1882,room service.,1
+1883,"good morning. this is room 113. i'd like some breakfast, please.",3
+1884,right. excuse me. mrs. jones?,2
+1885,that's right.,1
+1886,what can i do for you?,2
+1887,"i'd like some grapefruit juice, marmalade, two scrambled eggs with two sausages, toast, and a pot of black coffee, please. how long will it take?",2
+1888,"just a few minutes, ma'am.",1
+1889,great. thank you.,1
+1890,"hi, sam. i want to buy a pet. do you have any ideas?",2
+1891,you really should go to rachel's pet store.,1
+1892,why? anything special there?,2
+1893,it's more than special. you can find as many kinds of animals as you can put a name to and more.,1
+1894,"oh, really? are there any snakes?",2
+1895,snakes? there are even rodents and monkeys! it's a world of exotic pets.,1
+1896,that's terrific. i can't wait to check it out.,1
+1897,hang on. are you sure you want to keep a non - traditional pet?,2
+1898,why not? it's so cool.,1
+1899,but it will pose a risk to your health.,1
+1900,pardon?,2
+1901,"i mean, most reptiles carry some harmful bacteria, they are likely to cause immune system problems.",1
+1902,"well, i didn't realize that.",1
+1903,"i don't believe it's a good choice to keep those pets, especially for families with young children.",1
+1904,"oh, i should have thought of my brother's baby girl. maybe i'll just have a dog instead of an exotic pet.",1
+1905,"yes, good luck, maria.",1
+1906,"hello, this is room 1205. our message lamp is flashing.",1
+1907,"hold on a minute, please.",3
+1908,thank you.,4
+1909,i am sorry to have kept you waiting. mr. johns needs a telephone call from you.,3
+1910,would you bring the message to my room.,3
+1911,i'm afraid we have nobody available at the moment.,4
+1912,then i'll come down and pick up the message immediately.,3
+1913,"ok, we wait for you.",4
+1914,guess what? i've got great news!,2
+1915,what is it?,2
+1916,"well, you know how i've been working at the economist as a proof - reader, right?",2
+1917,yes.,1
+1918,"well, the editor - in - chief heard that i had experience as an editor at another magadize and asked me if i was interested in becoming an assistant editor for him.",2
+1919,really? that's fantastic! will you get a chance to do any writing?,2
+1920,she said that the columnist for the literary criticism column would be going on pregnancy leave soon and that i could be in charge of the column until she came back.,1
+1921,wow! that's really great news. how often does the magazine come out?,2
+1922,"it's a monthly magazine, but my column will be shared with another columnist so my articles will be due fortnightly.",1
+1923,are you looking forward to doing more editing work?,2
+1924,"yes, but i'm even more excited about getting my thoughts published again!",1
+1925,do you have any order forms here so that i can get a subscription to the magazine?,2
+1926,"i don't have any with me, but i think i could manage to bring a free copy home for you.",1
+1927,i'm really looking forward to reading your column.,2
+1928,"me, too. do you want to go out to celebrate my good news?",3
+1929,"sure, where would you like to go?",2
+1930,perhaps we could go to the library festival that's going on at the local bookshop.,1
+1931,have you seen the new cosmo magazine that i was reading this morning?,2
+1932,i think i may have seen it on the kitchen table.,1
+1933,"you're right, thanks. there's an interesting interview with a top director about his latest film that i want to finish.",1
+1934,who's the director?,2
+1935,"it's martin scorsese. you liked his film, the departed, didn't you?",2
+1936,"yes, it was fantastic! can i read the article when you're finished?",3
+1937,"sure. you know it has an online edition, too. you should go online to read if you want to read it now.",4
+1938,"that's ok. i'll wait until you're finished. just out of curiosity, do you have a subscription for that magadize?",2
+1939,no. i don't buy it regularly enough for it to be worthwhile.,1
+1940,how much does the magadize cost?,2
+1941,"it's almost three pounds now, and i think they're going to put the price up to four pounds soon.",1
+1942,that's quite expensive. who is their target audience?,2
+1943,"cosmo mainly has a middle - class readership, but i think circulation will fall dramatically if the price goes up anymore.",1
+1944,"i bet you'll still buy it, though. you wouldn't be able to live without your fashion magazine!",1
+1945,wei! this is a first - you didn't bargain!,1
+1946,bargain? i'd feel way too guilty.,1
+1947,but you could have saved money.,1
+1948,"from a sweet ma?! it's not worth it. plus, i'd happily pay more for these things i bought!",2
+1949,"f. y. i., there is a flea market nearby, but maybe you're done...",3
+1950,ha! i'm just warming up! please take me there now!,4
+1951,can you help me do an internet search?,3
+1952,sure. what do you want to find?,2
+1953,i want to find information on the american civil war.,1
+1954,"well, can you be more specific? there are a lot of websites about that.",3
+1955,"yes, i want to know about the battle of gettysburg.",1
+1956,"o. k. well, go to google. com, and type in “ battle of gettysburg. ”",3
+1957,"oh wow, there are a lot of sites.",1
+1958,"here, try this one. it ’ s a good site about gettysburg.",3
+1959,thanks.,4
+1960,"for detailed information, however, you should read a history book.",3
+1961,"thanks. if i ’ m interested, i ’ ll go to the library.",4
+1962,i just have to come up for air. i ’ ve been here for too long a time.,3
+1963,ok. you ’ d better come back in two hours.,4
+1964,good afternoon. i'd like to speak with tom smith.,3
+1965,i'm afraid he's away from his desk at the moment.,4
+1966,do you know when he will be back?,2
+1967,he's away on a business trip. he won't be back until some time next week.,1
+1968,is there some way i can get into contact with him?,2
+1969,the best way to reach him is by cell phone. i'll give you his number.,3
+1970,"thanks. and could i have his e - mail, just in case i can't get him by phone?",3
+1971,"sure. his cell phone is 09112223 33. and his e - mail is lower case t, smith - - that's one word, at, c, c, w, dot, com, dot, t, w.",1
+1972,thank you so much. does he read his e - mails daily?,2
+1973,yes. he usually replies immediately.,1
+1974,great. thanks again. you've been very helpful.,1
+1975,my pleasure. i hope you get a hold of him.,1
+1976,"what seems to be the trouble, mr. brown?",2
+1977,"i'm in pretty bad shape, dr. ford.",1
+1978,"oh, in what way?",2
+1979,"no appetite, always on edge, and i can't sleep well.",1
+1980,did you lose any weight?,2
+1981,"yes, i have lost quite a few pounds since last month.",1
+1982,when was the last time you had a check - up?,2
+1983,about two month ago.,1
+1984,let me take your blood pressure. you look anemic.,1
+1985,"well, mr. brown, i'm happy to say it's nothing serious.",1
+1986,you're just a little run - down from overwork.,1
+1987,what am i supposed to do?,2
+1988,i think all you need is just a vacation.,3
+1989,try to get outdoors more and be sure to get more rest.,3
+1990,"thank you, doctor. i'll do as you say.",4
+1991,"good morning, angela, how have you been lately?",2
+1992,"morning, michael. i ’ ve been very busy lately. one of our other vendors is going out of business and i ’ ve been searching for a suitable replacement.",1
+1993,"well, rest assured that you can count on us to be here for the long run, sitdown. coffee?",2
+1994,"no, thanks. i ’ ve been trying to cut down on the caffeine.",1
+1995,"haha, i could never do that. i ’ d be a zombie if i didn ’ t have my morning coffee fix. let ’ s get down to business then.",3
+1996,"yes. i ’ ve come to talk with you about ordering the eight megapixel cameras for our new methone. the demand for phone cameras is growing, and pear has been falling behind in the market.",4
+1997,that ’ s great! i ’ m glad to hear that pear has finally jumped on the bandwagon. right now our contract is for the five megapixel cameras. is pear still interested in having those?,2
+1998,"no, we ’ re changing all the cameras to eight megapixels. we were hoping that by making your company our sole supplier for cameras we could negotiate a better deal.",1
+1999,surely. let ’ s get started by drafting a new contract.,3
+2000,can i get my dress today?,3
+2001,"you have ordered a red dress, is that right?",2
+2002,yes. is that available now?,2
+2003,"yes, here you are. try it in front of the mirror.",4
+2004,did you hear about the robbery?,2
+2005,did i hear about it? i saw it happen.,1
+2006,are you serious?,2
+2007,i was there.,1
+2008,what happened?,2
+2009,a man came into the bank with a gun.,1
+2010,that's insane.,1
+2011,i was so scared when i saw the gun.,1
+2012,then what happened?,2
+2013,he took the money and tried to get away.,1
+2014,did the cops show up in time?,2
+2015,he didn't even make it out the door.,1
+2016,hello! what are you reading about in the newspaper?,2
+2017,"hello! i was exhausted form studying, so i decided to read the newspaper to relax. unfortunately, the news is so depressing. there has been another murder in the city center. i ’ m shocked that the pole",1
+2018,people are starting to get frightened by it. everyone will be relieved when they finally catch the murder.,1
+2019,you mean if they catch the murderer. i ’ m scared stiff about going into the city center at night.,1
+2020,there must have been some good news in the newspaper. i can ’ t believe that none of the news stories make you happy or excited.,1
+2021,"well, there was one good piece of news. you remember the local girl who was dying of a rare blood disease?",2
+2022,yes. her parents were raising money to have her treated in the united states.,1
+2023,"well, they ’ ve got the money and she ’ s going tomorrow for treatment.",1
+2024,i ’ m so happy for the family! they must be very relieved and excited about that.,1
+2025,"i ’ m sure they are. oh, and a local man won the lottery. i ’ m so jealous! i wish it were me! i buy a lottery ticket every week and i ’ m amazed that i haven ’ t even won a small prize yet. it ’ s so unfair!",1
+2026,"don ’ t be moody! i hope you ’ re not tired, because we ’ ve been invited to a party this evening. i know how excited you get about parties.",1
+2027,how much is it all together?,2
+2028,let me see. the bell - bottom pants are $ 90 and the coat is $ 120. it comes to $ 210.,1
+2029,is it possible for you to reduce the price?,2
+2030,i am sorry. it's a one - price shop.,1
+2031,this is the bell captain's desk. may i help you?,3
+2032,"yes, i've been waiting for my bags to be sent up for the last half hour. where are they?",2
+2033,"i'm very sorry to hear that. may i have your name and room number, please?",3
+2034,"yes, it's yao lan. room 406.",4
+2035,and how many pieces did you have?,2
+2036,two suitcases and a handbag. the suitcases are blue and the shoulder bag is red.,1
+2037,is there a name tag attached to them?,2
+2038,"yes, there is.",1
+2039,we're very sorry for the delay. i'll check immediately and call you back.,3
+2040,are you finished?,2
+2041,yes. may i have some more beer?,3
+2042,"oh, sure. i'll be back in a minute. thank you for waiting. here it is. did you enjoy your meal?",2
+2043,"yes, the meal was very delicious and i enjoyed very much. i'm full.",1
+2044,is that so? i'm glad you enjoyed it.,2
+2045,"by the way, miss. where is the toilet?",2
+2046,toilets are in the rear. i'm afraid all the toilets are fully occupied at the moment.,1
+2047,what?,2
+2048,you look fresh recently. how do you make it?,2
+2049,i attend an aerobic class three times a week.,1
+2050,aren't you tired?,2
+2051,"no, i feel young, fresh and energetic.",1
+2052,"hello, this is liu juan speaking. is that mr. brown?",2
+2053,"no, this isn't.",1
+2054,could you please get him on the phone?,3
+2055,sure. wait a minute.,4
+2056,it's especially cold when the wind is blowing.,1
+2057,why don't you wear a scarf?,2
+2058,what can wearing one do for me?,2
+2059,you're cold because the wind is blowing into your open collar. it's not because your jacket isn't thick enough.,1
+2060,so wearing a scarf helps your body to stay warm inside your jacket.,1
+2061,yes. that's the secret to wearing a thin jacket.,1
+2062,"you know, sometimes i can't feel my ears and fingers.",1
+2063,i'll lend you my gloves and earmuffs until you get your own.,3
+2064,"thanks, pam. you're my lifesaver.",4
+2065,"hey, could you help me try and figure out how to get ready for my job interview?",3
+2066,the most important thing to do is to make sure you know the company and what services or products it provides. do you know all about them?,2
+2067,"yes, i pretty much understand the company.",1
+2068,"well, after you've done your research, you have to decide whether the company is casual or formal. have you decided what they are yet?",2
+2069,"yes, i've been observing them.",1
+2070,"when you are choosing what to wear, keep all of that in mind. have you chosen what to wear?",2
+2071,i already have something to wear.,1
+2072,i would always be ready to go shopping with you! should we talk about other basics?,3
+2073,"ok, i am ready to think of other things.",4
+2074,"you need to make sure you arrive on time, smile, be pleasant and friendly, look the person in the eye and answer all questions to the best of your ability. you'll do great!",3
+2075,is there anything i can do for you?,3
+2076,would you please show me that mural?,3
+2077,certainly. here you are.,4
+2078,it looks so beautiful. how much is it?,2
+2079,four hundred yuan.,1
+2080,that's a bit more than i wanted to pay. can you cut the price down a bit?,3
+2081,i'm sorry. ours is a fixed price shop and i can assure you this is the best price you can get for a mural like this.,4
+2082,"maybe you are right. ok, i'll take it.",3
+2083,"well, i'll have it wrapped for you.",4
+2084,thank you. here is four hundred yuan.,1
+2085,thank you. please come again.,3
+2086,it ’ s so great to be here! i ’ m so excited to help you and my daughter with your new home!,1
+2087,we ’ re glad that you ’ re here. would you like a tour of the house?,3
+2088,"that ’ d be great, but could i have a cup of tea first?",3
+2089,"sure, i ’ ll just go put the kettle on. why don ’ t you have a seat on the sofa and i ’ ll go take care of things in the kitchen.",3
+2090,"that would be lovely, thanks.",4
+2091,do you take milk or sugar with your tea?,2
+2092,"i ’ ll take a little milk, but no sugar, please. make sure you let the tea steep a few minutes before you take the tea bag out of the cup.",1
+2093,ok. what do you think about our living room?,2
+2094,"well, i do like the mantelpiece and the coffee table, but i don ’ t really care for curtains. did you get them at a yard sale? they look ancient.",2
+2095,my parents gave them to us as a house warming gift.,1
+2096,"oh dear. well, i suppose they will do for now. do you ever dust in here? it seems a bit dusty in here.",2
+2097,"your daughter usually does the dusting, and i do the vacuuming.",1
+2098,"i see. well, i can help with the chores while i ’ m here. you two could probably use my help.",3
+2099,"that ’ s very nice of you to offer. here ’ s your tea. be careful, it ’ s still quite hot.",4
+2100,"my lease ends next month, so i have to find a new place.",1
+2101,i feel sorry for you. it's a jungle out there.,1
+2102,do you know any places?,2
+2103,well. i guess i can ask around to see if anyone's got a room or apartment available.,1
+2104,thank you. i think i should also have a look at the internet to see if anyone's got a sublet.,1
+2105,how much do are you looking to spend?,2
+2106,"i can only afford about 1, 000 yuan a month.",1
+2107,looks like you'll have to get a place in the suburbs.,1
+2108,"it doesn't matter, but it needs to be close to the subway or on a convenient bus route.",1
+2109,anything you need to have in the place?,2
+2110,"i want a bedroom with full bath, and it'll be better if the bedroom is on the sunny side.",1
+2111,you can also check out university bulletin boards.,3
+2112,why? will those be students who are leaving?,2
+2113,"not really, but landlords put up notices to attract students and they often have low rent.",1
+2114,thank you. i'll be sure to take a look.,4
+2115,good luck.,1
+2116,"good afternoon, how may i help you?",2
+2117,"hi, i'd like to order some flowers.",1
+2118,who are they for?,2
+2119,they're for my wife. her name is samantha.,1
+2120,what kind of flowers would you like?,2
+2121,i don't know. i don't know too much about flowers. can you recommend something?,1
+2122,ok. what's the reason you are sending her flowers?,2
+2123,today's her birthday and she told me she wants me to buy her flowers.,1
+2124,do you know what kind of flowers she likes?,2
+2125,"i'm not sure. i know i should know that, but i can't remember right now.",1
+2126,"well, they're for your wife, so i think you should give her roses.",3
+2127,roses will be fine.,4
+2128,what color?,2
+2129,i think red would be nice.,1
+2130,do you want to pick them up or should we deliver them?,2
+2131,"can you deliver them, please?",2
+2132,what's the address?,2
+2133,241 main street.,1
+2134,"what do you think i should do, doctor?",2
+2135,why don't you try chinese herbal medicine?,3
+2136,is it useful for me?,2
+2137,you have to try at least.,3
+2138,ok. thanks a lot.,4
+2139,that's nothing.,1
+2140,what do you need today?,2
+2141,i need to take a few classes.,3
+2142,what kind of classes would you like to take?,2
+2143,how about a driver's course?,3
+2144,"okay, you're going to need to make an appointment.",4
+2145,i don't understand why i need to make an appointment.,2
+2146,you need to make one to come down and fill out your paperwork.,1
+2147,i'd like to make one now if i could.,3
+2148,sure you can ; when would you like to come in?,2
+2149,i'd like to come in tomorrow morning at 9,3
+2150,that'll be fine.,4
+2151,that's great. thank you very much.,4
+2152,"hello, thank you for calling bradford and sons. this is tracy speaking, how may i help you?",3
+2153,"hello. i would like to speak to your director of human resources, ms. jenkins, please.",3
+2154,just a moment. i'll check to see if she is at her desk. may i tell her who is calling?,2
+2155,"this is bill burton from milford insurance, i'm calling in regards to our meeting next tuesday.",3
+2156,"thank you, mr. burton. can you please hold for a moment? i'll check to see if she is available.",3
+2157,no problem.,4
+2158,"i'm sorry, ms. jenkins is away from her desk. she has already left for lunch. would you like to leave a message for her?",3
+2159,how's jimmy today?,2
+2160,"better, thank you, doctor.",1
+2161,"can i see him please, mrs williams?",3
+2162,"certainly, doctor. come upstairs.",4
+2163,"you look very well, jimmy. you are better now, but you mustn't get up yet. you must stay in bed for another two days. the boy mustn't go to school yet, mrs williams. and he mustn't eat rich food.",3
+2164,"does he have a temperature, doctor?",2
+2165,"no, he doesn ’ t.",1
+2166,must he stay in bed?,2
+2167,"yes. he must remain in bed for another two days. he can get up for about two hours each day, but you must keep the room warm. where's mr williams this evening?",2
+2168,"he's in bed, doctor. can you see him, please? he has a bad cold, too!",3
+2169,"well, tell me something of yourself.",3
+2170,"what would you like to know, mr. green?",2
+2171,what working experience have you get?,2
+2172,"in 2004, i got a job in the sales department of a trading company near guangzhou. i started a sales representative. a year later, i was promoted to the position of sales manager. i had that job ever since, which is just over a year now.",1
+2173,"oh, good. irene, can you tell me why you plan to quit being a sales manager to work here as my assistant? don't you like your present job?",2
+2174,"frankly, some part of it i enjoy very much, but i prefer something more professional. it happens that i have a friend working here in this company. she told me the export department was to recruit an assistant. i felt very excited at this news. that's why i'm here.",1
+2175,"this looks wonderful, madame culot.",1
+2176,"yes, it's very nice. all our foreign visitors enjoy it. the food is wonderfully well - prepared. let me know if you need any help with the menu.",1
+2177,thank you. mmm. can you tell me about the terrine?,3
+2178,yes. a terrine is a kind of meat pate. it's meat turned into a paste. it sounds horrible but it's actually really good.,4
+2179,mmm. maybe another time.,1
+2180,"you could try the ravioli. they are rather like your chinese dumplings, and the sauce is delicious.",1
+2181,sounds good. i think i'll have the lamb for my main course. what does it come with?,2
+2182,"well, you can have fries - french fries - or simple boiled potatoes.",1
+2183,i'll have the potatoes. what are you having?,2
+2184,i'm having my usual. i like the fish here. would you like some wine?,3
+2185,"oh, yes. that would be lovely.",4
+2186,"hi, could we have two orange juice smoothies?",3
+2187,would you like those with yogurt?,3
+2188,"sure, why not?",4
+2189,what else would you like to add? we highly recommend caterpillar fungus.,3
+2190,caterpillar fungus?! what the heck is that?,2
+2191,it ’ s a special kind of chinese herb. it ’ s good for you!,1
+2192,"wow, amy, look at that number.",3
+2193,what's so great about it?,2
+2194,what do you mean? it's a scrim.,2
+2195,"not to me, i wouldn't be caught dead in that.",1
+2196,i love that kind of stuff.,1
+2197,"yeah, you seem to like those styles.",1
+2198,sure do. i get a kick out of looking punk.,1
+2199,this one looks really expensive though.,1
+2200,i don't care how much it costs. i'm rolling in it.,1
+2201,lucky you! i can't buy anything else. i'm flat broke.,1
+2202,"i got a replace my party outfit, i trashed it last week.",1
+2203,why did you drag me into this? i've spent a week salary.,2
+2204,"are you on the level? you're the one who called me, remember?",2
+2205,"just joking, tonia. i've got some wonderful clothes. let's go and have a close look at your outfit.",3
+2206,i have just received your note which informs me that you have offered the accountant position to another candidate. may i ask why i was defeated?,2
+2207,"we have thought of you carefully with discretion, but the other candidate has more experiences.",1
+2208,"experience is important, but don't you think capability is more valuable than that?",3
+2209,"yes, i think so. but how do you prove to me that you are more capable?",2
+2210,"maybe you can hire me on trial. if i'm not qualified for the job, you can let me go.",3
+2211,good idea.,4
+2212,"excuse me, sir. is there a barber near here?",2
+2213,"yes, the nearest one is at the third cross of this road.",1
+2214,"i'm a stranger here. how can i get there, please?",2
+2215,"just walk down the road for a few minutes, and you'll find it on your right.",1
+2216,thank you very much.,1
+2217,"unfortunately, according to our regulations i have to confiscate these counterfeit notes.",3
+2218,"so, this 500 rib is worthless?",2
+2219,"i'm sorry but it is our regulation, so i must follow it. we will issue you with a receipt to show that the notes you presented us with are counterfeit and have been confiscated. then, if you wish to pay in some more cash, you are free to do so.",3
+2220,"right, i see. let me give you another 500 rib.",3
+2221,here's your passbook back and the receipt to say we confiscated the 500 rib worth of counterfeit notes.,1
+2222,thanks. now can i make the full deposit?,3
+2223,yes. please fill in a new deposit slip and we can continue.,3
+2224,"ok, honey, time to take down the christmas tree.",3
+2225,do we have to?,2
+2226,"come on, it ’ s losing needles all the time and the branches are sagging.",1
+2227,"it ’ s not that bad, besides it really looks nice in that corner. it gives the room a good atmosphere.",1
+2228,"a good atmosphere? the tree is falling apart, and it ’ s messing up the room.",2
+2229,but it makes the place feel so much like christmas. i ’ d really hate to have to take it down.,1
+2230,but christmas was two weeks ago! it ’ s been there only because we ’ ve been too busy to get rid of it.,1
+2231,"i know, but it seems like such a shame to have to take it away.",1
+2232,"but it ’ s falling apart, and the cat keeps playing with the lower branches.",1
+2233,"i know, i know. but it reminds me of the great christmas we just had. all of us were here - - my parents, your parents, the kids, and the cousins - - the food was good, and everybody got what they wanted.",1
+2234,"yeah, it was a good christmas. it won ’ t always be this good, but we can ’ t make it last longer than it should.",1
+2235,"ok, fine. we need to take down the tree.",3
+2236,"i ’ ll make a deal with you. we ’ ll leave it up until sunday, and then we ’ ll take it down after church.",4
+2237,"welcome, how may i help you today?",2
+2238,"i'm ask for a pizza, please.",3
+2239,then you will be happy to here that today all our pizzas are on sale. two for one.,3
+2240,"you're right, that is great.",4
+2241,what size would you like?,2
+2242,"medium one will be perfect, thank you",1
+2243,which kind do you want?,2
+2244,i like seafood on my pizza.,1
+2245,we have two seafood pizzas. tuna and crab.,1
+2246,tuna sounds good today.,1
+2247,would that be for here or take away?,2
+2248,that would be to go.,1
+2249,"that'll be in a ten minutes. please sit over there, and i'll call you over as sooner as it's ready.",3
+2250,no problem.,4
+2251,good afternoon. can i help you?,2
+2252,i need some remedies for an upset stomach.,3
+2253,are you also suffering from pain and fever?,2
+2254,"yes, and i also have the runs",1
+2255,"i'll give you some tablets that should make you feel better. one moment, please. here you are. take these tablets three times a day swallow them with water.",3
+2256,when should i take them?,2
+2257,take on after each meal.,1
+2258,how long should i continue taking them?,2
+2259,"take them for two days. if your symptoms persist for more than two days, you should see a doctor also, be sure to drink plenty of water to prevent dehydration.",3
+2260,thank you for your advice.,4
+2261,"ticket, please. do you have a seat preference?",2
+2262,"yes. i want a window seat definitely, in the smoking section.",3
+2263,sure. please put your baggage on scale.,4
+2264,what's the weight limit?,2
+2265,20kg. yours is not overweight. here is your boarding pass and baggage tag. please go to the satellite hall to wait for boarding.,3
+2266,thank you.,4
+2267,what time is our connecting flight?,2
+2268,"let me check. oh, oh! it ’ s at 3 : 25.",1
+2269,"wow, that's cutting it close! that means we only have 25 minutes to make the connection! what gate is it at?",2
+2270,it ’ s at... gate 14.,1
+2271,"oh, great! that ’ s at the other end of the terminal!",1
+2272,"ok, so here ’ s the plan ; when we land, run to gate 14!",1
+2273,i ’ m be right behind ya!,4
+2274,i need to get my high speed internet installed.,3
+2275,you'll need to make an appointment.,4
+2276,"could i do that right now, please?",3
+2277,what day would you like us to do the installation?,2
+2278,is friday good?,2
+2279,we're only available at 3,1
+2280,you can't come any earlier than that?,2
+2281,i'm sorry. that's the only available time.,1
+2282,are you available this saturday?,2
+2283,yes. anytime on saturday will be fine.,1
+2284,how does 11,3
+2285,we can do it. see you then.,4
+2286,it's such a nice day.,1
+2287,"yes, it is.",1
+2288,it looks like it may rain soon.,1
+2289,"yes, and i hope that it does.",1
+2290,why is that?,2
+2291,i really love how rain clears the air.,1
+2292,me too. it always smells so fresh after it rains.,1
+2293,"yes, but i love the night air after it rains.",1
+2294,really? why is that?,2
+2295,because you can see the stars perfectly.,1
+2296,i really hope it rains today.,1
+2297,"yeah, me too.",1
+2298,"can we have a table for three, please?",3
+2299,"sorry, all the tables for three are reserved.",4
+2300,"do you have a table for four, please?",3
+2301,"yes, smoking or non - smoking?",2
+2302,"we'd like a non - smoking table, please.",3
+2303,"come with me, please.",4
+2304,i'm a little rushed. is there any quicker way to get there?,2
+2305,"yeah, of course. you can take a taxi.",1
+2306,how much will that run me?,2
+2307,"it depends on traffic and distance, but it is reasonable.",1
+2308,do the drivers speak english?,2
+2309,"some are better than others. but, you shouldn't have a problem.",1
+2310,are they safe?,2
+2311,"for the most part, yes. if you don't feel comfortable with it, then it is best not to take one at night.",1
+2312,hey jimmy. let's go workout later today.,3
+2313,sure. what time do you want to go?,2
+2314,how about at 3 : 30?,3
+2315,that sounds good. today we work on legs and forearm.,4
+2316,"hey. i just played basketball earlier, so my legs are a little sore. let's work out on arms and stomach today.",3
+2317,i'm on a weekly schedule. you're messing everything up.,4
+2318,c'mon. we're only switching two days. you can do legs on friday.,3
+2319,aright. i'll meet you at the gym at 3 : 30 then.,4
+2320,i have some great news! i was able to switch to the night shift!,1
+2321,i knew everything would work out for you!,1
+2322,i got to meet the night anger today too. we got along right from the start.,1
+2323,wonderful! do you already have your work schedule?,2
+2324,"not yet, i pick it up tomorrow.",1
+2325,do you know what you will be doing yet?,2
+2326,"yes, i'll be managing the guys on the dock.",1
+2327,you're so good with people. i think they will like you!,1
+2328,"next, please. may i help you, sir?",2
+2329,"hello, yes, i ’ d like to open a bank account.",3
+2330,"certainly, i can can help you with that. what type of account would you like to open? a chequing or a savings account?",2
+2331,what what features do they offer?,2
+2332,"well, if you just take a look here, see, with our chequing account, you can have unlimited daily transactions for a small monthly fee, and our savings account has a higher interest rate, but you must carry a minimum balance of $ 10, 000 dollars.",1
+2333,"i see, well, i think i ’ m more interested in a chequing account. i like to have easy access to my money.",3
+2334,"alright, then, with this chequing account you ’ ll be issued a debit card and a cheque book. will you require overdraft protection? there is an extra fee for that.",3
+2335,"no, that won ’ t be necessary.",4
+2336,"in that case, i ’ ll get you to fill out this paperwork. i ’ ll need your social insurance number, and two pieces of government id. if you could just sign here, and here, and here. we ’ ll be all set. would you like to make a deposit today?",3
+2337,"yes, i ’ d like to deposit one billion dollars.",3
+2338,"would you check the engine, please? it is knocking.",3
+2339,sure. do you want to have the car washed?,3
+2340,"yes, please. when can you get it done?",2
+2341,"you can pick it up in half an hour. by the way, how are you going to pay, cash or credit?",2
+2342,by credit.,1
+2343,have you decided what you ’ re going to do during your holiday?,2
+2344,yes. i ’ m going to travel around europe.,1
+2345,"wow, that sounds great! where are you going?",2
+2346,i think i will start off in paris. then i ’ m going to take the train to nice and then go on to milan.,1
+2347,oh that will be lovely. you ’ ll be able to do lots of shopping i expect.,2
+2348,oh yes and try lots of new food too.,1
+2349,great. make sure you buy me a souvenir!,3
+2350,"oh, don ’ t worry, i will!",4
+2351,it ’ s nice meeting you.,1
+2352,"it ’ s nice to meet you, too.",1
+2353,i am happy to be speaking to a presidential candidate.,1
+2354,would you like to ask me anything?,3
+2355,what do you feel about gay marriage?,2
+2356,i think everyone has the right to love who they want.,1
+2357,would you legalize gay marriage?,2
+2358,"yes, i would.",1
+2359,many people won ’ t like that.,1
+2360,"i ’ m sure they won ’ t, but that ’ s my view on gay marriage.",1
+2361,i really like you.,1
+2362,i really appreciate that.,1
+2363,"hello? this is john smith. can i speak to mr. white, please?",3
+2364,this is mr. white speaking.,4
+2365,"hi. i understand that you have a house for sale, haven ’ t you?",2
+2366,yes.,1
+2367,i ’ d like to know more about it.,3
+2368,can you come to my office this afternoon at 3 o ’ clock?,3
+2369,ok. i will be there.,4
+2370,thank you for calling. goodbye.,4
+2371,bye.,1
+2372,please fill in the arrival card and sign the register.,3
+2373,all right. which room shall i have?,2
+2374,"room 202, but i'm afraid we have to ask for a deposit of $ 200.",3
+2375,"marketing manage office, can i help you?",3
+2376,"mr green, please.",3
+2377,"sorry, he's out.",4
+2378,what time you suspect back them?,2
+2379,"sorry, i am not sure, can i take a message?",3
+2380,"no, thanks. i'll call back later.",4
+2381,that's fine. please call again later.,3
+2382,"ok, thank you. goodbye.",4
+2383,"so tell me, what's the difference between the board of directors, the ceo, and the stockholders? they all seems ot be the same group of people to me...",2
+2384,"no, there's a definite difference. you know, the stockholders are the people who own the company... they're the financial control system. then there's the ceo — the chief executive officer. he's the hot shot, the main guy who is the boss. if there is only one person with absolute power in the organization, everyone knows that the power will go to their head. it's too dangerous. that's the reason for a board of directors. the board is made up of people who are experts in the industry. they could be related to the organization, but more commonly, they are independent and non - biased.",1
+2385,how many people are on the board of directors?,2
+2386,"usually not more than 15, not less than 10. they meet monthly, quarterly, or biannually to oversee an organization or company. they provide long term planing and vision, and also act as moral watchdogs rto keep the company in line.",1

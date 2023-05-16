@@ -8,6 +8,8 @@ from transformers import AutoTokenizer, AutoModelForSequenceClassification
 from explained_models.Explainer.explainer import Explainer
 import numpy as np
 
+from explained_models.ModelABC.DANetwork import DANetwork
+from explained_models.Tokenizer.tokenizer import HFTokenizer
 from utils.custom_input import generate_explanation
 
 from nltk.tokenize import sent_tokenize
@@ -109,7 +111,7 @@ def get_explanation(dataset_name, inputs, file_name="sentence_level"):
         model = AutoModelForSequenceClassification.from_pretrained("andi611/distilbert-base-uncased-qa-boolq",
                                                                    num_labels=2)
     elif dataset_name == "daily_dialog":
-        pass
+        model = DANetwork()
     elif dataset_name == "olid":
         model = AutoModelForSequenceClassification.from_pretrained("sinhala-nlp/mbert-olid-en")
     else:
@@ -141,7 +143,7 @@ def explanation_with_custom_input(conversation, topk):
     res_list = get_explanation(dataset_name, inputs)
     return_s = ""
     for res in res_list:
-        if dataset_name == "boolq":
+        if dataset_name == "boolq" or dataset_name == "daily_dialog":
             original_text = res["text"]
 
             return_s += "The original text is:  <br>"
@@ -321,7 +323,7 @@ def feature_importance_operation(conversation, parse_text, i, **kwargs):
     if name == 'boolq':
         tokenizer = AutoTokenizer.from_pretrained("andi611/distilbert-base-uncased-qa-boolq")
     elif name == "daily_dialog":
-        pass
+        tokenizer = HFTokenizer('bert-base-uncased', mode='bert').tokenizer
     else:
         tokenizer = AutoTokenizer.from_pretrained("sinhala-nlp/mbert-olid-en")
 

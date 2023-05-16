@@ -6,6 +6,8 @@ from captum.attr import LayerIntegratedGradients
 from torch.utils.data import Dataset, DataLoader
 from transformers import AutoTokenizer
 
+from explained_models.Tokenizer.tokenizer import HFTokenizer
+
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 
@@ -27,7 +29,17 @@ class CustomInputDataset(Dataset):
                 }
                 self.data.append(input_model)
         elif dataset_name == "daily_dialog":
-            pass
+            self.tokenizer = HFTokenizer('bert-base-uncased', mode='bert').tokenizer
+            for string in inputs:
+                print(string)
+                encoding = self.tokenizer.encode_plus(string, add_special_tokens=True, return_tensors='pt')
+                input_ids = encoding["input_ids"]
+                attention_mask = encoding["attention_mask"]
+                input_model = {
+                    'input_ids': input_ids.long(),
+                    'attention_mask': attention_mask.long(),
+                }
+                self.data.append(input_model)
         elif dataset_name == 'olid':
             self.tokenizer = AutoTokenizer.from_pretrained("sinhala-nlp/mbert-olid-en")
             for string in inputs:
@@ -72,8 +84,8 @@ def get_inputs_and_additional_args(batch, dataset_name):
         input_ids = batch['input_ids']
         additional_forward_args = (batch['attention_mask'].to(device))
     elif dataset_name == "daily_dialog":
-        input_ids = batch[0]
-        additional_forward_args = (batch[1].to(device))
+        input_ids = batch['input_ids']
+        additional_forward_args = (batch['attention_mask'].to(device))
     else:
         input_ids = batch['input_ids']
         additional_forward_args = (batch['attention_mask'].to(device))
@@ -94,9 +106,10 @@ def get_forward_func(dataset_name, model):
             }
         elif dataset_name == "daily_dialog":
             input_model = {
-                'input_ids': input_ids.long(),
-                'input_mask': attention_masks.long()[None, :],
+                'input_ids': input_ids.long()[0],
+                'input_mask': attention_masks.long(),
             }
+
         else:
             input_model = {
                 'input_ids': input_ids.long()[0],
@@ -104,7 +117,11 @@ def get_forward_func(dataset_name, model):
             }
 
         output_model = model(**input_model)
-        return output_model.logits
+        print("output: ", output_model)
+        if dataset_name != "daily_dialog":
+            return output_model.logits
+        else:
+            return output_model
 
     return bert_forward
 
@@ -126,17 +143,18 @@ def compute_feature_attribution_scores(batch, model, dataset_name):
     )
     pred_id = torch.argmax(predictions, dim=1)
 
-
     if dataset_name == 'boolq':
         special_tokens_mask = batch["input_ids"] * 0
         special_tokens_mask[0][0] = 1
         special_tokens_mask[0][-1] = 1
         baseline = batch["input_ids"] * special_tokens_mask
     elif dataset_name == 'daily_dialog':
-        special_tokens_mask = batch[0] * 0
-        special_tokens_mask[0][0] = 1
-        special_tokens_mask[0][-1] = 1
-        baseline = batch[0] * special_tokens_mask
+        # print("batch: ", batch)
+        # special_tokens_mask = batch["input_ids"] * 0
+        # special_tokens_mask[0][0] = 1
+        # special_tokens_mask[0][-1] = 1
+        # baseline = batch["input_ids"] * special_tokens_mask
+        baseline = torch.zeros(batch["input_ids"].shape)
     else:
         # special_tokens_mask = batch["input_ids"] * 0
         # special_tokens_mask[0][0] = 1
@@ -144,6 +162,7 @@ def compute_feature_attribution_scores(batch, model, dataset_name):
         # baseline = batch["input_ids"] * special_tokens_mask
         baseline = torch.zeros(batch["input_ids"].shape)
 
+    print("baseline:", baseline)
     explainer = LayerIntegratedGradients(forward_func=forward_func,
                                          layer=get_embedding_layer(model, dataset_name))
 
@@ -227,7 +246,18 @@ def generate_explanation(model, dataset_name, inputs, file_name="custom_input"):
             }
             json_list.append(result)
     elif dataset_name == "daily_dialog":
-        pass
+        for idx_batch, b in enumerate(dataloader):
+            attribution, predictions = compute_feature_attribution_scores(b, model, dataset_name)
+
+            attrbs = detach_to_list(attribution[0])
+            preds = torch.argmax(predictions, dim=1)
+            result = {
+                'input_ids': detach_to_list(b["input_ids"][0]),
+                "text": inputs[idx_batch],
+                'attributions': attrbs,
+                'predictions': preds.item()
+            }
+            json_list.append(result)
     elif dataset_name == "olid":
         tokenizer = AutoTokenizer.from_pretrained("sinhala-nlp/mbert-olid-en")
         for idx_batch, b in enumerate(dataloader):
@@ -237,12 +267,12 @@ def generate_explanation(model, dataset_name, inputs, file_name="custom_input"):
             preds = torch.argmax(predictions, dim=1)
             attrbs = detach_to_list(attribution[0])
             result = {
-                      "original_text": inputs[idx_batch],
-                      'text': tokenizer.convert_ids_to_tokens(b["input_ids"][0][0]),
-                      'input_ids': ids,
-                      'attributions': attrbs,
-                      'predictions': preds.item()
-                      }
+                "original_text": inputs[idx_batch],
+                'text': tokenizer.convert_ids_to_tokens(b["input_ids"][0][0]),
+                'input_ids': ids,
+                'attributions': attrbs,
+                'predictions': preds.item()
+            }
             json_list.append(result)
     else:
         pass
