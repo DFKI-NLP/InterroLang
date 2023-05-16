@@ -326,6 +326,7 @@ def get_prediction_on_temp_dataset(conversation):
         tokenizer = HFTokenizer('bert-base-uncased', mode='bert').tokenizer
     else:
         raise NotImplementedError(f"{dataset_name} is not supported!")
+    model.to(device)
 
     predictions = []
     pbar = tqdm(texts)
@@ -386,6 +387,10 @@ def predict_operation(conversation, parse_text, i, **kwargs):
     # for random prediction
     if parse_text[i + 1] == "random":
         return_s = random_prediction(model, data, conversation, text)
+        return return_s, 1
+
+    if parse_text[i + 1] == "all":
+        return_s = prediction_with_id(model, data, conversation, text)
         return return_s, 1
 
     # if id is given or predictions on whole dataset
