@@ -63,6 +63,7 @@ class ExplainBot:
                  numerical_features: list[str],
                  remove_underscores: bool,
                  name: str,
+                 text_fields: list[str],
                  parsing_model_name: str = "ucinlp/diabetes-t5-small",
                  seed: int = 0,
                  prompt_metric: str = "cosine",
@@ -131,6 +132,10 @@ class ExplainBot:
         # These are done when the dataset is loaded
         self.prompts = None
         self.parser = None
+
+
+        # Add text fields, e.g. "question" and "passage" for BoolQ
+        self.text_fields = text_fields
 
         # Set up the conversation object
         self.conversation = Conversation(eval_file_path=dataset_file_path,

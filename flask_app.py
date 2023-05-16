@@ -61,20 +61,10 @@ def home():
     objective = BOT.conversation.describe.get_dataset_objective()
 
     BOT.conversation.build_temp_dataset()
-    df = BOT.conversation.temp_dataset.contents['X']
-    f_names = list(BOT.conversation.temp_dataset.contents['X'].columns)
-
-    # only for boolq
-    entries = []
-    for j in range(5):
-        temp = {}
-        for f in f_names:
-            temp[f] = df[f][j]
-        entries.append(temp)
 
     dataset = BOT.conversation.describe.get_dataset_name()
 
-    return render_template("index.html", currentUserId="user", datasetObjective=objective, entries= entries, dataset=dataset)
+    return render_template("index.html", currentUserId="user", datasetObjective=objective, dataset=dataset)
 
 
 @bp.route("/log_feedback", methods=['POST'])
@@ -133,16 +123,52 @@ def get_bot_response():
         try:
             data = json.loads(request.data)
             if data['custom_input'] == '0':
-                app.logger.info("generating the bot response")
                 user_text = data["userInput"]
                 conversation = BOT.conversation
-                response = BOT.update_state(user_text, conversation)
-            else:
+                if user_text == "quit":
+                    app.logger.info("remove the custom input!")
+                    response = f"<b>{conversation.custom_input}</b> is not available anymore!"
+                    conversation.custom_input = None
+                    conversation.used = True
+                else:
+                    app.logger.info("generating the bot response")
+                    response = BOT.update_state(user_text, conversation)
+            elif data['custom_input'] == '1':
                 user_text = data["userInput"]
+
+                if BOT.conversation.describe.get_dataset_name() == 'boolq':
+                    if "|" in user_text:
+                        idx = user_text.find("|")
+
+                        if idx == 0:
+                            return "No question is given!"
+                        elif idx == len(user_text) - 1:
+                            return "No passage is given!"
+                        elif user_text[idx-1] == ' ' and user_text[idx+1] == '':
+                            new_str = user_text.replace('|', '')
+                            custom_input = ''
+                            for i in range(len(new_str)):
+                                if i != idx-1:
+                                    custom_input = custom_input + new_str[i]
+                        else:
+                            custom_input = user_text.replace('|', '')
+                            user_text = custom_input
+                    else:
+                        return "The separate character '|' is not included!"
+
                 BOT.conversation.custom_input = user_text
                 BOT.conversation.used = False
                 app.logger.info(f"[CUSTOM INPUT] {user_text}")
-                response = "You have given a custom input. Please enter a follow-up question or prompt!" + "<>" + "Entered custom input: " + user_text
+                response = "You have given a custom input. " \
+                           "Please enter a follow-up question or prompt! <br><br>" \
+                           "<b>[ATTENTION]</b> The entered custom input will be kept until you PRESS <b>'quit'</b>"\
+                           + "<>" + "Entered custom input: " + user_text
+            else:
+                user_text = data["userInput"]
+                BOT.conversation.include_word = user_text
+                app.logger.info(f"[INCLUDE_WORD]: {user_text}")
+                response = f"You have given the include word {user_text}. " \
+                           "Please enter a follow-up question or prompt related to include operation! <br><br>"
         except Exception as ext:
             app.logger.info(f"Traceback getting bot response: {traceback.format_exc()}")
             app.logger.info(f"Exception getting bot response: {ext}")
@@ -164,6 +190,24 @@ def custom_input():
     return custom_input
 
 
+@bp.route("/filter_dataset", methods=["POST"])
+def filter_dataset():
+    filter_text = json.loads(request.data)["filterMsgText"]
+    df = BOT.conversation.stored_vars["dataset"].contents["X"]
+    if len(filter_text) > 0:
+        filtered_df = df[df[BOT.text_fields].apply(lambda row: row.str.contains(filter_text)).any(axis=1)]
+
+        BOT.conversation.temp_dataset.contents["X"] = filtered_df
+        app.logger.info(f"{len(filtered_df)} instances of {BOT.conversation.describe.dataset_name} include the filter string '{filter_text}'")
+        final_df = filtered_df
+    else:
+        final_df = df
+    return {
+        'jsonData': final_df.to_json(orient="index"),
+        'totalDataLen': len(df)
+    }
+
+
 @bp.route("/reset_temp_dataset", methods=["Post"])
 def reset_temp_dataset():
     data = json.loads(request.data)
@@ -172,7 +216,7 @@ def reset_temp_dataset():
     # Reset the tempdataset
     BOT.conversation.build_temp_dataset()
 
-    app.logger.info("Reset temp dataset succeessfully!")
+    app.logger.info("Reset temp dataset successfully!")
 
     return "reset temp_dataset"
 
