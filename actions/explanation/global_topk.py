@@ -7,7 +7,7 @@ def global_top_k(conversation, parse_text, i, **kwargs):
     k = 3
 
     if "all" in parse_text:
-        k = 1
+        k = 10
     else:
         for item in parse_text:
             try:
