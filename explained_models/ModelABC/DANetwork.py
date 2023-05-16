@@ -1,3 +1,5 @@
+import json
+import numpy as np
 import torch
 from torch import nn
 from transformers import BertForSequenceClassification
@@ -15,9 +17,11 @@ class DANetwork(nn.Module):
         self.model_id = model_id
         self.create_model()
         if not torch.cuda.is_available():
-            self.load_state_dict(torch.load('./explained_models/da_classifier/saved_model/5e_5e-06lr', map_location=torch.device('cpu')))
+            self.load_state_dict(torch.load('./explained_models/da_classifier/saved_model/5e_5e-06lr',
+                                            map_location=torch.device('cpu')))
         else:
             self.load_state_dict(torch.load('./explained_models/da_classifier/saved_model/5e_5e-06lr'))
+        self.dataset_name = "daily_dialog"
 
     def forward(self, input_ids, input_mask):
         output = self.bert(input_ids, attention_mask=input_mask).logits
@@ -25,3 +29,22 @@ class DANetwork(nn.Module):
 
     def create_model(self):
         self.bert = BertForSequenceClassification.from_pretrained(self.model_id, num_labels=self.num_labels)
+
+    def predict(self, data, text):
+        path = f"./cache/{self.dataset_name}/ig_explainer_{self.dataset_name}_explanation.json"
+        try:
+            fileObject = open(path, "r")
+            jsonContent = fileObject.read()
+            json_list = json.loads(jsonContent)
+        except:
+            raise FileNotFoundError(f"The required cache with path {path} doesn't exist!")
+
+        if text is None:
+            temp = []
+            for item in json_list:
+                temp.append(item["label"])
+
+            return np.array(temp)
+        else:
+            res = list([json_list[text]["label"]])
+            return np.array(res)

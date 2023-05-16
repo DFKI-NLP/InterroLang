@@ -48,9 +48,9 @@ similarity: " similar"
 
 rationalize: " rationalize"
 
-predictions: prediction flag
+predictions: prediction (predictrandom)
 prediction: " predict"
-flag: " random" | " "
+predictrandom: " random"
 
 whatami: " self"
 

@@ -79,7 +79,7 @@ def score_operation(conversation, parse_text, i, **kwargs):
 
     filter_string = gen_parse_op_text(conversation)
     if len(filter_string) <= 0:
-        data_name = "the <b>all</b> the data"
+        data_name = "<b>all</b> the data"
     else:
         data_name = f"the data where <b>{filter_string}</b>"
     multi_class = True if dataset_name == 'daily_dialog' else False
