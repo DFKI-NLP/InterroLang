@@ -139,7 +139,8 @@ class ExplainBot:
         # Set up the conversation object
         self.conversation = Conversation(eval_file_path=dataset_file_path,
                                          feature_definitions=feature_definitions,
-                                         decoder=self.decoder)
+                                         decoder=self.decoder,
+                                         text_fields=text_fields)
 
         # Load the model into the conversation
         self.load_model(model_file_path, name=name)

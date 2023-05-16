@@ -1,17 +1,17 @@
 User: Could you show me the predictions on all the data?
-Parsed: predict all [E]
+Parsed: predict [E]
 
 User: Super cool system you got here.... could you show me the predictions across all the data?
-Parsed: predict all [E]
+Parsed: predict [E]
 
 User: Show the predictions on all the data
-Parsed: predict all [E]
+Parsed: predict [E]
 
 User: Show the predictions across all the instances
-Parsed: predict all [E]
+Parsed: predict [E]
 
 User: what does the model predict on all the training data
-Parsed: predict all [E]
+Parsed: predict [E]
 
 User: What do you predict for 215?
 Parsed: filter id 215 and predict [E]
@@ -42,12 +42,3 @@ Parsed: filter id 34 and predict [E]
 
 User: predict 22
 Parsed: filter id 22 and predict [E]
-
-User: Could you show the predictions on this data?
-Parsed: previousfilter and predict all [E]
-
-User: Show the predictions on this data
-Parsed: previousfilter and predict all [E]
-
-User: What does the model predict on this subset?
-Parsed: previousfilter and predict all [E]

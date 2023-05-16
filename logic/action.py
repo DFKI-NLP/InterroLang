@@ -34,11 +34,13 @@ def run_action(conversation: Conversation,
 
     return_statement = ''
 
+    parsed_text = parsed_string.split(' ')
+
     # Will rebuilt the temporary dataset if requested (i.e, for filtering from scratch)
-    if build_temp_dataset:
+    # IL: ...or if previousfilter is not part of the parse
+    if build_temp_dataset:  # and "previousfilter" not in parsed_text:
         conversation.build_temp_dataset()
 
-    parsed_text = parsed_string.split(' ')
     is_or = False
 
     for i, p_text in enumerate(parsed_text):
