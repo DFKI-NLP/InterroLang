@@ -23,6 +23,7 @@ ExplainBot.target_variable_name = "act"
 ExplainBot.categorical_features = None
 ExplainBot.numerical_features = None
 ExplainBot.remove_underscores = False
+ExplainBot.text_fields = ["dialog"]
 
 ExplainBot.prompt_metric = "cosine"
 ExplainBot.prompt_ordering = "ascending"
