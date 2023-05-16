@@ -4,9 +4,13 @@ import csv
 import random
 import time
 import numpy as np
+import torch.cuda
+from tqdm import tqdm
 from transformers import AutoModelForSequenceClassification, AutoTokenizer
 
 from actions.util_functions import gen_parse_op_text, get_parse_filter_text
+from explained_models.ModelABC.DANetwork import DANetwork
+from explained_models.Tokenizer.tokenizer import HFTokenizer
 
 
 def handle_input(parse_text):
@@ -297,6 +301,72 @@ def prediction_with_id(model, data, conversation, text):
     return return_s
 
 
+def get_prediction_on_temp_dataset(conversation):
+    data = conversation.temp_dataset.contents['X']
+    # y_true = conversation.temp_dataset.contents['y']
+    dataset_name = conversation.describe.get_dataset_name()
+
+    device = "cuda" if torch.cuda.is_available() else "cpu"
+
+    if dataset_name == 'boolq':
+        texts = []
+        for i in range(len(data)):
+            texts.append(data["question"][i] + " " + data["passage"][i])
+
+        model = AutoModelForSequenceClassification.from_pretrained("andi611/distilbert-base-uncased-qa-boolq",
+                                                                   num_labels=2)
+        tokenizer = HFTokenizer("andi611/distilbert-base-uncased-qa-boolq").tokenizer
+    elif dataset_name == 'olid':
+        texts = data['text']
+        model = AutoModelForSequenceClassification.from_pretrained("sinhala-nlp/mbert-olid-en")
+        tokenizer = AutoTokenizer.from_pretrained("sinhala-nlp/mbert-olid-en")
+    elif dataset_name == 'daily_dialog':
+        texts = data['dialog']
+        model = DANetwork()
+        tokenizer = HFTokenizer('bert-base-uncased', mode='bert').tokenizer
+    else:
+        raise NotImplementedError(f"{dataset_name} is not supported!")
+
+    predictions = []
+    pbar = tqdm(texts)
+    for text in pbar:
+        encodings = tokenizer.encode_plus(text, return_tensors='pt', max_length=512).to(device)
+
+        prediction = model(encodings['input_ids'], encodings['attention_mask'])
+
+        if dataset_name == 'boolq':
+            prediction = np.argmax(prediction.logits[0].cpu().detach().numpy())
+        elif dataset_name == "daily_dialog":
+            prediction = torch.argmax(prediction).item()
+        else:
+            prediction = np.argmax(prediction.logits[0].cpu().detach().numpy())
+        # print("prediction: ", prediction)
+        predictions.append(prediction)
+
+    class_names = conversation.class_names
+
+    if class_names is None:
+        raise ValueError("class names is not given")
+    else:
+        length = len(class_names)
+        count_ls = [0 for i in range(length)]
+
+        for i in predictions:
+            count_ls[i] += 1
+
+        return_s = 'The result of predictions on temp dataset is: <br><br>'
+        prob_ls = [round(i / len(predictions) * 100, conversation.rounding_precision) for i in count_ls]
+        return_s += "<ul>"
+        for i in range(length):
+
+            return_s += "<li>"
+            return_s += f"{prob_ls[i]}% instances are predicted as label <b>{class_names[i]}</b> <br>"
+            return_s += "</li>"
+        return_s += "</ul>"
+
+    return predictions, return_s
+
+
 def predict_operation(conversation, parse_text, i, **kwargs):
     """The prediction operation."""
     if conversation.custom_input is not None and conversation.used is False:
@@ -319,8 +389,11 @@ def predict_operation(conversation, parse_text, i, **kwargs):
         return return_s, 1
 
     # if id is given or predictions on whole dataset
-    if text is not None or len(parse_text) == 2:
+    if text is not None:
         return_s = prediction_with_id(model, data, conversation, text)
         return return_s, 1
     else:
-        raise NotImplementedError(f"The flag {parse_text[i+1]} is not supported!")
+        # prediction on the whole temp_dataset
+        predictions, return_s = get_prediction_on_temp_dataset(conversation)
+        return return_s, 1
+
