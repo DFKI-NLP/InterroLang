@@ -187,9 +187,10 @@ def get_bot_response():
                            "Please enter a follow-up question or prompt related to include operation! <br>"
 
                 # Update temp_dataset
-                df = BOT.conversation.temp_dataset.contents["X"]
-                filtered_df = df[df[BOT.text_fields].apply(lambda row: row.str.contains(user_text)).any(axis=1)]
-                BOT.conversation.temp_dataset.contents["X"] = filtered_df
+                #df = BOT.conversation.temp_dataset.contents["X"]
+                #filtered_df = df[df[BOT.text_fields].apply(lambda row: row.str.contains(user_text)).any(axis=1)]
+                #BOT.conversation.temp_dataset.contents["X"] = filtered_df
+                # Update the conversation with the parse
                 BOT.conversation.store_last_parse(f"includes '{user_text}'")
         except Exception as ext:
             app.logger.info(f"Traceback getting bot response: {traceback.format_exc()}")
