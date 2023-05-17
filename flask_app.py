@@ -168,8 +168,8 @@ def get_bot_response():
                 user_text = data["userInput"]
                 BOT.conversation.include_word = user_text
                 app.logger.info(f"[INCLUDE_WORD]: {user_text}")
-                response = f"You have given the include word <b>{user_text}</b>. " \
-                           "Please enter a follow-up question or prompt related to include operation! <br><br>"
+                response = f"You have given the include-filter string <b>{user_text}</b>. " \
+                           "Please enter a follow-up question or prompt related to include operation! <br>"
 
                 # Update temp_dataset
                 df = BOT.conversation.temp_dataset.contents["X"]

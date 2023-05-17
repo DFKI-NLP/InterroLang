@@ -30,6 +30,15 @@ def includes_operation(conversation, parse_text, i, **kwargs):
     threshold = 3  # num of words before and after the match
     max_num_of_matches = 7  # max num of words that we output as matches
     output_str = ""
+
+    # Return with empty string if filter result was already shown in a previous turn
+    last_parses = conversation.last_parse_string
+    if "previousfilter" in parse_text:
+        return output_str, 1
+    if len(last_parses) >= 2:
+        if "includes and" in last_parses[-1]:
+            return output_str, 1
+
     match_len = len(text_to_match)
     total_matches = 0
     for inum, text_input in enumerate(text_inputs):

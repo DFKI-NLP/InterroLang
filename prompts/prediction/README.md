@@ -3,7 +3,6 @@
 ### likelihood.txt
 * 2x `likelihood [E]`
 * 12x `filter id and likelihood [E]`
-* 2x `includes and likelihood [E]`
 
 Action defined in prediction/prediction_likelihood.py
 

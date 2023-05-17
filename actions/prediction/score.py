@@ -6,7 +6,7 @@ import json
 
 import numpy as np
 
-from actions.util_functions import gen_parse_op_text
+from actions.util_functions import get_parse_filter_text
 
 MAPPING = {'dummy': 0, 'inform': 1, 'question': 2, 'directive': 3, 'commissive': 4}
 
@@ -77,11 +77,7 @@ def score_operation(conversation, parse_text, i, **kwargs):
         if dataset_name == 'daily_dialog':
             y_pred = np.argmax(y_pred, axis=1)
 
-    filter_string = gen_parse_op_text(conversation)
-    if len(filter_string) <= 0:
-        data_name = "<b>all</b> the data"
-    else:
-        data_name = f"the data where <b>{filter_string}</b>"
+    data_name = get_parse_filter_text(conversation).replace('For ', '')
     multi_class = True if dataset_name == 'daily_dialog' else False
     text = conversation.describe.get_score_text(y_true,
                                                 y_pred,
