@@ -41,9 +41,9 @@ Action defined in prediction/predict.py
 * 1x `score recall macro [E]`
 * 1x `score recall weighted [E]`
 * 2x `score roc [E]`
-* 3x `includes and score accuracy [E]`
-* 1x `includes and score accuracy and score accuracy [E]`
+* 4x `includes and score accuracy [E]`
 * 1x `includes and score precision [E]`
+* 1x `includes and score recall [E]`
 * 2x `includes and score npv [E]`
 * 2x `includes and score ppv [E]`
 * 1x `includes and score sensitivity [E]`

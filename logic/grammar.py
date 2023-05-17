@@ -23,11 +23,7 @@ ndatapoints: " countdata"
 
 mistakes: mistakesword mistakestypes
 mistakesword: " mistake"
-mistakestypes: " typical" | " count" | " sample"
-
-correct: correctword correcttypes
-correctword: " correct"
-correcttypes: " typical" | " count" | " sample"
+mistakestypes: " count" | " sample"
 
 label: " label"
 
@@ -60,7 +56,7 @@ function: " function"
 score: scoreword metricword (scoresetting)
 scoreword: " score"
 metricword: " default" | " accuracy" | " f1" | " roc" | " precision" | " recall" | " sensitivity" | " specificity" | " ppv" | " npv"
-scoresetting: " micro" | " macro" | " weighted"
+scoresetting: " micro" | " macro" | " weighted" | " "
 testword: " test"
 
 followup: " followup"

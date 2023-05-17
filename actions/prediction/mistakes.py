@@ -1,11 +1,10 @@
 """Show model mistakes"""
 import gin
-import json
 import numpy as np
 from sklearn.tree import DecisionTreeClassifier
 
 from actions.util_functions import get_parse_filter_text, get_rules
-from logic.utils import read_precomputed_explanation_data
+from actions.prediction.pred_utils import get_predictions_and_labels
 
 
 def one_mistake(y_true, y_pred, conversation, intro_text):
@@ -91,30 +90,6 @@ def typical_mistakes(data, y_true, y_pred, conversation, intro_text, ids):
             return_string += rule + "<br><br>"
 
     return return_string
-
-
-def get_predictions_and_labels(name, indices):
-    """
-    Args:
-        name: dataset name
-        indices: indices of temp_dataset
-    Returns:
-        predictions and labels
-    """
-    json_list = read_precomputed_explanation_data(name)
-    y_pred, y_true, ids = [], [], []
-
-    for item in json_list:
-        if item["index_running"] in indices:
-            y_pred.append(np.argmax(item["predictions"]))
-            y_true.append(item["label"])
-            ids.append(item["index_running"])
-
-    y_pred = np.array(y_pred)
-    y_true = np.array(y_true)
-    id_array = np.array(ids)
-
-    return y_pred, y_true, id_array
 
 
 @gin.configurable
