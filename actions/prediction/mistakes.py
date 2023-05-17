@@ -1,11 +1,10 @@
 """Show model mistakes"""
-import json
-
 import gin
 import numpy as np
 from sklearn.tree import DecisionTreeClassifier
 
 from actions.util_functions import get_parse_filter_text, get_rules
+from actions.prediction.pred_utils import get_predictions_and_labels
 
 
 def one_mistake(y_true, y_pred, conversation, intro_text):
@@ -27,18 +26,21 @@ def one_mistake(y_true, y_pred, conversation, intro_text):
 
 
 def sample_mistakes(y_true, y_pred, conversation, intro_text, ids):
-    """Sample mistakes sub-operation"""
+    """Sample mistakes sub-operation
+    `mistake sample [E]`
+    """
     if len(y_true) == 1:
         return_string = one_mistake(y_true, y_pred, conversation, intro_text)
     else:
         incorrect_num = np.sum(y_true != y_pred)
         total_num = len(y_true)
         incorrect_data = ids[y_true != y_pred]
+        incorrect_str = "<details><summary>Here are the ids of instances the model predicts incorrectly:</summary>" \
+                        f"{', '.join([str(d) for d in incorrect_data])}</details>"
 
         error_rate = round(incorrect_num / total_num, conversation.rounding_precision)
         return_string = (f"{intro_text} the model is incorrect {incorrect_num} out of {total_num} "
-                         f"times (error rate {error_rate}). Here are the ids of instances the model"
-                         f" predicts incorrectly:<br><br>{incorrect_data}")
+                         f"times (error rate {error_rate}). <br>{incorrect_str}")
 
     return return_string
 
@@ -71,7 +73,9 @@ def train_tree(data, target, depth: int = 1):
 
 
 def typical_mistakes(data, y_true, y_pred, conversation, intro_text, ids):
-    """Typical mistakes sub-operation"""
+    """Typical mistakes sub-operation
+    `mistake typical [E]`
+    """
     if len(y_true) == 1:
         return_string = one_mistake(y_true, y_pred, conversation, intro_text)
     else:
@@ -88,37 +92,14 @@ def typical_mistakes(data, y_true, y_pred, conversation, intro_text, ids):
     return return_string
 
 
-def get_predictions_and_labels(name):
-    """
-    Args:
-        name: dataset name
-    Returns:
-        predictions and labels
-    """
-    data_path = f"./cache/{name}/ig_explainer_{name}_explanation.json"
-    fileObject = open(data_path, "r")
-    jsonContent = fileObject.read()
-    json_list = json.loads(jsonContent)
-    y_pred, y_true = [], []
-
-    for item in json_list:
-        y_pred.append(np.argmax(item["predictions"]))
-        y_true.append(item["label"])
-
-    y_pred = np.array(y_pred)
-    y_true = np.array(y_true)
-
-    return y_pred, y_true, len(json_list)
-
-
 @gin.configurable
 def show_mistakes_operation(conversation, parse_text, i, n_features_to_show=float("+inf"), **kwargs):
     """Generates text that shows the model mistakes."""
 
     # Get dataset name
     name = conversation.describe.get_dataset_name()
-    y_pred, y_true, length = get_predictions_and_labels(name)
-    ids = np.array([i for i in range(length)])
+    data_indices = conversation.temp_dataset.contents["X"].index.to_list()
+    y_pred, y_true, ids = get_predictions_and_labels(name, data_indices)
 
     # The filtering text
     intro_text = get_parse_filter_text(conversation)

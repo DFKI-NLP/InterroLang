@@ -2,12 +2,14 @@
 import json
 import os
 import csv
-import random
-import time
 import numpy as np
+import torch.cuda
+from tqdm import tqdm
 from transformers import AutoModelForSequenceClassification, AutoTokenizer
 
 from actions.util_functions import gen_parse_op_text, get_parse_filter_text
+from explained_models.ModelABC.DANetwork import DANetwork
+from explained_models.Tokenizer.tokenizer import HFTokenizer
 
 
 def handle_input(parse_text):
@@ -214,58 +216,6 @@ def prediction_with_custom_input(conversation):
     return return_s
 
 
-def random_prediction(model, data, conversation, text):
-    """randomly pick an instance from the dataset and make the prediction"""
-    return_s = ''
-
-    random.seed(time.time())
-    f_names = list(data.columns)
-
-    # Using random.randint doesn't work here somehow
-    random_num = random.randint(0, len(data[f_names[0]]))
-    filtered_text = ''
-
-    dataset_name = conversation.describe.get_dataset_name()
-
-    # Get the first column, also for boolq, we only need question column not passage
-    if dataset_name == "boolq":
-        for f in f_names[:2]:
-            filtered_text += data[f][random_num]
-            filtered_text += " "
-    elif dataset_name == "daily_dialog":
-        for f in f_names[:1]:
-            filtered_text += data[f][random_num]
-            filtered_text += " "
-    elif dataset_name == "olid":
-        for f in f_names[:1]:
-            filtered_text += data[f][random_num]
-            filtered_text += " "
-    else:
-        raise NotImplementedError(f"The dataset {dataset_name} is not supported!")
-
-    return_s += f"The random text is with <b>id {random_num}</b>: <br><br>"
-    return_s += "<ul>"
-    return_s += "<li>"
-    return_s += f'The text is: {filtered_text}'
-    return_s += "</li>"
-
-    return_s += "<li>"
-    if conversation.describe.get_dataset_name() != "daily_dialog":
-        model_predictions = model.predict(data, text)
-    else:
-        model_predictions = get_prediction_by_id_da(random_num)
-    if conversation.class_names is None:
-        prediction_class = str(model_predictions[random_num])
-        return_s += f"The class name is not given, the prediction class is <b>{prediction_class}</b>"
-    else:
-        class_text = conversation.class_names[model_predictions[random_num]]
-        return_s += f"The prediction is <b>{class_text}</b>."
-    return_s += "</li>"
-    return_s += "</ul>"
-
-    return return_s
-
-
 def get_prediction_by_id_da(_id):
     name = 'daily_dialog'
     data_path = f"./cache/{name}/ig_explainer_{name}_prediction.json"
@@ -286,34 +236,109 @@ def prediction_with_id(model, data, conversation, text):
 
     filter_string = gen_parse_op_text(conversation)
 
-    if model_predictions.size == 1:
-        return_s += f"The instance with <b>{filter_string}</b> is predicted "
-        if conversation.class_names is None:
-            prediction_class = str(model_predictions[0])
-            return_s += f"<b>{prediction_class}</b>"
-        else:
-            class_text = conversation.class_names[model_predictions[0]]
-            return_s += f"<b>{class_text}</b>."
+    return_s += f"The instance with <b>{filter_string}</b> is predicted "
+    if conversation.class_names is None:
+        prediction_class = str(model_predictions[0])
+        return_s += f"<b>{prediction_class}</b>"
     else:
-        intro_text = get_parse_filter_text(conversation)
-        return_s += f"{intro_text} the model predicts:"
-        unique_preds = np.unique(model_predictions)
-        return_s += "<ul>"
-        for j, uniq_p in enumerate(unique_preds):
-            return_s += "<li>"
-            freq = np.sum(uniq_p == model_predictions) / len(model_predictions)
-            round_freq = str(round(freq * 100, conversation.rounding_precision))
+        class_text = conversation.class_names[model_predictions[0]]
+        return_s += f"<b>{class_text}</b>."
 
-            if conversation.class_names is None:
-                return_s += f"<b>class {uniq_p}</b>, {round_freq}%"
-            else:
-                class_text = conversation.class_names[uniq_p]
-                return_s += f"<b>{class_text}</b>, {round_freq}%"
+    return_s += "<br>"
+    return return_s
+
+
+def prediction_on_dataset(model, data, conversation, text):
+    """Get the predictions on multiple instances (entire dataset or subset of length > 1)"""
+    return_s = ''
+    model_predictions = model.predict(data, text)
+
+    intro_text = get_parse_filter_text(conversation)
+    return_s += f"{intro_text} the model predicts:"
+    unique_preds = np.unique(model_predictions)
+    return_s += "<ul>"
+    for j, uniq_p in enumerate(unique_preds):
+        return_s += "<li>"
+        freq = np.sum(uniq_p == model_predictions) / len(model_predictions)
+        round_freq = str(round(freq * 100, conversation.rounding_precision))
+
+        if conversation.class_names is None:
+            return_s += f"<b>class {uniq_p}</b>, {round_freq}%"
+        else:
+            class_text = conversation.class_names[uniq_p]
+            return_s += f"<b>{class_text}</b>, {round_freq}%"
+        return_s += "</li>"
+    return_s += "</ul>"
+
+    return_s += "<br>"
+    return return_s
+
+
+def get_prediction_on_temp_dataset(conversation):
+    data = conversation.temp_dataset.contents['X']
+    # y_true = conversation.temp_dataset.contents['y']
+    dataset_name = conversation.describe.get_dataset_name()
+
+    device = "cuda" if torch.cuda.is_available() else "cpu"
+
+    if dataset_name == 'boolq':
+        texts = []
+        for i in range(len(data)):
+            texts.append(data["question"][i] + " " + data["passage"][i])
+
+        model = AutoModelForSequenceClassification.from_pretrained("andi611/distilbert-base-uncased-qa-boolq",
+                                                                   num_labels=2)
+        tokenizer = HFTokenizer("andi611/distilbert-base-uncased-qa-boolq").tokenizer
+    elif dataset_name == 'olid':
+        texts = data['text']
+        model = AutoModelForSequenceClassification.from_pretrained("sinhala-nlp/mbert-olid-en")
+        tokenizer = AutoTokenizer.from_pretrained("sinhala-nlp/mbert-olid-en")
+    elif dataset_name == 'daily_dialog':
+        texts = data['dialog']
+        model = DANetwork()
+        tokenizer = HFTokenizer('bert-base-uncased', mode='bert').tokenizer
+    else:
+        raise NotImplementedError(f"{dataset_name} is not supported!")
+    model.to(device)
+
+    predictions = []
+    pbar = tqdm(texts)
+    for text in pbar:
+        encodings = tokenizer.encode_plus(text, return_tensors='pt', max_length=512).to(device)
+
+        prediction = model(encodings['input_ids'], encodings['attention_mask'])
+
+        if dataset_name == 'boolq':
+            prediction = np.argmax(prediction.logits[0].cpu().detach().numpy())
+        elif dataset_name == "daily_dialog":
+            prediction = torch.argmax(prediction).item()
+        else:
+            prediction = np.argmax(prediction.logits[0].cpu().detach().numpy())
+        # print("prediction: ", prediction)
+        predictions.append(prediction)
+
+    class_names = conversation.class_names
+
+    if class_names is None:
+        raise ValueError("class names is not given")
+    else:
+        length = len(class_names)
+        count_ls = [0 for i in range(length)]
+
+        for i in predictions:
+            count_ls[i] += 1
+
+        return_s = 'The result of predictions on temp dataset is: <br><br>'
+        prob_ls = [round(i / len(predictions) * 100, conversation.rounding_precision) for i in count_ls]
+        return_s += "<ul>"
+        for i in range(length):
+
+            return_s += "<li>"
+            return_s += f"{prob_ls[i]}% instances are predicted as label <b>{class_names[i]}</b> <br>"
             return_s += "</li>"
         return_s += "</ul>"
-    return_s += "<br>"
 
-    return return_s
+    return predictions, return_s
 
 
 def predict_operation(conversation, parse_text, i, **kwargs):
@@ -332,18 +357,12 @@ def predict_operation(conversation, parse_text, i, **kwargs):
 
     text = handle_input(parse_text)
 
-    # for random prediction
-    if parse_text[i + 1] == "random":
-
-        if len(data) != 1:
-            return_s = random_prediction(model, data, conversation, text)
-        else:  # if filter id already applied, random cannot be used
-            return_s = prediction_with_id(model, data, conversation, text)
-        return return_s, 1
-
-    # if id is given or predictions on whole dataset
-    if text is not None or len(parse_text) == 2:
+    if len(data) == 1:
+        # `filter id and predict [E]`
         return_s = prediction_with_id(model, data, conversation, text)
-        return return_s, 1
     else:
-        raise NotImplementedError(f"The flag {parse_text[i+1]} is not supported!")
+        # `predict [E]`
+        return_s = prediction_on_dataset(model, data, conversation, text)
+        #_, return_s = get_prediction_on_temp_dataset(conversation)
+
+    return return_s, 1

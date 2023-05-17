@@ -64,7 +64,7 @@ def get_predictions_and_probabilities(name, instance_id, dataset_name, conversat
 
 def predict_likelihood(conversation, parse_text, i, **kwargs):
     """The prediction likelihood operation."""
-    # filter id 15 and likelihood [E]
+    # `filter id 15 and likelihood [E]`
 
     # Get the dataset name
     name = conversation.describe.get_dataset_name()

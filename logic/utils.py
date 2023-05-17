@@ -1,6 +1,7 @@
 """Utils"""
 
 import gin
+import json
 import openai
 import pandas as pd
 from os import listdir
@@ -65,6 +66,20 @@ def read_and_format_data(filepath,
         cat_features, num_features = get_numeric_categorical(dataset)
 
     return dataset, y_values, cat_features, num_features
+
+
+def read_precomputed_explanation_data(dataset_name):
+    if dataset_name == 'daily_dialog':
+        path = f"./cache/{dataset_name}/ig_explainer_{dataset_name}_prediction.json"
+    else:
+        path = f"./cache/{dataset_name}/ig_explainer_{dataset_name}_explanation.json"
+    try:
+        fileObject = open(path, "r")
+        jsonContent = fileObject.read()
+        json_list = json.loads(jsonContent)
+    except:
+        raise FileNotFoundError(f"The required cache with path {path} doesn't exist!")
+    return json_list
 
 
 def setup_gpt3():

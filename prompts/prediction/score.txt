@@ -116,7 +116,7 @@ User: what's the accuracy performance of the model on the training data for text
 Parsed: includes and score accuracy [E]
 
 User: for {span}, how well, in terms of accuracy, does the model do on the training and test data
-Parsed: includes and score accuracy and score accuracy [E]
+Parsed: includes and score accuracy [E]
 
 User: what's the npv on {span}?
 Parsed: includes and score npv [E]
@@ -126,6 +126,9 @@ Parsed: includes and score npv [E]
 
 User: could you tell me the precision on the training data for {span}
 Parsed: includes and score precision [E]
+
+User: give me the recall score for the {span} subset
+Parsed: includes and score recall [E]
 
 User: what's the positive predictive value on {span}?
 Parsed: includes and score ppv [E]

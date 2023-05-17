@@ -178,12 +178,19 @@ def get_bot_response():
                            "Please enter a follow-up question or prompt! <br><br>" \
                            "<b>[ATTENTION]</b> The entered custom input will be kept until you PRESS <b>'quit'</b>"\
                            + "<>" + "Entered custom input: " + user_text
+                BOT.conversation.store_last_parse(f"custominput '{user_text}'")
             else:
                 user_text = data["userInput"]
                 BOT.conversation.include_word = user_text
                 app.logger.info(f"[INCLUDE_WORD]: {user_text}")
-                response = f"You have given the include word {user_text}. " \
-                           "Please enter a follow-up question or prompt related to include operation! <br><br>"
+                response = f"You have given the include-filter string <b>{user_text}</b>. " \
+                           "Please enter a follow-up question or prompt related to include operation! <br>"
+
+                # Update temp_dataset
+                df = BOT.conversation.temp_dataset.contents["X"]
+                filtered_df = df[df[BOT.text_fields].apply(lambda row: row.str.contains(user_text)).any(axis=1)]
+                BOT.conversation.temp_dataset.contents["X"] = filtered_df
+                BOT.conversation.store_last_parse(f"includes '{user_text}'")
         except Exception as ext:
             app.logger.info(f"Traceback getting bot response: {traceback.format_exc()}")
             app.logger.info(f"Exception getting bot response: {ext}")

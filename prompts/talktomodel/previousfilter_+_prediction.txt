@@ -121,6 +121,15 @@ Parsed: previousfilter and predict [E]
 User: what are the predictions for this data point
 Parsed: previousfilter and predict [E]
 
+User: Could you show the predictions on this data?
+Parsed: previousfilter and predict [E]
+
+User: Show the predictions on this data
+Parsed: previousfilter and predict [E]
+
+User: What does the model predict on this subset?
+Parsed: previousfilter and predict [E]
+
 User: accuracy on the previous slice of data
 Parsed: previousfilter and score accuracy [E]
 

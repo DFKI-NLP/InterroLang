@@ -1,7 +1,7 @@
 GRAMMAR = r"""
 ?start: action
 action: operation done | operation join action | followup done
-operation: explanation | filter | predictions | whatami | lastturnfilter | lastturnop | data | impfeatures | show | likelihood | modeldescription | function | score | ndatapoints | label | mistakes | fstats | define | labelfilter | predfilter | includes | globaltopk | cfe | similarity | rationalize
+operation: explanation | filter | predictions | whatami | lastturnfilter | lastturnop | data | impfeatures | show | likelihood | modeldescription | function | score | ndatapoints | label | mistakes | fstats | define | labelfilter | predfilter | includes | globaltopk | cfe | similarity | rationalize | randomprediction
 
 cfe: " cfe" cfefeature
 cfefeature: {availablefeaturetypes} | " "
@@ -23,11 +23,7 @@ ndatapoints: " countdata"
 
 mistakes: mistakesword mistakestypes
 mistakesword: " mistake"
-mistakestypes: " typical" | " count" | " sample"
-
-correct: correctword correcttypes
-correctword: " correct"
-correcttypes: " typical" | " count" | " sample"
+mistakestypes: " count" | " sample"
 
 label: " label"
 
@@ -48,9 +44,8 @@ similarity: " similar"
 
 rationalize: " rationalize"
 
-predictions: prediction (predictrandom)
-prediction: " predict"
-predictrandom: " random"
+predictions: " predict"
+randomprediction: " randompredict"
 
 whatami: " self"
 
@@ -61,7 +56,7 @@ function: " function"
 score: scoreword metricword (scoresetting)
 scoreword: " score"
 metricword: " default" | " accuracy" | " f1" | " roc" | " precision" | " recall" | " sensitivity" | " specificity" | " ppv" | " npv"
-scoresetting: " micro" | " macro" | " weighted"
+scoresetting: " micro" | " macro" | " weighted" | " "
 testword: " test"
 
 followup: " followup"
