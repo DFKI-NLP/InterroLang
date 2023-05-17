@@ -5,7 +5,7 @@ it returns the mean.
 """
 import gin
 
-from actions.util_functions import gen_parse_op_text
+from actions.util_functions import get_parse_filter_text
 from typing import List
 
 
@@ -48,11 +48,7 @@ def show_operation(conversation, parse_text, i, n_features_to_show=float("+inf")
     """Generates text that shows an instance."""
     data = conversation.temp_dataset.contents['X']
 
-    parse_op = gen_parse_op_text(conversation)
-    if len(parse_op) > 0:
-        intro_text = f"For the data with <b>{parse_op}</b>,"
-    else:
-        intro_text = "For all the instances in the data,"
+    intro_text = get_parse_filter_text(conversation)
     rest_of_info_string = "The rest of the features are<br><br>"
     init_len = len(rest_of_info_string)
     if len(data) == 0:

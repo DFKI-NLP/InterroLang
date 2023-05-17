@@ -1,6 +1,7 @@
 """Utils"""
 
 import gin
+import json
 import openai
 import pandas as pd
 from os import listdir
@@ -67,6 +68,20 @@ def read_and_format_data(filepath,
     return dataset, y_values, cat_features, num_features
 
 
+def read_precomputed_explanation_data(dataset_name):
+    if dataset_name == 'daily_dialog':
+        path = f"./cache/{dataset_name}/ig_explainer_{dataset_name}_prediction.json"
+    else:
+        path = f"./cache/{dataset_name}/ig_explainer_{dataset_name}_explanation.json"
+    try:
+        fileObject = open(path, "r")
+        jsonContent = fileObject.read()
+        json_list = json.loads(jsonContent)
+    except:
+        raise FileNotFoundError(f"The required cache with path {path} doesn't exist!")
+    return json_list
+
+
 def setup_gpt3():
     with open('openai_key.txt', 'r') as f:
         key = f.readline().strip()
@@ -93,6 +108,8 @@ def get_numeric_categorical(data, threshold=0.95, top_n=10):
     This function uses the ratio of unique values to total values"""
     cat, num = [], []
 
+    # leave these columns empty
+    """
     for var in data.columns:
         # From https://stackoverflow.com/questions/35826912/
         # what-is-a-good-heuristic-to-detect-if-a-column-in-a-pandas-dataframe-is-categori
@@ -100,6 +117,7 @@ def get_numeric_categorical(data, threshold=0.95, top_n=10):
             cat.append(var)
         else:
             num.append(var)
+    """
     return cat, num
 
 

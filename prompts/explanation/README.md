@@ -1,5 +1,13 @@
 # explanation
 
+## Counterfactuals
+
+### adversarial.txt
+* 5x `filter id and adversarial [E]`
+* 14x `filter id and adversarial [E]` (**GPT-4 generated**)
+
+Action defined in explanation/adversarial.py
+
 ### cfe.txt
 * 17x `filter id and explain cfe [E]`
 * 1x `filter id and predict and explain cfe [E]`
@@ -9,12 +17,12 @@
 Action defined in explanation/cfe_generation.py
 
 
+## Feature Importance
+
 ### global_feature_importance.txt
 * 21x `important all [E]`
 * 9x `important {classname} [E]`
 * 11x `important topk [E]`
-* 19x `includes {span} and important all [E]`
-* 3x `includes {span} and important topk [E]`
 
 Action defined in explanation/topk.py
 
@@ -43,10 +51,10 @@ Action defined in explanation/feature_importance.py
 * 6x `nlpattribute topk [E]`
 
 
+## Rationalization
+
 ### rationalize.txt
 * 4x `filter id and rationalize [E]`
-
-**GPT-4 generated**
-* 20x `filter id and rationalize [E]`
+* 20x `filter id and rationalize [E]` (**GPT-4 generated**)
 
 Action defined in explanation/rationalize.py

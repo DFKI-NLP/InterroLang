@@ -2,13 +2,13 @@
 from copy import deepcopy
 
 from actions.filter.filter import filter_operation
-#from actions.what_if import what_if_operation
+from actions.filter.includes_token import includes_operation
 
 
 def get_most_recent_filter(operations):
     for op in operations:
         for word in op.split(' '):
-            if "filter" == word or "previousfilter" == word or "predictionfilter" == word or "labelfilter" == word:
+            if word in ["filter", "previousfilter", "predictionfilter", "labelfilter", "includes"]:
                 return op
     return None
 
@@ -42,10 +42,10 @@ def last_turn_filter(conversation, parse_text, i, **kwargs):
     # like explanations or predictions will be run
     just_filter_op = {
         "filter": filter_operation,
-        #"change": what_if_operation,
         "previousfilter": last_turn_filter,
         "predictionfilter": filter_operation,
-        "labelfilter": filter_operation
+        "labelfilter": filter_operation,
+        "includes": includes_operation,
     }
 
     # Run action here

@@ -61,6 +61,7 @@ class Conversation:
                  eval_file_path: str = None,
                  feature_definitions: dict = None,
                  decoder = None,
+                 text_fields: list[str] = None,
         ):
         """
 
@@ -101,6 +102,9 @@ class Conversation:
 
         self.custom_input = None
         self.used = True
+
+        self.include_word = None
+        self.text_fields = text_fields
 
     def get_feature_definition(self, feature_name):
         """Gets semantic feature definition."""

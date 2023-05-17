@@ -1,7 +1,7 @@
 GRAMMAR = r"""
 ?start: action
 action: operation done | operation join action | followup done
-operation: explanation | filter | predictions | whatami | lastturnfilter | lastturnop | data | impfeatures | show | whatif | likelihood | modeldescription | function | score | ndatapoints | label | mistakes | fstats | define | labelfilter | predfilter | includes | globaltopk | cfe | similarity | rationalize | adversarial
+operation: explanation | filter | predictions | whatami | lastturnfilter | lastturnop | data | impfeatures | show | likelihood | modeldescription | function | score | ndatapoints | label | mistakes | fstats | define | labelfilter | predfilter | includes | globaltopk | adversarial | cfe | similarity | rationalize | randomprediction
 
 adversarial: " adversarial"
 
@@ -9,7 +9,7 @@ cfe: " cfe" cfefeature
 cfefeature: {availablefeaturetypes} | " "
 
 globaltopk: globaltopkword
-globaltopkword: " important" (classname)
+globaltopkword: " important" (classname | " all" | topk)
 classname: " true" | " false"
 
 labelfilter: " labelfilter" class
@@ -25,11 +25,7 @@ ndatapoints: " countdata"
 
 mistakes: mistakesword mistakestypes
 mistakesword: " mistake"
-mistakestypes: " typical" | " count" | " sample"
-
-correct: correctword correcttypes
-correctword: " correct"
-correcttypes: " typical" | " count" | " sample"
+mistakestypes: " count" | " sample"
 
 label: " label"
 
@@ -50,9 +46,8 @@ similarity: " similar"
 
 rationalize: " rationalize"
 
-predictions: prediction flag
-prediction: " predict"
-flag: " random" | " "
+predictions: " predict"
+randomprediction: " randompredict"
 
 whatami: " self"
 
@@ -60,15 +55,13 @@ data: " data"
 modeldescription: " model"
 function: " function"
 
-score: scoreword metricword
+score: scoreword metricword (scoresetting)
 scoreword: " score"
 metricword: " default" | " accuracy" | " f1" | " roc" | " precision" | " recall" | " sensitivity" | " specificity" | " ppv" | " npv"
+scoresetting: " micro" | " macro" | " weighted" | " "
 testword: " test"
 
 followup: " followup"
-
-whatif: whatifword ( ( numfeaturenames numupdates adhocnumvalues ) | catnames )
-whatifword: " change"
 
 show: " show"
 

@@ -1,0 +1,16 @@
+create_conversation.class_names = {0: 'dummy', 1: 'inform', 2: 'question', 3: 'directive', 4: 'commissive'}
+
+
+create_conversation.dataset_file_path = "./data/da_test_set_with_indices.csv"
+create_conversation.name = "daily_dialog"
+create_conversation.dataset_index_column = "idx"
+create_conversation.target_variable_name = "act"
+create_conversation.categorical_features = None
+create_conversation.numerical_features = None
+create_conversation.remove_underscores = False
+
+create_conversation.dataset_objective = "predict to dialogue acts based on conversations"
+create_conversation.dataset_description = "reflect the daily communication way and cover various topics about the daily life"
+create_conversation.model_description = "bert-base-uncased"
+
+create_conversation.model_file_path = "./explained_models/da_classifier/saved_model/5e_5e-06lr"

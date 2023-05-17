@@ -31,8 +31,21 @@ def convert_categorical_bools(data):
 def get_parse_filter_text(conversation: Conversation):
     """Gets the starting parse text."""
     parse_op = gen_parse_op_text(conversation)
+    temp_dataset_size = len(conversation.temp_dataset.contents["X"])
+    full_dataset_size = len(conversation.stored_vars["dataset"].contents["X"])
+
     if len(parse_op) > 0:
         intro_text = f"For the data with <b>{parse_op}</b>,"
+    elif temp_dataset_size < full_dataset_size:
+        last_filter_candidate = None
+        subset_size_str = f"({temp_dataset_size} out of {full_dataset_size}),"
+        for parse in conversation.last_parse_string:
+            if "includes '" in parse:
+                last_filter_candidate = f"For the data including <b>{conversation.include_word}</b> {subset_size_str}"
+            # TODO: Account for other types of filters, e.g. predictionfilter and labelfilter
+        if not last_filter_candidate:
+            last_filter_candidate = f"For this <b>subset</b> of the data {subset_size_str}"
+        intro_text = last_filter_candidate
     else:
         intro_text = "For <b>all</b> the instances in the data,"
     return intro_text
