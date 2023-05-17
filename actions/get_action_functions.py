@@ -61,12 +61,15 @@ def get_all_action_functions_map():
         'labelfilter': filter_operation,
         'includes': includes_operation,
         'similar': similar_instances_operation,
+        'similarity': similar_instances_operation,
         'topic': topic_operation,
         'sentiment': sentiment_operation,
         'rationalize': rationalize_operation,
         'nlpattribute': feature_importance_operation,
+        'globaltopk': global_top_k,
         'important': global_top_k,
         'cfe': counterfactuals_operation,
-        "adversarial": adversarial_operation
+        'newcfe': counterfactuals_operation,
+        'adversarial': adversarial_operation
     }
     return actions

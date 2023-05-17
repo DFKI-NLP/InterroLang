@@ -4,6 +4,7 @@ The file contains a representation of the conversation. The conversation
 class contains routines to write variable to the conversation, read those
 variables and print a representation of them.
 """
+import ast
 import copy
 import gin
 import pandas as pd
@@ -106,6 +107,8 @@ class Conversation:
         self.include_word = None
         self.text_fields = text_fields
 
+        self.needs_clarification = False
+
     def get_feature_definition(self, feature_name):
         """Gets semantic feature definition."""
         if feature_name not in self.feature_definitions or self.feature_definitions is None:
@@ -146,14 +149,40 @@ class Conversation:
                     data: pd.DataFrame,
                     y_value: Series,
                     categorical: list[str],
-                    numeric: list[str]):
+                    numeric: list[str],
+                    dataset_name: str = "boolq"):
         """Stores data as the dataset in the conversation."""
+        if not ("text" in data.columns):
+            text_data = []
+            # add the "text" field for each dataset
+            # hate speech data already have it
+            if "dialog" in data.columns:
+                text_data = [" ".join(ast.literal_eval(txt)) for txt in data["dialog"]]
+            elif "question" in data.columns and "passage" in data.columns:
+                for cidx in range(len(data["question"])):
+                    text_data.append(data["question"][cidx]+" "+data["passage"][cidx])
+            else:
+                raise Exception("There is no text column in the data!")
+            data.insert(0, "text", text_data)
+
+        if dataset_name=="dailydialog":
+            id2label = {0:'dummy', 1:'inform', 2:'question', 3:'directive', 4:'commissive'}
+        elif dataset_name=="boolq":
+            id2label = {0:"False", 1:"True"}
+        elif dataset_name=="olid":
+            id2label = {0:"NO", 1:"OFF"} # TODO: check with CO
+        else:
+            id2label = dict()
+
         dataset = {
+            'dataset_name': dataset_name,
             'X': data,
             'y': y_value,
             'cat': categorical,
             'numeric': numeric,
-            'ids_to_regenerate': []
+            'ids_to_regenerate': [],
+            'id2label': id2label,
+            'index': data.index,
         }
         var = Variable(name='dataset', contents=dataset, kind='dataset')
         self._store_var(var)
