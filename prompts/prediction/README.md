@@ -7,10 +7,10 @@
 Action defined in prediction/prediction_likelihood.py
 
 ### mistakes.txt
+* 5x `mistake count [E]`
 * 5x `mistake sample [E]`
-* 4x `mistake typical [E]`
+* 2x `includes and mistake count [E]`
 * 9x `includes and mistake sample [E]`
-* 7x `includes and mistake typical [E]`
 
 Action defined in prediction/mistakes.py
 

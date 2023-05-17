@@ -37,7 +37,7 @@ def sample_mistakes(y_true, y_pred, conversation, intro_text, ids):
         total_num = len(y_true)
         incorrect_data = ids[y_true != y_pred]
         incorrect_str = "<details><summary>Here are the ids of instances the model predicts incorrectly:</summary>" \
-                        f"{', '.join(incorrect_data)}</details>"
+                        f"{', '.join([str(d) for d in incorrect_data])}</details>"
 
         error_rate = round(incorrect_num / total_num, conversation.rounding_precision)
         return_string = (f"{intro_text} the model is incorrect {incorrect_num} out of {total_num} "
