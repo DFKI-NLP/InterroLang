@@ -1,0 +1,51 @@
+##########################################
+# The boolq dataset conversation config
+##########################################
+
+# for few shot, e.g., "EleutherAI/gpt-neo-2.7B"
+ExplainBot.parsing_model_name = "nearest-neighbor"
+
+
+
+# set skip_prompts to true for quicker startup for finetuned models
+# make sure to set to false using few-shot models
+ExplainBot.skip_prompts = False
+
+ExplainBot.t5_config = "./parsing/t5/gin_configs/t5-large.gin"
+ExplainBot.seed = 0
+ExplainBot.background_dataset_file_path = "./data/boolq_train.csv"
+ExplainBot.model_file_path = "./data/boolq_model"
+ExplainBot.dataset_file_path = "./data/boolq_validation.csv"
+
+ExplainBot.name = "boolq"
+
+ExplainBot.dataset_index_column = "idx"
+ExplainBot.target_variable_name = "label"
+ExplainBot.categorical_features = None
+ExplainBot.numerical_features = None
+ExplainBot.remove_underscores = False
+ExplainBot.text_fields = ["question", "passage"]
+
+ExplainBot.prompt_metric = "cosine"
+ExplainBot.prompt_ordering = "ascending"
+
+# Prompt params
+Prompts.prompt_cache_size = 1_000_000
+Prompts.prompt_cache_location = "./cache/boolq-prompts.pkl"
+Prompts.max_values_per_feature = 2
+Prompts.sentence_transformer_model_name = "all-mpnet-base-v2"
+Prompts.prompt_folder = "./prompts"
+Prompts.num_per_knn_prompt_template = 1
+Prompts.num_prompt_template = 7
+
+# Explanation Params
+
+# Conversation params
+Conversation.class_names = {1: "True", 0: "False"}
+
+# Dataset description
+DatasetDescription.dataset_objective = "predict to answer yes/no questions based on text passages"
+DatasetDescription.dataset_description = "Boolean question answering (yes/no)"
+DatasetDescription.model_description = "DistilBERT"
+
+DatasetDescription.name = "boolq"
