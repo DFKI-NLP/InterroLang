@@ -1,28 +1,24 @@
 """Data augmentation operation."""
-import string
-
 import nlpaug.augmenter.word as naw
+
 
 word_aug = naw.ContextualWordEmbsAug(model_path='bert-base-cased', action="substitute")
 
 def augment_operation(conversation, parse_text, i, **kwargs):
     """Data augmentation."""
-    model = conversation.get_var('model').contents
-    parsed_id = ""
-    if len(parse_text)>0:
-        parsed_id = parse_text[i+1]
-    while parsed_id[-1] in string.punctuation:
-        parsed_id = parsed_id[:-1]
-    if parsed_id.isdigit():
-        id_val = int(parsed_id)
-    else:
+
+    assert len(conversation.temp_dataset.contents["X"]) == 1
+
+    try:
+        id_val = conversation.temp_dataset.contents["X"].index[0]
+    except ValueError:
         return "Sorry, invalid id", 1
 
-    dataset = conversation.get_var('dataset').contents["dataset_name"]
-    if dataset=="boolq":
-        instance = conversation.get_var('dataset').contents["X"].iloc[id_val]["passage"]
+    dataset = conversation.describe.get_dataset_name()
+    if dataset == "boolq":
+        instance = conversation.get_var("dataset").contents["X"].iloc[id_val]["passage"]
     else:
-        instance = conversation.get_var('dataset').contents["X"].iloc[id_val]["text"]
+        instance = conversation.get_var("dataset").contents["X"].iloc[id_val]["text"]
 
     word_aug_instance = word_aug.augment(instance, n=1)
     
@@ -31,8 +27,8 @@ def augment_operation(conversation, parse_text, i, **kwargs):
     word_aug_instance = highlight_changed_tokens(instance_tok, word_aug_instance_tok)
 
     return_s = ""
-    return_s += "<b>Original text:</b><br>"+instance+"</br>"
-    return_s += "<b>Augmentation by word replacements:</b><br>"+word_aug_instance+"<br>"
+    return_s += f"<b>Original text:</b> (ID {id_val})<br>" + instance + "</br>"
+    return_s += "<b>Augmentation by word replacements:</b><br>" + word_aug_instance + "<br>"
     return return_s, 1
 
 def highlight_changed_tokens(orig_tokens, aug_tokens):
