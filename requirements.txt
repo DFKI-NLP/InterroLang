@@ -99,3 +99,4 @@ Werkzeug==2.0.3
 word2number==1.1
 wordninja==2.0.0
 OpenAttack==2.1.1
+nlpaug==1.1.10
