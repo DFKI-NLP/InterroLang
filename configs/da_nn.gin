@@ -1,5 +1,5 @@
 ##########################################
-# The olid dataset conversation config
+# The daily dialog dataset conversation config
 ##########################################
 
 # for few shot, e.g., "EleutherAI/gpt-neo-2.7B"
