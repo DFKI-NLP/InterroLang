@@ -117,7 +117,6 @@ def get_forward_func(dataset_name, model):
             }
 
         output_model = model(**input_model)
-        print("output: ", output_model)
         if dataset_name != "daily_dialog":
             return output_model.logits
         else:
@@ -162,7 +161,6 @@ def compute_feature_attribution_scores(batch, model, dataset_name):
         # baseline = batch["input_ids"] * special_tokens_mask
         baseline = torch.zeros(batch["input_ids"].shape)
 
-    print("baseline:", baseline)
     explainer = LayerIntegratedGradients(forward_func=forward_func,
                                          layer=get_embedding_layer(model, dataset_name))
 
@@ -246,14 +244,18 @@ def generate_explanation(model, dataset_name, inputs, file_name="custom_input"):
             }
             json_list.append(result)
     elif dataset_name == "daily_dialog":
+        tokenizer = HFTokenizer('bert-base-uncased', mode='bert').tokenizer
         for idx_batch, b in enumerate(dataloader):
             attribution, predictions = compute_feature_attribution_scores(b, model, dataset_name)
-
+            ids = detach_to_list(b["input_ids"][0])
             attrbs = detach_to_list(attribution[0])
             preds = torch.argmax(predictions, dim=1)
             result = {
-                'input_ids': detach_to_list(b["input_ids"][0]),
-                "text": inputs[idx_batch],
+                # 'input_ids': detach_to_list(b["input_ids"][0]),
+                # "text": inputs[idx_batch],
+                "original_text": inputs[idx_batch],
+                'text': tokenizer.convert_ids_to_tokens(b["input_ids"][0][0]),
+                'input_ids': ids,
                 'attributions': attrbs,
                 'predictions': preds.item()
             }
