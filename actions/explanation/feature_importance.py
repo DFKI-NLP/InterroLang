@@ -105,7 +105,6 @@ def get_return_str(topk, res):
     return return_s
 
 
-
 def get_explanation(dataset_name, inputs, file_name="sentence_level"):
     if dataset_name == "boolq":
         model = AutoModelForSequenceClassification.from_pretrained("andi611/distilbert-base-uncased-qa-boolq",
@@ -143,7 +142,7 @@ def explanation_with_custom_input(conversation, topk):
     res_list = get_explanation(dataset_name, inputs)
     return_s = ""
     for res in res_list:
-        if dataset_name == "boolq" or dataset_name == "daily_dialog":
+        if dataset_name == "boolq":
             original_text = res["text"]
 
             return_s += "The original text is:  <br>"
@@ -188,7 +187,7 @@ def explanation_with_custom_input(conversation, topk):
                 return_s += ' '
 
             return_s += '<br><br><br>'
-        elif dataset_name == "olid":
+        elif dataset_name == "olid" or dataset_name == "daily_dialog":
             original_text = res["text"]
             _input = res["original_text"]
 
@@ -257,6 +256,8 @@ def get_sentence_level_feature_importance(conversation, sentences):
         if dataset_name == 'boolq':
             text = res["text"]
         elif dataset_name == 'olid':
+            text = res["original_text"]
+        else:
             text = res["original_text"]
 
         return_s += "<ul>"

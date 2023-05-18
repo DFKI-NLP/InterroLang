@@ -51,29 +51,29 @@
             <div class="dots-cont" , id="generation-loading"><span class="dot dot-1"></span> <span
                     class="dot dot-2"></span> <span class="dot dot-3"></span></div>
             <div class="buttons" , id="generation-buttons">
-                <button id="idea-important" class="idea-button" onclick="sampleImportant()">important features</button>
-                <button id="idea-why" class="idea-button" onclick="sampleWhy()">explanations</button>
+                <button id="idea-important" class="idea-button" onclick="sampleImportant()">global feature importances</button>
+                <button id="idea-why" class="idea-button" onclick="sampleWhy()">local feature importance explanation</button>
                 <button id="idea-predict" class="idea-button" onclick="samplePredict()">predictions</button>
 
                 <button id="idea-random-predict" class="idea-button" onclick="sampleRandomPredict()">random
-                    predictions
+                    prediction
                 </button>
 
-                <button id="idea-likelihood" class="idea-button" onclick="sampleLikelihood()">prediction likelihood
+                <button id="idea-likelihood" class="idea-button" onclick="sampleLikelihood()">likelihood
                 </button>
-                <button id="idea-show" class="idea-button" onclick="sampleShow()">showing data</button>
+                <button id="idea-show" class="idea-button" onclick="sampleShow()">show data</button>
                 <button id="idea-capabilities" class="idea-button" onclick="sampleCapabilities()">system capabilities
                 </button>
                 <button id="idea-performance" class="idea-button" onclick="samplePerformance()">performance</button>
-                <button id="idea-flip" class="idea-button" onclick="sampleFlip()">how to change a prediction</button>
-                <button id="idea-description" class="idea-button" onclick="sampleDataDescription()">dataset
+                <button id="idea-flip" class="idea-button" onclick="sampleFlip()">counterfactual</button>
+                <button id="idea-description" class="idea-button" onclick="sampleDataDescription()">data
                     description
                 </button>
                 <!--                    <button class="idea-button" onclick="sampleInteractions()">feature interaction effects</button>-->
                 <button class="idea-button" onclick="sampleMistakes()">mistakes</button>
-                <button class="idea-button" onclick="sampleLabels()">data labels</button>
+                <button class="idea-button" onclick="sampleLabels()">true labels</button>
                 <button class="idea-button" onclick="sampleSimilar()">find a similar instance</button>
-                <button class="idea-button" onclick="sampleRationalization()">rationalization</button>
+                <button class="idea-button" onclick="sampleRationalization()">rationalize</button>
                 <button class="idea-button" id="c_pred" onclick="sampleCustomInputPrediction()">custom input
                     prediction
                 </button>
@@ -83,7 +83,7 @@
                 </button>
                 <button class="idea-button" id="c_feat_sent"
                         onclick="sampleCustomInputFeatureImportanceOnSentenceLevel()">custom input
-                    feature importance on sentence level
+                    sentence importance
                 </button>
             </div>
         </div>
@@ -147,7 +147,7 @@
                 {% elif dataset == 'daily_dialog' %}
                     <details>
                         <summary style="font-weight: bold;">ID: {{loop.index}}</summary>
-                        <b>dialog:</b> <br>
+                        <b>dialog:</b>
                         <div style='font-style: italic; font-size: 0.75em;'>{{entry["dialog"]}}</div>
                     </details>
                 {% else %}

@@ -137,7 +137,53 @@ def prediction_with_custom_input(conversation):
                 predictions.append(output_model)
 
     elif dataset_name == "daily_dialog":
-        pass
+        model = DANetwork()
+        tokenizer = HFTokenizer('bert-base-uncased', mode='bert').tokenizer
+
+        if os.path.exists(cache_path):
+            with open(cache_path, 'r') as file:
+                fieldnames = ["idx", "Input text", "Prediction"]
+                reader = csv.DictReader(file, fieldnames=fieldnames)
+
+                for string in inputs:
+                    flag = False
+                    for row in reader:
+                        if row["Input text"] == string:
+                            predictions.append(int(row["Prediction"]))
+                            flag = True
+                            break
+                    if flag:
+                        continue
+
+                    encoding = tokenizer.encode_plus(string, return_tensors='pt')
+                    input_ids = encoding["input_ids"]
+                    attention_mask = encoding["attention_mask"]
+                    input_model = {
+                        'input_ids': input_ids.long(),
+                        'input_mask': attention_mask.long(),
+                    }
+
+                    output_model = model(**input_model)[0]
+
+                    # Get logit
+                    output_model = np.argmax(output_model.cpu().detach().numpy())
+                    predictions.append(output_model)
+        else:
+            for string in inputs:
+                encoding = tokenizer.encode_plus(string, return_tensors='pt')
+                input_ids = encoding["input_ids"]
+                attention_mask = encoding["attention_mask"]
+                input_model = {
+                    'input_ids': input_ids.long(),
+                    'input_mask': attention_mask.long(),
+                }
+
+                output_model = model(**input_model)[0]
+
+                # Get logit
+                output_model = np.argmax(output_model.cpu().detach().numpy())
+                predictions.append(output_model)
+
     elif dataset_name == "olid":
         tokenizer = AutoTokenizer.from_pretrained("sinhala-nlp/mbert-olid-en")
         model = AutoModelForSequenceClassification.from_pretrained("sinhala-nlp/mbert-olid-en")
