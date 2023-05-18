@@ -1,0 +1,14 @@
+User: show me an adversarial example for the instance with id 32
+Parsed: filter id 32 and adversarial [E]
+
+User: show me an adversarial attack on id 22
+Parsed: filter id 22 and adversarial [E]
+
+User: How does instance with id 54 have to change in order to fool the model?
+Parsed: filter id 54 and adversarial [E]
+
+User: Please attack the model for id 98
+Parsed: filter id 98 and adversarial [E]
+
+User: How would you construct an adversarial example for the model's prediction on id 23?
+Parsed: filter id 23 and adversarial [E]

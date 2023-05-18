@@ -16,6 +16,11 @@ def includes_operation(conversation, parse_text, i, **kwargs):
 
     dataset_name = conversation.describe.get_dataset_name()
 
+    # Filter temp dataset for subsequent actions
+    filtered_df = temp_dataset[temp_dataset[conversation.text_fields].apply(
+        lambda row: row.str.contains(text_to_match)).any(axis=1)]
+    conversation.temp_dataset.contents["X"] = filtered_df
+
     if dataset_name == 'boolq':
         questions = temp_dataset["question"]
         passages = temp_dataset["passage"]
@@ -66,10 +71,5 @@ def includes_operation(conversation, parse_text, i, **kwargs):
         output_str = "No matches were found for: " + text_to_match + "<br>"
     else:
         output_str = f"I found the following matches for <b>{text_to_match}</b>: <br>" + output_str
-
-    # Filter temp dataset for subsequent actions
-    filtered_df = temp_dataset[temp_dataset[conversation.text_fields].apply(
-        lambda row: row.str.contains(text_to_match)).any(axis=1)]
-    conversation.temp_dataset.contents["X"] = filtered_df
 
     return output_str, 1

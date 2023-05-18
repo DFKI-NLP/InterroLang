@@ -32,6 +32,7 @@ from actions.prediction.predict import predict_operation
 from actions.prediction.prediction_likelihood import predict_likelihood
 from actions.prediction.random_prediction import random_prediction
 from actions.prediction.score import score_operation
+from actions.explanation.adversarial import adversarial_operation
 
 
 def get_all_action_functions_map():
@@ -65,6 +66,7 @@ def get_all_action_functions_map():
         'rationalize': rationalize_operation,
         'nlpattribute': feature_importance_operation,
         'important': global_top_k,
-        'cfe': counterfactuals_operation
+        'cfe': counterfactuals_operation,
+        "adversarial": adversarial_operation
     }
     return actions
