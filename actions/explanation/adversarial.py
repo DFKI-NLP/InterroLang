@@ -82,14 +82,20 @@ def adversarial_operation(conversation, parse_text, i, **kwargs):
     attack_eval = AttackEval(attacker, victim)
 
     # launch attacks and print attack results
-    d = attack_eval.eval(dataset, visualize=True)
+    d = attack_eval.eval(dataset, visualize=False)
+
+    return_s = ""
 
     x_orig = d["x_orig"]
     x_adv = d["x_adv"]
     y_orig = ast.literal_eval(d["y_orig"])
     y_adv = ast.literal_eval(d["y_adv"])
     token_orig = tokenizer.tokenize(x_orig)
-    token_adv = tokenizer.tokenize(x_adv)
+    if x_adv:
+        token_adv = tokenizer.tokenize(x_adv)
+    else:
+        token_adv = token_orig
+        return_s += "Attack was unsuccessful.<br>"
 
     pairs = levenshtein_visual(token_orig, token_adv)
 
@@ -124,7 +130,7 @@ def adversarial_operation(conversation, parse_text, i, **kwargs):
         ret.append(curr2 + " " * (max_len - length))
         ret.append(" " * max_len)
 
-    return_s = ''
+
 
     if dataset_name == 'boolq' or dataset_name == 'olid':
         idx_orig = np.argmax(y_orig)
