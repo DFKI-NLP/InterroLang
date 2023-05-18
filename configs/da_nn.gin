@@ -1,0 +1,50 @@
+##########################################
+# The olid dataset conversation config
+##########################################
+
+# for few shot, e.g., "EleutherAI/gpt-neo-2.7B"
+ExplainBot.parsing_model_name = "nearest-neighbor"
+
+
+# set skip_prompts to true for quicker startup for finetuned models
+# make sure to set to false using few-shot models
+ExplainBot.skip_prompts = False
+
+ExplainBot.t5_config = "./parsing/t5/gin_configs/t5-large.gin"
+ExplainBot.seed = 0
+ExplainBot.background_dataset_file_path = "./data/daily_dialog_test_with_idx.csv"
+ExplainBot.model_file_path = "./explained_models/da_classifier/saved_model/5e_5e-06lr"
+ExplainBot.dataset_file_path = "./data/da_test_set_with_indices.csv"
+
+ExplainBot.name = "daily_dialog"
+
+ExplainBot.dataset_index_column = "idx"
+ExplainBot.target_variable_name = "act"
+ExplainBot.categorical_features = None
+ExplainBot.numerical_features = None
+ExplainBot.remove_underscores = False
+ExplainBot.text_fields = ["dialog"]
+
+ExplainBot.prompt_metric = "cosine"
+ExplainBot.prompt_ordering = "ascending"
+
+# Prompt params
+Prompts.prompt_cache_size = 1_000_000
+Prompts.prompt_cache_location = "./cache/daily_dialog-prompts.pkl"
+Prompts.max_values_per_feature = 2
+Prompts.sentence_transformer_model_name = "all-mpnet-base-v2"
+Prompts.prompt_folder = "./prompts"
+Prompts.num_per_knn_prompt_template = 1
+Prompts.num_prompt_template = 7
+
+# Explanation Params
+
+# Conversation params
+Conversation.class_names = {0: 'dummy', 1: 'inform', 2: 'question', 3: 'directive', 4: 'commissive'}
+
+# Dataset description
+DatasetDescription.dataset_objective = "predict to dialogue acts based on conversations"
+DatasetDescription.dataset_description = "reflect the daily communication way and cover various topics about the daily life"
+DatasetDescription.model_description = "bert-base-uncased"
+
+DatasetDescription.name = "daily_dialog"
