@@ -310,7 +310,8 @@ class Prompts:
         c_prompt_id = 0
 
         # Load dynamic prompts
-        for prompt_type in ['about', 'context', 'explanation', 'filter', 'metadata', 'nlu', 'prediction']:
+        prompt_folders = ['about', 'context', 'explanation', 'filter', 'metadata', 'nlu', 'perturbation', 'prediction']
+        for prompt_type in prompt_folders:
             dynamic_prompt_file_names = find_csv_filenames(
                 os.path.join(self.prompt_folder, prompt_type), suffix='txt')
 

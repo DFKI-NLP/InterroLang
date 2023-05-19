@@ -1,21 +1,4 @@
-# explanation
-
-## Counterfactuals
-
-### adversarial.txt
-* 5x `filter id and adversarial [E]`
-* 14x `filter id and adversarial [E]` (**GPT-4 generated**)
-
-Action defined in explanation/adversarial.py
-
-### cfe.txt
-* 17x `filter id and explain cfe [E]`
-* 1x `filter id and predict and explain cfe [E]`
-* 6x `filter id and explain features and explain cfe [E]`
-* 1x `filter id and explain cfe and explain features and predict [E]`
-
-Action defined in explanation/cfe_generation.py
-
+# Explanation operations
 
 ## Feature Importance
 
