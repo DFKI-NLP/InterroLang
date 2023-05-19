@@ -104,6 +104,21 @@ def log_feedback():
         "username": username
     }
 
+    feedback_cache = "./cache/feedback.json"
+
+    if os.path.exists(feedback_cache):
+        fileObject = open(feedback_cache, "r")
+        jsonContent = fileObject.read()
+        json_list = json.loads(jsonContent)
+        json_list.append(logging_info)
+    else:
+        json_list = [logging_info]
+
+    jsonString = json.dumps(json_list)
+    jsonFile = open(feedback_cache, "w")
+    jsonFile.write(jsonString)
+    jsonFile.close()
+
     BOT.log(logging_info)
     return ""
 
