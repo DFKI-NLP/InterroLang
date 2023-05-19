@@ -256,7 +256,7 @@ class ExplainBot:
         """Returns slot annotations for user input (using adapters)"""
         text_anno = self.slot_tagger(intext)
         intext_chars = list(intext)
-        slot_types = ["class_names", "data_type", "id", "includetoken", "metric", "number"]
+        #slot_types = ["class_names", "data_type", "id", "includetoken", "metric", "number", "sent_level"]
         slot2spans = dict()
         for anno in text_anno:
             slot_type = anno["entity"][2:]
@@ -580,7 +580,13 @@ class ExplainBot:
         id_adhoc, number_adhoc, token_adhoc = self.check_heuristics(decoded_text, text)
         for slot in slot_pattern:
             if slot in anno_slots:
-                slot_value = anno_slots[slot][0]
+                if slot == "sent_level": # we don't need a value in this case
+                    decoded_text += " sentence"
+                    continue
+                try:
+                    slot_value = anno_slots[slot][0]
+                except:
+                    slot_value = ""
                 filter_id = ""
                 if slot == "includetoken":
                     self.conversation.include_word = self.clean_up(slot_value)
