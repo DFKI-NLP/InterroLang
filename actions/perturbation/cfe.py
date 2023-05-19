@@ -35,31 +35,20 @@ def get_text_by_id(conversation, _id):
     Returns:
         text from conversation with given id
     """
-    f_names = list(conversation.temp_dataset.contents['X'].columns)
     texts = conversation.temp_dataset.contents['X']
     filtered_text = ''
 
-    # Get the first column, also for boolq, we only need question column not passage
-    for f in f_names[:1]:
-        filtered_text += texts[f][_id]
+    dataset_name = conversation.describe.get_dataset_name()
+
+    if dataset_name == 'boolq':
+        filtered_text += texts["question"][_id]
         filtered_text += " "
+        filtered_text += texts["passage"][_id]
+    elif dataset_name == 'daily_dialog':
+        filtered_text += texts["dialog"][_id]
+    else:
+        filtered_text += texts["text"][_id]
     return filtered_text
-
-
-def get_text_by_id_from_csv(_id):
-    """
-    Args:
-        _id: filtered id
-
-    Returns:
-        text from csv file with given id
-    """
-    import pandas as pd
-
-    df = pd.read_csv('./data/da_test_set_with_indices.csv')
-    text = df["dialog"][_id]
-    label = df["act"][_id]
-    return text, label
 
 
 def counterfactuals_operation(conversation, parse_text, i, **kwargs):
@@ -85,12 +74,7 @@ def counterfactuals_operation(conversation, parse_text, i, **kwargs):
     _id, cfe_num = extract_id_cfe_number(parse_text)
     dataset_name = conversation.describe.get_dataset_name()
 
-    if dataset_name == "boolq":
-        instance = get_text_by_id(conversation, _id)
-    elif dataset_name == 'daily_dialog':
-        instance, label = get_text_by_id_from_csv(_id)
-    else:
-        instance = get_text_by_id(conversation, _id)
+    instance = get_text_by_id(conversation, _id)
 
     cfe_explainer = CFEExplainer(dataset_name=dataset_name)
     same, diff = cfe_explainer.cfe(instance, cfe_num, ctrl_code=ALL_CTRL_CODES, _id=_id)
