@@ -470,7 +470,7 @@ class ExplainBot:
             # check for quotes
             in_quote = re.search(self.quote_pattern, orig_text)
             if  in_quote is not None:
-               token_adhoc = self.cleanup(in_quote.group())
+               token_adhoc = self.clean_up(in_quote.group())
         if "id " in orig_text:
             splitted = orig_text[orig_text.index("id ")+2:].strip().split()
             if len(splitted)>0:
