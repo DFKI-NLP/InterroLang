@@ -32,7 +32,7 @@ from actions.prediction.predict import predict_operation
 from actions.prediction.prediction_likelihood import predict_likelihood
 from actions.prediction.random_prediction import random_prediction
 from actions.prediction.score import score_operation
-from actions.explanation.adversarial import adversarial_operation
+from actions.perturbation.adversarial import adversarial_operation
 
 
 def get_all_action_functions_map():
