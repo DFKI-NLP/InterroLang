@@ -74,6 +74,9 @@
                 <button class="idea-button" onclick="sampleLabels()">true labels</button>
                 <button class="idea-button" onclick="sampleSimilar()">find a similar instance</button>
                 <button class="idea-button" onclick="sampleRationalization()">rationalize</button>
+                <button class="idea-button" onclick="sampleAdversarial()">adversarial</button>
+                <button class="idea-button" onclick="sampleAugment()">augmentation</button>
+
                 <button class="idea-button" id="c_pred" onclick="sampleCustomInputPrediction()">custom input
                     prediction
                 </button>
@@ -217,6 +220,14 @@
                 ttmInput.value = data;
             }
         });
+    }
+
+    function sampleAdversarial(){
+        doSample("adversarial");
+    }
+
+    function sampleAugment(){
+        doSample("augment");
     }
 
     function sampleCustomInputFeatureImportanceOnSentenceLevel() {
