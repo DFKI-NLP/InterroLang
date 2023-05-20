@@ -250,7 +250,7 @@ class AttackEval:
         summary["x_orig"] = x_orig
         summary["y_orig"] = str(list(y_orig))
         summary["x_adv"] = x_adv
-        if y_adv:
+        if y_adv is not None:
             summary["y_adv"] = str(list(y_adv))
         else:
             summary["y_adv"] = str([0.0 for i in y_orig])

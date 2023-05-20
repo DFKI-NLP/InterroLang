@@ -2,7 +2,7 @@ import numpy as np
 from logic.utils import read_precomputed_explanation_data
 
 
-MAPPING = {'dummy': 0, 'inform': 1, 'question': 2, 'directive': 3, 'commissive': 4}
+DD_MAPPING = {'dummy': 0, 'inform': 1, 'question': 2, 'directive': 3, 'commissive': 4}
 
 
 def get_predictions_and_labels(name, indices):
@@ -19,7 +19,7 @@ def get_predictions_and_labels(name, indices):
     if name == "daily_dialog":
         for i in range(len(json_list)):
             y_pred.append(json_list[i]["predictions"])
-            y_true.append(MAPPING[json_list[i]["label"]])
+            y_true.append(DD_MAPPING[json_list[i]["label"]])
 
     else:
         for item in json_list:

@@ -12,7 +12,7 @@ def count_data_points(conversation, parse_text, i, **kwargs):
         i: Index in the parse
         **kwargs: additional kwargs
     """
-    data = conversation.temp_dataset.contents['X']
+    data = conversation.temp_dataset.contents["X"]
     num_elements = len(data)
 
     parse_op = gen_parse_op_text(conversation)

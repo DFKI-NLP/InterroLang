@@ -4,7 +4,7 @@
 
 ### global_feature_importance.txt
 * 21x `important all [E]`
-* 9x `important {classname} [E]`
+* 9x `important {class_names} [E]`
 * 11x `important topk [E]`
 
 Action defined in explanation/topk.py

@@ -28,9 +28,9 @@ def includes_operation(conversation, parse_text, i, **kwargs):
         for i in range(len(questions)):
             text_inputs.append(questions[i] + " " + passages[i])
     elif dataset_name == 'daily_dialog':
-        text_inputs = conversation.temp_dataset["dialog"]
+        text_inputs = temp_dataset["dialog"]
     else:
-        text_inputs = conversation.temp_dataset["text"]
+        text_inputs = temp_dataset["text"]
 
     threshold = 3  # num of words before and after the match
     max_num_of_matches = 7  # max num of words that we output as matches
@@ -59,7 +59,7 @@ def includes_operation(conversation, parse_text, i, **kwargs):
             before_short = ' '.join(before.split()[-threshold:])
             after_short = ' '.join(after.split()[:threshold])
             idx = temp_dataset.index[inum]
-            print(temp_dataset.index)
+            #print(temp_dataset.index)
             output_str += f"idx {idx}: "
             if len(before_short) > 0:
                 output_str += f"<details><summary>... {before_short} "
