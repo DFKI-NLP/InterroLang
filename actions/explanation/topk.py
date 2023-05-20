@@ -76,7 +76,7 @@ def results_with_pattern(results):
 
 
 def topk(conversation, explainer, k, threshold=-1, data_path="../../cache/boolq/ig_explainer_boolq_explanation.json",
-         res_path="../../cache/boolq/ig_explainer_boolq_attribution.json", print_with_pattern=True, class_name=None):
+         res_path="../../cache/boolq/ig_explainer_boolq_attribution.json", print_with_pattern=True, class_idx=None):
     """
     The operation to get most k important tokens
 
@@ -88,11 +88,11 @@ def topk(conversation, explainer, k, threshold=-1, data_path="../../cache/boolq/
         data_path: path to json file
         res_path: path to store attribution scores
         print_with_pattern: if output the results using the certain pattern
-        class_name: filter label
+        class_idx: filter label (index)
     Returns:
         sorted_scores: top k important tokens
     """
-    if os.path.exists(res_path) and threshold == -1 and (class_name is None):
+    if os.path.exists(res_path) and threshold == -1 and (class_idx is None):
         fileObject = open(res_path, "r")
         jsonContent = fileObject.read()
         result_list = json.loads(jsonContent)
@@ -130,12 +130,16 @@ def topk(conversation, explainer, k, threshold=-1, data_path="../../cache/boolq/
     word_counter = {}
     word_attributions = {}
 
-    if class_name:
-        print('class name: ', class_name)
+    if class_idx:
+        #print('class name: ', class_idx)
         temp = []
         for res in results:
-            if res["label"] == class_name:
-                temp.append(res)
+            if "daily_dialog" in data_path:
+                if res["label"] == conversation.class_names[class_idx]:
+                    temp.append(res)
+            else:
+                if res["label"] == class_idx:
+                    temp.append(res)
     else:
         temp = results
 
@@ -186,6 +190,3 @@ def topk(conversation, explainer, k, threshold=-1, data_path="../../cache/boolq/
             return results_with_pattern(sorted_scores)
         else:
             return sorted_scores
-
-# if __name__ == "__main__":
-# topk("ig_explainer", 10, data_path="../../cache/ig_explainer_daily_dialog_explanation.json", res_path="../../cache/ig_explainer_daily_dialog_attribution.json")
