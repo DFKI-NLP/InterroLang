@@ -44,7 +44,8 @@ explainword: " explain"
 explaintype: featureimportance
 featureimportance: " features"
 
-similarity: " similar"
+similarity: similarword ( {topkvalues} )
+similarword: " similar"
 
 rationalize: " rationalize"
 

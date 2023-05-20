@@ -221,7 +221,8 @@ def filter_dataset():
         filtered_df = df[df[BOT.text_fields].apply(lambda row: row.str.contains(filter_text)).any(axis=1)]
 
         BOT.conversation.temp_dataset.contents["X"] = filtered_df
-        app.logger.info(f"{len(filtered_df)} instances of {BOT.conversation.describe.dataset_name} include the filter string '{filter_text}'")
+        app.logger.info(f"{len(filtered_df)} instances of {BOT.conversation.describe.dataset_name} include the filter "
+                        f"string '{filter_text}'")
         final_df = filtered_df
     else:
         final_df = df
