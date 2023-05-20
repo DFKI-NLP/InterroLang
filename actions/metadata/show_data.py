@@ -46,7 +46,7 @@ def summarize_consecutive_ids(instance_ids: List[int]):
 @gin.configurable
 def show_operation(conversation, parse_text, i, n_features_to_show=float("+inf"), **kwargs):
     """Generates text that shows an instance."""
-    data = conversation.temp_dataset.contents['X']
+    data = conversation.temp_dataset.contents["X"]
 
     intro_text = get_parse_filter_text(conversation)
     rest_of_info_string = "The rest of the features are<br><br>"
