@@ -35,7 +35,17 @@ def rationalize_operation(conversation, parse_text, i, **kwargs):
             pred_str = label_dict[pred]
             intro = f"Answer: {pred_str}"
             instruction = "Please explain the answer: "
-            max_length = 350
+            max_length = 350  # The 'passage' is usually very long, so we use a longer max_length for this dataset
+
+        elif dataset_name == "daily_dialog":
+            text = "Text: '" + instance[0] + "'"
+            label_dict = conversation.class_names
+            pred_str = pred
+            other_class_names = ", ".join(
+                [label_dict[c] for c in conversation.class_names if label_dict[c] not in [pred, 'dummy']])
+            intro = f"The dialogue act of this text has been classified as {pred_str} (over {other_class_names})."
+            instruction = "Please explain why: "
+            max_length = 200
 
         elif dataset_name == "olid":
             text = "Tweet: '" + instance[0] + "'"
