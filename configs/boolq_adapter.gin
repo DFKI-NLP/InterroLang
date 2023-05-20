@@ -2,15 +2,19 @@
 # The boolq dataset conversation config
 ##########################################
 
-ExplainBot.parsing_model_name = "./parsing/t5/models/flan-t5-base"
-ExplainBot.skip_prompts = True
+# for few shot, e.g., "EleutherAI/gpt-neo-2.7B"
+ExplainBot.parsing_model_name = "adapters"
 
-ExplainBot.t5_config = "./parsing/t5/gin_configs/t5-base.gin"
+
+# set skip_prompts to true for quicker startup for finetuned models
+# make sure to set to false using few-shot models
+ExplainBot.skip_prompts = False
+
+ExplainBot.t5_config = "./parsing/t5/gin_configs/t5-large.gin"
 ExplainBot.seed = 0
 ExplainBot.background_dataset_file_path = "./data/boolq_train.csv"
 ExplainBot.model_file_path = "./data/boolq_model"
 ExplainBot.dataset_file_path = "./data/boolq_validation.csv"
-ExplainBot.text_fields = ["question", "passage"]
 
 ExplainBot.name = "boolq"
 
@@ -19,6 +23,7 @@ ExplainBot.target_variable_name = "label"
 ExplainBot.categorical_features = None
 ExplainBot.numerical_features = None
 ExplainBot.remove_underscores = False
+ExplainBot.text_fields = ["question", "passage"]
 
 ExplainBot.prompt_metric = "cosine"
 ExplainBot.prompt_ordering = "ascending"

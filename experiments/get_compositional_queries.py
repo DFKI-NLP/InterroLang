@@ -13,7 +13,7 @@ parent = dirname(dirname(abspath(__file__)))
 sys.path.append(parent)
 
 from logic.core import ExplainBot
-from logic.actions.get_action_functions import get_all_action_functions_map
+from actions.get_action_functions import get_all_action_functions_map
 
 
 def get_config_loc(parsed_args: argparse.ArgumentParser()) -> str:
