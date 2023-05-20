@@ -1,3 +1,5 @@
+import json
+
 import numpy as np
 from logic.utils import read_precomputed_explanation_data
 
@@ -17,10 +19,20 @@ def get_predictions_and_labels(name, indices):
     y_pred, y_true, ids = [], [], []
 
     if name == "daily_dialog":
-        for i in range(len(json_list)):
-            y_pred.append(json_list[i]["predictions"])
-            y_true.append(MAPPING[json_list[i]["label"]])
+        fileObject = open('./cache/daily_dialog/ig_explainer_daily_dialog_explanation.json', "r")
+        jsonContent = fileObject.read()
+        explanation_ls = json.loads(jsonContent)
 
+        label2id = {'dummy': 0, 'inform': 1, 'question': 2, 'directive': 3, 'commissive': 4}
+
+        for item in json_list:
+            if item["batch"] in indices:
+                y_pred.append(np.argmax(item["predictions"]))
+
+        for item in explanation_ls:
+            if item["index_running"] in indices:
+                y_true.append(label2id[item["label"]])
+        ids = np.array(indices)
     else:
         for item in json_list:
             if item["index_running"] in indices:
