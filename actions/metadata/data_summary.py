@@ -20,7 +20,7 @@ def get_frequent_words(conversation, f_names, top=5):
     temp = ""
     for f in f_names:
         for inum, t in enumerate(df[f]):
-            temp += t + " "
+            temp += str(t) + " "
 
     words = temp.split(" ")
 
