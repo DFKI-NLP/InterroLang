@@ -16,14 +16,12 @@ from actions.filter.filter import filter_operation
 from actions.filter.includes_token import includes_operation
 from actions.metadata.count_data_points import count_data_points
 from actions.metadata.data_summary import data_operation
+from actions.metadata.data_summary import keyword_operation
 from actions.metadata.define import define_operation
-from actions.metadata.feature_stats import feature_stats
 from actions.metadata.labels import show_labels_operation
 from actions.metadata.model import model_operation
 from actions.metadata.show_data import show_operation
-from actions.nlu.sentiment import sentiment_operation
 from actions.nlu.similarity import similar_instances_operation
-from actions.nlu.topic import topic_operation
 from actions.perturbation.adversarial import adversarial_operation
 from actions.perturbation.augment import augment_operation
 from actions.perturbation.cfe import counterfactuals_operation
@@ -45,6 +43,7 @@ def get_all_action_functions_map():
         'previousfilter': last_turn_filter,
         'previousoperation': last_turn_operation,
         'data': data_operation,
+        'keywords': keyword_operation,
         'followup': followup_operation,
         'show': show_operation,
         'likelihood': predict_likelihood,
@@ -53,14 +52,11 @@ def get_all_action_functions_map():
         'score': score_operation,
         'label': show_labels_operation,
         'mistake': show_mistakes_operation,
-        'statistic': feature_stats,
         'define': define_operation,
         'predictionfilter': filter_operation,
         'labelfilter': filter_operation,
         'includes': includes_operation,
         'similar': similar_instances_operation,
-        'topic': topic_operation,
-        'sentiment': sentiment_operation,
         'rationalize': rationalize_operation,
         'nlpattribute': feature_importance_operation,
         'important': global_top_k,

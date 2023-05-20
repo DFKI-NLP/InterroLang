@@ -4,7 +4,7 @@ import numpy as np
 from logic.utils import read_precomputed_explanation_data
 
 
-MAPPING = {'dummy': 0, 'inform': 1, 'question': 2, 'directive': 3, 'commissive': 4}
+DD_MAPPING = {'dummy': 0, 'inform': 1, 'question': 2, 'directive': 3, 'commissive': 4}
 
 
 def get_predictions_and_labels(name, indices):
@@ -19,6 +19,7 @@ def get_predictions_and_labels(name, indices):
     y_pred, y_true, ids = [], [], []
 
     if name == "daily_dialog":
+
         fileObject = open('./cache/daily_dialog/ig_explainer_daily_dialog_explanation.json', "r")
         jsonContent = fileObject.read()
         explanation_ls = json.loads(jsonContent)

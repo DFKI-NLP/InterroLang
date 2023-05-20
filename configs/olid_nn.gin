@@ -3,7 +3,7 @@
 ##########################################
 
 # for few shot, e.g., "EleutherAI/gpt-neo-2.7B"
-ExplainBot.parsing_model_name = "EleutherAI/gpt-neo-2.7B"
+ExplainBot.parsing_model_name = "nearest-neighbor"
 
 
 # set skip_prompts to true for quicker startup for finetuned models
@@ -39,7 +39,7 @@ Prompts.num_prompt_template = 7
 # Explanation Params
 
 # Conversation params
-Conversation.class_names = {1: "offensive", 0: "non-offensive"}
+Conversation.class_names = {1: "True", 0: "False"}
 
 # Dataset description
 DatasetDescription.dataset_objective = "predict to answer offensive/non-offensive attitude based on tweets"

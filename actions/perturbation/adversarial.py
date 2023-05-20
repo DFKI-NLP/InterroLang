@@ -9,7 +9,7 @@ import numpy as np
 
 from explained_models.ModelABC.DANetwork import DANetwork
 from explained_models.Tokenizer.tokenizer import HFTokenizer
-from utils.attack_eval import AttackEval
+from actions.perturbation.attack.attack_eval import AttackEval
 
 
 class AdversarialDataset(Dataset):
@@ -130,14 +130,11 @@ def adversarial_operation(conversation, parse_text, i, **kwargs):
         ret.append(curr2 + " " * (max_len - length))
         ret.append(" " * max_len)
 
-
-
-    if dataset_name == 'boolq' or dataset_name == 'olid':
-        idx_orig = np.argmax(y_orig)
-        prob_orig = round(y_orig[idx_orig] * 100, 2)
-        idx_adv = (~idx_orig.astype(bool)).astype(int)
-        prob_adv = round(y_adv[idx_adv] * 100, 2)
-        return_s += f"<span style='color:green;font-weight:bold'>Label 0 ({prob_orig}%) --> 1 ({prob_adv}%)</span> <br><br>"
+    idx_orig = np.argmax(y_orig)
+    idx_adv = np.argmax(y_adv)
+    prob_orig = round(y_orig[idx_orig] * 100, conversation.rounding_precision)
+    prob_adv = round(y_adv[idx_adv] * 100, conversation.rounding_precision)
+    return_s += f"<span style='color:green;font-weight:bold'>Label {conversation.class_names[idx_orig]} ({prob_orig}%) --> {conversation.class_names[idx_adv]} ({prob_adv}%)</span> <br><br>"
 
     for i in range(0, len(ret)):
         return_s += ret[i]

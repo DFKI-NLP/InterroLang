@@ -178,7 +178,9 @@ class DatasetDescription:
                                                   y_pred,
                                                   metric_name,
                                                   rounding_precision,
-                                                  "the data")
+                                                  "the data",
+                                                  False,
+                                                  "macro")
         return performance_summary
 
     def get_eval_performance_for_hf_model(self,
@@ -219,7 +221,9 @@ class DatasetDescription:
                                                       y_pred,
                                                       metric_name,
                                                       rounding_precision,
-                                                      "the data")
+                                                      "the data",
+                                                      False,
+                                                      "macro")
         else:
             performance_summary = self.get_score_text(y_values,
                                                       y_pred,

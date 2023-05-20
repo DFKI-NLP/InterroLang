@@ -10,7 +10,7 @@ import numpy as np
 
 from explained_models.ModelABC.DANetwork import DANetwork
 from explained_models.Tokenizer.tokenizer import HFTokenizer
-from utils.custom_input import generate_explanation
+from actions.custom_input import generate_explanation
 
 from nltk.tokenize import sent_tokenize
 

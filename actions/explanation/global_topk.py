@@ -3,8 +3,8 @@ from actions.explanation.topk import topk
 
 def global_top_k(conversation, parse_text, i, **kwargs):
 
-    # Set k 3 by default
-    k = 3
+    # Set default
+    k = 10
 
     if "all" in parse_text:
         k = 10
@@ -16,39 +16,17 @@ def global_top_k(conversation, parse_text, i, **kwargs):
                 pass
 
     dataset_name = conversation.describe.get_dataset_name()
+    class_names = conversation.class_names
+    # Reverse the dictionary
+    inverse_class_names = {v.lower(): k for k, v in class_names.items()}
 
-    class_name = parse_text[i + 1]
+    first_argument = parse_text[i + 1]
+    class_idx = None
 
-    if class_name == 'true':
-        return topk(conversation, "ig_explainer", k,
-                    data_path="cache/boolq/ig_explainer_boolq_explanation.json",
-                    res_path="cache/boolq/ig_explainer_boolq_attribution.json",
-                    print_with_pattern=True, class_name=1), 1
-    elif class_name == 'false':
-        return topk(conversation, "ig_explainer", k,
-                    data_path="cache/boolq/ig_explainer_boolq_explanation.json",
-                    res_path="cache/boolq/ig_explainer_boolq_attribution.json",
-                    print_with_pattern=True, class_name=0), 1
-    else:
-        return topk(conversation, "ig_explainer", k,
-                    data_path=f"./cache/{dataset_name}/ig_explainer_{dataset_name}_explanation.json",
-                    res_path=f"./cache/{dataset_name}/ig_explainer_{dataset_name}_attribution.json",
-                    print_with_pattern=True), 1
+    if first_argument in list(inverse_class_names.keys()):
+        class_idx = inverse_class_names[first_argument]
 
-    # if class_name == "boolq":
-    #     return topk("ig_explainer", k,
-    #                 data_path="../../cache/boolq/ig_explainer_boolq_explanation.json",
-    #                 res_path="../../cache/boolq/ig_explainer_boolq_attribution.json",
-    #                 print_with_pattern=True)
-    # elif class_name == "daily_dialog":
-    #     return topk("ig_explainer", k,
-    #                 data_path="../../cache/daily_dialog/ig_explainer_dailydialog_explanation.json",
-    #                 res_path="../../cache/daily_dialog/ig_explainer_dailydialog_attribution.json",
-    #                 print_with_pattern=True)
-    # elif class_name == "olid":
-    #     return topk("ig_explainer", k,
-    #                 data_path="../../cache/olid/ig_explainer_olid_explanation.json",
-    #                 res_path="../../cache/olid/ig_explainer_dailydialog_attribution.json",
-    #                 print_with_pattern=True)
-    # else:
-    #     raise NameError(f"Unknown class name: {class_name}")
+    return topk(conversation, "ig_explainer", k,
+                data_path=f"./cache/{dataset_name}/ig_explainer_{dataset_name}_explanation.json",
+                res_path=f"./cache/{dataset_name}/ig_explainer_{dataset_name}_attribution.json",
+                print_with_pattern=True, class_idx=class_idx), 1
