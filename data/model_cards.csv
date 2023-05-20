@@ -1,0 +1,2 @@
+model_name,model_summary,task,epochs,lr,loss,optimizer,train_data_name,train_data_source,train_data_language,train_data_number,test_data_name,test_data_source,test_data_language,test_data_number
+Basic BiLSTM Hate Speech Detection,BasicLSTM with  Embedding and LSTM layer which is ended by a Linear layer,Hate Speech Detection,5,0.001,Bce loss with logits,adam,OLID Dataset: Offensive Language Identification Dataset,tweet,English,2000,OLID Dataset: Offensive Language Identification Dataset,tweet,English,1000

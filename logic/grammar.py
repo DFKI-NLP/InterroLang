@@ -8,7 +8,7 @@ or: " or"
 followup: " followup"
 done: " [e]"
 
-operation: adversarial | augment | cfe | data | define | featureattribution | filter | function | globaltopk | includes | keywords | label | labelfilter | lastturnfilter | lastturnop | likelihood | mistakes | modeldescription | ndatapoints | predfilter | predictions | randomprediction | rationalize | score | show | similarity |  whatami
+operation: adversarial | augment | cfe | data | define | featureattribution | filter | function | globaltopk | includes | keywords | label | labelfilter | lastturnfilter | lastturnop | likelihood | mistakes | modeldescription | ndatapoints | predfilter | predictions | randomprediction | rationalize | score | show | similarity | whatami
 
 adversarial: " adversarial"
 
@@ -36,8 +36,7 @@ featuretype: {availablefeaturetypes}
 function: " function"
 
 globaltopk: globaltopkword
-globaltopkword: " important" (classname | " all" | topk)
-classname: " true" | " false"
+globaltopkword: " important" (class | " all" | topk)
 
 includes: " includes"
 

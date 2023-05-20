@@ -53,7 +53,7 @@ class Parser:
                  cat_features: list[str],
                  num_features: list[str],
                  dataset: pd.DataFrame,
-                 target: list[str]):
+                 class_names: dict):
         """
         Init.
 
@@ -61,7 +61,7 @@ class Parser:
             cat_features: The categorical feature names
             num_features: The numeric feature names
             dataset: The pd.DataFrame dataset
-            target: The class names in a list where the ith index corresponds that class's name
+            class_names:
         """
 
         #assert len(cat_features) > 0 or len(num_features) > 0, "There are no features!"
@@ -89,15 +89,10 @@ class Parser:
             else:
                 available_feature_types += " | numnames"
 
-        # Add the target variable into the grammar
+        # Add the class names into the grammar
         target_str = ""
-        for t_val in np.unique(target):
-            target_str = add_terminal_or(str(t_val), target_str)
-
-        # If adding categorical to binary true false
-        # if len(np.unique(target)) == 2 and 1 in target and 0 in target:
-        #     target_str = add_terminal_or("true", target_str)
-        #     target_str = add_terminal_or("false", target_str)
+        for i, class_name in class_names.items():
+            target_str = add_terminal_or(class_name.lower(), target_str).strip()
 
         self.target_var_grammar = TARGET_VAR.format(classes=target_str)
 
@@ -209,7 +204,7 @@ class Parser:
         grammar_text = ""
         for num in range(1, 50):  # self.absolute_number_of_features + 1
             grammar_text = add_terminal_or(str(num), grammar_text)
-        return grammar_text
+        return grammar_text.strip()
 
     def get_grammar(self, adhoc_grammar_updates: dict = None):
         """Gets the grammar.
@@ -260,4 +255,3 @@ class Parser:
         grammar += self.all_feature_names
 
         return grammar
-
