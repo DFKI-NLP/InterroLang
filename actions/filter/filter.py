@@ -11,8 +11,8 @@ from pandas.api.types import is_numeric_dtype
 
 def filter_dataset(dataset, bools):
     """Selects x and y of dataset by booleans."""
-    dataset['X'] = dataset['X'][bools]
-    dataset['y'] = dataset['y'][bools]
+    dataset['X'] = dataset['X'].iloc[bools]
+    dataset['y'] = dataset['y'].iloc[bools]
     return dataset
 
 
@@ -113,22 +113,26 @@ def categorical_filter(parse_text, temp_dataset, conversation, i, feature_name):
 
 def prediction_filter(temp_dataset, conversation, feature_name):
     """filters based on the model's prediction"""
-    model = conversation.get_var('model').contents
-    x_values = temp_dataset['X']
+    model = conversation.get_var("model").contents
+    x_values = temp_dataset["X"]
 
     # compute model predictions
-    predictions = model.predict(x_values)
+    predictions = model.predict(x_values, None)
 
-    # feature name is given as string from grammar, bind predictions to str
-    # to get correct equivalence
-    str_predictions = np.array([str(p) for p in predictions])
-    bools = feature_name == str_predictions
+    # Reverse the dictionary
+    inverse_class_names = {v.lower(): k for k, v in conversation.class_names.items()}
 
-    updated_dset = filter_dataset(temp_dataset, bools)
-    class_text = conversation.get_class_name_from_label(int(feature_name))
-    interpretable_parse_text = f"the model predicts {class_text}"
+    # Add predictions to temp dataset
+    df = temp_dataset["X"]
+    df["predictions"] = pd.Series(predictions)
 
-    return updated_dset, interpretable_parse_text
+    # Get Boolean values according to where predictions line up with the provided feature_name
+    bools = df[df["predictions"] == inverse_class_names[feature_name]].index.values.tolist()
+    temp_dataset = filter_dataset(temp_dataset, bools)
+
+    interpretable_parse_text = f"the model predicts {feature_name}"
+
+    return temp_dataset, interpretable_parse_text
 
 
 def label_filter(temp_dataset, conversation, feature_name):

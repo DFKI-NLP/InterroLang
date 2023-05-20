@@ -1,7 +1,14 @@
 GRAMMAR = r"""
 ?start: action
 action: operation done | operation join action | followup done
-operation: explanation | filter | predictions | whatami | lastturnfilter | lastturnop | data | impfeatures | show | likelihood | modeldescription | function | score | ndatapoints | label | mistakes | fstats | define | labelfilter | predfilter | includes | globaltopk | adversarial | augment | cfe | similarity | rationalize | randomprediction
+
+join: and | or
+and: " and"
+or: " or"
+followup: " followup"
+done: " [e]"
+
+operation: adversarial | augment | cfe | data | define | featureattribution | filter | function | globaltopk | includes | keywords | label | labelfilter | lastturnfilter | lastturnop | likelihood | mistakes | modeldescription | ndatapoints | predfilter | predictions | randomprediction | rationalize | score | show | similarity | whatami
 
 adversarial: " adversarial"
 
@@ -10,82 +17,68 @@ augment: " augment"
 cfe: " cfe" cfefeature
 cfefeature: {availablefeaturetypes} | " "
 
-globaltopk: globaltopkword
-globaltopkword: " important" (classname | " all" | topk)
-classname: " true" | " false"
-
-labelfilter: " labelfilter" class
-predfilter: " predictionfilter" class
-
-fstats: fstatsword (allfeaturenames | " target")
-fstatsword: " statistic"
+data: " data"
 
 define: defineword allfeaturenames
 defineword: " define"
 
-ndatapoints: " countdata"
+featureattribution: featureattributionword (allfeaturenames | allfeaturesword | topk | attrsentence)
+featureattributionword: " nlpattribute"
+allfeaturesword: " all"
+topk: topkword ( {topkvalues} )
+topkword: " topk"
+attrsentence: " sentence" 
+
+filter: filterword featuretype
+filterword: " filter"
+featuretype: {availablefeaturetypes}
+
+function: " function"
+
+globaltopk: globaltopkword
+globaltopkword: " important" (class | " all" | topk)
+
+includes: " includes"
+
+keywords: kwword ( {topkvalues} | allfeaturesword )
+kwword: " keywords"
+
+label: " label"
+
+labelfilter: " labelfilter" class
+
+lastturnfilter: " previousfilter"
+lastturnop: " previousoperation"
+
+likelihood: " likelihood"
 
 mistakes: mistakesword mistakestypes
 mistakesword: " mistake"
 mistakestypes: " count" | " sample"
 
-label: " label"
+modeldescription: " model"
 
-join: and | or
-and: " and"
-or: " or"
-filterword: " filter"
+ndatapoints: " countdata"
 
-filter: filterword featuretype
-featuretype: {availablefeaturetypes}
-
-explanation: explainword explaintype
-explainword: " explain"
-explaintype: featureimportance
-featureimportance: " features"
-
-similarity: " similar"
-
-rationalize: " rationalize"
+predfilter: " predictionfilter" class
 
 predictions: " predict"
+
 randomprediction: " randompredict"
 
-whatami: " self"
-
-data: " data"
-modeldescription: " model"
-function: " function"
+rationalize: " rationalize"
 
 score: scoreword metricword (scoresetting)
 scoreword: " score"
 metricword: " default" | " accuracy" | " f1" | " roc" | " precision" | " recall" | " sensitivity" | " specificity" | " ppv" | " npv"
 scoresetting: " micro" | " macro" | " weighted" | " "
-testword: " test"
-
-followup: " followup"
 
 show: " show"
 
-likelihood: likelihoodword
-likelihoodword: " likelihood"
+similarity: similarword ( {topkvalues} )
+similarword: " similar"
 
-lastturnfilter: " previousfilter"
-lastturnop: " previousoperation"
-
-impfeatures: impfeaturesword (allfeaturenames | allfeaturesword | topk | impsentence)
-allfeaturesword: " all"
-topk: topkword ( {topkvalues} )
-topkword: " topk"
-impsentence: " sentence" 
-
-
-impfeaturesword: " nlpattribute"
-numupdates: " increase" | " set" | " decrease"
-
-includes: " includes"
-
-done: " [e]"
+whatami: " self"
 """  # noqa: E501
 
 # append the cat feature name and
