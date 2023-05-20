@@ -16,8 +16,8 @@ from actions.filter.filter import filter_operation
 from actions.filter.includes_token import includes_operation
 from actions.metadata.count_data_points import count_data_points
 from actions.metadata.data_summary import data_operation
+from actions.metadata.data_summary import keyword_operation
 from actions.metadata.define import define_operation
-from actions.metadata.feature_stats import feature_stats
 from actions.metadata.labels import show_labels_operation
 from actions.metadata.model import model_operation
 from actions.metadata.show_data import show_operation
@@ -45,6 +45,7 @@ def get_all_action_functions_map():
         'previousfilter': last_turn_filter,
         'previousoperation': last_turn_operation,
         'data': data_operation,
+        'keywords': keyword_operation,
         'followup': followup_operation,
         'show': show_operation,
         'likelihood': predict_likelihood,
@@ -53,7 +54,6 @@ def get_all_action_functions_map():
         'score': score_operation,
         'label': show_labels_operation,
         'mistake': show_mistakes_operation,
-        'statistic': feature_stats,
         'define': define_operation,
         'predictionfilter': filter_operation,
         'labelfilter': filter_operation,

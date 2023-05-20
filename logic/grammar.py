@@ -1,7 +1,7 @@
 GRAMMAR = r"""
 ?start: action
 action: operation done | operation join action | followup done
-operation: explanation | filter | predictions | whatami | lastturnfilter | lastturnop | data | impfeatures | show | likelihood | modeldescription | function | score | ndatapoints | label | mistakes | fstats | define | labelfilter | predfilter | includes | globaltopk | adversarial | augment | cfe | similarity | rationalize | randomprediction
+operation: explanation | filter | predictions | whatami | lastturnfilter | lastturnop | data | keywords | impfeatures | show | likelihood | modeldescription | function | score | ndatapoints | label | mistakes | fstats | define | labelfilter | predfilter | includes | globaltopk | adversarial | augment | cfe | similarity | rationalize | randomprediction
 
 adversarial: " adversarial"
 
@@ -57,6 +57,9 @@ whatami: " self"
 data: " data"
 modeldescription: " model"
 function: " function"
+
+keywords: kwword ( {topkvalues} | allfeaturesword )
+kwword: " keywords"
 
 score: scoreword metricword (scoresetting)
 scoreword: " score"
