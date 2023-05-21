@@ -5,7 +5,7 @@ User: Could you tell me how likely it is that {cat_features} equal to {cat_value
 Parsed: filter {cat_features} {cat_values} and likelihood [E]
 
 User: Show the likelihood that {cat_features} and {cat_features} with {num_features} greater than or equal to {num_values} are predicted as {class_names}
-Parsed: filter {cat_features} true and filter {cat_features} true and filter {num_features} greater equal than {num_values} and likelihood [E]
+Parsed: filter {cat_features} true and filter {cat_features} true and lengthfilter greater equal than {num_values} and likelihood [E]
 
 User: How likely are {cat_features} predicted as {class_names}?
 Parsed: filter {cat_features} true and likelihood [E]

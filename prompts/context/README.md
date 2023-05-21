@@ -29,6 +29,7 @@ Action defined in context/last_turn_filter.py
 
 ### previousfilter_+_prediction.txt
 * 8x `previousfilter and predict [E]`
+* 4x `previousfilter and includes and predict [E]`
 
 ### previousfilter_+_score.txt
 * 4x `previousfilter and score accuracy [E]`
@@ -37,6 +38,6 @@ Action defined in context/last_turn_filter.py
 
 ## previousoperation.txt
 * 5x `filter id and previousoperation [E]`
-* 1x `{filter_parse} and previousoperation [E]`
+* 6x `includes and previousoperation [E]`
 
 Action defined in context/last_turn_operation.py

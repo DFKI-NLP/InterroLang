@@ -20,10 +20,10 @@ User: For {cat_features}, could you show for what instances {cat_features} ends 
 Parsed: filter {cat_features} true and important {cat_features} [E]
 
 User: For {cat_features} with {num_features} equal to {num_values}, could you tell me when {cat_features} is a highly ranked feature?
-Parsed: filter {cat_features} true and filter {num_features} equal to {num_values} and important {cat_features}. [E]
+Parsed: filter {cat_features} true and lengthfilter equal to {num_values} and important {cat_features}. [E]
 
 User: Can you help me identify when {cat_features} is an important feature for {num_features} greater than {num_values}?
-Parsed: filter {num_features} greater than {num_values} and important {cat_features} [E]
+Parsed: lengthfilter greater than {num_values} and important {cat_features} [E]
 
 User: top 10 most important features for predicting {cat_features}
 Parsed: filter {cat_features} true and important topk 10 [E]

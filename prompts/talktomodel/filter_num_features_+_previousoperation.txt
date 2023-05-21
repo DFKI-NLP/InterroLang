@@ -1,2 +1,0 @@
-User: what about for people with {num_features} over {num_values}
-Parsed: filter {num_features} greater than {num_values} and previousoperation [E]

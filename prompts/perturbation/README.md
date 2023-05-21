@@ -15,9 +15,9 @@ Action defined in perturbation/augment.py
 
 
 ### cfe.txt
-* 17x `filter id and explain cfe [E]`
-* 1x `filter id and predict and explain cfe [E]`
-* 6x `filter id and explain features and explain cfe [E]`
-* 1x `filter id and explain cfe and explain features and predict [E]`
+* 17x `filter id and cfe [E]`
+* 1x `filter id and predict and cfe [E]`
+* 8x `filter id and nlpattribute and cfe [E]`
+* 1x `filter id and cfe and nlpattribute and predict [E]`
 
 Action defined in perturbation/cfe_generation.py

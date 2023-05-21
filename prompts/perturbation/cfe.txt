@@ -70,5 +70,11 @@ Parsed: filter id 31 and nlpattribute all and cfe [E]
 User: What are the reasons why 54 is predicted and what you have to do to flip the prediction?
 Parsed: filter id 54 and nlpattribute all and cfe [E]
 
+User: (1) Why did the model predict and (2) how would you change the prediction of id 35?
+Parsed: filter id 35 and nlpattribute all and cfe [E]
+
+User: Why was data 52 predicted and how could you change this?
+Parsed: filter id 52 and nlpattribute all and cfe [E]
+
 User: For the data point with id 92, how could we change the prediction, what is the model's rationale, and what does it predict?
 Parsed: filter id 92 and cfe and nlpattribute all and predict [E]
