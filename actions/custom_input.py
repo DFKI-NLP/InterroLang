@@ -236,12 +236,16 @@ def generate_explanation(model, dataset_name, inputs, file_name="custom_input"):
 
             attrbs = detach_to_list(attribution[0])
             preds = torch.argmax(predictions, dim=1)
+            tokenizer = AutoTokenizer.from_pretrained("andi611/distilbert-base-uncased-qa-boolq")
             result = {
+                "original_text": inputs[idx_batch],
+                'text': tokenizer.convert_ids_to_tokens(b["input_ids"][0]),
                 'input_ids': detach_to_list(b["input_ids"]),
-                "text": inputs[idx_batch],
+                # "text": inputs[idx_batch],
                 'attributions': attrbs,
                 'predictions': preds.item()
             }
+
             json_list.append(result)
     elif dataset_name == "daily_dialog":
         tokenizer = HFTokenizer('bert-base-uncased', mode='bert').tokenizer

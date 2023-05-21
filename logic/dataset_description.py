@@ -76,8 +76,8 @@ class DatasetDescription:
                        metric_name: str,
                        rounding_precision: int,
                        data_name: str,
-                       multi_class: bool,
-                       average: str) -> str:
+                       multi_class: bool = False,
+                       average: str = "") -> str:
         """Computes model score and returns text describing the outcome.
 
         Arguments:
@@ -216,7 +216,7 @@ class DatasetDescription:
 
         y_pred = np.array(y_pred)
         y_values = np.array(y_values)
-
+        print(self.dataset_name)
         if self.dataset_name != "daily_dialog":
             performance_summary = self.get_score_text(y_values,
                                                       y_pred,
