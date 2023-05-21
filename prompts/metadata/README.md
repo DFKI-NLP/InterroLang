@@ -31,9 +31,3 @@ Action defined in metadata/labels.py
 * 1x `previousfilter and show [E]`
 
 Action defined in metadata/show_data.py 
-
-### statistic_target.txt
-* 6x `statistic target [E]`
-* 4x `includes and statistic target [E]`
-
-Action defined in metadata/feature_stats.py
