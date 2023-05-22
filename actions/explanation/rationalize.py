@@ -3,7 +3,7 @@ import pandas as pd
 
 def get_few_shot_str(csv_filename, num_shots=5):
     few_shot_str = ""
-    gpt_rationales = pd.read_csv(csv_filename)
+    gpt_rationales = pd.read_csv(csv_filename).sample(frac=1)
     for i, row in gpt_rationales.iterrows():
         few_shot_str += row["prompt"] + row["completion"] + "\n"
         if i == num_shots - 1:
@@ -57,10 +57,13 @@ def rationalize_operation(conversation, parse_text, i, **kwargs):
             label_dict = conversation.class_names
             pred_str = pred
             other_class_names = ", ".join(
-                [label_dict[c] for c in conversation.class_names if label_dict[c] not in [pred, 'dummy']])
+                [label_dict[c] for c in conversation.class_names if label_dict[c] not in [pred, "dummy"]])
             intro = f"The dialogue act of this text has been classified as {pred_str} (over {other_class_names})."
             instruction = "Please explain why: "
             max_length = 150
+
+            if few_shot:
+                few_shot_str += get_few_shot_str("cache/daily_dialog/GPT-4_rationales_DD_test_200.csv")
 
         elif dataset_name == "olid":
             text = "Tweet: '" + instance[0] + "'"

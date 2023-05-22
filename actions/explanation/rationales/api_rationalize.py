@@ -1,14 +1,17 @@
 import numpy as np
 import openai
 import pandas as pd
+import wandb
 import yaml
 from pprint import pprint
 from tqdm import tqdm
 
+from actions.explanation.da_explanation import MAPPING as DA_MAPPING
+
 
 MODEL_ID = "gpt-4" #"gpt-3.5-turbo"
-DATASET_ID = "olid"
-NUMBER_OF_INSTANCES = 400
+DATASET_ID = "daily_dialog"
+NUMBER_OF_INSTANCES = 200
 ROOT_DIR = "../../.."
 OPENAI_KEY_YAML = f"{ROOT_DIR}/configs/openai_api_key.yaml"
 CACHE_DIR = f"{ROOT_DIR}/cache"
@@ -88,7 +91,15 @@ if __name__ == "__main__":
                                     f"or revealing the answer or outcome in your response"
 
     elif DATASET_ID == "daily_dialog":
-        raise NotImplementedError(f"Dataset {DATASET_ID} not implemented yet.")
+        data = pd.read_csv(f"{DATA_DIR}/da_test_set_with_indices.csv")
+        explanations = pd.read_json(f"{CACHE_DIR}/daily_dialog/ig_explainer_daily_dialog_explanation.json")
+
+        data["text"] = "Text: '" + data["dialog"] + "'"
+
+        label_mapping = DA_MAPPING
+        text_desc = "the text"
+        out_desc = "predicted dialogue act"
+        prevent_label_leakage_str = f"Without revealing the predicted dialogue act label in your response"
 
     elif DATASET_ID == "olid":
         data = pd.read_csv(f"{DATA_DIR}/offensive_val.csv")
@@ -105,14 +116,14 @@ if __name__ == "__main__":
     else:
         raise ValueError(f"Dataset {DATASET_ID} not a valid choice.")
 
-    data["prediction"] = [np.argmax(x) for x in explanations["predictions"]]
+    data["prediction"] = [np.argmax(x) if type(x) != str else x for x in explanations["predictions"]]
 
     # Reduce amount of data
     data = data[:NUMBER_OF_INSTANCES]
 
     handler = ChatGPTHandler(model=MODEL_ID)
     handler.use_wandb()
-    for i, instance in tqdm(data.iterrows(), total=len(data)):
+    for i, (index, instance) in enumerate(tqdm(data.iterrows(), total=len(data))):
         try:
             idx = instance["idx"]
             text = instance["text"]
@@ -120,12 +131,22 @@ if __name__ == "__main__":
         except KeyError:
             raise "Dataset does not contain the required idx, text, and prediction columns."
 
-        pred_str = label_mapping[prediction]
+        if type(prediction) == int:
+            # BoolQ, OLID
+            pred_str = label_mapping[prediction]
+        elif DATASET_ID == "daily_dialog":
+            other_labels = [v for v in list(label_mapping.values())[1:]]
+            pred_str = prediction + f" (out of {', '.join(other_labels)})"
+        else:
+            raise TypeError(f"Invalid type for {prediction}")
 
         instruction_str = f"Based on {text_desc}, the {out_desc} is {pred_str}. " \
             f"{prevent_label_leakage_str}, explain why: "
 
         prompt = f"{text}\n{instruction_str}"
         handler.chat_request(prompt, id=idx)
+
+        if i % 5 == 0:
+            wandb.log({"predictions": handler.prediction_table})
 
     handler.visualize()
