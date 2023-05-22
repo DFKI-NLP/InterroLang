@@ -2,8 +2,8 @@
 
 To test out the current model, download it from the link...
 
-**FLAN-T5-base (250M)**  
-https://cloud.dfki.de/owncloud/index.php/s/txzg9ZCdYqB39j9/download
+**FLAN-T5-base (250M) BoolQ**  
+https://cloud.dfki.de/owncloud/index.php/s/rR2Q2swqg8dkmCt/download
 
 ...and put the folder (flan-t5-base) inside parsing/t5/models (this directory).
 
