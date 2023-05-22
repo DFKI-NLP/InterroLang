@@ -124,10 +124,12 @@ def prediction_filter(temp_dataset, conversation, feature_name):
 
     # Add predictions to temp dataset
     df = temp_dataset["X"]
-    df["predictions"] = pd.Series(predictions)
+    df["prediction"] = pd.Series(predictions)
 
-    # Get Boolean values according to where predictions line up with the provided feature_name
-    bools = df[df["predictions"] == inverse_class_names[feature_name]].index.values.tolist()
+    # Get boolean values according to where predictions line up with the provided feature_name
+    bools = df[df["prediction"] == inverse_class_names[feature_name]].index.values.tolist()
+
+    # Filter dataset according to boolean array
     temp_dataset = filter_dataset(temp_dataset, bools)
 
     interpretable_parse_text = f"the model predicts {feature_name}"
@@ -137,13 +139,21 @@ def prediction_filter(temp_dataset, conversation, feature_name):
 
 def label_filter(temp_dataset, conversation, feature_name):
     """Filters based on the labels in the data"""""
-    y_values = temp_dataset['y']
-    str_y_values = np.array([str(y) for y in y_values])
-    bools = feature_name == str_y_values
 
+    # Reverse the dictionary
+    inverse_class_names = {v.lower(): k for k, v in conversation.class_names.items()}
+
+    # Add labels to temp dataset
+    df = temp_dataset["X"]
+    df["label"] = temp_dataset["y"]
+
+    # Get boolean values according to where labels line up with the provided feature_name
+    bools = df[df["label"] == inverse_class_names[feature_name]].index.values.tolist()
+
+    # Filter dataset according to boolean array
     updated_dset = filter_dataset(temp_dataset, bools)
-    class_text = conversation.get_class_name_from_label(int(feature_name))
-    interpretable_parse_text = f"the ground truth label is {class_text}"
+
+    interpretable_parse_text = f"the ground truth label is {feature_name}"
 
     return updated_dset, interpretable_parse_text
 
