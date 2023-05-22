@@ -59,35 +59,6 @@ def handle_input(parse_text):
         return id_list, topk
 
 
-def get_res(json_list, topk, tokenizer, num=0):
-    """
-    Get topk tokens from a single sentence
-    Args:
-        json_list: data source
-        topk: topk value
-        tokenizer: for converting input_ids to sentence
-        num: current index
-
-    Returns:
-        topk tokens
-    """
-    input_ids = json_list[num]["input_ids"]
-    explanation = json_list[num]["attributions"]
-    res = []
-
-    # Get corresponding tokens by input_ids
-    # tokens = list(tokenizer.decode(input_ids).split(" "))
-    tokens = list(tokenizer.convert_ids_to_tokens(input_ids))
-
-    idx = np.argsort(explanation)[::-1][:topk]
-
-    for i in idx:
-        res.append(tokens[i])
-
-    return_s = ', '.join(i for i in res)
-    return return_s
-
-
 def get_explanation(dataset_name, inputs, file_name="sentence_level"):
     if dataset_name == "boolq":
         model = AutoModelForSequenceClassification.from_pretrained("andi611/distilbert-base-uncased-qa-boolq",
@@ -279,14 +250,17 @@ def feature_importance_operation(conversation, parse_text, i, **kwargs):
     if topk == -1:
         return_s = ''
         for _id in id_list:
-            f_names = list(conversation.temp_dataset.contents['X'].columns)
             texts = conversation.temp_dataset.contents['X']
             filtered_text = ''
 
-            # Get the first column, also for boolq, we only need question column not passage
-            for f in f_names[:1]:
-                filtered_text += texts[f][_id]
-                filtered_text += " "
+            dataset_name = conversation.describe.get_dataset_name()
+            if dataset_name == "boolq":
+                filtered_text += texts['question'][_id] + " " + texts['passage'][_id]
+            elif dataset_name == "olid":
+                filtered_text = texts['text'][_id]
+            elif dataset_name == "daily_dialog":
+                filtered_text = texts['dialog'][_id]
+
             return_s += f'ID {_id}: '
             return_s += get_sentence_level_feature_importance(conversation, sentences=filtered_text)
             return_s += '<br><br>'
@@ -311,7 +285,6 @@ def feature_importance_operation(conversation, parse_text, i, **kwargs):
         return "Entered topk is larger than input max length", 1
     else:
         if len(id_list) == 1:
-            res = get_res(json_list, topk, tokenizer, num=id_list[0])
             return_s, original_text = get_text_by_id(id_list[0], conversation)
 
             attr, input_ids = get_attr_by_id(conversation, id_list[0])
@@ -324,7 +297,6 @@ def feature_importance_operation(conversation, parse_text, i, **kwargs):
             return_s = ""
             for num in id_list:
                 return_s += f"For id {num}: <br>"
-                res = get_res(json_list, topk, tokenizer, num=num)
                 text, original_text = get_text_by_id(num, conversation)
                 return_s += text
 
