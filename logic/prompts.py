@@ -310,7 +310,8 @@ class Prompts:
         c_prompt_id = 0
 
         # Load dynamic prompts
-        prompt_folders = ['about', 'context', 'explanation', 'filter', 'metadata', 'nlu', 'perturbation', 'prediction']
+        prompt_folders = ['about', 'explanation', 'filter', 'metadata', 'nlu', 'perturbation', 'prediction']
+        # Excluded folders: 'context', 'talktomodel', 'work_in_progress'
         for prompt_type in prompt_folders:
             dynamic_prompt_file_names = find_csv_filenames(
                 os.path.join(self.prompt_folder, prompt_type), suffix='txt')
