@@ -7,6 +7,9 @@ from tqdm import tqdm
 
 
 def rationalize_operation(conversation, parse_text, i, **kwargs):
+    if not conversation.decoder.gpt_parser_initialized:
+        return f"Rationalize operation not enabled for {conversation.decoder.parser_name}"
+
     id_list = []
     for item in parse_text:
         try:

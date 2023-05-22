@@ -40,6 +40,7 @@ class Decoder:
         self.gpt_parser_initialized = False
         self.gpt_model = None
         self.gpt_tokenizer = None
+        self.parser_name = parsing_model_name
         self.init_model(parsing_model_name,
                         config_file=t5_gin_config_file,
                         no_init=no_init,
