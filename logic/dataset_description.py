@@ -216,7 +216,7 @@ class DatasetDescription:
 
         y_pred = np.array(y_pred)
         y_values = np.array(y_values)
-        print(self.dataset_name)
+
         if self.dataset_name != "daily_dialog":
             performance_summary = self.get_score_text(y_values,
                                                       y_pred,
