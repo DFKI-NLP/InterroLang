@@ -2,6 +2,7 @@
 
 This operation computes a score metric on the data or the eval data.
 """
+import json
 
 import numpy as np
 
@@ -31,6 +32,8 @@ def score_operation(conversation, parse_text, i, **kwargs):
         if metric not in ["default", "accuracy", "roc"]:
             if parse_text[i + 2] == '[e]':
                 average = "macro"
+            elif parse_text[i+2] in flags:
+                average = parse_text[i+2]
             else:
                 raise NotImplementedError(f"Flag {average} is not supported!")
 
@@ -39,8 +42,19 @@ def score_operation(conversation, parse_text, i, **kwargs):
 
     if metric == "default" or metric == 'accuracy':
         metric = conversation.default_metric
-        if dataset_name == 'daily_dialog':
-            y_pred = np.argmax(y_pred, axis=1)
+
+    if dataset_name == 'daily_dialog' and metric == "roc":
+        path = f"./cache/{dataset_name}/ig_explainer_{dataset_name}_prediction.json"
+
+        fileObject = open(path, "r")
+        jsonContent = fileObject.read()
+        json_list = json.loads(jsonContent)
+
+        y_pred = []
+        for item in json_list:
+            if item["batch"] in ids:
+                y_pred.append(item["predictions"])
+        y_pred = np.array(y_pred)
 
     data_name = get_parse_filter_text(conversation).replace('For ', '')
     multi_class = True if dataset_name == 'daily_dialog' else False
