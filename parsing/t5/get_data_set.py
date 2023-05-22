@@ -13,14 +13,12 @@ from logic.core import ExplainBot
 
 def get_config_loc(dataset: str) -> str:
     """Gets the location of a dataset's configuration file"""
-    if dataset == "diabetes":
-        config_loc = "./configs/diabetes-config.gin"
-    elif dataset == "compas":
-        config_loc = "./configs/compas-config.gin"
-    elif dataset == "german":
-        config_loc = "./configs/german-config.gin"
-    elif dataset == "boolq":
+    if dataset == "boolq":
         config_loc = "./configs/boolq.gin"
+    elif dataset == "daily_dialog":
+        config_loc = "./configs/da.gin"
+    elif dataset == "olid":
+        config_loc = "./configs/olid.gin"
     elif dataset.endswith(".gin"):
         config_loc = dataset
     else:
