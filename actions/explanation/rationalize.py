@@ -1,5 +1,16 @@
 import pandas as pd
 
+
+def get_few_shot_str(csv_filename, num_shots=5):
+    few_shot_str = ""
+    gpt_rationales = pd.read_csv(csv_filename)
+    for i, row in gpt_rationales.iterrows():
+        few_shot_str += row["prompt"] + row["completion"] + "\n"
+        if i == num_shots - 1:
+            break
+    return few_shot_str
+
+
 def rationalize_operation(conversation, parse_text, i, **kwargs):
     if not conversation.decoder.gpt_parser_initialized:
         return f"Rationalize operation not enabled for {conversation.decoder.parser_name}"
@@ -19,9 +30,8 @@ def rationalize_operation(conversation, parse_text, i, **kwargs):
     if len(conversation.temp_dataset.contents["X"]) == 0:
         return "There are no instances that meet this description!", 0
 
-    # Few-shot settings
+    # Few-shot setting
     few_shot = True
-    num_shots = 5
 
     return_s = ""
     for idx in id_list:
@@ -39,13 +49,8 @@ def rationalize_operation(conversation, parse_text, i, **kwargs):
             instruction = "Please explain the answer: "
             max_length = 150  # The 'passage' is usually very long, so we use a longer max_length for this dataset
 
-            # Few-shot
             if few_shot:
-                gpt_rationales = pd.read_csv("cache/boolq/GPT-3.5_rationales_BoolQ_val_400.csv")
-                for i, row in gpt_rationales.iterrows():
-                    few_shot_str += row["prompt"] + row["completion"] + "\n"
-                    if i == num_shots - 1:
-                        break
+                few_shot_str += get_few_shot_str("cache/boolq/GPT-3.5_rationales_BoolQ_val_400.csv")
 
         elif dataset_name == "daily_dialog":
             text = "Text: '" + instance[0] + "'"
@@ -64,6 +69,9 @@ def rationalize_operation(conversation, parse_text, i, **kwargs):
             intro = f"The tweet has been classified as {pred_str}."
             instruction = "Please explain why: "
             max_length = 150
+
+            if few_shot:
+                few_shot_str += get_few_shot_str("cache/olid/GPT-4_rationales_OLID_val_132.csv")
 
         else:
             return f"Dataset {dataset_name} currently not supported by rationalize operation", 1
