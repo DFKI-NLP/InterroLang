@@ -1,0 +1,11 @@
+User: Show me the feature importance for id 22 on sentence level
+Parsed: filter id 22 and nlpattribute sentence [E]
+
+User: What are the most important sentences for id 55
+Parsed: filter id 55 and nlpattribute sentence [E]
+
+User: Please explain the prediction of id 77 based on which sentences were most salient
+Parsed: filter id 77 and nlpattribute sentence [E]
+
+User: Most important phrases in id 1234
+Parsed: filter id 1234 and nlpattribute sentence [E]

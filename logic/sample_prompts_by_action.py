@@ -25,7 +25,8 @@ ACTION_2_FILENAME = {
     "custom_input_feature_importance": "custom_input_feature_importance_chatgpt.txt",
     "custom_input_feature_importance_on_sentence_level": "custom_feature_importance_sentence_chatgpt.txt",
     "augment": "augmentation_chatgpt.txt",
-    "adversarial": "adversarial_chatgpt.txt"
+    "adversarial": "adversarial_chatgpt.txt",
+    "sentence": "local_feature_importance_sentence.txt"
 }
 
 

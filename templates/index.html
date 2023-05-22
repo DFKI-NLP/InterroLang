@@ -76,6 +76,7 @@
                 <button class="idea-button" onclick="sampleRationalization()">rationalize</button>
                 <button class="idea-button" onclick="sampleAdversarial()">adversarial</button>
                 <button class="idea-button" onclick="sampleAugment()">augmentation</button>
+                <button class="idea-button" onclick="sampleSentence()">sentence-level feature attribution</button>
 
                 <button class="idea-button" id="c_pred" onclick="sampleCustomInputPrediction()">custom input
                     prediction
@@ -220,6 +221,10 @@
                 ttmInput.value = data;
             }
         });
+    }
+
+    function sampleSentence(){
+        doSample("sentence");
     }
 
     function sampleAdversarial(){
