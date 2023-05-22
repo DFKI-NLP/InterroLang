@@ -248,15 +248,13 @@ def main():
     print("Dataset:", dset, flush=True)
     print("Model:", model, flush=True)
 
-    if dset == "diabetes":
-        test_suite = "./experiments/parsing_accuracy/diabetes_test_suite.txt"
-        config = "./configs/diabetes-config.gin"
-    elif dset == "compas":
-        test_suite = "./experiments/parsing_accuracy/compas_test_suite.txt"
-        config = "./configs/compas-config.gin"
-    elif dset == "german":
-        test_suite = "./experiments/parsing_accuracy/german_test_suite.txt"
-        config = "./configs/german-config.gin"
+    test_suite = "./experiments/parsing_accuracy/german_test_suite.txt"
+    if dset == "boolq":
+        config = "./configs/boolq_nn.gin"
+    elif dset == "olid":
+        config = "./configs/olid_nn.gin"
+    elif dset == "daily_dialog":
+        config = "./configs/da_nn.gin"
     else:
         raise NameError(f"Unknown dataset {dset}")
 
@@ -364,7 +362,7 @@ def load_model(dset, guided_decoding, model):
     """Loads the model"""
     print("Initializing model...", flush=True)
     if "t5" not in model:
-        gin.parse_config(f"ExplainBot.model_name = '{model}'")
+        gin.parse_config(f"ExplainBot.parsing_model_name = {model}")
         gin.parse_config(f"ExplainBot.use_guided_decoding = {guided_decoding}")
 
         if args.debug:

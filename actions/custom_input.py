@@ -227,7 +227,6 @@ def generate_explanation(model, dataset_name, inputs, file_name="custom_input"):
                 'attributions': attrbs,
                 'predictions': preds.item()
             }
-
             json_list.append(result)
     elif dataset_name == "daily_dialog":
         tokenizer = HFTokenizer('bert-base-uncased', mode='bert').tokenizer

@@ -118,6 +118,12 @@ Parsed: includes and score accuracy [E]
 User: for {span}, how well, in terms of accuracy, does the model do on the training and test data
 Parsed: includes and score accuracy [E]
 
+User: model accuracy on {span}
+Parsed: includes and score accuracy [E]
+
+User: training accuracy on {span}
+Parsed: includes and score accuracy [E]
+
 User: what's the npv on {span}?
 Parsed: includes and score npv [E]
 
@@ -135,6 +141,9 @@ Parsed: includes and score ppv [E]
 
 User: what's the ppv on {span}?
 Parsed: includes and score ppv [E]
+
+User: recall on instances that have {span} in them
+Parsed: includes and score recall [E]
 
 User: what's the sensitivity on {span}?
 Parsed: includes and score sensitivity [E]

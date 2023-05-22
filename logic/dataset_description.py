@@ -107,19 +107,16 @@ class DatasetDescription:
             if not multi_class:
                 score = f1_score(y_true, y_pred)
             else:
-                y_pred = np.argmax(y_pred, axis=1)
                 score = f1_score(y_true, y_pred, average=average)
         elif metric_name == "recall":
             if not multi_class:
                 score = recall_score(y_true, y_pred)
             else:
-                y_pred = np.argmax(y_pred, axis=1)
                 score = recall_score(y_true, y_pred, average=average)
         elif metric_name == "precision":
             if not multi_class:
                 score = precision_score(y_true, y_pred)
             else:
-                y_pred = np.argmax(y_pred, axis=1)
                 score = precision_score(y_true, y_pred, average=average)
         elif metric_name == "sensitivity":
             tn, fp, fn, tp = confusion_matrix(y_true, y_pred).ravel()
@@ -181,7 +178,9 @@ class DatasetDescription:
                                                   y_pred,
                                                   metric_name,
                                                   rounding_precision,
-                                                  "the data")
+                                                  "the data",
+                                                  False,
+                                                  "macro")
         return performance_summary
 
     def get_eval_performance_for_hf_model(self,
@@ -222,7 +221,9 @@ class DatasetDescription:
                                                       y_pred,
                                                       metric_name,
                                                       rounding_precision,
-                                                      "the data")
+                                                      "the data",
+                                                      False,
+                                                      "macro")
         else:
             performance_summary = self.get_score_text(y_values,
                                                       y_pred,

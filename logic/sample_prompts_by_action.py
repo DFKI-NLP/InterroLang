@@ -19,11 +19,13 @@ ACTION_2_FILENAME = {
     "labels": "label.txt",
     "random_predict": "random_predict.txt",
     "explain": "local_feature_importance.txt",
-    "similar": "similar_prompts.txt",
+    "similar": "similar.txt",
     "rationalization": "rationalize.txt",
     "custom_input_prediction": "custom_input_prediction_chatgpt.txt",
     "custom_input_feature_importance": "custom_input_feature_importance_chatgpt.txt",
-    "custom_input_feature_importance_on_sentence_level": "custom_feature_importance_sentence_chatgpt.txt"
+    "custom_input_feature_importance_on_sentence_level": "custom_feature_importance_sentence_chatgpt.txt",
+    "augment": "augmentation_chatgpt.txt",
+    "adversarial": "adversarial_chatgpt.txt"
 }
 
 

@@ -104,6 +104,21 @@ def log_feedback():
         "username": username
     }
 
+    feedback_cache = "./cache/feedback.json"
+
+    if os.path.exists(feedback_cache):
+        fileObject = open(feedback_cache, "r")
+        jsonContent = fileObject.read()
+        json_list = json.loads(jsonContent)
+        json_list.append(logging_info)
+    else:
+        json_list = [logging_info]
+
+    jsonString = json.dumps(json_list)
+    jsonFile = open(feedback_cache, "w")
+    jsonFile.write(jsonString)
+    jsonFile.close()
+
     BOT.log(logging_info)
     return ""
 
@@ -221,7 +236,8 @@ def filter_dataset():
         filtered_df = df[df[BOT.text_fields].apply(lambda row: row.str.contains(filter_text)).any(axis=1)]
 
         BOT.conversation.temp_dataset.contents["X"] = filtered_df
-        app.logger.info(f"{len(filtered_df)} instances of {BOT.conversation.describe.dataset_name} include the filter string '{filter_text}'")
+        app.logger.info(f"{len(filtered_df)} instances of {BOT.conversation.describe.dataset_name} include the filter "
+                        f"string '{filter_text}'")
         final_df = filtered_df
     else:
         final_df = df

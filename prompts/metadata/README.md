@@ -27,13 +27,7 @@ Action defined in metadata/labels.py
 
 ### show.txt
 * 4x `filter id and show [E]`
-* 4x `includes and show [E]`
+* 7x `includes and show [E]`
 * 1x `previousfilter and show [E]`
 
 Action defined in metadata/show_data.py 
-
-### statistic_target.txt
-* 6x `statistic target [E]`
-* 4x `includes and statistic target [E]`
-
-Action defined in metadata/feature_stats.py

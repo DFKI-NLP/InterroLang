@@ -383,7 +383,7 @@ class ExplainBot:
             self.parser = Parser(cat_features=categorical,
                                  num_features=numeric,
                                  dataset=dataset,
-                                 target=list(y_values))
+                                 class_names=self.conversation.class_names)
 
             # Generate the available prompts
             # make sure to add the "incorrect" temporary feature
