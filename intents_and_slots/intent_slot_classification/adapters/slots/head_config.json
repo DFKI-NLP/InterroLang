@@ -1,0 +1,31 @@
+{
+  "config": {
+    "activation_function": "tanh",
+    "head_type": "tagging",
+    "label2id": {
+      "B-class_names": 3,
+      "B-data_type": 5,
+      "B-id": 7,
+      "B-includetoken": 0,
+      "B-metric": 11,
+      "B-number": 9,
+      "B-sent_level": 13,
+      "I-class_names": 4,
+      "I-data_type": 6,
+      "I-id": 8,
+      "I-includetoken": 1,
+      "I-metric": 12,
+      "I-number": 10,
+      "I-sent_level": 14,
+      "O": 2
+    },
+    "layers": 1,
+    "num_labels": 15
+  },
+  "hidden_size": 768,
+  "model_class": "BertAdapterModel",
+  "model_name": "bert-base-uncased",
+  "model_type": "bert",
+  "name": "slots",
+  "version": "3.1.0"
+}

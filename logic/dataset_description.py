@@ -76,8 +76,8 @@ class DatasetDescription:
                        metric_name: str,
                        rounding_precision: int,
                        data_name: str,
-                       multi_class: bool,
-                       average: str) -> str:
+                       multi_class: bool = False,
+                       average: str = "") -> str:
         """Computes model score and returns text describing the outcome.
 
         Arguments:

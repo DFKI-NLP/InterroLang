@@ -104,7 +104,9 @@ class Conversation:
         self.used = True
 
         self.include_word = None
+        self.prev_id = None
         self.text_fields = text_fields
+        self.needs_clarification = False
 
     def get_feature_definition(self, feature_name):
         """Gets semantic feature definition."""

@@ -190,39 +190,21 @@ def generate_explanation(model, dataset_name, inputs, file_name="custom_input"):
         jsonContent = fileObject.read()
         res_list = json.loads(jsonContent)
 
-        if dataset_name == 'boolq':
+        if len(inputs) == 1:
+            for res in res_list:
+                if res["original_text"] == inputs[0]:
+                    return [res]
+        else:
+            cache_text = [i["original_text"] for i in res_list]
+            cache_text_set = set(cache_text)
 
-            if len(inputs) == 1:
-                for res in res_list:
-                    if res["text"] == inputs[0]:
-                        return [res]
-            else:
-                cache_text = [i["text"] for i in res_list]
-                cache_text_set = set(cache_text)
-
-                # If cache contains all inputs
-                if set(inputs).issubset(cache_text_set):
-                    json_list = []
-                    for i in res_list:
-                        if i["text"] in inputs:
-                            json_list.append(i)
-                    return json_list
-        elif dataset_name == 'olid':
-            if len(inputs) == 1:
-                for res in res_list:
-                    if res["text"] == inputs[0]:
-                        return [res]
-            else:
-                cache_text = [i["original_text"] for i in res_list]
-                cache_text_set = set(cache_text)
-
-                # If cache contains all inputs
-                if set(inputs).issubset(cache_text_set):
-                    json_list = []
-                    for i in res_list:
-                        if i["original_text"] in inputs:
-                            json_list.append(i)
-                    return json_list
+            # If cache contains all inputs
+            if set(inputs).issubset(cache_text_set):
+                json_list = []
+                for i in res_list:
+                    if i["original_text"] in inputs:
+                        json_list.append(i)
+                return json_list
 
     dataloader = get_dataloader(inputs, dataset_name)
 
@@ -236,9 +218,12 @@ def generate_explanation(model, dataset_name, inputs, file_name="custom_input"):
 
             attrbs = detach_to_list(attribution[0])
             preds = torch.argmax(predictions, dim=1)
+            tokenizer = AutoTokenizer.from_pretrained("andi611/distilbert-base-uncased-qa-boolq")
             result = {
+                "original_text": inputs[idx_batch],
+                'text': tokenizer.convert_ids_to_tokens(b["input_ids"][0]),
                 'input_ids': detach_to_list(b["input_ids"]),
-                "text": inputs[idx_batch],
+                # "text": inputs[idx_batch],
                 'attributions': attrbs,
                 'predictions': preds.item()
             }

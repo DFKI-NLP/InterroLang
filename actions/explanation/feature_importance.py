@@ -49,7 +49,7 @@ def handle_input(parse_text):
         if len(id_list) >= 1:
             # filter id 213 and nlpattribute all [E]
             if "all" in parse_text:
-                return id_list, 1
+                return id_list, None
 
             # filter id 213 and nlpattribute sentence [E]
             if "sentence" in parse_text:
@@ -57,52 +57,6 @@ def handle_input(parse_text):
 
         # nlpattribute [E]
         return id_list, topk
-
-
-def get_res(json_list, topk, tokenizer, num=0):
-    """
-    Get topk tokens from a single sentence
-    Args:
-        json_list: data source
-        topk: topk value
-        tokenizer: for converting input_ids to sentence
-        num: current index
-
-    Returns:
-        topk tokens
-    """
-    input_ids = json_list[num]["input_ids"]
-    explanation = json_list[num]["attributions"]
-    res = []
-
-    # Get corresponding tokens by input_ids
-    # tokens = list(tokenizer.decode(input_ids).split(" "))
-    tokens = list(tokenizer.convert_ids_to_tokens(input_ids))
-
-    idx = np.argsort(explanation)[::-1][:topk]
-
-    for i in idx:
-        res.append(tokens[i])
-
-    return_s = ', '.join(i for i in res)
-    return return_s
-
-
-def get_return_str(topk, res):
-    """
-    Generate return string using template
-    Args:
-        topk: topk value
-        res:  topk tokens
-
-    Returns:
-        object: template string
-    """
-    if topk == 1:
-        return_s = f"The <b>most</b> important token is <b>{res}.</b>"
-    else:
-        return_s = f"The <b>{topk} most</b> important tokens are <b>{res}.</b>"
-    return return_s
 
 
 def get_explanation(dataset_name, inputs, file_name="sentence_level"):
@@ -119,6 +73,50 @@ def get_explanation(dataset_name, inputs, file_name="sentence_level"):
     res_list = generate_explanation(model, dataset_name, inputs, file_name=file_name)
 
     return res_list
+
+
+def get_visualization(attr, topk, original_text, conversation):
+    return_s = ""
+
+    # Get indices according to absolute attribution scores ascending
+    idx = np.argsort(np.absolute(np.copy(attr)))
+
+    # Get topk tokens
+    topk_tokens = []
+    for i in np.argsort(attr)[-topk:][::-1]:
+        print("i: ", i)
+        topk_tokens.append(original_text[i])
+
+    score_ranking = []
+    for i in range(len(idx)):
+        score_ranking.append(list(idx).index(i))
+    fraction = 1.0 / (len(original_text) - 1)
+
+    return_s += f"Top {topk} token(s): "
+    for i in topk_tokens:
+        return_s += f"<b>{i}</b>"
+        return_s += " "
+    return_s += '<br>'
+
+    return_s += "<details><summary>"
+    return_s += "The visualization: "
+    return_s += "</summary>"
+    # for i in range(1, len(text_list) - 1):
+    for i in range(1, len(original_text) - 1):
+        if attr[i] >= 0:
+            # Assign red to tokens with positive attribution
+            return_s += f"<span style='background-color:rgba(255,0,0,{round(fraction * score_ranking[i], conversation.rounding_precision)});padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 2; border-radius: 0.35em; box-decoration-break: clone; -webkit-box-decoration-break: clone'>"
+        else:
+            # Assign blue to tokens with negative attribution
+            return_s += f"<span style='background-color:rgba(0,0,255,{round(fraction * score_ranking[i], conversation.rounding_precision)});padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 2; border-radius: 0.35em; box-decoration-break: clone; -webkit-box-decoration-break: clone'>"
+        # return_s += text_list[i]
+        return_s += original_text[i]
+        return_s += "</span>"
+        return_s += ' '
+    return_s += "</details>"
+    return_s += '<br><br><br>'
+
+    return return_s
 
 
 def explanation_with_custom_input(conversation, topk):
@@ -142,102 +140,21 @@ def explanation_with_custom_input(conversation, topk):
     res_list = get_explanation(dataset_name, inputs)
     return_s = ""
     for res in res_list:
-        if dataset_name == "boolq":
-            original_text = res["text"]
+        original_text = res["text"]
+        _input = res["original_text"]
 
-            return_s += "The original text is:  <br>"
-            return_s += "<i>"
-            return_s += original_text
-            return_s += "</i>"
-            return_s += "<br><br>"
+        return_s += "The original text is:  <br>"
+        return_s += "<i>"
+        return_s += _input
+        return_s += "</i>"
+        return_s += "<br><br>"
 
-            text = "[CLS] " + original_text + " [SEP]"
-            attr = res["attributions"]
-            text_list = text.split()
+        attr = res["attributions"]
 
-            # Get indices according to absolute attribution scores ascending
-            idx = np.argsort(np.absolute(np.copy(attr)))
+        assert len(attr) == len(original_text)
 
-            # Get topk tokens
-            topk_tokens = []
-            for i in np.argsort(attr)[-topk:][::-1]:
-                topk_tokens.append(text_list[i])
-
-            score_ranking = []
-            for i in range(len(idx)):
-                score_ranking.append(list(idx).index(i))
-            fraction = 1.0 / (len(text_list) - 1)
-
-            return_s += f"Top {topk} token(s): "
-            for i in topk_tokens:
-                return_s += f"<b>{i}</b>"
-                return_s += " "
-            return_s += '<br>'
-
-            return_s += "The visualization: "
-            for i in range(1, len(text_list) - 1):
-                if attr[i] >= 0:
-                    # Assign red to tokens with positive attribution
-                    return_s += f"<span style='background-color:rgba(255,0,0,{round(fraction * score_ranking[i], conversation.rounding_precision)});padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 2; border-radius: 0.35em; box-decoration-break: clone; -webkit-box-decoration-break: clone'>"
-                else:
-                    # Assign blue to tokens with negative attribution
-                    return_s += f"<span style='background-color:rgba(0,0,255,{round(fraction * score_ranking[i], conversation.rounding_precision)});padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 2; border-radius: 0.35em; box-decoration-break: clone; -webkit-box-decoration-break: clone'>"
-                return_s += text_list[i]
-                return_s += "</span>"
-                return_s += ' '
-
-            return_s += '<br><br><br>'
-        elif dataset_name == "olid" or dataset_name == "daily_dialog":
-            original_text = res["text"]
-            _input = res["original_text"]
-
-            return_s += "The original text is:  <br>"
-            return_s += "<i>"
-            return_s += _input
-            return_s += "</i>"
-            return_s += "<br><br>"
-
-            attr = res["attributions"]
-
-            assert len(attr) == len(original_text)
-
-            # Get indices according to absolute attribution scores ascending
-            idx = np.argsort(np.absolute(np.copy(attr)))
-
-            # Get topk tokens
-            topk_tokens = []
-            # print(text_list)
-            for i in np.argsort(attr)[-topk:][::-1]:
-                print("i: ", i)
-                topk_tokens.append(original_text[i])
-
-            score_ranking = []
-            for i in range(len(idx)):
-                score_ranking.append(list(idx).index(i))
-            fraction = 1.0 / (len(original_text) - 1)
-
-            return_s += f"Top {topk} token(s): "
-            for i in topk_tokens:
-                return_s += f"<b>{i}</b>"
-                return_s += " "
-            return_s += '<br>'
-
-            return_s += "The visualization: "
-            # for i in range(1, len(text_list) - 1):
-            for i in range(1, len(original_text) - 1):
-                if attr[i] >= 0:
-                    # Assign red to tokens with positive attribution
-                    return_s += f"<span style='background-color:rgba(255,0,0,{round(fraction * score_ranking[i], conversation.rounding_precision)});padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 2; border-radius: 0.35em; box-decoration-break: clone; -webkit-box-decoration-break: clone'>"
-                else:
-                    # Assign blue to tokens with negative attribution
-                    return_s += f"<span style='background-color:rgba(0,0,255,{round(fraction * score_ranking[i], conversation.rounding_precision)});padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 2; border-radius: 0.35em; box-decoration-break: clone; -webkit-box-decoration-break: clone'>"
-                # return_s += text_list[i]
-                return_s += original_text[i]
-                return_s += "</span>"
-                return_s += ' '
-
-            return_s += '<br><br><br>'
-
+    returned_string = get_visualization(attr, topk, original_text, conversation)
+    return_s += returned_string
     return return_s
 
 
@@ -253,12 +170,7 @@ def get_sentence_level_feature_importance(conversation, sentences):
     for res in res_list:
         attr = res["attributions"]
 
-        if dataset_name == 'boolq':
-            text = res["text"]
-        elif dataset_name == 'olid':
-            text = res["original_text"]
-        else:
-            text = res["original_text"]
+        text = res["original_text"]
 
         return_s += "<ul>"
         return_s += "<li>"
@@ -277,6 +189,44 @@ def get_sentence_level_feature_importance(conversation, sentences):
     return return_s
 
 
+def get_text_by_id(_id, conversation):
+    dataset_name = conversation.describe.get_dataset_name()
+    dataset = conversation.temp_dataset.contents["X"]
+
+    text = ""
+
+    if dataset_name == "boolq":
+
+        text += f"<b>Question: </b>{dataset['question'][_id]} <br>"
+        text += f"<b>Passage: </b>{dataset['passage'][_id]} <br>"
+        original_text = dataset['question'][_id] + " " + dataset['passage'][_id]
+    elif dataset_name == "olid":
+        text += f"<b>Text: </b>{dataset['text'][_id]} <br>"
+        original_text = dataset['text'][_id]
+    elif dataset_name == "daily_dialog":
+        text += f"<b>Dialog: </b>{dataset['dialog'][_id]} <br>"
+        original_text = dataset['dialog'][_id]
+    else:
+        raise NotImplementedError(f"{dataset_name} is not supported!")
+
+    text += "<br>"
+
+    return text, original_text
+
+
+def get_attr_by_id(conversation, _id):
+    dataset_name = conversation.describe.get_dataset_name()
+    data_path = f"./cache/{dataset_name}/ig_explainer_{dataset_name}_explanation.json"
+    fileObject = open(data_path, "r")
+    jsonContent = fileObject.read()
+    json_list = json.loads(jsonContent)
+
+    attr = json_list[_id]["attributions"]
+    input_ids = json_list[_id]["input_ids"]
+
+    return attr, input_ids
+
+
 def feature_importance_operation(conversation, parse_text, i, **kwargs):
     # filter id 5 or filter id 151 or filter id 315 and nlpattribute topk 10 [E]
     # filter id 213 and nlpattribute all [E]
@@ -285,7 +235,7 @@ def feature_importance_operation(conversation, parse_text, i, **kwargs):
     id_list, topk = handle_input(parse_text)
 
     if topk is None:
-        topk = 3
+        topk = 5
 
     # If id is not given
 
@@ -300,14 +250,17 @@ def feature_importance_operation(conversation, parse_text, i, **kwargs):
     if topk == -1:
         return_s = ''
         for _id in id_list:
-            f_names = list(conversation.temp_dataset.contents['X'].columns)
             texts = conversation.temp_dataset.contents['X']
             filtered_text = ''
 
-            # Get the first column, also for boolq, we only need question column not passage
-            for f in f_names[:1]:
-                filtered_text += texts[f][_id]
-                filtered_text += " "
+            dataset_name = conversation.describe.get_dataset_name()
+            if dataset_name == "boolq":
+                filtered_text += texts['question'][_id] + " " + texts['passage'][_id]
+            elif dataset_name == "olid":
+                filtered_text = texts['text'][_id]
+            elif dataset_name == "daily_dialog":
+                filtered_text = texts['dialog'][_id]
+
             return_s += f'ID {_id}: '
             return_s += get_sentence_level_feature_importance(conversation, sentences=filtered_text)
             return_s += '<br><br>'
@@ -332,14 +285,26 @@ def feature_importance_operation(conversation, parse_text, i, **kwargs):
         return "Entered topk is larger than input max length", 1
     else:
         if len(id_list) == 1:
-            res = get_res(json_list, topk, tokenizer, num=id_list[0])
-            return get_return_str(topk, res), 1
+            return_s, original_text = get_text_by_id(id_list[0], conversation)
+
+            attr, input_ids = get_attr_by_id(conversation, id_list[0])
+            converted_text = tokenizer.convert_ids_to_tokens(input_ids)
+            idx = converted_text.index("[PAD]")
+            return_s += get_visualization(attr[:idx], topk, converted_text[:idx], conversation)
+
+            return return_s, 1
         else:
             return_s = ""
             for num in id_list:
-                res = get_res(json_list, topk, tokenizer, num=num)
-                temp = get_return_str(topk, res)
-                return_s += f"For id {num}: {temp}"
+                return_s += f"For id {num}: <br>"
+                text, original_text = get_text_by_id(num, conversation)
+                return_s += text
+
+                attr, input_ids = get_attr_by_id(conversation, num)
+                converted_text = tokenizer.convert_ids_to_tokens(input_ids)
+                idx = converted_text.index("[PAD]")
+                return_s += get_visualization(attr[:idx], topk, converted_text[:idx], conversation)
+
                 return_s += "<br>"
             return return_s, 1
 
