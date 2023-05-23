@@ -16,6 +16,10 @@ Action defined in context/last_turn_filter.py
 ### previousfilter_+_countdata.txt
 * 3x `previousfilter and countdata [E]`
 
+### previousfilter_+_keywords.txt
+* 2x `previousfilter and keywords all [E]`
+* 2x `previousfilter and keywords {topk} [E]`
+
 ### previousfilter_+_likelihood.txt
 * 17x `previousfilter and likelihood [E]`
 
