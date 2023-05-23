@@ -30,3 +30,30 @@ Parsed: data and model [E]
 
 User: What's the data like and what can you do?
 Parsed: data and function [E]
+
+User: show me the language of training data
+Parsed: data train_data_language [E]
+
+User: language of training data
+Parsed: data train_data_language [E]
+
+User: where does training data come from
+Parsed: data train_data_source [E]
+
+User: name of training data
+Parsed: data train_data_name [E]
+
+User: how many training data is used
+Parsed: data train_data_number [E]
+
+User: tell me the language of testing data
+Parsed: data test_data_language [E]
+
+User: where do you get test data
+Parsed: data test_data_source [E]
+
+User: inform me test data name
+Parsed: data test_data_name [E]
+
+User: count test data points
+Parsed: data test_data_number [E]

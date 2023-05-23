@@ -17,7 +17,9 @@ augment: " augment"
 cfe: " cfe" cfefeature
 cfefeature: {availablefeaturetypes} | " "
 
-data: " data"
+data: dataop ( dataflag )
+dataop: " data"
+dataflag: " train_data_name" | " train_data_source" | " train_data_language" | " train_data_number" | " test_data_name" | " test_data_source" | " test_data_language" | " test_data_number"
 
 define: defineword allfeaturenames
 defineword: " define"
