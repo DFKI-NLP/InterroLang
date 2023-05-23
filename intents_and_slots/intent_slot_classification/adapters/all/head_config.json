@@ -18,6 +18,8 @@
       "LABEL_19": 19,
       "LABEL_2": 2,
       "LABEL_20": 20,
+      "LABEL_21": 21,
+      "LABEL_22": 22,
       "LABEL_3": 3,
       "LABEL_4": 4,
       "LABEL_5": 5,
@@ -27,7 +29,7 @@
       "LABEL_9": 9
     },
     "layers": 2,
-    "num_labels": 21,
+    "num_labels": 23,
     "use_pooler": true
   },
   "hidden_size": 768,
