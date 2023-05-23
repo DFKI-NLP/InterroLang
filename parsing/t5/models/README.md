@@ -2,8 +2,13 @@
 
 To test out the current model, download it from the link...
 
-**FLAN-T5-base (250M) BoolQ**  
-https://cloud.dfki.de/owncloud/index.php/s/rR2Q2swqg8dkmCt/download
+### FLAN-T5-base (250M)
+
+| Dataset    | Link                                                                            | Val Accuracy |
+|------------|---------------------------------------------------------------------------------|--------------|
+| **BoolQ**  | [Download](https://cloud.dfki.de/owncloud/index.php/s/5aZPC4mTWLKeQ9x/download) | 95 %         |
+| **DA**     |                                                                                 |              |
+| **OLID**   |                                                                                 |              |
 
 ...and put the folder (flan-t5-base) inside parsing/t5/models (this directory).
 
