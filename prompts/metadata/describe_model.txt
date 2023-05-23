@@ -15,3 +15,24 @@ Parsed: model and data [E]
 
 User: describe the model and data
 Parsed: model and data [E]
+
+User: show me learning rate of current model
+Parsed: model lr [E]
+
+User: how many epochs does the model get trained
+Parsed: model epochs [E]
+
+User: what kind of loss does the model use for training
+Parsed: model loss [E]
+
+User: which optimizer is chosen for the model
+Parsed: model optimizer [E]
+
+User: can you tell me what kind of tasks can the model do
+Parsed: model task [E]
+
+User: what's the name of the model
+Parsed: model model_name [E]
+
+User: how would you summarize the model
+Parsed: model model_summary [E]

@@ -56,7 +56,9 @@ mistakes: mistakesword mistakestypes
 mistakesword: " mistake"
 mistakestypes: " count" | " sample"
 
-modeldescription: " model"
+modeldescription: model ( modelflag )
+model: " model"
+modelflag: " model_name" | " model_summary" | " task" | " epochs" | " lr" | " loss" | " optimizer"
 
 ndatapoints: " countdata"
 
