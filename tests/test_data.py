@@ -14,7 +14,7 @@ def test_data_summary():
     """Test data summary functionality"""
     parse_text = ["data", "[e]"]
 
-    return_s, status_code = data_operation(conversation, parse_text, 1)
+    return_s, status_code = data_operation(conversation, parse_text, 0)
 
     file_html = open(f"./tests/html/data/{dataset_name}_data_summary.html", "w")
     text = TEXT
