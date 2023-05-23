@@ -49,10 +49,6 @@ Action defined in prediction/predict.py
 * 1x `includes and score recall [E]`
 * 1x `includes and score sensitivity [E]`
 * 1x `includes and score specificity [E]`
-* 2x `previousfilter and score npv [E]`
-* 2x `previousfilter and score ppv [E]`
-* 1x `previousfilter and score sensitivity [E]`
-* 1x `previousfilter and score specificity [E]`
 
 Action defined in prediction/score.py
 
