@@ -39,7 +39,7 @@ Prompts.num_prompt_template = 7
 # Explanation Params
 
 # Conversation params
-Conversation.class_names = {1: "True", 0: "False"}
+Conversation.class_names = {1: "offensive", 0: "non-offensive"}
 
 # Dataset description
 DatasetDescription.dataset_objective = "predict to answer offensive/non-offensive attitude based on tweets"
