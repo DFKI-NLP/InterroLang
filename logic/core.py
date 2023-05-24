@@ -197,7 +197,7 @@ class ExplainBot:
             self.score_mapper = {"positive predictive value":"ppv", "negative predictive value":"npv", "acc":"accuracy", "prec":"precision", "rec":"recall", "f 1":"f1"}
             self.scores = ["accuracy", "f1", "roc", "precision", "recall", "sensitivity", "specificity", " ppv", "npv"]
             self.score_settings = ["micro", "macro", "weighted"]
-            self.intent_with_topk_prefix = ["nlpattribute", "important", "keywords", "similarity"]
+            self.intent_with_topk_prefix = ["nlpattribute", "important", "similarity"]
 
             self.core_slots = {"adversarial":["id"],
                 "augment":["id"],
@@ -630,6 +630,9 @@ class ExplainBot:
         for slot in slot_pattern:
             decoded_slot_text = ""
             if slot in anno_slots:
+                if slot == "includetoken":
+                    decoded_text = "includes and " + decoded_text
+                    continue
                 if slot == "sent_level": # we don't need a value in this case
                     decoded_slot_text += " sentence"
                     continue
@@ -649,7 +652,8 @@ class ExplainBot:
                     # NB: storing only the last id value
                     self.conversation.prev_id = str(slot_value)
                 elif len(slot_values) == 1:
-                    slot_value = self.clean_up(slot_values[0])
+                    slot_value = slot_values[0]
+                slot_value = self.clean_up(slot_value)
                 if slot == "includetoken":
                     self.conversation.include_word = self.clean_up(slot_value)
                 elif slot in ["id", "number"] and not(slot_value.isdigit()):
@@ -665,11 +669,11 @@ class ExplainBot:
                     elif not(slot_value in self.scores):
                         slot_value = "default"
                         for s_score in self.scores:
-                            if s_score in text:
+                            if s_score in text.lower():
                                 slot_value = s_score
                     for score_setting in self.score_settings:
                         if score_setting in text:
-                            score_setting_parsed = " "+score_setting
+                            score_setting_parsed = " " + score_setting
                     decoded_slot_text += " " + slot_value + score_setting_parsed
 
                 elif len(slot_value)>0:
