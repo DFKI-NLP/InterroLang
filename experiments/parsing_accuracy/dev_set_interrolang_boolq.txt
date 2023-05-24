@@ -254,7 +254,7 @@ What was predicted for id 99?
 filter id 99 and predict [E]
 
 Id 780. What does the model predict?
-filter id 780 predict [E]
+filter id 780 and predict [E]
 
 Please show me one example of the prediction that the model outputs.
 randompredict [E]
