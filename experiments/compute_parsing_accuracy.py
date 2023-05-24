@@ -262,8 +262,6 @@ def main():
         config = f"./configs/{dset}_nn.gin"
     elif model == "\'EleutherAI/gpt-neo-2.7B\'":
         config = f"./configs/{dset}.gin"
-    elif model == "\'adapters\'":
-        config = f"./configs/{dset}_adapter.gin"
     elif model == "\'FLAN-T5\'":
         config = f"./configs/{dset}_flan-t5.gin"
     else:
