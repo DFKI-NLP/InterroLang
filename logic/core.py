@@ -698,6 +698,8 @@ class ExplainBot:
                 decoded_text += " all"
             elif best_intent == "nlpattribute" and slot == "number" and len(decoded_slot_text)==0 and (not "sent_level" in anno_slots):
                 decoded_text += " all"
+            elif best_intent == "keywords" and slot == "number" and len(decoded_slot_text)==0:
+                decoded_text += " all"
             elif best_intent == "score" and slot == "metric" and not("metric" in anno_slots):
                 decoded_text += " default"
         self.conversation.store_last_parse(decoded_text)
