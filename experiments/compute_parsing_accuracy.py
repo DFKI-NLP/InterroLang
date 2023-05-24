@@ -248,15 +248,24 @@ def main():
     print("Dataset:", dset, flush=True)
     print("Model:", model, flush=True)
 
-    test_suite = "./experiments/parsing_accuracy/german_test_suite.txt"
     if dset == "boolq":
-        config = "./configs/boolq_nn.gin"
+        test_suite = f"./experiments/parsing_accuracy/dev_set_interrolang_{dset}.txt"
     elif dset == "olid":
-        config = "./configs/olid_nn.gin"
+        test_suite = f"./experiments/parsing_accuracy/dev_set_interrolang_{dset}.txt"
     elif dset == "daily_dialog":
-        config = "./configs/da_nn.gin"
+        test_suite = f"./experiments/parsing_accuracy/dev_set_interrolang_{dset}.txt"
+        dset = "da"
     else:
         raise NameError(f"Unknown dataset {dset}")
+
+    if model == "\'nearest-neighbor\'":
+        config = f"./configs/{dset}_nn.gin"
+    elif model == "\'EleutherAI/gpt-neo-2.7B\'":
+        config = f"./configs/{dset}.gin"
+    elif model == "\'FLAN-T5\'":
+        config = f"./configs/{dset}_flan-t5.gin"
+    else:
+        raise NotImplementedError(f"{model} is not supported!")
 
     # Parse config
     gin.parse_config_file(config)
