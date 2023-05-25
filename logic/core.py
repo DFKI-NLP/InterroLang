@@ -274,15 +274,59 @@ class ExplainBot:
                                      "randompredict": "show a prediction on a random instance"}
 
         self.deictic_words = ["this", "that", "it", "here"]
+        self.model_slot_words_map = {"lr": ["lr", "learning rate"], "epochs": ["epoch"], "loss": ["loss"], "optimizer":["optimizer"], "task":["task", "function"], "model_name": ["name", "call"], "model_summary":["summary", "summarize", "overview"]}
 
         self.st_model = SentenceTransformer('all-MiniLM-L6-v2')
         confirm = ["Yes", "Of course", "I agree", "Correct", "Yeah", "Right", "That's what I meant", "Indeed",
                    "Exactly", "True"]
         disconfirm = ["No", "Nope", "Sorry, no", "I think there is some misunderstanding", "Not right", "Incorrect",
                       "Wrong", "Disagree"]
-        # Compute embedding for both lists
+        data_name = ["inform me test data name", "name of training data", "how is the test set called?", "what's the name of the data?"]
+        data_source = ["where does training data come from", "where do you get test data", "the source of the dataset?"]
+        data_language = ["show me the language of training data", "language of training data", "tell me the language of testing data", "what's the language of the model?"]
+        data_number = ["how many training data is used", "count test data points", "tell me the number of data points"]
+
+        # Compute embedding for data flags
+        self.data_name = self.st_model.encode(data_name, convert_to_tensor=True)
+        self.data_source = self.st_model.encode(data_source, convert_to_tensor=True)
+        self.data_language = self.st_model.encode(data_language, convert_to_tensor=True)
+        self.data_number = self.st_model.encode(data_number, convert_to_tensor=True)
+
+        # Compute embeddings for confirm/disconfirm
         self.confirm = self.st_model.encode(confirm, convert_to_tensor=True)
         self.disconfirm = self.st_model.encode(disconfirm, convert_to_tensor=True)
+
+    def get_data_type(self, text:str):
+        """Checks the data type (train/test supported)"""
+        if "test" in text:
+            return "test"
+        else:
+            return "train"
+
+    def get_data_flag(self, text: str):
+        """Checks whether the user asks about specific details of the data"""
+        # Compute cosine-similarities
+        text = self.st_model.encode(text, convert_to_tensor=True)
+        dname_scores = util.cos_sim(text, self.data_name)
+        dname_score = torch.mean(dname_scores, dim=-1).item()
+
+        dsource_scores = util.cos_sim(text, self.data_source)
+        dsource_score = torch.mean(dsource_scores, dim=-1).item()
+
+        dlang_scores = util.cos_sim(text, self.data_language)
+        dlang_score = torch.mean(dlang_scores, dim=-1).item()
+
+        dnum_scores = util.cos_sim(text, self.data_number)
+        dnum_score = torch.mean(dnum_scores, dim=-1).item()
+
+        max_score_name = "number"
+        max_score = 0
+        for score in [("name", dname_score), ("source", dsource_score), ("language", dlang_score), ("number", dnum_score)]:
+            if score[1] > max_score:
+                max_score = score[1]
+                max_score_name = score[0]
+        return max_score_name
+
 
     def has_deictic(self, text):
         for deictic in self.deictic_words:
@@ -330,7 +374,6 @@ class ExplainBot:
                     span_end = span_start[2]
                 span_start = span_start[1]
                 final_slot2spans[slot_type].append("".join(intext_chars[span_start:span_end]))
-
         return final_slot2spans
 
     def init_loaded_var(self, name: bytes):
@@ -605,13 +648,31 @@ class ExplainBot:
         decoded_text = ""
         clarification_text = ""
         # NB: if the score is too low, ask for clarification
-        print("Intent scores:", anno_intents)
         if anno_intents[0][1] < 0.50:
             do_clarification = True
             clarification_text = "I'm sorry, I am not sure whether I understood you correctly. Did you mean that you want me to " + \
                                  self.op2clarification[anno_intents[0][0]] + "?"
         best_intent = anno_intents[0][0]
+        # discard includes as a separate intent
+        # we use it only in combination with others
+        if best_intent == "includes":
+            best_intent = anno_intents[1][0]
+
         decoded_text += best_intent
+
+        if best_intent == "model":
+            model_slot = " summarize"
+            for mslot_name, m_slot_values in self.model_slot_words_map.items():
+                for mslot_value in m_slot_values:
+                    if mslot_value in text:
+                        model_slot = " " + mslot_name
+                        break
+            decoded_text += model_slot
+        if best_intent == "data":
+            dtype = self.get_data_type(text)
+            dflag = self.get_data_flag(text)
+            decoded_text += " " + dtype + "_data_" + dflag
+
         slot_pattern = self.intent2slot_pattern[best_intent]
         id_adhoc, number_adhoc, token_adhoc = self.check_heuristics(decoded_text, text)
         for slot in slot_pattern:
@@ -621,7 +682,7 @@ class ExplainBot:
                     decoded_text = "includes and " + decoded_text
                     continue
                 if slot == "sent_level":  # we don't need a value in this case
-                    decoded_slot_text += " sentence"
+                    decoded_text += " sentence"
                     continue
                 try:
                     slot_values = anno_slots[slot]
@@ -666,7 +727,7 @@ class ExplainBot:
                 elif len(slot_value) > 0:
                     if slot == "number" and best_intent in self.intent_with_topk_prefix:
                         decoded_slot_text += " topk " + str(slot_value)
-                    else:
+                    elif len(slot_values) == 1: # avoid adding the same id twice
                         decoded_slot_text += " " + str(slot_value)
 
             else:  # check heuristics
@@ -677,10 +738,10 @@ class ExplainBot:
                         decoded_text = "filter id " + str(id_adhoc) + " and " + decoded_text
                         self.conversation.prev_id = str(id_adhoc)
                     elif self.conversation.prev_id is not None and (
-                            self.has_deictic(text) or slot in self.core_slots[best_intent]):
+                            self.has_deictic(text) or slot in self.core_slots[best_intent]) and self.conversation.custom_input is None:
                         decoded_text = "filter id " + self.conversation.prev_id + " and " + decoded_text
                 elif slot == "number":
-                    if number_adhoc != "":
+                    if number_adhoc != "" and slot in self.core_slots[best_intent]:
                         if best_intent in self.intent_with_topk_prefix:
                             decoded_slot_text += " topk " + str(number_adhoc)
                         else:
