@@ -661,7 +661,7 @@ class ExplainBot:
         decoded_text += best_intent
 
         if best_intent == "model":
-            model_slot = " summarize"
+            model_slot = " model_summary"
             for mslot_name, m_slot_values in self.model_slot_words_map.items():
                 for mslot_value in m_slot_values:
                     if mslot_value in text:
