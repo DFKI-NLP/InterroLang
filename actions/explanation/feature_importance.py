@@ -60,6 +60,16 @@ def handle_input(parse_text):
 
 
 def get_explanation(dataset_name, inputs, file_name="sentence_level"):
+    """
+    Get explanation list
+    Args:
+        dataset_name: dataset name
+        inputs: list of inputs
+        file_name: cache file name
+
+    Returns:
+        res_list: results in list
+    """
     if dataset_name == "boolq":
         model = AutoModelForSequenceClassification.from_pretrained("andi611/distilbert-base-uncased-qa-boolq",
                                                                    num_labels=2)
@@ -76,6 +86,17 @@ def get_explanation(dataset_name, inputs, file_name="sentence_level"):
 
 
 def get_visualization(attr, topk, original_text, conversation):
+    """
+    Get visualization on given input
+    Args:
+        attr: attribution list
+        topk: top k value
+        original_text: original text
+        conversation: conversation object
+
+    Returns:
+        heatmap in html form
+    """
     return_s = ""
 
     # Get indices according to absolute attribution scores ascending
@@ -84,7 +105,6 @@ def get_visualization(attr, topk, original_text, conversation):
     # Get topk tokens
     topk_tokens = []
     for i in np.argsort(attr)[-topk:][::-1]:
-        print("i: ", i)
         topk_tokens.append(original_text[i])
 
     score_ranking = []
@@ -159,6 +179,13 @@ def explanation_with_custom_input(conversation, topk):
 
 
 def get_sentence_level_feature_importance(conversation, sentences):
+    """
+    Sentence level feature importance
+    Args:
+        conversation: conversation object
+        sentences: A string containing multiple (optionally) sentences
+
+    """
     # sentences = parse_text[i+1]
     inputs = sent_tokenize(sentences)
     dataset_name = conversation.describe.get_dataset_name()
@@ -190,6 +217,15 @@ def get_sentence_level_feature_importance(conversation, sentences):
 
 
 def get_text_by_id(_id, conversation):
+    """
+    Get text with corresponding id
+    Args:
+        _id: id
+        conversation:
+
+    Returns:
+        text string
+    """
     dataset_name = conversation.describe.get_dataset_name()
     dataset = conversation.temp_dataset.contents["X"]
 
@@ -215,6 +251,15 @@ def get_text_by_id(_id, conversation):
 
 
 def get_attr_by_id(conversation, _id):
+    """
+    Get attribution list and input ids
+    Args:
+        conversation
+        _id
+
+    Returns:
+
+    """
     dataset_name = conversation.describe.get_dataset_name()
     data_path = f"./cache/{dataset_name}/ig_explainer_{dataset_name}_explanation.json"
     fileObject = open(data_path, "r")
@@ -228,6 +273,17 @@ def get_attr_by_id(conversation, _id):
 
 
 def feature_importance_operation(conversation, parse_text, i, **kwargs):
+    """
+    feature attribution operation
+    Args:
+        conversation
+        parse_text: parsed text from T5
+        i: counter pointing at operation
+        **kwargs:
+
+    Returns:
+        formatted string
+    """
     # filter id 5 or filter id 151 or filter id 315 and nlpattribute topk 10 [E]
     # filter id 213 and nlpattribute all [E]
     # filter id 33 and nlpattribute topk 1 [E]
