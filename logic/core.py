@@ -756,7 +756,11 @@ class ExplainBot:
             elif best_intent == "keywords" and slot == "number" and len(decoded_slot_text) == 0:
                 decoded_text += " all"
             elif best_intent == "score" and slot == "metric" and not ("metric" in anno_slots):
-                decoded_text += " default"
+                score_val = " default"
+                for score in self.scores:
+                    if score in text:
+                        score_val = " " + score
+                decoded_text += score_val
         self.conversation.store_last_parse(decoded_text)
         app.logger.info(f"adapters decoded text {decoded_text}")
         return None, decoded_text, do_clarification, clarification_text
