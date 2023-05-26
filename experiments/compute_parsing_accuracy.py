@@ -249,11 +249,11 @@ def main():
     print("Model:", model, flush=True)
 
     if dset == "boolq":
-        test_suite = f"./experiments/parsing_accuracy/dev_set_interrolang_{dset}.txt"
+        test_suite = f"./experiments/parsing_interrolang_dev/dev_set_interrolang_{dset}.txt"
     elif dset == "olid":
-        test_suite = f"./experiments/parsing_accuracy/dev_set_interrolang_{dset}.txt"
+        test_suite = f"./experiments/parsing_interrolang_dev/dev_set_interrolang_{dset}.txt"
     elif dset == "daily_dialog":
-        test_suite = f"./experiments/parsing_accuracy/dev_set_interrolang_{dset}.txt"
+        test_suite = f"./experiments/parsing_interrolang_dev/dev_set_interrolang_{dset}.txt"
         dset = "da"
     else:
         raise NameError(f"Unknown dataset {dset}")
