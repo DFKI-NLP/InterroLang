@@ -37,23 +37,47 @@ Parsed: data train_data_language [E]
 User: language of training data
 Parsed: data train_data_language [E]
 
+User: Which languages does the data for training contain?
+Parsed: data train_data_language [E]
+
 User: where does training data come from
+Parsed: data train_data_source [E]
+
+User: What's the source of the training data?
 Parsed: data train_data_source [E]
 
 User: name of training data
 Parsed: data train_data_name [E]
 
-User: how many training data is used
+User: What is the dataset called?
+Parsed: data train_data_name [E]
+
+User: how much training data is used
+Parsed: data train_data_number [E]
+
+User: How many training data points are present?
 Parsed: data train_data_number [E]
 
 User: tell me the language of testing data
 Parsed: data test_data_language [E]
 
+User: test partition languages
+Parsed: data test_data_language [E]
+
 User: where do you get test data
 Parsed: data test_data_source [E]
 
-User: inform me test data name
+User: Could you please tell me the sources of the test data?
+Parsed: data test_data_source [E]
+
+User: inform me about the test data name
 Parsed: data test_data_name [E]
 
-User: count test data points
+User: What is the test set called?
+Parsed: data test_data_name [E]
+
+User: How many test data points are here?
+Parsed: data test_data_number [E]
+
+User: The size of the test partition of the dataset, please
 Parsed: data test_data_number [E]
