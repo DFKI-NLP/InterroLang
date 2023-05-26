@@ -11,6 +11,7 @@ from logging.config import dictConfig
 
 from logic.core import ExplainBot
 from logic.sample_prompts_by_action import sample_prompt_for_action
+from timeout import TimeOutError
 
 
 # gunicorn doesn't have command line flags, using a gin file to pass command line args
@@ -200,6 +201,8 @@ def get_bot_response():
 
                 # Update the conversation with the parse
                 BOT.conversation.store_last_parse(f"includes '{user_text}'")
+        except TimeOutError:
+            response = "Sorry! The response time is more than 60s!"
         except Exception as ext:
             app.logger.info(f"Traceback getting bot response: {traceback.format_exc()}")
             app.logger.info(f"Exception getting bot response: {ext}")
