@@ -129,8 +129,9 @@ class AdapterParse:
             "randompredict": "show a prediction on a random instance"}
 
         self.deictic_words = ["this", "that", "it", "here"]
-        
-        self.model_slot_words_map = {"lr": ["lr", "learning rate"], "epochs": ["epoch"], "loss": ["loss"], "optimizer":["optimizer"], "task":["task", "function"], "model_name": ["name", "call"], "model_summary":["summary", "summarize", "overview"]}
+
+        self.model_slots = ["lr", "epochs", "loss", "optimizer", "task", "model_name", "model_summary"]
+        self.model_slot_words_map = {"lr": ["lr", "learning rate"], "epochs": ["epoch"], "loss": ["loss"], "optimizer":["optimizer"], "task":["task", "function"], "model_name": ["name", "call"], "model_summary":["summary", "overview"]}
 
         self.st_model = SentenceTransformer('all-MiniLM-L6-v2')
         confirm = ["Yes", "Of course", "I agree", "Correct", "Yeah", "Right", "That's what I meant", "Indeed", "Exactly", "True"]
@@ -333,12 +334,17 @@ class AdapterParse:
         decoded_text += best_intent
 
         if best_intent == "model":
-            model_slot = " model_summary"
-            for mslot_name, m_slot_values in self.model_slot_words_map.items():
+            model_slot = None
+            for mslot_name in self.model_slots:
+                m_slot_values = self.model_slot_words_map[mslot_name]
                 for mslot_value in m_slot_values:
                     if mslot_value in text:
                         model_slot = " " + mslot_name
                         break
+                if model_slot is not None:
+                    break
+            if model_slot is None:
+                model_slot = " model_summary"
             decoded_text += model_slot
         if best_intent == "data":
             dtype = self.get_data_type(text)
@@ -501,7 +507,7 @@ def get_f1scores(predicted_and_gold, labels):
 
     return f1_per_label, macro_f1, micro_f1, intent_accuracy
 
-  
+
 def evaluate(parser, val_data_path):
     user_parsed_tuples = []
     with open(val_data_path) as f:
