@@ -3,8 +3,10 @@ import gin
 import numpy as np
 
 from actions.util_functions import get_parse_filter_text
+from timeout import timeout
 
 
+@timeout(60)
 @gin.configurable
 def show_labels_operation(conversation, parse_text, i, n_features_to_show=float("+inf"), **kwargs):
     """Generates text that shows labels."""

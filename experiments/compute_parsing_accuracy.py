@@ -258,14 +258,26 @@ def main():
     else:
         raise NameError(f"Unknown dataset {dset}")
 
-    if model == "\'nearest-neighbor\'":
-        config = f"./configs/{dset}_nn.gin"
-    elif model == "\'EleutherAI/gpt-neo-2.7B\'":
-        config = f"./configs/{dset}.gin"
-    elif model == "\'FLAN-T5\'":
-        config = f"./configs/{dset}_flan-t5.gin"
+    if sys.platform.startswith('linux') or sys.platform.startswith('darwin'):
+        if model == "nearest-neighbor":
+            config = f"./configs/{dset}_nn.gin"
+        elif model == "EleutherAI/gpt-neo-2.7B":
+            config = f"./configs/{dset}.gin"
+        elif model == "FLAN-T5":
+            config = f"./configs/{dset}_flan-t5.gin"
+        else:
+            raise NotImplementedError(f"{model} is not supported!")
+    elif sys.platform.startswith('win32') or sys.platform.startswith('cygwin'):
+        if model == "\'nearest-neighbor\'":
+            config = f"./configs/{dset}_nn.gin"
+        elif model == "\'EleutherAI/gpt-neo-2.7B\'":
+            config = f"./configs/{dset}.gin"
+        elif model == "\'FLAN-T5\'":
+            config = f"./configs/{dset}_flan-t5.gin"
+        else:
+            raise NotImplementedError(f"{model} is not supported!")
     else:
-        raise NotImplementedError(f"{model} is not supported!")
+        raise OSError("Unknown operating system!")
 
     # Parse config
     gin.parse_config_file(config)

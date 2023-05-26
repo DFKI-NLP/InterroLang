@@ -1,6 +1,8 @@
 """Data summary operation."""
 import nltk
 
+from timeout import timeout
+
 
 def get_frequent_words(conversation, f_names, top=5):
     """
@@ -49,6 +51,7 @@ def get_frequent_words(conversation, f_names, top=5):
     return text
 
 
+@timeout(60)
 def keyword_operation(conversation, parse_text, i, **kwargs):
     """topk keywords operation. """
     df = conversation.temp_dataset.contents["X"]

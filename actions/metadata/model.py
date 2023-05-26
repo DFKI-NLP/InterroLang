@@ -1,6 +1,8 @@
 """Describes the model."""
+from timeout import timeout
 
 
+@timeout(60)
 def model_operation(conversation, parse_text, i, **kwargs):
     """Model description."""
 

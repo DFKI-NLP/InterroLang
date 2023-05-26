@@ -62,9 +62,6 @@ def home():
 
     BOT.conversation.build_temp_dataset()
 
-    # dataset = BOT.conversation.describe.get_dataset_name()
-    #
-    # return render_template("index.html", currentUserId="user", datasetObjective=objective, dataset=dataset)
     df = BOT.conversation.temp_dataset.contents['X']
     f_names = list(BOT.conversation.temp_dataset.contents['X'].columns)
 
@@ -174,11 +171,11 @@ def get_bot_response():
                             return "No question is given!"
                         elif idx == len(user_text) - 1:
                             return "No passage is given!"
-                        elif user_text[idx-1] == ' ' and user_text[idx+1] == '':
+                        elif user_text[idx - 1] == ' ' and user_text[idx + 1] == '':
                             new_str = user_text.replace('|', '')
                             custom_input = ''
                             for i in range(len(new_str)):
-                                if i != idx-1:
+                                if i != idx - 1:
                                     custom_input = custom_input + new_str[i]
                         else:
                             custom_input = user_text.replace('|', '')
@@ -191,7 +188,7 @@ def get_bot_response():
                 app.logger.info(f"[CUSTOM INPUT] {user_text}")
                 response = "You have given a custom input. " \
                            "Please enter a follow-up question or prompt! <br><br>" \
-                           "<b>[ATTENTION]</b> The entered custom input will be kept until you PRESS <b>'quit'</b>"\
+                           "<b>[ATTENTION]</b> The entered custom input will be kept until you PRESS <b>'quit'</b>" \
                            + "<>" + "Entered custom input: " + user_text
                 BOT.conversation.store_last_parse(f"custominput '{user_text}'")
             else:
@@ -201,10 +198,6 @@ def get_bot_response():
                 response = f"You have given the include-filter string <b>{user_text}</b>. " \
                            "Please enter a follow-up question or prompt related to include operation! <br>"
 
-                # Update temp_dataset
-                #df = BOT.conversation.temp_dataset.contents["X"]
-                #filtered_df = df[df[BOT.text_fields].apply(lambda row: row.str.contains(user_text)).any(axis=1)]
-                #BOT.conversation.temp_dataset.contents["X"] = filtered_df
                 # Update the conversation with the parse
                 BOT.conversation.store_last_parse(f"includes '{user_text}'")
         except Exception as ext:

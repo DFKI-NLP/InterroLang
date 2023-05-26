@@ -1,5 +1,7 @@
 import pandas as pd
 
+from timeout import timeout
+
 
 def get_few_shot_str(csv_filename, num_shots=5):
     few_shot_str = ""
@@ -11,6 +13,7 @@ def get_few_shot_str(csv_filename, num_shots=5):
     return few_shot_str
 
 
+@timeout(60)
 def rationalize_operation(conversation, parse_text, i, **kwargs):
     if not conversation.decoder.gpt_parser_initialized:
         return f"Rationalize operation not enabled for {conversation.decoder.parser_name}"

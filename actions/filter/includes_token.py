@@ -1,7 +1,10 @@
 import string
 import re
 
+from timeout import timeout
 
+
+@timeout(60)
 def includes_operation(conversation, parse_text, i, **kwargs):
     text_to_match = conversation.include_word
     # if "includetoken" in text_to_match:
