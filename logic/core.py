@@ -688,7 +688,7 @@ class ExplainBot:
         for slot in slot_pattern:
             decoded_slot_text = ""
             if slot in anno_slots:
-                if slot == "includetoken":
+                if slot == "includetoken" and self.conversation.include_word is not None:
                     decoded_text = "includes and " + decoded_text
                     continue
                 if slot == "sent_level":  # we don't need a value in this case
