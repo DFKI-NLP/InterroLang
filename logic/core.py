@@ -319,10 +319,10 @@ class ExplainBot:
         dnum_scores = util.cos_sim(text, self.data_number)
         dnum_score = torch.mean(dnum_scores, dim=-1).item()
 
-        max_score_name = "number"
+        max_score_name = None
         max_score = 0
         for score in [("name", dname_score), ("source", dsource_score), ("language", dlang_score), ("number", dnum_score)]:
-            if score[1] > max_score:
+            if score[1] > max_score and score[1] > 0.5:
                 max_score = score[1]
                 max_score_name = score[0]
         return max_score_name
@@ -657,6 +657,9 @@ class ExplainBot:
         # we use it only in combination with others
         if best_intent == "includes":
             best_intent = anno_intents[1][0]
+        # remap to "data" because statistic is not in the current grammar
+        elif best_intent == "statistic":
+            best_intent = "data"
 
         decoded_text += best_intent
 
@@ -671,7 +674,8 @@ class ExplainBot:
         if best_intent == "data":
             dtype = self.get_data_type(text)
             dflag = self.get_data_flag(text)
-            decoded_text += " " + dtype + "_data_" + dflag
+            if dflag is not None:
+                decoded_text += " " + dtype + "_data_" + dflag
 
         slot_pattern = self.intent2slot_pattern[best_intent]
         id_adhoc, number_adhoc, token_adhoc = self.check_heuristics(decoded_text, text)
