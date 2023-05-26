@@ -177,7 +177,7 @@ class AdapterParse:
         max_score_name = None
         max_score = 0
         for score in [("name", dname_score), ("source", dsource_score), ("language", dlang_score), ("number", dnum_score)]:
-            if score[1] > max_score and score[1] > 0.5::
+            if score[1] > max_score and score[1] > 0.5:
                 max_score = score[1]
                 max_score_name = score[0]
         return max_score_name
