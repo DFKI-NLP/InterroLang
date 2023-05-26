@@ -1,11 +1,14 @@
 """Show model mistakes"""
 import gin
+import os
 import numpy as np
 from sklearn.tree import DecisionTreeClassifier
 
 from actions.util_functions import get_parse_filter_text, get_rules
 from actions.prediction.pred_utils import get_predictions_and_labels
 
+import matplotlib.pyplot as plt
+from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
 
 def one_mistake(y_true, y_pred, conversation, intro_text):
     """One mistake text"""
@@ -53,6 +56,19 @@ def count_mistakes(y_true, y_pred, conversation, intro_text):
 
     return_string = (f"{intro_text} the model is incorrect {incorrect_num} out of {total_num} "
                      f"times (error rate {error_rate}).")
+
+    labels = [v for k,v in conversation.class_names.items()]
+    y_true_labels = [conversation.get_class_name_from_label(lbl) for lbl in y_true]
+    y_pred_labels = [conversation.get_class_name_from_label(lbl) for lbl in y_pred]
+    cm = confusion_matrix(y_true_labels, y_pred_labels)
+    disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=labels)
+    disp.plot()
+    if not os.path.exists('./static/plots'):
+        os.mkdir('./static/plots')
+    plt.savefig('./static/plots/confusion_matrix.png')
+    image_tag = "<img src='./static/plots/confusion_matrix.png' style='width:420px;height:350px;'>"
+    return_string += "<br>Here is the confusion matrix:<br> " + image_tag
+
 
     return return_string
 
