@@ -49,7 +49,7 @@ def handle_input(parse_text):
         if len(id_list) >= 1:
             # filter id 213 and nlpattribute all [E]
             if "all" in parse_text:
-                return id_list, 1
+                return id_list, None
 
             # filter id 213 and nlpattribute sentence [E]
             if "sentence" in parse_text:
@@ -291,7 +291,7 @@ def feature_importance_operation(conversation, parse_text, i, **kwargs):
     id_list, topk = handle_input(parse_text)
 
     if topk is None:
-        topk = 3
+        topk = 5
 
     # If id is not given
 

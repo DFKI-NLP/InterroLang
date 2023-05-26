@@ -30,6 +30,3 @@ Parsed: includes and show [E]
 
 User: display data with the filter text {span}
 Parsed: includes and show [E]
-
-User: show me this data point
-Parsed: previousfilter and show [E]

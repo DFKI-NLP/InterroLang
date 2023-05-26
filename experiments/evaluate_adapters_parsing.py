@@ -13,6 +13,7 @@ from sentence_transformers import SentenceTransformer, util
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
+
 class AdapterParse:
     """Evaluating Adapter's Parsing Accuracy."""
 
@@ -128,11 +129,13 @@ class AdapterParse:
             "randompredict": "show a prediction on a random instance"}
 
         self.deictic_words = ["this", "that", "it", "here"]
+        
         self.model_slot_words_map = {"lr": ["lr", "learning rate"], "epochs": ["epoch"], "loss": ["loss"], "optimizer":["optimizer"], "task":["task", "function"], "model_name": ["name", "call"], "model_summary":["summary", "summarize", "overview"]}
 
         self.st_model = SentenceTransformer('all-MiniLM-L6-v2')
         confirm = ["Yes", "Of course", "I agree", "Correct", "Yeah", "Right", "That's what I meant", "Indeed", "Exactly", "True"]
         disconfirm = ["No", "Nope", "Sorry, no", "I think there is some misunderstanding", "Not right", "Incorrect", "Wrong", "Disagree"]
+
         data_name = ["inform me test data name", "name of training data", "how is the test set called?", "what's the name of the data?"]
         data_source = ["where does training data come from", "where do you get test data", "the source of the dataset?"]
         data_language = ["show me the language of training data", "language of training data", "tell me the language of testing data", "what's the language of the model?"]
@@ -179,6 +182,7 @@ class AdapterParse:
                 max_score_name = score[0]
         return max_score_name
 
+
     def has_deictic(self, text):
         for deictic in self.deictic_words:
             if " "+deictic in text.lower() or deictic+" " in text.lower():
@@ -224,6 +228,7 @@ class AdapterParse:
                     span_end = span_start[2]
                 span_start = span_start[1]
                 final_slot2spans[slot_type].append("".join(intext_chars[span_start:span_end]))
+
         return final_slot2spans
 
 
@@ -312,10 +317,12 @@ class AdapterParse:
         decoded_text = ""
         clarification_text = ""
         # NB: if the score is too low, ask for clarification
+
         if anno_intents[0][1]<0.50:
             do_clarification = True
             clarification_text = "I'm sorry, I am not sure whether I understood you correctly. Did you mean that you want me to "+self.op2clarification[anno_intents[0][0]]+"?"
         best_intent = anno_intents[0][0]
+
         # discard includes as a separate intent
         # we use it only in combination with others
         if best_intent == "includes":
@@ -490,6 +497,7 @@ def get_f1scores(predicted_and_gold, labels):
 
     return f1_per_label, macro_f1, micro_f1, intent_accuracy
 
+  
 def evaluate(parser, val_data_path):
     user_parsed_tuples = []
     with open(val_data_path) as f:
@@ -506,6 +514,7 @@ def evaluate(parser, val_data_path):
         input_text = user_parsed_tuples[i][0]
         _, decoded, _, _ = parser.compute_parse_text_adapters(input_text.strip())
         gold_parse = user_parsed_tuples[i][1]
+
         predicted_and_gold.append((decoded, gold_parse))
         print("input: " + input_text)
         print("gold: " + gold_parse + " >>> decoded: " + decoded)
@@ -513,6 +522,7 @@ def evaluate(parser, val_data_path):
         if decoded==gold_parse:
             matched+=1
         total+=1
+
     f1_per_label, macro_f1, micro_f1, intent_accuracy = get_f1scores(predicted_and_gold, parser.all_intents)
     accuracy = round(matched/total, 3)
     return f1_per_label, macro_f1, micro_f1, intent_accuracy, accuracy
@@ -529,6 +539,7 @@ def main():
     print("F1 Scores for Intents:")
     for intent in sorted(f1_per_label.keys()):
         print(intent, f1_per_label[intent])
+
 
 if __name__ == "__main__":
     main()
