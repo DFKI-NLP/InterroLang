@@ -1,3 +1,5 @@
+"""https://stackoverflow.com/questions/366682/how-to-limit-execution-time-of-a-function-call"""
+
 import threading
 
 
