@@ -11,6 +11,19 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <script>
+        function showTooltip(description) {
+            const infobox = document.getElementById("infobox");
+            infobox.style.visibility = "visible";
+            infobox.innerHTML = description
+        }
+
+        function hideTooltip() {
+            const infobox = document.getElementById("infobox");
+            infobox.style.visibility = "hidden";
+        }
+    </script>
 </head>
 
 <body>
@@ -48,11 +61,16 @@
         <span class="genOptions">👇Help me generate a question about...👇</span>
 
         <div class="slideDown">
-            <div class="dots-cont" , id="generation-loading"><span class="dot dot-1"></span> <span
+            <div id="infobox" style="visibility: hidden; color: red; font-style: italic"></div>
+            <div class="dots-cont" id="generation-loading"><span class="dot dot-1"></span> <span
                     class="dot dot-2"></span> <span class="dot dot-3"></span></div>
-            <div class="buttons" , id="generation-buttons">
-                <button id="idea-important" class="idea-button" onclick="sampleImportant()">global feature importances</button>
-                <button id="idea-why" class="idea-button" onclick="sampleWhy()">local feature importance explanation</button>
+            <div class="buttons" id="generation-buttons">
+
+                <button title="global" id="idea-important" class="idea-button" onclick="sampleImportant()">global
+                    feature importances
+                </button>
+                <button id="idea-why" class="idea-button" onclick="sampleWhy()">local feature importance explanation
+                </button>
                 <button id="idea-predict" class="idea-button" onclick="samplePredict()">predictions</button>
 
                 <button id="idea-random-predict" class="idea-button" onclick="sampleRandomPredict()">random
@@ -85,7 +103,9 @@
                     feature
                     importance
                 </button>
-                <button class="idea-button" id="c_feat_sent"
+                <button onmouseover="showTooltip('sentence level feature attribution on custom input. Your custom input requires to be given before call this function')"
+                        onmouseout="hideTooltip()"
+                        class="idea-button" id="c_feat_sent"
                         onclick="sampleCustomInputFeatureImportanceOnSentenceLevel()">custom input
                     sentence importance
                 </button>
@@ -134,7 +154,7 @@
             <!-- Filter dataset by string ("includes") -->
             <b>🔍 Filter dataset by text:</b>
             <form class="filterdata-inputarea">
-                <input type="text" class="filterdata-input" id="filterdataInput" placeholder="Filter dataset" >
+                <input type="text" class="filterdata-input" id="filterdataInput" placeholder="Filter dataset">
             </form>
         </div>
         <!-- Displaying data -->
@@ -143,28 +163,28 @@
         <div id="show_data"
              style="border: thick #32a1ce double; width: 300px; border-radius: 15px; padding: 5px; overflow-y: scroll; height: 450px; width: 500px">
             {% for entry in entries %}
-                {% if dataset == 'boolq' %}
-                    <details>
-                        <summary style="font-weight: bold;">ID: {{loop.index}} </summary>
-                        <b>question:</b> <br>
-                        <div style='font-style: italic; font-size: 0.75em;'>{{entry["question"]}}</div>
-                        <b>passage:</b> <br>
-                        <div style='font-style: italic; font-size: 0.75em;'>{{entry["passage"]}}</div>
-                    </details>
-                {% elif dataset == 'daily_dialog' %}
-                    <details>
-                        <summary style="font-weight: bold;">ID: {{loop.index}}</summary>
-                        <b>dialog:</b>
-                        <div style='font-style: italic; font-size: 0.75em;'>{{entry["dialog"]}}</div>
-                    </details>
-                {% else %}
-                    <details>
-                        <summary style="font-weight: bold;">ID: {{loop.index}}</summary>
-                        <b>text:</b> <br>
-                        <div style='font-style: italic; font-size: 0.75em;'>{{entry["text"]}}</div>
-                    </details>
-                {% endif %}
-                <br>
+            {% if dataset == 'boolq' %}
+            <details>
+                <summary style="font-weight: bold;">ID: {{loop.index}}</summary>
+                <b>question:</b> <br>
+                <div style='font-style: italic; font-size: 0.75em;'>{{entry["question"]}}</div>
+                <b>passage:</b> <br>
+                <div style='font-style: italic; font-size: 0.75em;'>{{entry["passage"]}}</div>
+            </details>
+            {% elif dataset == 'daily_dialog' %}
+            <details>
+                <summary style="font-weight: bold;">ID: {{loop.index}}</summary>
+                <b>dialog:</b>
+                <div style='font-style: italic; font-size: 0.75em;'>{{entry["dialog"]}}</div>
+            </details>
+            {% else %}
+            <details>
+                <summary style="font-weight: bold;">ID: {{loop.index}}</summary>
+                <b>text:</b> <br>
+                <div style='font-style: italic; font-size: 0.75em;'>{{entry["text"]}}</div>
+            </details>
+            {% endif %}
+            <br>
             {% endfor %}
             <br>(Showing first 10)
         </div>
@@ -223,15 +243,15 @@
         });
     }
 
-    function sampleSentence(){
+    function sampleSentence() {
         doSample("sentence");
     }
 
-    function sampleAdversarial(){
+    function sampleAdversarial() {
         doSample("adversarial");
     }
 
-    function sampleAugment(){
+    function sampleAugment() {
         doSample("augment");
     }
 
