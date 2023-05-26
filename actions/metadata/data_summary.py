@@ -1,5 +1,11 @@
 """Data summary operation."""
 import nltk
+import pandas as pd
+
+from actions.metadata.model import DATASET_TO_IDX
+
+DATA_FLAG = ["train_data_name", "train_data_source", "train_data_language", "train_data_number", "test_data_name",
+             "test_data_source", "test_data_language", "test_data_number"]
 
 from timeout import timeout
 
@@ -78,10 +84,65 @@ def keyword_operation(conversation, parse_text, i, **kwargs):
     return return_s, 1
 
 
+def get_intro_text(flag, conversation):
+    dataset_name = conversation.describe.get_dataset_name()
+    df = pd.read_csv("./data/model_card.csv")
+
+    idx = DATASET_TO_IDX[dataset_name]
+
+    if flag in DATA_FLAG[:4]:
+        text = "<b>Training Data Details: </b> <br><br>"
+        text += "<table style='border: 1px solid black;'>"
+        text += "<tr style='border: 1px solid black;'>"
+        text += "<th> Name </th>"
+        text += "<th> Content </th>"
+        text += "</tr>"
+
+        for i in DATA_FLAG[:4]:
+            text += "<tr style='border: 1px solid black;'>"
+            if i == flag:
+                text += f"<td style='border: 1px solid black;'> <span style='background-color:yellow'>{i}</span> </td>"
+            else:
+                text += f"<td style='border: 1px solid black;'> {i} </td>"
+
+            text += f"<td style='border: 1px solid black;'> {df[i][idx]} </td>"
+            text += "</tr>"
+        text += "</table><br>"
+    else:
+        text = "<b>Testing Data Details: </b> <br><br>"
+        text += "<table style='border: 1px solid black;'>"
+        text += "<tr style='border: 1px solid black;'>"
+        text += "<th> Name </th>"
+        text += "<th> Content </th>"
+        text += "</tr>"
+
+        for i in DATA_FLAG[4:]:
+            text += "<tr style='border: 1px solid black;'>"
+            if i == flag:
+                text += f"<td style='border: 1px solid black;'> <span style='background-color:yellow'>{i}</span> </td>"
+            else:
+                text += f"<td style='border: 1px solid black;'> {i} </td>"
+
+            text += f"<td style='border: 1px solid black;'> {df[i][idx]} </td>"
+            text += "</tr>"
+        text += "</table><br><br>"
+    return text
+
+
 def data_operation(conversation, parse_text, i, **kwargs):
     """Data summary operation."""
+
+    flag = parse_text[i+1]
+
+    if flag == '[e]':
+        text = ''
+    elif flag in DATA_FLAG:
+        text = get_intro_text(flag, conversation)
+    else:
+        raise TypeError(f"The flag {flag} is not supported!")
+
     description = conversation.describe.get_dataset_description()
-    text = f"The data contains information related to <b>{description}</b>.<br>"
+    text += f"The data contains information related to <b>{description}</b>.<br>"
 
     # List out the feature names
     f_names = list(conversation.temp_dataset.contents['X'].columns)
