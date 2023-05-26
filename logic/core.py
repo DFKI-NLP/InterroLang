@@ -27,6 +27,7 @@ from logic.parser import Parser, get_parse_tree
 from logic.prompts import Prompts
 from logic.utils import read_and_format_data
 from logic.write_to_log import log_dialogue_input
+from logic.transformers import TransformerModel
 
 from transformers import AutoAdapterModel, AutoTokenizer
 from transformers import TextClassificationPipeline, TokenClassificationPipeline
@@ -43,9 +44,6 @@ def load_sklearn_model(filepath):
     with open(filepath, 'rb') as file:
         model = pickle.load(file)
     return model
-
-
-from logic.transformers import TransformerModel
 
 
 @gin.configurable
@@ -190,32 +188,66 @@ class ExplainBot:
             self.quote_pattern = r'(\"|\')[^\"\']*(\"|\')'
 
             self.all_intents = ["adversarial", "augment", "includes", "cfe", "similar", "predict", "self", "data",
-                                "show", "likelihood", "model", "function", "score", "countdata", "label", "mistake",
-                                "keywords", "nlpattribute", "rationalize", "important", "statistic"]
+                                "show", "likelihood", "model", "function", "score", "countdata", "label",
+                                "mistake count", "mistake sample", "keywords", "nlpattribute", "rationalize",
+                                "important", "statistic", "randompredict"]
             self.id2label_str = dict()
             for i, intent_name in enumerate(self.all_intents):
                 self.id2label_str[i] = intent_name
+            # Mapping slots to the fixed values for scores (as defined in grammar.py)
+            self.score_mapper = {"positive predictive value": "ppv", "negative predictive value": "npv",
+                                 "acc": "accuracy", "prec": "precision", "rec": "recall", "f 1": "f1"}
+            self.scores = ["accuracy", "f1", "roc", "precision", "recall", "sensitivity", "specificity", " ppv", "npv"]
+            self.score_settings = ["micro", "macro", "weighted"]
+            self.intent_with_topk_prefix = ["nlpattribute", "important", "similarity"]
+
+            self.core_slots = {"adversarial": ["id"],
+                               "augment": ["id"],
+                               "includes": [],
+                               "cfe": ["id"],
+                               "similar": ["id"],
+                               "predict": [],
+                               "self": [],
+                               "data": [],
+                               "show": ["id"],
+                               "likelihood": ["id"],
+                               "model": [],
+                               "function": [],
+                               "score": [],
+                               "countdata": [],
+                               "label": [],
+                               "mistake count": [],
+                               "mistake sample": [],
+                               "keywords": [],
+                               "nlpattribute": [],
+                               "rationalize": ["id"],
+                               "important": [],
+                               "statistic": [],
+                               "randompredict": []}
+
             self.intent2slot_pattern = {"adversarial": ["id"],
                                         "augment": ["id"],
                                         "includes": ["includetoken"],
                                         "cfe": ["id", "number"],
                                         "similar": ["id", "number"],
-                                        "self": [],
                                         "predict": ["id"],
+                                        "self": [],
                                         "data": [],
-                                        "show": ["id"],
+                                        "show": ["id", "includetoken"],
                                         "likelihood": ["class_names", "includetoken", "id"],
                                         "model": [],
                                         "function": [],
                                         "score": ["includetoken", "metric", "class_names", "data_type"],
                                         "countdata": ["include_token"],
                                         "label": ["includetoken"],
-                                        "mistake": ["includetoken"],
+                                        "mistake count": ["includetoken"],
+                                        "mistake sample": ["includetoken"],
                                         "keywords": ["number"],
                                         "nlpattribute": ["id", "number", "class_names", "sent_level"],
                                         "rationalize": ["id"],
-                                        "important": ["class_names", "include_token"],
-                                        "statistic": ["includetoken"]}
+                                        "important": ["class_names", "include_token", "number"],
+                                        "statistic": ["includetoken"],
+                                        "randompredict": []}
 
             self.op2clarification = {"adversarial": "generate adversarial examples",
                                      "augment": "do some data augmentation",
@@ -232,21 +264,75 @@ class ExplainBot:
                                      "score": "explain the perfromance in terms of different scores",
                                      "countdata": "count the data points",
                                      "label": "show the labels",
-                                     "mistake": "show the mistakes that the model makes",
+                                     "mistake count": "show how many mistakes the model makes",
+                                     "mistake sample": "show which mistakes the model makes",
                                      "keywords": "display some keywords relevant for the dataset",
                                      "nlpattribute": "show you the most important features/tokens",
                                      "rationalize": "provide a rationalization, explain the behaviour of the model",
                                      "important": "show the top token attributions based on the global dataset statistics",
-                                     "statistic": "show you some statistics for the dataset"}
+                                     "statistic": "show you some statistics for the dataset",
+                                     "randompredict": "show a prediction on a random instance"}
 
-            self.st_model = SentenceTransformer('all-MiniLM-L6-v2')
-            confirm = ["Yes", "Of course", "I agree", "Correct", "Yeah", "Right", "That's what I meant", "Indeed",
-                       "Exactly", "True"]
-            disconfirm = ["No", "Nope", "Sorry, no", "I think there is some misunderstanding", "Not right", "Incorrect",
-                          "Wrong", "Disagree"]
-            # Compute embedding for both lists
-            self.confirm = self.st_model.encode(confirm, convert_to_tensor=True)
-            self.disconfirm = self.st_model.encode(disconfirm, convert_to_tensor=True)
+        self.deictic_words = ["this", "that", "it", "here"]
+        self.model_slot_words_map = {"lr": ["lr", "learning rate"], "epochs": ["epoch"], "loss": ["loss"], "optimizer":["optimizer"], "task":["task", "function"], "model_name": ["name", "call"], "model_summary":["summary", "summarize", "overview"]}
+
+        self.st_model = SentenceTransformer('all-MiniLM-L6-v2')
+        confirm = ["Yes", "Of course", "I agree", "Correct", "Yeah", "Right", "That's what I meant", "Indeed",
+                   "Exactly", "True"]
+        disconfirm = ["No", "Nope", "Sorry, no", "I think there is some misunderstanding", "Not right", "Incorrect",
+                      "Wrong", "Disagree"]
+        data_name = ["inform me test data name", "name of training data", "how is the test set called?", "what's the name of the data?"]
+        data_source = ["where does training data come from", "where do you get test data", "the source of the dataset?"]
+        data_language = ["show me the language of training data", "language of training data", "tell me the language of testing data", "what's the language of the model?"]
+        data_number = ["how many training data is used", "count test data points", "tell me the number of data points"]
+
+        # Compute embedding for data flags
+        self.data_name = self.st_model.encode(data_name, convert_to_tensor=True)
+        self.data_source = self.st_model.encode(data_source, convert_to_tensor=True)
+        self.data_language = self.st_model.encode(data_language, convert_to_tensor=True)
+        self.data_number = self.st_model.encode(data_number, convert_to_tensor=True)
+
+        # Compute embeddings for confirm/disconfirm
+        self.confirm = self.st_model.encode(confirm, convert_to_tensor=True)
+        self.disconfirm = self.st_model.encode(disconfirm, convert_to_tensor=True)
+
+    def get_data_type(self, text:str):
+        """Checks the data type (train/test supported)"""
+        if "test" in text:
+            return "test"
+        else:
+            return "train"
+
+    def get_data_flag(self, text: str):
+        """Checks whether the user asks about specific details of the data"""
+        # Compute cosine-similarities
+        text = self.st_model.encode(text, convert_to_tensor=True)
+        dname_scores = util.cos_sim(text, self.data_name)
+        dname_score = torch.mean(dname_scores, dim=-1).item()
+
+        dsource_scores = util.cos_sim(text, self.data_source)
+        dsource_score = torch.mean(dsource_scores, dim=-1).item()
+
+        dlang_scores = util.cos_sim(text, self.data_language)
+        dlang_score = torch.mean(dlang_scores, dim=-1).item()
+
+        dnum_scores = util.cos_sim(text, self.data_number)
+        dnum_score = torch.mean(dnum_scores, dim=-1).item()
+
+        max_score_name = "number"
+        max_score = 0
+        for score in [("name", dname_score), ("source", dsource_score), ("language", dlang_score), ("number", dnum_score)]:
+            if score[1] > max_score:
+                max_score = score[1]
+                max_score_name = score[0]
+        return max_score_name
+
+
+    def has_deictic(self, text):
+        for deictic in self.deictic_words:
+            if " " + deictic in text.lower() or deictic + " " in text.lower():
+                return True
+        return False
 
     def get_intent_annotations(self, intext):
         """Returns intent annotations for user input (using adapters)"""
@@ -265,7 +351,7 @@ class ExplainBot:
         slot2spans = dict()
         for anno in text_anno:
             slot_type = anno["entity"][2:]
-            if not slot_type in slot2spans:
+            if not (slot_type) in slot2spans:
                 slot2spans[slot_type] = []
             slot2spans[slot_type].append((anno["word"], anno["start"], anno["end"], anno["entity"]))
         final_slot2spans = dict()
@@ -288,7 +374,6 @@ class ExplainBot:
                     span_end = span_start[2]
                 span_start = span_start[1]
                 final_slot2spans[slot_type].append("".join(intext_chars[span_start:span_end]))
-
         return final_slot2spans
 
     def init_loaded_var(self, name: bytes):
@@ -388,9 +473,6 @@ class ExplainBot:
             # Generate the available prompts
             # make sure to add the "incorrect" temporary feature
             # so we generate prompts for this
-            # if "adapters" in self.decoding_model_name:
-            #     self.prompts = None
-            # else:
             self.prompts = Prompts(cat_features=categorical,
                                    num_features=numeric,
                                    target=np.unique(list(y_values)),
@@ -439,6 +521,16 @@ class ExplainBot:
     def clean_up(self, text: str):
         while len(text) > 0 and text[-1] in string.punctuation:
             text = text[:-1]
+        return text
+
+    def clean_up_number(self, text: str):
+        text = self.clean_up(text)
+        try:
+            text = w2n.word_to_num(text)
+            text = str(text)
+        except:
+            text = ""
+            app.logger.info(f"value is not a number: {text}")
         return text
 
     def check_heuristics(self, decoded_text: str, orig_text: str):
@@ -556,39 +648,88 @@ class ExplainBot:
         decoded_text = ""
         clarification_text = ""
         # NB: if the score is too low, ask for clarification
-        if anno_intents[0][1] < 0.8:
+        if anno_intents[0][1] < 0.50:
             do_clarification = True
             clarification_text = "I'm sorry, I am not sure whether I understood you correctly. Did you mean that you want me to " + \
                                  self.op2clarification[anno_intents[0][0]] + "?"
         best_intent = anno_intents[0][0]
+        # discard includes as a separate intent
+        # we use it only in combination with others
+        if best_intent == "includes":
+            best_intent = anno_intents[1][0]
+
         decoded_text += best_intent
+
+        if best_intent == "model":
+            model_slot = " model_summary"
+            for mslot_name, m_slot_values in self.model_slot_words_map.items():
+                for mslot_value in m_slot_values:
+                    if mslot_value in text:
+                        model_slot = " " + mslot_name
+                        break
+            decoded_text += model_slot
+        if best_intent == "data":
+            dtype = self.get_data_type(text)
+            dflag = self.get_data_flag(text)
+            decoded_text += " " + dtype + "_data_" + dflag
+
         slot_pattern = self.intent2slot_pattern[best_intent]
         id_adhoc, number_adhoc, token_adhoc = self.check_heuristics(decoded_text, text)
         for slot in slot_pattern:
+            decoded_slot_text = ""
             if slot in anno_slots:
+                if slot == "includetoken":
+                    decoded_text = "includes and " + decoded_text
+                    continue
                 if slot == "sent_level":  # we don't need a value in this case
                     decoded_text += " sentence"
                     continue
                 try:
-                    slot_value = anno_slots[slot][0]
+                    slot_values = anno_slots[slot]
                 except:
-                    slot_value = ""
-                filter_id = ""
+                    slot_values = []
+                # allow multiple ids
+                slot_value = ""
+                if len(slot_values) > 1 and slot == "id":
+                    prefix = ""
+                    for si, slot_value in enumerate(slot_values):
+                        prefix += "filter id " + self.clean_up_number(slot_value)
+                        if si != len(slot_values) - 1:
+                            prefix += " or "
+                    decoded_text = prefix + " and " + decoded_text
+                    # NB: storing only the last id value
+                    self.conversation.prev_id = str(slot_value)
+                elif len(slot_values) == 1:
+                    slot_value = slot_values[0]
+                slot_value = self.clean_up(slot_value)
                 if slot == "includetoken":
                     self.conversation.include_word = self.clean_up(slot_value)
                 elif slot in ["id", "number"] and not (slot_value.isdigit()):
-                    slot_value = self.clean_up(slot_value)
-                    try:
-                        slot_value = w2n.word_to_num(slot_value)
-                        slot_value = str(slot_value)
-                    except:
-                        slot_value = ""
-                        app.logger.info(f"slot value is not a number: {slot}: {slot_value}")
-                if slot == "id" and len(slot_value) > 0:
+                    slot_value = self.clean_up_number(slot_value)
+                if slot == "id" and len(slot_value) > 0 and len(slot_values) == 1:
                     decoded_text = "filter id " + str(slot_value) + " and " + decoded_text
                     self.conversation.prev_id = str(slot_value)
+                elif slot == "metric" and best_intent == "score":
+                    score_setting_parsed = ""
+                    slot_value = slot_value.lower()
+                    if slot_value in self.score_mapper:
+                        slot_value = self.score_mapper[slot_value.lower()]
+                    elif not (slot_value in self.scores):
+                        slot_value = "default"
+                        for s_score in self.scores:
+                            if s_score in text.lower():
+                                slot_value = s_score
+                    for score_setting in self.score_settings:
+                        if score_setting in text:
+                            score_setting_parsed = " " + score_setting
+                    decoded_slot_text += " " + slot_value + score_setting_parsed
+
                 elif len(slot_value) > 0:
-                    decoded_text += " " + str(slot_value)
+                    if slot == "number" and best_intent in self.intent_with_topk_prefix:
+                        decoded_slot_text += " topk " + str(slot_value)
+                    elif len(slot_values) == 1: # avoid adding the same id twice
+                        decoded_slot_text += " " + str(slot_value)
+
             else:  # check heuristics
                 if slot == "includetoken" and token_adhoc != "":
                     self.conversation.include_word = token_adhoc
@@ -596,11 +737,30 @@ class ExplainBot:
                     if id_adhoc != "":
                         decoded_text = "filter id " + str(id_adhoc) + " and " + decoded_text
                         self.conversation.prev_id = str(id_adhoc)
-                    elif self.conversation.prev_id is not None:
+                    elif self.conversation.prev_id is not None and (
+                            self.has_deictic(text) or slot in self.core_slots[best_intent]) and self.conversation.custom_input is None:
                         decoded_text = "filter id " + self.conversation.prev_id + " and " + decoded_text
                 elif slot == "number":
-                    if number_adhoc != "":
-                        decoded_text += " " + str(number_adhoc)
+                    if number_adhoc != "" and slot in self.core_slots[best_intent]:
+                        if best_intent in self.intent_with_topk_prefix:
+                            decoded_slot_text += " topk " + str(number_adhoc)
+                        else:
+                            decoded_slot_text += " " + str(number_adhoc)
+            decoded_text += decoded_slot_text
+            if best_intent == "important" and slot == "number" and len(decoded_slot_text) == 0 and (
+            not "class_names" in anno_slots):
+                decoded_text += " all"
+            elif best_intent == "nlpattribute" and slot == "number" and len(decoded_slot_text) == 0 and (
+            not "sent_level" in anno_slots):
+                decoded_text += " all"
+            elif best_intent == "keywords" and slot == "number" and len(decoded_slot_text) == 0:
+                decoded_text += " all"
+            elif best_intent == "score" and slot == "metric" and not ("metric" in anno_slots):
+                score_val = " default"
+                for score in self.scores:
+                    if score in text:
+                        score_val = " " + score
+                decoded_text += score_val
         self.conversation.store_last_parse(decoded_text)
         app.logger.info(f"adapters decoded text {decoded_text}")
         return None, decoded_text, do_clarification, clarification_text

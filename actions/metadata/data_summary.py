@@ -69,7 +69,7 @@ def keyword_operation(conversation, parse_text, i, **kwargs):
                 pass
         top = num_list[-1]
 
-    return_s = "The {top} most frequent words in the dataset are: <br>"
+    return_s = f"The {top} most frequent words in the dataset are: <br>"
     return_s += get_frequent_words(conversation, f_names=f_names, top=top)
 
     return return_s, 1
