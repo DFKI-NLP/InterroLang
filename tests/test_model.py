@@ -12,9 +12,9 @@ dataset_name = conversation.describe.get_dataset_name()
 
 def test_model_description():
     """Test model description functionality"""
-    parse_text = ["model", "[E]"]
+    parse_text = ["model", "[e]"]
 
-    return_s, status_code = model_operation(conversation, parse_text, 1)
+    return_s, status_code = model_operation(conversation, parse_text, 0)
 
     file_html = open(f"./tests/html/model/{dataset_name}_model_description.html", "w")
     text = TEXT
