@@ -112,7 +112,6 @@ model task [E]
 What optimization strategy does it use? What's the name of the optimizer?
 model optimizer [E]
 
-
 for all sentences that include the word "chocolate", what are the true labels?
 includes and label [E]
 
