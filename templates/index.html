@@ -43,7 +43,7 @@
             </select>
             <input type="text" class="ttm-input" id="textInput"
                    placeholder="Enter your command! Use the ↑ arrow and ↓ arrow to cycle previous commands.">
-            <button type="submit" class="ttm-send-btn">Send</button>
+            <button type="submit" class="ttm-send-btn" id="ttm-send-btn-id">Send</button>
         </form>
         <span class="genOptions">👇Help me generate a question about...👇</span>
 
@@ -171,9 +171,12 @@
         <div style="margin-top: 10px;">
             <!-- Reset temp dataset -->
             <div style="margin-top: 10px">
-                <button type="button" class="btn btn-primary" id="reset_temp_dataset" style="width: 300px"
-                        onclick="reset_temp_dataset()">Click me to reset the temp
+                <button type="button" class="btn btn-primary" id="reset_temp_dataset" style="width: 200px"
+                        onclick="reset_temp_dataset()">Reset the temp
                     dataset
+                </button>
+                <button type="button" class="btn btn-primary" id="includeBtn" style="width: 200px"
+                        onclick="applyInclude()">Apply filtering on dataset
                 </button>
             </div>
         </div>
@@ -202,6 +205,13 @@
 </script>
 
 <script>
+    function applyInclude(){
+        let filter_string = document.getElementById("filterdataInput").value;
+        document.getElementById("textInput").value = filter_string;
+
+        document.getElementById("input_source").value = "2";
+        document.getElementById("ttm-send-btn-id").click();
+    }
 
     function doSample(rawAction) {
         let username = '{{ currentUserId }}'
