@@ -216,6 +216,10 @@ def main():
         program_only_text += "-program-only"
     results_location = (f"./experiments/results_store/{safe_name(model)}_{dset}_gd-{guided_decoding}"
                         f"_debug-{args.debug}{program_only_text}.csv")
+    if os.path.exists(results_location):
+        print(f"Skipping already existing results file: f{results_location}\nPlease delete or move the results file to "
+              f"produce new ones.")
+        return
 
     print(f"-----------------", flush=True)
     print("Debug:", args.debug, flush=True)
@@ -234,14 +238,26 @@ def main():
     else:
         raise NameError(f"Unknown dataset {dset}")
 
-    if model == "nearest-neighbor":
-        config = f"./configs/{config_dset_id}_nn.gin"
-    elif model == "EleutherAI/gpt-neo-2.7B":
-        config = f"./configs/{config_dset_id}.gin"
-    elif model == "flan-t5-base":
-        config = f"./configs/{config_dset_id}_flan-t5.gin"
+    if sys.platform.startswith('linux') or sys.platform.startswith('darwin'):
+        if model == "nearest-neighbor":
+            config = f"./configs/{config_dset_id}_nn.gin"
+        elif model == "EleutherAI/gpt-neo-2.7B":
+            config = f"./configs/{config_dset_id}.gin"
+        elif model == "FLAN-T5":
+            config = f"./configs/{config_dset_id}_flan-t5.gin"
+        else:
+            raise NotImplementedError(f"{model} is not supported!")
+    elif sys.platform.startswith('win32') or sys.platform.startswith('cygwin'):
+        if model == "\'nearest-neighbor\'":
+            config = f"./configs/{config_dset_id}_nn.gin"
+        elif model == "\'EleutherAI/gpt-neo-2.7B\'":
+            config = f"./configs/{config_dset_id}.gin"
+        elif model == "\'FLAN-T5\'":
+            config = f"./configs/{config_dset_id}_flan-t5.gin"
+        else:
+            raise NotImplementedError(f"{model} is not supported!")
     else:
-        raise NotImplementedError(f"{model} is not supported!")
+        raise OSError("Unknown operating system!")
 
     # Parse config
     gin.parse_config_file(config)

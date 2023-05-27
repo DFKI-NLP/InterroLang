@@ -10,6 +10,7 @@ from transformers import AutoModelForSequenceClassification, AutoTokenizer
 from actions.util_functions import gen_parse_op_text, get_parse_filter_text
 from explained_models.ModelABC.DANetwork import DANetwork
 from explained_models.Tokenizer.tokenizer import HFTokenizer
+from timeout import timeout
 
 
 def handle_input(parse_text):
@@ -387,6 +388,7 @@ def get_prediction_on_temp_dataset(conversation):
     return predictions, return_s
 
 
+@timeout(60)
 def predict_operation(conversation, parse_text, i, **kwargs):
     """The prediction operation."""
     if conversation.custom_input is not None and conversation.used is False:

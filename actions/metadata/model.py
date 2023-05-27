@@ -1,9 +1,14 @@
 """Describes the model."""
+
+from timeout import timeout
+
 import pandas as pd
 
 DATASET_TO_IDX = {"boolq": 1, "olid":0, "daily_dialog": 2}
 
 
+
+@timeout(60)
 def model_operation(conversation, parse_text, i, **kwargs):
     """Model description."""
 

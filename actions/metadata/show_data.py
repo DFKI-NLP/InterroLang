@@ -8,6 +8,8 @@ import gin
 from actions.util_functions import get_parse_filter_text
 from typing import List
 
+from timeout import timeout
+
 
 def summarize_consecutive_ids(instance_ids: List[int]):
     if not instance_ids:
@@ -43,6 +45,7 @@ def summarize_consecutive_ids(instance_ids: List[int]):
     return ", ".join(summary)
 
 
+@timeout(60)
 @gin.configurable
 def show_operation(conversation, parse_text, i, n_features_to_show=float("+inf"), **kwargs):
     """Generates text that shows an instance."""

@@ -14,6 +14,8 @@ from actions.custom_input import generate_explanation
 
 from nltk.tokenize import sent_tokenize
 
+from timeout import timeout
+
 
 def handle_input(parse_text):
     """
@@ -272,6 +274,7 @@ def get_attr_by_id(conversation, _id):
     return attr, input_ids
 
 
+@timeout(60)
 def feature_importance_operation(conversation, parse_text, i, **kwargs):
     """
     feature attribution operation
@@ -345,8 +348,11 @@ def feature_importance_operation(conversation, parse_text, i, **kwargs):
 
             attr, input_ids = get_attr_by_id(conversation, id_list[0])
             converted_text = tokenizer.convert_ids_to_tokens(input_ids)
-            idx = converted_text.index("[PAD]")
-            return_s += get_visualization(attr[:idx], topk, converted_text[:idx], conversation)
+            try:
+                idx = converted_text.index("[PAD]")
+                return_s += get_visualization(attr[:idx], topk, converted_text[:idx], conversation)
+            except ValueError:
+                return_s += get_visualization(attr, topk, converted_text, conversation)
 
             return return_s, 1
         else:
@@ -358,8 +364,11 @@ def feature_importance_operation(conversation, parse_text, i, **kwargs):
 
                 attr, input_ids = get_attr_by_id(conversation, num)
                 converted_text = tokenizer.convert_ids_to_tokens(input_ids)
-                idx = converted_text.index("[PAD]")
-                return_s += get_visualization(attr[:idx], topk, converted_text[:idx], conversation)
+                try:
+                    idx = converted_text.index("[PAD]")
+                    return_s += get_visualization(attr[:idx], topk, converted_text[:idx], conversation)
+                except ValueError:
+                    return_s += get_visualization(attr, topk, converted_text, conversation)
 
                 return_s += "<br>"
             return return_s, 1

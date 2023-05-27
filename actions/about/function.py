@@ -1,6 +1,8 @@
 """Describes the system capabilities."""
+from timeout import timeout
 
 
+@timeout(60)
 def function_operation(conversation, parse_text, i, **kwargs):
     """function description."""
 

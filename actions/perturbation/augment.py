@@ -1,9 +1,12 @@
 """Data augmentation operation."""
 import nlpaug.augmenter.word as naw
 
+from timeout import timeout
+
 word_aug = naw.ContextualWordEmbsAug(model_path='bert-base-cased', action="substitute")
 
 
+@timeout(60)
 def augment_operation(conversation, parse_text, i, **kwargs):
     """Data augmentation."""
 
