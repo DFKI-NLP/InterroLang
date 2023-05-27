@@ -150,6 +150,7 @@
                         <div style='font-style: italic; font-size: 0.75em;'>{{entry["question"]}}</div>
                         <b>passage:</b> <br>
                         <div style='font-style: italic; font-size: 0.75em;'>{{entry["passage"]}}</div>
+                        <button onclick="addId({{loop.index}})">Add this instance into input box</button>
                     </details>
                 {% elif dataset == 'daily_dialog' %}
                     <details>
@@ -631,13 +632,13 @@
                 const span_start = "<span style='background-color: yellow'>";
                 const span_end = "</span>";
 
-                for (let [id, entry] of Object.entries(data)) {
+                for (let [_id, entry] of Object.entries(data)) {
                     msgHTML += "<details style='margin-top: 1px;'"
                     if (numDisplayed == 0) {
                         msgHTML += " open='true';"
                     }
                     msgHTML += "><summary>";
-                    msgHTML += "<b>ID:" + id + "</b></summary>";
+                    msgHTML += "<b>ID:" + _id + "</b></summary>";
 
                     for (let [field_name, field_content] of Object.entries(entry)) {
                         msgHTML += "<b>" + field_name + ": </b>"
@@ -698,7 +699,11 @@
                         }
                         msgHTML += "</div>";
                     }
+                    msgHTML += "<button style=\"margin: 1px; padding: 1px\" type=\"button\" class=\"btn btn-outline-secondary\" onclick=\"addId("
+                    msgHTML += _id
+                    msgHTML += ")\">Add this instance into input box</button>"
                     msgHTML += "</details>"
+
 
                     numDisplayed += 1;
                     if (numDisplayed >= 10) {
@@ -710,4 +715,11 @@
             }
         })
     });
+
+    function addId(_id){
+        let string = "For id ";
+        string += _id;
+        string += ", "
+        document.getElementById("textInput").value = string;
+    }
 </script>
