@@ -274,7 +274,8 @@ class ExplainBot:
                                      "randompredict": "show a prediction on a random instance"}
 
         self.deictic_words = ["this", "that", "it", "here"]
-        self.model_slot_words_map = {"lr": ["lr", "learning rate"], "epochs": ["epoch"], "loss": ["loss"], "optimizer":["optimizer"], "task":["task", "function"], "model_name": ["name", "call"], "model_summary":["summary", "summarize", "overview"]}
+        self.model_slots = ["lr", "epochs", "loss", "optimizer", "task", "model_name", "model_summary"]
+        self.model_slot_words_map = {"lr": ["lr", "learning rate"], "epochs": ["epoch"], "loss": ["loss"], "optimizer":["optimizer"], "task":["task", "function"], "model_name": ["name", "call"], "model_summary":["summary", "overview"]}
 
         self.st_model = SentenceTransformer('all-MiniLM-L6-v2')
         confirm = ["Yes", "Of course", "I agree", "Correct", "Yeah", "Right", "That's what I meant", "Indeed",
@@ -319,10 +320,10 @@ class ExplainBot:
         dnum_scores = util.cos_sim(text, self.data_number)
         dnum_score = torch.mean(dnum_scores, dim=-1).item()
 
-        max_score_name = "number"
+        max_score_name = None
         max_score = 0
         for score in [("name", dname_score), ("source", dsource_score), ("language", dlang_score), ("number", dnum_score)]:
-            if score[1] > max_score:
+            if score[1] > max_score and score[1] > 0.5:
                 max_score = score[1]
                 max_score_name = score[0]
         return max_score_name
@@ -657,28 +658,37 @@ class ExplainBot:
         # we use it only in combination with others
         if best_intent == "includes":
             best_intent = anno_intents[1][0]
+        # remap to "data" because statistic is not in the current grammar
+        elif best_intent == "statistic":
+            best_intent = "data"
 
         decoded_text += best_intent
 
         if best_intent == "model":
-            model_slot = " model_summary"
-            for mslot_name, m_slot_values in self.model_slot_words_map.items():
+            model_slot = None
+            for mslot_name in self.model_slots:
+                m_slot_values = self.model_slot_words_map[mslot_name]
                 for mslot_value in m_slot_values:
                     if mslot_value in text:
                         model_slot = " " + mslot_name
                         break
+                if model_slot is not None:
+                    break
+            if model_slot is None:
+                model_slot = " model_summary"
             decoded_text += model_slot
         if best_intent == "data":
             dtype = self.get_data_type(text)
             dflag = self.get_data_flag(text)
-            decoded_text += " " + dtype + "_data_" + dflag
+            if dflag is not None:
+                decoded_text += " " + dtype + "_data_" + dflag
 
         slot_pattern = self.intent2slot_pattern[best_intent]
         id_adhoc, number_adhoc, token_adhoc = self.check_heuristics(decoded_text, text)
         for slot in slot_pattern:
             decoded_slot_text = ""
             if slot in anno_slots:
-                if slot == "includetoken":
+                if slot == "includetoken" and self.conversation.include_word is not None:
                     decoded_text = "includes and " + decoded_text
                     continue
                 if slot == "sent_level":  # we don't need a value in this case
