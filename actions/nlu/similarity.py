@@ -2,6 +2,7 @@ import re
 #import emoji
 from sentence_transformers import SentenceTransformer, util
 
+from timeout import timeout
 
 
 def extract_id_number(parse_text):
@@ -25,6 +26,8 @@ def extract_id_number(parse_text):
     else:
         raise ValueError("Too many numbers in parse text!")
 
+
+@timeout(60)
 def similar_instances_operation(conversation, parse_text, i, **kwargs):
 
     """
