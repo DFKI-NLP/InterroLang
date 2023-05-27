@@ -7,6 +7,8 @@ from actions.metadata.model import DATASET_TO_IDX
 DATA_FLAG = ["train_data_name", "train_data_source", "train_data_language", "train_data_number", "test_data_name",
              "test_data_source", "test_data_language", "test_data_number"]
 
+from timeout import timeout
+
 
 def get_frequent_words(conversation, f_names, top=5):
     """
@@ -55,6 +57,7 @@ def get_frequent_words(conversation, f_names, top=5):
     return text
 
 
+@timeout(60)
 def keyword_operation(conversation, parse_text, i, **kwargs):
     """topk keywords operation. """
     df = conversation.temp_dataset.contents["X"]

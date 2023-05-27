@@ -1,8 +1,10 @@
 import random
 import time
 from actions.prediction.predict import handle_input
+from timeout import timeout
 
 
+@timeout(60)
 def random_prediction(conversation, parse_text, i, **kwargs):
     """randomly pick an instance from the dataset and make the prediction
     `randompredict [E]`

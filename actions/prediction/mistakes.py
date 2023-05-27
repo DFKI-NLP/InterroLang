@@ -5,6 +5,7 @@ from sklearn.tree import DecisionTreeClassifier
 
 from actions.util_functions import get_parse_filter_text, get_rules
 from actions.prediction.pred_utils import get_predictions_and_labels
+from timeout import timeout
 
 
 def one_mistake(y_true, y_pred, conversation, intro_text):
@@ -92,6 +93,7 @@ def typical_mistakes(data, y_true, y_pred, conversation, intro_text, ids):
     return return_string
 
 
+@timeout(60)
 @gin.configurable
 def show_mistakes_operation(conversation, parse_text, i, n_features_to_show=float("+inf"), **kwargs):
     """Generates text that shows the model mistakes."""

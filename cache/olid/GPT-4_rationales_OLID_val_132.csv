@@ -1,4 +1,4 @@
-"id","prompt\.*\.content","completion"
+"id","prompt","completion"
 "0","Tweet: '@USER @USER Why is John Kerry running his mouth again as if we cared about what he has to say? I can’t think of a single damn thing Kerry has accomplished besides run his mouth. Trump’s accomplishments exceed anything Kerry could ever dream of. Even before becoming president!'
 Based on the tweet, the predicted label is non-offensive. Without revealing the predicted label in your response, explain why: ","The tweet is considered non-offensive because it mainly expresses the user's opinion about John Kerry and his accomplishments in comparison to Trump. Although the language used is strong and critical, it does not contain explicit offensive language, slurs, or targeted harassment."
 "1","Tweet: '@USER @USER Gun control anyone? DisarmHate'

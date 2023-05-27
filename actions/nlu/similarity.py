@@ -2,6 +2,7 @@ import re
 #import emoji
 from sentence_transformers import SentenceTransformer, util
 
+from timeout import timeout
 
 
 def extract_id_number(parse_text):
@@ -25,6 +26,8 @@ def extract_id_number(parse_text):
     else:
         raise ValueError("Too many numbers in parse text!")
 
+
+@timeout(60)
 def similar_instances_operation(conversation, parse_text, i, **kwargs):
 
     """
@@ -35,17 +38,22 @@ def similar_instances_operation(conversation, parse_text, i, **kwargs):
     Returns:
         final_results  matched results
     """
-    if len(conversation.temp_dataset.contents['X']) == 0:
-        return 'There are no instances that meet this description!', 0
+    if len(conversation.temp_dataset.contents["X"]) == 0:
+        return "There are no instances that meet this description!", 0
     dataset = conversation.stored_vars["dataset"]
 
-    idx,number = extract_id_number(parse_text)
-    query = " ".join(dataset.contents["X"].loc[[idx]].values.tolist()[0])
+    if conversation.custom_input:
+        query = conversation.custom_input
+        idx = 0
+        number = 3
+    else:
+        idx, number = extract_id_number(parse_text)
+        query = " ".join(dataset.contents["X"].loc[[idx]].values.tolist()[0])
 
 
     final_results = get_similar_str(query, idx, number, dataset)
 
-    return final_results,1
+    return final_results, 1
 
 
 def get_similar_str(query, idx, number, dataset):
@@ -88,7 +96,7 @@ def get_similars(query, query_idx, dataset, number):
     indices = []
     texts = []
     for idx in list(dataset.contents["X"].index):
-        if idx!=query_idx:
+        if idx != query_idx:
             indices.append(idx)
             texts.append(" ".join(dataset.contents["X"].loc[[idx]].values.tolist()[0]))
     #TA use caching if the dataset is too big?

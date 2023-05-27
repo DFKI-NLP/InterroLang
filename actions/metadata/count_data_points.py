@@ -1,8 +1,10 @@
 """Count the number of elements in the data."""
 from actions.util_functions import gen_parse_op_text
 from actions.metadata.show_data import summarize_consecutive_ids
+from timeout import timeout
 
 
+@timeout(60)
 def count_data_points(conversation, parse_text, i, **kwargs):
     """Gets the number of elements in the data.
 
