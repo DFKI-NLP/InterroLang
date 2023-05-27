@@ -209,7 +209,7 @@ def get_sentence_level_feature_importance(conversation, sentences):
         return_s += "</li>"
 
         return_s += "<li>"
-        return_s += f"Prediction: <b>{conversation.class_names[res['predictions']]}</b>"
+        return_s += f"Prediction: <span style=\"background-color: #6CB4EE\">{conversation.class_names[res['predictions']]}</span>"
         return_s += "</li>"
         return_s += "</ul>"
         counter += 1

@@ -288,7 +288,7 @@ def prediction_with_id(model, data, conversation, text):
         return_s += f"<b>{prediction_class}</b>"
     else:
         class_text = conversation.class_names[model_predictions[0]]
-        return_s += f"<b>{class_text}</b>."
+        return_s += f"<span style=\"background-color: #6CB4EE\">{class_text}</span>."
 
     return_s += "<br>"
     return return_s
@@ -312,7 +312,7 @@ def prediction_on_dataset(model, data, conversation, text):
             return_s += f"<b>class {uniq_p}</b>, {round_freq}%"
         else:
             class_text = conversation.class_names[uniq_p]
-            return_s += f"<b>{class_text}</b>, {round_freq}%"
+            return_s += f"<span style=\"background-color: #6CB4EE\">{class_text}</span>, {round_freq}%"
         return_s += "</li>"
     return_s += "</ul>"
 

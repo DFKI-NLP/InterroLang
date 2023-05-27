@@ -87,7 +87,7 @@ def predict_likelihood(conversation, parse_text, i, **kwargs):
         prob = model_prediction_probabilities
         prob = round(model_prediction_probabilities[_class] * 100, conversation.rounding_precision)
         return_s += "<li>"
-        return_s += f"The likelihood of class <b>{class_name}</b> is <b>{prob}%</b>"
+        return_s += f"The likelihood of class <span style=\"background-color: #6CB4EE\">{class_name}</span> is <b>{prob}%</b>"
         return_s += "</li>"
     return_s += "</ul>"
 
