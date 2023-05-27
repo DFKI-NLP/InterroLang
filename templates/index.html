@@ -66,10 +66,10 @@
                     class="dot dot-2"></span> <span class="dot dot-3"></span></div>
             <div class="buttons" id="generation-buttons">
 
-                <button title="global" id="idea-important" class="idea-button" onclick="sampleImportant()">global
+                <button title="args: topk (int, optional)" id="idea-important" class="idea-button" onclick="sampleImportant()">global
                     feature importances
                 </button>
-                <button id="idea-why" class="idea-button" onclick="sampleWhy()">local feature importance explanation
+                <button title="args: id (int), topk (int, optional)" id="idea-why" class="idea-button" onclick="sampleWhy()">local feature importance explanation
                 </button>
                 <button id="idea-predict" class="idea-button" onclick="samplePredict()">predictions</button>
 
@@ -103,7 +103,7 @@
                     feature
                     importance
                 </button>
-                <button onmouseover="showTooltip('sentence level feature attribution on custom input. Your custom input requires to be given before call this function')"
+                <button title="args: custom_input (str)" onmouseover="showTooltip('sentence level feature attribution on custom input. Your custom input requires to be given before call this function')"
                         onmouseout="hideTooltip()"
                         class="idea-button" id="c_feat_sent"
                         onclick="sampleCustomInputFeatureImportanceOnSentenceLevel()">custom input
