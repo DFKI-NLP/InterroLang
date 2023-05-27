@@ -15,6 +15,8 @@ def rationalize_operation(conversation, parse_text, i, **kwargs):
     if not conversation.decoder.gpt_parser_initialized:
         return f"Rationalize operation not enabled for {conversation.decoder.parser_name}"
 
+    # TODO: Custom input – if conversation.used and conversation.custom_input:
+
     id_list = []
     for item in parse_text:
         try:
@@ -48,9 +50,7 @@ def rationalize_operation(conversation, parse_text, i, **kwargs):
             intro = f"Answer: {pred_str}"
             instruction = "Please explain the answer: "
             max_length = 150  # The 'passage' is usually very long, so we use a longer max_length for this dataset
-
-            if few_shot:
-                few_shot_str += get_few_shot_str("cache/boolq/GPT-3.5_rationales_BoolQ_val_400.csv")
+            gpt_rationales = "cache/boolq/GPT-3.5_rationales_BoolQ_val_400.csv"
 
         elif dataset_name == "daily_dialog":
             text = "Text: '" + instance[0] + "'"
@@ -61,9 +61,7 @@ def rationalize_operation(conversation, parse_text, i, **kwargs):
             intro = f"The dialogue act of this text has been classified as {pred_str} (over {other_class_names})."
             instruction = "Please explain why: "
             max_length = 150
-
-            if few_shot:
-                few_shot_str += get_few_shot_str("cache/daily_dialog/GPT-4_rationales_DD_test_200.csv")
+            gpt_rationales = "cache/daily_dialog/GPT-4_rationales_DD_test_200.csv"
 
         elif dataset_name == "olid":
             text = "Tweet: '" + instance[0] + "'"
@@ -72,12 +70,13 @@ def rationalize_operation(conversation, parse_text, i, **kwargs):
             intro = f"The tweet has been classified as {pred_str}."
             instruction = "Please explain why: "
             max_length = 150
-
-            if few_shot:
-                few_shot_str += get_few_shot_str("cache/olid/GPT-4_rationales_OLID_val_132.csv")
+            gpt_rationales = "cache/olid/GPT-4_rationales_OLID_val_132.csv"
 
         else:
             return f"Dataset {dataset_name} currently not supported by rationalize operation", 1
+
+        if few_shot:
+            few_shot_str += get_few_shot_str(gpt_rationales)
 
         prompt = f"{few_shot_str}" \
                  f"{text}\n" \
