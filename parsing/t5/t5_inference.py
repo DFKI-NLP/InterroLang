@@ -136,14 +136,8 @@ def get_predict_func(t5_gin_file: str,
         t5_params = load_t5_params()
 
     if bot_gin_file is None:
-        if t5_params.dataset_name == "boolq":
-            bot_gin_file = "./configs/boolq.gin"
-        else:
-            known_options = "diabetes, compas, or german"
-            message = ("Please provide the gin file for the conversation in bot_gin_file, "
-                       f"argument as the dataset {dataset_name} is unknown. Known dataset "
-                       f"options are {known_options}.")
-            raise NameError(message)
+        bot_gin_file = f"./configs/{t5_params.dataset_name}.gin"
+
 
     if guided_decoding and compute_grammar:
         from logic.core import ExplainBot

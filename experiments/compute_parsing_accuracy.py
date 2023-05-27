@@ -48,6 +48,10 @@ def compute_accuracy(data, predict_func, verbose: bool = False, error_analysis: 
         else:
             parse_text = predict_func(user_input)
 
+        if type(parse_text == tuple):
+            if len(parse_text) == 2 and parse_text[1] is None:
+                parse_text = parse_text[0]
+
         # Get the gold label parse
         correct_parse = data[user_input]
 
@@ -117,11 +121,9 @@ def compute_accuracy(data, predict_func, verbose: bool = False, error_analysis: 
 
 def set_t5_config(model_name):
     if "base" in model_name:
-        set_config = "inference-t5-base.gin"
-    elif "small" in model_name:
-        set_config = "inference-t5-small.gin"
+        set_config = "flan-t5-base.gin"
     elif "large" in model_name:
-        set_config = "inference-t5-large.gin"
+        set_config = "flan-t5-large.gin"
     else:
         raise NameError(f"Don't know {model_name}")
     return os.path.join("parsing/t5/gin_configs", set_config)
@@ -184,35 +186,7 @@ def retrieve_t5_model_dir(model, dset, debug):
     # best_val_epoch = retrieve_best_val_epoch(model, dset)
     # print(f"Best validation epoch {best_val_epoch}")
 
-    if dset == "diabetes":
-        if model == "t5-small":
-            location = f"diabetes_t5-small_epoch_20_lr_0.0001_batchsize_32_optimizer_adamw"
-        elif model == "t5-base":
-            location = f"diabetes_t5-base_epoch_9_lr_0.0001_batchsize_32_optimizer_adamw"
-        elif model == "t5-large":
-            location = f"diabetes_t5-large_epoch_17_lr_0.0001_batchsize_32_optimizer_adamw"
-        else:
-            raise NameError(f"no t5 model for model type {model}")
-    elif dset == "compas":
-        if model == "t5-small":
-            location = f"compas_t5-small_epoch_20_lr_0.0001_batchsize_32_optimizer_adamw"
-        elif model == "t5-base":
-            location = f"compas_t5-base_epoch_21_lr_0.0001_batchsize_32_optimizer_adamw"
-        elif model == "t5-large":
-            location = f"compas_t5-large_epoch_17_lr_0.0001_batchsize_32_optimizer_adamw"
-        else:
-            raise NameError(f"no t5 model for model type {model}")
-    elif dset == "german":
-        if model == "t5-small":
-            location = f"german_t5-small_epoch_29_lr_0.0001_batchsize_32_optimizer_adamw"
-        elif model == "t5-base":
-            location = f"german_t5-base_epoch_15_lr_0.0001_batchsize_32_optimizer_adamw"
-        elif model == "t5-large":
-            location = f"german_t5-large_epoch_5_lr_0.0001_batchsize_32_optimizer_adamw"
-        else:
-            raise NameError(f"no t5 model for model type {model}")
-    else:
-        raise NameError(f"no t5 model for dataset {dset}")
+    location = f"flan-t5-base/{dset}-flan-t5-base"
     model_path = os.path.join("parsing/t5/models", location)
     return model_path
 
@@ -242,11 +216,17 @@ def main():
         program_only_text += "-program-only"
     results_location = (f"./experiments/results_store/{safe_name(model)}_{dset}_gd-{guided_decoding}"
                         f"_debug-{args.debug}{program_only_text}.csv")
+    if os.path.exists(results_location):
+        print(f"Skipping already existing results file: f{results_location}\nPlease delete or move the results file to "
+              f"produce new ones.")
+        return
 
     print(f"-----------------", flush=True)
     print("Debug:", args.debug, flush=True)
     print("Dataset:", dset, flush=True)
     print("Model:", model, flush=True)
+
+    config_dset_id = dset
 
     if dset == "boolq":
         test_suite = f"./experiments/parsing_interrolang_dev/dev_set_interrolang_{dset}.txt"
@@ -254,26 +234,26 @@ def main():
         test_suite = f"./experiments/parsing_interrolang_dev/dev_set_interrolang_{dset}.txt"
     elif dset == "daily_dialog":
         test_suite = f"./experiments/parsing_interrolang_dev/dev_set_interrolang_{dset}.txt"
-        dset = "da"
+        config_dset_id = "da"
     else:
         raise NameError(f"Unknown dataset {dset}")
 
     if sys.platform.startswith('linux') or sys.platform.startswith('darwin'):
         if model == "nearest-neighbor":
-            config = f"./configs/{dset}_nn.gin"
+            config = f"./configs/{config_dset_id}_nn.gin"
         elif model == "EleutherAI/gpt-neo-2.7B":
-            config = f"./configs/{dset}.gin"
+            config = f"./configs/{config_dset_id}.gin"
         elif model == "FLAN-T5":
-            config = f"./configs/{dset}_flan-t5.gin"
+            config = f"./configs/{config_dset_id}_flan-t5.gin"
         else:
             raise NotImplementedError(f"{model} is not supported!")
     elif sys.platform.startswith('win32') or sys.platform.startswith('cygwin'):
         if model == "\'nearest-neighbor\'":
-            config = f"./configs/{dset}_nn.gin"
+            config = f"./configs/{config_dset_id}_nn.gin"
         elif model == "\'EleutherAI/gpt-neo-2.7B\'":
-            config = f"./configs/{dset}.gin"
+            config = f"./configs/{config_dset_id}.gin"
         elif model == "\'FLAN-T5\'":
-            config = f"./configs/{dset}_flan-t5.gin"
+            config = f"./configs/{config_dset_id}_flan-t5.gin"
         else:
             raise NotImplementedError(f"{model} is not supported!")
     else:
@@ -383,10 +363,10 @@ def load_model(dset, guided_decoding, model):
     """Loads the model"""
     print("Initializing model...", flush=True)
     if "t5" not in model:
-        gin.parse_config(f"ExplainBot.parsing_model_name = {model}")
+        gin.parse_config(f"ExplainBot.parsing_model_name = '{model}'")
         gin.parse_config(f"ExplainBot.use_guided_decoding = {guided_decoding}")
 
-        if args.debug:
+        if args.debug or "gpt-neo-2.7B" in model:
             gin.parse_config("get_few_shot_predict_f.device = 'cpu'")
         else:
             gin.parse_config("get_few_shot_predict_f.device = 'cuda'")
@@ -406,7 +386,7 @@ def load_model(dset, guided_decoding, model):
         t5_config = set_t5_config(model)
         t5_model_dir = retrieve_t5_model_dir(model, dset, args.debug)
 
-        gin.parse_config(f"ExplainBot.model_name = '{t5_model_dir}'")
+        gin.parse_config(f"ExplainBot.parsing_model_name = '{t5_model_dir}'")
         gin.parse_config(f"ExplainBot.t5_config = '{t5_config}'")
         gin.parse_config(f"ExplainBot.use_guided_decoding = {guided_decoding}")
 
