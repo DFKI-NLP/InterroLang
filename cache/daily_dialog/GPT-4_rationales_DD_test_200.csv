@@ -1,4 +1,4 @@
-"id","prompt\.*\.content","completion"
+"id","prompt","completion"
 "0","Text: 'hey man, you wanna buy some weed?'
 Based on the text, the predicted dialogue act is directive (out of inform, question, directive, commissive). Without revealing the predicted dialogue act label in your response, explain why: ","The text appears to be instructing or suggesting an action to the recipient, which is to buy some weed. This indicates that the speaker is directing the other person to perform a specific action, making it a directive."
 "1","Text: 'some what?'

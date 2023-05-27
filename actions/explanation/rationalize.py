@@ -3,7 +3,7 @@ import pandas as pd
 from timeout import timeout
 
 
-def get_few_shot_str(csv_filename, num_shots=5):
+def get_few_shot_str(csv_filename, num_shots=3):
     few_shot_str = ""
     gpt_rationales = pd.read_csv(csv_filename).sample(frac=1)
     for i, row in gpt_rationales.iterrows():
@@ -52,7 +52,6 @@ def rationalize_operation(conversation, parse_text, i, **kwargs):
             pred_str = label_dict[pred]
             intro = f"Answer: {pred_str}"
             instruction = "Please explain the answer: "
-            max_length = 150  # The 'passage' is usually very long, so we use a longer max_length for this dataset
             gpt_rationales = "cache/boolq/GPT-3.5_rationales_BoolQ_val_400.csv"
 
         elif dataset_name == "daily_dialog":
@@ -63,7 +62,6 @@ def rationalize_operation(conversation, parse_text, i, **kwargs):
                 [label_dict[c] for c in conversation.class_names if label_dict[c] not in [pred, "dummy"]])
             intro = f"The dialogue act of this text has been classified as {pred_str} (over {other_class_names})."
             instruction = "Please explain why: "
-            max_length = 150
             gpt_rationales = "cache/daily_dialog/GPT-4_rationales_DD_test_200.csv"
 
         elif dataset_name == "olid":
@@ -72,7 +70,6 @@ def rationalize_operation(conversation, parse_text, i, **kwargs):
             pred_str = label_dict[pred]
             intro = f"The tweet has been classified as {pred_str}."
             instruction = "Please explain why: "
-            max_length = 150
             gpt_rationales = "cache/olid/GPT-4_rationales_OLID_val_132.csv"
 
         else:
@@ -91,7 +88,7 @@ def rationalize_operation(conversation, parse_text, i, **kwargs):
         input_ids = input_ids.to(device = "cpu")
         generation = conversation.decoder.gpt_model.generate(
             input_ids,
-            max_length=input_ids.size()[-1] + max_length,
+            max_length=2048,
             no_repeat_ngram_size=2,
             temperature=0.7,
             top_p=0.7
