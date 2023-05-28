@@ -395,7 +395,12 @@ parse {
   border-bottom-left-radius: 10px;
   z-index: 1; /* Give it a lower z-index than the button but still higher than the chat */
   display: none; /* Hide it initially */
-  opacity: 0.85;
+  opacity: 75%;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.slideSideways:hover {
+  opacity: 1;
 }
 
 .shuffle {
