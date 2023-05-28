@@ -49,7 +49,7 @@ def highlight_changed_tokens(orig_tokens, aug_tokens):
             ai += 1
             while not (ai >= len(aug_tokens) or oi >= len(orig_tokens) or orig_tokens[oi] == aug_tokens[ai]):
                 # heuristics to check that oi token appears in aug_tokens
-                while (oi < len(orig_tokens) and not (orig_tokens[oi] in aug_tokens[ai:ai + 3])):
+                while oi < len(orig_tokens) and not (orig_tokens[oi] in aug_tokens[ai:ai + 3]):
                     oi += 1
                 if oi >= len(orig_tokens):
                     break
