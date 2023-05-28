@@ -3,14 +3,14 @@
 ##########################################
 
 # for few shot, e.g., "EleutherAI/gpt-neo-2.7B"
-ExplainBot.parsing_model_name = "./parsing/t5/models/flan-t5-base"
+ExplainBot.parsing_model_name = "./parsing/t5/models/flan-t5-base/daily_dialog-flan-t5-base"
 
 
 # set skip_prompts to true for quicker startup for finetuned models
 # make sure to set to false using few-shot models
 ExplainBot.skip_prompts = False
 
-ExplainBot.t5_config = "./parsing/t5/gin_configs/t5-large.gin"
+ExplainBot.t5_config = "./parsing/t5/gin_configs/flan-t5-base.gin"
 ExplainBot.seed = 0
 ExplainBot.background_dataset_file_path = "./data/daily_dialog_test_with_idx.csv"
 ExplainBot.model_file_path = "./explained_models/da_classifier/saved_model/5e_5e-06lr"

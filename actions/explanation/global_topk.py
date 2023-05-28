@@ -1,6 +1,8 @@
 from actions.explanation.topk import topk
+from timeout import timeout
 
 
+@timeout(60)
 def global_top_k(conversation, parse_text, i, **kwargs):
 
     # Set default

@@ -17,15 +17,15 @@ ACTION_2_FILENAME = {
     "interactions": "interactions.txt",
     "mistake": "mistakes.txt",
     "labels": "label.txt",
-    "random_predict": "random_predict.txt",
-    "explain": "local_feature_importance.txt",
-    "similar": "similar.txt",
-    "rationalization": "rationalize.txt",
-    "custom_input_prediction": "custom_input_prediction_chatgpt.txt",
-    "custom_input_feature_importance": "custom_input_feature_importance_chatgpt.txt",
+    "random_predict": ["random_predict.txt", "random_predict_chatgpt.txt"],
+    "explain": ["local_feature_importance.txt", "local_feature_importance_chatgpt.txt"],
+    "similar": ["similar.txt", "similar_chatgpt.txt"],
+    "rationalization": ["rationalize.txt", "rationalize_chatgpt.txt"],
+    "custom_input_prediction": ["custom_input_prediction_chatgpt.txt", "custom_input_prediction.txt"],
+    "custom_input_feature_importance": ["custom_input_feature_importance_chatgpt.txt", "custom_input_feature_importance.txt"],
     "custom_input_feature_importance_on_sentence_level": "custom_feature_importance_sentence_chatgpt.txt",
-    "augment": "augmentation_chatgpt.txt",
-    "adversarial": "adversarial_chatgpt.txt",
+    "augment": ["augmentation_chatgpt.txt", "augmentation.txt"],
+    "adversarial": ["adversarial_chatgpt.txt", "adversarial.txt"],
     "sentence": "local_feature_importance_sentence.txt"
 }
 
@@ -81,6 +81,11 @@ def sample_prompt_for_action(action: str,
         return "What can you do?"
     elif action in ACTION_2_FILENAME:
         filename_end = ACTION_2_FILENAME[action]
+
+        if type(filename_end) != str:
+            chosen_id = np.random.choice(len(filename_end))
+            filename_end = filename_end[chosen_id]
+
         for filename in filename_to_prompt_ids:
             if filename.endswith(filename_end):
                 prompt_ids = filename_to_prompt_ids[filename]

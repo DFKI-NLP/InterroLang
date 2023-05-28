@@ -10,6 +10,7 @@ from transformers import AutoModelForSequenceClassification, AutoTokenizer
 from actions.util_functions import gen_parse_op_text, get_parse_filter_text
 from explained_models.ModelABC.DANetwork import DANetwork
 from explained_models.Tokenizer.tokenizer import HFTokenizer
+from timeout import timeout
 
 
 def handle_input(parse_text):
@@ -288,7 +289,7 @@ def prediction_with_id(model, data, conversation, text):
         return_s += f"<b>{prediction_class}</b>"
     else:
         class_text = conversation.class_names[model_predictions[0]]
-        return_s += f"<b>{class_text}</b>."
+        return_s += f"<span style=\"background-color: #6CB4EE\">{class_text}</span>."
 
     return_s += "<br>"
     return return_s
@@ -312,7 +313,7 @@ def prediction_on_dataset(model, data, conversation, text):
             return_s += f"<b>class {uniq_p}</b>, {round_freq}%"
         else:
             class_text = conversation.class_names[uniq_p]
-            return_s += f"<b>{class_text}</b>, {round_freq}%"
+            return_s += f"<span style=\"background-color: #6CB4EE\">{class_text}</span>, {round_freq}%"
         return_s += "</li>"
     return_s += "</ul>"
 
@@ -387,6 +388,7 @@ def get_prediction_on_temp_dataset(conversation):
     return predictions, return_s
 
 
+@timeout(60)
 def predict_operation(conversation, parse_text, i, **kwargs):
     """The prediction operation."""
     if conversation.custom_input is not None and conversation.used is False:
