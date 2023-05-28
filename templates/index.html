@@ -88,12 +88,14 @@
                                 <summary style="font-weight: bold;">ID: {{loop.index}}</summary>
                                 <b>dialog:</b>
                                 <div style='font-style: italic; font-size: 0.75em;'>{{entry["dialog"]}}</div>
+                                <button onclick="addId({{loop.index}})">Add this instance into input box</button>
                             </details>
                         {% else %}
                             <details>
                                 <summary style="font-weight: bold;">ID: {{loop.index}}</summary>
                                 <b>text:</b> <br>
                                 <div style='font-style: italic; font-size: 0.75em;'>{{entry["text"]}}</div>
+                                <button onclick="addId({{loop.index}})">Add this instance into input box</button>
                             </details>
                         {% endif %}
                         <br>
