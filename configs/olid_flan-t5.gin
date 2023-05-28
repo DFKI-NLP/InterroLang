@@ -9,7 +9,7 @@ ExplainBot.parsing_model_name = "./parsing/t5/models/flan-t5-base/olid-flan-t5-b
 # make sure to set to false using few-shot models
 ExplainBot.skip_prompts = False
 ExplainBot.text_fields = ["text"]
-ExplainBot.t5_config = "./parsing/t5/gin_configs/t5-large.gin"
+ExplainBot.t5_config = "./parsing/t5/gin_configs/flan-t5-base.gin"
 ExplainBot.seed = 0
 ExplainBot.background_dataset_file_path = "./data/offensive_train.csv"
 ExplainBot.model_file_path = "./data/olid_model"
