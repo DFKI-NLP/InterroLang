@@ -2,7 +2,7 @@
 # The boolq dataset conversation config
 ##########################################
 
-ExplainBot.parsing_model_name = "./parsing/t5/models/flan-t5-base"
+ExplainBot.parsing_model_name = "./parsing/t5/models/flan-t5-base/boolq-flan-t5-base"
 ExplainBot.skip_prompts = True
 
 ExplainBot.t5_config = "./parsing/t5/gin_configs/t5-base.gin"
