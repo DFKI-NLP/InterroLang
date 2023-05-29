@@ -1,6 +1,23 @@
 import pandas as pd
 
 
+
+def get_results(dataset,data_path):
+    """
+    Get the rationlize result
+
+    Args:
+        data_path: path to json file
+    Returns:
+        results: results in JSON format
+        model: explainer model
+    """
+
+    fileObject = open(data_path+dataset+".json", "r")
+    jsonContent = fileObject.read()
+    results = json.loads(jsonContent)
+    return results
+
 def get_few_shot_str(csv_filename, num_shots=5):
     few_shot_str = ""
     gpt_rationales = pd.read_csv(csv_filename).sample(frac=1)
@@ -11,7 +28,7 @@ def get_few_shot_str(csv_filename, num_shots=5):
     return few_shot_str
 
 
-def rationalize_operation(conversation, parse_text, i, **kwargs):
+def rationalize_operation(conversation, parse_text, i, data_path="../../cache/", **kwargs):
     if not conversation.decoder.gpt_parser_initialized:
         return f"Rationalize operation not enabled for {conversation.decoder.parser_name}"
 
@@ -29,7 +46,7 @@ def rationalize_operation(conversation, parse_text, i, **kwargs):
 
     if len(conversation.temp_dataset.contents["X"]) == 0:
         return "There are no instances that meet this description!", 0
-
+    results = get_results(dataset, data_path)
     # Few-shot setting
     few_shot = True
 
@@ -79,24 +96,29 @@ def rationalize_operation(conversation, parse_text, i, **kwargs):
         else:
             return f"Dataset {dataset_name} currently not supported by rationalize operation", 1
 
-        prompt = f"{few_shot_str}" \
-                 f"{text}\n" \
-                 f"{intro}\n" \
-                 f"{instruction}\n"
-        print(f"[rationalize operation]\n=== PROMPT ===\n{prompt}")
+        if idx in results.keys():
+            inputs = text
+            explanation = results[idx]
+            return_s += inputs + "<br><b>Explanation:</b> " + explanation
+        else:
+            prompt = f"{few_shot_str}" \
+                     f"{text}\n" \
+                     f"{intro}\n" \
+                     f"{instruction}\n"
+            print(f"[rationalize operation]\n=== PROMPT ===\n{prompt}")
 
-        input_ids = conversation.decoder.gpt_tokenizer(prompt, return_tensors="pt").input_ids
-        input_ids = input_ids.to(device = "cpu")
-        generation = conversation.decoder.gpt_model.generate(
-            input_ids,
-            max_length=input_ids.size()[-1] + max_length,
-            no_repeat_ngram_size=2,
-            temperature=0.7,
-            top_p=0.7
-        )
-        decoded_generation = conversation.decoder.gpt_tokenizer.decode(generation[0], skip_special_tokens=True)
+            input_ids = conversation.decoder.gpt_tokenizer(prompt, return_tensors="pt").input_ids
+            input_ids = input_ids.to(device = "cpu")
+            generation = conversation.decoder.gpt_model.generate(
+                input_ids,
+                max_length=input_ids.size()[-1] + max_length,
+                no_repeat_ngram_size=2,
+                temperature=0.7,
+                top_p=0.7
+            )
+            decoded_generation = conversation.decoder.gpt_tokenizer.decode(generation[0], skip_special_tokens=True)
 
-        explanation = decoded_generation.split(instruction)[1]
+            explanation = decoded_generation.split(instruction)[1]
 
         return_s += "<b>Original text:</b> " + text \
                     + "<br><b>Prediction:</b> " + pred_str \
