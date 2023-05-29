@@ -40,7 +40,7 @@ class CustomInputDataset(Dataset):
                     'attention_mask': attention_mask.long(),
                 }
                 self.data.append(input_model)
-        elif dataset_name == 'olid':
+        elif dataset_name == "olid":
             self.tokenizer = AutoTokenizer.from_pretrained("sinhala-nlp/mbert-olid-en")
             for string in inputs:
                 encoding = self.tokenizer.encode_plus(
@@ -71,16 +71,16 @@ def get_dataloader(inputs, dataset_name, batch_size=1):
 
 
 def get_embedding_layer(model, dataset_name):
-    if dataset_name == 'boolq':
+    if dataset_name == "boolq":
         return model.base_model.embeddings
-    elif dataset_name == 'daily_dialog':
+    elif dataset_name == "daily_dialog":
         return model.bert.base_model.embeddings
     else:
         return model.bert.embeddings
 
 
 def get_inputs_and_additional_args(batch, dataset_name):
-    if dataset_name == 'boolq':
+    if dataset_name == "boolq":
         input_ids = batch['input_ids']
         additional_forward_args = (batch['attention_mask'].to(device))
     elif dataset_name == "daily_dialog":
@@ -99,7 +99,7 @@ def get_forward_func(dataset_name, model):
         input_ids = input_ids.to(device)
         attention_masks = attention_masks.to(device)
 
-        if dataset_name == 'boolq':
+        if dataset_name == "boolq":
             input_model = {
                 'input_ids': input_ids.long(),
                 'attention_mask': attention_masks.long()[None, :],
@@ -142,12 +142,12 @@ def compute_feature_attribution_scores(batch, model, dataset_name):
     )
     pred_id = torch.argmax(predictions, dim=1)
 
-    if dataset_name == 'boolq':
+    if dataset_name == "boolq":
         special_tokens_mask = batch["input_ids"] * 0
         special_tokens_mask[0][0] = 1
         special_tokens_mask[0][-1] = 1
         baseline = batch["input_ids"] * special_tokens_mask
-    elif dataset_name == 'daily_dialog':
+    elif dataset_name == "daily_dialog":
         # print("batch: ", batch)
         # special_tokens_mask = batch["input_ids"] * 0
         # special_tokens_mask[0][0] = 1
@@ -190,19 +190,24 @@ def generate_explanation(model, dataset_name, inputs, file_name="custom_input"):
         jsonContent = fileObject.read()
         res_list = json.loads(jsonContent)
 
+        if dataset_name == "boolq":
+            raw_text_column = "text"
+        else:
+            raw_text_column = "original_text"
+
         if len(inputs) == 1:
             for res in res_list:
-                if res["original_text"] == inputs[0]:
+                if res[raw_text_column] == inputs[0]:
                     return [res]
         else:
-            cache_text = [i["original_text"] for i in res_list]
+            cache_text = [i[raw_text_column] for i in res_list]
             cache_text_set = set(cache_text)
 
             # If cache contains all inputs
             if set(inputs).issubset(cache_text_set):
                 json_list = []
                 for i in res_list:
-                    if i["original_text"] in inputs:
+                    if i[raw_text_column] in inputs:
                         json_list.append(i)
                 return json_list
 
@@ -212,7 +217,7 @@ def generate_explanation(model, dataset_name, inputs, file_name="custom_input"):
 
     model.to(device=device)
 
-    if dataset_name == 'boolq':
+    if dataset_name == "boolq":
         for idx_batch, b in enumerate(dataloader):
             attribution, predictions = compute_feature_attribution_scores(b, model, dataset_name)
 
@@ -221,11 +226,11 @@ def generate_explanation(model, dataset_name, inputs, file_name="custom_input"):
             tokenizer = AutoTokenizer.from_pretrained("andi611/distilbert-base-uncased-qa-boolq")
             result = {
                 "original_text": inputs[idx_batch],
-                'text': tokenizer.convert_ids_to_tokens(b["input_ids"][0]),
-                'input_ids': detach_to_list(b["input_ids"]),
+                "text": tokenizer.convert_ids_to_tokens(b["input_ids"][0]),
+                "input_ids": detach_to_list(b["input_ids"]),
                 # "text": inputs[idx_batch],
-                'attributions': attrbs,
-                'predictions': preds.item()
+                "attributions": attrbs,
+                "predictions": preds.item()
             }
             json_list.append(result)
     elif dataset_name == "daily_dialog":
@@ -239,10 +244,10 @@ def generate_explanation(model, dataset_name, inputs, file_name="custom_input"):
                 # 'input_ids': detach_to_list(b["input_ids"][0]),
                 # "text": inputs[idx_batch],
                 "original_text": inputs[idx_batch],
-                'text': tokenizer.convert_ids_to_tokens(b["input_ids"][0][0]),
-                'input_ids': ids,
-                'attributions': attrbs,
-                'predictions': preds.item()
+                "text": tokenizer.convert_ids_to_tokens(b["input_ids"][0][0]),
+                "input_ids": ids,
+                "attributions": attrbs,
+                "predictions": preds.item()
             }
             json_list.append(result)
     elif dataset_name == "olid":
@@ -255,10 +260,10 @@ def generate_explanation(model, dataset_name, inputs, file_name="custom_input"):
             attrbs = detach_to_list(attribution[0])
             result = {
                 "original_text": inputs[idx_batch],
-                'text': tokenizer.convert_ids_to_tokens(b["input_ids"][0][0]),
-                'input_ids': ids,
-                'attributions': attrbs,
-                'predictions': preds.item()
+                "text": tokenizer.convert_ids_to_tokens(b["input_ids"][0][0]),
+                "input_ids": ids,
+                "attributions": attrbs,
+                "predictions": preds.item()
             }
             json_list.append(result)
     else:
