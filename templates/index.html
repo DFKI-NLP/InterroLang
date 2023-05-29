@@ -35,11 +35,13 @@
                     <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                         <div class="card-body">
                             <div class="panel panel-danger">
-                                <div class="panel-heading"><b>"Input"</b>: enter <b>"quit"</b> can delete the entered custom
+                                <div class="panel-heading"><b>"Input"</b>: enter <b>"quit"</b> can delete the entered
+                                    custom
                                     input if
                                     available.
                                 </div>
-                                <div class="panel-heading"><b>"Custom input"</b>: add your own input instance. For BoolQ,
+                                <div class="panel-heading"><b>"Custom input"</b>: add your own input instance. For
+                                    BoolQ,
                                     please
                                     use
                                     <b>"|"</b> to separate question and passage!
@@ -68,37 +70,38 @@
                 <!-- Filter dataset by string ("includes") -->
                 <b>🔍 Filter dataset by text:</b>
                 <form class="filterdata-inputarea">
-                    <input type="text" class="filterdata-input" id="filterdataInput" placeholder="Filter dataset" >
+                    <input type="text" class="filterdata-input" id="filterdataInput" placeholder="Filter dataset">
                 </form>
-                <h1 style="font: small-caps bold 20px/1 sans-serif; margin-top: 10px">🗃️ {{dataset}} dataset viewer </h1>
+                <h1 style="font: small-caps bold 20px/1 sans-serif; margin-top: 10px">🗃️ {{dataset}} dataset
+                    viewer </h1>
                 <div id="show_data"
                      style="border-radius: 15px; padding: 5px; overflow-y: scroll; height: 70%;">
                     {% for entry in entries %}
-                        {% if dataset == 'boolq' %}
-                            <details>
-                                <summary style="font-weight: bold;">ID: {{loop.index}} </summary>
-                                <b>question:</b> <br>
-                                <div style='font-style: italic; font-size: 0.75em;'>{{entry["question"]}}</div>
-                                <b>passage:</b> <br>
-                                <div style='font-style: italic; font-size: 0.75em;'>{{entry["passage"]}}</div>
-                                <button onclick="addId({{loop.index}})">Add this instance into input box</button>
-                            </details>
-                        {% elif dataset == 'daily_dialog' %}
-                            <details>
-                                <summary style="font-weight: bold;">ID: {{loop.index}}</summary>
-                                <b>dialog:</b>
-                                <div style='font-style: italic; font-size: 0.75em;'>{{entry["dialog"]}}</div>
-                                <button onclick="addId({{loop.index}})">Add this instance into input box</button>
-                            </details>
-                        {% else %}
-                            <details>
-                                <summary style="font-weight: bold;">ID: {{loop.index}}</summary>
-                                <b>text:</b> <br>
-                                <div style='font-style: italic; font-size: 0.75em;'>{{entry["text"]}}</div>
-                                <button onclick="addId({{loop.index}})">Add this instance into input box</button>
-                            </details>
-                        {% endif %}
-                        <br>
+                    {% if dataset == 'boolq' %}
+                    <details>
+                        <summary style="font-weight: bold;">ID: {{loop.index}}</summary>
+                        <b>question:</b> <br>
+                        <div style='font-style: italic; font-size: 0.75em;'>{{entry["question"]}}</div>
+                        <b>passage:</b> <br>
+                        <div style='font-style: italic; font-size: 0.75em;'>{{entry["passage"]}}</div>
+                        <button onclick="addId({{loop.index}})">Add this instance into input box</button>
+                    </details>
+                    {% elif dataset == 'daily_dialog' %}
+                    <details>
+                        <summary style="font-weight: bold;">ID: {{loop.index}}</summary>
+                        <b>dialog:</b>
+                        <div style='font-style: italic; font-size: 0.75em;'>{{entry["dialog"]}}</div>
+                        <button onclick="addId({{loop.index}})">Add this instance into input box</button>
+                    </details>
+                    {% else %}
+                    <details>
+                        <summary style="font-weight: bold;">ID: {{loop.index}}</summary>
+                        <b>text:</b> <br>
+                        <div style='font-style: italic; font-size: 0.75em;'>{{entry["text"]}}</div>
+                        <button onclick="addId({{loop.index}})">Add this instance into input box</button>
+                    </details>
+                    {% endif %}
+                    <br>
                     {% endfor %}
                     <br>(Showing first 10)
                 </div>
@@ -124,7 +127,7 @@
                 <option style="text-align:center;" value="1">Custom input</option>
                 <option style="text-align:center;" value="2">Include</option>
             </select>
-            <textarea rows="1" cols="50" type="text" class="ttm-input" id="textInput"
+            <textarea onKeyPress="return checkSubmit(event)" rows="1" cols="50" type="text" class="ttm-input" id="textInput"
                       placeholder="Enter your command! Use the ↑ arrow and ↓ arrow to cycle previous commands."></textarea>
             <button type="submit" class="ttm-send-btn" id="ttm-send-btn-id">Send</button>
         </form>
@@ -134,9 +137,11 @@
             <div id="infobox" style="visibility: hidden; color: red; font-style: italic"></div>
             <div class="dots-cont" id="generation-loading"><span class="dot dot-1"></span> <span
                     class="dot dot-2"></span> <span class="dot dot-3"></span></div>
-            <div id="knobs" style="display: table; padding: 10px; width: 100%; margin-top: -10px; margin-left: 15px; margin-right: 15px;">
+            <div id="knobs"
+                 style="display: table; padding: 10px; width: 100%; margin-top: -10px; margin-left: 15px; margin-right: 15px;">
                 <div class="row row1" data-sort="abt_" style="display: table-row;">
-                    <div class="control" style="display: table-cell; text-align: right; padding: 10px;"><b>About</b></div>
+                    <div class="control" style="display: table-cell; text-align: right; padding: 10px;"><b>About</b>
+                    </div>
                     <div class="buttons" style="display: table-cell;">
                         <div class="tooltip-wrapper">
                             <button id="abt_function" class="idea-button" onclick="sampleCapabilities()">
@@ -146,7 +151,8 @@
                     </div>
                 </div>
                 <div class="row row2" data-sort="md_" style="display: table-row;">
-                    <div class="control" style="display: table-cell; text-align: right; padding: 10px;"><b>Metadata</b></div>
+                    <div class="control" style="display: table-cell; text-align: right; padding: 10px;"><b>Metadata</b>
+                    </div>
                     <div class="buttons" style="display: table-cell;">
                         <div class="tooltip-wrapper">
                             <button id="md_show" class="idea-button" onclick="sampleShow()">
@@ -166,7 +172,8 @@
                     </div>
                 </div>
                 <div class="row row3" data-sort="pred_" style="display: table-row;">
-                    <div class="control" style="display: table-cell; text-align: right; padding: 10px;"><b>Prediction</b></div>
+                    <div class="control" style="display: table-cell; text-align: right; padding: 10px;">
+                        <b>Prediction</b></div>
                     <div class="buttons" style="display: table-cell;">
                         <div class="tooltip-wrapper">
                             <button id="pred_predict" class="idea-button" onclick="samplePredict()">
@@ -199,7 +206,8 @@
                     </div>
                 </div>
                 <div class="row row4" data-sort="nlu_" style="display: table-row;">
-                    <div class="control" style="display: table-cell; text-align: right; padding: 10px;"><b>Understanding</b></div>
+                    <div class="control" style="display: table-cell; text-align: right; padding: 10px;">
+                        <b>Understanding</b></div>
                     <div class="buttons" style="display: table-cell;">
                         <div class="tooltip-wrapper">
                             <button id="nlu_similar" class="idea-button" onclick="sampleSimilar()">
@@ -209,7 +217,8 @@
                     </div>
                 </div>
                 <div class="row row5" data-sort="x_" style="display: table-row;">
-                    <div class="control" style="display: table-cell; text-align: right; padding: 10px;"><b>Explanation</b></div>
+                    <div class="control" style="display: table-cell; text-align: right; padding: 10px;">
+                        <b>Explanation</b></div>
                     <div class="buttons" style="display: table-cell;">
                         <div class="tooltip-wrapper">
                             <button id="x_local" class="idea-button" onclick="sampleWhy()">
@@ -234,7 +243,8 @@
                     </div>
                 </div>
                 <div style="display: table-row;">
-                    <div class="control" style="display: table-cell; text-align: right; padding: 10px;"><b>Custom input</b></div>
+                    <div class="control" style="display: table-cell; text-align: right; padding: 10px;"><b>Custom
+                        input</b></div>
                     <div class="tooltip-wrapper">
                         <button id="c_pred" class="idea-button" onclick="sampleCustomInputPrediction()">
                             custom input prediction
@@ -246,7 +256,8 @@
                         </button>
                     </div>
                     <div class="tooltip-wrapper">
-                        <button id="c_feat-sent" class="idea-button" onclick="sampleCustomInputFeatureImportanceOnSentenceLevel()">
+                        <button id="c_feat-sent" class="idea-button"
+                                onclick="sampleCustomInputFeatureImportanceOnSentenceLevel()">
                             custom input sentence importance
                         </button>
                         <span class="tooltip-text">
@@ -255,7 +266,8 @@
                     </div>
                 </div>
                 <div class="row row6" data-sort="ptb_" style="display: table-row;">
-                    <div class="control" style="display: table-cell; text-align: right; padding: 10px;"><b>Perturbation</b></div>
+                    <div class="control" style="display: table-cell; text-align: right; padding: 10px;">
+                        <b>Perturbation</b></div>
                     <div class="buttons" style="display: table-cell;">
                         <div class="tooltip-wrapper">
                             <button id="ptb_cfe" class="idea-button" onclick="sampleFlip()">
@@ -286,20 +298,20 @@
         <!-- Referring jinja2 syntax -->
     </section>
 
-        <!--        <section class="pins" id="my-pins">-->
-        <!--          <header class="pins-header">-->
-        <!--            <div class="pins-header-title">-->
-        <!--             Pins-->
-        <!--            </div>-->
-        <!--          </header>-->
-        <!--            <main class="pins-scroll"> &lt;!&ndash; pinned messages appear here &ndash;&gt;-->
-        <!--                <div class="pin left-msg">-->
-        <!--                  <div class="pin-bubble">-->
-        <!--                    <div class="pin-text">Pin messages and they will appear here!</div>-->
-        <!--                  </div>-->
-        <!--                </div>-->
-        <!--            </main>-->
-        <!--        </section>-->
+    <!--        <section class="pins" id="my-pins">-->
+    <!--          <header class="pins-header">-->
+    <!--            <div class="pins-header-title">-->
+    <!--             Pins-->
+    <!--            </div>-->
+    <!--          </header>-->
+    <!--            <main class="pins-scroll"> &lt;!&ndash; pinned messages appear here &ndash;&gt;-->
+    <!--                <div class="pin left-msg">-->
+    <!--                  <div class="pin-bubble">-->
+    <!--                    <div class="pin-text">Pin messages and they will appear here!</div>-->
+    <!--                  </div>-->
+    <!--                </div>-->
+    <!--            </main>-->
+    <!--        </section>-->
 </messagebody>
 </body>
 </html>
@@ -308,7 +320,7 @@
     $('.opendv').click(function (e) {
         var chatWidth = $('.ttm-chat').width();
         if ($('.slideSideways').is(':visible')) {
-            $('.slideSideways').animate({left: chatWidth}, function() {
+            $('.slideSideways').animate({left: chatWidth}, function () {
                 $(this).hide();
             });
         } else {
@@ -324,7 +336,13 @@
 </script>
 
 <script>
-    function applyInclude(){
+    function checkSubmit(e) {
+        if (e && e.keyCode === 13) {
+            document.getElementById("ttm-send-btn-id").click();
+        }
+    }
+
+    function applyInclude() {
         let filter_string = document.getElementById("filterdataInput").value;
         document.getElementById("textInput").value = filter_string;
 
@@ -834,7 +852,7 @@
         })
     });
 
-    function addId(_id){
+    function addId(_id) {
         let string = "For id ";
         string += _id;
         string += ", "
