@@ -50,7 +50,7 @@ pip install -r requirements.txt
 ```
 Install [polyjuice-nlp](https://github.com/tongshuangwu/polyjuice) and its dependencies due to some [issues](https://github.com/tongshuangwu/polyjuice/issues/10) from polyjuice:
 ```bash
-cd uitls
+cd utils
 bash dependency.sh
 ```
 
@@ -78,6 +78,8 @@ You can launch the Flask web app via
 python flask_app.py
 ```
 
+### Use Guidance
+After the project is set up, we provide a [user guidance](https://github.com/nfelnlp/InterroLang/blob/main/utils/user_guide.py) using Selenium to demonstrate how to use our system if you have Chrome Browser available.
 
 ## How to use custom input?
 ### Supported operations
