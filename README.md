@@ -21,51 +21,57 @@ We consider 7 categories of operations.
 We provide a dataset view, with which user can explore instances containing in the current dataset (in screenshot, BoolQ dataset is used). User can enter a token to search instances that include the entered token. 
 ![](./static/images/data_viewer.png)
 
+## Datasets / Use cases
+* Question Answering ([BoolQ](https://huggingface.co/datasets/boolq))
+* Hate Speech Detection ([OLID](https://scholar.harvard.edu/malmasi/olid))
+* Dialogue Act Classification ([DailyDialog]((https://huggingface.co/datasets/daily_dialog)))
+
+
 ## Running with conda / virtualenv
 
-Create the environment and install dependencies.
+### Create the environment and install dependencies.
 
+#### Conda
 ```shell
-conda create -n ttm python=3.9
-conda activate ttm
+conda create -n interrolang python=3.9
+conda activate interrolang
 ```
 
-Install the requirements
+#### Venv
+```shell
+python -m venv venv
+source venv/venv/activate
+```
+
+### Then install the requirements
 ```shell
 pip install -r requirements.txt
 ```
 
-Download datasets (only **BoolQ** for now!) by running
-```python
-python get_data.py
+### Download models
+### How to get used models?
+- BoolQ model: https://huggingface.co/andi611/distilbert-base-uncased-qa-boolq
+- OLID model: https://huggingface.co/sinhala-nlp/mbert-olid-en
+- Daily Dialog model: https://cloud.dfki.de/owncloud/index.php/s/m72HGNLW2TyCABr
+
+#### For BoolQ and OLID Model:
+Put them under `./data` and name the folders `boolq_model` and `olid_model` respectively.
+
+#### For Daily Dialog model:
+Put the file `5e_5e-06lr` under `./explained_models/da_classifier/saved_model`
+
+### Set up configuration
+In `./configs`, there are all gin config files for all three datasets with different parsing models. You can choose one of them and set its path in `./global_config.gin`:
+```
+GlobalArgs.config = "./configs/boolq_adapter.gin"
 ```
 
-Download the model from [Hugging Face](https://huggingface.co/andi611/distilbert-base-uncased-qa-boolq/tree/main)  
-and put it under _/configs_ as _./configs/boolq_model_.
-
+### Run the application
 You can launch the Flask web app via
 ```python
 python flask_app.py
 ```
 
-
-## Datasets / Use cases
-* Question Answering (BoolQ)
-* Hate Speech Detection (OLID)
-* Dialogue Act Classification (DailyDialog)
-
-## Explanation modules
-* Feature Attribution (feature_importance)
-* Counterfactual Generation (counterfactuals)
-* Similar Examples (similarity)
-
-## Data modules
-* Filtering (utils)
-
-## How to get used models?
-- BoolQ model: https://huggingface.co/andi611/distilbert-base-uncased-qa-boolq
-- OLID model: https://huggingface.co/sinhala-nlp/mbert-olid-en
-- Daily Dialog model: https://cloud.dfki.de/owncloud/index.php/s/m72HGNLW2TyCABr
 
 ## How to use custom input?
 ### Supported operations
