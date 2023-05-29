@@ -213,6 +213,9 @@
                             <button id="nlu_similar" class="idea-button" onclick="sampleSimilar()">
                                 similar instances
                             </button>
+                            <button id="nlu_keyword" class="idea-button" onclick="sampleKeyword()">
+                                keyword
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -368,6 +371,10 @@
                 ttmInput.value = data;
             }
         });
+    }
+
+    function sampleKeyword(){
+        doSample("keyword");
     }
 
     function sampleSentence() {

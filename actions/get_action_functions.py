@@ -16,11 +16,11 @@ from actions.filter.filter import filter_operation
 from actions.filter.includes_token import includes_operation
 from actions.metadata.count_data_points import count_data_points
 from actions.metadata.data_summary import data_operation
-from actions.metadata.data_summary import keyword_operation
 from actions.metadata.define import define_operation
 from actions.metadata.labels import show_labels_operation
 from actions.metadata.model import model_operation
 from actions.metadata.show_data import show_operation
+from actions.nlu.keyword import keyword_operation
 from actions.nlu.similarity import similar_instances_operation
 from actions.perturbation.adversarial import adversarial_operation
 from actions.perturbation.augment import augment_operation
