@@ -9,24 +9,3 @@ Parsed: filter id 215 and show [E]
 
 User: Please display id 105111
 Parsed: filter id 105111 and show [E]
-
-User: show me instances that include {span}
-Parsed: includes and show [E]
-
-User: return the data with {span}
-Parsed: includes and show [E]
-
-User: show me all the data where {span} is present
-Parsed: includes and show [E]
-
-User: please show the items with {span} in the data
-Parsed: includes and show [E]
-
-User: Could you show me all the examples with {span}
-Parsed: includes and show [E]
-
-User: Please display the instances with {span}
-Parsed: includes and show [E]
-
-User: display data with the filter text {span}
-Parsed: includes and show [E]

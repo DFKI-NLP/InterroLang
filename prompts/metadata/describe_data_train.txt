@@ -1,0 +1,26 @@
+User: show me the language of training data
+Parsed: data train_data_language [E]
+
+User: language of training data
+Parsed: data train_data_language [E]
+
+User: Which languages does the data for training contain?
+Parsed: data train_data_language [E]
+
+User: where does training data come from
+Parsed: data train_data_source [E]
+
+User: What's the source of the training data?
+Parsed: data train_data_source [E]
+
+User: name of training data
+Parsed: data train_data_name [E]
+
+User: What is the dataset called?
+Parsed: data train_data_name [E]
+
+User: how much training data is used
+Parsed: data train_data_number [E]
+
+User: How many training data points are present?
+Parsed: data train_data_number [E]

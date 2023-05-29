@@ -1,9 +1,3 @@
-User: What's the likelihood of {class_names}?
-Parsed: likelihood [E]
-
-User: What's the probability of {class_names}?
-Parsed: likelihood [E]
-
 User: What is the probability that id 2215 is predicted as {class_names} by the model?
 Parsed: filter id 2215 and likelihood [E]
 

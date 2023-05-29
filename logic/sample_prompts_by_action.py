@@ -4,29 +4,40 @@ import numpy as np
 from logic.prompts import get_user_part_of_prompt
 
 ACTION_2_FILENAME = {
+    # About
     "self": "describe_self.txt",
-    "score": "score.txt",
-    "likelihood": "likelihood.txt",
-    "important": "global_feature_importance.txt",
-    "logic": "explanation_prompts.txt",
-    "predict": "predict.txt",
-    "cfe": "cfe.txt",
     "function": "describe_function.txt",
+    # Metadata
     "show": "show.txt",
-    "description": "describe_data.txt",
-    "interactions": "interactions.txt",
-    "mistake": "mistakes.txt",
+    "describe_train_data": "describe_data_train.txt",
+    "describe_test_data": "describe_data_test.txt",
+    "countdata": "count_data.txt",
     "labels": "label.txt",
+    # Prediction
+    "predict": "predict.txt",
+    "predict_dataset": "predict_dataset.txt",
     "random_predict": ["random_predict.txt", "random_predict_chatgpt.txt"],
-    "explain": ["local_feature_importance.txt", "local_feature_importance_chatgpt.txt"],
+    "likelihood": "likelihood.txt",
+    "score": "score.txt",
+    "mistake_count": "mistake_count.txt",
+    "mistake_sample": "mistake_sample.txt",
+    # Understanding
     "similar": ["similar.txt", "similar_chatgpt.txt"],
+    "keyword": "keywords.txt",
+    # Explanation
+    "explain": ["local_feature_importance.txt", "local_feature_importance_chatgpt.txt"],
+    "sentence": "local_feature_importance_sentence.txt",
+    "important": "global_feature_importance.txt",
+    "important_class": "global_feature_importance_class.txt",
     "rationalization": ["rationalize.txt", "rationalize_chatgpt.txt"],
+    # Custom input
     "custom_input_prediction": ["custom_input_prediction_chatgpt.txt", "custom_input_prediction.txt"],
     "custom_input_feature_importance": ["custom_input_feature_importance_chatgpt.txt", "custom_input_feature_importance.txt"],
     "custom_input_feature_importance_on_sentence_level": "custom_feature_importance_sentence_chatgpt.txt",
+    # Perturbation
+    "cfe": "cfe.txt",
     "augment": ["augmentation_chatgpt.txt", "augmentation.txt"],
     "adversarial": ["adversarial_chatgpt.txt", "adversarial.txt"],
-    "sentence": "local_feature_importance_sentence.txt"
 }
 
 
