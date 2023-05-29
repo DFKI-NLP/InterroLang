@@ -14,7 +14,7 @@ We consider 7 categories of operations.
 - Prediction: various operations related to golden labels and predictions.
 - Understanding: find some similar instances.
 - Explanation: different kinds of methods to explain an instance / dataset.
-- Custom input: we not only allow instances from the dataset but also instances given by user. (More details see below)
+- Custom input: we not only allow instances from the dataset but also instances given by user. (More details see [below](https://github.com/nfelnlp/InterroLang#process))
 - Perturbation: operations would change some parts of instance such that the label of the instance would change.  
 
 ### Dataset Viewer
