@@ -45,7 +45,12 @@ source venv/venv/activate
 
 ### Then install the requirements
 ```shell
+python -m pip install --upgrade pip
 pip install -r requirements.txt
+
+# Needed for some operations
+python -m nltk.downloader omw-1.4
+python -m nltk.downloader punkt
 ```
 
 ### Download models
