@@ -6,6 +6,9 @@ pip install -e .
 # Download omw-1.4
 python -m nltk.downloader omw-1.4
 
+# Punkt
+python -m nltk.downloader punkt
+
 # Install spacy
 pip install -U pip setuptools wheel
 pip install -U spacy
