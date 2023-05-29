@@ -14,9 +14,9 @@ from transformers import GPTNeoXTokenizerFast, GPTNeoXForCausalLM, GPTNeoXConfig
 
 def generate_rationale(dataset_name,write_path):
     device = "cuda" if torch.cuda.is_available() else "cpu"
-    #gpt_tokenizer = GPTNeoXTokenizerFast.from_pretrained("databricks/dolly-v2-3b", padding_side="left")
-    #gpt_model = GPTNeoXForCausalLM.from_pretrained("databricks/dolly-v2-3b")
-    #gpt_model.to(device)
+    gpt_tokenizer = GPTNeoXTokenizerFast.from_pretrained("databricks/dolly-v2-3b", padding_side="left")
+    gpt_model = GPTNeoXForCausalLM.from_pretrained("databricks/dolly-v2-3b")
+    gpt_model.to(device)
     instances = []
     explanations = []
     if dataset_name == "boolq":
