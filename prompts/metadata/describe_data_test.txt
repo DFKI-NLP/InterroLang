@@ -1,0 +1,23 @@
+User: tell me the language of testing data
+Parsed: data test_data_language [E]
+
+User: test partition languages
+Parsed: data test_data_language [E]
+
+User: where do you get test data
+Parsed: data test_data_source [E]
+
+User: Could you please tell me the sources of the test data?
+Parsed: data test_data_source [E]
+
+User: inform me about the test data name
+Parsed: data test_data_name [E]
+
+User: What is the test set called?
+Parsed: data test_data_name [E]
+
+User: How many test data points are here?
+Parsed: data test_data_number [E]
+
+User: The size of the test partition of the dataset, please
+Parsed: data test_data_number [E]
