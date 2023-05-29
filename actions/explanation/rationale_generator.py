@@ -7,7 +7,14 @@ import json
 import csv
 from rationalize import get_few_shot_str
 import argparse
+import os.path
+import sys
 
+# directory reach
+directory = os.path.dirname(os.path.abspath("__file__"))
+print(directory)
+# setting path
+sys.path.append(directory)
 from explained_models.ModelABC.DANetwork import DANetwork
 from explained_models.Tokenizer.tokenizer import HFTokenizer
 from transformers import GPTNeoXTokenizerFast, GPTNeoXForCausalLM, GPTNeoXConfig
@@ -88,7 +95,7 @@ def generate_rationale(dataset_name,write_path):
         device = "cuda" if torch.cuda.is_available() else "cpu"
         #tokenizer = AutoTokenizer.from_pretrained("./explained_models/da_classifier/saved_model/5e_5e-06lr")
         model.to(device)
-        dataset = pd.read_csv("./data/daily_dialog_test_with_idx.csv")
+        dataset = pd.read_csv("./data/da_test_set_with_indices.csv")
         few_shot_str = get_few_shot_str("cache/daily_dialog/GPT-4_rationales_DD_test_200.csv")
         with open(write_path, 'w', newline='') as file:
             writer = csv.writer(file)
@@ -113,7 +120,6 @@ def generate_rationale(dataset_name,write_path):
 
                 label_dict = {0: 'dummy', 1: 'inform', 2: 'question', 3: 'directive', 4: 'commissive'}
                 pred = model_predictions
-                #{0: 'dummy', 1: 'inform', 2: 'question', 3: 'directive', 4: 'commissive'}
                 other_class_names = ", ".join(
                     [label_dict[c] for c in label_dict if label_dict[c] not in [pred, "dummy"]])
                 intro = f"The dialogue act of this text has been classified as {pred} (over {other_class_names})."
@@ -133,7 +139,6 @@ def generate_rationale(dataset_name,write_path):
                 )
                 decoded_generation = gpt_tokenizer.decode(generation[0], skip_special_tokens=True)
                 #
-                #inputs = decoded_generation.split("Based on ")[0]
                 explanation = decoded_generation.split("explain why: ")[1]
                 writer.writerow([idx,instance[0],explanation])
     else:
@@ -141,7 +146,7 @@ def generate_rationale(dataset_name,write_path):
         device = "cuda" if torch.cuda.is_available() else "cpu"
         tokenizer = AutoTokenizer.from_pretrained("sinhala-nlp/mbert-olid-en")
         model.to(device)
-        dataset = pd.read_csv("./data/offenseval_train.csv")
+        dataset = pd.read_csv("data/offensive_train.csv")
         few_shot_str = get_few_shot_str("cache/olid/GPT-4_rationales_OLID_val_132.csv")
         instances = []
         with open(write_path, 'w', newline='') as file:
