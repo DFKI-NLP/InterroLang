@@ -11,19 +11,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-
-    <script>
-        function showTooltip(description) {
-            const infobox = document.getElementById("infobox");
-            infobox.style.visibility = "visible";
-            infobox.innerHTML = description
-        }
-
-        function hideTooltip() {
-            const infobox = document.getElementById("infobox");
-            infobox.style.visibility = "hidden";
-        }
-    </script>
 </head>
 
 <body>
@@ -55,7 +42,7 @@
                                 <div class="panel-heading"><b>"Custom input"</b>: add your own input instance. For BoolQ,
                                     please
                                     use
-                                    <b>"|"</b> to separate text and passage!
+                                    <b>"|"</b> to separate question and passage!
                                 </div>
                                 <div class="panel-heading"><b>"Include"</b>: enter a search term to filter the dataset.
                                 </div>
@@ -147,51 +134,146 @@
             <div id="infobox" style="visibility: hidden; color: red; font-style: italic"></div>
             <div class="dots-cont" id="generation-loading"><span class="dot dot-1"></span> <span
                     class="dot dot-2"></span> <span class="dot dot-3"></span></div>
-            <div class="buttons" id="generation-buttons">
-
-                <button title="args: topk (int, optional)" id="idea-important" class="idea-button" onclick="sampleImportant()">global
-                    feature importances
-                </button>
-                <button title="args: id (int), topk (int, optional)" id="idea-why" class="idea-button" onclick="sampleWhy()">local feature importance explanation
-                </button>
-                <button id="idea-predict" class="idea-button" onclick="samplePredict()">predictions</button>
-
-                <button id="idea-random-predict" class="idea-button" onclick="sampleRandomPredict()">random
-                    prediction
-                </button>
-
-                <button id="idea-likelihood" class="idea-button" onclick="sampleLikelihood()">likelihood
-                </button>
-                <button id="idea-show" class="idea-button" onclick="sampleShow()">show data</button>
-                <button id="idea-capabilities" class="idea-button" onclick="sampleCapabilities()">system capabilities
-                </button>
-                <button id="idea-performance" class="idea-button" onclick="samplePerformance()">performance</button>
-                <button id="idea-flip" class="idea-button" onclick="sampleFlip()">counterfactual</button>
-                <button id="idea-description" class="idea-button" onclick="sampleDataDescription()">data
-                    description
-                </button>
-                <!--                    <button class="idea-button" onclick="sampleInteractions()">feature interaction effects</button>-->
-                <button class="idea-button" onclick="sampleMistakes()">mistakes</button>
-                <button class="idea-button" onclick="sampleLabels()">true labels</button>
-                <button class="idea-button" onclick="sampleSimilar()">find a similar instance</button>
-                <button class="idea-button" onclick="sampleRationalization()">rationalize</button>
-                <button class="idea-button" onclick="sampleAdversarial()">adversarial</button>
-                <button class="idea-button" onclick="sampleAugment()">augmentation</button>
-                <button class="idea-button" onclick="sampleSentence()">sentence-level feature attribution</button>
-
-                <button class="idea-button" id="c_pred" onclick="sampleCustomInputPrediction()">custom input
-                    prediction
-                </button>
-                <button class="idea-button" id="c_feat" onclick="sampleCustomInputFeatureImportance()">custom input
-                    feature
-                    importance
-                </button>
-                <button title="args: custom_input (str)" onmouseover="showTooltip('sentence level feature attribution on custom input. Your custom input requires to be given before call this function')"
-                        onmouseout="hideTooltip()"
-                        class="idea-button" id="c_feat_sent"
-                        onclick="sampleCustomInputFeatureImportanceOnSentenceLevel()">custom input
-                    sentence importance
-                </button>
+            <div id="knobs" style="display: table; padding: 10px; width: 100%; margin-top: -10px; margin-left: 15px; margin-right: 15px;">
+                <div class="row row1" data-sort="abt_" style="display: table-row;">
+                    <div class="control" style="display: table-cell; text-align: right; padding: 10px;"><b>About</b></div>
+                    <div class="buttons" style="display: table-cell;">
+                        <div class="tooltip-wrapper">
+                            <button id="abt_function" class="idea-button" onclick="sampleCapabilities()">
+                                system capabilities
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row row2" data-sort="md_" style="display: table-row;">
+                    <div class="control" style="display: table-cell; text-align: right; padding: 10px;"><b>Metadata</b></div>
+                    <div class="buttons" style="display: table-cell;">
+                        <div class="tooltip-wrapper">
+                            <button id="md_show" class="idea-button" onclick="sampleShow()">
+                                show data
+                            </button>
+                        </div>
+                        <div class="tooltip-wrapper">
+                            <button id="md_data-description" class="idea-button" onclick="sampleDataDescription()">
+                                data description
+                            </button>
+                        </div>
+                        <div class="tooltip-wrapper">
+                            <button id="md_labels" class="idea-button" onclick="sampleLabels()">
+                                true labels
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row row3" data-sort="pred_" style="display: table-row;">
+                    <div class="control" style="display: table-cell; text-align: right; padding: 10px;"><b>Prediction</b></div>
+                    <div class="buttons" style="display: table-cell;">
+                        <div class="tooltip-wrapper">
+                            <button id="pred_predict" class="idea-button" onclick="samplePredict()">
+                                predictions
+                            </button>
+                            <span class="tooltip-text">
+                                Let the model predict a single instance, the entire dataset of any subset with multiple instances.
+                            </span>
+                        </div>
+                        <div class="tooltip-wrapper">
+                            <button id="pred_random" class="idea-button" onclick="sampleRandomPredict()">
+                                random prediction
+                            </button>
+                        </div>
+                        <div class="tooltip-wrapper">
+                            <button id="pred_likelihood" class="idea-button" onclick="sampleLikelihood()">
+                                likelihood
+                            </button>
+                        </div>
+                        <div class="tooltip-wrapper">
+                            <button id="pred_score" class="idea-button" onclick="samplePerformance()">
+                                performance
+                            </button>
+                        </div>
+                        <div class="tooltip-wrapper">
+                            <button id="pred_mistakes" class="idea-button" onclick="sampleMistakes()">
+                                mistakes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row row4" data-sort="nlu_" style="display: table-row;">
+                    <div class="control" style="display: table-cell; text-align: right; padding: 10px;"><b>Understanding</b></div>
+                    <div class="buttons" style="display: table-cell;">
+                        <div class="tooltip-wrapper">
+                            <button id="nlu_similar" class="idea-button" onclick="sampleSimilar()">
+                                similar instances
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row row5" data-sort="x_" style="display: table-row;">
+                    <div class="control" style="display: table-cell; text-align: right; padding: 10px;"><b>Explanation</b></div>
+                    <div class="buttons" style="display: table-cell;">
+                        <div class="tooltip-wrapper">
+                            <button id="x_local" class="idea-button" onclick="sampleWhy()">
+                                local feature importance
+                            </button>
+                        </div>
+                        <div class="tooltip-wrapper">
+                            <button id="x_sentence" class="idea-button" onclick="sampleSentence()">
+                                sentence-level feature importance
+                            </button>
+                        </div>
+                        <div class="tooltip-wrapper">
+                            <button id="x_global" class="idea-button" onclick="sampleImportant()">
+                                global feature importance
+                            </button>
+                        </div>
+                        <div class="tooltip-wrapper">
+                            <button id="x_rationalize" class="idea-button" onclick="sampleRationalization()">
+                                rationalize
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div style="display: table-row;">
+                    <div class="control" style="display: table-cell; text-align: right; padding: 10px;"><b>Custom input</b></div>
+                    <div class="tooltip-wrapper">
+                        <button id="c_pred" class="idea-button" onclick="sampleCustomInputPrediction()">
+                            custom input prediction
+                        </button>
+                    </div>
+                    <div class="tooltip-wrapper">
+                        <button id="c_feat" class="idea-button" onclick="sampleCustomInputFeatureImportance()">
+                            custom input feature importance
+                        </button>
+                    </div>
+                    <div class="tooltip-wrapper">
+                        <button id="c_feat-sent" class="idea-button" onclick="sampleCustomInputFeatureImportanceOnSentenceLevel()">
+                            custom input sentence importance
+                        </button>
+                        <span class="tooltip-text">
+                            Sentence-level feature attribution on custom input. Your custom input needs to be given before you can call this function.
+                        </span>
+                    </div>
+                </div>
+                <div class="row row6" data-sort="ptb_" style="display: table-row;">
+                    <div class="control" style="display: table-cell; text-align: right; padding: 10px;"><b>Perturbation</b></div>
+                    <div class="buttons" style="display: table-cell;">
+                        <div class="tooltip-wrapper">
+                            <button id="ptb_cfe" class="idea-button" onclick="sampleFlip()">
+                                counterfactual
+                            </button>
+                        </div>
+                        <div class="tooltip-wrapper">
+                            <button id="ptb_adversarial" class="idea-button" onclick="sampleAdversarial()">
+                                adversarial
+                            </button>
+                        </div>
+                        <div class="tooltip-wrapper">
+                            <button id="ptb_augment" class="idea-button" onclick="sampleAugment()">
+                                augmentation
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         </main>
@@ -415,7 +497,7 @@
     });
 
     function changeBtnColor(flag) {
-        let ids = ["c_feat_sent", "c_feat", "c_pred"]
+        let ids = ["c_feat-sent", "c_feat", "c_pred"]
 
         if (flag) {
             ids.forEach(id => {
