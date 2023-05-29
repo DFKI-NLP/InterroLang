@@ -623,10 +623,12 @@ parse {
 .tooltip-text {
   visibility: hidden;
   width: 300px;
-  background-color: #fce7bd;
+  background-color: #ddd;
   text-align: center;
   border-radius: 6px;
-  padding: 10px 0;
+  padding: 10px;
+  border: 3px solid #ccc;
+  box-shadow: 0 15px 15px -5px rgba(0, 0, 0, 0.2);
 
   /* Position the tooltip */
   position: absolute;
@@ -637,7 +639,7 @@ parse {
 
   /* Fade in tooltip - CSS transitions */
   opacity: 0;
-  transition: opacity 1s;
+  transition: opacity 0.5s;
 }
 
 .tooltip-text::after {
@@ -648,7 +650,8 @@ parse {
   margin-left: -5px;
   border-width: 10px;
   border-style: solid;
-  border-color: #fce7bd transparent transparent transparent;
+  border-color: #ccc #ccc transparent transparent;
+  box-shadow: 0 15px 15px -5px rgba(0, 0, 0, 0.2);
 }
 
 .tooltip-wrapper:hover .tooltip-text {

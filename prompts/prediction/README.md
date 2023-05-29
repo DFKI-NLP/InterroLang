@@ -26,7 +26,6 @@ See *filter* category.
 Action defined in prediction/prediction_likelihood.py
 
 ### likelihood.txt
-* 2x `likelihood [E]`
 * 12x `filter id and likelihood [E]`
 
 
@@ -34,12 +33,15 @@ Action defined in prediction/prediction_likelihood.py
 
 Action defined in prediction/mistakes.py
 
-### mistakes.txt
+### mistake_count.txt
 * 5x `mistake count [E]`
+
+### mistake_sample.txt
 * 5x `mistake sample [E]`
 
 ### includes_+_mistake.txt
 See *filter* category.
+
 
 ## Score
 
@@ -62,11 +64,3 @@ Action defined in prediction/score.py
 * 1x `score recall macro [E]`
 * 1x `score recall weighted [E]`
 * 2x `score roc [E]`
-* 6x `includes and score accuracy [E]`
-* 1x `includes and score precision [E]`
-* 1x `includes and score recall [E]`
-* 2x `includes and score npv [E]`
-* 2x `includes and score ppv [E]`
-* 1x `includes and score recall [E]`
-* 1x `includes and score sensitivity [E]`
-* 1x `includes and score specificity [E]`

@@ -19,7 +19,8 @@ ACTION_2_FILENAME = {
     "random_predict": ["random_predict.txt", "random_predict_chatgpt.txt"],
     "likelihood": "likelihood.txt",
     "score": "score.txt",
-    "mistake": "mistakes.txt",
+    "mistake_count": "mistake_count.txt",
+    "mistake_sample": "mistake_sample.txt",
     # Understanding
     "similar": ["similar.txt", "similar_chatgpt.txt"],
     "keyword": "keywords.txt",
@@ -27,6 +28,7 @@ ACTION_2_FILENAME = {
     "explain": ["local_feature_importance.txt", "local_feature_importance_chatgpt.txt"],
     "sentence": "local_feature_importance_sentence.txt",
     "important": "global_feature_importance.txt",
+    "important_class": "global_feature_importance_class.txt",
     "rationalization": ["rationalize.txt", "rationalize_chatgpt.txt"],
     # Custom input
     "custom_input_prediction": ["custom_input_prediction_chatgpt.txt", "custom_input_prediction.txt"],

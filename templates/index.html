@@ -164,7 +164,7 @@
                                 Show example
                             </button>
                             <span class="tooltip-text">
-                                Displays a single instance from the dataset based on the ID you specify.
+                                Displays a <b>single example</b> from the dataset based on the <b>ID</b> you specify.
                             </span>
                         </div>
                         <div class="tooltip-wrapper">
@@ -172,7 +172,7 @@
                                 Describe training data
                             </button>
                             <span class="tooltip-text">
-                                .
+                                Lists name, source, language, size and features of the <b>training</b> data.
                             </span>
                         </div>
                         <div class="tooltip-wrapper">
@@ -180,7 +180,7 @@
                                 Describe test data
                             </button>
                             <span class="tooltip-text">
-                                .
+                                Lists name, source, language, size and features of the <b>test</b> data.
                             </span>
                         </div>
                         <div class="tooltip-wrapper">
@@ -188,7 +188,7 @@
                                 Count data
                             </button>
                             <span class="tooltip-text">
-                                .
+                                Shows <b>how many</b> examples there are in the data and what the range of <b>IDs</b> is.
                             </span>
                         </div>
                         <div class="tooltip-wrapper">
@@ -196,7 +196,7 @@
                                 True labels
                             </button>
                             <span class="tooltip-text">
-                                .
+                                Shows the <b>distribution</b> of the <b>true labels</b>, i.e. how the examples were annotated by humans.
                             </span>
                         </div>
                     </div>
@@ -210,7 +210,7 @@
                                 Single prediction
                             </button>
                             <span class="tooltip-text">
-                                Let the model predict a <b>single instance</b> (ID).
+                                Lets the model predict a <b>single instance</b> (ID).
                             </span>
                         </div>
                         <div class="tooltip-wrapper">
@@ -218,7 +218,7 @@
                                 Random prediction
                             </button>
                             <span class="tooltip-text">
-                                Let the model predict a <b>randomly selected instance</b> (ID).
+                                Lets the model predict a <b>randomly selected instance</b> (ID).
                             </span>
                         </div> <!-- Move custom input prediction button here -->
                         <div class="tooltip-wrapper">
@@ -226,7 +226,7 @@
                                 Dataset prediction
                             </button>
                             <span class="tooltip-text">
-                                Let the model predict the <b>entire dataset</b> or any subset with <b>multiple instances</b>.
+                                Lets the model predict the <b>entire dataset</b> or any subset with <b>multiple instances</b>.
                             </span>
                         </div>
                         <div class="tooltip-wrapper">
@@ -234,7 +234,7 @@
                                 Likelihood
                             </button>
                             <span class="tooltip-text">
-                                .
+                                For a <b>single example</b> (ID), gets the <b>probability</b> that the model predicts a certain <b>label</b>.
                             </span>
                         </div>
                         <div class="tooltip-wrapper">
@@ -242,15 +242,23 @@
                                 Performance
                             </button>
                             <span class="tooltip-text">
-                                .
+                                Gets an overall <b>score</b> for the model performance (Accuracy, Precision, Recall, F1).
                             </span>
                         </div>
                         <div class="tooltip-wrapper">
-                            <button id="pred_mistakes" class="idea-button" onclick="sampleMistakes()">
-                                Mistakes
+                            <button id="pred_mistakes-count" class="idea-button" onclick="sampleMistakeCount()">
+                                Count mistakes
                             </button>
                             <span class="tooltip-text">
-                                .
+                                Shows <b>how many</b> examples the model predicts a <b>wrong label</b> for.
+                            </span>
+                        </div>
+                        <div class="tooltip-wrapper">
+                            <button id="pred_mistakes-sample" class="idea-button" onclick="sampleMistakeSample()">
+                                Sample mistakes
+                            </button>
+                            <span class="tooltip-text">
+                                Shows <b>examples</b> where the model predicts a <b>wrong label</b>.
                             </span>
                         </div>
                     </div>
@@ -264,7 +272,7 @@
                                 Similar examples
                             </button>
                             <span class="tooltip-text">
-                                .
+                                Retrieves a number of examples from the dataset that are semantically similar to a given ID.
                             </span>
                         </div>
                         <div class="tooltip-wrapper">
@@ -272,7 +280,7 @@
                                 Most frequent keywords
                             </button>
                             <span class="tooltip-text">
-                                .
+                                Prints a table of the most frequent keywords in the data.
                             </span>
                         </div>
                     </div>
@@ -300,6 +308,14 @@
                         <div class="tooltip-wrapper">
                             <button id="x_global" class="idea-button" onclick="sampleImportant()">
                                 Global feature importance
+                            </button>
+                            <span class="tooltip-text">
+                                .
+                            </span>
+                        </div>
+                        <div class="tooltip-wrapper">
+                            <button id="x_class" class="idea-button" onclick="sampleImportantClass()">
+                                Class-based feature importance
                             </button>
                             <span class="tooltip-text">
                                 .
@@ -506,8 +522,12 @@
         doSample("score");
     }
 
-    function sampleMistakes() {
-        doSample("mistake");
+    function sampleMistakeCount() {
+        doSample("mistake_count");
+    }
+
+    function sampleMistakeSample() {
+        doSample("mistake_sample");
     }
 
     function sampleFlip() {
@@ -520,6 +540,10 @@
 
     function sampleImportant() {
         doSample("important");
+    }
+
+    function sampleImportantClass() {
+        doSample("important_class");
     }
 
     function sampleLabels() {
@@ -559,6 +583,31 @@
     }
 </script>
 
+<script>
+    document.querySelectorAll('.tooltip-wrapper').forEach((wrapper) => {
+      const tooltip = wrapper.querySelector('.tooltip-text');
+      wrapper.addEventListener('mouseenter', () => {
+        const wrapperRect = wrapper.getBoundingClientRect();
+        const tooltipRect = tooltip.getBoundingClientRect();
+
+        if (wrapperRect.left + tooltipRect.width > window.innerWidth) {
+          tooltip.style.left = 'auto';
+          tooltip.style.right = '0';
+        } else {
+          tooltip.style.left = '50%';
+          tooltip.style.right = 'auto';
+        }
+
+        if (wrapperRect.top < tooltipRect.height) {
+          tooltip.style.bottom = 'auto';
+          tooltip.style.top = '125%';
+        } else {
+          tooltip.style.bottom = '125%';
+          tooltip.style.top = 'auto';
+        }
+      });
+    });
+</script>
 
 <script src='https://use.fontawesome.com/releases/v5.0.13/js/all.js'></script>
 <script>

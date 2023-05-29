@@ -55,3 +55,8 @@ Most prompts are adapted from TTM's `{num_features}` and `{num_values}`.
 * 1x `lengthfilter chars and show [E]`
 * 1x `lengthfilter sents and show [E]`
 * 2x `lengthfilter words and show [E]`
+
+## likelihood
+
+### likelihood_class.txt
+* 2x `likelihood [E]`

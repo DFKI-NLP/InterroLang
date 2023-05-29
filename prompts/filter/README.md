@@ -25,6 +25,19 @@ Action defined in prediction/mistakes.py
 
 Action defined in prediction/predict.py
 
+
+### includes_+_score.txt
+* 6x `includes and score accuracy [E]`
+* 1x `includes and score precision [E]`
+* 1x `includes and score recall [E]`
+* 2x `includes and score npv [E]`
+* 2x `includes and score ppv [E]`
+* 1x `includes and score recall [E]`
+* 1x `includes and score sensitivity [E]`
+* 1x `includes and score specificity [E]`
+
+Action defined in prediction/score.py
+
 ### includes_+_show.txt
 * 7x `includes and show [E]`
 
