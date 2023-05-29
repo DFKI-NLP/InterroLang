@@ -6,6 +6,20 @@
 
 TalkToModel (Slack et al., 2022) adaptation to NLP use cases (question answering, hate speech detection, dialogue act classification).
 
+## InterroLang Interface
+![](./static/images/interface.png)
+We consider 7 categories of operations.
+- About: Capabilities of our system.
+- Metadata: information in terms of data, model, label.
+- Prediction: various operations related to golden labels and predictions.
+- Understanding: find some similar instances.
+- Explanation: different kinds of methods to explain an instance / dataset.
+- Custom input: we not only allow instances from the dataset but also instances given by user. (More details see below)
+- Perturbation: operations would change some parts of instance such that the label of the instance would change.  
+
+### Dataset Viewer
+We provide a dataset view, with which user can explore instances containing in the current dataset (in screenshot, BoolQ dataset is used). User can enter a token to search instances that include the entered token. 
+![](./static/images/data_viewer.png)
 
 ## Running with conda / virtualenv
 
@@ -55,19 +69,22 @@ python flask_app.py
 
 ## How to use custom input?
 ### Supported operations
-1. nlpattribute
-2. prediction
+1. feature importance on token level
+2. feature importance on sentence level
+3. prediction
+4. similarity
+5. rationalization
 
 ### Process
 #### 1. Enter your custom input in the text area and then click send button. Be aware: you have to choose **"Custom input"** in the selection box.
-![](./templates/images/custom_input.png)
+![](./static/images/custom_input.png)
 
 #### 2. After clicking the button, you could see your custom input in the terminal
-![](./templates/images/terminal.png)
+![](./static/images/enter_custom_input.png)
 
-#### 3. Then you should enter prompts for operations mentioned above. Here, as example, we choose nlpattribute.
-![](./templates/images/input.png)
+#### 3. Then you should enter prompts for operations mentioned above. Operations that support custom input are highlighted with yellow border.
+![](./static/images/buttons.png)
 
-#### 4. In the end, click the send button and you will get the result.
-![](./templates/images/result.png)
+#### 4. In the end, click the send button and you will get the result. (In this example, we show the result of feature importance on token level on given custom input)
+![](./static/images/result.png)
 
