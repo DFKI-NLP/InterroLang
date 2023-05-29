@@ -144,8 +144,13 @@
                     </div>
                     <div class="buttons" style="display: table-cell;">
                         <div class="tooltip-wrapper">
-                            <button id="abt_function" class="idea-button" onclick="sampleCapabilities()">
-                                system capabilities
+                            <button id="abt_self" class="idea-button" onclick="sampleAboutSelf()">
+                                InterroLang
+                            </button>
+                        </div>
+                        <div class="tooltip-wrapper">
+                            <button id="abt_function" class="idea-button" onclick="sampleAboutFunction()">
+                                System capabilities
                             </button>
                         </div>
                     </div>
@@ -156,18 +161,43 @@
                     <div class="buttons" style="display: table-cell;">
                         <div class="tooltip-wrapper">
                             <button id="md_show" class="idea-button" onclick="sampleShow()">
-                                show data
+                                Show example
                             </button>
+                            <span class="tooltip-text">
+                                Displays a single instance from the dataset based on the ID you specify.
+                            </span>
                         </div>
                         <div class="tooltip-wrapper">
-                            <button id="md_data-description" class="idea-button" onclick="sampleDataDescription()">
-                                data description
+                            <button id="md_train-data-description" class="idea-button" onclick="sampleTrainDataDescription()">
+                                Describe training data
                             </button>
+                            <span class="tooltip-text">
+                                .
+                            </span>
+                        </div>
+                        <div class="tooltip-wrapper">
+                            <button id="md_test-data-description" class="idea-button" onclick="sampleTestDataDescription()">
+                                Describe test data
+                            </button>
+                            <span class="tooltip-text">
+                                .
+                            </span>
+                        </div>
+                        <div class="tooltip-wrapper">
+                            <button id="md_count-data" class="idea-button" onclick="sampleCountData()">
+                                Count data
+                            </button>
+                            <span class="tooltip-text">
+                                .
+                            </span>
                         </div>
                         <div class="tooltip-wrapper">
                             <button id="md_labels" class="idea-button" onclick="sampleLabels()">
-                                true labels
+                                True labels
                             </button>
+                            <span class="tooltip-text">
+                                .
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -187,21 +217,33 @@
                             <button id="pred_random" class="idea-button" onclick="sampleRandomPredict()">
                                 random prediction
                             </button>
+                            <span class="tooltip-text">
+                                .
+                            </span>
                         </div>
                         <div class="tooltip-wrapper">
                             <button id="pred_likelihood" class="idea-button" onclick="sampleLikelihood()">
                                 likelihood
                             </button>
+                            <span class="tooltip-text">
+                                .
+                            </span>
                         </div>
                         <div class="tooltip-wrapper">
                             <button id="pred_score" class="idea-button" onclick="samplePerformance()">
                                 performance
                             </button>
+                            <span class="tooltip-text">
+                                .
+                            </span>
                         </div>
                         <div class="tooltip-wrapper">
                             <button id="pred_mistakes" class="idea-button" onclick="sampleMistakes()">
                                 mistakes
                             </button>
+                            <span class="tooltip-text">
+                                .
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -211,8 +253,11 @@
                     <div class="buttons" style="display: table-cell;">
                         <div class="tooltip-wrapper">
                             <button id="nlu_similar" class="idea-button" onclick="sampleSimilar()">
-                                similar instances
+                                Similar examples
                             </button>
+                            <span class="tooltip-text">
+                                .
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -224,21 +269,33 @@
                             <button id="x_local" class="idea-button" onclick="sampleWhy()">
                                 local feature importance
                             </button>
+                            <span class="tooltip-text">
+                                .
+                            </span>
                         </div>
                         <div class="tooltip-wrapper">
                             <button id="x_sentence" class="idea-button" onclick="sampleSentence()">
                                 sentence-level feature importance
                             </button>
+                            <span class="tooltip-text">
+                                .
+                            </span>
                         </div>
                         <div class="tooltip-wrapper">
                             <button id="x_global" class="idea-button" onclick="sampleImportant()">
                                 global feature importance
                             </button>
+                            <span class="tooltip-text">
+                                .
+                            </span>
                         </div>
                         <div class="tooltip-wrapper">
                             <button id="x_rationalize" class="idea-button" onclick="sampleRationalization()">
                                 rationalize
                             </button>
+                            <span class="tooltip-text">
+                                .
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -249,11 +306,17 @@
                         <button id="c_pred" class="idea-button" onclick="sampleCustomInputPrediction()">
                             custom input prediction
                         </button>
+                        <span class="tooltip-text">
+                                .
+                            </span>
                     </div>
                     <div class="tooltip-wrapper">
                         <button id="c_feat" class="idea-button" onclick="sampleCustomInputFeatureImportance()">
                             custom input feature importance
                         </button>
+                        <span class="tooltip-text">
+                                .
+                            </span>
                     </div>
                     <div class="tooltip-wrapper">
                         <button id="c_feat-sent" class="idea-button"
@@ -273,16 +336,25 @@
                             <button id="ptb_cfe" class="idea-button" onclick="sampleFlip()">
                                 counterfactual
                             </button>
+                            <span class="tooltip-text">
+                                .
+                            </span>
                         </div>
                         <div class="tooltip-wrapper">
                             <button id="ptb_adversarial" class="idea-button" onclick="sampleAdversarial()">
                                 adversarial
                             </button>
+                            <span class="tooltip-text">
+                                .
+                            </span>
                         </div>
                         <div class="tooltip-wrapper">
                             <button id="ptb_augment" class="idea-button" onclick="sampleAugment()">
                                 augmentation
                             </button>
+                            <span class="tooltip-text">
+                                .
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -398,8 +470,16 @@
         doSample("random_predict");
     }
 
-    function sampleDataDescription() {
-        doSample("description");
+    function sampleTrainDataDescription() {
+        doSample("describe_train_data");
+    }
+
+    function sampleTestDataDescription() {
+        doSample("describe_test_data");
+    }
+
+    function sampleCountData() {
+        doSample("countdata");
     }
 
     function samplePerformance() {
@@ -446,12 +526,12 @@
         doSample("show");
     }
 
-    function sampleCapabilities() {
+    function sampleAboutFunction() {
         doSample("function");
     }
 
-    function sampleInteractions() {
-        doSample("interactions")
+    function sampleAboutSelf() {
+        doSample("self");
     }
 </script>
 
