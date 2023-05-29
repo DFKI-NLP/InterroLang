@@ -9,7 +9,7 @@ TalkToModel (Slack et al., 2022) adaptation to NLP use cases (question answering
 ## InterroLang Interface
 ![](./static/images/interface.png)
 We consider 7 categories of operations.
-- About: Capabilities of our system.
+- About: capabilities of our system.
 - Metadata: information in terms of data, model, label.
 - Prediction: various operations related to golden labels and predictions.
 - Understanding: find some similar instances.
@@ -24,7 +24,7 @@ We provide a dataset view, with which user can explore instances containing in t
 ## Datasets / Use cases
 * Question Answering ([BoolQ](https://huggingface.co/datasets/boolq))
 * Hate Speech Detection ([OLID](https://scholar.harvard.edu/malmasi/olid))
-* Dialogue Act Classification ([DailyDialog]((https://huggingface.co/datasets/daily_dialog)))
+* Dialogue Act Classification ([DailyDialog](https://huggingface.co/datasets/daily_dialog))
 
 
 ## Running with conda / virtualenv
