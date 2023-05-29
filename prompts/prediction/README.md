@@ -1,28 +1,49 @@
-# prediction
+## Prediction
+
+Action defined in prediction/predict.py
+
+### predict.txt
+* 10x `filter id and predict [E]`
+
+### predict_dataset.txt
+* 5x `predict [E]`
+* 3x `previousfilter and predict [E]` (see *context*)
+
+### random_predict.txt
+* 4x `randompredict [E]`
+* 11x `randompredict [E]` (random_predict_chatgpt.txt) [GPT-4 generated]
+
+### custom_input_prediction.txt
+* 3x `predict [E]`
+* 10x `predict [E]` (custom_input_prediction_chatgpt.txt) [GPT-4 generated]
+
+### includes_+_predict.txt
+See *filter* category.
+
+
+## Likelihood
+
+Action defined in prediction/prediction_likelihood.py
 
 ### likelihood.txt
 * 2x `likelihood [E]`
 * 12x `filter id and likelihood [E]`
 
-Action defined in prediction/prediction_likelihood.py
+
+## Mistakes
+
+Action defined in prediction/mistakes.py
 
 ### mistakes.txt
 * 5x `mistake count [E]`
 * 5x `mistake sample [E]`
-* 2x `includes and mistake count [E]`
-* 9x `includes and mistake sample [E]`
 
-Action defined in prediction/mistakes.py
+### includes_+_mistake.txt
+See *filter* category.
 
-### predict.txt
-* 5x `predict [E]`
-* 3x `predict [E]` (custom_input_prediction.txt)
-* 10x `predict [E]` (custom_input_prediction_chatgpt.txt) [GPT-4 generated]
-* 10x `filter id and predict [E]`
-* 3x `previousfilter and predict [E]`
+## Score
 
-Action defined in prediction/predict.py
-
+Action defined in prediction/score.py
 
 ### score.txt
 * 14x `score accuracy [E]`
@@ -49,6 +70,3 @@ Action defined in prediction/predict.py
 * 1x `includes and score recall [E]`
 * 1x `includes and score sensitivity [E]`
 * 1x `includes and score specificity [E]`
-
-Action defined in prediction/score.py
-

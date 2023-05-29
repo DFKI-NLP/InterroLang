@@ -43,7 +43,6 @@ Action defined in metadata/data_summary.py
 Action defined in metadata/model.py
 
 ### label.txt
-* 7x `includes and label [E]`
 * 1x `label [E]`
 
 Action defined in metadata/labels.py

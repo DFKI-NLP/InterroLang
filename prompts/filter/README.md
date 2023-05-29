@@ -9,6 +9,17 @@
 
 Action defined in metadata/count_data_points.py
 
+### includes_+_label.txt
+* 7x `includes and label [E]`
+
+Action defined in metadata/labels.py
+
+### includes_+_mistake.txt
+* 2x `includes and mistake count [E]`
+* 9x `includes and mistake sample [E]`
+
+Action defined in prediction/mistakes.py
+
 ### includes_+_predict.txt
 * 5x `includes and predict [E]`
 

@@ -59,7 +59,7 @@ def get_predictions_and_probabilities(name, instance_id, dataset_name, conversat
     elif dataset_name == 'olid':
         model_prediction_probabilities = (nn.Softmax(dim=0)(torch.Tensor(prediction).float())).detach().numpy()
     else:
-        raise NotImplementedError(f"{dataset_name} is not supported!");
+        raise NotImplementedError(f"{dataset_name} is not supported!")
 
     return model_predictions, model_prediction_probabilities
 

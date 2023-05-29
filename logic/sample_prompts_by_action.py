@@ -15,6 +15,7 @@ ACTION_2_FILENAME = {
     "labels": "label.txt",
     # Prediction
     "predict": "predict.txt",
+    "predict_dataset": "predict_dataset.txt",
     "random_predict": ["random_predict.txt", "random_predict_chatgpt.txt"],
     "likelihood": "likelihood.txt",
     "score": "score.txt",

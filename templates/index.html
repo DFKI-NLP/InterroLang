@@ -207,23 +207,31 @@
                     <div class="buttons" style="display: table-cell;">
                         <div class="tooltip-wrapper">
                             <button id="pred_predict" class="idea-button" onclick="samplePredict()">
-                                predictions
+                                Single prediction
                             </button>
                             <span class="tooltip-text">
-                                Let the model predict a single instance, the entire dataset of any subset with multiple instances.
+                                Let the model predict a <b>single instance</b> (ID).
                             </span>
                         </div>
                         <div class="tooltip-wrapper">
                             <button id="pred_random" class="idea-button" onclick="sampleRandomPredict()">
-                                random prediction
+                                Random prediction
                             </button>
                             <span class="tooltip-text">
-                                .
+                                Let the model predict a <b>randomly selected instance</b> (ID).
+                            </span>
+                        </div> <!-- Move custom input prediction button here -->
+                        <div class="tooltip-wrapper">
+                            <button id="pred_dataset" class="idea-button" onclick="samplePredictDataset()">
+                                Dataset prediction
+                            </button>
+                            <span class="tooltip-text">
+                                Let the model predict the <b>entire dataset</b> or any subset with <b>multiple instances</b>.
                             </span>
                         </div>
                         <div class="tooltip-wrapper">
                             <button id="pred_likelihood" class="idea-button" onclick="sampleLikelihood()">
-                                likelihood
+                                Likelihood
                             </button>
                             <span class="tooltip-text">
                                 .
@@ -231,7 +239,7 @@
                         </div>
                         <div class="tooltip-wrapper">
                             <button id="pred_score" class="idea-button" onclick="samplePerformance()">
-                                performance
+                                Performance
                             </button>
                             <span class="tooltip-text">
                                 .
@@ -239,7 +247,7 @@
                         </div>
                         <div class="tooltip-wrapper">
                             <button id="pred_mistakes" class="idea-button" onclick="sampleMistakes()">
-                                mistakes
+                                Mistakes
                             </button>
                             <span class="tooltip-text">
                                 .
@@ -258,9 +266,10 @@
                             <span class="tooltip-text">
                                 .
                             </span>
-
+                        </div>
+                        <div class="tooltip-wrapper">
                             <button id="nlu_keyword" class="idea-button" onclick="sampleKeyword()">
-                                keyword
+                                Most frequent keywords
                             </button>
                             <span class="tooltip-text">
                                 .
@@ -274,7 +283,7 @@
                     <div class="buttons" style="display: table-cell;">
                         <div class="tooltip-wrapper">
                             <button id="x_local" class="idea-button" onclick="sampleWhy()">
-                                local feature importance
+                                Local feature importance
                             </button>
                             <span class="tooltip-text">
                                 .
@@ -282,7 +291,7 @@
                         </div>
                         <div class="tooltip-wrapper">
                             <button id="x_sentence" class="idea-button" onclick="sampleSentence()">
-                                sentence-level feature importance
+                                Sentence-level feature importance
                             </button>
                             <span class="tooltip-text">
                                 .
@@ -290,7 +299,7 @@
                         </div>
                         <div class="tooltip-wrapper">
                             <button id="x_global" class="idea-button" onclick="sampleImportant()">
-                                global feature importance
+                                Global feature importance
                             </button>
                             <span class="tooltip-text">
                                 .
@@ -298,7 +307,7 @@
                         </div>
                         <div class="tooltip-wrapper">
                             <button id="x_rationalize" class="idea-button" onclick="sampleRationalization()">
-                                rationalize
+                                Rationalize
                             </button>
                             <span class="tooltip-text">
                                 .
@@ -311,24 +320,24 @@
                         input</b></div>
                     <div class="tooltip-wrapper">
                         <button id="c_pred" class="idea-button" onclick="sampleCustomInputPrediction()">
-                            custom input prediction
+                            Custom input prediction
                         </button>
                         <span class="tooltip-text">
-                                .
-                            </span>
+                            .
+                        </span>
                     </div>
                     <div class="tooltip-wrapper">
                         <button id="c_feat" class="idea-button" onclick="sampleCustomInputFeatureImportance()">
-                            custom input feature importance
+                            Custom input feature importance
                         </button>
                         <span class="tooltip-text">
-                                .
-                            </span>
+                            .
+                        </span>
                     </div>
                     <div class="tooltip-wrapper">
                         <button id="c_feat-sent" class="idea-button"
                                 onclick="sampleCustomInputFeatureImportanceOnSentenceLevel()">
-                            custom input sentence importance
+                            Custom input sentence importance
                         </button>
                         <span class="tooltip-text">
                             Sentence-level feature attribution on custom input. Your custom input needs to be given before you can call this function.
@@ -341,7 +350,7 @@
                     <div class="buttons" style="display: table-cell;">
                         <div class="tooltip-wrapper">
                             <button id="ptb_cfe" class="idea-button" onclick="sampleFlip()">
-                                counterfactual
+                                Counterfactual
                             </button>
                             <span class="tooltip-text">
                                 .
@@ -349,7 +358,7 @@
                         </div>
                         <div class="tooltip-wrapper">
                             <button id="ptb_adversarial" class="idea-button" onclick="sampleAdversarial()">
-                                adversarial
+                                Adversarial example
                             </button>
                             <span class="tooltip-text">
                                 .
@@ -357,7 +366,7 @@
                         </div>
                         <div class="tooltip-wrapper">
                             <button id="ptb_augment" class="idea-button" onclick="sampleAugment()">
-                                augmentation
+                                Augment
                             </button>
                             <span class="tooltip-text">
                                 .
@@ -527,6 +536,10 @@
 
     function samplePredict() {
         doSample("predict");
+    }
+
+    function samplePredictDataset() {
+        doSample("predict_dataset");
     }
 
     function sampleLikelihood() {
