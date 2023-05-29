@@ -43,14 +43,15 @@ python -m venv venv
 source venv/venv/activate
 ```
 
-### Then install the requirements
+### Install the requirements
 ```shell
 python -m pip install --upgrade pip
 pip install -r requirements.txt
-
-# Needed for some operations
-python -m nltk.downloader omw-1.4
-python -m nltk.downloader punkt
+```
+Install [polyjuice-nlp](https://github.com/tongshuangwu/polyjuice) and its dependencies due to some [issues](https://github.com/tongshuangwu/polyjuice/issues/10) from polyjuice:
+```bash
+cd uitls
+bash dependency.sh
 ```
 
 ### Download models
