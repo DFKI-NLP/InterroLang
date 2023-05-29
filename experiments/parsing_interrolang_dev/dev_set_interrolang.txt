@@ -1,0 +1,305 @@
+Show me the functions available in the system
+function [E]
+
+What can this chat do for me?
+function [E]
+
+What are the functions that you can perform?
+function [E]
+
+Tell me about your functionality, please.
+function [E]
+
+Could you introduce yourself?
+self [E]
+
+Tell me about yourself
+self [E]
+
+What is this conversational system about?
+self [E]
+
+Show me the most important features in the dataset
+important all [E]
+
+What are the features that have the highest importance?
+important all [E]
+
+What are the features that have the highest importance?
+important all [E]
+
+How do you predict that something has class {class_names}?
+important {class_names} [E]
+
+What are the top 7 influential features?
+important topk 7 [E]
+
+I'm curious what are the 5 most contributing tokens?
+important topk 5 [E]
+
+What about 10 most contributing features?
+important topk 10 [E]
+
+Can you show me 2 tokens that have the highest attributions?
+important topk 2 [E]
+
+Show me some the top features for the predictions that the model makes
+important all [E]
+
+I need an explanation for the model's prediction in terms of token attributions for the sample number 8.
+filter id 8 and nlpattribute all [E]
+
+What are the features that are the most important ones for id 145.
+filter id 145 and nlpattribute all [E]
+
+What are the top tokens contributing to the prediction for instance number 49.
+filter id 49 and nlpattribute all [E]
+
+Can you explain to me how the model decides on the predictions for the instances with id 145 and id 122?
+filter id 145 or filter id 122 and nlpattribute all [E]
+
+Show me please the most important five features for instances with id 100 and 102.
+filter id 100 or filter id 102 and nlpattribute topk 5 [E]
+
+Explain please what the model predicts for id 89.
+filter id 89 and nlpattribute all [E]
+
+Provide an elaborate explanation with rationalization for id 1000, please.
+filter id 1000 and rationalize [E]
+
+What would be the rationale for the prediction that the model outputs for id 134?
+filter id 134 and rationalize [E]
+
+Please rationalize for me the output for id 14.
+filter id 14 and rationalize [E]
+
+What rationale can you generate for id 93?
+filter id 93 and rationalize [E]
+
+Tell me how many datapoints are in the dataset?
+countdata [E]
+
+How big is the training set?
+data train_data_number [E]
+
+What is the size of the test set?
+data test_data_number [E]
+
+How do you call this dataset?
+data train_data_name [E]
+
+What data does the model use? Where does it come from?
+data train_data_source [E]
+
+Can you tell me about the language of the dataset?
+data train_data_language [E]
+
+What's the data that this model is using?
+data train_data_source [E]
+
+What is the learning rate?
+model lr [E]
+
+What loss function does the model utilize?
+model loss [E]
+
+What model do you use? Tell me more about it.
+model model_summary [E]
+
+What tasks can the model do for me?
+model task [E]
+
+What optimization strategy does it use? What's the name of the optimizer?
+model optimizer [E]
+
+for all sentences that include the word "chocolate", what are the true labels?
+includes and label [E]
+
+Let's check the distribution of labels for the instances with Great Britain.
+includes and label [E]
+
+What labels do we have?
+label [E]
+
+Tell me about the dataset labels, please.
+label [E]
+
+I want to see labels for all samples with "computer" in them.
+includes and label [E]
+
+Let's look at the sample number 11.
+filter id 11 and show [E]
+
+Show me the instance with id 15, please.
+filter id 15 and show [E]
+
+What about id 25, can you show it to me?
+filter id 25 and show [E]
+
+Show me the most frequent keyword tokens, please.
+keywords all [E]
+
+What are the keywords in the dataset?
+keywords all [E]
+
+Top 5 keywords from the data would be good to have.
+keywords 5 [E]
+
+Could you display 10 most frequent keywords?
+keywords 10 [E]
+
+Please find me similar samples to id 10 and 112.
+filter id 10 or filter id 112 and similar 1 [E]
+
+I need some samples that are similar to id 1400.
+filter id 1400 and similar 1 [E]
+
+Show me other similar samples, I want to compare them to id 12.
+filter id 12 and similar 1 [E]
+
+Top 7 most similar isntances to id 16, please.
+filter id 16 and similar 7 [E]
+
+Can I see five similar instances for the instance with id 888?
+filter id 888 and similar 5 [E]
+
+Any adversarial samples for id 67?
+filter id 67 and adversarial [E]
+
+I would like to use adversarial training to generate new exaples. Could you show me some for id 53?
+filter id 53 and adversarial [E]
+
+Adversarial attack on sample 115, please.
+filter id 115 and adversarial [E]
+
+What would be an adversarial alternative for id 77?
+filter id 77 and adversarial [E]
+
+Could you please augment instance 120 somehow?
+filter id 120 and augment [E]
+
+Do you support data augmentation for instance 32?
+filter id 32 and augment [E]
+
+I'd like to see an augmented version for id 84.
+filter id 84 and augment [E]
+
+Can you generate a counterfactual example for id 36?
+filter id 36 and cfe [E]
+
+I want to look at the counterfactuals for id 6.
+filter id 6 and cfe [E]
+
+What cfes can you generate for id 257?
+filter id 257 and cfe [E]
+
+How can we flip the prediction for instance 90?
+filter id 90 and cfe [E]
+
+What is an alternative sample that fools the model? I mean something like a counterfactual for id 8.
+filter id 8 and cfe [E]
+
+Tell me the probabilities for {class_names}.
+likelihood [E]
+
+How likely it is to get the {class_names} label for id 15?
+filter id 15 and likelihood [E]
+
+Do we have a high chance of getting {class_names} label for the instance number 900?
+filter id 900 and likelihood [E]
+
+What are the likelihoods of different class labels for id 32?
+filter id 32 and likelihood [E]
+
+Show me the likelihood for the following class: {class_names} given that we have id 222.
+filter id 222 and likelihood [E]
+
+How many mistakes do we get here?
+mistake count [E]
+
+Are the mistakes frequent? How often do they occur?
+mistake count [E]
+
+I want to see the amount of the mistakes made by the model.
+mistake count [E]
+
+What would be the misclassified samples?
+mistake sample [E]
+
+Please show me some randomly picked mistakes made by the model.
+mistake sample [E]
+
+Can you compute the number of mistakes?
+mistake count [E]
+
+Can we see what are the wrong outputs/misclassified examples?
+mistake sample [E]
+
+How many mistakes does the model make on the sentences with the word geography?
+includes and mistake count [E]
+
+Let's count the mistakes among all cases that include "chemical".
+includes and mistake count [E]
+
+Show me some misclassified samples among the ones with "film".
+includes and mistake sample [E]
+
+Please show some wrong predictions with "spider".
+includes and mistake sample [E]
+
+What are the predictions on the training data?
+predict [E]
+
+What is the most likely prediction for id 47?
+filter id 47 and predict [E]
+
+Let's look at the model's predictions then.
+predict [E]
+
+What was predicted for id 99?
+filter id 99 and predict [E]
+
+Id 780. What does the model predict?
+filter id 780 and predict [E]
+
+Please show me one example of the prediction that the model outputs.
+randompredict [E]
+
+Ok, you can show me some random prediction.
+randompredict [E]
+
+Just pick one sample and show me the prediction on it, the sample can be random.
+randompredict [E]
+
+I would like to check the accuracy of the model.
+score accuracy [E]
+
+Can you tell me how accurate the model is?
+score accuracy [E]
+
+I would like to check the accuracy of the model.
+score accuracy [E]
+
+Just show me some scores, please.
+score default [E]
+
+What is the F1 score on the data?
+score f1 [E]
+
+It would be nice to have the micro F1 score as well.
+score f1 micro [E]
+
+What would be the macro scores in terms of precision?
+score precision macro [E]
+
+Maybe you could also show me the weighted recall score?
+score recall weighted [E]
+
+What would be the accuracy on the instances with "road"?
+includes and score accuracy [E]
+
+Would be interesting to see also the sensitivity for all samples including the span "story".
+includes and score sensitivity [E]
+
+Now show me the micro-F1 scores.
+score f1 micro [E]

@@ -22,7 +22,7 @@ def load_test_data(location):
         pair = item.split("\n")
         pair[1] = pair[1].lower()
         # Check that data is properly formatted
-        assert pair[1].endswith(" [e]")
+        assert pair[1].endswith(" [e]"), f"'{pair[1]}'\ndoes not end with '[e]'"
 
         formatted_input = pair[0]
         formatted_response = pair[1]

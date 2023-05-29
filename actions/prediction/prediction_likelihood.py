@@ -4,6 +4,8 @@ import numpy as np
 import torch
 from torch import nn
 
+from timeout import timeout
+
 SINGLE_INSTANCE_TEMPLATE = """
 The model predicts the instance with <b>{filter_string}</b> as:
 <b>
@@ -62,6 +64,7 @@ def get_predictions_and_probabilities(name, instance_id, dataset_name, conversat
     return model_predictions, model_prediction_probabilities
 
 
+@timeout(60)
 def predict_likelihood(conversation, parse_text, i, **kwargs):
     """The prediction likelihood operation."""
     # `filter id 15 and likelihood [E]`
@@ -87,7 +90,7 @@ def predict_likelihood(conversation, parse_text, i, **kwargs):
         prob = model_prediction_probabilities
         prob = round(model_prediction_probabilities[_class] * 100, conversation.rounding_precision)
         return_s += "<li>"
-        return_s += f"The likelihood of class <b>{class_name}</b> is <b>{prob}%</b>"
+        return_s += f"The likelihood of class <span style=\"background-color: #6CB4EE\">{class_name}</span> is <b>{prob}%</b>"
         return_s += "</li>"
     return_s += "</ul>"
 

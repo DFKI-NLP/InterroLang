@@ -1,1 +1,0 @@
-Hold slurm directory

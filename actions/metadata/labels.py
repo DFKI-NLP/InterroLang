@@ -3,8 +3,10 @@ import gin
 import numpy as np
 
 from actions.util_functions import get_parse_filter_text
+from timeout import timeout
 
 
+@timeout(60)
 @gin.configurable
 def show_labels_operation(conversation, parse_text, i, n_features_to_show=float("+inf"), **kwargs):
     """Generates text that shows labels."""
@@ -34,7 +36,7 @@ def show_labels_operation(conversation, parse_text, i, n_features_to_show=float(
         return_string += '<ul>'
         for i in range(num_class):
             return_string += "<li>"
-            return_string += f'<b>{class_counter[i]}%</b> of instances have label <b>{conversation.class_names[i]}</b>'
+            return_string += f'<b>{class_counter[i]}%</b> of instances have label <span style=\"background-color: #6CB4EE\">{conversation.class_names[i]}</span>'
             return_string += "</li>"
         return_string += '</ul>'
 

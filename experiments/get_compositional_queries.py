@@ -87,6 +87,9 @@ def get_templates(load_templates, store_name, explain_bot=None, program_only: bo
     if explain_bot is None:
         explain_bot = ExplainBot()
     final_prompt_set = explain_bot.prompts.final_prompt_set
+    if not final_prompt_set:
+        explain_bot = ExplainBot(skip_prompts=False)
+        final_prompt_set = explain_bot.prompts.final_prompt_set
 
     # Log templates
     templates = do_load_templates(final_prompt_set, program_only=program_only)
@@ -126,7 +129,12 @@ def compute_error(keys, result_col, df=True):
 
     error = 1. * incorrect / total
 
-    return incorrect, total, error, num_incorrect_that_doesnt_have_all_keys / incorrect
+    if incorrect != 0:
+        final_score = num_incorrect_that_doesnt_have_all_keys / incorrect
+    else:
+        final_score = num_incorrect_that_doesnt_have_all_keys
+
+    return incorrect, total, error, final_score
 
 
 def run_iid_compositional_accuracies(dataset, parse_keys, explain_bot, program_only: bool = False):

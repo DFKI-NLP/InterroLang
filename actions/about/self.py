@@ -2,8 +2,10 @@
 
 This operation gives some description of the system.
 """
+from timeout import timeout
 
 
+@timeout(60)
 def self_operation(conversation, parse_text, i, **kwargs):
     """Self description."""
 

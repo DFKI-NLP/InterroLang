@@ -11,20 +11,13 @@ args = parser.parse_args()
 
 # The set of models for the sweep
 models = [
-    # "EleutherAI/gpt-j-6B",
     "EleutherAI/gpt-neo-2.7B",
-    # "EleutherAI/gpt-neo-1.3B",
     "nearest-neighbor",
-    # "t5-small",
-    # "t5-base",
-    # "t5-large",
-][::-1]
+    #"flan-t5-base"
+]
 
 # The datasets for the sweep
 datasets = [
-    # "compas",
-    # "diabetes",
-    # "german"
     "boolq",
     "olid",
     "daily_dialog"

@@ -19,7 +19,37 @@
     <section class="ttm">
         <header class="ttm-header">
             <div class="ttm-header-title">
-                InterroLang
+                <img src="{{url_for('static', filename='images/banner.png')}}" style="width: 200px; align: center;">
+            </div>
+            <div id="accordion">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
+                                    aria-expanded="true" aria-controls="collapseOne" style="color: red">
+                                ⚠️ Instructions:
+                            </button>
+                        </h5>
+                    </div>
+
+                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                        <div class="card-body">
+                            <div class="panel panel-danger">
+                                <div class="panel-heading"><b>"Input"</b>: enter <b>"quit"</b> can delete the entered custom
+                                    input if
+                                    available.
+                                </div>
+                                <div class="panel-heading"><b>"Custom input"</b>: add your own input instance. For BoolQ,
+                                    please
+                                    use
+                                    <b>"|"</b> to separate text and passage!
+                                </div>
+                                <div class="panel-heading"><b>"Include"</b>: enter a search term to filter the dataset.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </header>
         <main class="ttm-chat">
@@ -32,6 +62,59 @@
                     </div>
                 </div>
             </div>
+
+            <button class="opendv">Dataset Viewer</button>
+            <div class="slideSideways">
+                <!-- Filter dataset by string ("includes") -->
+                <b>🔍 Filter dataset by text:</b>
+                <form class="filterdata-inputarea">
+                    <input type="text" class="filterdata-input" id="filterdataInput" placeholder="Filter dataset" >
+                </form>
+                <h1 style="font: small-caps bold 20px/1 sans-serif; margin-top: 10px">🗃️ {{dataset}} dataset viewer </h1>
+                <div id="show_data"
+                     style="border-radius: 15px; padding: 5px; overflow-y: scroll; height: 70%;">
+                    {% for entry in entries %}
+                        {% if dataset == 'boolq' %}
+                            <details>
+                                <summary style="font-weight: bold;">ID: {{loop.index}} </summary>
+                                <b>question:</b> <br>
+                                <div style='font-style: italic; font-size: 0.75em;'>{{entry["question"]}}</div>
+                                <b>passage:</b> <br>
+                                <div style='font-style: italic; font-size: 0.75em;'>{{entry["passage"]}}</div>
+                                <button onclick="addId({{loop.index}})">Add this instance into input box</button>
+                            </details>
+                        {% elif dataset == 'daily_dialog' %}
+                            <details>
+                                <summary style="font-weight: bold;">ID: {{loop.index}}</summary>
+                                <b>dialog:</b>
+                                <div style='font-style: italic; font-size: 0.75em;'>{{entry["dialog"]}}</div>
+                                <button onclick="addId({{loop.index}})">Add this instance into input box</button>
+                            </details>
+                        {% else %}
+                            <details>
+                                <summary style="font-weight: bold;">ID: {{loop.index}}</summary>
+                                <b>text:</b> <br>
+                                <div style='font-style: italic; font-size: 0.75em;'>{{entry["text"]}}</div>
+                                <button onclick="addId({{loop.index}})">Add this instance into input box</button>
+                            </details>
+                        {% endif %}
+                        <br>
+                    {% endfor %}
+                    <br>(Showing first 10)
+                </div>
+                <div style="margin-top: 10px;">
+                    <!-- Reset temp dataset -->
+                    <div style="margin-top: 10px">
+                        <button type="button" class="btn btn-primary" id="reset_temp_dataset" style="width: 200px"
+                                onclick="reset_temp_dataset()">Reset the temp
+                            dataset
+                        </button>
+                        <button type="button" class="btn btn-primary" id="includeBtn" style="width: 200px"
+                                onclick="applyInclude()">Apply filtering on dataset
+                        </button>
+                    </div>
+                </div>
+            </div>
         </main>
 
         <form class="ttm-inputarea">
@@ -41,9 +124,9 @@
                 <option style="text-align:center;" value="1">Custom input</option>
                 <option style="text-align:center;" value="2">Include</option>
             </select>
-            <input type="text" class="ttm-input" id="textInput"
-                   placeholder="Enter your command! Use the ↑ arrow and ↓ arrow to cycle previous commands.">
-            <button type="submit" class="ttm-send-btn">Send</button>
+            <textarea rows="1" cols="50" type="text" class="ttm-input" id="textInput"
+                      placeholder="Enter your command! Use the ↑ arrow and ↓ arrow to cycle previous commands."></textarea>
+            <button type="submit" class="ttm-send-btn" id="ttm-send-btn-id">Send</button>
         </form>
         <span class="genOptions">👇Help me generate a question about...👇</span>
 
@@ -95,88 +178,12 @@
 
     </section>
 
-    <div style="width: 500px; justify-content: start;">
-        <div>
-            <img src="{{url_for('static', filename='images/banner.png')}}" style="width: 400px; align-content: center;">
-        </div>
-        <div id="accordion">
-            <div class="card">
-                <div class="card-header" id="headingOne">
-                    <h5 class="mb-0">
-                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
-                                aria-expanded="true" aria-controls="collapseOne" style="color: red">
-                            ⚠️ Instructions:
-                        </button>
-                    </h5>
-                </div>
+    <section>
 
-                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                    <div class="card-body">
-                        <div class="panel panel-danger">
-                            <div class="panel-heading"><b>"Input"</b>: enter <b>"quit"</b> can delete the entered custom
-                                input if
-                                available.
-                            </div>
-                            <div class="panel-heading"><b>"Custom input"</b>: add your own input instance. For BoolQ,
-                                please
-                                use
-                                <b>"|"</b> to separate text and passage!
-                            </div>
-                            <div class="panel-heading"><b>"Include"</b>: enter a search term to filter the dataset.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <div style="margin-top: 10px">
-            <!-- Filter dataset by string ("includes") -->
-            <b>🔍 Filter dataset by text:</b>
-            <form class="filterdata-inputarea">
-                <input type="text" class="filterdata-input" id="filterdataInput" placeholder="Filter dataset" >
-            </form>
-        </div>
+        <!-- OLD DATASET VIEWER PLACEMENT -->
         <!-- Displaying data -->
         <!-- Referring jinja2 syntax -->
-        <h1 style="font: small-caps bold 20px/1 sans-serif; margin-top: 10px">🗃️ {{dataset}} dataset viewer </h1>
-        <div id="show_data"
-             style="border: thick #32a1ce double; width: 300px; border-radius: 15px; padding: 5px; overflow-y: scroll; height: 450px; width: 500px">
-            {% for entry in entries %}
-                {% if dataset == 'boolq' %}
-                    <details>
-                        <summary style="font-weight: bold;">ID: {{loop.index}} </summary>
-                        <b>question:</b> <br>
-                        <div style='font-style: italic; font-size: 0.75em;'>{{entry["question"]}}</div>
-                        <b>passage:</b> <br>
-                        <div style='font-style: italic; font-size: 0.75em;'>{{entry["passage"]}}</div>
-                    </details>
-                {% elif dataset == 'daily_dialog' %}
-                    <details>
-                        <summary style="font-weight: bold;">ID: {{loop.index}}</summary>
-                        <b>dialog:</b>
-                        <div style='font-style: italic; font-size: 0.75em;'>{{entry["dialog"]}}</div>
-                    </details>
-                {% else %}
-                    <details>
-                        <summary style="font-weight: bold;">ID: {{loop.index}}</summary>
-                        <b>text:</b> <br>
-                        <div style='font-style: italic; font-size: 0.75em;'>{{entry["text"]}}</div>
-                    </details>
-                {% endif %}
-                <br>
-            {% endfor %}
-            <br>(Showing first 10)
-        </div>
-        <div style="margin-top: 10px;">
-            <!-- Reset temp dataset -->
-            <div style="margin-top: 10px">
-                <button type="button" class="btn btn-primary" id="reset_temp_dataset" style="width: 300px"
-                        onclick="reset_temp_dataset()">Click me to reset the temp
-                    dataset
-                </button>
-            </div>
-        </div>
+    </section>
         <!--        <section class="pins" id="my-pins">-->
         <!--          <header class="pins-header">-->
         <!--            <div class="pins-header-title">-->
@@ -196,12 +203,32 @@
 </html>
 
 <script>
+    $('.opendv').click(function (e) {
+        var chatWidth = $('.ttm-chat').width();
+        if ($('.slideSideways').is(':visible')) {
+            $('.slideSideways').animate({left: chatWidth}, function() {
+                $(this).hide();
+            });
+        } else {
+            $('.slideSideways').show().animate({left: chatWidth / 2});
+        }
+    });
+</script>
+
+<script>
     $('.genOptions').click(function (e) {
         $('.slideDown').slideToggle();
     });
 </script>
 
 <script>
+    function applyInclude(){
+        let filter_string = document.getElementById("filterdataInput").value;
+        document.getElementById("textInput").value = filter_string;
+
+        document.getElementById("input_source").value = "2";
+        document.getElementById("ttm-send-btn-id").click();
+    }
 
     function doSample(rawAction) {
         let username = '{{ currentUserId }}'
@@ -621,13 +648,13 @@
                 const span_start = "<span style='background-color: yellow'>";
                 const span_end = "</span>";
 
-                for (let [id, entry] of Object.entries(data)) {
+                for (let [_id, entry] of Object.entries(data)) {
                     msgHTML += "<details style='margin-top: 1px;'"
                     if (numDisplayed == 0) {
                         msgHTML += " open='true';"
                     }
                     msgHTML += "><summary>";
-                    msgHTML += "<b>ID:" + id + "</b></summary>";
+                    msgHTML += "<b>ID:" + _id + "</b></summary>";
 
                     for (let [field_name, field_content] of Object.entries(entry)) {
                         msgHTML += "<b>" + field_name + ": </b>"
@@ -688,7 +715,11 @@
                         }
                         msgHTML += "</div>";
                     }
+                    msgHTML += "<button style=\"margin: 1px; padding: 1px\" type=\"button\" class=\"btn btn-outline-secondary\" onclick=\"addId("
+                    msgHTML += _id
+                    msgHTML += ")\">Add this instance into input box</button>"
                     msgHTML += "</details>"
+
 
                     numDisplayed += 1;
                     if (numDisplayed >= 10) {
@@ -700,4 +731,11 @@
             }
         })
     });
+
+    function addId(_id){
+        let string = "For id ";
+        string += _id;
+        string += ", "
+        document.getElementById("textInput").value = string;
+    }
 </script>

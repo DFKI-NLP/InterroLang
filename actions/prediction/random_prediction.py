@@ -1,8 +1,10 @@
 import random
 import time
 from actions.prediction.predict import handle_input
+from timeout import timeout
 
 
+@timeout(60)
 def random_prediction(conversation, parse_text, i, **kwargs):
     """randomly pick an instance from the dataset and make the prediction
     `randompredict [E]`
@@ -53,7 +55,7 @@ def random_prediction(conversation, parse_text, i, **kwargs):
         return_s += f"The class name is not given, the prediction class is <b>{prediction_class}</b>"
     else:
         class_text = conversation.class_names[model_predictions[random_num]]
-        return_s += f"The prediction is <b>{class_text}</b>."
+        return_s += f"The prediction is <span style=\"background-color: #6CB4EE\">{class_text}</span>."
     return_s += "</li>"
     return_s += "</ul>"
 
