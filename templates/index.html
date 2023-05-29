@@ -258,6 +258,13 @@
                             <span class="tooltip-text">
                                 .
                             </span>
+
+                            <button id="nlu_keyword" class="idea-button" onclick="sampleKeyword()">
+                                keyword
+                            </button>
+                            <span class="tooltip-text">
+                                .
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -440,6 +447,10 @@
                 ttmInput.value = data;
             }
         });
+    }
+
+    function sampleKeyword(){
+        doSample("keyword");
     }
 
     function sampleSentence() {

@@ -21,6 +21,7 @@ ACTION_2_FILENAME = {
     "mistake": "mistakes.txt",
     # Understanding
     "similar": ["similar.txt", "similar_chatgpt.txt"],
+    "keyword": "keywords.txt",
     # Explanation
     "explain": ["local_feature_importance.txt", "local_feature_importance_chatgpt.txt"],
     "sentence": "local_feature_importance_sentence.txt",
