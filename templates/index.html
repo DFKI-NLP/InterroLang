@@ -21,35 +21,46 @@
             <div class="ttm-header-title">
                 <img src="{{url_for('static', filename='images/banner.png')}}" style="width: 200px; align: center;">
             </div>
-            <div id="accordion">
-                <div class="card">
-                    <div class="card-header" id="headingOne">
-                        <h5 class="mb-0">
-                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
-                                    aria-expanded="true" aria-controls="collapseOne" style="color: red">
-                                ⚠️ Instructions:
-                            </button>
-                        </h5>
-                    </div>
+            <div class="container">
+                <div class="row">
+                    <div id="accordion" class="col-8">
+                        <div class="card">
+                            <div class="card-header" id="headingOne">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
+                                            aria-expanded="true" aria-controls="collapseOne" style="color: red">
+                                        ⚠️ Instructions:
+                                    </button>
+                                </h5>
+                            </div>
 
-                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                        <div class="card-body">
-                            <div class="panel panel-danger">
-                                <div class="panel-heading"><b>"Input"</b>: enter <b>"quit"</b> can delete the entered
-                                    custom
-                                    input if
-                                    available.
-                                </div>
-                                <div class="panel-heading"><b>"Custom input"</b>: add your own input instance. For
-                                    BoolQ,
-                                    please
-                                    use
-                                    <b>"|"</b> to separate question and passage!
-                                </div>
-                                <div class="panel-heading"><b>"Include"</b>: enter a search term to filter the dataset.
+                            <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
+                                 data-parent="#accordion">
+                                <div class="card-body">
+                                    <div class="panel panel-danger">
+                                        <div class="panel-heading"><b>"Input"</b>: enter <b>"quit"</b> can delete the
+                                            entered
+                                            custom
+                                            input if
+                                            available.
+                                        </div>
+                                        <div class="panel-heading"><b>"Custom input"</b>: add your own input instance.
+                                            For
+                                            BoolQ,
+                                            please
+                                            use
+                                            <b>"|"</b> to separate question and passage!
+                                        </div>
+                                        <div class="panel-heading"><b>"Include"</b>: enter a search term to filter the
+                                            dataset.
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="col-4">
+                        <button style="float: right" class="opendv">Dataset Viewer</button>
                     </div>
                 </div>
             </div>
@@ -65,7 +76,6 @@
                 </div>
             </div>
 
-            <button class="opendv">Dataset Viewer</button>
             <div class="slideSideways">
                 <!-- Filter dataset by string ("includes") -->
                 <b>🔍 Filter dataset by text:</b>
@@ -144,7 +154,8 @@
                     <div class="control" style="display: table-cell; text-align: right; padding: 10px;"><b>Custom
                         input</b></div>
                     <div class="tooltip-wrapper">
-                        <button disabled id="c_pred" class="idea-button" style="background: rgba(253, 186, 54, 0.96);" onclick="sampleCustomInputPrediction()">
+                        <button disabled id="c_pred" class="idea-button" style="background: rgba(253, 186, 54, 0.96);"
+                                onclick="sampleCustomInputPrediction()">
                             Single prediction
                         </button>
                         <span class="tooltip-text">
@@ -152,7 +163,8 @@
                         </span>
                     </div>
                     <div class="tooltip-wrapper">
-                        <button disabled id="c_feat" class="idea-button" style="background: rgba(235, 244, 61, 0.96);" onclick="sampleCustomInputFeatureImportance()">
+                        <button disabled id="c_feat" class="idea-button" style="background: rgba(235, 244, 61, 0.96);"
+                                onclick="sampleCustomInputFeatureImportance()">
                             Local feature importance
                         </button>
                         <span class="tooltip-text">
@@ -160,7 +172,9 @@
                         </span>
                     </div>
                     <div class="tooltip-wrapper">
-                        <button disabled id="c_feat-sent" class="idea-button" style="background: rgba(235, 244, 61, 0.96);" onclick="sampleCustomInputFeatureImportanceOnSentenceLevel()">
+                        <button disabled id="c_feat-sent" class="idea-button"
+                                style="background: rgba(235, 244, 61, 0.96);"
+                                onclick="sampleCustomInputFeatureImportanceOnSentenceLevel()">
                             Sentence-level feature importance
                         </button>
                         <span class="tooltip-text">
@@ -443,7 +457,7 @@
 
 <script>
     function disableBtn(flag) {
-        if(!flag) {
+        if (!flag) {
             document.getElementById("custom_input_btns").style.display = "table-row";
         } else {
             document.getElementById("custom_input_btns").style.display = "none";
