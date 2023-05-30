@@ -127,7 +127,8 @@
                 <option style="text-align:center;" value="1">Custom input</option>
                 <option style="text-align:center;" value="2">Include</option>
             </select>
-            <textarea onKeyPress="return checkSubmit(event)" rows="1" cols="50" type="text" class="ttm-input" id="textInput"
+            <textarea onKeyPress="return checkSubmit(event)" rows="1" cols="50" type="text" class="ttm-input"
+                      id="textInput"
                       placeholder="Enter your command! Use the ↑ arrow and ↓ arrow to cycle previous commands."></textarea>
             <button type="submit" class="ttm-send-btn" id="ttm-send-btn-id">Send</button>
         </form>
@@ -168,7 +169,8 @@
                             </span>
                         </div>
                         <div class="tooltip-wrapper">
-                            <button id="md_train-data-description" class="idea-button" onclick="sampleTrainDataDescription()">
+                            <button id="md_train-data-description" class="idea-button"
+                                    onclick="sampleTrainDataDescription()">
                                 Describe training data
                             </button>
                             <span class="tooltip-text">
@@ -176,7 +178,8 @@
                             </span>
                         </div>
                         <div class="tooltip-wrapper">
-                            <button id="md_test-data-description" class="idea-button" onclick="sampleTestDataDescription()">
+                            <button id="md_test-data-description" class="idea-button"
+                                    onclick="sampleTestDataDescription()">
                                 Describe test data
                             </button>
                             <span class="tooltip-text">
@@ -335,7 +338,7 @@
                     <div class="control" style="display: table-cell; text-align: right; padding: 10px;"><b>Custom
                         input</b></div>
                     <div class="tooltip-wrapper">
-                        <button id="c_pred" class="idea-button" onclick="sampleCustomInputPrediction()">
+                        <button disabled id="c_pred" class="idea-button" onclick="sampleCustomInputPrediction()">
                             Custom input prediction
                         </button>
                         <span class="tooltip-text">
@@ -343,7 +346,7 @@
                         </span>
                     </div>
                     <div class="tooltip-wrapper">
-                        <button id="c_feat" class="idea-button" onclick="sampleCustomInputFeatureImportance()">
+                        <button disabled id="c_feat" class="idea-button" onclick="sampleCustomInputFeatureImportance()">
                             Custom input feature importance
                         </button>
                         <span class="tooltip-text">
@@ -351,7 +354,7 @@
                         </span>
                     </div>
                     <div class="tooltip-wrapper">
-                        <button id="c_feat-sent" class="idea-button"
+                        <button disabled id="c_feat-sent" class="idea-button"
                                 onclick="sampleCustomInputFeatureImportanceOnSentenceLevel()">
                             Custom input sentence importance
                         </button>
@@ -440,6 +443,14 @@
 </script>
 
 <script>
+    function disableBtn(flag) {
+        let ids = ["c_feat-sent", "c_feat", "c_pred"];
+
+        for(let i = 0; i < ids.length; i++) {
+            document.getElementById(ids[i]).disabled = flag;
+        }
+    }
+
     function checkSubmit(e) {
         if (e && e.keyCode === 13) {
             document.getElementById("ttm-send-btn-id").click();
@@ -474,7 +485,7 @@
         });
     }
 
-    function sampleKeyword(){
+    function sampleKeyword() {
         doSample("keyword");
     }
 
@@ -585,27 +596,27 @@
 
 <script>
     document.querySelectorAll('.tooltip-wrapper').forEach((wrapper) => {
-      const tooltip = wrapper.querySelector('.tooltip-text');
-      wrapper.addEventListener('mouseenter', () => {
-        const wrapperRect = wrapper.getBoundingClientRect();
-        const tooltipRect = tooltip.getBoundingClientRect();
+        const tooltip = wrapper.querySelector('.tooltip-text');
+        wrapper.addEventListener('mouseenter', () => {
+            const wrapperRect = wrapper.getBoundingClientRect();
+            const tooltipRect = tooltip.getBoundingClientRect();
 
-        if (wrapperRect.left + tooltipRect.width > window.innerWidth) {
-          tooltip.style.left = 'auto';
-          tooltip.style.right = '0';
-        } else {
-          tooltip.style.left = '50%';
-          tooltip.style.right = 'auto';
-        }
+            if (wrapperRect.left + tooltipRect.width > window.innerWidth) {
+                tooltip.style.left = 'auto';
+                tooltip.style.right = '0';
+            } else {
+                tooltip.style.left = '50%';
+                tooltip.style.right = 'auto';
+            }
 
-        if (wrapperRect.top < tooltipRect.height) {
-          tooltip.style.bottom = 'auto';
-          tooltip.style.top = '125%';
-        } else {
-          tooltip.style.bottom = '125%';
-          tooltip.style.top = 'auto';
-        }
-      });
+            if (wrapperRect.top < tooltipRect.height) {
+                tooltip.style.bottom = 'auto';
+                tooltip.style.top = '125%';
+            } else {
+                tooltip.style.bottom = '125%';
+                tooltip.style.top = 'auto';
+            }
+        });
     });
 </script>
 
@@ -656,11 +667,13 @@
 
             if (msgText == "quit") {
                 changeBtnColor(false);
+                disableBtn(true);
             }
         } else if (document.getElementsByTagName("option")[idx].value === '1') {
             selectBox.selectedIndex = "0";
             botResponse(msgText, custom_input = '1');
             changeBtnColor(true);
+            disableBtn(false);
         } else {
             selectBox.selectedIndex = "0";
             botResponse(msgText, custom_input = '2');
