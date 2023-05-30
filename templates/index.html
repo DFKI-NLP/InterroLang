@@ -334,7 +334,7 @@
                         </div>
                     </div>
                 </div>
-                <div style="display: table-row;">
+                <div id="custom_input_btns" style="display: none">
                     <div class="control" style="display: table-cell; text-align: right; padding: 10px;"><b>Custom
                         input</b></div>
                     <div class="tooltip-wrapper">
@@ -444,10 +444,10 @@
 
 <script>
     function disableBtn(flag) {
-        let ids = ["c_feat-sent", "c_feat", "c_pred"];
-
-        for(let i = 0; i < ids.length; i++) {
-            document.getElementById(ids[i]).disabled = flag;
+        if(!flag) {
+            document.getElementById("custom_input_btns").style.display = "table-row";
+        } else {
+            document.getElementById("custom_input_btns").style.display = "none";
         }
     }
 
