@@ -9,6 +9,7 @@ from rationalize import get_few_shot_str
 import argparse
 import os.path
 import sys
+from tqdm import tqdm
 
 # directory reach
 directory = os.path.dirname(os.path.abspath("__file__"))
@@ -42,7 +43,7 @@ def generate_rationale(dataset_name,write_path):
             writer.writerow(["Id", "Question", "Passage", "Explanation"])
             for i in range(len(dataset)):
                 instances.append([dataset["question"][i], dataset["passage"][i]])
-            for idx,instance in enumerate(instances):
+            for idx, instance in tqdm(enumerate(instances), total=len(instances)):
                 # if dataset_name == "boolq":
                 text = 'Question: ' + instance[0] + '\nPassage: ' + instance[1]
                 label_dict = {0: 'false', 1: 'true'}
@@ -82,7 +83,7 @@ def generate_rationale(dataset_name,write_path):
                 input_ids = input_ids.to(device)
                 generation = gpt_model.generate(
                     input_ids,
-                    max_length=350,
+                    max_length=2048,
                     no_repeat_ngram_size=2,
                 )
                 decoded_generation = gpt_tokenizer.decode(generation[0], skip_special_tokens=True)
@@ -98,13 +99,12 @@ def generate_rationale(dataset_name,write_path):
         #tokenizer = AutoTokenizer.from_pretrained("./explained_models/da_classifier/saved_model/5e_5e-06lr")
         model.to(device)
         dataset = pd.read_csv("./data/da_test_set_with_indices.csv")
-        few_shot_str = get_few_shot_str("cache/daily_dialog/GPT-4_rationales_DD_test_200.csv")
         with open(write_path, 'w', newline='') as file:
             writer = csv.writer(file)
             writer.writerow(["Id", "Input Text", "Explanation"])
             for i in range(len(dataset)):
                 instances.append([dataset["dialog"][i]])
-            for idx, instance in enumerate(instances):
+            for idx, instance in tqdm(enumerate(instances), total=len(instances)):
                 text = instance[0]
                 encoding = tokenizer.encode_plus(text, return_tensors='pt')
                 input_ids = encoding["input_ids"]
@@ -126,6 +126,7 @@ def generate_rationale(dataset_name,write_path):
                     [label_dict[c] for c in label_dict if label_dict[c] not in [pred, "dummy"]])
                 intro = f"The dialogue act of this text has been classified as {pred} (over {other_class_names})."
                 instruction = "Please explain why: "
+                few_shot_str = get_few_shot_str("cache/daily_dialog/GPT-4_rationales_DD_test_200.csv")
 
                 prompt = f"{few_shot_str}" \
                          f"{text}\n" \
@@ -136,7 +137,7 @@ def generate_rationale(dataset_name,write_path):
                 input_ids = input_ids.to(device)
                 generation = gpt_model.generate(
                     input_ids,
-                    max_length=150,
+                    max_length=2048,
                     no_repeat_ngram_size=2,
                 )
                 decoded_generation = gpt_tokenizer.decode(generation[0], skip_special_tokens=True)
@@ -149,14 +150,13 @@ def generate_rationale(dataset_name,write_path):
         tokenizer = AutoTokenizer.from_pretrained("sinhala-nlp/mbert-olid-en")
         model.to(device)
         dataset = pd.read_csv("./data/offensive_val.csv")
-        few_shot_str = get_few_shot_str("cache/olid/GPT-4_rationales_OLID_val_132.csv")
         instances = []
         with open(write_path, 'w', newline='') as file:
             writer = csv.writer(file)
             writer.writerow(["Id", "Input Text", "Explanation"])
             for i in range(len(dataset)):
                 instances.append(dataset["text"][i])
-            for idx, instance in enumerate(instances):
+            for idx, instance in tqdm(enumerate(instances), total=len(instances)):
                 text = "Tweet: '" + instance[0] + "'"
                 label_dict = {0: "non-offensive", 1: "offensive"}
 
@@ -177,7 +177,7 @@ def generate_rationale(dataset_name,write_path):
                 pred_str = label_dict[model_predictions]
                 intro = f"The tweet has been classified as {pred_str}."
                 instruction = "Please explain why: "
-                max_length = 150
+                few_shot_str = get_few_shot_str("cache/olid/GPT-4_rationales_OLID_val_132.csv")
 
                 prompt = f"{few_shot_str}" \
                          f"{text}\n" \
@@ -188,7 +188,7 @@ def generate_rationale(dataset_name,write_path):
                 input_ids = input_ids.to(device)
                 generation = gpt_model.generate(
                     input_ids,
-                    max_length=350,
+                    max_length=2048,
                     no_repeat_ngram_size=2,
                 )
                 decoded_generation = gpt_tokenizer.decode(generation[0], skip_special_tokens=True)
