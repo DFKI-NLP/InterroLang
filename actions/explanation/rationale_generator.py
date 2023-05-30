@@ -33,7 +33,7 @@ def generate_rationale(dataset_name,write_path):
         tokenizer = AutoTokenizer.from_pretrained("andi611/distilbert-base-uncased-qa-boolq")
         model.to(device)
 
-        dataset = pd.read_csv("./data/boolq_train.csv")
+        dataset = pd.read_csv("./data/boolq_validation.csv")
         few_shot_str = get_few_shot_str("cache/boolq/GPT-3.5_rationales_BoolQ_val_400.csv")
         with open(write_path, 'w', newline='') as file:
             writer = csv.writer(file)
@@ -146,7 +146,7 @@ def generate_rationale(dataset_name,write_path):
         device = "cuda" if torch.cuda.is_available() else "cpu"
         tokenizer = AutoTokenizer.from_pretrained("sinhala-nlp/mbert-olid-en")
         model.to(device)
-        dataset = pd.read_csv("data/offensive_train.csv")
+        dataset = pd.read_csv("./data/offensive_val.csv")
         few_shot_str = get_few_shot_str("cache/olid/GPT-4_rationales_OLID_val_132.csv")
         instances = []
         with open(write_path, 'w', newline='') as file:
