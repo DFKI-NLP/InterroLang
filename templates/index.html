@@ -127,7 +127,8 @@
                 <option style="text-align:center;" value="1">Custom input</option>
                 <option style="text-align:center;" value="2">Include</option>
             </select>
-            <textarea onKeyPress="return checkSubmit(event)" rows="1" cols="50" type="text" class="ttm-input" id="textInput"
+            <textarea onKeyPress="return checkSubmit(event)" rows="1" cols="50" type="text" class="ttm-input"
+                      id="textInput"
                       placeholder="Enter your command! Use the ↑ arrow and ↓ arrow to cycle previous commands."></textarea>
             <button type="submit" class="ttm-send-btn" id="ttm-send-btn-id">Send</button>
         </form>
@@ -139,6 +140,34 @@
                     class="dot dot-2"></span> <span class="dot dot-3"></span></div>
             <div id="knobs"
                  style="display: table; padding: 10px; width: 100%; margin-top: -10px; margin-left: 15px; margin-right: 15px;">
+                <div class="rowc" id="custom_input_btns" style="display: none">
+                    <div class="control" style="display: table-cell; text-align: right; padding: 10px;"><b>Custom
+                        input</b></div>
+                    <div class="tooltip-wrapper">
+                        <button disabled id="c_pred" class="idea-button" style="background: rgba(253, 186, 54, 0.96);" onclick="sampleCustomInputPrediction()">
+                            Single prediction
+                        </button>
+                        <span class="tooltip-text">
+                            Lets the model predict a <b>custom single instance</b> provided by you.
+                        </span>
+                    </div>
+                    <div class="tooltip-wrapper">
+                        <button disabled id="c_feat" class="idea-button" style="background: rgba(235, 244, 61, 0.96);" onclick="sampleCustomInputFeatureImportance()">
+                            Local feature importance
+                        </button>
+                        <span class="tooltip-text">
+                            Indicates which <b>tokens</b> are <b>most important</b> in a <b>custom single instance</b> provided by you.
+                        </span>
+                    </div>
+                    <div class="tooltip-wrapper">
+                        <button disabled id="c_feat-sent" class="idea-button" style="background: rgba(235, 244, 61, 0.96);" onclick="sampleCustomInputFeatureImportanceOnSentenceLevel()">
+                            Sentence-level feature importance
+                        </button>
+                        <span class="tooltip-text">
+                            Indicates which <b>sentences</b> are <b>most important</b> in a <b>custom single instance</b> provided by you.
+                        </span>
+                    </div>
+                </div>
                 <div class="row row1" data-sort="abt_" style="display: table-row;">
                     <div class="control" style="display: table-cell; text-align: right; padding: 10px;"><b>About</b>
                     </div>
@@ -168,7 +197,8 @@
                             </span>
                         </div>
                         <div class="tooltip-wrapper">
-                            <button id="md_train-data-description" class="idea-button" onclick="sampleTrainDataDescription()">
+                            <button id="md_train-data-description" class="idea-button"
+                                    onclick="sampleTrainDataDescription()">
                                 Describe training data
                             </button>
                             <span class="tooltip-text">
@@ -176,7 +206,8 @@
                             </span>
                         </div>
                         <div class="tooltip-wrapper">
-                            <button id="md_test-data-description" class="idea-button" onclick="sampleTestDataDescription()">
+                            <button id="md_test-data-description" class="idea-button"
+                                    onclick="sampleTestDataDescription()">
                                 Describe test data
                             </button>
                             <span class="tooltip-text">
@@ -331,35 +362,6 @@
                         </div>
                     </div>
                 </div>
-                <div style="display: table-row;">
-                    <div class="control" style="display: table-cell; text-align: right; padding: 10px;"><b>Custom
-                        input</b></div>
-                    <div class="tooltip-wrapper">
-                        <button id="c_pred" class="idea-button" onclick="sampleCustomInputPrediction()">
-                            Custom input prediction
-                        </button>
-                        <span class="tooltip-text">
-                            Lets the model predict a <b>custom single instance</b> provided by you.
-                        </span>
-                    </div>
-                    <div class="tooltip-wrapper">
-                        <button id="c_feat" class="idea-button" onclick="sampleCustomInputFeatureImportance()">
-                            Custom input feature importance
-                        </button>
-                        <span class="tooltip-text">
-                            Indicates which <b>tokens</b> are <b>most important</b> in a <b>custom single instance</b> provided by you.
-                        </span>
-                    </div>
-                    <div class="tooltip-wrapper">
-                        <button id="c_feat-sent" class="idea-button"
-                                onclick="sampleCustomInputFeatureImportanceOnSentenceLevel()">
-                            Custom input sentence importance
-                        </button>
-                        <span class="tooltip-text">
-                            Indicates which <b>sentences</b> are <b>most important</b> in a <b>custom single instance</b> provided by you.
-                        </span>
-                    </div>
-                </div>
                 <div class="row row6" data-sort="ptb_" style="display: table-row;">
                     <div class="control" style="display: table-cell; text-align: right; padding: 10px;">
                         <b>Perturbation</b></div>
@@ -440,6 +442,14 @@
 </script>
 
 <script>
+    function disableBtn(flag) {
+        if(!flag) {
+            document.getElementById("custom_input_btns").style.display = "table-row";
+        } else {
+            document.getElementById("custom_input_btns").style.display = "none";
+        }
+    }
+
     function checkSubmit(e) {
         if (e && e.keyCode === 13) {
             document.getElementById("ttm-send-btn-id").click();
@@ -474,7 +484,7 @@
         });
     }
 
-    function sampleKeyword(){
+    function sampleKeyword() {
         doSample("keyword");
     }
 
@@ -585,27 +595,27 @@
 
 <script>
     document.querySelectorAll('.tooltip-wrapper').forEach((wrapper) => {
-      const tooltip = wrapper.querySelector('.tooltip-text');
-      wrapper.addEventListener('mouseenter', () => {
-        const wrapperRect = wrapper.getBoundingClientRect();
-        const tooltipRect = tooltip.getBoundingClientRect();
+        const tooltip = wrapper.querySelector('.tooltip-text');
+        wrapper.addEventListener('mouseenter', () => {
+            const wrapperRect = wrapper.getBoundingClientRect();
+            const tooltipRect = tooltip.getBoundingClientRect();
 
-        if (wrapperRect.left + tooltipRect.width > window.innerWidth) {
-          tooltip.style.left = 'auto';
-          tooltip.style.right = '0';
-        } else {
-          tooltip.style.left = '50%';
-          tooltip.style.right = 'auto';
-        }
+            if (wrapperRect.left + tooltipRect.width > window.innerWidth) {
+                tooltip.style.left = 'auto';
+                tooltip.style.right = '0';
+            } else {
+                tooltip.style.left = '50%';
+                tooltip.style.right = 'auto';
+            }
 
-        if (wrapperRect.top < tooltipRect.height) {
-          tooltip.style.bottom = 'auto';
-          tooltip.style.top = '125%';
-        } else {
-          tooltip.style.bottom = '125%';
-          tooltip.style.top = 'auto';
-        }
-      });
+            if (wrapperRect.top < tooltipRect.height) {
+                tooltip.style.bottom = 'auto';
+                tooltip.style.top = '125%';
+            } else {
+                tooltip.style.bottom = '125%';
+                tooltip.style.top = 'auto';
+            }
+        });
     });
 </script>
 
@@ -656,11 +666,13 @@
 
             if (msgText == "quit") {
                 changeBtnColor(false);
+                disableBtn(true);
             }
         } else if (document.getElementsByTagName("option")[idx].value === '1') {
             selectBox.selectedIndex = "0";
             botResponse(msgText, custom_input = '1');
             changeBtnColor(true);
+            disableBtn(false);
         } else {
             selectBox.selectedIndex = "0";
             botResponse(msgText, custom_input = '2');
@@ -672,7 +684,7 @@
 
         if (flag) {
             ids.forEach(id => {
-                document.getElementById(id).style.border = "5px solid yellow";
+                document.getElementById(id).style.border = "3px solid rgba(63, 103, 232, 0.96)";
             });
         } else {
             ids.forEach(id => {

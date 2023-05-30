@@ -583,9 +583,14 @@ parse {
   background: rgba(245, 250, 87, 0.96);
 }
 
-.row .idea-button {
-  color: #333333;
+.rowc .idea-button {
+  color: #333;
 }
+
+.row .idea-button {
+  color: #333;
+}
+
 .idea-button:hover {
   background-color: rgba(63, 103, 232, 0.5);
 }
