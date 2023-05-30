@@ -38,8 +38,8 @@ def generate_rationale(dataset_name,write_path):
 
         dataset = pd.read_csv("data/boolq_validation.csv")
 
-        with open(write_path, 'w', newline='') as file:
-            writer = csv.writer(file)
+        with open(write_path, 'w',newline='') as file:
+            writer = csv.writer(file,delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
             writer.writerow(["Id", "Question", "Passage", "Explanation"])
             for i in range(len(dataset)):
                 instances.append([dataset["question"][i], dataset["passage"][i]])
@@ -99,13 +99,13 @@ def generate_rationale(dataset_name,write_path):
         #tokenizer = AutoTokenizer.from_pretrained("./explained_models/da_classifier/saved_model/5e_5e-06lr")
         model.to(device)
         dataset = pd.read_csv("./data/da_test_set_with_indices.csv")
-        with open(write_path, 'w', newline='') as file:
-            writer = csv.writer(file)
+        with open(write_path, 'w',newline='') as file:
+            writer = csv.writer(file,delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
             writer.writerow(["Id", "Input Text", "Explanation"])
             for i in range(len(dataset)):
-                instances.append([dataset["dialog"][i]])
+                instances.append(dataset["dialog"][i])
             for idx, instance in tqdm(enumerate(instances), total=len(instances)):
-                text = instance[0]
+                text = instance
                 encoding = tokenizer.encode_plus(text, return_tensors='pt')
                 input_ids = encoding["input_ids"]
                 attention_mask = encoding["attention_mask"]
@@ -122,9 +122,10 @@ def generate_rationale(dataset_name,write_path):
 
                 label_dict = {0: 'dummy', 1: 'inform', 2: 'question', 3: 'directive', 4: 'commissive'}
                 pred = model_predictions
+                pred_str = label_dict[pred]
                 other_class_names = ", ".join(
                     [label_dict[c] for c in label_dict if label_dict[c] not in [pred, "dummy"]])
-                intro = f"The dialogue act of this text has been classified as {pred} (over {other_class_names})."
+                intro = f"The dialogue act of this text has been classified as {pred_str} (over {other_class_names})."
                 instruction = "Please explain why: "
                 few_shot_str = get_few_shot_str("cache/daily_dialog/GPT-4_rationales_DD_test_200.csv")
 
@@ -142,8 +143,7 @@ def generate_rationale(dataset_name,write_path):
                 )
                 decoded_generation = gpt_tokenizer.decode(generation[0], skip_special_tokens=True)
                 #
-                explanation = decoded_generation.split("explain why: ")[1]
-                writer.writerow([idx,instance[0],explanation])
+                writer.writerow([idx,instance,decoded_generation])
     else:
         model = AutoModelForSequenceClassification.from_pretrained("sinhala-nlp/mbert-olid-en")
         device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -151,16 +151,16 @@ def generate_rationale(dataset_name,write_path):
         model.to(device)
         dataset = pd.read_csv("./data/offensive_val.csv")
         instances = []
-        with open(write_path, 'w', newline='') as file:
-            writer = csv.writer(file)
-            writer.writerow(["Id", "Input Text", "Explanation"])
+        with open(write_path, 'w',newline='') as file:
+            writer = csv.writer(file,delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+            writer.writerow(["Id", "InputText", "Explanation"])
             for i in range(len(dataset)):
                 instances.append(dataset["text"][i])
             for idx, instance in tqdm(enumerate(instances), total=len(instances)):
-                text = "Tweet: '" + instance[0] + "'"
+                text = "Tweet: '" + instance + "'"
                 label_dict = {0: "non-offensive", 1: "offensive"}
 
-                encoding = tokenizer.encode_plus(instance[0], return_tensors='pt', max_length=512, truncation=True)
+                encoding = tokenizer.encode_plus(instance, return_tensors='pt', max_length=512, truncation=True)
                 input_ids = encoding["input_ids"]
                 attention_mask = encoding["attention_mask"]
                 input_ids = input_ids.to(device)
@@ -194,8 +194,8 @@ def generate_rationale(dataset_name,write_path):
                 decoded_generation = gpt_tokenizer.decode(generation[0], skip_special_tokens=True)
                 #
                 # inputs = decoded_generation.split("Based on ")[0]
-                explanation = decoded_generation.split("explain why: ")[1]
-                writer.writerow([idx, instance[0], explanation])
+                #explanation = decoded_generation.split("explain why: ")[1]
+                writer.writerow([idx, instance, decoded_generation])
 
 
 
