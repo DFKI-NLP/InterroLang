@@ -22,7 +22,7 @@ def get_results(dataset,data_path):
 
 def get_few_shot_str(csv_filename, num_shots=3):
     few_shot_str = ""
-    gpt_rationales = pd.read_csv(csv_filename).sample(frac=1)
+    gpt_rationales = pd.read_csv(csv_filename).sample(frac=1).reset_index()
     for i, row in gpt_rationales.iterrows():
         few_shot_str += row["prompt"] + row["completion"] + "\n"
         if i == num_shots - 1:
