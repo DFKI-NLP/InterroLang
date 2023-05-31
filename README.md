@@ -2,9 +2,17 @@
 <img src="static/images/banner.png" alt="drawing" width="600"/>
 </p>
 
+
+[![Python application](https://github.com/nfelnlp/InterroLang/actions/workflows/github.yml/badge.svg)](https://github.com/nfelnlp/InterroLang/actions/workflows/github.yml/badge.svg)
+
 # InterroLang
 
 TalkToModel (Slack et al., 2022) adaptation to NLP use cases (question answering, hate speech detection, dialogue act classification).
+
+<p align="center">
+&nbsp;&nbsp;&nbsp;
+<img src="static/images/interrolang.gif" alt="drawing" width="600"/>
+</p>
 
 ## InterroLang Interface
 ![](./static/images/interface.png)
