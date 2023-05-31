@@ -364,7 +364,7 @@ class AdapterParse:
         id_adhoc, number_adhoc, token_adhoc = self.check_heuristics(decoded_text, text)
         for slot in slot_pattern:
             decoded_slot_text = ""
-            if slot in anno_slots:
+            if slot in anno_slots and len(anno_slots[slot]) > 0:
                 if slot == "includetoken":
                     decoded_text = "includes and " + decoded_text
                     continue
