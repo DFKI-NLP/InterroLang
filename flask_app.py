@@ -4,6 +4,7 @@ import json
 import logging
 import os
 import traceback
+import random
 
 from flask import Flask
 from flask import render_template, request, Blueprint
@@ -206,7 +207,7 @@ def get_bot_response():
         except Exception as ext:
             app.logger.info(f"Traceback getting bot response: {traceback.format_exc()}")
             app.logger.info(f"Exception getting bot response: {ext}")
-            response = "Sorry! I couldn't understand that. Could you please try to rephrase?"
+            response = random.choice(BOT.dialogue_flow_map["sorry"])
         return response
 
 

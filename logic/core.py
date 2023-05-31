@@ -13,6 +13,7 @@ import pickle
 import secrets
 import sys
 import torch
+import random
 from flask import Flask
 from random import seed as py_random_seed
 
@@ -286,6 +287,10 @@ class ExplainBot:
         data_source = ["where does training data come from", "where do you get test data", "the source of the dataset?"]
         data_language = ["show me the language of training data", "language of training data", "tell me the language of testing data", "what's the language of the model?"]
         data_number = ["how many training data is used", "count test data points", "tell me the number of data points"]
+        thanks = ["Thanks!", "OK!", "I see", "Thanks a lot!", "Thank you.", "Alright, thank you!", "That's nice, thanks a lot :)", "Good, thanks!", "Thank you very much.", "Looks good, thank you!", "Great, thank you very much!", "Ok, thanks!", "Thank you for the answer."]
+        bye = ["Goodbye!", "Bye-bye!", "Bye!", "Ok, bye then!", "That's all, bye!", "See you next time!", "Thanks for the chat, bye!"]
+
+        self.dialogue_flow_map = {"thanks": ["You are welcome!", "No problem.", "I'm glad I could help.", "Can I help you with something else?", "Is there anything else I could do for you?"], "bye": ["Goodbye!", "Bye-bye!", "Have a nice day!", "See you next time!"], "sorry": ["Sorry! I couldn't understand that. Could you please try to rephrase?", "My apologies, I did not get what you mean.", "I'm sorry but could you rephrase the message, please?", "I'm not sure I can do this. Maybe you have another request for me?", "This is likely out of my expertise, can I help you with something else?", "This was a bit unclear. Could you rephrase it, please?", "Let's try another option. I'm afraid I don't have an answer for this."]}
 
         # Compute embedding for data flags
         self.data_name = self.st_model.encode(data_name, convert_to_tensor=True)
@@ -296,6 +301,11 @@ class ExplainBot:
         # Compute embeddings for confirm/disconfirm
         self.confirm = self.st_model.encode(confirm, convert_to_tensor=True)
         self.disconfirm = self.st_model.encode(disconfirm, convert_to_tensor=True)
+
+        # Compute embeddings for thanks/bye
+        self.thanks = self.st_model.encode(thanks, convert_to_tensor=True)
+        self.bye = self.st_model.encode(bye, convert_to_tensor=True)
+
 
     def get_data_type(self, text:str):
         """Checks the data type (train/test supported)"""
@@ -593,6 +603,20 @@ class ExplainBot:
         else:
             return False
 
+    def check_dialogue_flow_intents(self, text: str):
+        """Checks whether the user says thanks/bye etc."""
+        # Compute cosine-similarities
+        text = self.st_model.encode(text, convert_to_tensor=True)
+        thanks_scores = util.cos_sim(text, self.thanks)
+        bye_scores = util.cos_sim(text, self.bye)
+        max_thanks_score = torch.max(thanks_scores)
+        max_bye_score = torch.max(bye_scores)
+        if max_thanks_score > max_bye_score and max_thanks_score > 0.50:
+            return "thanks"
+        elif max_bye_score > 0.50:
+            return "bye"
+        return None
+
     def compute_parse_text(self, text: str, error_analysis: bool = False):
         """Computes the parsed text from the user text input.
 
@@ -642,12 +666,18 @@ class ExplainBot:
     def compute_parse_text_adapters(self, text: str):
         """Computes the parsed text for the input using intent classifier model.
         """
-        anno_intents = self.get_intent_annotations(text)
-        anno_slots = self.get_slot_annotations(text)
-
         do_clarification = False
         decoded_text = ""
         clarification_text = ""
+
+        # check if we have simply thanks or bye and return corresp. string in this case
+        df_intent = self.check_dialogue_flow_intents(text)
+        if df_intent is not None:
+            return None, df_intent, do_clarification, clarification_text
+
+        anno_intents = self.get_intent_annotations(text)
+        anno_slots = self.get_slot_annotations(text)
+
         # NB: if the score is too low, ask for clarification
         if anno_intents[0][1] < 0.50:
             do_clarification = True
@@ -835,7 +865,9 @@ class ExplainBot:
             if user_session_conversation.needs_clarification:
                 user_session_conversation.needs_clarification = False
                 if self.is_confirmed(text):
-                    parsed_text = user_session_conversation.get_last_parse()[-1]
+                    parsed_text = user_session_conversation.get_last_parse()
+                    if len(parsed_text) > 0:
+                        parsed_text = parsed_text[-1]
                 else:
                     parse_tree, parsed_text, do_clarification, clarification_text = self.compute_parse_text_adapters(
                         text)
@@ -851,6 +883,8 @@ class ExplainBot:
 
         if self.decoding_model_name == "adapters" and do_clarification:
             returned_item = parsed_text
+        elif self.decoding_model_name == "adapters" and parsed_text in ["thanks", "bye"]:
+            returned_item = random.choice(self.dialogue_flow_map[parsed_text])
         else:
             # Run the action in the conversation corresponding to the formal grammar
             user_session_conversation.needs_clarification = False
