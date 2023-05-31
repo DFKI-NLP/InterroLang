@@ -670,11 +670,6 @@ class ExplainBot:
         decoded_text = ""
         clarification_text = ""
 
-        # check if we have simply thanks or bye and return corresp. string in this case
-        df_intent = self.check_dialogue_flow_intents(text)
-        if df_intent is not None:
-            return None, df_intent, do_clarification, clarification_text
-
         anno_intents = self.get_intent_annotations(text)
         anno_slots = self.get_slot_annotations(text)
 
@@ -717,7 +712,7 @@ class ExplainBot:
         id_adhoc, number_adhoc, token_adhoc = self.check_heuristics(decoded_text, text)
         for slot in slot_pattern:
             decoded_slot_text = ""
-            if slot in anno_slots:
+            if slot in anno_slots and len(anno_slots[slot]) > 0:
                 if slot == "includetoken" and self.conversation.include_word is not None:
                     decoded_text = "includes and " + decoded_text
                     continue
@@ -859,37 +854,41 @@ class ExplainBot:
         app.logger.info(f'USER INPUT: {text}')
         do_clarification = False
 
-        # Parse user input into text abiding by formal grammar
-        if self.decoding_model_name == "adapters":
-            parse_tree = ""
-            if user_session_conversation.needs_clarification:
-                user_session_conversation.needs_clarification = False
-                if self.is_confirmed(text):
-                    parsed_text = user_session_conversation.get_last_parse()
-                    if len(parsed_text) > 0:
-                        parsed_text = parsed_text[-1]
-                else:
-                    parse_tree, parsed_text, do_clarification, clarification_text = self.compute_parse_text_adapters(
-                        text)
-            else:
-                parse_tree, parsed_text, do_clarification, clarification_text = self.compute_parse_text_adapters(text)
-                if do_clarification:
-                    user_session_conversation.needs_clarification = True
-                    return (clarification_text)
-        elif "t5" not in self.decoding_model_name:
-            parse_tree, parsed_text = self.compute_parse_text(text)
-        else:
-            parse_tree, parsed_text = self.compute_parse_text_t5(text)
-
-        if self.decoding_model_name == "adapters" and do_clarification:
-            returned_item = parsed_text
-        elif self.decoding_model_name == "adapters" and parsed_text in ["thanks", "bye"]:
+        # check if we have simply thanks or bye and return corresp. string in this case
+        df_intent = self.check_dialogue_flow_intents(text)
+        if df_intent is not None:
+            parsed_text = df_intent
             returned_item = random.choice(self.dialogue_flow_map[parsed_text])
         else:
-            # Run the action in the conversation corresponding to the formal grammar
-            user_session_conversation.needs_clarification = False
-            returned_item = run_action(
-                user_session_conversation, parse_tree, parsed_text)
+            # Parse user input into text abiding by formal grammar
+            if self.decoding_model_name == "adapters":
+                parse_tree = ""
+                if user_session_conversation.needs_clarification:
+                    user_session_conversation.needs_clarification = False
+                    if self.is_confirmed(text):
+                        parsed_text = user_session_conversation.get_last_parse()
+                        if len(parsed_text) > 0:
+                            parsed_text = parsed_text[-1]
+                    else:
+                        parse_tree, parsed_text, do_clarification, clarification_text = self.compute_parse_text_adapters(
+                            text)
+                else:
+                    parse_tree, parsed_text, do_clarification, clarification_text = self.compute_parse_text_adapters(text)
+                    if do_clarification:
+                        user_session_conversation.needs_clarification = True
+                        return (clarification_text)
+            elif "t5" not in self.decoding_model_name:
+                parse_tree, parsed_text = self.compute_parse_text(text)
+            else:
+                parse_tree, parsed_text = self.compute_parse_text_t5(text)
+
+            if self.decoding_model_name == "adapters" and do_clarification:
+                returned_item = parsed_text
+            else:
+                # Run the action in the conversation corresponding to the formal grammar
+                user_session_conversation.needs_clarification = False
+                returned_item = run_action(
+                    user_session_conversation, parse_tree, parsed_text)
 
         username = user_session_conversation.username
 
