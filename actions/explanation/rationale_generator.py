@@ -113,7 +113,7 @@ def generate_rationale(dataset_name,write_path):
                 attention_mask = attention_mask.to(device)
                 input_model = {
                     'input_ids': input_ids.long(),
-                    'attention_mask': attention_mask.long(),
+                    'input_mask': attention_mask.long(),
                 }
                 output_model = model(**input_model)[0]
 
