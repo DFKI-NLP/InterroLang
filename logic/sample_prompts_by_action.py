@@ -98,7 +98,8 @@ def sample_prompt_for_action(action: str,
             filename_end = filename_end[chosen_id]
 
         for filename in filename_to_prompt_ids:
-            if filename.endswith(filename_end):
+            if ("includes" not in filename) and filename.endswith(filename_end):
+
                 prompt_ids = filename_to_prompt_ids[filename]
                 chosen_id = np.random.choice(prompt_ids)
                 i = 0
@@ -114,6 +115,13 @@ def sample_prompt_for_action(action: str,
                     user_part = get_user_part_of_prompt(prompt)
                 final_user_part = replace_non_existent_id_with_real_id(user_part, real_ids)
                 return final_user_part
+
+            elif ("includes" in filename) and ("includes" in filename_end) and filename.endswith(filename_end):
+                prompt_ids = filename_to_prompt_ids[filename]
+                chosen_id = np.random.choice(prompt_ids)
+                prompt = prompt_set[chosen_id]["prompts"][0]
+                user_part = get_user_part_of_prompt(prompt)
+                return user_part
         message = f"Unable to filename ending in {filename_end}!"
         raise NameError(message)
     else:
