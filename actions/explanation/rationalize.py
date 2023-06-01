@@ -2,6 +2,7 @@ import pandas as pd
 
 from timeout import timeout
 import json
+import pandas as pd
 
 def get_results(dataset,data_path):
     """
@@ -14,9 +15,8 @@ def get_results(dataset,data_path):
         model: explainer model
     """
 
-    fileObject = open(data_path+dataset+".json", "r")
-    jsonContent = fileObject.read()
-    results = json.loads(jsonContent)
+    results = pd.read_csv(data_path/dataset+"/dolly-rationales.csv", "r")
+
     return results
 
 
@@ -31,7 +31,7 @@ def get_few_shot_str(csv_filename, num_shots=3):
 
 
 @timeout(60)
-def rationalize_operation(conversation, parse_text, i, data_path="../../cache/", **kwargs):
+def rationalize_operation(conversation, parse_text, i, data_path="cache/", **kwargs):
     if not conversation.decoder.gpt_parser_initialized:
         return f"Rationalize operation not enabled for {conversation.decoder.parser_name}"
 
@@ -95,9 +95,9 @@ def rationalize_operation(conversation, parse_text, i, data_path="../../cache/",
         if few_shot:
             few_shot_str += get_few_shot_str(gpt_rationales)
 
-        if idx in results.keys():
+        if idx in results['Id']:
             inputs = text
-            explanation = results[idx]
+            explanation = results['Explanation']
             return_s += inputs + "<br><b>Explanation:</b> " + explanation
         else:
             prompt = f"{few_shot_str}" \

@@ -72,7 +72,7 @@ def generate_rationale(dataset_name,write_path):
                 pred_str = label_dict[model_predictions]
                 # else:
                 #     return f"Dataset {dataset_name} currently not supported by rationalize operation", 1
-                few_shot_str = get_few_shot_str("cache/boolq/GPT-3.5_rationales_BoolQ_val_400.csv")
+                few_shot_str = get_few_shot_str("cache/boolq/GPT-3.5_rationales_BoolQ_val_400.csv",1)
                 prompt = f"{few_shot_str}"\
                          f"{text}\n" \
                          f"Based on {text_description}, the {output_description} is {pred_str}. " \
@@ -194,8 +194,8 @@ def generate_rationale(dataset_name,write_path):
                 decoded_generation = gpt_tokenizer.decode(generation[0], skip_special_tokens=True)
                 #
                 # inputs = decoded_generation.split("Based on ")[0]
-                #explanation = decoded_generation.split("explain why: ")[1]
-                writer.writerow([idx, instance, decoded_generation])
+                explanation = decoded_generation.split("explain why: ")[1]
+                writer.writerow([idx, instance, explanation])
 
 
 
