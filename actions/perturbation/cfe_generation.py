@@ -2,21 +2,13 @@ import json
 import numpy as np
 import os
 import torch
-from polyjuice import Polyjuice
-from polyjuice.generations.special_tokens import *
 from transformers import AutoModelForSequenceClassification, AutoTokenizer
 
 from explained_models.Explainer.explainer import Explainer
 from explained_models.ModelABC.DANetwork import DANetwork
 from explained_models.Tokenizer.tokenizer import HFTokenizer
 
-# https://huggingface.co/uw-hai/polyjuice
-
-ALL_CTRL_CODES = set([
-    LEXCICAL, RESEMANTIC, NEGATION, INSERT,
-    DELETE, QUANTIFIER, RESTRUCTURE, SHUFFLE
-])
-
+from actions.perturbation.nlpaug_util import *
 
 class CFEExplainer(Explainer):
     def __init__(self, dataset_name=None):
@@ -24,7 +16,7 @@ class CFEExplainer(Explainer):
         self.device = None
         self.is_cuda = None
         self.check_cuda()
-        self.explainer = Polyjuice(model_path="uw-hai/polyjuice", is_cuda=self.is_cuda)
+        self.explainer =  CustomContextualWordEmbsAug(action="substitute", device=self.device, model_path="bert-base-cased", aug_max=15)
         self.dataset_name = dataset_name
 
         if dataset_name == 'boolq':
@@ -46,25 +38,28 @@ class CFEExplainer(Explainer):
         encoded = self.tokenizer.encode_plus(sample, return_tensors='pt').to(self.device)
         return encoded
 
-    def get_samples_from_pj(self, instance, ctrl_code):
-        try:
-            generated_samples = self.explainer.perturb(instance, ctrl_code=ctrl_code, num_perturbations=None,
-                                                       perplex_thred=10)  # , num_beams=5)
-        except:
-            generated_samples = self.explainer.perturb(instance, ctrl_code=ALL_CTRL_CODES, num_perturbations=None,
-                                                       perplex_thred=None)
-        return generated_samples
+    def get_samples_from_nlpaug(self, instances):
+        aug_results = self.explainer.augment(instances, n=5)
+        generated_samples = []
+        aug_tokens = []
+        orig_tokens = []
+        for aug_res in aug_results:
+            generated_samples.append(aug_res[0])
+            aug_tokens.append(aug_res[2])
+            orig_tokens.append(aug_res[3])
+        assert(len(generated_samples)==len(aug_tokens))
+        return [generated_samples, aug_tokens, orig_tokens]
 
     # instance: input string
     # number: max number of samples to generate
-    # ctrl_code: ['resemantic', 'restructure', 'negation', 'insert', 'lexical', 'shuffle', 'quantifier', 'delete'] by default uses all codes
     # returns two lists with the generated samples that result in the same or different label
     # each list consists of tuples (generated_text, class)
     # e.g.:
     # same label: [('i also have blow if you prefer to do a few shots.', 'directive'), ('i also have blow if you prefer to do this.', 'directive')]
     # diff label: [('also blew me away with his single second.', 'inform')]
-    def cfe(self, instance, number, ctrl_code=ALL_CTRL_CODES, _id=None):
-        new_samples = self.get_samples_from_pj(instance, ctrl_code)
+    def cfe(self, instance, number, _id=None):
+        instances = (number*2)*[instance]# 2x cfes for similar/diff predictions
+        new_samples, aug_tokens, orig_tokens = self.get_samples_from_nlpaug(instances)
 
         if self.dataset_name == 'boolq':
             if _id is not None:
@@ -96,10 +91,11 @@ class CFEExplainer(Explainer):
         orig_prediction = model_id2label[orig_prediction]
         same_label_samples = []
         diff_label_samples = []
-        for new_sample in new_samples:
-            encoded_new_sample = self.encode_sample(new_sample)
+        for s_i, new_sample in enumerate(new_samples):
+            encoded_new_sample = self.encode_sample(new_sample[0])
+            aug_tokens_sample = aug_tokens[s_i]
+            orig_tokens_sample = orig_tokens[s_i]
 
-            # using Polyjuice output on the model.
             prediction = self.model(encoded_new_sample['input_ids'], encoded_new_sample['attention_mask'])
 
             if self.dataset_name == 'boolq':
@@ -112,10 +108,11 @@ class CFEExplainer(Explainer):
                 pass
 
             prediction = model_id2label[prediction]
+            out_str = self.get_changed_tokens(orig_tokens[s_i], aug_tokens[s_i])
             if prediction != orig_prediction:
-                diff_label_samples.append((new_sample, prediction))
+                diff_label_samples.append((new_sample, prediction, out_str))
             else:
-                same_label_samples.append((new_sample, prediction))
+                same_label_samples.append((new_sample, prediction, out_str))
         return same_label_samples[:number], diff_label_samples[:number]
 
     def check_cuda(self):
@@ -126,33 +123,48 @@ class CFEExplainer(Explainer):
             self.is_cuda = False
             self.device = 'cpu'
 
+
+    def get_changed_tokens(self, orig_tokens, aug_tokens):
+        oi = 0
+        ai = 0
+        out_str = ""
+        while ai < len(aug_tokens):
+            if oi>=len(orig_tokens) or orig_tokens[oi]==aug_tokens[ai]:
+                out_str+=aug_tokens[ai]+" "
+                ai+=1
+                oi+=1
+            else:
+                out_str+="<b>"+aug_tokens[ai]+"</b> "
+                ai+=1
+                while not(ai>=len(aug_tokens) or oi>=len(orig_tokens) or orig_tokens[oi]==aug_tokens[ai]):
+                    # heuristics to check that oi token appears in aug_tokens
+                    while (oi<len(orig_tokens) and not(orig_tokens[oi] in aug_tokens[ai:ai+3])):
+                        oi+=1
+                    if oi < len(orig_tokens) and ai < len(orig_tokens) and orig_tokens[oi]==aug_tokens[ai]:
+                        out_str+=aug_tokens[ai]+" "
+                        ai+=1
+                        oi+=1
+                        break
+                    out_str+="<b>"+aug_tokens[ai]+"</b> "
+                    ai+=1
+        return out_str
+
+
+
     def generate_explanation(self, store_data=False,
                              data_path="../../cache/daily_dialog/cfe_daily_dialog_explanation.json"):
         if os.path.exists(data_path):
             fileObject = open(data_path, "r")
             jsonContent = fileObject.read()
             result_list = json.loads(jsonContent)
-            print(result_list)
-
         else:
             json_list = []
-
-            ### testing with some random text ###
-            instance_text = 'Why is this important?'
-            same, diff = self.cfe(instance_text, number=4, ctrl_code='lexical')
-            print('original text:', instance_text)
-            print('same label predictions:', same)
-            print('different label predictions:', diff)
-
             ### testing with the DA test dataloader ###
             test_dataloader = torch.load('../../explained_models/da_classifier/test_dataloader.pth')
             for b_input in test_dataloader:
                 input_ids = b_input[0].to(self.device)
                 instance_text = self.tokenizer.convert_tokens_to_string(self.tokenizer.convert_ids_to_tokens(input_ids[0], skip_special_tokens=True))
                 same, diff = self.cfe(instance_text, number=4, id2label=model_id2label)
-                print('original text:', instance_text)
-                print('same label predictions:', same)
-                print('different label predictions:', diff)
                 input_mask = b_input[1].to(self.device)
                 labels = b_input[2].to(self.device)
 
@@ -160,9 +172,6 @@ class CFEExplainer(Explainer):
                     result = self.model(input_ids, input_mask)
                     predicted_label_id = torch.argmax(result.detach().cpu()).item() # result.logits...
                     true_label_id = labels.to('cpu').numpy()[0]
-                    print('predicted label:', model_id2label[predicted_label_id])
-                    print('true label:', model_id2label[true_label_id])
-                print()
 
                 json_list.append({
                     "instance_text": instance_text,

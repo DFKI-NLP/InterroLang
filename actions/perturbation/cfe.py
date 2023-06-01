@@ -1,4 +1,4 @@
-from actions.perturbation.cfe_generation import CFEExplainer, ALL_CTRL_CODES
+from actions.perturbation.cfe_generation import CFEExplainer
 
 
 def extract_id_cfe_number(parse_text):
@@ -64,20 +64,13 @@ def counterfactuals_operation(conversation, parse_text, i, **kwargs):
 
     """
 
-    # Needed for polyjuice
-    # import nltk
-    # nltk.download('omw-1.4')
-    #
-    # import spacy
-    # spacy.load('en_core_web_sm')
-
     _id, cfe_num = extract_id_cfe_number(parse_text)
     dataset_name = conversation.describe.get_dataset_name()
 
     instance = get_text_by_id(conversation, _id)
 
     cfe_explainer = CFEExplainer(dataset_name=dataset_name)
-    same, diff = cfe_explainer.cfe(instance, cfe_num, ctrl_code=ALL_CTRL_CODES, _id=_id)
+    same, diff = cfe_explainer.cfe(instance, cfe_num, _id=_id)
 
     if len(same) > 0:
         predicted_label = same[0][1]
@@ -86,23 +79,25 @@ def counterfactuals_operation(conversation, parse_text, i, **kwargs):
         predicted_label = model(instance)
 
     return_s = ""
-    if len(diff) > 0:
-        return_s += "<ul>"
-        return_s += '<li>'
-        return_s += f"<b>[The original text]:</b> "
-        return_s += f"{instance}"
-        return_s += '</li>'
 
+    return_s += "<ul>"
+    return_s += '<li>'
+    return_s += f"<b>[The original text]:</b> "
+    return_s += f"{instance}"
+    return_s += '</li>'
+
+
+    if len(diff) > 0:
         flipped_label = diff[0][1]
 
         for i in range(len(diff)):
             return_s += '<li>'
             return_s += f"<b>[Counterfactual {i+1}]:</b> "
-            return_s += diff[i][0]
+            return_s += diff[i][2]
             return_s += '</li>'
         return_s += "</ul><br>"
 
-        return_s += f"the predicted label <span style=\"background-color: #6CB4EE\">{predicted_label}</span> changes to <span style=\"background-color: #6CB4EE\">{flipped_label}</span>. <br>"
+        return_s += f"The predicted label <b>{predicted_label}</b> changes to <b>{flipped_label}</b>."
 
     else:
         return_s += f"This sentence is always classified as <b>{predicted_label}</b>!"
