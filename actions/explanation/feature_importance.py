@@ -275,6 +275,54 @@ def get_attr_by_id(conversation, _id):
 
 
 @timeout(60)
+def feature_attribution_with_id(conversation, topk, id_list):
+    # Get the dataset name
+    name = conversation.describe.get_dataset_name()
+
+    data_path = f"./cache/{name}/ig_explainer_{name}_explanation.json"
+    fileObject = open(data_path, "r")
+    jsonContent = fileObject.read()
+    json_list = json.loads(jsonContent)
+
+    if name == 'boolq':
+        tokenizer = AutoTokenizer.from_pretrained("andi611/distilbert-base-uncased-qa-boolq")
+    elif name == "daily_dialog":
+        tokenizer = HFTokenizer('bert-base-uncased', mode='bert').tokenizer
+    else:
+        tokenizer = AutoTokenizer.from_pretrained("sinhala-nlp/mbert-olid-en")
+
+    if topk >= len(json_list[0]["input_ids"]):
+        return "Entered topk is larger than input max length", 1
+    else:
+        if len(id_list) == 1:
+            return_s, original_text = get_text_by_id(id_list[0], conversation)
+
+            attr, input_ids = get_attr_by_id(conversation, id_list[0])
+            converted_text = tokenizer.convert_ids_to_tokens(input_ids)
+            try:
+                idx = converted_text.index("[PAD]")
+                return_s += get_visualization(attr[:idx], topk, converted_text[:idx], conversation)
+            except ValueError:
+                return_s += get_visualization(attr, topk, converted_text, conversation)
+        else:
+            return_s = ""
+            for num in id_list:
+                return_s += f"For id {num}: <br>"
+                text, original_text = get_text_by_id(num, conversation)
+                return_s += text
+
+                attr, input_ids = get_attr_by_id(conversation, num)
+                converted_text = tokenizer.convert_ids_to_tokens(input_ids)
+                try:
+                    idx = converted_text.index("[PAD]")
+                    return_s += get_visualization(attr[:idx], topk, converted_text[:idx], conversation)
+                except ValueError:
+                    return_s += get_visualization(attr, topk, converted_text, conversation)
+
+                return_s += "<br>"
+    return return_s
+
+
 def feature_importance_operation(conversation, parse_text, i, **kwargs):
     """
     feature attribution operation
@@ -325,53 +373,8 @@ def feature_importance_operation(conversation, parse_text, i, **kwargs):
             return_s += '<br><br>'
         return return_s, 1
 
-    # Get the dataset name
-    name = conversation.describe.get_dataset_name()
-
-    data_path = f"./cache/{name}/ig_explainer_{name}_explanation.json"
-    fileObject = open(data_path, "r")
-    jsonContent = fileObject.read()
-    json_list = json.loads(jsonContent)
-
-    if name == 'boolq':
-        tokenizer = AutoTokenizer.from_pretrained("andi611/distilbert-base-uncased-qa-boolq")
-    elif name == "daily_dialog":
-        tokenizer = HFTokenizer('bert-base-uncased', mode='bert').tokenizer
-    else:
-        tokenizer = AutoTokenizer.from_pretrained("sinhala-nlp/mbert-olid-en")
-
-    if topk >= len(json_list[0]["input_ids"]):
-        return "Entered topk is larger than input max length", 1
-    else:
-        if len(id_list) == 1:
-            return_s, original_text = get_text_by_id(id_list[0], conversation)
-
-            attr, input_ids = get_attr_by_id(conversation, id_list[0])
-            converted_text = tokenizer.convert_ids_to_tokens(input_ids)
-            try:
-                idx = converted_text.index("[PAD]")
-                return_s += get_visualization(attr[:idx], topk, converted_text[:idx], conversation)
-            except ValueError:
-                return_s += get_visualization(attr, topk, converted_text, conversation)
-
-            return return_s, 1
-        else:
-            return_s = ""
-            for num in id_list:
-                return_s += f"For id {num}: <br>"
-                text, original_text = get_text_by_id(num, conversation)
-                return_s += text
-
-                attr, input_ids = get_attr_by_id(conversation, num)
-                converted_text = tokenizer.convert_ids_to_tokens(input_ids)
-                try:
-                    idx = converted_text.index("[PAD]")
-                    return_s += get_visualization(attr[:idx], topk, converted_text[:idx], conversation)
-                except ValueError:
-                    return_s += get_visualization(attr, topk, converted_text, conversation)
-
-                return_s += "<br>"
-            return return_s, 1
+    return_s = feature_attribution_with_id(conversation, topk, id_list)
+    return return_s, 1
 
 
 class FeatureAttributionExplainer(Explainer):
