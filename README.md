@@ -55,6 +55,17 @@ source venv/venv/activate
 ```shell
 python -m pip install --upgrade pip
 pip install -r requirements.txt
+
+# Download omw-1.4
+python -m nltk.downloader omw-1.4
+
+# Punkt
+python -m nltk.downloader punkt
+
+# Install spacy
+pip install -U pip setuptools wheel
+pip install -U spacy
+python -m spacy download en_core_web_sm
 ```
 Install [polyjuice-nlp](https://github.com/tongshuangwu/polyjuice) and its dependencies due to some [issues](https://github.com/tongshuangwu/polyjuice/issues/10) from polyjuice:
 ```bash
