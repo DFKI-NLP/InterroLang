@@ -1,23 +1,14 @@
-User: what are the labels for texts with {span}
-Parsed: includes and label [E]
-
-User: what's the gold label for {span}
-Parsed: includes and label [E]
-
-User: for {span}, what are the ground truth labels
-Parsed: includes and label [E]
-
-User: what are the ground truth labels in the data for {span}
-Parsed: includes and label [E]
-
-User: what are the data labels for {span}
-Parsed: includes and label [E]
-
-User: just on instances with {span}, show me the labels?
-Parsed: includes and label [E]
-
-User: just on instances with {span}, show me the gold labels?
-Parsed: includes and label [E]
-
 User: what are the labels for all the data
+Parsed: label [E]
+
+User: Please show what the gold labels are
+Parsed: label [E]
+
+User: Could you show me how the data is labelled?
+Parsed: label [E]
+
+User: What are the true labels in the dataset and how often do they occur?
+Parsed: label [E]
+
+User: Show how often which target label appears in the entire dataset
 Parsed: label [E]

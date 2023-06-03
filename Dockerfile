@@ -10,6 +10,17 @@ WORKDIR /usr/src/app
 # Installing python dependencies
 COPY requirements.txt /usr/src/app/
 RUN pip install --no-cache-dir -r requirements.txt
+RUN python -m pip install mysqlclient
+
+COPY /utils/dependency.sh /usr/src/app/
+
+RUN python -m nltk.downloader omw-1.4
+RUN python -m nltk.downloader punkt
+RUN pip install -U pip setuptools wheel
+RUN pip install -U spacy
+RUN python -m spacy download en_core_web_sm
+
+RUN bash dependency.sh
 RUN python -c 'from sentence_transformers import SentenceTransformer; SentenceTransformer("all-mpnet-base-v2")'
 # Copying src code to Container
 COPY . /usr/src/app

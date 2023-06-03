@@ -46,87 +46,91 @@ class AdapterParse:
 
         self.quote_pattern = r'(\"|\')[^\"\']*(\"|\')'
 
-        self.all_intents = ["adversarial", "augment", "includes", "cfe", "similar", "predict", "self", "data", "show", "likelihood", "model", "function", "score", "countdata", "label", "mistake count", "mistake sample", "keywords", "nlpattribute", "rationalize", "important", "statistic", "randompredict"]
+        self.all_intents = ["adversarial", "augment", "includes", "cfe", "similar", "predict", "self", "data", "show",
+                            "likelihood", "model", "function", "score", "countdata", "label", "mistake count",
+                            "mistake sample", "keywords", "nlpattribute", "rationalize", "important", "statistic",
+                            "randompredict"]
         self.id2label_str = dict()
         for i, intent_name in enumerate(self.all_intents):
             self.id2label_str[i] = intent_name
         # Mapping slots to the fixed values for scores (as defined in grammar.py)
-        self.score_mapper = {"positive predictive value":"ppv", "negative predictive value":"npv", "acc":"accuracy", "prec":"precision", "rec":"recall", "f 1":"f1"}
+        self.score_mapper = {"positive predictive value": "ppv", "negative predictive value": "npv", "acc": "accuracy",
+                             "prec": "precision", "rec": "recall", "f 1": "f1"}
         self.scores = ["accuracy", "f1", "roc", "precision", "recall", "sensitivity", "specificity", " ppv", "npv"]
         self.score_settings = ["micro", "macro", "weighted"]
         self.intent_with_topk_prefix = ["nlpattribute", "important", "similarity"]
 
-        self.core_slots = {"adversarial":["id"],
-            "augment":["id"],
-            "includes":[],
-            "cfe":["id"],
-            "similar":["id"],
-            "predict":[],
-            "self":[],
-            "data":[],
-            "show":["id"],
-            "likelihood":["id"],
-            "model":[],
-            "function":[],
-            "score":[],
-            "countdata":[],
-            "label":[],
-            "mistake count":[],
-            "mistake sample":[],
-            "keywords":[],
-            "nlpattribute":[],
-            "rationalize":["id"],
-            "important":[],
-            "statistic":[],
-            "randompredict":[]}
+        self.core_slots = {"adversarial": ["id"],
+                           "augment": ["id"],
+                           "includes": [],
+                           "cfe": ["id"],
+                           "similar": ["id"],
+                           "predict": [],
+                           "self": [],
+                           "data": [],
+                           "show": ["id"],
+                           "likelihood": ["id"],
+                           "model": [],
+                           "function": [],
+                           "score": [],
+                           "countdata": [],
+                           "label": [],
+                           "mistake count": [],
+                           "mistake sample": [],
+                           "keywords": [],
+                           "nlpattribute": [],
+                           "rationalize": ["id"],
+                           "important": [],
+                           "statistic": [],
+                           "randompredict": []}
 
-        self.intent2slot_pattern = {"adversarial":["id"],
-            "augment":["id"],
-            "includes":["includetoken"],
-            "cfe":["id", "number"],
-            "similar":["id", "number"],
-            "predict":["id"],
-            "self":[],
-            "data":[],
-            "show":["id", "includetoken"],
-            "likelihood":["class_names", "includetoken", "id"],
-            "model":[],
-            "function":[],
-            "score":["includetoken", "metric", "class_names", "data_type"],
-            "countdata":["include_token"],
-            "label":["includetoken"],
-            "mistake count":["includetoken"],
-            "mistake sample":["includetoken"],
-            "keywords":["number"],
-            "nlpattribute":["id", "number", "class_names", "sent_level"],
-            "rationalize":["id"],
-            "important":["class_names", "include_token", "number"],
-            "statistic":["includetoken"],
-            "randompredict":[]}
+        self.intent2slot_pattern = {"adversarial": ["id"],
+                                    "augment": ["id"],
+                                    "includes": ["includetoken"],
+                                    "cfe": ["id", "number"],
+                                    "similar": ["id", "number"],
+                                    "predict": ["id"],
+                                    "self": [],
+                                    "data": [],
+                                    "show": ["id", "includetoken"],
+                                    "likelihood": ["class_names", "includetoken", "id"],
+                                    "model": [],
+                                    "function": [],
+                                    "score": ["includetoken", "metric", "class_names", "data_type"],
+                                    "countdata": ["include_token"],
+                                    "label": ["includetoken"],
+                                    "mistake count": ["includetoken"],
+                                    "mistake sample": ["includetoken"],
+                                    "keywords": ["number"],
+                                    "nlpattribute": ["id", "number", "class_names", "sent_level"],
+                                    "rationalize": ["id"],
+                                    "important": ["class_names", "include_token", "number"],
+                                    "statistic": ["includetoken"],
+                                    "randompredict": []}
 
         self.op2clarification = {"adversarial": "generate adversarial examples",
-            "augment": "do some data augmentation",
-            "includes": "filter the dataset by the specified word",
-            "cfe": "generate counterfactuals",
-            "similar": "search for similar instances in the dataset",
-            "self": "describe my capabilities",
-            "predict": "check the prediction",
-            "data": "explain the dataset",
-            "show": "show you the instance from the dataset",
-            "likelihood": "check the likelihood of the prediction",
-            "model": "talk about the underlying model",
-            "function": "talk about the possible actions",
-            "score": "explain the perfromance in terms of different scores",
-            "countdata": "count the data points",
-            "label": "show the labels",
-            "mistake count": "show how many mistakes the model makes",
-            "mistake sample": "show which mistakes the model makes",
-            "keywords": "display some keywords relevant for the dataset",
-            "nlpattribute": "show you the most important features/tokens",
-            "rationalize": "provide a rationalization, explain the behaviour of the model",
-            "important": "show the top token attributions based on the global dataset statistics",
-            "statistic": "show you some statistics for the dataset",
-            "randompredict": "show a prediction on a random instance"}
+                                 "augment": "do some data augmentation",
+                                 "includes": "filter the dataset by the specified word",
+                                 "cfe": "generate counterfactuals",
+                                 "similar": "search for similar instances in the dataset",
+                                 "self": "describe my capabilities",
+                                 "predict": "check the prediction",
+                                 "data": "explain the dataset",
+                                 "show": "show you the instance from the dataset",
+                                 "likelihood": "check the likelihood of the prediction",
+                                 "model": "talk about the underlying model",
+                                 "function": "talk about the possible actions",
+                                 "score": "explain the perfromance in terms of different scores",
+                                 "countdata": "count the data points",
+                                 "label": "show the labels",
+                                 "mistake count": "show how many mistakes the model makes",
+                                 "mistake sample": "show which mistakes the model makes",
+                                 "keywords": "display some keywords relevant for the dataset",
+                                 "nlpattribute": "show you the most important features/tokens",
+                                 "rationalize": "provide a rationalization, explain the behaviour of the model",
+                                 "important": "show the top token attributions based on the global dataset statistics",
+                                 "statistic": "show you some statistics for the dataset",
+                                 "randompredict": "show a prediction on a random instance"}
 
         self.deictic_words = ["this", "that", "it", "here"]
 
@@ -134,12 +138,16 @@ class AdapterParse:
         self.model_slot_words_map = {"lr": ["lr", "learning rate"], "epochs": ["epoch"], "loss": ["loss"], "optimizer":["optimizer"], "task":["task", "function"], "model_name": ["name", "call"], "model_summary":["summary", "overview"]}
 
         self.st_model = SentenceTransformer('all-MiniLM-L6-v2')
-        confirm = ["Yes", "Of course", "I agree", "Correct", "Yeah", "Right", "That's what I meant", "Indeed", "Exactly", "True"]
-        disconfirm = ["No", "Nope", "Sorry, no", "I think there is some misunderstanding", "Not right", "Incorrect", "Wrong", "Disagree"]
+        confirm = ["Yes", "Of course", "I agree", "Correct", "Yeah", "Right", "That's what I meant", "Indeed",
+                   "Exactly", "True"]
+        disconfirm = ["No", "Nope", "Sorry, no", "I think there is some misunderstanding", "Not right", "Incorrect",
+                      "Wrong", "Disagree"]
 
-        data_name = ["inform me test data name", "name of training data", "how is the test set called?", "what's the name of the data?"]
+        data_name = ["inform me test data name", "name of training data", "how is the test set called?",
+                     "what's the name of the data?"]
         data_source = ["where does training data come from", "where do you get test data", "the source of the dataset?"]
-        data_language = ["show me the language of training data", "language of training data", "tell me the language of testing data", "what's the language of the model?"]
+        data_language = ["show me the language of training data", "language of training data",
+                         "tell me the language of testing data", "what's the language of the model?"]
         data_number = ["how many training data is used", "count test data points", "tell me the number of data points"]
 
         # Compute embedding for data flags
@@ -152,7 +160,7 @@ class AdapterParse:
         self.confirm = self.st_model.encode(confirm, convert_to_tensor=True)
         self.disconfirm = self.st_model.encode(disconfirm, convert_to_tensor=True)
 
-    def get_data_type(self, text:str):
+    def get_data_type(self, text: str):
         """Checks the data type (train/test supported)"""
         if "test" in text:
             return "test"
@@ -177,16 +185,16 @@ class AdapterParse:
 
         max_score_name = None
         max_score = 0
+
         for score in [("name", dname_score), ("source", dsource_score), ("language", dlang_score), ("number", dnum_score)]:
             if score[1] > max_score and score[1] > 0.5:
                 max_score = score[1]
                 max_score_name = score[0]
         return max_score_name
 
-
     def has_deictic(self, text):
         for deictic in self.deictic_words:
-            if " "+deictic in text.lower() or deictic+" " in text.lower():
+            if " " + deictic in text.lower() or deictic + " " in text.lower():
                 return True
         return False
 
@@ -195,7 +203,7 @@ class AdapterParse:
         text_anno = self.intent_classifier(intext)[0]
         labels = []
         for entry in text_anno:
-            labels.append((self.id2label_str[int(entry["label"].replace("LABEL_",""))], entry["score"]))
+            labels.append((self.id2label_str[int(entry["label"].replace("LABEL_", ""))], entry["score"]))
         labels.sort(key=lambda x: x[1], reverse=True)
         return labels[:5]
 
@@ -207,7 +215,7 @@ class AdapterParse:
         slot2spans = dict()
         for anno in text_anno:
             slot_type = anno["entity"][2:]
-            if not(slot_type) in slot2spans:
+            if not (slot_type) in slot2spans:
                 slot2spans[slot_type] = []
             slot2spans[slot_type].append((anno["word"], anno["start"], anno["end"], anno["entity"]))
         final_slot2spans = dict()
@@ -218,12 +226,13 @@ class AdapterParse:
             span_ends = [s for s in slot2spans[slot_type] if s[-1].startswith("I-")]
             span_ends.sort(key=lambda x: x[1])
             for i, span_start in enumerate(span_starts):
-                if i<len(span_starts)-1:
-                    next_span_start = span_starts[i+1]
+                if i < len(span_starts) - 1:
+                    next_span_start = span_starts[i + 1]
                 else:
                     next_span_start = None
-                selected_ends = [s[2] for s in span_ends if s[1]>=span_start[1] and (next_span_start is None or s[1]<next_span_start[1])]
-                if len(selected_ends)>0:
+                selected_ends = [s[2] for s in span_ends if
+                                 s[1] >= span_start[1] and (next_span_start is None or s[1] < next_span_start[1])]
+                if len(selected_ends) > 0:
                     span_end = max(selected_ends)
                 else:
                     span_end = span_start[2]
@@ -232,9 +241,8 @@ class AdapterParse:
 
         return final_slot2spans
 
-
     def clean_up(self, text: str):
-        while len(text)>0 and text[-1] in string.punctuation:
+        while len(text) > 0 and text[-1] in string.punctuation:
             text = text[:-1]
         return text
 
@@ -248,7 +256,6 @@ class AdapterParse:
             print(f"value is not a number: {text}")
         return text
 
-
     def check_heuristics(self, decoded_text: str, orig_text: str):
         """Checks heuristics for those intents/actions that were identified but their core slots are missing.
         """
@@ -259,22 +266,22 @@ class AdapterParse:
             indicators = ["word ", "words ", "token ", "tokens "]
             for indicator in indicators:
                 if indicator in orig_text:
-                    word_start = orig_text.index(indicator)+len(indicator)
-                    if word_start<len(orig_text):
+                    word_start = orig_text.index(indicator) + len(indicator)
+                    if word_start < len(orig_text):
                         includeword = orig_text[word_start:]
                         token_adhoc = self.clean_up(includeword)
                         break
             # check for quotes
             in_quote = re.search(self.quote_pattern, orig_text)
-            if  in_quote is not None:
-               token_adhoc = self.clean_up(in_quote.group())
+            if in_quote is not None:
+                token_adhoc = self.clean_up(in_quote.group())
         if "id " in orig_text:
-            splitted = orig_text[orig_text.index("id ")+2:].strip().split()
-            if len(splitted)>0:
+            splitted = orig_text[orig_text.index("id ") + 2:].strip().split()
+            if len(splitted) > 0:
                 id_adhoc = self.clean_up(splitted[0])
         splitted_text = orig_text.split()
         for tkn in splitted_text:
-            if tkn.isdigit() and not(tkn == id_adhoc):
+            if tkn.isdigit() and not (tkn == id_adhoc):
                 number_adhoc = tkn
                 break
         return id_adhoc, number_adhoc, token_adhoc
@@ -283,15 +290,15 @@ class AdapterParse:
         """Converts text to number if possible"""
         for ch in string.punctuation:
             if ch in text:
-                text = text.replace(ch,"")
-        if len(text)>0 and not(text.isdigit()):
+                text = text.replace(ch, "")
+        if len(text) > 0 and not (text.isdigit()):
             try:
                 converted_num = w2n.word_to_num(text)
             except:
                 converted_num = None
             if converted_num is not None:
                 text = str(converted_num)
-        if not(text.isdigit()):
+        if not (text.isdigit()):
             text = ""
         return text
 
@@ -319,9 +326,10 @@ class AdapterParse:
         clarification_text = ""
         # NB: if the score is too low, ask for clarification
 
-        if anno_intents[0][1]<0.50:
+        if anno_intents[0][1] < 0.50:
             do_clarification = True
-            clarification_text = "I'm sorry, I am not sure whether I understood you correctly. Did you mean that you want me to "+self.op2clarification[anno_intents[0][0]]+"?"
+            clarification_text = "I'm sorry, I am not sure whether I understood you correctly. Did you mean that you want me to " + \
+                                 self.op2clarification[anno_intents[0][0]] + "?"
         best_intent = anno_intents[0][0]
 
         # discard includes as a separate intent
@@ -356,11 +364,11 @@ class AdapterParse:
         id_adhoc, number_adhoc, token_adhoc = self.check_heuristics(decoded_text, text)
         for slot in slot_pattern:
             decoded_slot_text = ""
-            if slot in anno_slots:
+            if slot in anno_slots and len(anno_slots[slot]) > 0:
                 if slot == "includetoken":
                     decoded_text = "includes and " + decoded_text
                     continue
-                if slot == "sent_level": # we don't need a value in this case
+                if slot == "sent_level":  # we don't need a value in this case
                     decoded_text += " sentence"
                     continue
                 try:
@@ -373,23 +381,23 @@ class AdapterParse:
                     prefix = ""
                     for si, slot_value in enumerate(slot_values):
                         prefix += "filter id " + self.clean_up_number(slot_value)
-                        if si != len(slot_values)-1:
+                        if si != len(slot_values) - 1:
                             prefix += " or "
                     decoded_text = prefix + " and " + decoded_text
                     # NB: storing only the last id value
                 elif len(slot_values) == 1:
                     slot_value = slot_values[0]
                 slot_value = self.clean_up(slot_value)
-                if slot in ["id", "number"] and not(slot_value.isdigit()):
+                if slot in ["id", "number"] and not (slot_value.isdigit()):
                     slot_value = self.clean_up_number(slot_value)
-                if slot == "id" and len(slot_value)>0 and len(slot_values)==1:
+                if slot == "id" and len(slot_value) > 0 and len(slot_values) == 1:
                     decoded_text = "filter id " + str(slot_value) + " and " + decoded_text
-                elif slot=="metric" and best_intent=="score":
+                elif slot == "metric" and best_intent == "score":
                     score_setting_parsed = ""
                     slot_value = slot_value.lower()
                     if slot_value in self.score_mapper:
                         slot_value = self.score_mapper[slot_value.lower()]
-                    elif not(slot_value in self.scores):
+                    elif not (slot_value in self.scores):
                         slot_value = "default"
                         for s_score in self.scores:
                             if s_score in text.lower():
@@ -399,13 +407,13 @@ class AdapterParse:
                             score_setting_parsed = " " + score_setting
                     decoded_slot_text += " " + slot_value + score_setting_parsed
 
-                elif len(slot_value)>0:
-                    if slot=="number" and best_intent in self.intent_with_topk_prefix:
+                elif len(slot_value) > 0:
+                    if slot == "number" and best_intent in self.intent_with_topk_prefix:
                         decoded_slot_text += " topk " + str(slot_value)
-                    elif len(slot_values) == 1: # avoid adding the same id twice
+                    elif len(slot_values) == 1:  # avoid adding the same id twice
                         decoded_slot_text += " " + str(slot_value)
 
-            else: # check heuristics
+            else:  # check heuristics
                 if slot == "id":
                     if id_adhoc != "":
                         decoded_text = "filter id " + str(id_adhoc) + " and " + decoded_text
@@ -414,15 +422,17 @@ class AdapterParse:
                         if best_intent in self.intent_with_topk_prefix:
                             decoded_slot_text += " topk " + str(number_adhoc)
                         else:
-                             decoded_slot_text += " " + str(number_adhoc)
+                            decoded_slot_text += " " + str(number_adhoc)
             decoded_text += decoded_slot_text
-            if best_intent == "important" and slot == "number" and len(decoded_slot_text)==0 and (not "class_names" in anno_slots):
+            if best_intent == "important" and slot == "number" and len(decoded_slot_text) == 0 and (
+            not "class_names" in anno_slots):
                 decoded_text += " all"
-            elif best_intent == "nlpattribute" and slot == "number" and len(decoded_slot_text)==0 and (not "sent_level" in anno_slots):
+            elif best_intent == "nlpattribute" and slot == "number" and len(decoded_slot_text) == 0 and (
+            not "sent_level" in anno_slots):
                 decoded_text += " all"
-            elif best_intent == "keywords" and slot == "number" and len(decoded_slot_text)==0:
+            elif best_intent == "keywords" and slot == "number" and len(decoded_slot_text) == 0:
                 decoded_text += " all"
-            elif best_intent == "score" and slot == "metric" and not("metric" in anno_slots):
+            elif best_intent == "score" and slot == "metric" and not ("metric" in anno_slots):
                 score_val = " default"
                 for score in self.scores:
                     if score in text:
@@ -434,9 +444,9 @@ class AdapterParse:
 
 def get_f1scores(predicted_and_gold, labels):
     scores = dict()
-    labels = [lb.replace(" ","_") for lb in labels]
+    labels = [lb.replace(" ", "_") for lb in labels]
     for label in labels:
-        scores[label] = {"tp":0, "fp":0, "fn":0}
+        scores[label] = {"tp": 0, "fp": 0, "fn": 0}
     match = 0
     total = 0
     for i, pair in enumerate(predicted_and_gold):
@@ -455,9 +465,9 @@ def get_f1scores(predicted_and_gold, labels):
                 else:
                     scores[el]["fp"] += 1
         for el in gold_list:
-            if el in labels and not(el in pred_list):
+            if el in labels and not (el in pred_list):
                 scores[el]["fn"] += 1
-    intent_accuracy = round(match/total, 3)
+    intent_accuracy = round(match / total, 3)
 
     micro_prec = 0
     micro_rec = 0
@@ -471,39 +481,39 @@ def get_f1scores(predicted_and_gold, labels):
     f1_per_label = dict()
     # compute f1 scores (per label)
     for label in labels:
-        f1_per_label[label] = {"prec":0, "rec":0, "f1":0}
+        f1_per_label[label] = {"prec": 0, "rec": 0, "f1": 0}
         tp = scores[label]["tp"]
         fp = scores[label]["fp"]
         fn = scores[label]["fn"]
-        all_tp+=tp
-        all_fp+=fp
-        all_fn+=fn
-        if (tp+fp)>0:
-            prec = tp/(tp+fp)
+        all_tp += tp
+        all_fp += fp
+        all_fn += fn
+        if (tp + fp) > 0:
+            prec = tp / (tp + fp)
         else:
             prec = 0
-        if (tp+fn)>0:
-            rec = tp/(tp+fn)
+        if (tp + fn) > 0:
+            rec = tp / (tp + fn)
         else:
             rec = 0
-        if (prec+rec)>0:
-            f1score = 2*prec*rec/(prec+rec)
+        if (prec + rec) > 0:
+            f1score = 2 * prec * rec / (prec + rec)
         else:
             f1score = 0
-        f1scores+=f1score
+        f1scores += f1score
         f1_per_label[label]["prec"] = round(prec, 3)
         f1_per_label[label]["rec"] = round(rec, 3)
         f1_per_label[label]["f1"] = round(f1score, 3)
-    if (all_tp+all_fp)>0:
-        micro_prec = all_tp/(all_tp+all_fp)
-    if (all_tp+all_fn)>0:
-        micro_rec = all_tp/(all_tp+all_fn)
-    if (micro_prec+micro_rec)>0:
-        micro_f1 = 2*micro_prec*micro_rec/(micro_prec+micro_rec)
+    if (all_tp + all_fp) > 0:
+        micro_prec = all_tp / (all_tp + all_fp)
+    if (all_tp + all_fn) > 0:
+        micro_rec = all_tp / (all_tp + all_fn)
+    if (micro_prec + micro_rec) > 0:
+        micro_f1 = 2 * micro_prec * micro_rec / (micro_prec + micro_rec)
 
     # compute macro f1 score (avg)
-    macro_f1 = round(f1scores/len(labels), 3)
-    micro_f1 = round(micro_f1,3)
+    macro_f1 = round(f1scores / len(labels), 3)
+    micro_f1 = round(micro_f1, 3)
 
     return f1_per_label, macro_f1, micro_f1, intent_accuracy
 
@@ -512,10 +522,10 @@ def evaluate(parser, val_data_path):
     user_parsed_tuples = []
     with open(val_data_path) as f:
         lines = f.readlines()
-        lines = [ln for ln in lines if len(ln.strip())>0]
+        lines = [ln for ln in lines if len(ln.strip()) > 0]
         for i in range(0, len(lines), 2):
             user_input = lines[i].strip()
-            parse_output = lines[i+1].replace("[E]","").strip()
+            parse_output = lines[i + 1].replace("[E]", "").strip()
             user_parsed_tuples.append((user_input, parse_output))
     total = 0
     matched = 0
@@ -529,18 +539,18 @@ def evaluate(parser, val_data_path):
         print("input: " + input_text)
         print("gold: " + gold_parse + " >>> decoded: " + decoded)
         print()
-        if decoded==gold_parse:
-            matched+=1
-        total+=1
+        if decoded == gold_parse:
+            matched += 1
+        total += 1
 
     f1_per_label, macro_f1, micro_f1, intent_accuracy = get_f1scores(predicted_and_gold, parser.all_intents)
-    accuracy = round(matched/total, 3)
+    accuracy = round(matched / total, 4)
     return f1_per_label, macro_f1, micro_f1, intent_accuracy, accuracy
 
 
 def main():
     parser = AdapterParse()
-    val_data_path = "./experiments/parsing_interrolang_dev/dev_set_interrolang.txt"
+    val_data_path = "./experiments/parsing_interrolang_dev/dev_set_interrolang_daily_dialog.txt"
     f1_per_label, macro_f1, micro_f1, intent_accuracy, accuracy = evaluate(parser, val_data_path)
     print("Exact Match Accuracy:", accuracy)
     print("Intent Accuracy:", intent_accuracy)

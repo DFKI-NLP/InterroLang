@@ -35,14 +35,16 @@
                     <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                         <div class="card-body">
                             <div class="panel panel-danger">
-                                <div class="panel-heading"><b>"Input"</b>: enter <b>"quit"</b> can delete the entered custom
+                                <div class="panel-heading"><b>"Input"</b>: enter <b>"quit"</b> can delete the entered
+                                    custom
                                     input if
                                     available.
                                 </div>
-                                <div class="panel-heading"><b>"Custom input"</b>: add your own input instance. For BoolQ,
+                                <div class="panel-heading"><b>"Custom input"</b>: add your own input instance. For
+                                    BoolQ,
                                     please
                                     use
-                                    <b>"|"</b> to separate text and passage!
+                                    <b>"|"</b> to separate question and passage!
                                 </div>
                                 <div class="panel-heading"><b>"Include"</b>: enter a search term to filter the dataset.
                                 </div>
@@ -68,37 +70,38 @@
                 <!-- Filter dataset by string ("includes") -->
                 <b>🔍 Filter dataset by text:</b>
                 <form class="filterdata-inputarea">
-                    <input type="text" class="filterdata-input" id="filterdataInput" placeholder="Filter dataset" >
+                    <input type="text" class="filterdata-input" id="filterdataInput" placeholder="Filter dataset">
                 </form>
-                <h1 style="font: small-caps bold 20px/1 sans-serif; margin-top: 10px">🗃️ {{dataset}} dataset viewer </h1>
+                <h1 style="font: small-caps bold 20px/1 sans-serif; margin-top: 10px">🗃️ {{dataset}} dataset
+                    viewer </h1>
                 <div id="show_data"
                      style="border-radius: 15px; padding: 5px; overflow-y: scroll; height: 70%;">
                     {% for entry in entries %}
-                        {% if dataset == 'boolq' %}
-                            <details>
-                                <summary style="font-weight: bold;">ID: {{loop.index}} </summary>
-                                <b>question:</b> <br>
-                                <div style='font-style: italic; font-size: 0.75em;'>{{entry["question"]}}</div>
-                                <b>passage:</b> <br>
-                                <div style='font-style: italic; font-size: 0.75em;'>{{entry["passage"]}}</div>
-                                <button onclick="addId({{loop.index}})">Add this instance into input box</button>
-                            </details>
-                        {% elif dataset == 'daily_dialog' %}
-                            <details>
-                                <summary style="font-weight: bold;">ID: {{loop.index}}</summary>
-                                <b>dialog:</b>
-                                <div style='font-style: italic; font-size: 0.75em;'>{{entry["dialog"]}}</div>
-                                <button onclick="addId({{loop.index}})">Add this instance into input box</button>
-                            </details>
-                        {% else %}
-                            <details>
-                                <summary style="font-weight: bold;">ID: {{loop.index}}</summary>
-                                <b>text:</b> <br>
-                                <div style='font-style: italic; font-size: 0.75em;'>{{entry["text"]}}</div>
-                                <button onclick="addId({{loop.index}})">Add this instance into input box</button>
-                            </details>
-                        {% endif %}
-                        <br>
+                    {% if dataset == 'boolq' %}
+                    <details>
+                        <summary style="font-weight: bold;">ID: {{loop.index}}</summary>
+                        <b>question:</b> <br>
+                        <div style='font-style: italic; font-size: 0.75em;'>{{entry["question"]}}</div>
+                        <b>passage:</b> <br>
+                        <div style='font-style: italic; font-size: 0.75em;'>{{entry["passage"]}}</div>
+                        <button onclick="addId({{loop.index}})">Add this instance into input box</button>
+                    </details>
+                    {% elif dataset == 'daily_dialog' %}
+                    <details>
+                        <summary style="font-weight: bold;">ID: {{loop.index}}</summary>
+                        <b>dialog:</b>
+                        <div style='font-style: italic; font-size: 0.75em;'>{{entry["dialog"]}}</div>
+                        <button onclick="addId({{loop.index}})">Add this instance into input box</button>
+                    </details>
+                    {% else %}
+                    <details>
+                        <summary style="font-weight: bold;">ID: {{loop.index}}</summary>
+                        <b>text:</b> <br>
+                        <div style='font-style: italic; font-size: 0.75em;'>{{entry["text"]}}</div>
+                        <button onclick="addId({{loop.index}})">Add this instance into input box</button>
+                    </details>
+                    {% endif %}
+                    <br>
                     {% endfor %}
                     <br>(Showing first 10)
                 </div>
@@ -124,54 +127,271 @@
                 <option style="text-align:center;" value="1">Custom input</option>
                 <option style="text-align:center;" value="2">Include</option>
             </select>
-            <textarea rows="1" cols="50" type="text" class="ttm-input" id="textInput"
+            <textarea onkeyup="checkSubmit(event)" rows="1" cols="50" type="text" class="ttm-input"
+                      id="textInput"
                       placeholder="Enter your command! Use the ↑ arrow and ↓ arrow to cycle previous commands."></textarea>
             <button type="submit" class="ttm-send-btn" id="ttm-send-btn-id">Send</button>
         </form>
         <span class="genOptions">👇Help me generate a question about...👇</span>
 
         <div class="slideDown">
-            <div class="dots-cont" , id="generation-loading"><span class="dot dot-1"></span> <span
+            <div id="infobox" style="visibility: hidden; color: red; font-style: italic"></div>
+            <div class="dots-cont" id="generation-loading"><span class="dot dot-1"></span> <span
                     class="dot dot-2"></span> <span class="dot dot-3"></span></div>
-            <div class="buttons" , id="generation-buttons">
-                <button id="idea-important" class="idea-button" onclick="sampleImportant()">global feature importances</button>
-                <button id="idea-why" class="idea-button" onclick="sampleWhy()">local feature importance explanation</button>
-                <button id="idea-predict" class="idea-button" onclick="samplePredict()">predictions</button>
-
-                <button id="idea-random-predict" class="idea-button" onclick="sampleRandomPredict()">random
-                    prediction
-                </button>
-
-                <button id="idea-likelihood" class="idea-button" onclick="sampleLikelihood()">likelihood
-                </button>
-                <button id="idea-show" class="idea-button" onclick="sampleShow()">show data</button>
-                <button id="idea-capabilities" class="idea-button" onclick="sampleCapabilities()">system capabilities
-                </button>
-                <button id="idea-performance" class="idea-button" onclick="samplePerformance()">performance</button>
-                <button id="idea-flip" class="idea-button" onclick="sampleFlip()">counterfactual</button>
-                <button id="idea-description" class="idea-button" onclick="sampleDataDescription()">data
-                    description
-                </button>
-                <!--                    <button class="idea-button" onclick="sampleInteractions()">feature interaction effects</button>-->
-                <button class="idea-button" onclick="sampleMistakes()">mistakes</button>
-                <button class="idea-button" onclick="sampleLabels()">true labels</button>
-                <button class="idea-button" onclick="sampleSimilar()">find a similar instance</button>
-                <button class="idea-button" onclick="sampleRationalization()">rationalize</button>
-                <button class="idea-button" onclick="sampleAdversarial()">adversarial</button>
-                <button class="idea-button" onclick="sampleAugment()">augmentation</button>
-                <button class="idea-button" onclick="sampleSentence()">sentence-level feature attribution</button>
-
-                <button class="idea-button" id="c_pred" onclick="sampleCustomInputPrediction()">custom input
-                    prediction
-                </button>
-                <button class="idea-button" id="c_feat" onclick="sampleCustomInputFeatureImportance()">custom input
-                    feature
-                    importance
-                </button>
-                <button class="idea-button" id="c_feat_sent"
-                        onclick="sampleCustomInputFeatureImportanceOnSentenceLevel()">custom input
-                    sentence importance
-                </button>
+            <div id="knobs"
+                 style="display: table; padding: 10px; width: 100%; margin-top: -10px; margin-left: 15px; margin-right: 15px;">
+                <div class="rowc" id="custom_input_btns" style="display: none">
+                    <div class="control" style="display: table-cell; text-align: right; padding: 10px;"><b>Custom
+                        input</b></div>
+                    <div class="tooltip-wrapper">
+                        <button disabled id="c_pred" class="idea-button" style="background: rgba(253, 186, 54, 0.96);" onclick="sampleCustomInputPrediction()">
+                            Single prediction
+                        </button>
+                        <span class="tooltip-text">
+                            Lets the model predict a <b>custom single instance</b> provided by you.
+                        </span>
+                    </div>
+                    <div class="tooltip-wrapper">
+                        <button disabled id="c_feat" class="idea-button" style="background: rgba(235, 244, 61, 0.96);" onclick="sampleCustomInputFeatureImportance()">
+                            Local feature importance
+                        </button>
+                        <span class="tooltip-text">
+                            Indicates which <b>tokens</b> are <b>most important</b> in a <b>custom single instance</b> provided by you.
+                        </span>
+                    </div>
+                    <div class="tooltip-wrapper">
+                        <button disabled id="c_feat-sent" class="idea-button" style="background: rgba(235, 244, 61, 0.96);" onclick="sampleCustomInputFeatureImportanceOnSentenceLevel()">
+                            Sentence-level feature importance
+                        </button>
+                        <span class="tooltip-text">
+                            Indicates which <b>sentences</b> are <b>most important</b> in a <b>custom single instance</b> provided by you.
+                        </span>
+                    </div>
+                </div>
+                <div class="row row1" data-sort="abt_" style="display: table-row;">
+                    <div class="control" style="display: table-cell; text-align: right; padding: 10px;"><b>About</b>
+                    </div>
+                    <div class="buttons" style="display: table-cell;">
+                        <div class="tooltip-wrapper">
+                            <button id="abt_self" class="idea-button" onclick="sampleAboutSelf()">
+                                InterroLang
+                            </button>
+                        </div>
+                        <div class="tooltip-wrapper">
+                            <button id="abt_function" class="idea-button" onclick="sampleAboutFunction()">
+                                System capabilities
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row row2" data-sort="md_" style="display: table-row;">
+                    <div class="control" style="display: table-cell; text-align: right; padding: 10px;"><b>Metadata</b>
+                    </div>
+                    <div class="buttons" style="display: table-cell;">
+                        <div class="tooltip-wrapper">
+                            <button id="md_show" class="idea-button" onclick="sampleShow()">
+                                Show example
+                            </button>
+                            <span class="tooltip-text">
+                                Displays a <b>single example</b> from the dataset based on the <b>ID</b> you specify.
+                            </span>
+                        </div>
+                        <div class="tooltip-wrapper">
+                            <button id="md_train-data-description" class="idea-button"
+                                    onclick="sampleTrainDataDescription()">
+                                Describe training data
+                            </button>
+                            <span class="tooltip-text">
+                                Lists name, source, language, size and features of the <b>training</b> data.
+                            </span>
+                        </div>
+                        <div class="tooltip-wrapper">
+                            <button id="md_test-data-description" class="idea-button"
+                                    onclick="sampleTestDataDescription()">
+                                Describe test data
+                            </button>
+                            <span class="tooltip-text">
+                                Lists name, source, language, size and features of the <b>test</b> data.
+                            </span>
+                        </div>
+                        <div class="tooltip-wrapper">
+                            <button id="md_count-data" class="idea-button" onclick="sampleCountData()">
+                                Count data
+                            </button>
+                            <span class="tooltip-text">
+                                Shows <b>how many</b> examples there are in the data and what the range of <b>IDs</b> is.
+                            </span>
+                        </div>
+                        <div class="tooltip-wrapper">
+                            <button id="md_labels" class="idea-button" onclick="sampleLabels()">
+                                True labels
+                            </button>
+                            <span class="tooltip-text">
+                                Shows the <b>distribution</b> of the <b>true labels</b>, i.e. how the examples were annotated by humans.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row row3" data-sort="pred_" style="display: table-row;">
+                    <div class="control" style="display: table-cell; text-align: right; padding: 10px;">
+                        <b>Prediction</b></div>
+                    <div class="buttons" style="display: table-cell;">
+                        <div class="tooltip-wrapper">
+                            <button id="pred_predict" class="idea-button" onclick="samplePredict()">
+                                Single prediction
+                            </button>
+                            <span class="tooltip-text">
+                                Lets the model predict a <b>single instance</b> (ID).
+                            </span>
+                        </div>
+                        <div class="tooltip-wrapper">
+                            <button id="pred_random" class="idea-button" onclick="sampleRandomPredict()">
+                                Random prediction
+                            </button>
+                            <span class="tooltip-text">
+                                Lets the model predict a <b>randomly selected instance</b> (ID).
+                            </span>
+                        </div> <!-- Move custom input prediction button here -->
+                        <div class="tooltip-wrapper">
+                            <button id="pred_dataset" class="idea-button" onclick="samplePredictDataset()">
+                                Dataset prediction
+                            </button>
+                            <span class="tooltip-text">
+                                Lets the model predict the <b>entire dataset</b> or any subset with <b>multiple instances</b>.
+                            </span>
+                        </div>
+                        <div class="tooltip-wrapper">
+                            <button id="pred_likelihood" class="idea-button" onclick="sampleLikelihood()">
+                                Likelihood
+                            </button>
+                            <span class="tooltip-text">
+                                For a <b>single example</b> (ID), gets the <b>probability</b> that the model predicts a certain <b>label</b>.
+                            </span>
+                        </div>
+                        <div class="tooltip-wrapper">
+                            <button id="pred_score" class="idea-button" onclick="samplePerformance()">
+                                Performance
+                            </button>
+                            <span class="tooltip-text">
+                                Gets an overall <b>score</b> for the model performance (Accuracy, Precision, Recall, F1).
+                            </span>
+                        </div>
+                        <div class="tooltip-wrapper">
+                            <button id="pred_mistakes-count" class="idea-button" onclick="sampleMistakeCount()">
+                                Count mistakes
+                            </button>
+                            <span class="tooltip-text">
+                                Shows <b>how many</b> examples the model predicts a <b>wrong label</b> for.
+                            </span>
+                        </div>
+                        <div class="tooltip-wrapper">
+                            <button id="pred_mistakes-sample" class="idea-button" onclick="sampleMistakeSample()">
+                                Sample mistakes
+                            </button>
+                            <span class="tooltip-text">
+                                Shows <b>examples</b> where the model predicts a <b>wrong label</b>.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row row4" data-sort="nlu_" style="display: table-row;">
+                    <div class="control" style="display: table-cell; text-align: right; padding: 10px;">
+                        <b>Understanding</b></div>
+                    <div class="buttons" style="display: table-cell;">
+                        <div class="tooltip-wrapper">
+                            <button id="nlu_similar" class="idea-button" onclick="sampleSimilar()">
+                                Similar examples
+                            </button>
+                            <span class="tooltip-text">
+                                Retrieves a number of <b>examples</b> from the dataset that are semantically <b>similar</b> to a given <b>single example</b> (ID).
+                            </span>
+                        </div>
+                        <div class="tooltip-wrapper">
+                            <button id="nlu_keyword" class="idea-button" onclick="sampleKeyword()">
+                                Most frequent keywords
+                            </button>
+                            <span class="tooltip-text">
+                                Prints a table of the <b>most frequent keywords</b> in the data.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row row5" data-sort="x_" style="display: table-row;">
+                    <div class="control" style="display: table-cell; text-align: right; padding: 10px;">
+                        <b>Explanation</b></div>
+                    <div class="buttons" style="display: table-cell;">
+                        <div class="tooltip-wrapper">
+                            <button id="x_local" class="idea-button" onclick="sampleWhy()">
+                                Local feature importance
+                            </button>
+                            <span class="tooltip-text">
+                                Indicates which <b>tokens</b> for a <b>single example</b> (ID) are <b>most important</b>. Also prints a heatmap visualization.
+                            </span>
+                        </div>
+                        <div class="tooltip-wrapper">
+                            <button id="x_sentence" class="idea-button" onclick="sampleSentence()">
+                                Sentence-level feature importance
+                            </button>
+                            <span class="tooltip-text">
+                                Indicates which <b>sentences</b> for a <b>single example</b> (ID) are <b>most important</b>.
+                            </span>
+                        </div>
+                        <div class="tooltip-wrapper">
+                            <button id="x_global" class="idea-button" onclick="sampleImportant()">
+                                Global feature importance
+                            </button>
+                            <span class="tooltip-text">
+                                Indicates which <b>tokens</b> are <b>most important</b> if <b>aggregated</b> over the <b>entire dataset</b>.
+                            </span>
+                        </div>
+                        <div class="tooltip-wrapper">
+                            <button id="x_class" class="idea-button" onclick="sampleImportantClass()">
+                                Class-based feature importance
+                            </button>
+                            <span class="tooltip-text">
+                                Indicates which <b>tokens</b> are <b>most important</b> if <b>aggregated</b> over one <b>label subset</b> of the data.
+                            </span>
+                        </div>
+                        <div class="tooltip-wrapper">
+                            <button id="x_rationalize" class="idea-button" onclick="sampleRationalization()">
+                                Rationalize
+                            </button>
+                            <span class="tooltip-text">
+                                Generates a <b>free-text justification</b> for the model's prediction on a <b>single example</b> (ID).
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row row6" data-sort="ptb_" style="display: table-row;">
+                    <div class="control" style="display: table-cell; text-align: right; padding: 10px;">
+                        <b>Perturbation</b></div>
+                    <div class="buttons" style="display: table-cell;">
+                        <div class="tooltip-wrapper">
+                            <button id="ptb_cfe" class="idea-button" onclick="sampleFlip()">
+                                Counterfactual
+                            </button>
+                            <span class="tooltip-text">
+                                Generates a <b>modified</b> version of a given <b>single example</b> (ID) that <b>flips</b> the model's <b>prediction</b> from one label to another.
+                            </span>
+                        </div>
+                        <div class="tooltip-wrapper">
+                            <button id="ptb_adversarial" class="idea-button" onclick="sampleAdversarial()">
+                                Adversarial example
+                            </button>
+                            <span class="tooltip-text">
+                                Generates a <b>modified</b> version of a given <b>single example</b> (ID) that <b>flips</b> the model's <b>prediction</b> from correct to <b>wrong</b>.
+                            </span>
+                        </div>
+                        <div class="tooltip-wrapper">
+                            <button id="ptb_augment" class="idea-button" onclick="sampleAugment()">
+                                Augment
+                            </button>
+                            <span class="tooltip-text">
+                                Generates a <b>modified</b> version of a given <b>single example</b> (ID) that can be used as a <b>new data point</b>.
+                            </span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         </main>
@@ -179,25 +399,25 @@
     </section>
 
     <section>
-
         <!-- OLD DATASET VIEWER PLACEMENT -->
         <!-- Displaying data -->
         <!-- Referring jinja2 syntax -->
     </section>
-        <!--        <section class="pins" id="my-pins">-->
-        <!--          <header class="pins-header">-->
-        <!--            <div class="pins-header-title">-->
-        <!--             Pins-->
-        <!--            </div>-->
-        <!--          </header>-->
-        <!--            <main class="pins-scroll"> &lt;!&ndash; pinned messages appear here &ndash;&gt;-->
-        <!--                <div class="pin left-msg">-->
-        <!--                  <div class="pin-bubble">-->
-        <!--                    <div class="pin-text">Pin messages and they will appear here!</div>-->
-        <!--                  </div>-->
-        <!--                </div>-->
-        <!--            </main>-->
-        <!--        </section>-->
+
+    <!--        <section class="pins" id="my-pins">-->
+    <!--          <header class="pins-header">-->
+    <!--            <div class="pins-header-title">-->
+    <!--             Pins-->
+    <!--            </div>-->
+    <!--          </header>-->
+    <!--            <main class="pins-scroll"> &lt;!&ndash; pinned messages appear here &ndash;&gt;-->
+    <!--                <div class="pin left-msg">-->
+    <!--                  <div class="pin-bubble">-->
+    <!--                    <div class="pin-text">Pin messages and they will appear here!</div>-->
+    <!--                  </div>-->
+    <!--                </div>-->
+    <!--            </main>-->
+    <!--        </section>-->
 </messagebody>
 </body>
 </html>
@@ -206,7 +426,7 @@
     $('.opendv').click(function (e) {
         var chatWidth = $('.ttm-chat').width();
         if ($('.slideSideways').is(':visible')) {
-            $('.slideSideways').animate({left: chatWidth}, function() {
+            $('.slideSideways').animate({left: chatWidth}, function () {
                 $(this).hide();
             });
         } else {
@@ -222,7 +442,22 @@
 </script>
 
 <script>
-    function applyInclude(){
+    function disableBtn(flag) {
+        if(!flag) {
+            document.getElementById("custom_input_btns").style.display = "table-row";
+        } else {
+            document.getElementById("custom_input_btns").style.display = "none";
+        }
+    }
+
+    function checkSubmit(e) {
+        if (e && e.keyCode === 13) {
+            document.getElementById("ttm-send-btn-id").click();
+             document.getElementById("textInput").value = "";
+        }
+    }
+
+    function applyInclude() {
         let filter_string = document.getElementById("filterdataInput").value;
         document.getElementById("textInput").value = filter_string;
 
@@ -250,15 +485,19 @@
         });
     }
 
-    function sampleSentence(){
+    function sampleKeyword() {
+        doSample("keyword");
+    }
+
+    function sampleSentence() {
         doSample("sentence");
     }
 
-    function sampleAdversarial(){
+    function sampleAdversarial() {
         doSample("adversarial");
     }
 
-    function sampleAugment(){
+    function sampleAugment() {
         doSample("augment");
     }
 
@@ -278,16 +517,28 @@
         doSample("random_predict");
     }
 
-    function sampleDataDescription() {
-        doSample("description");
+    function sampleTrainDataDescription() {
+        doSample("describe_train_data");
+    }
+
+    function sampleTestDataDescription() {
+        doSample("describe_test_data");
+    }
+
+    function sampleCountData() {
+        doSample("countdata");
     }
 
     function samplePerformance() {
         doSample("score");
     }
 
-    function sampleMistakes() {
-        doSample("mistake");
+    function sampleMistakeCount() {
+        doSample("mistake_count");
+    }
+
+    function sampleMistakeSample() {
+        doSample("mistake_sample");
     }
 
     function sampleFlip() {
@@ -300,6 +551,10 @@
 
     function sampleImportant() {
         doSample("important");
+    }
+
+    function sampleImportantClass() {
+        doSample("important_class");
     }
 
     function sampleLabels() {
@@ -318,6 +573,10 @@
         doSample("predict");
     }
 
+    function samplePredictDataset() {
+        doSample("predict_dataset");
+    }
+
     function sampleLikelihood() {
         doSample("likelihood");
     }
@@ -326,15 +585,40 @@
         doSample("show");
     }
 
-    function sampleCapabilities() {
+    function sampleAboutFunction() {
         doSample("function");
     }
 
-    function sampleInteractions() {
-        doSample("interactions")
+    function sampleAboutSelf() {
+        doSample("self");
     }
 </script>
 
+<script>
+    document.querySelectorAll('.tooltip-wrapper').forEach((wrapper) => {
+        const tooltip = wrapper.querySelector('.tooltip-text');
+        wrapper.addEventListener('mouseenter', () => {
+            const wrapperRect = wrapper.getBoundingClientRect();
+            const tooltipRect = tooltip.getBoundingClientRect();
+
+            if (wrapperRect.left + tooltipRect.width > window.innerWidth) {
+                tooltip.style.left = 'auto';
+                tooltip.style.right = '0';
+            } else {
+                tooltip.style.left = '50%';
+                tooltip.style.right = 'auto';
+            }
+
+            if (wrapperRect.top < tooltipRect.height) {
+                tooltip.style.bottom = 'auto';
+                tooltip.style.top = '125%';
+            } else {
+                tooltip.style.bottom = '125%';
+                tooltip.style.top = 'auto';
+            }
+        });
+    });
+</script>
 
 <script src='https://use.fontawesome.com/releases/v5.0.13/js/all.js'></script>
 <script>
@@ -383,11 +667,13 @@
 
             if (msgText == "quit") {
                 changeBtnColor(false);
+                disableBtn(true);
             }
         } else if (document.getElementsByTagName("option")[idx].value === '1') {
             selectBox.selectedIndex = "0";
             botResponse(msgText, custom_input = '1');
             changeBtnColor(true);
+            disableBtn(false);
         } else {
             selectBox.selectedIndex = "0";
             botResponse(msgText, custom_input = '2');
@@ -395,11 +681,11 @@
     });
 
     function changeBtnColor(flag) {
-        let ids = ["c_feat_sent", "c_feat", "c_pred"]
+        let ids = ["c_feat-sent", "c_feat", "c_pred"]
 
         if (flag) {
             ids.forEach(id => {
-                document.getElementById(id).style.border = "5px solid yellow";
+                document.getElementById(id).style.border = "3px solid rgba(63, 103, 232, 0.96)";
             });
         } else {
             ids.forEach(id => {
@@ -503,15 +789,18 @@
                         <button title="confused" class="unhappy-button" id="confusedbutton" onclick="answeredConfused('${logText}');">😕</button>
                     </div>
                 </div>
-                  <div class="pin-button">
-                    <svg onclick="pinMessage('${modifiedText}')" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pin-angle-fill" viewBox="0 0 16 16">
-                      <path d="M9.828.722a.5.5 0 0 1 .354.146l4.95 4.95a.5.5 0 0 1 0 .707c-.48.48-1.072.588-1.503.588-.177 0-.335-.018-.46-.039l-3.134 3.134a5.927 5.927 0 0 1 .16 1.013c.046.702-.032 1.687-.72 2.375a.5.5 0 0 1-.707 0l-2.829-2.828-3.182 3.182c-.195.195-1.219.902-1.414.707-.195-.195.512-1.22.707-1.414l3.182-3.182-2.828-2.829a.5.5 0 0 1 0-.707c.688-.688 1.673-.767 2.375-.72a5.922 5.922 0 0 1 1.013.16l3.134-3.133a2.772 2.772 0 0 1-.04-.461c0-.43.108-1.022.589-1.503a.5.5 0 0 1 .353-.146z"/>
-                    </svg>
-                  </div>
               </div>
             </div>
             </div>
             `;
+            /**
+             * <div class="pin-button">
+             *                     <svg onclick="pinMessage('${modifiedText}')" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pin-angle-fill" viewBox="0 0 16 16">
+             *                       <path d="M9.828.722a.5.5 0 0 1 .354.146l4.95 4.95a.5.5 0 0 1 0 .707c-.48.48-1.072.588-1.503.588-.177 0-.335-.018-.46-.039l-3.134 3.134a5.927 5.927 0 0 1 .16 1.013c.046.702-.032 1.687-.72 2.375a.5.5 0 0 1-.707 0l-2.829-2.828-3.182 3.182c-.195.195-1.219.902-1.414.707-.195-.195.512-1.22.707-1.414l3.182-3.182-2.828-2.829a.5.5 0 0 1 0-.707c.688-.688 1.673-.767 2.375-.72a5.922 5.922 0 0 1 1.013.16l3.134-3.133a2.772 2.772 0 0 1-.04-.461c0-.43.108-1.022.589-1.503a.5.5 0 0 1 .353-.146z"/>
+             *                     </svg>
+             *                   </div>
+             * */
+
             ttmChat.insertAdjacentHTML("beforeend", msgHTML);
             document.addEventListener("click", doReact);
 
@@ -732,7 +1021,7 @@
         })
     });
 
-    function addId(_id){
+    function addId(_id) {
         let string = "For id ";
         string += _id;
         string += ", "
