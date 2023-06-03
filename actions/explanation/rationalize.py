@@ -4,18 +4,18 @@ from timeout import timeout
 import json
 import pandas as pd
 
-def get_results(dataset,data_path):
+def get_results(dataset_name,data_path):
     """
     Get the rationlize result
 
     Args:
         data_path: path to json file
     Returns:
-        results: results in JSON format
-        model: explainer model
+        results: results in csv format
     """
-
-    results = pd.read_csv(data_path/dataset+"/dolly-rationales.csv", "r")
+    path =data_path +dataset_name+"/dolly-rationales.csv"
+    print(path)
+    results = pd.read_csv(path)
 
     return results
 
@@ -31,7 +31,7 @@ def get_few_shot_str(csv_filename, num_shots=3):
 
 
 @timeout(60)
-def rationalize_operation(conversation, parse_text, i, data_path="cache/", **kwargs):
+def rationalize_operation(conversation, parse_text, i, data_path="./cache/", **kwargs):
     if not conversation.decoder.gpt_parser_initialized:
         return f"Rationalize operation not enabled for {conversation.decoder.parser_name}"
 
@@ -51,7 +51,7 @@ def rationalize_operation(conversation, parse_text, i, data_path="cache/", **kwa
 
     if len(conversation.temp_dataset.contents["X"]) == 0:
         return "There are no instances that meet this description!", 0
-    results = get_results(dataset, data_path)
+    results = get_results(dataset_name, data_path)
     # Few-shot setting
     few_shot = True
 
@@ -97,8 +97,10 @@ def rationalize_operation(conversation, parse_text, i, data_path="cache/", **kwa
 
         if idx in results['Id']:
             inputs = text
-            explanation = results['Explanation']
-            return_s += inputs + "<br><b>Explanation:</b> " + explanation
+            explanation = results.loc[idx]['Explanation']
+            return_s += "<b>Original text:</b> " + text \
+                        + "<br><b>Prediction:</b> " + pred_str \
+                        + "<br><b>Explanation:</b> " + explanation
         else:
             prompt = f"{few_shot_str}" \
                      f"{text}\n" \
