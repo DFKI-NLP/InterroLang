@@ -85,7 +85,7 @@ def generate_rationale(dataset_name,write_path):
                     no_repeat_ngram_size=2,
                 )
                 decoded_generation = gpt_tokenizer.decode(generation[0], skip_special_tokens=True)
-                explanation = decoded_generation.split("explain why: ")[1]
+                explanation = decoded_generation.split("explain why: ")[-1]
                 writer.writerow([idx,instance[0], instance[1],explanation])
     elif dataset_name == "daily_dialog":
         model = DANetwork()
@@ -138,7 +138,8 @@ def generate_rationale(dataset_name,write_path):
                 )
                 decoded_generation = gpt_tokenizer.decode(generation[0], skip_special_tokens=True)
                 #
-                writer.writerow([idx,instance,decoded_generation])
+                explanation = decoded_generation.split("explain why: ")[-1]
+                writer.writerow([idx,instance,explanation])
     else:
         model = AutoModelForSequenceClassification.from_pretrained("sinhala-nlp/mbert-olid-en")
         device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -189,7 +190,7 @@ def generate_rationale(dataset_name,write_path):
                 decoded_generation = gpt_tokenizer.decode(generation[0], skip_special_tokens=True)
                 #
                 # inputs = decoded_generation.split("Based on ")[0]
-                explanation = decoded_generation.split("explain why: ")[1]
+                explanation = decoded_generation.split("explain why: ")[-1]
                 writer.writerow([idx, instance, explanation])
 
 
