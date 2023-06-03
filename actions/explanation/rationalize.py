@@ -14,7 +14,6 @@ def get_results(dataset_name,data_path):
         results: results in csv format
     """
     path =data_path +dataset_name+"/dolly-rationales.csv"
-    print(path)
     results = pd.read_csv(path)
 
     return results
@@ -40,7 +39,7 @@ def rationalize_operation(conversation, parse_text, i, data_path="./cache/", **k
     id_list = []
     for item in parse_text:
         try:
-            if int(item):
+            if type(int(item)) == int:
                 id_list.append(int(item))
         except ValueError:
             pass
@@ -57,6 +56,7 @@ def rationalize_operation(conversation, parse_text, i, data_path="./cache/", **k
 
     return_s = ""
     for idx in id_list:
+
         instance = dataset.loc[[idx]].values.tolist()[0]
 
         model_predictions = model.predict(dataset, idx)
@@ -94,7 +94,6 @@ def rationalize_operation(conversation, parse_text, i, data_path="./cache/", **k
 
         if few_shot:
             few_shot_str += get_few_shot_str(gpt_rationales)
-
         if idx in results['Id']:
             inputs = text
             explanation = results.loc[idx]['Explanation']
