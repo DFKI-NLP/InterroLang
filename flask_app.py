@@ -92,15 +92,18 @@ def log_feedback():
     assert split_feedback[0].startswith("MessageID: "), message
     assert split_feedback[1].startswith("Feedback: "), message
     assert split_feedback[2].startswith("Username: "), message
+    assert split_feedback[3].startswith("Answer: "), message
 
     message_id = split_feedback[0][len("MessageID: "):]
     feedback_text = split_feedback[1][len("Feedback: "):]
     username = split_feedback[2][len("Username: "):]
+    answer = split_feedback[3][len("Answer: "):]
 
     logging_info = {
         "id": message_id,
         "feedback_text": feedback_text,
-        "username": username
+        "username": username,
+        "answer": answer
     }
 
     feedback_cache = "./cache/feedback.json"

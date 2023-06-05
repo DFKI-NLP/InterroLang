@@ -639,6 +639,8 @@
 
 </script>
 <script>
+    var counter = 0;
+
     const ttmForm = get(".ttm-inputarea");
     const ttmInput = get(".ttm-input");
     const ttmChat = get(".ttm-chat");
@@ -695,44 +697,32 @@
     }
 
     function corr_answeredNo(logText) {
-        // Fade out
-        // $('.all-feedback').fadeOut(250, function () {
-        //     $('.all-feedback').remove();
-        // });
+        let answer = document.getElementById("msg-text-"+counter).innerText;
 
-        const feedback = `MessageID: ${logText} || Feedback: Correctness Negative || Username: {{ currentUserId }}`;
+        const feedback = `MessageID: ${logText} || Feedback: Correctness Negative || Username: {{ currentUserId }} || Answer: ${answer}`;
         logFeedback(feedback);
     }
 
     function flu_answeredNo(logText) {
-        // Fade out
-        // $('.all-feedback').fadeOut(250, function () {
-        //     $('.all-feedback').remove();
-        // });
+        let answer = document.getElementById("msg-text-"+counter).innerText;
 
-        const feedback = `MessageID: ${logText} || Feedback: Fluency Negative || Username: {{ currentUserId }}`;
+        const feedback = `MessageID: ${logText} || Feedback: Fluency Negative || Username: {{ currentUserId }} || Answer: ${answer}`;
         logFeedback(feedback);
     }
 
 
     function help_answeredNo(logText) {
-        // Fade out
-        // $('.all-feedback').fadeOut(250, function () {
-        //     $('.all-feedback').remove();
-        // });
+        let answer = document.getElementById("msg-text-"+counter).innerText;
 
-        const feedback = `MessageID: ${logText} || Feedback: Helpful Negative || Username: {{ currentUserId }}`;
+        const feedback = `MessageID: ${logText} || Feedback: Helpful Negative || Username: {{ currentUserId }} || Answer: ${answer}`;
         logFeedback(feedback);
     }
 
 
     function sat_answeredNo(logText) {
-        // Fade out
-        // $('.all-feedback').fadeOut(250, function () {
-        //     $('.all-feedback').remove();
-        // });
+        let answer = document.getElementById("msg-text-"+counter).innerText;
 
-        const feedback = `MessageID: ${logText} || Feedback: Satisfaction Negative || Username: {{ currentUserId }}`;
+        const feedback = `MessageID: ${logText} || Feedback: Satisfaction Negative || Username: {{ currentUserId }} || Answer: ${answer}`;
         logFeedback(feedback);
     }
 
@@ -757,38 +747,26 @@
     }
 
     function corr_answeredYes(logText) {
-        // Fade out
-        // $('.all-feedback').fadeOut(250, function () {
-        //     $('.all-feedback').remove();
-        // });
-        const feedback = `MessageID: ${logText} || Feedback: Correctness Positive || Username: {{ currentUserId }}`;
+        let answer = document.getElementById("msg-text-"+counter).innerText;
+        const feedback = `MessageID: ${logText} || Feedback: Correctness Positive || Username: {{ currentUserId }} || Answer: ${answer}`;
         logFeedback(feedback);
     }
 
     function flu_answeredYes(logText) {
-        // Fade out
-        // $('.all-feedback').fadeOut(250, function () {
-        //     $('.all-feedback').remove();
-        // });
-        const feedback = `MessageID: ${logText} || Feedback: Fluency Positive || Username: {{ currentUserId }}`;
+        let answer = document.getElementById("msg-text-"+counter).innerText;
+        const feedback = `MessageID: ${logText} || Feedback: Fluency Positive || Username: {{ currentUserId }} || Answer: ${answer}`;
         logFeedback(feedback);
     }
 
     function help_answeredYes(logText) {
-        // Fade out
-        // $('.all-feedback').fadeOut(250, function () {
-        //     $('.all-feedback').remove();
-        // });
-        const feedback = `MessageID: ${logText} || Feedback: Helpful Positive || Username: {{ currentUserId }}`;
+        let answer = document.getElementById("msg-text-"+counter).innerText;
+        const feedback = `MessageID: ${logText} || Feedback: Helpful Positive || Username: {{ currentUserId }} || Answer: ${answer}`;
         logFeedback(feedback);
     }
 
     function sat_answeredYes(logText) {
-        // Fade out
-        // $('.all-feedback').fadeOut(250, function () {
-        //     $('.all-feedback').remove();
-        // });
-        const feedback = `MessageID: ${logText} || Feedback: Satisfaction Positive || Username: {{ currentUserId }}`;
+        let answer = document.getElementById("msg-text-"+counter).innerText;
+        const feedback = `MessageID: ${logText} || Feedback: Satisfaction Positive || Username: {{ currentUserId }} || Answer: ${answer}`;
         logFeedback(feedback);
     }
 
@@ -833,10 +811,11 @@
         // modifiedText = modifiedText.replace("(", "");
         // modifiedText = modifiedText.replace(")", "");
         if (side == "left") {
+            counter++;
             msgHTML = `
             <div class="msg ${side}-msg">
               <div class="msg-bubble">
-                <div class="msg-text">${text}</div>
+                <div class="msg-text" id="msg-text-${counter}">${text}</div>
               <div class="happy-sad-unsure-response">
                 <div class="all-feedback">
                 <div class="feedback-opener">
