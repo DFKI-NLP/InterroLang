@@ -83,8 +83,13 @@ similarity: similarword ( {topkvalues} )
 similarword: " similar"
 
 whatami: " self"
-"""  # noqa: E501
 
+%import common.WS
+%ignore WS
+%ignore /\#.*/
+
+"""
+# noqa: E501
 # append the cat feature name and
 # the values in another nonterminal
 CAT_FEATURES = r"""
