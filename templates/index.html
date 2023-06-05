@@ -694,15 +694,48 @@
         }
     }
 
-    function answeredNo(logText) {
+    function corr_answeredNo(logText) {
         // Fade out
-        $('.all-feedback').fadeOut(250, function () {
-            $('.all-feedback').remove();
-        });
+        // $('.all-feedback').fadeOut(250, function () {
+        //     $('.all-feedback').remove();
+        // });
 
-        const feedback = `MessageID: ${logText} || Feedback: Negative || Username: {{ currentUserId }}`;
+        const feedback = `MessageID: ${logText} || Feedback: Correctness Negative || Username: {{ currentUserId }}`;
         logFeedback(feedback);
     }
+
+    function flu_answeredNo(logText) {
+        // Fade out
+        // $('.all-feedback').fadeOut(250, function () {
+        //     $('.all-feedback').remove();
+        // });
+
+        const feedback = `MessageID: ${logText} || Feedback: Fluency Negative || Username: {{ currentUserId }}`;
+        logFeedback(feedback);
+    }
+
+
+    function help_answeredNo(logText) {
+        // Fade out
+        // $('.all-feedback').fadeOut(250, function () {
+        //     $('.all-feedback').remove();
+        // });
+
+        const feedback = `MessageID: ${logText} || Feedback: Helpful Negative || Username: {{ currentUserId }}`;
+        logFeedback(feedback);
+    }
+
+
+    function sat_answeredNo(logText) {
+        // Fade out
+        // $('.all-feedback').fadeOut(250, function () {
+        //     $('.all-feedback').remove();
+        // });
+
+        const feedback = `MessageID: ${logText} || Feedback: Satisfaction Negative || Username: {{ currentUserId }}`;
+        logFeedback(feedback);
+    }
+
 
     function answeredInsight(logText) {
         $('.all-feedback').fadeOut(250, function () {
@@ -723,12 +756,39 @@
         logFeedback(feedback);
     }
 
-    function answeredYes(logText) {
+    function corr_answeredYes(logText) {
         // Fade out
-        $('.all-feedback').fadeOut(250, function () {
-            $('.all-feedback').remove();
-        });
-        const feedback = `MessageID: ${logText} || Feedback: Positive || Username: {{ currentUserId }}`;
+        // $('.all-feedback').fadeOut(250, function () {
+        //     $('.all-feedback').remove();
+        // });
+        const feedback = `MessageID: ${logText} || Feedback: Correctness Positive || Username: {{ currentUserId }}`;
+        logFeedback(feedback);
+    }
+
+    function flu_answeredYes(logText) {
+        // Fade out
+        // $('.all-feedback').fadeOut(250, function () {
+        //     $('.all-feedback').remove();
+        // });
+        const feedback = `MessageID: ${logText} || Feedback: Fluency Positive || Username: {{ currentUserId }}`;
+        logFeedback(feedback);
+    }
+
+    function help_answeredYes(logText) {
+        // Fade out
+        // $('.all-feedback').fadeOut(250, function () {
+        //     $('.all-feedback').remove();
+        // });
+        const feedback = `MessageID: ${logText} || Feedback: Helpful Positive || Username: {{ currentUserId }}`;
+        logFeedback(feedback);
+    }
+
+    function sat_answeredYes(logText) {
+        // Fade out
+        // $('.all-feedback').fadeOut(250, function () {
+        //     $('.all-feedback').remove();
+        // });
+        const feedback = `MessageID: ${logText} || Feedback: Satisfaction Positive || Username: {{ currentUserId }}`;
         logFeedback(feedback);
     }
 
@@ -782,17 +842,41 @@
                 <div class="feedback-opener">
                     Feedback
                   </div>
-                   <div class="feedback-form" >
-                        <button title="positive" class="unhappy-button" id="yesbutton" onclick="answeredYes('${logText}');">👍</button>
-                        <button title="negative" class="unhappy-button" id="nobutton" onclick="answeredNo('${logText}');">👎</button>
-                        <button title="insightful" class="unhappy-button" id="insightbutton" onclick="answeredInsight('${logText}');">💡</button>
-                        <button title="confused" class="unhappy-button" id="confusedbutton" onclick="answeredConfused('${logText}');">😕</button>
+                   <div class="feedback-form container" >
+                        <div class="row">
+                        <button style="font-size: 10px;">Correctness: </button>
+                        <button title="positive" class="unhappy-button" id="corr_yesbutton" onclick="corr_answeredYes('${logText}');">👍</button>
+                        <button title="negative" class="unhappy-button" id="corr_nobutton" onclick="corr_answeredNo('${logText}');">👎</button>
+                        </div>
+
+                        <div class="row">
+                        <button style="font-size: 10px;">Fluency: </button>
+                        <button title="positive" class="unhappy-button" id="flu_yesbutton" onclick="flu_answeredYes('${logText}');">👍</button>
+                        <button title="negative" class="unhappy-button" id="flu_nobutton" onclick="flu_answeredNo('${logText}');">👎</button>
+                        </div>
+
+                        <div class="row">
+                        <button style="font-size: 10px;">Helpful: </button>
+                        <button title="positive" class="unhappy-button" id="help_yesbutton" onclick="help_answeredYes('${logText}');">👍</button>
+                        <button title="negative" class="unhappy-button" id="help_nobutton" onclick="help_answeredNo('${logText}');">👎</button>
+                        </div>
+
+                        <div class="row">
+                        <button style="font-size: 10px;">Satisfaction: </button>
+                        <button title="positive" class="unhappy-button" id="sat_yesbutton" onclick="sat_answeredYes('${logText}');">👍</button>
+                        <button title="negative" class="unhappy-button" id="sat_nobutton" onclick="sat_answeredNo('${logText}');">👎</button>
+                        </div>
                     </div>
                 </div>
               </div>
             </div>
             </div>
             `;
+
+            // <button title="insightful" className="unhappy-button" id="insightbutton"
+            //         onClick="answeredInsight('${logText}');">💡</button>
+            // <button title="confused" className="unhappy-button" id="confusedbutton"
+            //         onClick="answeredConfused('${logText}');">😕</button>
             /**
              * <div class="pin-button">
              *                     <svg onclick="pinMessage('${modifiedText}')" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pin-angle-fill" viewBox="0 0 16 16">
