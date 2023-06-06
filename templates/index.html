@@ -703,14 +703,6 @@
         logFeedback(feedback);
     }
 
-    function flu_answeredNo(logText) {
-        let answer = document.getElementById("msg-text-"+counter).innerText;
-
-        const feedback = `MessageID: ${logText} || Feedback: Fluency Negative || Username: {{ currentUserId }} || Answer: ${answer}`;
-        logFeedback(feedback);
-    }
-
-
     function help_answeredNo(logText) {
         let answer = document.getElementById("msg-text-"+counter).innerText;
 
@@ -749,12 +741,6 @@
     function corr_answeredYes(logText) {
         let answer = document.getElementById("msg-text-"+counter).innerText;
         const feedback = `MessageID: ${logText} || Feedback: Correctness Positive || Username: {{ currentUserId }} || Answer: ${answer}`;
-        logFeedback(feedback);
-    }
-
-    function flu_answeredYes(logText) {
-        let answer = document.getElementById("msg-text-"+counter).innerText;
-        const feedback = `MessageID: ${logText} || Feedback: Fluency Positive || Username: {{ currentUserId }} || Answer: ${answer}`;
         logFeedback(feedback);
     }
 
@@ -826,12 +812,6 @@
                         <button style="font-size: 10px;">Correctness: </button>
                         <button title="positive" class="unhappy-button" id="corr_yesbutton" onclick="corr_answeredYes('${logText}');">👍</button>
                         <button title="negative" class="unhappy-button" id="corr_nobutton" onclick="corr_answeredNo('${logText}');">👎</button>
-                        </div>
-
-                        <div class="row">
-                        <button style="font-size: 10px;">Fluency: </button>
-                        <button title="positive" class="unhappy-button" id="flu_yesbutton" onclick="flu_answeredYes('${logText}');">👍</button>
-                        <button title="negative" class="unhappy-button" id="flu_nobutton" onclick="flu_answeredNo('${logText}');">👎</button>
                         </div>
 
                         <div class="row">
