@@ -371,12 +371,12 @@ parse {
 }
 
 .opendv {
-  position: absolute; /* Make the button position absolute so it can overlay the chat */
-  right: 0px; /* Position it to the right of the chat container */
-  top: 0px; /* Position it to the top of the chat container */
-  padding: 0px;
+  position: sticky; /* Make the button position absolute so it can overlay the chat */
+  left: 0px; /* Position it to the right of the chat container */
+  top: 5px; /* Position it to the top of the chat container */
+  padding: 5px;
   cursor: pointer;
-  background: #eee;
+  background: #e6e6fa;
   width: 150px;
   height: 50px;
   border: none;
@@ -385,7 +385,7 @@ parse {
 }
 
 .slideSideways {
-  position: absolute; /* Make the dataset viewer position absolute to overlay the chat */
+  position: sticky; /* Make the dataset viewer position absolute to overlay the chat */
   top: 0;
   left: calc(50% - 10px); /*left: 100%;*/
   width: calc(50% + 10px); /*width: 50%; /* Start with width 0 */

@@ -136,7 +136,6 @@ def sample_prompt():
                                       BOT.prompts.filename_to_prompt_id,
                                       BOT.prompts.final_prompt_set,
                                       real_ids=BOT.conversation.get_training_data_ids())
-
     logging_info = {
         "username": username,
         "requested_action_generation": action,
