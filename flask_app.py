@@ -1,4 +1,6 @@
 """The app main."""
+import uuid
+
 import gin
 import json
 import logging
@@ -13,6 +15,8 @@ from logging.config import dictConfig
 from logic.core import ExplainBot
 from logic.sample_prompts_by_action import sample_prompt_for_action
 from timeout import TimeOutError
+
+my_uuid = uuid.uuid4()
 
 
 # gunicorn doesn't have command line flags, using a gin file to pass command line args
@@ -108,7 +112,7 @@ def log_feedback():
         "parsed_text": BOT.parsed_text
     }
 
-    feedback_cache = "./cache/feedback.json"
+    feedback_cache = f"./feedback/feedback-{my_uuid}.json"
 
     if os.path.exists(feedback_cache):
         fileObject = open(feedback_cache, "r")
