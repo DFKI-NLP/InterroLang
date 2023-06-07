@@ -62,6 +62,8 @@ for file in json_files:
     olid_json_res = {}
     dd_json_res = {}
 
+    file = file[:file.index(".")]
+
     for i in range(len(actions)):
         boolq_json_res[actions[i]] = boolq_ls[i]
         olid_json_res[actions[i]] = olid_ls[i]
