@@ -7,7 +7,9 @@
 
 # InterroLang
 
-TalkToModel (Slack et al., 2022) adaptation to NLP use cases (question answering, hate speech detection, dialogue act classification).
+A TalkToModel (Slack et al., 2022) adaptation to NLP use cases (question answering, hate speech detection, dialogue act classification).
+The name is a word-play on [Interrobang](https://en.wikipedia.org/wiki/Interrobang), a ligature of question mark and exclamation mark, and **Lang**uage models.
+Our tool offers a dialogue-based exploration of NLP interpretability methods (feature attribution, counterfactuals and perturbations, free-text rationalization) and dataset analyses (similar examples, keywords, label distribution).
 
 <p align="center">
 &nbsp;&nbsp;&nbsp;
@@ -17,16 +19,16 @@ TalkToModel (Slack et al., 2022) adaptation to NLP use cases (question answering
 ## InterroLang Interface
 ![](./static/images/interface.png)
 We consider 7 categories of operations.
-- About: capabilities of our system.
-- Metadata: information in terms of data, model, label.
-- Prediction: various operations related to golden labels and predictions.
-- Understanding: find some similar instances.
-- Explanation: different kinds of methods to explain an instance / dataset.
-- Custom input: we not only allow instances from the dataset but also instances given by user. (More details see [below](https://github.com/nfelnlp/InterroLang#process))
-- Perturbation: operations would change some parts of instance such that the label of the instance would change.  
+- About: Capabilities of our system.
+- Metadata: Information in terms of data, model, labels.
+- Prediction: Various operations related to gold labels and model predictions.
+- Understanding: Keyword-based analysis and retrieval of similar instances.
+- Explanation: Feature attribution methods (local-, class-, global-level) and free-text rationalization.
+- Perturbation: Methods to change some parts of an instance, e.g. such that the label of the instance would change.
+- Custom input: We not only allow instances from the dataset but also instances given by users. (More details see [below](https://github.com/nfelnlp/InterroLang#process))
 
 ### Dataset Viewer
-We provide a dataset view, with which user can explore instances containing in the current dataset (in screenshot, BoolQ dataset is used). User can enter a token to search instances that include the entered token. 
+We provide a dataset view with which users can explore instances contained in the pre-defined dataset (in screenshot, BoolQ dataset is used). Users can search instances that include the entered string. 
 ![](./static/images/data_viewer.png)
 
 ## Datasets / Use cases
@@ -45,7 +47,7 @@ conda create -n interrolang python=3.9
 conda activate interrolang
 ```
 
-#### Venv
+#### venv
 ```shell
 python -m venv venv
 source venv/venv/activate
@@ -74,16 +76,18 @@ bash dependency.sh
 ```
 
 ### Download models
-### How to get used models?
-- BoolQ model: https://huggingface.co/andi611/distilbert-base-uncased-qa-boolq
-- OLID model: https://huggingface.co/sinhala-nlp/mbert-olid-en
-- Daily Dialog model: https://cloud.dfki.de/owncloud/index.php/s/m72HGNLW2TyCABr
+In our tool, we currently use the following Transformer models: 
+
+- DistilBERT fine-tuned on BoolQ: https://huggingface.co/andi611/distilbert-base-uncased-qa-boolq (HF)
+- MultiBERT fine-tuned on OLID: https://huggingface.co/sinhala-nlp/mbert-olid-en (HF)
+- BERT fine-tuned on DailyDialog: https://cloud.dfki.de/owncloud/index.php/s/m72HGNLW2TyCABr (DFKI)
 
 #### For BoolQ and OLID Model:
 Put them under `./data` and name the folders `boolq_model` and `olid_model` respectively.
 
 #### For Daily Dialog model:
 Put the file `5e_5e-06lr` under `./explained_models/da_classifier/saved_model`
+
 
 ### Set up configuration
 In `./configs`, there are all gin config files for all three datasets with different parsing models. You can choose one of them and set its path in `./global_config.gin`:
@@ -97,10 +101,23 @@ You can launch the Flask web app via
 python flask_app.py
 ```
 
-### Use Guidance
+
+## Running with Docker
+
+If you want to run with Docker, you can build the docker app
+```bash
+sudo docker build -t interrolang .
+```
+
+And then run the image
+```bash
+sudo docker run -d -p 4000:4000 interrolang
+```
+
+## User Guide
 After the project is set up, we provide a [user guidance](https://github.com/nfelnlp/InterroLang/blob/main/utils/user_guide.py) using Selenium to demonstrate how to use our system if you have Chrome Browser available.
 
-## How to use custom input?
+## How to use custom input
 ### Supported operations
 1. feature importance on token level
 2. feature importance on sentence level
