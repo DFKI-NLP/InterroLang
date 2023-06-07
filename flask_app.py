@@ -103,7 +103,9 @@ def log_feedback():
         "id": message_id,
         "feedback_text": feedback_text,
         "username": username,
-        "answer": answer
+        "answer": answer,
+        "dataset": BOT.conversation.describe.get_dataset_name(),
+        "parsed_text": BOT.parsed_text
     }
 
     feedback_cache = "./cache/feedback.json"

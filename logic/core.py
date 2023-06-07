@@ -160,6 +160,8 @@ class ExplainBot:
                           store_to_conversation=True,
                           skip_prompts=skip_prompts)
 
+        self.parsed_text = None
+
         if "adapters" in parsing_model_name:
             bert_model = "bert-base-uncased"
             self.intent_adapter_model = AutoAdapterModel.from_pretrained(bert_model)
@@ -889,6 +891,8 @@ class ExplainBot:
                 user_session_conversation.needs_clarification = False
                 returned_item = run_action(
                     user_session_conversation, parse_tree, parsed_text)
+
+        self.parsed_text = parsed_text
 
         username = user_session_conversation.username
 
