@@ -1,5 +1,6 @@
 """The app main."""
 import uuid
+from os.path import isfile, join
 
 import gin
 import json
@@ -112,7 +113,17 @@ def log_feedback():
         "parsed_text": BOT.parsed_text
     }
 
-    feedback_cache = f"./feedback/feedback-{my_uuid}.json"
+    files = [f for f in os.listdir("./feedback") if isfile(join("./feedback", f))]
+    json_files = [f for f in files if (
+            f.endswith(".json") and not f.endswith("boolq.json") and not f.endswith("olid.json") and not f.endswith(
+        "daily_dialog.json"))]
+
+    if len(json_files) == 0:
+        feedback_cache = f"./feedback/feedback-{my_uuid}.json"
+    else:
+        feedback_cache = f"./feedback/{json_files[0]}"
+
+    print(feedback_cache)
 
     if os.path.exists(feedback_cache):
         fileObject = open(feedback_cache, "r")
