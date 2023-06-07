@@ -1,0 +1,172 @@
+[
+  {
+    "self": {
+      "Correctness Positive": 0,
+      "Correctness Negative": 0,
+      "Satisfaction Positive": 0,
+      "Satisfaction Negative": 0,
+      "Helpfulness Positive": 0,
+      "Helpfulness Negative": 0
+    },
+    "adversarial": {
+      "Correctness Positive": 0,
+      "Correctness Negative": 0,
+      "Satisfaction Positive": 0,
+      "Satisfaction Negative": 0,
+      "Helpfulness Positive": 0,
+      "Helpfulness Negative": 0
+    },
+    "augment": {
+      "Correctness Positive": 0,
+      "Correctness Negative": 0,
+      "Satisfaction Positive": 0,
+      "Satisfaction Negative": 0,
+      "Helpfulness Positive": 0,
+      "Helpfulness Negative": 0
+    },
+    "cfe": {
+      "Correctness Positive": 0,
+      "Correctness Negative": 0,
+      "Satisfaction Positive": 0,
+      "Satisfaction Negative": 0,
+      "Helpfulness Positive": 0,
+      "Helpfulness Negative": 0
+    },
+    "data": {
+      "Correctness Positive": 0,
+      "Correctness Negative": 0,
+      "Satisfaction Positive": 0,
+      "Satisfaction Negative": 0,
+      "Helpfulness Positive": 0,
+      "Helpfulness Negative": 0
+    },
+    "nlpattribute": {
+      "Correctness Positive": 0,
+      "Correctness Negative": 0,
+      "Satisfaction Positive": 0,
+      "Satisfaction Negative": 0,
+      "Helpfulness Positive": 0,
+      "Helpfulness Negative": 0
+    },
+    "filter": {
+      "Correctness Positive": 0,
+      "Correctness Negative": 0,
+      "Satisfaction Positive": 0,
+      "Satisfaction Negative": 0,
+      "Helpfulness Positive": 0,
+      "Helpfulness Negative": 0
+    },
+    "function": {
+      "Correctness Positive": 0,
+      "Correctness Negative": 0,
+      "Satisfaction Positive": 0,
+      "Satisfaction Negative": 0,
+      "Helpfulness Positive": 0,
+      "Helpfulness Negative": 0
+    },
+    "important": {
+      "Correctness Positive": 0,
+      "Correctness Negative": 0,
+      "Satisfaction Positive": 0,
+      "Satisfaction Negative": 0,
+      "Helpfulness Positive": 0,
+      "Helpfulness Negative": 0
+    },
+    "keywords": {
+      "Correctness Positive": 0,
+      "Correctness Negative": 0,
+      "Satisfaction Positive": 0,
+      "Satisfaction Negative": 0,
+      "Helpfulness Positive": 0,
+      "Helpfulness Negative": 0
+    },
+    "label": {
+      "Correctness Positive": 0,
+      "Correctness Negative": 0,
+      "Satisfaction Positive": 0,
+      "Satisfaction Negative": 0,
+      "Helpfulness Positive": 0,
+      "Helpfulness Negative": 0
+    },
+    "likelihood": {
+      "Correctness Positive": 0,
+      "Correctness Negative": 0,
+      "Satisfaction Positive": 0,
+      "Satisfaction Negative": 0,
+      "Helpfulness Positive": 0,
+      "Helpfulness Negative": 0
+    },
+    "mistakes": {
+      "Correctness Positive": 0,
+      "Correctness Negative": 0,
+      "Satisfaction Positive": 0,
+      "Satisfaction Negative": 0,
+      "Helpfulness Positive": 0,
+      "Helpfulness Negative": 0
+    },
+    "model": {
+      "Correctness Positive": 0,
+      "Correctness Negative": 0,
+      "Satisfaction Positive": 0,
+      "Satisfaction Negative": 0,
+      "Helpfulness Positive": 0,
+      "Helpfulness Negative": 0
+    },
+    "countdata": {
+      "Correctness Positive": 0,
+      "Correctness Negative": 0,
+      "Satisfaction Positive": 0,
+      "Satisfaction Negative": 0,
+      "Helpfulness Positive": 0,
+      "Helpfulness Negative": 0
+    },
+    "predict": {
+      "Correctness Positive": 0,
+      "Correctness Negative": 0,
+      "Satisfaction Positive": 0,
+      "Satisfaction Negative": 0,
+      "Helpfulness Positive": 0,
+      "Helpfulness Negative": 0
+    },
+    "randompredict": {
+      "Correctness Positive": 0,
+      "Correctness Negative": 0,
+      "Satisfaction Positive": 0,
+      "Satisfaction Negative": 0,
+      "Helpfulness Positive": 0,
+      "Helpfulness Negative": 0
+    },
+    "rationalize": {
+      "Correctness Positive": 0,
+      "Correctness Negative": 0,
+      "Satisfaction Positive": 0,
+      "Satisfaction Negative": 0,
+      "Helpfulness Positive": 0,
+      "Helpfulness Negative": 0
+    },
+    "score": {
+      "Correctness Positive": 0,
+      "Correctness Negative": 0,
+      "Satisfaction Positive": 0,
+      "Satisfaction Negative": 0,
+      "Helpfulness Positive": 0,
+      "Helpfulness Negative": 0
+    },
+    "show": {
+      "Correctness Positive": 0,
+      "Correctness Negative": 0,
+      "Satisfaction Positive": 0,
+      "Satisfaction Negative": 0,
+      "Helpfulness Positive": 0,
+      "Helpfulness Negative": 0
+    },
+    "similar": {
+      "Correctness Positive": 0,
+      "Correctness Negative": 0,
+      "Satisfaction Positive": 0,
+      "Satisfaction Negative": 0,
+      "Helpfulness Positive": 0,
+      "Helpfulness Negative": 0
+    }
+  }
+]
