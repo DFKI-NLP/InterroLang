@@ -7,8 +7,8 @@
 
 # InterroLang
 
-A TalkToModel (Slack et al., 2022) adaptation to NLP use cases (question answering, hate speech detection, dialogue act classification).
-The name is a word-play on [Interrobang](https://en.wikipedia.org/wiki/Interrobang), a ligature of question mark and exclamation mark, and **Lang**uage models.
+A [TalkToModel (Slack et al., 2022)](https://github.com/dylan-slack/TalkToModel) adaptation to NLP use cases (question answering, hate speech detection, dialogue act classification).  
+The name is a word-play on [Interrobang](https://en.wikipedia.org/wiki/Interrobang), a ligature of question mark and exclamation mark, and **Lang**uage models.  
 Our tool offers a dialogue-based exploration of NLP interpretability methods (feature attribution, counterfactuals and perturbations, free-text rationalization) and dataset analyses (similar examples, keywords, label distribution).
 
 <p align="center">
@@ -26,6 +26,8 @@ We consider 7 categories of operations.
 - Explanation: Feature attribution methods (local-, class-, global-level) and free-text rationalization.
 - Perturbation: Methods to change some parts of an instance, e.g. such that the label of the instance would change.
 - Custom input: We not only allow instances from the dataset but also instances given by users. (More details see [below](https://github.com/nfelnlp/InterroLang#process))
+
+They are defined in [actions](https://github.com/nfelnlp/InterroLang/tree/main/actions) and [prompts](https://github.com/nfelnlp/InterroLang/tree/main/prompts).  
 
 ### Dataset Viewer
 We provide a dataset view with which users can explore instances contained in the pre-defined dataset (in screenshot, BoolQ dataset is used). Users can search instances that include the entered string. 
@@ -115,15 +117,15 @@ sudo docker run -d -p 4000:4000 interrolang
 ```
 
 ## User Guide
-After the project is set up, we provide a [user guidance](https://github.com/nfelnlp/InterroLang/blob/main/utils/user_guide.py) using Selenium to demonstrate how to use our system if you have Chrome Browser available.
+After the project is set up, we provide an optional [user guide](https://github.com/nfelnlp/InterroLang/blob/main/utils/user_guide.py) using Selenium to demonstrate how to use our system if you have a Chrome Browser available.
 
 ## How to use custom input
 ### Supported operations
-1. feature importance on token level
-2. feature importance on sentence level
-3. prediction
-4. similarity
-5. rationalization
+1. Feature importance on token level
+2. Feature importance on sentence level
+3. Prediction
+4. Similarity
+5. Rationalization
 
 ### Process
 #### 1. Enter your custom input in the text area and then click send button. Be aware: you have to choose **"Custom input"** in the selection box.
