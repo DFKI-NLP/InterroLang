@@ -1,5 +1,6 @@
 """The app main."""
 import uuid
+from datetime import datetime
 from os.path import isfile, join
 
 import gin
@@ -104,13 +105,19 @@ def log_feedback():
     username = split_feedback[2][len("Username: "):]
     answer = split_feedback[3][len("Answer: "):]
 
+    current_time = datetime.now()
+    time_stamp = current_time.timestamp()
+    date_time = datetime.fromtimestamp(time_stamp)
+    str_time = date_time.strftime("%d-%m-%Y, %H:%M:%S")
+
     logging_info = {
         "id": message_id,
         "feedback_text": feedback_text,
         "username": username,
         "answer": answer,
         "dataset": BOT.conversation.describe.get_dataset_name(),
-        "parsed_text": BOT.parsed_text
+        "parsed_text": BOT.parsed_text,
+        "timestamp": str_time
     }
 
     files = [f for f in os.listdir("./feedback") if isfile(join("./feedback", f))]
