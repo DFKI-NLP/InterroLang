@@ -25,7 +25,8 @@ class TransformerModel(Module):
         json_list = read_precomputed_explanation_data(self.dataset_name)
 
         # Get indices of dataset to filter json_list with
-        data_indices = data.index.to_list()
+        if data is not None:
+            data_indices = data.index.to_list()
 
         if text is None:
             temp = []

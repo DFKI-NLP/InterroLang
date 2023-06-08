@@ -83,10 +83,10 @@ def counterfactuals_operation(conversation, parse_text, i, **kwargs):
         predicted_label = same[0][1]
     else:
         model = conversation.get_var("model").contents
-        predicted_label = model(instance)
+        predicted_label = conversation.class_names[model.predict(None, _id)[0]]
 
     return_s = ""
-    if len(diff) > 0:
+    if len(diff) > 0 and (diff[0][1] != predicted_label):
         return_s += "<ul>"
         return_s += '<li>'
         return_s += f"<b>[The original text]:</b> "
