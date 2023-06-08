@@ -10,17 +10,20 @@ from explained_models.Tokenizer.tokenizer import HFTokenizer
 
 from actions.perturbation.nlpaug_util import *
 
+
 class CFEExplainer(Explainer):
     def __init__(self, dataset_name=None):
         super(CFEExplainer, self).__init__()
         self.device = None
         self.is_cuda = None
         self.check_cuda()
-        self.explainer =  CustomContextualWordEmbsAug(action="substitute", device=self.device, model_path="bert-base-cased", aug_max=15)
+        self.explainer = CustomContextualWordEmbsAug(action="substitute", device=self.device,
+                                                     model_path="bert-base-cased", aug_max=15)
         self.dataset_name = dataset_name
 
         if dataset_name == 'boolq':
-            self.model = AutoModelForSequenceClassification.from_pretrained("andi611/distilbert-base-uncased-qa-boolq", num_labels=2)
+            self.model = AutoModelForSequenceClassification.from_pretrained("andi611/distilbert-base-uncased-qa-boolq",
+                                                                            num_labels=2)
             self.tokenizer = HFTokenizer("andi611/distilbert-base-uncased-qa-boolq").tokenizer
         elif dataset_name == 'daily_dialog':
             self.model = DANetwork()
@@ -47,7 +50,7 @@ class CFEExplainer(Explainer):
             generated_samples.append(aug_res[0])
             aug_tokens.append(aug_res[2])
             orig_tokens.append(aug_res[3])
-        assert(len(generated_samples)==len(aug_tokens))
+        assert (len(generated_samples) == len(aug_tokens))
         return [generated_samples, aug_tokens, orig_tokens]
 
     # instance: input string
@@ -58,7 +61,7 @@ class CFEExplainer(Explainer):
     # same label: [('i also have blow if you prefer to do a few shots.', 'directive'), ('i also have blow if you prefer to do this.', 'directive')]
     # diff label: [('also blew me away with his single second.', 'inform')]
     def cfe(self, instance, number, _id=None):
-        instances = (number*2)*[instance]# 2x cfes for similar/diff predictions
+        instances = (number * 2) * [instance]  # 2x cfes for similar/diff predictions
         new_samples, aug_tokens, orig_tokens = self.get_samples_from_nlpaug(instances)
 
         if self.dataset_name == 'boolq':
@@ -123,33 +126,30 @@ class CFEExplainer(Explainer):
             self.is_cuda = False
             self.device = 'cpu'
 
-
     def get_changed_tokens(self, orig_tokens, aug_tokens):
         oi = 0
         ai = 0
         out_str = ""
         while ai < len(aug_tokens):
-            if oi>=len(orig_tokens) or orig_tokens[oi]==aug_tokens[ai]:
-                out_str+=aug_tokens[ai]+" "
-                ai+=1
-                oi+=1
+            if oi >= len(orig_tokens) or orig_tokens[oi] == aug_tokens[ai]:
+                out_str += aug_tokens[ai] + " "
+                ai += 1
+                oi += 1
             else:
-                out_str+="<b>"+aug_tokens[ai]+"</b> "
-                ai+=1
-                while not(ai>=len(aug_tokens) or oi>=len(orig_tokens) or orig_tokens[oi]==aug_tokens[ai]):
+                out_str += "<b>" + aug_tokens[ai] + "</b> "
+                ai += 1
+                while not (ai >= len(aug_tokens) or oi >= len(orig_tokens) or orig_tokens[oi] == aug_tokens[ai]):
                     # heuristics to check that oi token appears in aug_tokens
-                    while (oi<len(orig_tokens) and not(orig_tokens[oi] in aug_tokens[ai:ai+3])):
-                        oi+=1
-                    if oi < len(orig_tokens) and ai < len(orig_tokens) and orig_tokens[oi]==aug_tokens[ai]:
-                        out_str+=aug_tokens[ai]+" "
-                        ai+=1
-                        oi+=1
+                    while (oi < len(orig_tokens) and not (orig_tokens[oi] in aug_tokens[ai:ai + 3])):
+                        oi += 1
+                    if oi < len(orig_tokens) and ai < len(orig_tokens) and orig_tokens[oi] == aug_tokens[ai]:
+                        out_str += aug_tokens[ai] + " "
+                        ai += 1
+                        oi += 1
                         break
-                    out_str+="<b>"+aug_tokens[ai]+"</b> "
-                    ai+=1
+                    out_str += "<b>" + aug_tokens[ai] + "</b> "
+                    ai += 1
         return out_str
-
-
 
     def generate_explanation(self, store_data=False,
                              data_path="../../cache/daily_dialog/cfe_daily_dialog_explanation.json"):
@@ -163,14 +163,15 @@ class CFEExplainer(Explainer):
             test_dataloader = torch.load('../../explained_models/da_classifier/test_dataloader.pth')
             for b_input in test_dataloader:
                 input_ids = b_input[0].to(self.device)
-                instance_text = self.tokenizer.convert_tokens_to_string(self.tokenizer.convert_ids_to_tokens(input_ids[0], skip_special_tokens=True))
+                instance_text = self.tokenizer.convert_tokens_to_string(
+                    self.tokenizer.convert_ids_to_tokens(input_ids[0], skip_special_tokens=True))
                 same, diff = self.cfe(instance_text, number=4, id2label=model_id2label)
                 input_mask = b_input[1].to(self.device)
                 labels = b_input[2].to(self.device)
 
                 with torch.no_grad():
                     result = self.model(input_ids, input_mask)
-                    predicted_label_id = torch.argmax(result.detach().cpu()).item() # result.logits...
+                    predicted_label_id = torch.argmax(result.detach().cpu()).item()  # result.logits...
                     true_label_id = labels.to('cpu').numpy()[0]
 
                 json_list.append({
