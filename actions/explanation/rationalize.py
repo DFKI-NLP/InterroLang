@@ -31,8 +31,6 @@ def get_few_shot_str(csv_filename, num_shots=3):
 
 @timeout(60)
 def rationalize_operation(conversation, parse_text, i, data_path="./cache/", **kwargs):
-    if not conversation.decoder.gpt_parser_initialized:
-        return f"Rationalize operation not enabled for {conversation.decoder.parser_name}"
 
     # TODO: Custom input – if conversation.used and conversation.custom_input:
 
