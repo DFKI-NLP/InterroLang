@@ -161,6 +161,7 @@ class ExplainBot:
                           skip_prompts=skip_prompts)
 
         self.parsed_text = None
+        self.user_text = None
 
         if "adapters" in parsing_model_name:
             bert_model = "bert-base-uncased"
