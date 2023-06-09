@@ -7,11 +7,12 @@ parser = argparse.ArgumentParser(description="generate parsing results table")
 parser.add_argument("--id", type=str, required=True, help="a unique id to associate with the run")
 parser.add_argument("--slurm", action="store_true", help="whether to run on slurm cluster")
 parser.add_argument("--wandb", action="store_true", help="whether to use weights and biases")
+parser.add_argument("--test", action="store_true")
 args = parser.parse_args()
 
 # The set of models for the sweep
 models = [
-    "EleutherAI/gpt-neo-2.7B",
+    # "EleutherAI/gpt-neo-2.7B",
     "nearest-neighbor",
     #"flan-t5-base"
 ]

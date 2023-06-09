@@ -214,7 +214,7 @@ def main():
     program_only_text = ""
     if args.program_only:
         program_only_text += "-program-only"
-    results_location = (f"./experiments/results_store/{safe_name(model)}_{dset}_gd-{guided_decoding}"
+    results_location = (f"./experiments/results_store/{safe_name(model)}_{dset}_test-{args.test}_gd-{guided_decoding}"
                         f"_debug-{args.debug}{program_only_text}.csv")
     if os.path.exists(results_location):
         print(f"Skipping already existing results file: f{results_location}\nPlease delete or move the results file to "
@@ -229,11 +229,20 @@ def main():
     config_dset_id = dset
 
     if dset == "boolq":
-        test_suite = f"./experiments/parsing_interrolang_dev/dev_set_interrolang_{dset}.txt"
+        if args.test:
+            test_suite = f"./experiments/parsing_interrolang_dev/test_set_interrolang_{dset}.txt"
+        else:
+            test_suite = f"./experiments/parsing_interrolang_dev/dev_set_interrolang_{dset}.txt"
     elif dset == "olid":
-        test_suite = f"./experiments/parsing_interrolang_dev/dev_set_interrolang_{dset}.txt"
+        if args.test:
+            test_suite = f"./experiments/parsing_interrolang_dev/test_set_interrolang_{dset}.txt"
+        else:
+            test_suite = f"./experiments/parsing_interrolang_dev/dev_set_interrolang_{dset}.txt"
     elif dset == "daily_dialog":
-        test_suite = f"./experiments/parsing_interrolang_dev/dev_set_interrolang_{dset}.txt"
+        if args.test:
+            test_suite = f"./experiments/parsing_interrolang_dev/test_set_interrolang_{dset}.txt"
+        else:
+            test_suite = f"./experiments/parsing_interrolang_dev/dev_set_interrolang_{dset}.txt"
         config_dset_id = "da"
     else:
         raise NameError(f"Unknown dataset {dset}")
@@ -363,7 +372,13 @@ def load_model(dset, guided_decoding, model):
     """Loads the model"""
     print("Initializing model...", flush=True)
     if "t5" not in model:
-        gin.parse_config(f"ExplainBot.parsing_model_name = '{model}'")
+        if sys.platform.startswith('linux') or sys.platform.startswith('darwin'):
+            gin.parse_config(f"ExplainBot.parsing_model_name = '{model}'")
+        elif sys.platform.startswith('win32') or sys.platform.startswith('cygwin'):
+            gin.parse_config(f"ExplainBot.parsing_model_name = {model}")
+        else:
+            raise OSError("Unknown operating system!")
+
         gin.parse_config(f"ExplainBot.use_guided_decoding = {guided_decoding}")
 
         if args.debug or "gpt-neo-2.7B" in model:
@@ -421,6 +436,7 @@ if __name__ == "__main__":
     parser.add_argument("--id", type=str, required=True, help="a unique id to associate with the run")
     parser.add_argument("--down_sample", action="store_true", help="this will break each run on 10 samples")
     parser.add_argument("--program_only", action="store_true", help="only uses the program name for templates")
+    parser.add_argument("--test", action="store_true")
     args = parser.parse_args()
 
     if args.wandb:
