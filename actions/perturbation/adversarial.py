@@ -24,7 +24,7 @@ class AdversarialDataset(Dataset):
         return self.data[idx]
 
 
-def adversarial_operation(conversation, parse_text, i, **kwargs):
+def adversarial_operation(conversation, parse_text, i, simulation, **kwargs):
     import ssl
     ssl._create_default_https_context = ssl._create_unverified_context
 
@@ -134,7 +134,8 @@ def adversarial_operation(conversation, parse_text, i, **kwargs):
     idx_adv = np.argmax(y_adv)
     prob_orig = round(y_orig[idx_orig] * 100, conversation.rounding_precision)
     prob_adv = round(y_adv[idx_adv] * 100, conversation.rounding_precision)
-    return_s += f"<span style='color:green;font-weight:bold'>Label {conversation.class_names[idx_orig]} ({prob_orig}%) --> {conversation.class_names[idx_adv]} ({prob_adv}%)</span> <br><br>"
+    if not simulation:
+        return_s += f"<span style='color:green;font-weight:bold'>Label {conversation.class_names[idx_orig]} ({prob_orig}%) --> {conversation.class_names[idx_adv]} ({prob_adv}%)</span> <br><br>"
 
     for i in range(0, len(ret)):
         return_s += ret[i]

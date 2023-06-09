@@ -51,7 +51,7 @@ def get_text_by_id(conversation, _id):
     return filtered_text
 
 
-def counterfactuals_operation(conversation, parse_text, i, **kwargs):
+def counterfactuals_operation(conversation, parse_text, i, simulation, **kwargs):
     """
     nlpcfe operation
     Args:
@@ -102,7 +102,8 @@ def counterfactuals_operation(conversation, parse_text, i, **kwargs):
             return_s += '</li>'
         return_s += "</ul><br>"
 
-        return_s += f"the predicted label <span style=\"background-color: #6CB4EE\">{predicted_label}</span> changes to <span style=\"background-color: #6CB4EE\">{flipped_label}</span>. <br>"
+        if not simulation:
+            return_s += f"the predicted label <span style=\"background-color: #6CB4EE\">{predicted_label}</span> changes to <span style=\"background-color: #6CB4EE\">{flipped_label}</span>. <br>"
 
     else:
         return_s += f"This sentence is always classified as <b>{predicted_label}</b>!"
