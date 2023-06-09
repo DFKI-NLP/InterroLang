@@ -140,3 +140,17 @@ After the project is set up, we provide an optional [user guide](https://github.
 #### 4. In the end, click the send button and you will get the result. (In this example, we show the result of feature importance on token level on given custom input)
 ![](./static/images/result.png)
 
+## How to use include operation
+Include operation works similar to [custom input](https://github.com/nfelnlp/InterroLang#how-to-use-custom-input)
+1. Enter a single token in the text area and choose **"Include""** in the selection box. Then click the send button.
+![](./static/images/include.png)
+2. After clicking the button, you could see your entered token in the interface.
+![](./static/images/include_entered.png)
+3. Then you could enter a prompt (refer [here](https://github.com/nfelnlp/InterroLang/tree/main/prompts/filter))
+   - Supported operations:
+     - countdata
+     - label
+     - mistake
+     - predict
+     - score
+     - show
