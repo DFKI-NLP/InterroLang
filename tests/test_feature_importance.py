@@ -23,7 +23,7 @@ def test_feature_importance():
 
     parse_text = ["filter", "id", "33", "and", "nlpattribute", "topk", "1", "[E]"]
 
-    return_s, status_code = feature_importance_operation(conversation, parse_text, 1)
+    return_s, status_code = feature_importance_operation(conversation, parse_text, 1, False)
 
     file_html = open(f"./tests/html/feature_importance/{dataset_name}_feature_importance.html", "w")
     text = TEXT
@@ -44,7 +44,7 @@ def test_multiple_feature_importance():
 
     parse_text = ["filter", "id", "33", "or", "id", "151", "and", "nlpattribute", "topk", "2", "[E]"]
 
-    return_s, status_code = feature_importance_operation(conversation, parse_text, 1)
+    return_s, status_code = feature_importance_operation(conversation, parse_text, 1, False)
 
     file_html = open(f"./tests/html/feature_importance/{dataset_name}_multiple_feature_importance.html", "w")
     text = TEXT
@@ -67,7 +67,7 @@ def test_feature_importance_with_custom_input():
 
     conversation.custom_input = "conservatives left frustrated as Congress passes big spending bills"
     conversation.used = False
-    return_s, status_code = feature_importance_operation(conversation, parse_text, 1)
+    return_s, status_code = feature_importance_operation(conversation, parse_text, 1, False)
 
     file_html = open(f"./tests/html/feature_importance/{dataset_name}_feature_importance_with_custom_input.html", "w")
     text = TEXT
@@ -88,7 +88,7 @@ def test_feature_importance_all():
 
     parse_text = ["filter", "id", "53", "and", "nlpattribute", "all", "[E]"]
 
-    return_s, status_code = feature_importance_operation(conversation, parse_text, 1)
+    return_s, status_code = feature_importance_operation(conversation, parse_text, 1, False)
 
     file_html = open(f"./tests/html/feature_importance/{dataset_name}_feature_importance_all.html", "w")
     text = TEXT
@@ -109,7 +109,7 @@ def test_feature_importance_sentence_level():
 
     parse_text = ["filter", "id", "15", 'or', 'filter', 'id', '20', "nlpattribute", "sentence", "[E]"]
 
-    return_s, status_code = feature_importance_operation(conversation, parse_text, 0)
+    return_s, status_code = feature_importance_operation(conversation, parse_text, 0, False)
 
     file_html = open(f"./tests/html/feature_importance/{dataset_name}_feature_importance_sentence_level.html", "w")
     text = TEXT
@@ -133,7 +133,7 @@ def test_feature_importance_with_custom_input_at_sentence_level():
 
     conversation.custom_input = "conservatives left frustrated as Congress passes big spending bills. he left the house and go to the bank."
     conversation.used = False
-    return_s, status_code = feature_importance_operation(conversation, parse_text, 1)
+    return_s, status_code = feature_importance_operation(conversation, parse_text, 1, False)
 
     file_html = open(f"./tests/html/feature_importance/{dataset_name}_feature_importance_with_custom_inputat_sentence_level.html", "w")
     text = TEXT
