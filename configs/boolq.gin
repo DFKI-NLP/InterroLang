@@ -28,6 +28,8 @@ ExplainBot.text_fields = ["question", "passage"]
 ExplainBot.prompt_metric = "cosine"
 ExplainBot.prompt_ordering = "ascending"
 
+ExplainBot.simulation = True
+
 # Prompt params
 Prompts.prompt_cache_size = 1_000_000
 Prompts.prompt_cache_location = "./cache/boolq-prompts.pkl"

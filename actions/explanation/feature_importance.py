@@ -180,7 +180,7 @@ def explanation_with_custom_input(conversation, topk):
     return return_s
 
 
-def get_sentence_level_feature_importance(conversation, sentences):
+def get_sentence_level_feature_importance(conversation, sentences, simulation):
     """
     Sentence level feature importance
     Args:
@@ -211,7 +211,8 @@ def get_sentence_level_feature_importance(conversation, sentences):
         return_s += "</li>"
 
         return_s += "<li>"
-        return_s += f"Prediction: <span style=\"background-color: #6CB4EE\">{conversation.class_names[res['predictions']]}</span>"
+        if not simulation:
+            return_s += f"Prediction: <span style=\"background-color: #6CB4EE\">{conversation.class_names[res['predictions']]}</span>"
         return_s += "</li>"
         return_s += "</ul>"
         counter += 1
@@ -323,7 +324,7 @@ def feature_attribution_with_id(conversation, topk, id_list):
     return return_s
 
 
-def feature_importance_operation(conversation, parse_text, i, **kwargs):
+def feature_importance_operation(conversation, parse_text, i, simulation, **kwargs):
     """
     feature attribution operation
     Args:
@@ -348,7 +349,7 @@ def feature_importance_operation(conversation, parse_text, i, **kwargs):
 
     if conversation.used is False and conversation.custom_input is not None:
         if "sentence" in parse_text:
-            return_s = get_sentence_level_feature_importance(conversation, sentences=conversation.custom_input)
+            return_s = get_sentence_level_feature_importance(conversation, conversation.custom_input, simulation)
             return return_s, 1
         else:
             explanation = explanation_with_custom_input(conversation, topk)
@@ -369,7 +370,7 @@ def feature_importance_operation(conversation, parse_text, i, **kwargs):
                 filtered_text = texts['dialog'][_id]
 
             return_s += f'ID {_id}: '
-            return_s += get_sentence_level_feature_importance(conversation, sentences=filtered_text)
+            return_s += get_sentence_level_feature_importance(conversation, filtered_text, simulation)
             return_s += '<br><br>'
         return return_s, 1
 

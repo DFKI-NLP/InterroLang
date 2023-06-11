@@ -117,6 +117,7 @@ def log_feedback():
         "answer": answer,
         "dataset": BOT.conversation.describe.get_dataset_name(),
         "parsed_text": BOT.parsed_text,
+        "user_text": BOT.user_text,
         "timestamp": str_time
     }
 
@@ -179,6 +180,7 @@ def get_bot_response():
             data = json.loads(request.data)
             if data['custom_input'] == '0':
                 user_text = data["userInput"]
+                BOT.user_text = user_text
                 conversation = BOT.conversation
                 if user_text == "quit":
                     app.logger.info("remove the custom input!")

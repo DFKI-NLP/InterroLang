@@ -30,8 +30,7 @@ def get_few_shot_str(csv_filename, num_shots=3):
 
 
 @timeout(60)
-def rationalize_operation(conversation, parse_text, i, data_path="./cache/", **kwargs):
-
+def rationalize_operation(conversation, parse_text, i, simulation, data_path="./cache/", **kwargs):
     # TODO: Custom input – if conversation.used and conversation.custom_input:
 
     id_list = []
@@ -95,9 +94,14 @@ def rationalize_operation(conversation, parse_text, i, data_path="./cache/", **k
         if idx in results['Id']:
             inputs = text
             explanation = results.loc[idx]['Explanation']
-            return_s += "<b>Original text:</b> " + text \
-                        + "<br><b>Prediction:</b> " + pred_str \
-                        + "<br><b>Explanation:</b> " + explanation
+
+            if simulation:
+                return_s += "<b>Original text:</b> " + text \
+                            + "<br><b>Explanation:</b> " + explanation
+            else:
+                return_s += "<b>Original text:</b> " + text \
+                            + "<br><b>Prediction:</b> " + pred_str \
+                            + "<br><b>Explanation:</b> " + explanation
         else:
             prompt = f"{few_shot_str}" \
                      f"{text}\n" \

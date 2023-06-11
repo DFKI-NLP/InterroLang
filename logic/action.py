@@ -15,11 +15,13 @@ app = Flask(__name__)
 def run_action(conversation: Conversation,
                parse_tree,
                parsed_string: str,
+               simulation: bool,
                actions=get_all_action_functions_map(),
                build_temp_dataset: bool = True) -> str:
     """Runs the action and updates the conversation object
 
     Arguments:
+        simulation: for simulation test
         build_temp_dataset: Whether to use the temporary dataset stored in the conversation
                             or to rebuild the temporary dataset from scratch.
         actions: The set of avaliable actions
@@ -46,7 +48,7 @@ def run_action(conversation: Conversation,
     for i, p_text in enumerate(parsed_text):
         if parsed_text[i] in actions:
             action_return, action_status = actions[p_text](
-                conversation, parsed_text, i, is_or=is_or)
+                conversation, parsed_text, i, simulation, is_or=is_or)
             return_statement += action_return
 
             # If operation fails, return error output to user
