@@ -89,26 +89,26 @@
                     {% for entry in entries %}
                     {% if dataset == 'boolq' %}
                     <details>
-                        <summary style="font-weight: bold;">ID: {{loop.index}}</summary>
+                        <summary style="font-weight: bold;">ID: {{loop.index-1}}</summary>
                         <b>question:</b> <br>
                         <div style='font-style: italic; font-size: 0.75em;'>{{entry["question"]}}</div>
                         <b>passage:</b> <br>
                         <div style='font-style: italic; font-size: 0.75em;'>{{entry["passage"]}}</div>
-                        <button onclick="addId({{loop.index}})">Add this instance into input box</button>
+                        <button onclick="addId({{loop.index-1}})">Add this instance into input box</button>
                     </details>
                     {% elif dataset == 'daily_dialog' %}
                     <details>
-                        <summary style="font-weight: bold;">ID: {{loop.index}}</summary>
+                        <summary style="font-weight: bold;">ID: {{loop.index-1}}</summary>
                         <b>dialog:</b>
                         <div style='font-style: italic; font-size: 0.75em;'>{{entry["dialog"]}}</div>
-                        <button onclick="addId({{loop.index}})">Add this instance into input box</button>
+                        <button onclick="addId({{loop.index-1}})">Add this instance into input box</button>
                     </details>
                     {% else %}
                     <details>
-                        <summary style="font-weight: bold;">ID: {{loop.index}}</summary>
+                        <summary style="font-weight: bold;">ID: {{loop.index-1}}</summary>
                         <b>text:</b> <br>
                         <div style='font-style: italic; font-size: 0.75em;'>{{entry["text"]}}</div>
-                        <button onclick="addId({{loop.index}})">Add this instance into input box</button>
+                        <button onclick="addId({{loop.index-1}})">Add this instance into input box</button>
                     </details>
                     {% endif %}
                     <br>
