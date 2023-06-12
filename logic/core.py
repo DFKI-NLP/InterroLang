@@ -896,7 +896,7 @@ class ExplainBot:
                 # Run the action in the conversation corresponding to the formal grammar
                 user_session_conversation.needs_clarification = False
                 returned_item = run_action(
-                    user_session_conversation, parse_tree, parsed_text, simulation)
+                    user_session_conversation, parse_tree, parsed_text, self.simulation)
          
         self.parsed_text = parsed_text
 
