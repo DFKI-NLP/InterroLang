@@ -75,7 +75,9 @@ class ExplainBot:
                  t5_config: str = None,
                  use_guided_decoding: bool = True,
                  feature_definitions: dict = None,
-                 skip_prompts: bool = False):
+                 skip_prompts: bool = False,
+                 simulation: bool = False
+                ):
         """The init routine.
 
         Arguments:
@@ -160,6 +162,8 @@ class ExplainBot:
 
         self.parsed_text = None
         self.user_text = None
+        
+        self.simulation = simulation
 
         if "adapters" in parsing_model_name:
             from transformers import AutoAdapterModel, AutoTokenizer
@@ -892,8 +896,8 @@ class ExplainBot:
                 # Run the action in the conversation corresponding to the formal grammar
                 user_session_conversation.needs_clarification = False
                 returned_item = run_action(
-                    user_session_conversation, parse_tree, parsed_text)
-
+                    user_session_conversation, parse_tree, parsed_text, simulation)
+         
         self.parsed_text = parsed_text
 
         username = user_session_conversation.username
