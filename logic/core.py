@@ -30,8 +30,6 @@ from logic.utils import read_and_format_data
 from logic.write_to_log import log_dialogue_input
 from logic.transformers import TransformerModel
 
-from transformers import AutoAdapterModel, AutoTokenizer
-from transformers import TextClassificationPipeline, TokenClassificationPipeline
 from sentence_transformers import SentenceTransformer, util
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -164,6 +162,9 @@ class ExplainBot:
         self.user_text = None
 
         if "adapters" in parsing_model_name:
+            from transformers import AutoAdapterModel, AutoTokenizer
+            from transformers import TextClassificationPipeline, TokenClassificationPipeline
+
             bert_model = "bert-base-uncased"
             self.intent_adapter_model = AutoAdapterModel.from_pretrained(bert_model)
             self.slot_adapter_model = AutoAdapterModel.from_pretrained(bert_model)
