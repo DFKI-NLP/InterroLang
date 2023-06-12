@@ -872,7 +872,9 @@
 
         let dataPackage = {userInput: rawText, userName: "{{ currentUserId }}", custom_input: custom_input}
         dataPackage = JSON.stringify(dataPackage)
-
+        $('.all-feedback').fadeOut(250, function () {
+            $('.all-feedback').remove();
+        });
         const result = $.ajax({
             type: 'POST',
             url: "{{ url_for('.get_bot_response') }}",
