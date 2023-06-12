@@ -70,7 +70,6 @@ SIMULATION_OPERATIONS = [
     "adversarial",
     "cfe",
     "filter",
-    "important",
     "nlpattribute",
     "rationalize",
 ]
