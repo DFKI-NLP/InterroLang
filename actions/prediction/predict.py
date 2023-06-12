@@ -91,9 +91,8 @@ def prediction_with_custom_input(conversation):
     cache_path = f"./cache/{dataset_name}/{dataset_name}_custom_input.csv"
 
     if dataset_name == "boolq":
-        model = AutoModelForSequenceClassification.from_pretrained("andi611/distilbert-base-uncased-qa-boolq",
-                                                                   num_labels=2)
-        tokenizer = AutoTokenizer.from_pretrained("andi611/distilbert-base-uncased-qa-boolq")
+        model = conversation.get_var("model").contents.model
+        tokenizer = conversation.get_var("model").contents.tokenizer
 
         if os.path.exists(cache_path):
             with open(cache_path, 'r') as file:
@@ -138,7 +137,7 @@ def prediction_with_custom_input(conversation):
                 predictions.append(output_model)
 
     elif dataset_name == "daily_dialog":
-        model = DANetwork()
+        model = conversation.get_var("model").contents
         tokenizer = HFTokenizer('bert-base-uncased', mode='bert').tokenizer
 
         if os.path.exists(cache_path):
@@ -186,8 +185,8 @@ def prediction_with_custom_input(conversation):
                 predictions.append(output_model)
 
     elif dataset_name == "olid":
-        tokenizer = AutoTokenizer.from_pretrained("sinhala-nlp/mbert-olid-en")
-        model = AutoModelForSequenceClassification.from_pretrained("sinhala-nlp/mbert-olid-en")
+        model = conversation.get_var("model").contents.model
+        tokenizer = conversation.get_var("model").contents.tokenizer
 
         if os.path.exists(cache_path):
             with open(cache_path, 'r') as file:

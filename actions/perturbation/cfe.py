@@ -76,7 +76,7 @@ def counterfactuals_operation(conversation, parse_text, i, simulation, **kwargs)
 
     instance = get_text_by_id(conversation, _id)
 
-    cfe_explainer = CFEExplainer(dataset_name=dataset_name)
+    cfe_explainer = CFEExplainer(conversation, dataset_name=dataset_name)
     same, diff = cfe_explainer.cfe(instance, cfe_num, ctrl_code=ALL_CTRL_CODES, _id=_id)
 
     if len(same) > 0:
