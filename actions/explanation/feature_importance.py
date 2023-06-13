@@ -61,10 +61,11 @@ def handle_input(parse_text):
         return id_list, topk
 
 
-def get_explanation(dataset_name, inputs, file_name="sentence_level"):
+def get_explanation(dataset_name, inputs, conversation, file_name="sentence_level"):
     """
     Get explanation list
     Args:
+        conversation:
         dataset_name: dataset name
         inputs: list of inputs
         file_name: cache file name
@@ -73,16 +74,15 @@ def get_explanation(dataset_name, inputs, file_name="sentence_level"):
         res_list: results in list
     """
     if dataset_name == "boolq":
-        model = AutoModelForSequenceClassification.from_pretrained("andi611/distilbert-base-uncased-qa-boolq",
-                                                                   num_labels=2)
+        model = conversation.get_var("model").contents.model
     elif dataset_name == "daily_dialog":
-        model = DANetwork()
+        model = conversation.get_var("model").contents
     elif dataset_name == "olid":
-        model = AutoModelForSequenceClassification.from_pretrained("sinhala-nlp/mbert-olid-en")
+        model = conversation.get_var("model").contents.model
     else:
         raise NotImplementedError(f"The dataset {dataset_name} is not supported!")
 
-    res_list = generate_explanation(model, dataset_name, inputs, file_name=file_name)
+    res_list = generate_explanation(model, dataset_name, inputs, conversation, file_name=file_name)
 
     return res_list
 
@@ -159,7 +159,7 @@ def explanation_with_custom_input(conversation, topk):
 
     dataset_name = conversation.describe.get_dataset_name()
 
-    res_list = get_explanation(dataset_name, inputs)
+    res_list = get_explanation(dataset_name, inputs, conversation)
     return_s = ""
     for res in res_list:
         original_text = res["text"]
@@ -184,6 +184,7 @@ def get_sentence_level_feature_importance(conversation, sentences, simulation):
     """
     Sentence level feature importance
     Args:
+        simulation:
         conversation: conversation object
         sentences: A string containing multiple (optionally) sentences
 
@@ -191,7 +192,7 @@ def get_sentence_level_feature_importance(conversation, sentences, simulation):
     # sentences = parse_text[i+1]
     inputs = sent_tokenize(sentences)
     dataset_name = conversation.describe.get_dataset_name()
-    res_list = get_explanation(dataset_name, inputs, file_name="sentence_level")
+    res_list = get_explanation(dataset_name, inputs, conversation, file_name="sentence_level")
 
     return_s = f'The original text is: <i>{sentences}</i> <br><br>'
     counter = 1
@@ -286,11 +287,11 @@ def feature_attribution_with_id(conversation, topk, id_list):
     json_list = json.loads(jsonContent)
 
     if name == 'boolq':
-        tokenizer = AutoTokenizer.from_pretrained("andi611/distilbert-base-uncased-qa-boolq")
+        tokenizer = conversation.get_var("model").contents.tokenizer
     elif name == "daily_dialog":
         tokenizer = HFTokenizer('bert-base-uncased', mode='bert').tokenizer
     else:
-        tokenizer = AutoTokenizer.from_pretrained("sinhala-nlp/mbert-olid-en")
+        tokenizer = conversation.get_var("model").contents.tokenizer
 
     if topk >= len(json_list[0]["input_ids"]):
         return "Entered topk is larger than input max length", 1

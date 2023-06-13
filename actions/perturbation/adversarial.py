@@ -62,16 +62,16 @@ def adversarial_operation(conversation, parse_text, i, simulation, **kwargs):
     dataset = AdversarialDataset(dataset_json)
 
     if dataset_name == 'boolq':
-        model = AutoModelForSequenceClassification.from_pretrained("andi611/distilbert-base-uncased-qa-boolq")
-        tokenizer = AutoTokenizer.from_pretrained("andi611/distilbert-base-uncased-qa-boolq")
+        model = conversation.get_var("model").contents.model
+        tokenizer = conversation.get_var("model").contents.tokenizer
         victim = classifiers.TransformersClassifier(model, tokenizer, model.base_model.embeddings.word_embeddings)
     elif dataset_name == 'daily_dialog':
-        model = DANetwork()
+        model = conversation.get_var("model").contents
         tokenizer = HFTokenizer('bert-base-uncased', mode='bert').tokenizer
         victim = classifiers.TransformersClassifier(model.bert, tokenizer, model.bert.base_model.embeddings.word_embeddings)
     elif dataset_name == 'olid':
-        model = AutoModelForSequenceClassification.from_pretrained("sinhala-nlp/mbert-olid-en")
-        tokenizer = AutoTokenizer.from_pretrained("sinhala-nlp/mbert-olid-en")
+        model = conversation.get_var("model").contents.model
+        tokenizer = conversation.get_var("model").contents.tokenizer
         victim = classifiers.TransformersClassifier(model, tokenizer, model.bert.embeddings.word_embeddings)
     else:
         raise NotImplementedError(f"{dataset_name} is not supported!")

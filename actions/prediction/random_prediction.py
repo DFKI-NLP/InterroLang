@@ -36,9 +36,9 @@ def random_prediction(conversation, parse_text, i, **kwargs):
     elif dataset_name == "daily_dialog":
         for f in f_names[:1]:
             filtered_text += data[f][random_num]
-            filtered_text += " "
     elif dataset_name == "olid":
-        pass
+        for f in f_names[:1]:
+            filtered_text += data[f][random_num]
     else:
         raise NotImplementedError(f"The dataset {dataset_name} is not supported!")
 
@@ -54,7 +54,10 @@ def random_prediction(conversation, parse_text, i, **kwargs):
         prediction_class = str(model_predictions[random_num])
         return_s += f"The class name is not given, the prediction class is <b>{prediction_class}</b>"
     else:
-        class_text = conversation.class_names[model_predictions[random_num]]
+        try:
+            class_text = conversation.class_names[model_predictions[random_num]]
+        except KeyError:
+            class_text = model_predictions[random_num]
         return_s += f"The prediction is <span style=\"background-color: #6CB4EE\">{class_text}</span>."
     return_s += "</li>"
     return_s += "</ul>"

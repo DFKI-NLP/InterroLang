@@ -144,14 +144,14 @@ if __name__ == '__main__':
 
         ids = detach_to_list(b[0][0])
         attrbs = detach_to_list(attribution[0])
-        preds = torch.argmax(predictions, dim=1)
+        preds = detach_to_list(predictions[0])
         result = {'batch': idx_batch,
                   # 'instance': idx_instance,
                   'index_running': idx_instance_running,
                   'input_ids': ids,
                   'label': b[2][0].item(),
                   'attributions': attrbs,
-                  'predictions': preds.item()
+                  'predictions': preds
                   }
         json_list.append(result)
 

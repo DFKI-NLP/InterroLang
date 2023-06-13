@@ -12,14 +12,13 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 
 class CustomInputDataset(Dataset):
-    def __init__(self, inputs, dataset_name):
+    def __init__(self, inputs, dataset_name, conversation):
         self.data = []
 
         if dataset_name == "boolq":
-            self.tokenizer = AutoTokenizer.from_pretrained("andi611/distilbert-base-uncased-qa-boolq")
+            self.tokenizer = conversation.get_var("model").contents.tokenizer
 
             for string in inputs:
-                print(string)
                 encoding = self.tokenizer.encode_plus(string, add_special_tokens=True, return_tensors='pt')
                 input_ids = encoding["input_ids"][0]
                 attention_mask = encoding["attention_mask"][0]
@@ -31,7 +30,6 @@ class CustomInputDataset(Dataset):
         elif dataset_name == "daily_dialog":
             self.tokenizer = HFTokenizer('bert-base-uncased', mode='bert').tokenizer
             for string in inputs:
-                print(string)
                 encoding = self.tokenizer.encode_plus(string, add_special_tokens=True, return_tensors='pt')
                 input_ids = encoding["input_ids"]
                 attention_mask = encoding["attention_mask"]
@@ -41,7 +39,7 @@ class CustomInputDataset(Dataset):
                 }
                 self.data.append(input_model)
         elif dataset_name == "olid":
-            self.tokenizer = AutoTokenizer.from_pretrained("sinhala-nlp/mbert-olid-en")
+            self.tokenizer = tokenizer = conversation.get_var("model").contents.tokenizer
             for string in inputs:
                 encoding = self.tokenizer.encode_plus(
                     string,
@@ -64,8 +62,8 @@ class CustomInputDataset(Dataset):
         return self.data[idx]
 
 
-def get_dataloader(inputs, dataset_name, batch_size=1):
-    customInputDataset = CustomInputDataset(inputs, dataset_name)
+def get_dataloader(inputs, dataset_name, conversation, batch_size=1):
+    customInputDataset = CustomInputDataset(inputs, dataset_name, conversation)
     customDataLoader = DataLoader(dataset=customInputDataset, batch_size=batch_size)
     return customDataLoader
 
@@ -180,7 +178,7 @@ def detach_to_list(t):
     return t.detach().cpu().numpy().tolist() if type(t) == torch.Tensor else t
 
 
-def generate_explanation(model, dataset_name, inputs, file_name="custom_input"):
+def generate_explanation(model, dataset_name, inputs, conversation, file_name="custom_input"):
     print(device)
 
     cache_path = f"./cache/{dataset_name}/{dataset_name}_{file_name}_explanation.json"
@@ -206,7 +204,7 @@ def generate_explanation(model, dataset_name, inputs, file_name="custom_input"):
                         json_list.append(i)
                 return json_list
 
-    dataloader = get_dataloader(inputs, dataset_name)
+    dataloader = get_dataloader(inputs, dataset_name, conversation)
 
     json_list = []
 
@@ -218,7 +216,7 @@ def generate_explanation(model, dataset_name, inputs, file_name="custom_input"):
 
             attrbs = detach_to_list(attribution[0])
             preds = torch.argmax(predictions, dim=1)
-            tokenizer = AutoTokenizer.from_pretrained("andi611/distilbert-base-uncased-qa-boolq")
+            tokenizer = conversation.get_var("model").contents.tokenizer
             result = {
                 "original_text": inputs[idx_batch],
                 "text": tokenizer.convert_ids_to_tokens(b["input_ids"][0]),
@@ -246,7 +244,7 @@ def generate_explanation(model, dataset_name, inputs, file_name="custom_input"):
             }
             json_list.append(result)
     elif dataset_name == "olid":
-        tokenizer = AutoTokenizer.from_pretrained("sinhala-nlp/mbert-olid-en")
+        tokenizer = conversation.get_var("model").contents.tokenizer
         for idx_batch, b in enumerate(dataloader):
             attribution, predictions = compute_feature_attribution_scores(b, model, device)
 
