@@ -311,7 +311,10 @@ def prediction_on_dataset(model, data, conversation, text):
         if conversation.class_names is None:
             return_s += f"<b>class {uniq_p}</b>, {round_freq}%"
         else:
-            class_text = conversation.class_names[uniq_p]
+            try:
+                class_text = conversation.class_names[uniq_p]
+            except KeyError:
+                class_text = uniq_p
             return_s += f"<span style=\"background-color: #6CB4EE\">{class_text}</span>, {round_freq}%"
         return_s += "</li>"
     return_s += "</ul>"

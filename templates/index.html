@@ -796,11 +796,11 @@
               <div class="msg-bubble">
                 <div class="msg-text" id="msg-text-${counter}">${text}</div>
               <div class="happy-sad-unsure-response">
-                <div class="all-feedback">
-                    <div class="feedback-opener">
+                <div class="all-feedback-${counter}">
+                    <div class="feedback-opener-${counter}">
                         Feedback
                     </div>
-                    <div class="feedback-form container" >
+                    <div class="feedback-form-${counter} container" >
                         <div class="row">
                         <button style="font-size: 12px;">Correctness </button>
                         <button title="positive" class="unhappy-button" id="corr_yesbutton" onclick="corr_answeredYes('${logText}');">👍</button>
@@ -841,17 +841,19 @@
             document.addEventListener("click", doReact);
 
             function doReact(event) {
-                let feedback = document.querySelector("div.feedback-opener");
-                let isClickInside = feedback.contains(event.target);
-                if (isClickInside) {
-                    let right = feedback.getBoundingClientRect().right
-                    let bottom = feedback.getBoundingClientRect().bottom
-                    let feedbackFrom = document.querySelector("div.feedback-form");
-                    feedbackFrom.style.display = "block";
-                    ttmChat.scrollTop += 200;
-                } else {
-                    let feedbackFrom = document.querySelector("div.feedback-form");
-                    feedbackFrom.style.display = "none";
+                for(var i = 1; i <= counter; i++) {
+                    let feedback = document.querySelector("div.feedback-opener-" + i);
+                    let isClickInside = feedback.contains(event.target);
+                    if (isClickInside) {
+                        let right = feedback.getBoundingClientRect().right
+                        let bottom = feedback.getBoundingClientRect().bottom
+                        let feedbackFrom = document.querySelector("div.feedback-form-" + i);
+                        feedbackFrom.style.display = "block";
+                        ttmChat.scrollTop += 200;
+                    } else {
+                        let feedbackFrom = document.querySelector("div.feedback-form-" + i);
+                        feedbackFrom.style.display = "none";
+                    }
                 }
             }
         } else {
@@ -872,9 +874,7 @@
 
         let dataPackage = {userInput: rawText, userName: "{{ currentUserId }}", custom_input: custom_input}
         dataPackage = JSON.stringify(dataPackage)
-        $('.all-feedback').fadeOut(250, function () {
-            $('.all-feedback').remove();
-        });
+
         const result = $.ajax({
             type: 'POST',
             url: "{{ url_for('.get_bot_response') }}",
