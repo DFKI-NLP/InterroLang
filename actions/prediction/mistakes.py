@@ -63,13 +63,15 @@ def count_mistakes(y_true, y_pred, conversation, intro_text):
     y_pred_labels = [conversation.get_class_name_from_label(lbl) for lbl in y_pred]
     cm = confusion_matrix(y_true_labels, y_pred_labels)
     disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=labels)
-    disp.plot()
-    if not os.path.exists('./static/plots'):
-        os.mkdir('./static/plots')
-    plt.savefig('./static/plots/confusion_matrix.png')
-    image_tag = "<img src='./static/plots/confusion_matrix.png' style='width:420px;height:350px;'>"
-    return_string += "<br>Here is the confusion matrix:<br> " + image_tag
-
+    try:
+        disp.plot()
+        if not os.path.exists('./static/plots'):
+            os.mkdir('./static/plots')
+        plt.savefig('./static/plots/confusion_matrix.png')
+        image_tag = "<img src='./static/plots/confusion_matrix.png' style='width:420px;height:350px;'>"
+        return_string += "<br>Here is the confusion matrix:<br> " + image_tag
+    except ValueError:
+        pass
 
     return return_string
 
