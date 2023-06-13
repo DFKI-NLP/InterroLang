@@ -28,16 +28,12 @@ class CFEExplainer(Explainer):
         self.dataset_name = dataset_name
 
         if dataset_name == 'boolq':
-            # self.model = AutoModelForSequenceClassification.from_pretrained("andi611/distilbert-base-uncased-qa-boolq", num_labels=2)
             self.model = conversation.get_var("model").contents.model
             self.tokenizer = conversation.get_var("model").contents.tokenizer
-            # self.tokenizer = HFTokenizer("andi611/distilbert-base-uncased-qa-boolq").tokenizer
         elif dataset_name == 'daily_dialog':
             self.model = conversation.get_var("model").contents
             self.tokenizer = HFTokenizer('bert-base-uncased', mode='bert').tokenizer
         elif dataset_name == 'olid':
-            # self.model = AutoModelForSequenceClassification.from_pretrained("sinhala-nlp/mbert-olid-en")
-            # self.tokenizer = AutoTokenizer.from_pretrained("sinhala-nlp/mbert-olid-en")
             self.model = conversation.get_var("model").contents.model
             self.tokenizer = conversation.get_var("model").contents.tokenizer
         else:
@@ -92,10 +88,10 @@ class CFEExplainer(Explainer):
                 jsonContent = fileObject.read()
                 json_list = json.loads(jsonContent)
                 item = json_list[_id]
-                orig_prediction = item["predictions"]
+                orig_prediction = np.argmax(item["predictions"])
             model_id2label = {0: 'False', 1: 'True'}
         else:
-            pass
+            raise NotImplementedError(f"Dataset {self.dataset_name} is not supported!")
 
         orig_prediction = model_id2label[orig_prediction]
         same_label_samples = []
