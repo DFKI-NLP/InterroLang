@@ -36,9 +36,9 @@ def random_prediction(conversation, parse_text, i, **kwargs):
     elif dataset_name == "daily_dialog":
         for f in f_names[:1]:
             filtered_text += data[f][random_num]
-            filtered_text += " "
     elif dataset_name == "olid":
-        pass
+        for f in f_names[:1]:
+            filtered_text += data[f][random_num]
     else:
         raise NotImplementedError(f"The dataset {dataset_name} is not supported!")
 

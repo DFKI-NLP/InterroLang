@@ -32,9 +32,9 @@ class TransformerModel(Module):
             temp = []
             for item in json_list:
                 if item["index_running"] in data_indices:
-                    temp.append(item["label"])
+                    temp.append(np.argmax(item["predictions"]))
 
             return np.array(temp)
         else:
-            res = list([json_list[text]["label"]])
+            res = list([np.argmax(json_list[text]["predictions"])])
             return np.array(res)
