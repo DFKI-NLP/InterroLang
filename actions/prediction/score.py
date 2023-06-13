@@ -33,7 +33,7 @@ def score_operation(conversation, parse_text, i, **kwargs):
         except IndexError:
             pass
         if metric not in ["default", "accuracy", "roc"]:
-            if parse_text[i + 2] == '[e]':
+            if len(parse_text) == 2 or parse_text[i + 2] == '[e]':
                 average = "macro"
             elif parse_text[i+2] in flags:
                 average = parse_text[i+2]
