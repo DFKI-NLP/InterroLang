@@ -92,10 +92,10 @@ class CFEExplainer(Explainer):
                 jsonContent = fileObject.read()
                 json_list = json.loads(jsonContent)
                 item = json_list[_id]
-                orig_prediction = item["predictions"]
+                orig_prediction = np.argmax(item["predictions"])
             model_id2label = {0: 'False', 1: 'True'}
         else:
-            pass
+            raise NotImplementedError(f"Dataset {self.dataset_name} is not supported!")
 
         orig_prediction = model_id2label[orig_prediction]
         same_label_samples = []
