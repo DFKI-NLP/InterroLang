@@ -841,17 +841,19 @@
             document.addEventListener("click", doReact);
 
             function doReact(event) {
-                let feedback = document.querySelector("div.feedback-opener-"+counter);
-                let isClickInside = feedback.contains(event.target);
-                if (isClickInside) {
-                    let right = feedback.getBoundingClientRect().right
-                    let bottom = feedback.getBoundingClientRect().bottom
-                    let feedbackFrom = document.querySelector("div.feedback-form-"+counter);
-                    feedbackFrom.style.display = "block";
-                    ttmChat.scrollTop += 200;
-                } else {
-                    let feedbackFrom = document.querySelector("div.feedback-form-"+counter);
-                    feedbackFrom.style.display = "none";
+                for(var i = 1; i <= counter; i++) {
+                    let feedback = document.querySelector("div.feedback-opener-" + i);
+                    let isClickInside = feedback.contains(event.target);
+                    if (isClickInside) {
+                        let right = feedback.getBoundingClientRect().right
+                        let bottom = feedback.getBoundingClientRect().bottom
+                        let feedbackFrom = document.querySelector("div.feedback-form-" + i);
+                        feedbackFrom.style.display = "block";
+                        ttmChat.scrollTop += 200;
+                    } else {
+                        let feedbackFrom = document.querySelector("div.feedback-form-" + i);
+                        feedbackFrom.style.display = "none";
+                    }
                 }
             }
         } else {
