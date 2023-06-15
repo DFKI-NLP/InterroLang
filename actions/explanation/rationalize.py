@@ -4,7 +4,8 @@ from timeout import timeout
 import json
 import pandas as pd
 
-def get_results(dataset_name,data_path):
+
+def get_results(dataset_name, data_path):
     """
     Get the rationlize result
 
@@ -13,7 +14,7 @@ def get_results(dataset_name,data_path):
     Returns:
         results: results in csv format
     """
-    path =data_path +dataset_name+"/dolly-rationales.csv"
+    path = data_path + dataset_name + "/dolly-rationales.csv"
     results = pd.read_csv(path)
 
     return results
@@ -27,6 +28,34 @@ def get_few_shot_str(csv_filename, num_shots=3):
         if i == num_shots - 1:
             break
     return few_shot_str
+
+
+def formalize_output(dataset_name, text):
+    return_s = ""
+    if dataset_name == "boolq":
+        return_s += "<b>"
+        return_s += text[0: 8]
+        return_s += "</b>"
+
+        idx_p = text.index("Passage")
+
+        return_s += text[8: idx_p]
+        return_s += "<br>"
+        return_s += "<b>"
+        return_s += text[idx_p: idx_p + 8]
+        return_s += "</b>"
+        return_s += text[idx_p + 8:]
+    elif dataset_name == "daily_dialog":
+        return_s += "<b>"
+        return_s += text[0: 7]
+        return_s += "</b>"
+        return_s += text[7:]
+    else:
+        return_s += "<b>"
+        return_s += text[0: 6]
+        return_s += "</b>"
+        return_s += text[6:]
+    return return_s
 
 
 @timeout(60)
@@ -69,7 +98,7 @@ def rationalize_operation(conversation, parse_text, i, simulation, data_path="./
             gpt_rationales = "cache/boolq/GPT-3.5_rationales_BoolQ_val_400.csv"
 
         elif dataset_name == "daily_dialog":
-            text = "Text: '" + instance[0] + "'"
+            text = "Dialog: '" + instance[0] + "'"
             label_dict = conversation.class_names
             pred_str = pred
             other_class_names = ", ".join(
@@ -92,16 +121,15 @@ def rationalize_operation(conversation, parse_text, i, simulation, data_path="./
         if few_shot:
             few_shot_str += get_few_shot_str(gpt_rationales)
         if idx in results['Id']:
-            inputs = text
             explanation = results.loc[idx]['Explanation']
 
             if simulation:
-                return_s += "<b>Original text:</b> " + text \
-                            + "<br><b>Explanation:</b> " + explanation
+                return_s += formalize_output(dataset_name, text)
+                return_s += "<br><br><b>Explanation:</b> " + explanation
             else:
-                return_s += "<b>Original text:</b> " + text \
-                            + "<br><b>Prediction:</b> " + pred_str \
-                            + "<br><b>Explanation:</b> " + explanation
+                return_s += formalize_output(dataset_name, text) \
+                            + "<br><br><b>Prediction:</b> " + pred_str \
+                            + "<br><br><b>Explanation:</b> " + explanation
         else:
             prompt = f"{few_shot_str}" \
                      f"{text}\n" \
@@ -110,7 +138,7 @@ def rationalize_operation(conversation, parse_text, i, simulation, data_path="./
             print(f"[rationalize operation]\n=== PROMPT ===\n{prompt}")
 
             input_ids = conversation.decoder.gpt_tokenizer(prompt, return_tensors="pt").input_ids
-            input_ids = input_ids.to(device = "cpu")
+            input_ids = input_ids.to(device="cpu")
             generation = conversation.decoder.gpt_model.generate(
                 input_ids,
                 max_length=2048,
