@@ -247,15 +247,16 @@ def prediction_with_custom_input(conversation):
             return_s += "</li>"
             return_s += "</ul><br><br>"
     else:
-        return_s += "<ul>"
-        return_s += "<li>"
-        return_s += f"Your input is: {inputs[i]}"
-        return_s += "</li>"
+        for i in range(len(predictions)):
+            return_s += "<ul>"
+            return_s += "<li>"
+            return_s += f"Your input is: {inputs[i]}"
+            return_s += "</li>"
 
-        return_s += "<li>"
-        return_s += f"The prediction is: {predictions[i]}"
-        return_s += "</li>"
-        return_s += "</ul>"
+            return_s += "<li>"
+            return_s += f"The prediction is: {predictions[i]}"
+            return_s += "</li>"
+            return_s += "</ul>"
 
     store_results(inputs, predictions, cache_path)
 
@@ -269,7 +270,7 @@ def get_prediction_by_id_da(_id):
     jsonContent = fileObject.read()
     json_list = json.loads(jsonContent)
 
-    return np.array([np.argmax(json_list[_id])])
+    return np.array([np.argmax(json_list[_id]["predictions"])])
 
 
 def prediction_with_id(model, data, conversation, text):
