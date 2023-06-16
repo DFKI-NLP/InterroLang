@@ -126,7 +126,7 @@ def get_forward_func(dataset_name, model):
 def compute_feature_attribution_scores(batch, model, dataset_name):
     model.to(device)
     model.eval()
-    # model.zero_grad()
+    model.zero_grad()
 
     inputs, additional_forward_args = get_inputs_and_additional_args(
         batch=batch, dataset_name=dataset_name
