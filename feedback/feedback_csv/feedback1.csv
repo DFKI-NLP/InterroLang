@@ -1,0 +1,64 @@
+User text,Golden label,Parsed text,Correctness
+please display id 1242,filter id 1241 and show [e],filter id 1241 and show [e],1
+for 1197 please show me the values of the features,filter id 1197 and show [e],filter id 1197 and show [e],1
+for 123 please show me the values of the features.,filter id 123 and show [e],filter id 123 and show [e],1
+please show the values of 636,filter id 636 and show [e],filter id 123 and show [e],0
+please show me the values of id 512,filter id 512 and show [e],filter id 123 and show [e],0
+how much training data is used,data train_data_number [e],data train_data_number [e],1
+can you please tell me the name of the dataset?,data train_data_name [e],data train_data_name [e],1
+can you display the instance with id 1666,filter id 1666 and show [e],data train_data_name [e],0
+where does training data come from?,data train_data_source [e],data train_data_source [e],1
+what is the origin of the dataset,data train_data_source [e],data train_data_source [e],1
+where does the data come from again?,data train_data_source [e],data train_data_source [e],1
+let me see their ids,countdata [e],countdata [e],1
+how many datapoints exist in train and test data?,data train_data_number [e],data train_data_number [e],1
+how many datapoints exist in \ntest data?,data test_data_number [e],countdata [e],0
+what are the id's of all the items,countdata [e],countdata [e],1
+how many data points are in the training data set,data train_data_name [e],data train_data_name [e],1
+what are the true labels in the dataset and how often do they occur?,label [e],label [e],1
+show me how the data is labeled,label [e],label [e],1
+show the frequence of the labels,label [e],label [e],1
+please predict id 274,filter id 274 and predict [e],filter id 320 and nlpattribute all [e],0
+predict 274,filter id 274 and predict [e],filter id 320 and nlpattribute all [e],0
+predict 214,filter id 214 and predict [e],filter id 320 and nlpattribute all [e],0
+show me data the model gets wrong,mistake sample [e],mistake sample [e],1
+could you randomly select an example and predict it?,randompredict [e],randompredict [e],1
+predict a random sample,randompredict [e],randompredict [e],1
+please predict a random sample,randompredict [e],randompredict [e],1
+can you predict a random sample,randompredict [e],randompredict [e],1
+show the probabilities of id 1768,filter id 1768 and likelihood,filter id 1768 and likelihood,1
+how often did the model predict falsely?,mistake count [e],mistake count [e],1
+give me the confusion matrix,score accuracy  [e],score accuracy  [e],1
+what does the model predict on all the training data,predict [e],predict [e],1
+can you provide me an instance that is analogous to id 1235,filter 1235 and similar 1,predict [e],0
+can you provide me an instance that is analogous to id 1235,filter 1235 and similar 1,predict [e],0
+please retrieve an example that is similar to id 2121,filter id 2121 and similar 1 [e],filter id 2121 and similar 1 [e],1
+please retrieve an example that is similar to id 2121,filter id 2121 and similar 1 [e],filter id 2121 and similar 1 [e],1
+show me a data point that is analogous to id 2037,filter id 2037 and similar 1 [e],filter id 2037 and similar 1 [e],1
+show me a data point that is analogous to id 20,filter id 2 and similar 1 [e],filter id 2037 and similar 1 [e],0
+could you give me an analogous data point to id 1605,filter id 1605 and similar 1 [e],filter id 1605 and similar 1 [e],1
+could you give me an analogous data point to id 14,filter id 14 and similar 1 [e],filter id 1605 and similar 1 [e],0
+what are the most frequent keywords in the data?,keywords all [e],keywords all [e],1
+what are the key features for data point 1030,filter id 1030 and nlpattribute all [e],filter id 1030 and nlpattribute all [e],1
+what are the key features for data point 130,filter id 130 and nlpattribute all [e],filter id 0 and nlpattribute all [e],0
+top 2 features influencing the model's prediction on data point 9,filter id 9 and nlpattribute topk 2 [e],filter id 11 and nlpattribute topk 2 [e],0
+what features are not that important,important all [e],important all [e],1
+show me the least important feature,important all [e],important all [e],1
+show me the feature importance for id 1508 on sentence level,filter id 1508 and nlpattribute sentence [e],filter id 1508 and nlpattribute sentence [e],1
+what features most influence the model's predictions,important all [e],important all [e],1
+what features most influence the model's predictions,important all [e],important all [e],1
+provide a plain language interpretation for id 1171,filter id 1171 and rationalize [e],filter id 1171 and rationalize [e],1
+explain id 131 with rationale,filter id 131 and rationalize [e],filter id 131 and rationalize [e],1
+offer a plain-english interpretation for id 3113,filter id 3113 and rationalize [e],filter id 3113 and rationalize [e],1
+clarify id 1224 with a reason,filter id 1224 and rationalize [e],filter id 1224 and rationalize [e],1
+could you show me how to change the prediction for the data point 237,filter id 237 and cfe [e],filter id 237 and cfe [e],1
+show me how the model could be deceived by instance 428,filter id 428 and adversarial [e],filter id 428 and adversarial [e],1
+please attack the model for id 18,filter id 18 and adversarial [e],ilter id 18 and adversarial [e],1
+kindly generate a new variant based on id 964,filter id 964 and augment [e],filter id 964 and augment [e],1
+starting from id 1208 how would a new instance look like?,filter id 1208 and augment [e],filter id 1208 and augment [e],1
+which languages does the data for training contain?,data train_data_language [e],data train_data_language [e],1
+why do you predict instance id 1954,filter id 1954 and nlpattribute all [e],filter id 1954 and nlpattribute all [e],1
+why do you predict instance id 19,filter id 19 and nlpattribute all [e],filter id 19 and nlpattribute all [e],1
+why do you predict instance id 1942,filter id 1942 and nlpattribute all [e],filter id 1942 and nlpattribute all [e],1
+can you display the instance with id 9,filter id 9 and show [e],filter id 9 and show [e],1
+probability of id 1822,filter id 1822 and likelihood [e],filter id 1822 and likelihood [e],1
