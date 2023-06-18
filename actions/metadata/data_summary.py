@@ -59,10 +59,13 @@ def get_intro_text(flag, conversation):
 def data_operation(conversation, parse_text, i, **kwargs):
     """Data summary operation."""
 
-    flag = parse_text[i+1]
+    try:
+        flag = parse_text[i+1]
+    except IndexError:
+        flag = "[e]"
 
-    if flag == '[e]':
-        text = ''
+    if flag == "[e]":
+        text = ""
     elif flag in DATA_FLAG:
         text = get_intro_text(flag, conversation)
     else:
