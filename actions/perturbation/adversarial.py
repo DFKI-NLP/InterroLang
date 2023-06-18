@@ -84,6 +84,9 @@ def adversarial_operation(conversation, parse_text, i, simulation, **kwargs):
     # launch attacks and print attack results
     d = attack_eval.eval(dataset, visualize=False)
 
+    # needed to avoid conflict with captum (feature attributions)
+    victim.hook.remove()
+
     return_s = ""
 
     x_orig = d["x_orig"]
