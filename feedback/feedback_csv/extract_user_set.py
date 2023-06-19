@@ -18,7 +18,11 @@ for file in files:
         with open(user_set_path, "a+") as f:
             for i in range(len(user_text)):
                 f.write(user_text[i] + '\n')
-                f.write(golden_label[i] + '\n')
+
+                if not golden_label[i].endswith("[e]"):
+                    f.write(golden_label[i] + "[e] " + '\n')
+                else:
+                    f.write(golden_label[i] + '\n')
 
                 if i != len(user_text) - 1:
                     f.write("\n")
