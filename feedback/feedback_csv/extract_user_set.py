@@ -28,7 +28,7 @@ for file in files:
                 f.write(user_text[i] + '\n')
 
                 if not golden_label[i].endswith("[e]"):
-                    f.write(golden_label[i] + "[e] " + '\n')
+                    f.write(golden_label[i] + " [e] " + '\n')
                 else:
                     f.write(golden_label[i] + '\n')
 

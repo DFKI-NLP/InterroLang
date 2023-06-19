@@ -7,7 +7,7 @@ for id 1072 please provide the prediction.,filter id 1072 and predict [e],filter
 what do you predict for 55,filter id 55 and predict [e],filter id 55 and predict,1
 could you show me the predictions on all the data?,predict [e],predict,1
 show me the number of data points the model forecasts inaccurately?,mistake count [e],mistake count,1
-return the probability that instance 2000 is predicted in the True class,filter id 2000 and likelihood True [e],filter id 2000 and likelihood True,1
+return the probability that instance 2000 is predicted in the True class,filter id 2000 and likelihood [e],filter id 2000 and likelihood True,1
 give me an example that is similar to id 1788,filter id 1788 and similar [e],filter id 1788 and similar,1
 show the most frequent keywords in the dataset,keywords all [e],keywords all,1
 show the least frequent words in the dataset,keywords all [e],keywords all,1
@@ -58,7 +58,7 @@ could you show me how the data is labelled?,label [e],data train_data_name,0
 please display the prediction of the instance with id 2051,filter id 2051 and predict [e],filter id 2051 and predict,1
 predict one instance from the data at random,randompredict [e],filter id 2051 and predict,0
 show the predictions on all the data,predict [e],filter id 2051 and predict,0
-probability of id 1745 predicted question?,filter id 1745 and likelihood  [e],filter id 1745 and likelihood question,0
+probability of id 1745 predicted question?,filter id 1745 and likelihood [e],filter id 1745 and likelihood question,0
 training accuracy please,score default [e],filter id 1745 and likelihood question,0
 f1 score please,score f1 [e],filter id 1745 and likelihood question,0
 can you tell me how many data points is the model predicting incorrectly?,mistake count [e],filter id 1745 and likelihood question,0
