@@ -1,0 +1,19 @@
+User text,Golden label,Parsed text,Correctness
+what are the labels for all the data,label,label,1
+number of rows in the data,countdata,countdata,1
+return prediction id 902,filter id 902 and predict,filter id 902 and predict,1
+please choose one input text and show the model's outcome,randompredict,randompredict,1
+show the probability that id 266 is inform,filter id 266 and likelihood inform,filter id 266 and likelihood inform,1
+testing accuracy please,score accuracy,score accuracy,1
+is it possible to retrieve an example that is similar to id 84,filter id 84 and similar,filter id 84 and similar,1
+what are the three most frequent keywords?,keywords 3,keywords 3,1
+"8 most crucial features for ids 3, 67, and 450",filter id 3 or filter id 67 or filter id 450 and nlpattribute topk 8,filter id 3 or filter id 67 or filter id 450 and nlpattribute topk 8,1
+show me the feature importance for id 1690 on sentence level,filter id 1690 and nlpattribute sentence,filter id 1690 and nlpattribute,0
+explain the model's predictions on the data,important all,important all,1
+how do you decide whether some text is inform,important inform,important inform,1
+explain id 462 with rationale,filter id 462 and rationalize,filter id 462 and rationalize,1
+nice. i'm pretty satisfied with the prediction of id 111 but could you tell me how to change the prediction?,filter id 111 and cfe,filter id 111 and cfe,1
+show me an adversarial attack on id 2097,filter id 2097 and adversarial,filter id 2097 and adversarial,1
+please augment id 336,filter id 336 and augment,filter id 2097 and adversarial,0
+i'd like to view a new example derived from id 2023 please.,filter id 2023 and augment,filter id 2097 and adversarial,0
+could you show me the predictions on all the data?,predict,predict,1

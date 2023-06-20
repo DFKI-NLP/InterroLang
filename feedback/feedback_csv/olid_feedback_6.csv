@@ -1,0 +1,25 @@
+User text,Golden label,Parsed text,Correctness
+What can you do?,function,function,1
+for 84 please show me the values of the features.,filter id 84 and show,filter id 84 and show,1
+what are the three most frequent keywords?,keywords 3,keywords 3,1
+what's the source of the training data?,data train_data_source,data train_data_source,1
+what is your prediction for id 0?,filter id 0 and predict,filter id 0 and predict,1
+shed light on id 0 in simple terms,filter id 0 and rationalize,filter id 0 and rationalize,1
+shed light on id 610 in simple terms,filter id 610 and rationalize,filter id 610 and rationalize,1
+explain your judgement of id 1,filter id 1 and nlpattribute all,filter id 1 and nlpattribute all,1
+show me id 2,filter id 2 and show,filter id 2 and show,1
+interpret id 2,filter id 2 and rationalize,filter id 2 and rationalize,1
+explain how id 2 uses slur words,filter id 2 and rationalize,filter id 2 and rationalize,1
+show me some data you predict incorrectly,mistake sample,mistake sample,1
+explain your judgement of id 6,filter id 6 and rationalize,filter id 6 and nlpattribute all,1
+kindly generate a new variant based on id 0,filter id 0 and augment,filter id 0 and augment,1
+generate a natural language explanation for id 1337,filter id 1337 and rationalize,filter id 1337 and rationalize,1
+what are some data points you get incorrect?,mistake sample,mistake sample,1
+probability of id 1337 predicted offensive?,filter id 1337 and likelihood offensive,filter id 1337 and likelihood offensive,1
+give me the accuracy on the training data,score accuracy training,score accuracy training,1
+explain how to use you,self,self,1
+rationalize item 42,filter id 42 and rationalize,filter id 42 and rationalize,1
+show the prediction of id 448,filter id 448 and predict,filter id 448 and predict,1
+show how often which target label appears in the entire dataset,label,countdata,0
+list all ids,show,countdata,0
+"For id 9, rationalize",rationalize,filter id 9 and rationalize,1

@@ -1,0 +1,22 @@
+User text,Golden label,Parsed text,Correctness
+for 2322 please show me the values of the features.,filter id 2322 and show,filter id 2322 and show,1
+could you show me how the data is labelled?,label,data train_data_name,0
+what's the source of the training data?,data train_data_source,data train_data_source,1
+how many test data points are here?,data test_data_number,countdata,0
+how many data points are in the training data set,data train_data_number,countdata,0
+predict 22,filter id 22 and predict,filter id 22 and predict,1
+what is the probability that id 62 is predicted as offensive by the model?,filter id 62 and likelihood offensive,filter id 62 and likelihood offensive,1
+what is the weighted recall?,score recall weighted,score recall weighted,1
+could you show me some data the model predicts incorrectly?,mistake sample,mistake sample,1
+show me 5 data points that are analogous to id 1984,filter id 1984 and similar 5,filter id 1984 and similar 5,1
+which five words occur the most in the data?,keywords 5,keywords 5,1
+for 1605 why do you predict it?,filter id 1605 and nlpattribute all,filter id 1605 and nlpattribute all,1
+please explain the prediction of id 877 based on which sentences were most salient,filter id 877 and nlpattribute sentence,filter id 877 and nlpattribute all,0
+please show the top few features for the predictions,important all,important all,1
+how do you figure out if data points are non-offensive,important non-offensive,important non-offensive,1
+offer a plain-english interpretation for id 586,filter id 586 and rationalize,filter id 586 and rationalize,1
+could you please tell me the predictions for id 1257 and what you have to do to flip the prediction?,filter id 1257 and cfe,filter id 1257 and cfe,1
+show me an adversarial attack on id 1099,filter id 1099 and adversarial,filter id 1099 and adversarial,1
+what does instance with id 1923 have to do in order to change the prediction?,filter id 1923 and cfe,filter id 1923 and cfe,1
+can i see an instance modification from id 597,filter id 597 and augment,filter id 597 and augment,1
+"For id 2,show ",filter id 2 and show,filter id 2 and show,1

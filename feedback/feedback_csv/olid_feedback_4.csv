@@ -1,0 +1,39 @@
+User text,Golden label,Parsed text,Correctness
+what's the source of the training data?,data train_data_source,data train_data_source,1
+inform me about the test data name,data test_data_name,data test_data_name,1
+what are the true labels in the dataset and how often do they occur?,label,keywords all,0
+please choose one input text and show the model's outcome,randompredict,randompredict,1
+language of training data,data train_data_language,data train_data_language,1
+where does training data come from,data train_data_source,data train_data_source,1
+test partition languages,data test_data_language,score default,0
+could you show me how the data is labelled?,label,data train_data_name,0
+how often does the label "offensive" appears in the dataset ?,label,countdata,0
+predict instance with id 1,filter id 1 and predict,filter id 1 and predict,1
+generate a prediction for a randomly chosen example,randompredict,randompredict,1
+what is the probability that id 1918 is predicted as offensive by the model?,filter id 1918 and likelihood offensive,filter id 1918 and likelihood offensive,1
+what's the chance instance id 1381 is scored as non-offensive,filter id 1381 and likelihood non-offensive,filter id 1381 and likelihood non-offensive,1
+can you tell me how many data points is the model predicting incorrectly?,mistake count,mistake count,1
+could you show me a few examples of data that you get wrong?,mistake sample,mistake sample,1
+show me a data point that is analogous to id 2583,filter id 2583 and similar,filter id 2583 and similar,1
+show me a similar data point to id 40,filter id 40 and similar,filter id 40 and similar,1
+what are the reasons for predicting id 40 and why do you predict this instance?,filter id 40 and nlpattribute all,filter id 40 and nlpattribute all,1
+what are the major features for instance 40,filter id 40 and nlpattribute all,filter id 40 and nlpattribute all,1
+what are the most important sentences for id 2479,filter id 2479 and nlpattribute sentence,filter id 2479 and nlpattribute sentence,1
+what are the reasons for predicting id 40 and why do you predict this instance?,filter id 40 and nlpattribute all,filter id 40 and nlpattribute all,1
+show the feature importances,important all,important all,1
+how do you figure out if data points are offensive,important offensive,important offensive,1
+what methods do you use to come to predict offensive?,important offensive,important offensive,1
+what methods do you use to come to predict non-offensive?,important non-offensive,important non-offensive,1
+rationalize the prediction for id 82,filter id 82 and rationalize,filter id 82 and rationalize,1
+explain id 40 in natural language,filter id 40 and rationalize,filter id 40 and rationalize,1
+nice. i'm pretty satisfied with the prediction of id 177 but could you tell me how to change the prediction?,filter id 177 and cfe,filter id 177 and cfe,1
+could you tell me how to change the prediction of id 40,filter id 40 and cfe,filter id 40 and cfe,1
+what would an adversarial attack look like for instance 2075,filter id 2075 and adversarial,filter id 2075 and adversarial,1
+what would an adversarial attack look like for instance 40,filter id 40 and adversarial,filter id 40 and adversarial,1
+please augment id 290,filter id 290 and augment,filter id 290 and augment,1
+augment id 40,filter id 40 and augment,filter id 40 and augment,1
+why do you predict this,nlpattribute all,nlpattribute all,1
+what is the most important sentence,nlpattribute sentence,important all,0
+why do you predicted this as offensive,nlpattribute all offensive,nlpattribute all offensive,1
+perform an adversary attack,adversarial,model model_summary,0
+what are the most important sentences,nlpattribute sentence,important all,0

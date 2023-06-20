@@ -1,0 +1,22 @@
+User text,Golden label,Parsed text,Correctness
+show me some data you predict incorrectly,mistake sample,mistake sample,1
+for 84 please show me the values of the features.,filter id 84 and show,filter id 84 and show,1
+which languages does the data for training contain?,data train_data_language,data train_data_language,1
+probability that id 2167 is predicted as "commissive" from the model,filter id 2167 and likelihood commissive,filter id 2167 and likelihood,0
+could you show me some data the model predicts incorrectly?,mistake sample,mistake sample,1
+please provide me with 3 examples that are similar to id 573,filter id 573 and similar 3,filter id 573 and similar 3,1
+which five words occur the most in the data?,keywords 5,keywords 5,1
+show me the 5 most important features for data point 46,filter id 46 and nlpattribute topk 5,filter id 46 and nlpattribute topk 5,1
+please explain the prediction of id 2235 based on which sentences were most salient,filter id 2235 and nlpattribute sentence,filter id 2235 and nlpattribute all,0
+what are the top 2 most important features,important topk 2,important topk 2,1
+how do you figure out if data points are commissive,important commissive,important commissive,1
+simplify the explanation for id 1631,filter id 1631 and rationalize,filter id 1631 and rationalize,1
+what does instance with id 571 have to do in order to change the prediction?,filter id 571 and cfe,filter id 571 and cfe,1
+can you create an instance that would mislead the model for id 300,filter id 300 and adversarial,filter id 300 and adversarial,1
+give me the feature important score,important all,important all,1
+give me similar text,similar,similar,1
+give me some similar text,similar,similar,1
+predict,predict,predict,1
+feature importance,important all,important all,1
+show me the feature importance for id 1070 on sentence level,filter id 1070 and nlpattribute sentence,filter id 1070 and nlpattribute,0
+give an account for id 1300 with justification,filter id 1300 and rationalize,filter id 1300 and rationalize,1
