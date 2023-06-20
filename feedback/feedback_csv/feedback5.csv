@@ -1,0 +1,56 @@
+User text,Golden label,Parsed text,Correctness
+Could you tell me a bit more about what this is?,self,self,1
+What can you do?,function,function,1
+for 84 please show me the values of the features.,filter id 84 and show,filter id 84 and show,1
+which languages does the data for training contain?,data train_data_language,data train_data_language,1
+what is the test set called?,data test_data_name,data test_data_name,1
+show me a random prediction,randompredict,randompredict,1
+please display the prediction of the instance with id 698,filter id 698 and predict,filter id 698 and predict,1
+return the probability that instance 622 is predicted in the True class,filter id 622 and likelihood True,filter id 622 and likelihood True,1
+what are some data points you get incorrect?,mistake sample,mistake sample,1
+what are the most frequent keywords in the data?,keywords all,keywords all,1
+show 3 similar instances to id 1307,filter id 1307 and similar 3,filter id 691 and similar 4,0
+why is id 1970 predicted True,filter id 1970 and nlpattribute all,filter id 1307 and similar 3,0
+i would like to see the top attributed tokens with label True.,important True,important True,1
+please create a new instance based on id 2342,filter id 2342 and augment,filter id 2342 and augment,1
+what would it take to change how instance 267 is predicted?,filter id 267 and cfe,filter id 2821 and adversarial,0
+what would it take to change how instance 505 is predicted?,filter id 505 and cfe,filter id 267 and cfe,0
+for 2322 please show me the values of the features.,filter id 2322 and show,filter id 2322 and show,1
+could you show me how the data is labelled?,label,data train_data_name,0
+what's the source of the training data?,data train_data_source,data train_data_source,1
+how many test data points are here?,data test_data_number,countdata,0
+how many data points are in the training data set,data train_data_number,countdata,0
+predict 22,filter id 22 and predict,filter id 22 and predict,1
+what is the probability that id 62 is predicted as offensive by the model?,filter id 62 and likelihood offensive,filter id 62 and likelihood offensive,1
+what is the weighted recall?,score recall weighted,score recall weighted,1
+could you show me some data the model predicts incorrectly?,mistake sample,mistake sample,1
+show me 5 data points that are analogous to id 1984,filter id 1984 and similar 5,filter id 1984 and similar 5,1
+which five words occur the most in the data?,keywords 5,keywords 5,1
+for 1605 why do you predict it?,filter id 1605 and nlpattribute all,filter id 1605 and nlpattribute all,1
+please explain the prediction of id 877 based on which sentences were most salient,filter id 877 and nlpattribute sentence,filter id 877 and nlpattribute all,0
+please show the top few features for the predictions,important all,important all,1
+how do you figure out if data points are non-offensive,important non-offensive,important non-offensive,1
+offer a plain-english interpretation for id 586,filter id 586 and rationalize,filter id 586 and rationalize,1
+could you please tell me the predictions for id 1257 and what you have to do to flip the prediction?,filter id 1257 and cfe,filter id 1257 and cfe,1
+show me an adversarial attack on id 1099,filter id 1099 and adversarial,filter id 1099 and adversarial,1
+what does instance with id 1923 have to do in order to change the prediction?,filter id 1923 and cfe,filter id 1923 and cfe,1
+can i see an instance modification from id 597,filter id 597 and augment,filter id 597 and augment,1
+"For id 2,show ",filter id 2 and show,filter id 2 and show,1
+what are the labels for all the data,label,label,1
+number of rows in the data,countdata,countdata,1
+return prediction id 902,filter id 902 and predict,filter id 902 and predict,1
+please choose one input text and show the model's outcome,randompredict,randompredict,1
+show the probability that id 266 is inform,filter id 266 and likelihood inform,filter id 266 and likelihood inform,1
+testing accuracy please,score accuracy,score accuracy,1
+is it possible to retrieve an example that is similar to id 84,filter id 84 and similar,filter id 84 and similar,1
+what are the three most frequent keywords?,keywords 3,keywords 3,1
+"8 most crucial features for ids 3, 67, and 450",filter id 3 or filter id 67 or filter id 450 and nlpattribute topk 8,filter id 3 or filter id 67 or filter id 450 and nlpattribute topk 8,1
+show me the feature importance for id 1690 on sentence level,filter id 1690 and nlpattribute sentence,filter id 1690 and nlpattribute,0
+explain the model's predictions on the data,important all,important all,1
+how do you decide whether some text is inform,important inform,important inform,1
+explain id 462 with rationale,filter id 462 and rationalize,filter id 462 and rationalize,1
+nice. i'm pretty satisfied with the prediction of id 111 but could you tell me how to change the prediction?,filter id 111 and cfe,filter id 111 and cfe,1
+show me an adversarial attack on id 2097,filter id 2097 and adversarial,filter id 2097 and adversarial,1
+please augment id 336,filter id 336 and augment,filter id 2097 and adversarial,0
+i'd like to view a new example derived from id 2023 please.,filter id 2023 and augment,filter id 2097 and adversarial,0
+could you show me the predictions on all the data?,predict,predict,1
