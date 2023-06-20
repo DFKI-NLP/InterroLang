@@ -11,9 +11,9 @@ da_user_set_path = "../../experiments/parsing_interrolang_dev/user_set_interrola
 
 name2path = {"boolq": boolq_user_set_path, "olid": olid_user_set_path, "daily_dialog": da_user_set_path}
 
-is_exist = False
-
 for file in files:
+    is_exist = False
+
     if file.endswith(".csv") and (file.startswith("boolq") or file.startswith("olid") or file.startswith("daily")):
         name = file[:file.find("_")]
 
@@ -25,7 +25,6 @@ for file in files:
         golden_label = list(df["Golden label"])
 
         assert len(user_text) == len(golden_label)
-        print(name)
         if os.path.exists(name2path[name]):
             is_exist = True
 
