@@ -1,0 +1,25 @@
+User text,Golden label,Parsed text,Correctness
+please display id 1,filter id 1 and show,filter id 1 and show,1
+Could you tell me a bit more about what this is?,self,self,1
+What can you do?,function,function,1
+how many training data points are present?,countdata,countdata,1
+could you please tell me the sources of the test data?,data test_data_source,data test_data_source,1
+what are the labels for all the data,label,label,1
+for id 2925 please provide the prediction.,filter id 2925 and predict,filter id 2925 and predict,1
+predict one instance from the data at random,randompredict,randompredict,1
+could you show me the predictions on all the data?,predict,predict,1
+what's the chance instance id 2698 is scored as True,filter id 2698 and likelihood True,filter id 2698 and likelihood True,1
+what's the rate you do correct predictions?,score default,score default,1
+can you demonstrate how many data points are predicted wrongly?,mistake count,mistake count,1
+what are some data points you get incorrect?,mistake sample,mistake sample,1
+can you please retrieve an instance that is similar to id 2302,filter id 2302 and similar,filter id 2302 and similar,1
+show the most frequent keywords in the dataset,keywords all,keywords all,1
+i was wondering what are the most important features for instance 2116,filter id 2116 and nlpattribute all,filter id 2116 and nlpattribute all,1
+explain the model's predictions on the data,important all,important all,1
+i would like to see the top attributed tokens with label False.,important False,important False,1
+expound on id 355 with an explanation,filter id 355 and rationalize,filter id 355 and rationalize,1
+what are the most important tokens in id 1,filter id 1 and nlpattribute all,filter id 1 and nlpattribute all,1
+could you locate 6 comparable data point to id 1 for me?,filter id 1 and similar 6,filter id 1 and similar 6,1
+most impactful feature for the id: 2443,filter id 2443 and nlpattribute topk 1,filter id 2443 and nlpattribute all,1
+can you tell me how to change the prediction for id 1,filter id 1 and cfe,filter id 1 and cfe,1
+give the importance scores for the sentence,nlpattribute,important all,0

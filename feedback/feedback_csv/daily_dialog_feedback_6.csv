@@ -1,0 +1,35 @@
+User text,Golden label,Parsed text,Correctness
+for 1 please show me the values of the features.,filter id 1 and show,filter id 84 and show,0
+show me id 1,filter id 1 and show,filter id 1 and show,1
+show me id 0,filter id 0 and show,filter id 0 and show,1
+show me 5 data points that are analogous to id 1,filter id 1 and similar 5,filter id 1 and similar 5,1
+data points most similar to id 0,filter id 0 and similar,filter id 1 and similar 5,0
+show me most similar ids to number 0,filter id 0 and similar,filter id 1 and similar 5,0
+please retrieve an example that is similar to id 0,filter id 0 and similar 1,filter id 1 and similar 5,0
+please retrieve an example that is similar to id 2,filter id 2 and similar,filter id 2 and similar,1
+can i see an instance modification from id 2,filter id 2 and augment,filter id 2 and similar,0
+can you display the instance with id 807,filter id 807 and show,filter id 807 and show,1
+where does training data come from,data train_data_source,data train_data_source,1
+probability of id 1309 predicted dummy?,filter id 1309 and likelihood,filter id 1309 and likelihood,1
+give a rationale for id 0,filter id 0 and rationalize,filter id 0 and rationalize,1
+give a rationale for id 2,filter id 2 and rationalize,filter id 2 and rationalize,1
+how accurate are you in predicting the class inform?,score default inform,score default inform,1
+what does instance with id 184 need to do to change the prediction?,filter id 184 and cfe,filter id 184 and cfe,1
+i'd like to see a model deception for the instance with id 2,filter id 2 and adversarial,filter id 2 and adversarial,1
+predict one instance from the data at random,randompredict,randompredict,1
+show me data the model gets wrong,mistake sample,mistake sample,1
+what are the labels for all the data,label,label,1
+keywords,keywords all,keywords all,1
+create perturbation of id 2,filter id 2 and augment,filter id 2 and rationalize,1
+help me understand 2,filter id 2 and rationalize,filter id 2 and rationalize,1
+show me id 1337,filter id 1337 and show,filter id 1337 and show,1
+interpret this id for me,filter id 1337 and rationalize,self,0
+interpret id 1337 for me,filter id 1337 and rationalize,filter id 1337 and rationalize,1
+explain id 1025 to me,filter id 1025 and nlpattribute all,filter id 1025 and nlpattribute all,1
+explain id 1025 to me using natural language,filter id 1025 and rationalize,filter id 1025 and rationalize,1
+show 3 similar instances to id 1337,filter id 1337 and similar 3,filter id 1337 and similar 3,1
+show 3 similar instances to id 1025,filter id 1025 and similar 3,filter id 1025 and similar 3,1
+what is the way to change the prediction for the data point with the id number 1025,filter id 1025 and cfe,filter id 1025 and cfe,1
+what is the way to change the prediction for the data point with the id number 2,filter id 2 and cfe,filter id 2 and cfe,1
+can you generate an adversarial example for instance 1025,adversarial,filter id 1025 and adversarial,1
+can you generate an adversarial example for instance 2,filter id 2 and adversarial,filter id 2 and adversarial,1

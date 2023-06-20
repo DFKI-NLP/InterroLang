@@ -1,0 +1,18 @@
+User text,Golden label,Parsed text,Correctness
+Could you tell me a bit more about what this is?,self,self,1
+What is the prediction for ID 7?,filter id 7 and predict,filter id 7 and predict,1
+show me an adversarial example for the instance with id 1,filter id 1 and adversarial,filter id 1 and adversarial,1
+can you give me a prediction for a random data point?,randompredict,randompredict,1
+tell me the language of testing data,data test_data_language,data test_data_language,1
+what is the dataset called?,data train_data_source,data train_data_source,1
+could you show me a random data point?,randompredict,randompredict,1
+what is the chance that the data point with id 2191 is False,filter id 2191 and likelihood False,filter id 2191 and likelihood False,1
+what is the f1 score on the evaluation data,score f1 evaluation,score f1 evaluation,1
+please show what the gold labels are,label,label,1
+how many data points are in the training data set,countdata,countdata,1
+"For id 3, what is the probability?",filter id 3 and likelihood,filter id 3 and likelihood,1
+"For the maximum id, what is the probability of being true?",filter id 3270 and likelihood true,filter id 3 and likelihood true,0
+flip prediction class data point 73,filter id 73 and cfe,filter id 73 and cfe,1
+which seven adjectives occur the most in the data?,keywords 7,keywords 7,1
+please provide me with 4 examples that are similar to id 3,filter id 3 and similar 4,keywords 7,0
+could you show me the predictions on all the data?,predict,predict,1

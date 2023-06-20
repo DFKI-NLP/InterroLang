@@ -1,0 +1,17 @@
+User text,Golden label,Parsed text,Correctness
+Could you tell me a bit more about what this is?,self,self,1
+What can you do?,function,function,1
+for 84 please show me the values of the features.,filter id 84 and show,filter id 84 and show,1
+which languages does the data for training contain?,data train_data_language,data train_data_language,1
+what is the test set called?,data test_data_name,data test_data_name,1
+show me a random prediction,randompredict,randompredict,1
+please display the prediction of the instance with id 698,filter id 698 and predict,filter id 698 and predict,1
+return the probability that instance 622 is predicted in the True class,filter id 622 and likelihood True,filter id 622 and likelihood True,1
+what are some data points you get incorrect?,mistake sample,mistake sample,1
+what are the most frequent keywords in the data?,keywords all,keywords all,1
+show 3 similar instances to id 1307,filter id 1307 and similar 3,filter id 691 and similar 4,0
+why is id 1970 predicted True,filter id 1970 and nlpattribute all,filter id 1307 and similar 3,0
+i would like to see the top attributed tokens with label True.,important True,important True,1
+please create a new instance based on id 2342,filter id 2342 and augment,filter id 2342 and augment,1
+what would it take to change how instance 267 is predicted?,filter id 267 and cfe,filter id 2821 and adversarial,0
+what would it take to change how instance 505 is predicted?,filter id 505 and cfe,filter id 267 and cfe,0
