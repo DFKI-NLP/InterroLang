@@ -1,0 +1,26 @@
+User text,Golden label,Parsed text
+Could you tell me a bit more about what this is?,self [e],self
+What can you do?,function [e],function
+for 84 please show me the values of the features.,filter id 84 and show [e],filter id 84 and show
+which languages does the data for training contain?,data train_data_language [e],data train_data_language
+what is the test set called?,data test_data_name [e],data test_data_name
+total number of training items in the data,data train_data_number [e],countdata
+could you show me how the data is labelled?,label [e],data train_data_name
+please display the prediction of the instance with id 2051,filter id 2051 and predict [e],filter id 2051 and predict
+predict one instance from the data at random,randompredict [e],randompredict
+show the predictions on all the data,predict [e],predict
+probability of id 1745 predicted offensive,filter id 1745 and likelihood offensive,filter id 1745 and likelihood offensive
+training accuracy please,score accuracy [e],score accuracy
+can you tell me how many data points is the model predicting incorrectly?,mistake count [e],mistake count
+show me data the model gets wrong,mistake sample [e],mistake sample
+please retrieve an example that is similar to id 355,filter id 355 and similar [e],filter id 355 and similar
+keywords,keywords all [e],keywords all
+"8 most crucial features for ids 3, 67, and 450",filter id 3 or filter id 67 or filter id 450 and nlpattribute topk 8 [e],filter id 3 or filter id 67 or filter id 450 and nlpattribute topk 8
+what features most influence model predictions,important all [e],important all
+how do you figure out if data points are non-offensive,important non-offensive [e],important non-offensive
+i want to know topk contributed words with label offensive,important offensive [e],important offensive
+rationalize the prediction for id 2474,filter id 2474 and rationalize [e],filter id 2474 and rationalize
+starting from id 1093 how would a new instance look like?,filter id 1093 and augment [e],filter id 1093 and augment
+rationalize the prediction for id 201,filter id 201 and rationalize [e],filter id 201 and rationalize
+starting from id 1792 how would a new instance look like?,filter id 201 and augment [e],filter id 201 and rationalize
+could you create an adversarial example for the model prediction on id 1703,filter id 1703 and adversarial [e],filter id 1703 and adversarial

@@ -1,0 +1,75 @@
+User text,Golden label,Parsed text,Correctness
+Could you tell me a bit more about what this is?,self [e],self,1
+for 54 please show me the values of the features.,filter id 54 and show [e],filter id 54 and show,1
+which languages does the data for training contain?,data train_data_language [e],data train_data_language,1
+what is the test set called?,data test_data_name [e],data test_data_name,1
+for id 1072 please provide the prediction.,filter id 1072 and predict [e],filter id 1072 and predict,1
+what do you predict for 55,filter id 55 and predict [e],filter id 55 and predict,1
+could you show me the predictions on all the data?,predict [e],predict,1
+show me the number of data points the model forecasts inaccurately?,mistake count [e],mistake count,1
+return the probability that instance 2000 is predicted in the True class,filter id 2000 and likelihood [e],filter id 2000 and likelihood True,1
+give me an example that is similar to id 1788,filter id 1788 and similar [e],filter id 1788 and similar,1
+show the most frequent keywords in the dataset,keywords all [e],keywords all,1
+show the least frequent words in the dataset,keywords all [e],keywords all,1
+what are the key features for data point 38,filter id 38 and nlpattribute all [e],filter id 38 and nlpattribute all,1
+what are the most important sentences for id 3033,filter id 3033 and nlpattribute sentence [e],filter id 3033 and nlpattribute sentence,1
+generate a natural language explanation for id 1901,filter id 1901 and rationalize [e],filter id 1901 and rationalize,1
+could you show me how to change the prediction for the data point 2945,filter id 1901 and cfe [e],filter id 1901 and rationalize,0
+what does instance with id 21 need to do to change the prediction?,filter id 21 and cfe [e],filter id 1901 and rationalize,0
+generate an adversarial example for model prediction for id 762,filter id 762 and adversarial [e],filter id 762 and adversarial,1
+please create a new instance based on id 362,filter id 362 and augment [e],filter id 362 and augment,1
+For how many epochs the model is trained,model epochs [e],model epochs,1
+How many encoder layers does this model have?,model [e],countdata,0
+Does this model work on multilingual setting?,model [e],filter id 362 and predict,0
+what are the three least frequent keywords?,keywords 3 [e],keywords 3,1
+Give the recall value of the model,score recall [e],score recall,1
+compute the F1 score,score f1 [e],score f1,1
+probability data point 737 is predicted by the model False,filter id 737 and likelihood False,filter id 737 and likelihood False,1
+super cool system you got here.... could you show me the predictions across all the data?,predict,filter id 737 and predict,1
+return the probability that instance 1007 is predicted in the True class,filter id 1007 and likelihood True,filter id 1007 and likelihood True,1
+what is the probability that id 970 is predicted as True by the model?,filter id 970 and likelihood True,filter id 970 and likelihood True,1
+show the probability that id 250 is True,filter id 250 and likelihood True,filter id 250 and likelihood True,1
+,,,0
+,,,0
+,,,1
+,,,1
+,,,1
+,,,0
+,,,1
+,,,1
+,,,1
+,,,1
+,,,1
+,,,1
+,,,1
+,,,1
+,,,1
+,,,1
+,,,1
+,,,1
+,,,1
+,,,1
+,,,1
+,,,0
+,,,0
+,,,1
+,,,1
+,,,0
+,,,1
+,,,0
+,,,0
+,,,0
+,,,0
+,,,0
+,,,0
+,,,1
+,,,1
+,,,1
+,,,1
+,,,1
+,,,1
+,,,0
+,,,1
+,,,1
+,,,0
+,,,1

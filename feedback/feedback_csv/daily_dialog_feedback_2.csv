@@ -1,0 +1,6 @@
+User text,Golden label,Parsed text
+why do you predict instance id 1954,filter id 1954 and nlpattribute all [e],filter id 1954 and nlpattribute all [e]
+why do you predict instance id 19,filter id 19 and nlpattribute all [e],filter id 19 and nlpattribute all [e]
+why do you predict instance id 1942,filter id 1942 and nlpattribute all [e],filter id 1942 and nlpattribute all [e]
+can you display the instance with id 9,filter id 9 and show [e],filter id 9 and show [e]
+probability of id 1822,filter id 1822 and likelihood [e],filter id 1822 and likelihood [e]

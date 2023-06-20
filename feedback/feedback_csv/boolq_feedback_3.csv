@@ -56,9 +56,3 @@ show me how the model could be deceived by instance 428,filter id 428 and advers
 please attack the model for id 18,filter id 18 and adversarial [e],ilter id 18 and adversarial [e],1
 kindly generate a new variant based on id 964,filter id 964 and augment [e],filter id 964 and augment [e],1
 starting from id 1208 how would a new instance look like?,filter id 1208 and augment [e],filter id 1208 and augment [e],1
-which languages does the data for training contain?,data train_data_language [e],data train_data_language [e],1
-why do you predict instance id 1954,filter id 1954 and nlpattribute all [e],filter id 1954 and nlpattribute all [e],1
-why do you predict instance id 19,filter id 19 and nlpattribute all [e],filter id 19 and nlpattribute all [e],1
-why do you predict instance id 1942,filter id 1942 and nlpattribute all [e],filter id 1942 and nlpattribute all [e],1
-can you display the instance with id 9,filter id 9 and show [e],filter id 9 and show [e],1
-probability of id 1822,filter id 1822 and likelihood [e],filter id 1822 and likelihood [e],1
