@@ -1,0 +1,18 @@
+User text,Golden label,Parsed text,Correctness
+can you display the instance with id 1990,filter id 1990 and show,filter id 1990 and show,1
+where does training data come from,data train_data_source,data train_data_source,1
+where do you get test data,data test_data_source,data test_data_source,1
+total number of training items in the data,countdata,countdata,1
+what are the labels for all the data,label,label,1
+show example iwth id 970,filter id 970 and show,filter id 970 and show,1
+could you show me the predictions on all the data?,predict,filter id 970 and show,0
+can you show me how much data the model predicts incorrectly?,mistake count,mistake count,1
+show me some data you predict incorrectly,mistake sample,mistake sample,1
+keywords,keywords all,keywords all,1
+can you bring up 3 instances that shares similarities with id 1715,filter id 1715 and similar 3,filter id 3 or filter id 1715 and similar,0
+top three most important features,important topk 3,important topk 3,1
+how do you figure out if data points are dummy,important dummy,important dummy,1
+explain id 1387 in natural language,filter id 1387 and rationalize,filter id 1387 and rationalize,1
+what does instance with id 17 need to do to change the prediction?,filter id 17 and cfe,filter id 17 and cfe,1
+how does instance with id 2082 have to change in order to fool the model?,filter id 2082 and adversarial,filter id 2082 and adversarial,1
+what is the most important feature,important all,important all,1

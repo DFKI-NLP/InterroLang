@@ -1,0 +1,48 @@
+User text,Golden label,Parsed text,Correctness
+Could you tell me a bit more about what this is?,self,self,1
+What can you do?,function,function,1
+Can you explain the model's predictions?,important all,important all,1
+What do you need to explain the predictions?,model model_summary,model model_summary,1
+Can you generate data?,function,randompredict,0
+for 9 please show me the values of the features.,filter id 9 and show,filter id 9 and show,1
+What is a feature?,score default,score default,1
+What do you mean under 'a feature'?,filter id 9 and show 'a feature,filter id 9 and show 'a feature,1
+language of training data,data train_data_language,data train_data_language,1
+what is the test set called?,data test_data_name,data test_data_name,1
+count the total number of data points,countdata,countdata,1
+count the number of data points in train data,countdata,countdata,1
+count the number of data points in test data,countdata,countdata,1
+show how often which target label appears in the entire dataset,countdata,countdata,1
+"please, show the distribution of labels in the dataset",label,countdata,0
+show prediction of id 7,filter id 7 and predict,filter id 7 and predict,1
+show prediction of id 9,filter id 9 and predict,filter id 9 and predict,1
+could you randomly select an example and predict it?,randompredict,randompredict,1
+show the predictions on all the data,predict,predict,1
+show the predictions for any 10 examples,predict,predict,1
+how likely is it id 9 is directive?,filter id 9 and likelihood directive,filter id 9 and likelihood directive,1
+testing f1,score f1,score f1,1
+what is the macro precision?,score precision,score precision,1
+show me the number of data points the model forecasts inaccurately?,mistake count,mistake count,1
+show me data the model gets wrong,mistake sample,mistake sample,1
+show me data the model gets correct,score default,score default,1
+i'm looking for a case that is akin to id 739 could you help me with that?,filter id 739 and similar,filter id 739 and similar,1
+could you locate 6 comparable data point to id 0 for me?,filter id 0 and similar 6,filter id 0 and similar 6,1
+could you locate 6 comparable data point to id 9 for me?,filter id 9 and similar 6,filter id 9 and similar 6,1
+could you locate 3 comparable data point to id 9 for me?,filter id 9 and similar 3,filter id 9 and similar 3,1
+keywords,keywords all,keywords all,1
+what are 5 the most frequent keywords in the data?,keywords 5,keywords 5,1
+most important features for data point 0,filter id 0 and nlpattribute all,filter id 0 and nlpattribute all,1
+most important features for data point 8,filter id 8 and nlpattribute all,filter id 8 and nlpattribute all,1
+most important phrases in id 8,filter id 8 and nlpattribute all,filter id 8 and nlpattribute all,1
+what are the top five most important features for the models predictions?,important topk 5,important topk 5,1
+what are the top five most important features for the label 'Question'?,important topk 5 question,important topk 5,0
+i want to know topk contributed words with label inform.,important inform,important inform,1
+i want to know topk contributed words with label question.,important question,important question,1
+i want to know top 20 contributed words with label question.,important topk 20 question,important question,0
+explain id 0 with rationale,filter id 0 and rationalize,filter id 0 and rationalize,1
+explain id 8 with rationale,filter id 8 and rationalize,filter id 8 and rationalize,1
+could you tell me how to change the prediction point for data point 8,filter id 8 and cfe,filter id 8 and cfe,1
+could you tell me how to change the prediction point for data point 7,filter id 7 and cfe,filter id 7 and cfe,1
+what is the way to change the prediction for the data point with the id number 1496,filter id 1496 and cfe,filter id 1496 and cfe,1
+can you generate an adversarial example for instance 0,filter id 0 and adversarial,filter id 0 and adversarial,1
+i'd like to see a model deception for the instance with id 7,filter id 7 and adversarial,filter id 7 and adversarial,1

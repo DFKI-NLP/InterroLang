@@ -1,0 +1,45 @@
+User text,Golden label,Parsed text,Correctness
+could you show me data point number 1503,filter id 1503 and show,filter id 1503 and show,1
+What is the label for instance 1503,filter id 1503 and label,filter id 1503 and show,0
+What is the prediction for id 1503,filter id 1503 and predict,filter id 1503 and predict,1
+What is the likelihood of id 1503 being classified as inform?,filter id 1503 and likelihood inform,filter id 1503 and likelihood inform,1
+"Of the entire data, how many instances are classified as inform?",predict,countdata,0
+training dataset,data train_data_source,data train_data_source,1
+test partition languages,data test_data_language ,score default,0
+show me the test data,data test_data_name,data test_data_name,1
+How many datapoints are there?,countdata,countdata,1
+how many data points are there?,countdata,countdata,1
+what are the labels for all the data,label,label,1
+what are the true labels in the dataset and how often do they occur?,label,keywords all,0
+return prediction id 2129,filter id 2129 and predict,filter id 2129 and predict,1
+what is the true label for id 2129,filter id 2129 and label,model model_summary,0
+what is the prediction for instance 2129,filter id 2129 and predict,filter id 2129 and predict,1
+Show me 3 random predictions,randompredict,randompredict,1
+What is the probability of id 2129 being predicted as directive?,filter id 2129 and likelihood directive,filter id 2129 and likelihood directive,1
+give me a random prediction,randompredict,randompredict,1
+what is the likelihood of id 2129 being wrongly classified?,filter id 2129 and likelihood,filter id 2129 and likelihood,1
+testing f1,score f1,score f1,1
+What is the recall of the model?,score recall,score recall,1
+How well does the model perform?,score default,model model_summary,0
+How accurate is the model?,score default,score default,1
+How precise is the system?,score precision,score default,0
+what is the precision of the system?,score precision,score precision,1
+show me the number of data points the model forecasts inaccurately?,mistake count,mistake count,1
+How many data points does the model get wrong?,mistake count,mistake count,1
+how many times does the model get it wrong?,mistake count,mistake count,1
+What are the words that show up the most in the dataset?,keywords all,keywords all,1
+What are the 6 keywords that are the most relevant?,keywords 6,keywords 6,1
+i was wondering what are the most important features for instance 1117,filter id 1117 and nlpattribute all,filter id 1117 and nlpattribute all,1
+what are the words in id 8 that make it being classified as it is?,filter id 8 and nlpattribute all,filter id 8 and show,0
+What are the most salient words in id 8 for the model to make a decision?,filter id 8 and nlpattribute all,filter id 8 and nlpattribute all,1
+please explain id 504 based on which sentences were the most salient,filter id 504 and nlpattribute sentence,filter id 504 and nlpattribute all,0
+what are the 2 most important features for the model making a decision?,important topk 2,important topk 2,1
+how do you decide whether some text is question,important question,important question,1
+How do you decide if an instance is a question?,important question,important question,1
+What are the 3 most important words in deciding whether an id is inform?,important inform topk 3,important inform topk 3,1
+simplify the explanation for id 951,filter id 951 and rationalize,filter id 951 and rationalize,1
+Rationalize the prediction for id 508 for me,filter id 508 and rationalize,filter id 508 and rationalize,1
+How could I rewrite id 8 to make it into a question?,filter id 8 and cfe,filter id 8 and adversarial,0
+How could we change instance 204 from a directive into a question?,filter id 204 and cfe,filter id 204 and cfe,1
+How could instance 204 be changed to deceive the model?,filter id 204 and adversarial,filter id 204 and adversarial,1
+please create a new instance based on id 1211,filter id 1211 and augment,filter id 204 and adversarial,0
