@@ -56,3 +56,25 @@ show me how the model could be deceived by instance 428,filter id 428 and advers
 please attack the model for id 18,filter id 18 and adversarial [e],ilter id 18 and adversarial [e],1
 kindly generate a new variant based on id 964,filter id 964 and augment [e],filter id 964 and augment [e],1
 starting from id 1208 how would a new instance look like?,filter id 1208 and augment [e],filter id 1208 and augment [e],1
+Could you tell me a bit more about what this is?,self,self,1
+What can you do?,function,function,1
+could you show me data point number 165,filter id 165 and show,filter id 165 and show,1
+how much training data is used,data train_data_number,data train_data_source,0
+could you please tell me the sources of the test data?,data test_data_source,data test_data_source,1
+number of rows in the data,countdata,countdata,1
+total number of training items in the data,data train_data_number,countdata,0
+show how often which target label appears in the entire dataset,label,countdata,0
+what are the true labels in the dataset and how often do they occur?,label,keywords all,0
+what are the labels for all the data,label,label,1
+give me an output for a randomly picked input,randompredict,randompredict,1
+probability of id 163 predicted False?,filter id 163 and likelihood False,filter id 163 and likelihood False,1
+i meant what is the f1 score on the evaluation data,score f1 evaluation,score f1 evaluation,1
+can you show me how much data the model predicts incorrectly?,mistake count,mistake count,1
+could you show me a few examples of data that you get wrong?,mistake sample,mistake sample,1
+is it possible to show me 2 data points that are similar to id 1860,filter id 1860 and similar 2,filter id 1860 and similar 2,1
+what are the most frequent keywords in the data?,keywords all,keywords all,1
+top three most important features,important topk 3,important topk 3,1
+in what ways do you determine if data will be predicted False?,important False,important False,1
+generate a natural language explanation for id 2042,filter id 2042 and rationalize,filter id 2042 and rationalize,1
+hmm... i was wondering what it would take to flip the prediction of instance with id 1436,filter id 1436 and cfe,filter id 1436 and cfe,1
+how does instance with id 849 have to change in order to fool the model?,filter id 849 and adversarial,filter id 849 and adversarial,1

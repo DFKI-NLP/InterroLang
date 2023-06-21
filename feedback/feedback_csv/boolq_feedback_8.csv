@@ -1,0 +1,16 @@
+User text,Golden label,Parsed text,Correctness
+Could you tell me a bit more about what this is?,self,self,1
+What can you do?,function,function,1
+please display id 1996,filter id 1996 and show,filter id 1996 and show,1
+where does training data come from,data train_data_source,data train_data_source,1
+please show what the gold labels are,label,label,1
+return prediction id 2581,filter id 2581 and predict,label,0
+return prediction id 44,filter id 44 and predict,label,0
+which five words occur the most in the data?,keywords 5,keywords 5,1
+i'm looking for a case that is akin to id 1339 could you help me with that?,filter id 1339 and similar,filter id 1339 and similar,1
+most important phrases in id 2621,filter id 2621 and nlpattribute sentence,filter id 1339 and similar,0
+how do you decide whether some text is False,important False,important False,1
+generate a natural language explanation for id 1938,filter id 1938 and rationalize,filter id 1938 and rationalize,1
+how would you flip the prediction for id 1938,filter id 1938 and cfe,filter id 1938 and cfe,1
+generate an adversarial instance for id 276,filter id 276 and adversarial,filter id 276 and adversarial,1
+starting from id 2800 how would a new instance look like?,filter id 2800 and augment,filter id 280 and augment,0

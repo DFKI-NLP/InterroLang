@@ -1,0 +1,31 @@
+User text,Golden label,Parsed text,Correctness
+Could you tell me a bit more about what this is?,self,self,1
+id 1 | show example,filter id 1 and show,filter id 1 and show,1
+example 1 | what did the model predict?,filter id 1 and predict,filter id 1 and predict,1
+example 1 | what is the likelihood that the prediction is wrong?,filter id 1 and likelihood False,filter id 1 and likelihood prediction,0
+show keywords,keywords all,keywords all,1
+id 1 | show visualizations,filter id 1 and nlpattribute,filter id 1 and show,0
+`?example 1 | what is this prediction based on,filter id 1 and nlpattribute,filter id 1 and predict,0
+randomly predict an input from the dataset,randompredict,randompredict,1
+what are the 5 most important features in this text?,nlpattribute topk 5,nlpattribute topk 5,1
+id 1 | i'm interested in the sentence-wise saliency scores for this text.,filter id 1 and nlpattribute sentence,filter id 1 and nlpattribute sentence,1
+please choose one input text and show the model's outcome,randompredict,randompredict,1
+show the probability that id 215 is False,filter id 215 and likelihood False,filter id 215 and likelihood False,1
+show how often which target label appears in the entire dataset,label,countdata,0
+what are the true labels in the dataset and how often do they occur?,label,keywords all,0
+show me the language of training data,data train_data_language,data train_data_language,1
+find similar examples for id 215,filter id 215 and similar,keywords all,0
+change id 215 so that the model predicts counterfactual,filter id 215 and cfe,filter id 215 and cfe,1
+could you please tell me the predictions for id 215 and what you have to do to flip the prediction?,filter id 215 and cfe,filter id 215 and cfe,1
+show predictions for id 215 | change the prediction of id 215,filter id 215 and predict and cfe,filter id 215 and cfe,1
+please explain the prediction of id 215 based on which sentences were most salient,filter id 215 and nlpattribute sentence,filter id 215 and nlpattribute all,0
+show id 6,filter id 6 and show,filter id 6 and show,1
+thirty most important features ids 0-9,filter id 0 and nlpattribute topk 30,filter id 0 and nlpattribute,0
+keywords,keywords all,keywords all,1
+"display a random prediction, please",randompredict,randompredict,1
+predict id 215,filter id 215 and predict,randompredict,0
+show the prediction for id 215,filter id 215 and predict,filter id 215 and show,1
+show id 215 | display prediction for id 215,filter id 215 and show and predict,filter id 215 and show,0
+is id 215 true or false?,filter id 215 and show,filter id 215 and show,1
+what is the likelihood that 215 is true?,filter id 215 and likelihood true,filter id 215 and likelihood true,1
+can you create a misleading instance for the model for id 215,filter id 215 and adversarial,filter id 215 and adversarial,1

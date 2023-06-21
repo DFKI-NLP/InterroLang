@@ -1,0 +1,23 @@
+User text,Golden label,Parsed text,Correctness
+"For id 8, what is the label predicted?",filter id 8 and predict,filter id 3236 and show,0
+What is the answer predicted for id 8?,filter id 8 and predict,filter id 3236 and show,0
+please display the prediction of instance with id 203,filter id 203 and show,filter id 3236 and show,0
+how big is the dataset?,countdata,countdata,1
+what are the labels for all the data,label,label,1
+Why is it predicted true?,important true,important true,1
+what is the model precision over all data?,score precision,score precision,1
+can you demonstrate how many data points are predicted wrongly?,mistake count,mistake count,1
+Can you demonstrate how many of the filtered data points are classified wrongly?,mistake count,mistake count,1
+what are some data points you get incorrect?,mistake sample,mistake sample,1
+could you show me an instance that is similar to id 8,filter id 8 and similar,filter id 8 and similar,1
+please show me an instance that is similar to id 203,filter id 203 and similar,filter id 203 and similar,1
+what are the most frequent keywords in the data?,keywords all,keywords all,1
+feature importance,important all,important all,1
+Could you show me feature importance across the entire dataset,important all,important all,1
+interpret id 8 in plain language,filter id 8 and rationalize,filter id 8 and rationalize,1
+please interpret id 18,filter id 18 and rationalize,filter id 18 and rationalize,1
+please interpret prediction 38,filter id 38 and rationalize,filter id 38 and rationalize,1
+for data point id 7 how would i change the prediction?,filter id 7 and cfe,filter id 7 and cfe,1
+show me an adversarial attack on id 18,filter id 18 and adversarial,filter id 18 and adversarial,1
+show me a case where the model would be confused by instance 38,filter id 38 and adversarial,filter id 38 and adversarial,1
+starting from id 8 how would a new instance look like?,filter id 8 and augment,filter id 8 and augment,1

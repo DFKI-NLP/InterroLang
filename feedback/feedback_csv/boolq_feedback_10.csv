@@ -1,0 +1,33 @@
+User text,Golden label,Parsed text,Correctness
+Could you tell me a bit more about what this is?,self,self,1
+What can you do?,function,function,1
+could you show me data point number 0?,filter id 0 and show,filter id 0 and show,1
+show me the language of training data,data train_data_language,data train_data_language,1
+inform me about the test data,data test_data_name,data test_data_name,1
+what are the id's of all the items,data,countdata,0
+How many instances are there in the dataset?,countdata,countdata,1
+show how often which target label appears in the entire dataset,label,countdata,0
+show how often positive label appears in the entire dataset,label,countdata,0
+what are the true labels in the dataset and how often do they occur?,label,keywords all,0
+How many true labels are there?,label,label,1
+what do you predict for 0,filter id 0 and predict,label,0
+what is the prediction for data point number 2117,filter id 2117 and predict,label,0
+show me a random prediction,randompredict,randompredict,1
+super cool system you got here.... could you show me the predictions across all the data?,predict,randompredict,0
+i want you to tell me the probability of the instance with id 73 being predicted in the "False" class by the model,filter id 73 and likelihood False,filter id 73 and likelihood,0
+can you show me the precision on the data?,score precision,score precision,1
+i meant what is the f1 score on the evaluation data,score f1 evaluation,score f1 evaluation,1
+show me the number of data points the model forecasts inaccurately?,mistake count,mistake count,1
+show me some data you predict incorrectly,mistake sample,mistake sample,1
+show me 3 examples you predict incorrectly,mistake sample,mistake sample,1
+can you provide me an instance that is analogous to id 73,filter id 73 and similar,filter id 73 and similar,1
+what are the three most frequent keywords?,keywords 3,keywords 3,1
+could you show top 3 most important features for the data point 73,filter id 73 and nlpattribute topk 3,keywords 3,0
+what are the most important sentences for id 3202,filter id 3202 and nlpattribute sentence,keywords 3,0
+what are the top 2 most important features,important topk 2,important topk 2,1
+please show me the most contributing words with label True.,important True,important True,1
+please show me the most contributing words with label False.,important False,important False,1
+present a comprehensible explanation for id 73,filter id 73 and rationalize,filter id 73 and rationalize,1
+how do you decide whether some text is False,important False,important False,1
+how can i change the prediction for the data point with an id of 73?,filter id 73 and cfe,filter id 73 and cfe,1
+how can the model be tricked by id 73,filter id 73 and adversarial,filter id 73 and adversarial,1
