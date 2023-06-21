@@ -6,7 +6,7 @@ files = [f for f in listdir("../feedback") if isfile(join("../feedback", f))]
 json_files = [f for f in files if (f.endswith(".json") and not f.endswith("boolq.json") and not f.endswith("olid.json") and not f.endswith("daily_dialog.json"))]
 
 actions = ["self", "adversarial", "augment", "cfe", "data", "nlpattribute", "filter", "function", "important",
-           "keywords", "label", "likelihood", "mistakes", "model", "countdata", "predict",
+           "keywords", "label", "likelihood", "mistake", "model", "countdata", "predict",
            "randompredict", "rationalize", "score", "show", "similar"]
 
 for file in json_files:
