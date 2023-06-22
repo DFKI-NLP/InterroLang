@@ -1,0 +1,13 @@
+User text,Golden label,Parsed text,Correctness
+Could you tell me a bit more about what this is?,self,self,1
+which 15 words occur the most in the data?,keywords 15,keywords all,0
+for id 82 please provide the prediction.,filter id 82 and predict,filter id 82 and predict,1
+which five words occur the most in the data?,keywords 5,filter id 1 and similar 5,0
+what are the most important sentences for id 1,filter id 1 and nlpattribute sentence,filter id 1 and nlpattribute sentence,1
+what are the most important sentences for id 2,filter id 2 and nlpattribute sentence,filter id 2 and nlpattribute sentence,1
+hat are the most relevant words for class offensive,important offensive,important non-offensive,0
+give me similar examples to id 9,filter id 9 and similar,filter id 9 and similar,1
+rationalize the prediction for id 1,filter id 1 and rationalize,filter id 1 and rationalize,1
+what would it take to change how instance 1 is predicted?,filter id 1 and cfe,filter id 1 and cfe,1
+can you create an instance that would mislead the model for id 1,filter id 1 and adversarial,filter id 1 and adversarial,1
+could you produce a new data point based on id 1,filter id 1 and augment,filter id 1 and augment,1

@@ -1,0 +1,89 @@
+User text,Golden label,Parsed text,Correctness
+Could you tell me a bit more about what this is?,self,self,1
+What can you do?,function,function,1
+could you show me data point number 868,filter id 868 and show,filter id 868 and show,1
+show me the language of training data,data train_data_language,data train_data_language,1
+inform me about the test data name,data test_data_name,data test_data_name,1
+how many rows are there across all the items in the data,countdata,countdata,1
+could you show me how the data is labelled?,data train_data_name,data train_data_name,1
+please show what the gold labels are,label,countdata,0
+what is the prediction for data point number 492,filter id 492 and predict,filter id 492 and predict,1
+what do you predict for 2440,filter id 2440 and predict,predict,0
+show the probability that id 62 is non-offensive,filter id 62 and likelihood non-offensive,filter id 62 and likelihood non-offensive,1
+what is the weighted recall?,score recall weighted,score recall weighted,1
+can you show me how much data the model predicts incorrectly?,mistake count,mistake count,1
+what are some data points you get incorrect?,mistake sample,mistake sample,1
+can you bring up 3 instances that shares similarities with id 507,filter id 507 and similar 3,filter id 507 and similar 3,1
+please retrieve an example that is similar to id 1872,filter id 1872 and similar,filter id 1872 and similar,1
+what are the three most frequent keywords?,keywords 3,keywords 3,1
+ show the most frequent keywords in the dataset,keywords all,keywords all,1
+why does the model predict id 322,filter id 322 and nlpattribute all,filter id 322 and nlpattribute all,1
+explain my model's prediction for data 21 and then follow up with the rationale for the prediction!,filter id 21 and nlpattribute all and rationalize,filter id 21 and rationalize,0
+show me the feature importance for id 124 on sentence level,filter id 124 and nlpattribute sentence,filter id 124 and nlpattribute,0
+show me the feature importance for id 1602 on sentence level,filter id 1602 and nlpattribute sentence,filter id 1602 and nlpattribute,0
+thirty most important features,important topk 30,important all,0
+i want to know topk contributed words with label non-offensive,important non-offensive,important non-offensive,1
+rationalize the prediction for id 1792,filter id 1792 and rationalize,filter id 1792 and rationalize,1
+provide a plain language interpretation for id 1564,filter id 1564 and rationalize,filter id 1564 and rationalize,1
+could you show me how to change the prediction for the data point 515,filter id 515 and cfe,filter id 515 and cfe,1
+can you create an instance that would mislead the model for id 2041,filter id 2041 and adversarial,filter id 2041 and adversarial,1
+could you produce a new data point based on id 1688,filter id 1688 and augment,filter id 1688 and augment,1
+For id 36  does it express a negative attitude towards racism?,filter id 36 and rationalize,includes and filter id 36 and show,0
+generate a natural language explanation for id 36,filter id 36 and rationalize,filter id 36 and rationalize,1
+key features for data point 36,filter id 36 and nlpattribute all,filter id 36 and nlpattribute all,1
+predict 36,filter id 36 and predict,filter id 36 and predict,1
+could you tell me how to change the prediction point for data point 36,filter id 36 and cfe,filter id 36 and cfe,1
+display a random prediction for id ,randompredict,randompredict,1
+ what are some data points you get incorrect?,mistake sample,predict,0
+for data point id 786 how would i change the prediction?,filter id 786 and cfe,filter id 786 and likelihood offensive,0
+keywords,keywords all,keywords all,1
+show me some data you predict incorrectly,mistake sample,score default,0
+show me the feature importance for id 412on sentence level,filter id 412 and nlpattribute sentence,nlpattribute,0
+what are the 2 most relevant features for the model's decision on data point 412,filter id 412 and nlpattribute topk 2,filter id 412 and nlpattribute topk 2,1
+generate a natural language explanation for id 412,filter id 412 and rationalize,filter id 412 and rationalize,1
+i want to know topk contributed words with label non-offensive.,important non-offensive,important non-offensive,1
+i want to know top 10 contributed words with label offensive.,important offensive topk 10,important offensive topk 10,1
+i want to know top 20 contributed words with label offensive.,important offensive topk 20,important offensive,0
+i want to know top 20 contributed words with label non-offensive.,important non-offensive topk 20,important non-offensive,0
+can you show me how much data the model predicts incorrectly?,mistake count,mistake count,1
+what methods do you use to come to predict non-offensive?,important non-offensive,important non-offensive,1
+rationalize the prediction for id 1325,filter id 1325 and rationalize,filter id 1325 and rationalize,1
+for 9,filter id 9 and show,filter id 9 and show,1
+please show what the gold labels are,label,score default,0
+can you please tell me the prediction for id 1597,filter id 1597 and predict,filter id 1597 and predict,1
+can you please tell me the prediction for id 9,filter id 9 and predict,filter id 9 and predict,1
+generate a prediction for a randomly chosen example,randompredict,randompredict,1
+can you please tell me the prediction for id 10,filter id 10 and predict,filter id 10 and predict,1
+"For id 5, show me the features",filter id 5 and show,filter id 5 and predict,0
+could you show me the predictions on all the data?,predict,predict,1
+what does the model predict on all the training data,predict,predict,1
+what's the chance instance id 1 is scored as non-offensive,filter id 1 and likelihood non-offensive,filter id 1 and likelihood non-offensive,1
+how accurate is the model over all the instances in the data?,score default,score default,1
+tell me the amount of data the model predicts falsely,mistake count,mistake count,1
+could you show me some data the model predicts incorrectly?,mistake sample,mistake sample,1
+show me a similar data point to id 10,filter id 10 and similar,filter id 10 and similar,1
+show the most frequent keywords in the dataset,keywords all,keywords all,1
+what are the key features for data point 9,filter id 9 and nlpattribute all,filter id 9 and nlpattribute all,1
+what are the key features for data point 2,filter id 2 and nlpattribute all,filter id 2 and nlpattribute all,1
+most important phrases in id 10,filter id 10 and nlpattribute sentence,filter id 10 and nlpattribute all,0
+most important features,important all,important all,1
+ ow do you decide whether some text is offensive,important offensive,important offensive,1
+give an account for id 9 with justification,filter id 9 and rationalize,filter id 9 and rationalize,1
+give an account for id 10 with justification,filter id 10 and rationalize,filter id 10 and rationalize,1
+could you tell me how to change the prediction point for data point 9,filter id 9 and cfe,filter id 9 and cfe,1
+could you tell me how to change the prediction point for data point 10,filter id 10 and cfe,filter id 10 and cfe,1
+how can the model be tricked by id 9,filter id 9 and adversarial,filter id 9 and adversarial,1
+name of training data,data train_data_name,data train_data_name,1
+For id 40  predict the label,filter id 40 and predict,filter id 40 and predict,1
+Could you tell me a bit more about what this is?,self,self,1
+what are the true labels in the dataset and how often do they occur?,label,keywords all,0
+for id 82 please provide the prediction.,filter id 82 and predict,filter id 82 and predict,1
+which five words occur the most in the data?,keywords 5,filter id 1 and similar 5,0
+what are the most important sentences for id 1,filter id 1 and nlpattribute sentence,filter id 1 and nlpattribute sentence,1
+what are the most important sentences for id 2,filter id 2 and nlpattribute sentence,filter id 2 and nlpattribute sentence,1
+what are the most relevant words for class offensive,important offensive,important non-offensive,0
+give me similar examples to id 9,filter id 9 and similar,filter id 9 and similar,1
+rationalize the prediction for id 1,filter id 1 and rationalize,filter id 1 and rationalize,1
+what would it take to change how instance 1 is predicted?,filter id 1 and cfe,filter id 1 and cfe,1
+can you create an instance that would mislead the model for id 1,filter id 1 and adversarial,filter id 1 and adversarial,1
+could you produce a new data point based on id 1,filter id 1 and augment,filter id 1 and augment,1
