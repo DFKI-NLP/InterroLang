@@ -1,0 +1,17 @@
+User text,Golden label,Parsed text,Correctness
+could you randomly select an example and predict it?,randompredict,randompredict,1
+expound on id 340 with an explanation,filter id 340 and rationalize,filter id 340 and rationalize,1
+show me data the model gets wrong,mistake sample,mistake sample,1
+what are the most important sentences for id 340,filter id 340 and nlpattribute sentence,filter id 340 and nlpattribute sentence,1
+What is the probability that id 340 is non-offensive?,filter id 340 and likelihood non-offensive,filter id 340 and likelihood non-offensive,1
+please create a new instance based on id 340,filter id 340 and augment,filter id 340 and augment,1
+what would an adversarial attack look like for instance 340,filter id 340 and adversarial,filter id 340 and augment,0
+nice. i'm pretty satisfied with the prediction of id 340 but could you tell me how to change the prediction?,filter id 340 and cfe,filter id 340 and augment,0
+show me the item ids on the training data,data,countdata,0
+could you show me how the data is labelled?,label,data train_data_name,0
+kindly generate a new variant based on id 0,filter id 0 and augment,filter id 0 and augment,1
+generate a new variant,filter id 0 and augment,model model_summary,0
+FIínd an instance with this keyword.,include,model model_summary,0
+explain the model's predictions on the data,important all,important all,1
+show the predictions for all instances including cola,include “cola” and predict,show,0
+give information of topk contributed words with label offensive.,important offensive,important offensive,1

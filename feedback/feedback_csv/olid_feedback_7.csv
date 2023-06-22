@@ -1,0 +1,44 @@
+User text,Golden label,Parsed text,Correctness
+What is the prediction for id 1782?,filter id 1782 and show,filter id 1782 and show,1
+What does row 8 look like?,filter id 8 and show,filter id 8 and show,1
+What is the prediction for id 8?,filter id 8 and show,filter id 8 and show,1
+give me random prediction,randompredict,randompredict,1
+show me the language of training data,data train_data_language,data train_data_language,1
+Training data,data train_data_source,data train_data_source,1
+How big is the training data?,data train_data_source,data train_data_source,1
+What is the split between offensive and non-offensive?,model model_summary,model model_summary,1
+count the total number of data points,countdata,countdata,1
+How many data points?,countdata,countdata,1
+How many datapoints in the test data?,data test_data_number,countdata,1
+How many data points in the test data?,data test_data_number,countdata,1
+"How many data points were classified as ""offensive""?",label,countdata,0
+could you show me the predictions on all the data?,predict,countdata,0
+return the probability that instance 262 is predicted in the non-offensive class,filter id 262 and likelihood non-offensive,filter id 262 and likelihood non-offensive,1
+return the probability that instance 8 is predicted to be offensive,filter id 8 and likelihood offensive,filter id 8 and likelihood offensive,1
+How accurate is the model?,score default,score default,1
+How precise is the model?,score default,score default,1
+precision,score precision,score precision,1
+can you tell me how many data points is the model predicting incorrectly?,mistake count,mistake count,1
+What is the performance of this model?,model model_summary,model model_summary,1
+could you show me some data the model predicts incorrectly?,mistake sample,mistake sample,1
+Could you show me an example of a wrongly categorized instance?,mistake sample,mistake sample,1
+Can you show me an incorrectly labeled prediction?,mistake sample,mistake sample,1
+Could you show me 2 examples that are similar to id 8?,filter id 8 and similar 2,filter id 8 and similar 2,1
+Please show two examples similar to id 8,filter id 8 and similar 2,filter id 8 and similar 2,1
+what are the three most frequent keywords?,keywords 3,keywords 3,1
+What are the four most frequent keywords?,keywords 4,keywords 4,1
+What is the most frequent keyword in the model?,keywords all,keywords all,1
+What is the least frequent word in the dataset?,keywords all,keywords all,1
+Most important words for instance 8,filter id 8 and nlpattribute,countdata,0
+most important token in id 8,filter id 8 and nlpattribute topk 1,countdata,0
+What are the most important words for making a prediction?,important all,important all,1
+"What are the words most important for a sentence being classified as ""offensive""?",important offensive,important offensive,1
+give a detailed explanation of id 2592,filter id 2592 and rationalize,filter id 2592 and rationalize,1
+please explain the prediction for id 8,filter id 8 and rationalize,filter id 8 and rationalize,1
+could you interpret the prediction for id 123,filter id 123 and rationalize,filter id 123 and rationalize,1
+how would you flip the prediction for id 801,filter id 801 and cfe,filter id 801 and cfe,1
+would it be possible for you to tell me how to change the prediction for the data point with the id number 1247,filter id 1247 and cfe,filter id 1247 and cfe,1
+How would you flip the prediction for id 205?,filter id 205 and cfe,filter id 205 and cfe,1
+show me an adversarial attack on id 2259,filter id 2259 and adversarial,filter id 2259 and adversarial,1
+Give me an adversarial attack on id 1247,filter id 1247 and adversarial,filter id 1247 and adversarial,1
+please create a new instance of id 1247,filter id 1247 and augment,filter id 1247 and augment,1
