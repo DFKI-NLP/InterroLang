@@ -20,7 +20,7 @@ for file in files:
         if name == "daily":
             name += "_dialog"
 
-        df = pd.read_csv(file)
+        df = pd.read_csv(file, on_bad_lines='skip')
         user_text = list(df["User text"])
         golden_label = list(df["Golden label"])
 
@@ -36,7 +36,7 @@ for file in files:
                 f.write(user_text[i] + '\n')
 
                 if not golden_label[i].endswith("[e]"):
-                    f.write(golden_label[i] + " [e] " + '\n')
+                    f.write(golden_label[i] + " [e]" + '\n')
                 else:
                     f.write(golden_label[i] + '\n')
 

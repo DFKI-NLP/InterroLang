@@ -1,0 +1,899 @@
+Could you tell me a bit more about what this is?
+self [e]
+
+for 54 please show me the values of the features.
+filter id 54 and show [e]
+
+which languages does the data for training contain?
+data train_data_language [e]
+
+what is the test set called?
+data test_data_name [e]
+
+for id 1072 please provide the prediction.
+filter id 1072 and predict [e]
+
+what do you predict for 55
+filter id 55 and predict [e]
+
+could you show me the predictions on all the data?
+predict [e]
+
+show me the number of data points the model forecasts inaccurately?
+mistake count [e]
+
+return the probability that instance 2000 is predicted in the True class
+filter id 2000 and likelihood [e]
+
+give me an example that is similar to id 1788
+filter id 1788 and similar [e]
+
+show the most frequent keywords in the dataset
+keywords all [e]
+
+show the least frequent words in the dataset
+keywords all [e]
+
+what are the key features for data point 38
+filter id 38 and nlpattribute all [e]
+
+what are the most important sentences for id 3033
+filter id 3033 and nlpattribute sentence [e]
+
+generate a natural language explanation for id 1901
+filter id 1901 and rationalize [e]
+
+could you show me how to change the prediction for the data point 2945
+filter id 1901 and cfe [e]
+
+what does instance with id 21 need to do to change the prediction?
+filter id 21 and cfe [e]
+
+generate an adversarial example for model prediction for id 762
+filter id 762 and adversarial [e]
+
+please create a new instance based on id 362
+filter id 362 and augment [e]
+
+For how many epochs the model is trained
+model epochs [e]
+
+How many encoder layers does this model have?
+model [e]
+
+Does this model work on multilingual setting?
+model [e]
+
+what are the three least frequent keywords?
+keywords 3 [e]
+
+Give the recall value of the model
+score recall [e]
+
+compute the F1 score
+score f1 [e]
+
+probability data point 737 is predicted by the model False
+filter id 737 and likelihood False [e]
+
+super cool system you got here.... could you show me the predictions across all the data?
+predict [e]
+
+return the probability that instance 1007 is predicted in the True class
+filter id 1007 and likelihood True [e]
+
+what is the probability that id 970 is predicted as True by the model?
+filter id 970 and likelihood True [e]
+
+show the probability that id 250 is True
+filter id 250 and likelihood True [e]
+
+Could you tell me a bit more about what this is?
+self [e]
+
+What can you do?
+function [e]
+
+could you show me data point number 0?
+filter id 0 and show [e]
+
+show me the language of training data
+data train_data_language [e]
+
+inform me about the test data
+data test_data_name [e]
+
+what are the id's of all the items
+data [e]
+
+How many instances are there in the dataset?
+countdata [e]
+
+show how often which target label appears in the entire dataset
+label [e]
+
+show how often positive label appears in the entire dataset
+label [e]
+
+what are the true labels in the dataset and how often do they occur?
+label [e]
+
+How many true labels are there?
+label [e]
+
+what do you predict for 0
+filter id 0 and predict [e]
+
+what is the prediction for data point number 2117
+filter id 2117 and predict [e]
+
+show me a random prediction
+randompredict [e]
+
+super cool system you got here.... could you show me the predictions across all the data?
+predict [e]
+
+i want you to tell me the probability of the instance with id 73 being predicted in the "False" class by the model
+filter id 73 and likelihood False [e]
+
+can you show me the precision on the data?
+score precision [e]
+
+i meant what is the f1 score on the evaluation data
+score f1 evaluation [e]
+
+show me the number of data points the model forecasts inaccurately?
+mistake count [e]
+
+show me some data you predict incorrectly
+mistake sample [e]
+
+show me 3 examples you predict incorrectly
+mistake sample [e]
+
+can you provide me an instance that is analogous to id 73
+filter id 73 and similar [e]
+
+what are the three most frequent keywords?
+keywords 3 [e]
+
+could you show top 3 most important features for the data point 73
+filter id 73 and nlpattribute topk 3 [e]
+
+what are the most important sentences for id 3202
+filter id 3202 and nlpattribute sentence [e]
+
+what are the top 2 most important features
+important topk 2 [e]
+
+please show me the most contributing words with label True.
+important True [e]
+
+please show me the most contributing words with label False.
+important False [e]
+
+present a comprehensible explanation for id 73
+filter id 73 and rationalize [e]
+
+how do you decide whether some text is False
+important False [e]
+
+how can i change the prediction for the data point with an id of 73?
+filter id 73 and cfe [e]
+
+how can the model be tricked by id 73
+filter id 73 and adversarial [e]
+
+Could you tell me a bit more about what this is?
+self [e]
+
+could you show me data point number 1899
+filter id 1899 and show [e]
+
+what's the source of the training data?
+data train_data_source [e]
+
+inform me about the test data name
+data test_data_name [e]
+
+show me the ids
+countdata [e]
+
+predict 320
+filter id 320 and predict [e]
+
+give me an output for a randomly picked input
+randompredict [e]
+
+could you randomly select an example and predict it?
+randompredict [e]
+
+pick a random data point and show the predicted result
+randompredict [e]
+
+what does the model predict on all the training data
+predict [e]
+
+probability data point 737 is predicted by the model False
+filter id 737 and likelihood [e]
+
+super cool system you got here.... could you show me the predictions across all the data?
+predict [e]
+
+return the probability that instance 1007 is predicted in the True class
+filter id 1007 and likelihood [e]
+
+what is the probability that id 970 is predicted as True by the model?
+filter id 970 and likelihood [e]
+
+show the probability that id 250 is True
+filter id 250 and likelihood [e]
+
+what is the macro-f1 score?
+score f1 [e]
+
+when scoring False, what's the model's accuracy?
+score accuracy [e]
+
+what is the f1 score on the evaluation data
+score f1 [e]
+
+can you tell me how many data points is the model predicting incorrectly?
+mistake count [e]
+
+can you demonstrate how many data points are predicted wrongly?
+mistake count [e]
+
+show me data the model gets wrong
+mistake sample [e]
+
+could you show me some data the model predicts incorrectly?
+mistake sample [e]
+
+can you provide me an instance that is analogous to id 659
+filter 659 and similar 1 [e]
+
+could you give me 5 analogous data points to id 1287
+filter 1287 and similar 5 [e]
+
+keywords all
+keywords [e]
+
+which feature is most significant for data point 221
+filter id 221 and nlpattribute all [e]
+
+most critical feature for id 2332
+filter id 2332 and nlpattribute all [e]
+
+can you tell me the main features for instance 23
+filter id 23 and nlpattribute all [e]
+
+please explain the prediction of id 3046 based on which sentences were most salient
+filter id 3046 and nlpattribute sentence [e]
+
+please show me the most contributing words with label False.
+important 1 [e]
+
+deliver a natural language description for id 1358
+filter id 1358 and rationalize [e]
+
+clarify the reasoning behind id 1699
+filter id 1699 and rationalize [e]
+
+how do i change the prediction for the data point with id number 3121
+filter id 3121 and cfe [e]
+
+can i see an instance modification from id 2123
+filter id 2123 and augment [e]
+
+please create a new instance based on id 2269
+filter id 2269 and augment [e]
+
+please display id 1242
+filter id 1241 and show [e]
+
+for 1197 please show me the values of the features
+filter id 1197 and show [e]
+
+for 123 please show me the values of the features.
+filter id 123 and show [e]
+
+please show the values of 636
+filter id 636 and show [e]
+
+please show me the values of id 512
+filter id 512 and show [e]
+
+how much training data is used
+data train_data_number [e]
+
+can you please tell me the name of the dataset?
+data train_data_name [e]
+
+can you display the instance with id 1666
+filter id 1666 and show [e]
+
+where does training data come from?
+data train_data_source [e]
+
+what is the origin of the dataset
+data train_data_source [e]
+
+where does the data come from again?
+data train_data_source [e]
+
+let me see their ids
+countdata [e]
+
+how many datapoints exist in train and test data?
+data train_data_number [e]
+
+how many datapoints exist in \ntest data?
+data test_data_number [e]
+
+what are the id's of all the items
+countdata [e]
+
+how many data points are in the training data set
+data train_data_name [e]
+
+what are the true labels in the dataset and how often do they occur?
+label [e]
+
+show me how the data is labeled
+label [e]
+
+show the frequence of the labels
+label [e]
+
+please predict id 274
+filter id 274 and predict [e]
+
+predict 274
+filter id 274 and predict [e]
+
+predict 214
+filter id 214 and predict [e]
+
+show me data the model gets wrong
+mistake sample [e]
+
+could you randomly select an example and predict it?
+randompredict [e]
+
+predict a random sample
+randompredict [e]
+
+please predict a random sample
+randompredict [e]
+
+can you predict a random sample
+randompredict [e]
+
+show the probabilities of id 1768
+filter id 1768 and likelihood [e]
+
+how often did the model predict falsely?
+mistake count [e]
+
+give me the confusion matrix
+score accuracy  [e]
+
+what does the model predict on all the training data
+predict [e]
+
+can you provide me an instance that is analogous to id 1235
+filter 1235 and similar 1 [e]
+
+can you provide me an instance that is analogous to id 1235
+filter 1235 and similar 1 [e]
+
+please retrieve an example that is similar to id 2121
+filter id 2121 and similar 1 [e]
+
+please retrieve an example that is similar to id 2121
+filter id 2121 and similar 1 [e]
+
+show me a data point that is analogous to id 2037
+filter id 2037 and similar 1 [e]
+
+show me a data point that is analogous to id 20
+filter id 2 and similar 1 [e]
+
+could you give me an analogous data point to id 1605
+filter id 1605 and similar 1 [e]
+
+could you give me an analogous data point to id 14
+filter id 14 and similar 1 [e]
+
+what are the most frequent keywords in the data?
+keywords all [e]
+
+what are the key features for data point 1030
+filter id 1030 and nlpattribute all [e]
+
+what are the key features for data point 130
+filter id 130 and nlpattribute all [e]
+
+top 2 features influencing the model's prediction on data point 9
+filter id 9 and nlpattribute topk 2 [e]
+
+what features are not that important
+important all [e]
+
+show me the least important feature
+important all [e]
+
+show me the feature importance for id 1508 on sentence level
+filter id 1508 and nlpattribute sentence [e]
+
+what features most influence the model's predictions
+important all [e]
+
+what features most influence the model's predictions
+important all [e]
+
+provide a plain language interpretation for id 1171
+filter id 1171 and rationalize [e]
+
+explain id 131 with rationale
+filter id 131 and rationalize [e]
+
+offer a plain-english interpretation for id 3113
+filter id 3113 and rationalize [e]
+
+clarify id 1224 with a reason
+filter id 1224 and rationalize [e]
+
+could you show me how to change the prediction for the data point 237
+filter id 237 and cfe [e]
+
+show me how the model could be deceived by instance 428
+filter id 428 and adversarial [e]
+
+please attack the model for id 18
+filter id 18 and adversarial [e]
+
+kindly generate a new variant based on id 964
+filter id 964 and augment [e]
+
+starting from id 1208 how would a new instance look like?
+filter id 1208 and augment [e]
+
+Could you tell me a bit more about what this is?
+self [e]
+
+What can you do?
+function [e]
+
+could you show me data point number 165
+filter id 165 and show [e]
+
+how much training data is used
+data train_data_number [e]
+
+could you please tell me the sources of the test data?
+data test_data_source [e]
+
+number of rows in the data
+countdata [e]
+
+total number of training items in the data
+data train_data_number [e]
+
+show how often which target label appears in the entire dataset
+label [e]
+
+what are the true labels in the dataset and how often do they occur?
+label [e]
+
+what are the labels for all the data
+label [e]
+
+give me an output for a randomly picked input
+randompredict [e]
+
+probability of id 163 predicted False?
+filter id 163 and likelihood False [e]
+
+i meant what is the f1 score on the evaluation data
+score f1 evaluation [e]
+
+can you show me how much data the model predicts incorrectly?
+mistake count [e]
+
+could you show me a few examples of data that you get wrong?
+mistake sample [e]
+
+is it possible to show me 2 data points that are similar to id 1860
+filter id 1860 and similar 2 [e]
+
+what are the most frequent keywords in the data?
+keywords all [e]
+
+top three most important features
+important topk 3 [e]
+
+in what ways do you determine if data will be predicted False?
+important False [e]
+
+generate a natural language explanation for id 2042
+filter id 2042 and rationalize [e]
+
+hmm... i was wondering what it would take to flip the prediction of instance with id 1436
+filter id 1436 and cfe [e]
+
+how does instance with id 849 have to change in order to fool the model?
+filter id 849 and adversarial [e]
+
+please display id 1
+filter id 1 and show [e]
+
+Could you tell me a bit more about what this is?
+self [e]
+
+What can you do?
+function [e]
+
+how many training data points are present?
+countdata [e]
+
+could you please tell me the sources of the test data?
+data test_data_source [e]
+
+what are the labels for all the data
+label [e]
+
+for id 2925 please provide the prediction.
+filter id 2925 and predict [e]
+
+predict one instance from the data at random
+randompredict [e]
+
+could you show me the predictions on all the data?
+predict [e]
+
+what's the chance instance id 2698 is scored as True
+filter id 2698 and likelihood True [e]
+
+what's the rate you do correct predictions?
+score default [e]
+
+can you demonstrate how many data points are predicted wrongly?
+mistake count [e]
+
+what are some data points you get incorrect?
+mistake sample [e]
+
+can you please retrieve an instance that is similar to id 2302
+filter id 2302 and similar [e]
+
+show the most frequent keywords in the dataset
+keywords all [e]
+
+i was wondering what are the most important features for instance 2116
+filter id 2116 and nlpattribute all [e]
+
+explain the model's predictions on the data
+important all [e]
+
+i would like to see the top attributed tokens with label False.
+important False [e]
+
+expound on id 355 with an explanation
+filter id 355 and rationalize [e]
+
+what are the most important tokens in id 1
+filter id 1 and nlpattribute all [e]
+
+could you locate 6 comparable data point to id 1 for me?
+filter id 1 and similar 6 [e]
+
+most impactful feature for the id: 2443
+filter id 2443 and nlpattribute topk 1 [e]
+
+can you tell me how to change the prediction for id 1
+filter id 1 and cfe [e]
+
+give the importance scores for the sentence
+nlpattribute [e]
+
+Could you tell me a bit more about what this is?
+self [e]
+
+What can you do?
+function [e]
+
+for 84 please show me the values of the features.
+filter id 84 and show [e]
+
+which languages does the data for training contain?
+data train_data_language [e]
+
+what is the test set called?
+data test_data_name [e]
+
+show me a random prediction
+randompredict [e]
+
+please display the prediction of the instance with id 698
+filter id 698 and predict [e]
+
+return the probability that instance 622 is predicted in the True class
+filter id 622 and likelihood True [e]
+
+what are some data points you get incorrect?
+mistake sample [e]
+
+what are the most frequent keywords in the data?
+keywords all [e]
+
+show 3 similar instances to id 1307
+filter id 1307 and similar 3 [e]
+
+why is id 1970 predicted True
+filter id 1970 and nlpattribute all [e]
+
+i would like to see the top attributed tokens with label True.
+important True [e]
+
+please create a new instance based on id 2342
+filter id 2342 and augment [e]
+
+what would it take to change how instance 267 is predicted?
+filter id 267 and cfe [e]
+
+what would it take to change how instance 505 is predicted?
+filter id 505 and cfe [e]
+
+Could you tell me a bit more about what this is?
+self [e]
+
+What is the prediction for ID 7?
+filter id 7 and predict [e]
+
+show me an adversarial example for the instance with id 1
+filter id 1 and adversarial [e]
+
+can you give me a prediction for a random data point?
+randompredict [e]
+
+tell me the language of testing data
+data test_data_language [e]
+
+what is the dataset called?
+data train_data_source [e]
+
+could you show me a random data point?
+randompredict [e]
+
+what is the chance that the data point with id 2191 is False
+filter id 2191 and likelihood False [e]
+
+what is the f1 score on the evaluation data
+score f1 evaluation [e]
+
+please show what the gold labels are
+label [e]
+
+how many data points are in the training data set
+countdata [e]
+
+For id 3, what is the probability?
+filter id 3 and likelihood [e]
+
+For the maximum id, what is the probability of being true?
+filter id 3270 and likelihood true [e]
+
+flip prediction class data point 73
+filter id 73 and cfe [e]
+
+which seven adjectives occur the most in the data?
+keywords 7 [e]
+
+please provide me with 4 examples that are similar to id 3
+filter id 3 and similar 4 [e]
+
+could you show me the predictions on all the data?
+predict [e]
+
+For id 8, what is the label predicted?
+filter id 8 and predict [e]
+
+What is the answer predicted for id 8?
+filter id 8 and predict [e]
+
+please display the prediction of instance with id 203
+filter id 203 and show [e]
+
+how big is the dataset?
+countdata [e]
+
+what are the labels for all the data
+label [e]
+
+Why is it predicted true?
+important true [e]
+
+what is the model precision over all data?
+score precision [e]
+
+can you demonstrate how many data points are predicted wrongly?
+mistake count [e]
+
+Can you demonstrate how many of the filtered data points are classified wrongly?
+mistake count [e]
+
+what are some data points you get incorrect?
+mistake sample [e]
+
+could you show me an instance that is similar to id 8
+filter id 8 and similar [e]
+
+please show me an instance that is similar to id 203
+filter id 203 and similar [e]
+
+what are the most frequent keywords in the data?
+keywords all [e]
+
+feature importance
+important all [e]
+
+Could you show me feature importance across the entire dataset
+important all [e]
+
+interpret id 8 in plain language
+filter id 8 and rationalize [e]
+
+please interpret id 18
+filter id 18 and rationalize [e]
+
+please interpret prediction 38
+filter id 38 and rationalize [e]
+
+for data point id 7 how would i change the prediction?
+filter id 7 and cfe [e]
+
+show me an adversarial attack on id 18
+filter id 18 and adversarial [e]
+
+show me a case where the model would be confused by instance 38
+filter id 38 and adversarial [e]
+
+starting from id 8 how would a new instance look like?
+filter id 8 and augment [e]
+
+Could you tell me a bit more about what this is?
+self [e]
+
+What can you do?
+function [e]
+
+please display id 1996
+filter id 1996 and show [e]
+
+where does training data come from
+data train_data_source [e]
+
+please show what the gold labels are
+label [e]
+
+return prediction id 2581
+filter id 2581 and predict [e]
+
+return prediction id 44
+filter id 44 and predict [e]
+
+which five words occur the most in the data?
+keywords 5 [e]
+
+i'm looking for a case that is akin to id 1339 could you help me with that?
+filter id 1339 and similar [e]
+
+most important phrases in id 2621
+filter id 2621 and nlpattribute sentence [e]
+
+how do you decide whether some text is False
+important False [e]
+
+generate a natural language explanation for id 1938
+filter id 1938 and rationalize [e]
+
+how would you flip the prediction for id 1938
+filter id 1938 and cfe [e]
+
+generate an adversarial instance for id 276
+filter id 276 and adversarial [e]
+
+starting from id 2800 how would a new instance look like?
+filter id 2800 and augment [e]
+
+Could you tell me a bit more about what this is?
+self [e]
+
+id 1 | show example
+filter id 1 and show [e]
+
+example 1 | what did the model predict?
+filter id 1 and predict [e]
+
+example 1 | what is the likelihood that the prediction is wrong?
+filter id 1 and likelihood False [e]
+
+show keywords
+keywords all [e]
+
+id 1 | show visualizations
+filter id 1 and nlpattribute [e]
+
+`?example 1 | what is this prediction based on
+filter id 1 and nlpattribute [e]
+
+randomly predict an input from the dataset
+randompredict [e]
+
+what are the 5 most important features in this text?
+nlpattribute topk 5 [e]
+
+id 1 | i'm interested in the sentence-wise saliency scores for this text.
+filter id 1 and nlpattribute sentence [e]
+
+please choose one input text and show the model's outcome
+randompredict [e]
+
+show the probability that id 215 is False
+filter id 215 and likelihood False [e]
+
+show how often which target label appears in the entire dataset
+label [e]
+
+what are the true labels in the dataset and how often do they occur?
+label [e]
+
+show me the language of training data
+data train_data_language [e]
+
+find similar examples for id 215
+filter id 215 and similar [e]
+
+change id 215 so that the model predicts counterfactual
+filter id 215 and cfe [e]
+
+could you please tell me the predictions for id 215 and what you have to do to flip the prediction?
+filter id 215 and cfe [e]
+
+show predictions for id 215 | change the prediction of id 215
+filter id 215 and predict and cfe [e]
+
+please explain the prediction of id 215 based on which sentences were most salient
+filter id 215 and nlpattribute sentence [e]
+
+show id 6
+filter id 6 and show [e]
+
+thirty most important features ids 0-9
+filter id 0 and nlpattribute topk 30 [e]
+
+keywords
+keywords all [e]
+
+display a random prediction, please
+randompredict [e]
+
+predict id 215
+filter id 215 and predict [e]
+
+show the prediction for id 215
+filter id 215 and predict [e]
+
+show id 215 | display prediction for id 215
+filter id 215 and show and predict [e]
+
+is id 215 true or false?
+filter id 215 and show [e]
+
+what is the likelihood that 215 is true?
+filter id 215 and likelihood true [e]
+
+can you create a misleading instance for the model for id 215
+filter id 215 and adversarial [e]
