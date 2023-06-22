@@ -7,14 +7,14 @@ parser = argparse.ArgumentParser(description="generate parsing results table")
 parser.add_argument("--id", type=str, required=True, help="a unique id to associate with the run")
 parser.add_argument("--slurm", action="store_true", help="whether to run on slurm cluster")
 parser.add_argument("--wandb", action="store_true", help="whether to use weights and biases")
-parser.add_argument("--test", action="store_true")
+parser.add_argument("--subset", choices=["train", "dev", "test", "user"])
 args = parser.parse_args()
 
 # The set of models for the sweep
 models = [
-    # "EleutherAI/gpt-neo-2.7B",
+    #"EleutherAI/gpt-neo-2.7B",
     "nearest-neighbor",
-    #"flan-t5-base"
+    "flan-t5-base"
 ]
 
 # The datasets for the sweep
@@ -25,7 +25,7 @@ datasets = [
 ]
 
 # This setting is for whether to use guided decoding (True) or not (False)
-gd_choices = [True, False]
+gd_choices = [True]
 
 for model in models:
     for ds in datasets:
@@ -64,7 +64,7 @@ for model in models:
                 if args.wandb:
                     wf = "--wandb"
 
-                job_template = f"python experiments/compute_parsing_accuracy.py {wf} --model '{model}' {gd_text} --dataset {ds} --id {args.id}"\
+                job_template = f"python experiments/compute_parsing_accuracy.py {wf} --model '{model}' {gd_text} --dataset {ds} --id {args.id} --subset {args.subset}"
 
             if args.slurm:
                 job_file = os.path.join("slurm", f"{model.replace('/', '-')}-{ds}-{gd}-parsing-accuracy.sh")

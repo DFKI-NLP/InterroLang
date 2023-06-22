@@ -214,7 +214,7 @@ def main():
     program_only_text = ""
     if args.program_only:
         program_only_text += "-program-only"
-    results_location = (f"./experiments/results_store/{safe_name(model)}_{dset}_test-{args.test}_gd-{guided_decoding}"
+    results_location = (f"./experiments/results_store/{safe_name(model)}_{dset}_{args.subset}_gd-{guided_decoding}"
                         f"_debug-{args.debug}{program_only_text}.csv")
     if os.path.exists(results_location):
         print(f"Skipping already existing results file: f{results_location}\nPlease delete or move the results file to "
@@ -226,33 +226,21 @@ def main():
     print("Dataset:", dset, flush=True)
     print("Model:", model, flush=True)
 
-    config_dset_id = dset
-
-    if dset == "boolq":
-        if args.test:
-            test_suite = f"./experiments/parsing_interrolang_dev/test_set_interrolang_{dset}.txt"
-        else:
-            test_suite = f"./experiments/parsing_interrolang_dev/dev_set_interrolang_{dset}.txt"
-    elif dset == "olid":
-        if args.test:
-            test_suite = f"./experiments/parsing_interrolang_dev/test_set_interrolang_{dset}.txt"
-        else:
-            test_suite = f"./experiments/parsing_interrolang_dev/dev_set_interrolang_{dset}.txt"
-    elif dset == "daily_dialog":
-        if args.test:
-            test_suite = f"./experiments/parsing_interrolang_dev/test_set_interrolang_{dset}.txt"
-        else:
-            test_suite = f"./experiments/parsing_interrolang_dev/dev_set_interrolang_{dset}.txt"
+    if dset == "daily_dialog":
         config_dset_id = "da"
     else:
+        config_dset_id = dset
+
+    if dset not in ["boolq", "olid", "daily_dialog"]:
         raise NameError(f"Unknown dataset {dset}")
+    test_suite = f"./experiments/parsing_interrolang_dev/{args.subset}_set_interrolang_{dset}.txt"
 
     if sys.platform.startswith('linux') or sys.platform.startswith('darwin'):
         if model == "nearest-neighbor":
             config = f"./configs/{config_dset_id}_nn.gin"
         elif model == "EleutherAI/gpt-neo-2.7B":
             config = f"./configs/{config_dset_id}.gin"
-        elif model == "FLAN-T5":
+        elif model == "flan-t5-base":
             config = f"./configs/{config_dset_id}_flan-t5.gin"
         else:
             raise NotImplementedError(f"{model} is not supported!")
@@ -360,7 +348,7 @@ def load_n_prompts(model):
     if model == "EleutherAI/gpt-j-6B":
         n_prompts_configs = [10, 5]
     if model == "EleutherAI/gpt-neo-2.7B":
-        n_prompts_configs = [20, 10, 5]
+        n_prompts_configs = [20]
     # doesn't matter if we draw many
     # when taking nn as result
     if model == "nearest-neighbor" or "t5" in model:
@@ -436,7 +424,7 @@ if __name__ == "__main__":
     parser.add_argument("--id", type=str, required=True, help="a unique id to associate with the run")
     parser.add_argument("--down_sample", action="store_true", help="this will break each run on 10 samples")
     parser.add_argument("--program_only", action="store_true", help="only uses the program name for templates")
-    parser.add_argument("--test", action="store_true")
+    parser.add_argument("--subset", choices=["train", "dev", "test", "user"])
     args = parser.parse_args()
 
     if args.wandb:
