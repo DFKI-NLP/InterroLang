@@ -3,14 +3,14 @@ For id 9,filter id 9 and show,filter id 9 and show,1
 please tell me how many items are in the data,countdata,score default,0
 can you please tell me the prediction for id 1597,filter id 1597 and predict,filter id 1597 and predict,1
 can you please tell me the prediction for id 9,filter id 9 and predict,filter id 9 and predict,1
-generate a prediction for a randomly chosen example',randompredict,randompredict,1
+generate a prediction for a randomly chosen example,randompredict,randompredict,1
 can you please tell me the prediction for id 10,filter id 10 and predict,filter id 10 and predict,1
 show the prediction,filter id 10 and predict,filter id 5 and predict,0
 could you show me the predictions on all the data?,predict,predict,1
 what does the model predict on all the training data,predict,predict,1
 what's the chance instance id 1 is scored as non-offensive,filter id 1 and likelihood non-offensive,filter id 1 and likelihood non-offensive,1
 how accurate is the model over all the instances in the data?,score default,score default,1
- tell me the amount of data the model predicts falsely,mistake count,mistake count,1
+tell me the amount of data the model predicts falsely,mistake count,mistake count,1
 could you show me some data the model predicts incorrectly?,mistake sample,mistake sample,1
 show me a similar data point to id 10,filter id 10 and similar,filter id 10 and similar,1
 show the most frequent keywords in the dataset,keywords all,keywords all,1
@@ -24,4 +24,4 @@ could you tell me how to change the prediction point for data point 9,filter id 
 could you tell me how to change the prediction point for data point 10,filter id 10 and cfe,filter id 10 and cfe,1
 how can the model be tricked by id 9,filter id 9 and adversarial,filter id 9 and adversarial,1
 show data,data,data train_data_name,1
-"For id 40, show the features",filter id 40 and predict,filter id 40 and predict,1
+For id 40, show the features,filter id 40 and predict,filter id 40 and predict,1

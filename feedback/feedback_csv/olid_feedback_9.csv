@@ -11,7 +11,7 @@ show me the item ids on the training data,data,countdata,0
 could you show me how the data is labelled?,label,data train_data_name,0
 kindly generate a new variant based on id 0,filter id 0 and augment,filter id 0 and augment,1
 generate a new variant,filter id 0 and augment,model model_summary,0
-FIínd an instance with this keyword.,include,model model_summary,0
+Find an instance with this keyword.,include,model model_summary,0
 explain the model's predictions on the data,important all,important all,1
-show the predictions for all instances including cola,include “cola” and predict,show,0
+show the predictions for all instances including cola,include cola and predict,show,0
 give information of topk contributed words with label offensive.,important offensive,important offensive,1

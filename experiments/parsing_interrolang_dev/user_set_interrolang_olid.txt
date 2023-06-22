@@ -1,0 +1,875 @@
+Could you tell me a bit more about what this is?
+self [e]
+
+What can you do?
+function [e]
+
+for 84 please show me the values of the features.
+filter id 84 and show [e]
+
+which languages does the data for training contain?
+data train_data_language [e]
+
+what is the test set called?
+data test_data_name [e]
+
+total number of training items in the data
+data train_data_number [e]
+
+could you show me how the data is labelled?
+label [e]
+
+please display the prediction of the instance with id 2051
+filter id 2051 and predict [e]
+
+predict one instance from the data at random
+randompredict [e]
+
+show the predictions on all the data
+predict [e]
+
+probability of id 1745 predicted offensive
+filter id 1745 and likelihood offensive [e]
+
+training accuracy please
+score accuracy [e]
+
+can you tell me how many data points is the model predicting incorrectly?
+mistake count [e]
+
+show me data the model gets wrong
+mistake sample [e]
+
+please retrieve an example that is similar to id 355
+filter id 355 and similar [e]
+
+keywords
+keywords all [e]
+
+what features most influence model predictions
+important all [e]
+
+how do you figure out if data points are non-offensive
+important non-offensive [e]
+
+i want to know topk contributed words with label offensive
+important offensive [e]
+
+rationalize the prediction for id 2474
+filter id 2474 and rationalize [e]
+
+starting from id 1093 how would a new instance look like?
+filter id 1093 and augment [e]
+
+rationalize the prediction for id 201
+filter id 201 and rationalize [e]
+
+starting from id 1792 how would a new instance look like?
+filter id 201 and augment [e]
+
+could you create an adversarial example for the model prediction on id 1703
+filter id 1703 and adversarial [e]
+
+For id 9
+filter id 9 and show [e]
+
+please tell me how many items are in the data
+countdata [e]
+
+can you please tell me the prediction for id 1597
+filter id 1597 and predict [e]
+
+can you please tell me the prediction for id 9
+filter id 9 and predict [e]
+
+generate a prediction for a randomly chosen example
+randompredict [e]
+
+can you please tell me the prediction for id 10
+filter id 10 and predict [e]
+
+show the prediction
+filter id 10 and predict [e]
+
+could you show me the predictions on all the data?
+predict [e]
+
+what does the model predict on all the training data
+predict [e]
+
+what's the chance instance id 1 is scored as non-offensive
+filter id 1 and likelihood non-offensive [e]
+
+how accurate is the model over all the instances in the data?
+score default [e]
+
+tell me the amount of data the model predicts falsely
+mistake count [e]
+
+could you show me some data the model predicts incorrectly?
+mistake sample [e]
+
+show me a similar data point to id 10
+filter id 10 and similar [e]
+
+show the most frequent keywords in the dataset
+keywords all [e]
+
+what are the key features for data point 9
+filter id 9 and nlpattribute all [e]
+
+what are the key features for data point 2
+filter id 2 and nlpattribute all [e]
+
+most important phrases in id 10
+filter id 10 and nlpattribute sentence [e]
+
+how do you decide whether some text is offensive
+important offensive [e]
+
+give an account for id 9 with justification
+filter id 9 and rationalize [e]
+
+give an account for id 10 with justification
+filter id 10 and rationalize [e]
+
+could you tell me how to change the prediction point for data point 9
+filter id 9 and cfe [e]
+
+could you tell me how to change the prediction point for data point 10
+filter id 10 and cfe [e]
+
+how can the model be tricked by id 9
+filter id 9 and adversarial [e]
+
+show data
+data [e]
+
+data train_data_language [e]
+data train_data_language [e]
+
+Could you tell me a bit more about what this is?
+self [e]
+
+What can you do?
+function [e]
+
+could you show me data point number 868
+filter id 868 and show [e]
+
+show me the language of training data
+data train_data_language [e]
+
+inform me about the test data name
+data test_data_name [e]
+
+how many rows are there across all the items in the data
+countdata [e]
+
+could you show me how the data is labelled?
+data train_data_name [e]
+
+please show what the gold labels are
+label [e]
+
+what is the prediction for data point number 492
+filter id 492 and predict [e]
+
+what do you predict for 2440
+filter id 2440 and predict [e]
+
+show the probability that id 62 is non-offensive
+filter id 62 and likelihood non-offensive [e]
+
+what is the weighted recall?
+score recall weighted [e]
+
+can you show me how much data the model predicts incorrectly?
+mistake count [e]
+
+what are some data points you get incorrect?
+mistake sample [e]
+
+can you bring up 3 instances that shares similarities with id 507
+filter id 507 and similar 3 [e]
+
+please retrieve an example that is similar to id 1872
+filter id 1872 and similar [e]
+
+what are the three most frequent keywords?
+keywords 3 [e]
+
+ show the most frequent keywords in the dataset
+keywords all [e]
+
+why does the model predict id 322
+filter id 322 and nlpattribute all [e]
+
+explain my model's prediction for data 21 and then follow up with the rationale for the prediction!
+filter id 21 and nlpattribute all and rationalize [e]
+
+show me the feature importance for id 124 on sentence level
+filter id 124 and nlpattribute sentence [e]
+
+show me the feature importance for id 1602 on sentence level
+filter id 1602 and nlpattribute sentence [e]
+
+thirty most important features
+important topk 30 [e]
+
+i want to know topk contributed words with label non-offensive
+important non-offensive [e]
+
+rationalize the prediction for id 1792
+filter id 1792 and rationalize [e]
+
+provide a plain language interpretation for id 1564
+filter id 1564 and rationalize [e]
+
+could you show me how to change the prediction for the data point 515
+filter id 515 and cfe [e]
+
+can you create an instance that would mislead the model for id 2041
+filter id 2041 and adversarial [e]
+
+could you produce a new data point based on id 1688
+filter id 1688 and augment [e]
+
+For id 36  does it express a negative attitude towards racism?
+filter id 36 and rationalize [e]
+
+generate a natural language explanation for id 36
+filter id 36 and rationalize [e]
+
+key features for data point 36
+filter id 36 and nlpattribute all [e]
+
+predict 36
+filter id 36 and predict [e]
+
+could you tell me how to change the prediction point for data point 36
+filter id 36 and cfe [e]
+
+display a random prediction for id 
+randompredict [e]
+
+ what are some data points you get incorrect?
+mistake sample [e]
+
+for data point id 786 how would i change the prediction?
+filter id 786 and cfe [e]
+
+keywords
+keywords all [e]
+
+show me some data you predict incorrectly
+mistake sample [e]
+
+show me the feature importance for id 412on sentence level
+filter id 412 and nlpattribute sentence [e]
+
+what are the 2 most relevant features for the model's decision on data point 412
+filter id 412 and nlpattribute topk 2 [e]
+
+generate a natural language explanation for id 412
+filter id 412 and rationalize [e]
+
+i want to know topk contributed words with label non-offensive.
+important non-offensive [e]
+
+i want to know top 10 contributed words with label offensive.
+important offensive topk 10 [e]
+
+i want to know top 20 contributed words with label offensive.
+important offensive topk 20 [e]
+
+i want to know top 20 contributed words with label non-offensive.
+important non-offensive topk 20 [e]
+
+can you show me how much data the model predicts incorrectly?
+mistake count [e]
+
+what methods do you use to come to predict non-offensive?
+important non-offensive [e]
+
+rationalize the prediction for id 1325
+filter id 1325 and rationalize [e]
+
+for 9
+filter id 9 and show [e]
+
+please show what the gold labels are
+label [e]
+
+can you please tell me the prediction for id 1597
+filter id 1597 and predict [e]
+
+can you please tell me the prediction for id 9
+filter id 9 and predict [e]
+
+generate a prediction for a randomly chosen example
+randompredict [e]
+
+can you please tell me the prediction for id 10
+filter id 10 and predict [e]
+
+For id 5, show me the features
+filter id 5 and show [e]
+
+could you show me the predictions on all the data?
+predict [e]
+
+what does the model predict on all the training data
+predict [e]
+
+what's the chance instance id 1 is scored as non-offensive
+filter id 1 and likelihood non-offensive [e]
+
+how accurate is the model over all the instances in the data?
+score default [e]
+
+tell me the amount of data the model predicts falsely
+mistake count [e]
+
+could you show me some data the model predicts incorrectly?
+mistake sample [e]
+
+show me a similar data point to id 10
+filter id 10 and similar [e]
+
+show the most frequent keywords in the dataset
+keywords all [e]
+
+what are the key features for data point 9
+filter id 9 and nlpattribute all [e]
+
+what are the key features for data point 2
+filter id 2 and nlpattribute all [e]
+
+most important phrases in id 10
+filter id 10 and nlpattribute sentence [e]
+
+most important features
+important all [e]
+
+ ow do you decide whether some text is offensive
+important offensive [e]
+
+give an account for id 9 with justification
+filter id 9 and rationalize [e]
+
+give an account for id 10 with justification
+filter id 10 and rationalize [e]
+
+could you tell me how to change the prediction point for data point 9
+filter id 9 and cfe [e]
+
+could you tell me how to change the prediction point for data point 10
+filter id 10 and cfe [e]
+
+how can the model be tricked by id 9
+filter id 9 and adversarial [e]
+
+name of training data
+data train_data_name [e]
+
+For id 40  predict the label
+filter id 40 and predict [e]
+
+Could you tell me a bit more about what this is?
+self [e]
+
+what are the true labels in the dataset and how often do they occur?
+label [e]
+
+for id 82 please provide the prediction.
+filter id 82 and predict [e]
+
+which five words occur the most in the data?
+keywords 5 [e]
+
+what are the most important sentences for id 1
+filter id 1 and nlpattribute sentence [e]
+
+what are the most important sentences for id 2
+filter id 2 and nlpattribute sentence [e]
+
+what are the most relevant words for class offensive
+important offensive [e]
+
+give me similar examples to id 9
+filter id 9 and similar [e]
+
+rationalize the prediction for id 1
+filter id 1 and rationalize [e]
+
+what would it take to change how instance 1 is predicted?
+filter id 1 and cfe [e]
+
+can you create an instance that would mislead the model for id 1
+filter id 1 and adversarial [e]
+
+could you produce a new data point based on id 1
+filter id 1 and augment [e]
+
+what's the source of the training data?
+data train_data_source [e]
+
+inform me about the test data name
+data test_data_name [e]
+
+what are the true labels in the dataset and how often do they occur?
+label [e]
+
+please choose one input text and show the model's outcome
+randompredict [e]
+
+language of training data
+data train_data_language [e]
+
+where does training data come from
+data train_data_source [e]
+
+test partition languages
+data test_data_language [e]
+
+could you show me how the data is labelled?
+label [e]
+
+how often does the label "offensive" appears in the dataset ?
+label [e]
+
+predict instance with id 1
+filter id 1 and predict [e]
+
+generate a prediction for a randomly chosen example
+randompredict [e]
+
+what is the probability that id 1918 is predicted as offensive by the model?
+filter id 1918 and likelihood offensive [e]
+
+what's the chance instance id 1381 is scored as non-offensive
+filter id 1381 and likelihood non-offensive [e]
+
+can you tell me how many data points is the model predicting incorrectly?
+mistake count [e]
+
+could you show me a few examples of data that you get wrong?
+mistake sample [e]
+
+show me a data point that is analogous to id 2583
+filter id 2583 and similar [e]
+
+show me a similar data point to id 40
+filter id 40 and similar [e]
+
+what are the reasons for predicting id 40 and why do you predict this instance?
+filter id 40 and nlpattribute all [e]
+
+what are the major features for instance 40
+filter id 40 and nlpattribute all [e]
+
+what are the most important sentences for id 2479
+filter id 2479 and nlpattribute sentence [e]
+
+what are the reasons for predicting id 40 and why do you predict this instance?
+filter id 40 and nlpattribute all [e]
+
+show the feature importances
+important all [e]
+
+how do you figure out if data points are offensive
+important offensive [e]
+
+what methods do you use to come to predict offensive?
+important offensive [e]
+
+what methods do you use to come to predict non-offensive?
+important non-offensive [e]
+
+rationalize the prediction for id 82
+filter id 82 and rationalize [e]
+
+explain id 40 in natural language
+filter id 40 and rationalize [e]
+
+nice. i'm pretty satisfied with the prediction of id 177 but could you tell me how to change the prediction?
+filter id 177 and cfe [e]
+
+could you tell me how to change the prediction of id 40
+filter id 40 and cfe [e]
+
+what would an adversarial attack look like for instance 2075
+filter id 2075 and adversarial [e]
+
+what would an adversarial attack look like for instance 40
+filter id 40 and adversarial [e]
+
+please augment id 290
+filter id 290 and augment [e]
+
+augment id 40
+filter id 40 and augment [e]
+
+why do you predict this
+nlpattribute all [e]
+
+what is the most important sentence
+nlpattribute sentence [e]
+
+why do you predicted this as offensive
+nlpattribute all offensive [e]
+
+perform an adversary attack
+adversarial [e]
+
+what are the most important sentences
+nlpattribute sentence [e]
+
+for 2322 please show me the values of the features.
+filter id 2322 and show [e]
+
+could you show me how the data is labelled?
+label [e]
+
+what's the source of the training data?
+data train_data_source [e]
+
+how many test data points are here?
+data test_data_number [e]
+
+how many data points are in the training data set
+data train_data_number [e]
+
+predict 22
+filter id 22 and predict [e]
+
+what is the probability that id 62 is predicted as offensive by the model?
+filter id 62 and likelihood offensive [e]
+
+what is the weighted recall?
+score recall weighted [e]
+
+could you show me some data the model predicts incorrectly?
+mistake sample [e]
+
+show me 5 data points that are analogous to id 1984
+filter id 1984 and similar 5 [e]
+
+which five words occur the most in the data?
+keywords 5 [e]
+
+for 1605 why do you predict it?
+filter id 1605 and nlpattribute all [e]
+
+please explain the prediction of id 877 based on which sentences were most salient
+filter id 877 and nlpattribute sentence [e]
+
+please show the top few features for the predictions
+important all [e]
+
+how do you figure out if data points are non-offensive
+important non-offensive [e]
+
+offer a plain-english interpretation for id 586
+filter id 586 and rationalize [e]
+
+could you please tell me the predictions for id 1257 and what you have to do to flip the prediction?
+filter id 1257 and cfe [e]
+
+show me an adversarial attack on id 1099
+filter id 1099 and adversarial [e]
+
+what does instance with id 1923 have to do in order to change the prediction?
+filter id 1923 and cfe [e]
+
+can i see an instance modification from id 597
+filter id 597 and augment [e]
+
+For id 2,show 
+filter id 2 and show [e]
+
+What can you do?
+function [e]
+
+for 84 please show me the values of the features.
+filter id 84 and show [e]
+
+what are the three most frequent keywords?
+keywords 3 [e]
+
+what's the source of the training data?
+data train_data_source [e]
+
+what is your prediction for id 0?
+filter id 0 and predict [e]
+
+shed light on id 0 in simple terms
+filter id 0 and rationalize [e]
+
+shed light on id 610 in simple terms
+filter id 610 and rationalize [e]
+
+explain your judgement of id 1
+filter id 1 and nlpattribute all [e]
+
+show me id 2
+filter id 2 and show [e]
+
+interpret id 2
+filter id 2 and rationalize [e]
+
+explain how id 2 uses slur words
+filter id 2 and rationalize [e]
+
+show me some data you predict incorrectly
+mistake sample [e]
+
+explain your judgement of id 6
+filter id 6 and rationalize [e]
+
+kindly generate a new variant based on id 0
+filter id 0 and augment [e]
+
+generate a natural language explanation for id 1337
+filter id 1337 and rationalize [e]
+
+what are some data points you get incorrect?
+mistake sample [e]
+
+probability of id 1337 predicted offensive?
+filter id 1337 and likelihood offensive [e]
+
+give me the accuracy on the training data
+score accuracy training [e]
+
+explain how to use you
+self [e]
+
+rationalize item 42
+filter id 42 and rationalize [e]
+
+show the prediction of id 448
+filter id 448 and predict [e]
+
+show how often which target label appears in the entire dataset
+label [e]
+
+list all ids
+show [e]
+
+For id 9, rationalize
+rationalize [e]
+
+What is the prediction for id 1782?
+filter id 1782 and show [e]
+
+What does row 8 look like?
+filter id 8 and show [e]
+
+What is the prediction for id 8?
+filter id 8 and show [e]
+
+give me random prediction
+randompredict [e]
+
+show me the language of training data
+data train_data_language [e]
+
+Training data
+data train_data_source [e]
+
+How big is the training data?
+data train_data_source [e]
+
+What is the split between offensive and non-offensive?
+model model_summary [e]
+
+count the total number of data points
+countdata [e]
+
+How many data points?
+countdata [e]
+
+How many datapoints in the test data?
+data test_data_number [e]
+
+How many data points in the test data?
+data test_data_number [e]
+
+How many data points were classified as "offensive"?
+label [e]
+
+could you show me the predictions on all the data?
+predict [e]
+
+return the probability that instance 262 is predicted in the non-offensive class
+filter id 262 and likelihood non-offensive [e]
+
+return the probability that instance 8 is predicted to be offensive
+filter id 8 and likelihood offensive [e]
+
+How accurate is the model?
+score default [e]
+
+How precise is the model?
+score default [e]
+
+precision
+score precision [e]
+
+can you tell me how many data points is the model predicting incorrectly?
+mistake count [e]
+
+What is the performance of this model?
+model model_summary [e]
+
+could you show me some data the model predicts incorrectly?
+mistake sample [e]
+
+Could you show me an example of a wrongly categorized instance?
+mistake sample [e]
+
+Can you show me an incorrectly labeled prediction?
+mistake sample [e]
+
+Could you show me 2 examples that are similar to id 8?
+filter id 8 and similar 2 [e]
+
+Please show two examples similar to id 8
+filter id 8 and similar 2 [e]
+
+what are the three most frequent keywords?
+keywords 3 [e]
+
+What are the four most frequent keywords?
+keywords 4 [e]
+
+What is the most frequent keyword in the model?
+keywords all [e]
+
+What is the least frequent word in the dataset?
+keywords all [e]
+
+Most important words for instance 8
+filter id 8 and nlpattribute [e]
+
+most important token in id 8
+filter id 8 and nlpattribute topk 1 [e]
+
+What are the most important words for making a prediction?
+important all [e]
+
+What are the words most important for a sentence being classified as "offensive"?
+important offensive [e]
+
+give a detailed explanation of id 2592
+filter id 2592 and rationalize [e]
+
+please explain the prediction for id 8
+filter id 8 and rationalize [e]
+
+could you interpret the prediction for id 123
+filter id 123 and rationalize [e]
+
+how would you flip the prediction for id 801
+filter id 801 and cfe [e]
+
+would it be possible for you to tell me how to change the prediction for the data point with the id number 1247
+filter id 1247 and cfe [e]
+
+How would you flip the prediction for id 205?
+filter id 205 and cfe [e]
+
+show me an adversarial attack on id 2259
+filter id 2259 and adversarial [e]
+
+Give me an adversarial attack on id 1247
+filter id 1247 and adversarial [e]
+
+please create a new instance of id 1247
+filter id 1247 and augment [e]
+
+Could you tell me a bit more about what this is?
+self [e]
+
+which 15 words occur the most in the data?
+keywords 15 [e]
+
+for id 82 please provide the prediction.
+filter id 82 and predict [e]
+
+which five words occur the most in the data?
+keywords 5 [e]
+
+what are the most important sentences for id 1
+filter id 1 and nlpattribute sentence [e]
+
+what are the most important sentences for id 2
+filter id 2 and nlpattribute sentence [e]
+
+hat are the most relevant words for class offensive
+important offensive [e]
+
+give me similar examples to id 9
+filter id 9 and similar [e]
+
+rationalize the prediction for id 1
+filter id 1 and rationalize [e]
+
+what would it take to change how instance 1 is predicted?
+filter id 1 and cfe [e]
+
+can you create an instance that would mislead the model for id 1
+filter id 1 and adversarial [e]
+
+could you produce a new data point based on id 1
+filter id 1 and augment [e]
+
+could you randomly select an example and predict it?
+randompredict [e]
+
+expound on id 340 with an explanation
+filter id 340 and rationalize [e]
+
+show me data the model gets wrong
+mistake sample [e]
+
+what are the most important sentences for id 340
+filter id 340 and nlpattribute sentence [e]
+
+What is the probability that id 340 is non-offensive?
+filter id 340 and likelihood non-offensive [e]
+
+please create a new instance based on id 340
+filter id 340 and augment [e]
+
+what would an adversarial attack look like for instance 340
+filter id 340 and adversarial [e]
+
+nice. i'm pretty satisfied with the prediction of id 340 but could you tell me how to change the prediction?
+filter id 340 and cfe [e]
+
+show me the item ids on the training data
+data [e]
+
+could you show me how the data is labelled?
+label [e]
+
+kindly generate a new variant based on id 0
+filter id 0 and augment [e]
+
+generate a new variant
+filter id 0 and augment [e]
+
+Find an instance with this keyword.
+include [e]
+
+explain the model's predictions on the data
+important all [e]
+
+show the predictions for all instances including cola
+include cola and predict [e]
+
+give information of topk contributed words with label offensive.
+important offensive [e]
