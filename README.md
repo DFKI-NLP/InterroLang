@@ -82,7 +82,7 @@ In our tool, we currently use the following Transformer models:
 
 - DistilBERT fine-tuned on BoolQ: https://huggingface.co/andi611/distilbert-base-uncased-qa-boolq (HF)
 - MultiBERT fine-tuned on OLID: https://huggingface.co/sinhala-nlp/mbert-olid-en (HF)
-- BERT fine-tuned on DailyDialog: https://cloud.dfki.de/owncloud/index.php/s/m72HGNLW2TyCABr (DFKI)
+- BERT fine-tuned on DailyDialog: Due to anonymization not shown any links
 
 #### For BoolQ and OLID Model:
 Put them under `./data` and name the folders `boolq_model` and `olid_model` respectively.
