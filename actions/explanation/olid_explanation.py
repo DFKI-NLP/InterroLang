@@ -118,8 +118,8 @@ def detach_to_list(t):
 
 
 if __name__ == '__main__':
-    data_path = "/netscratch/qwang/offenseval_val.csv"
-    res_path = "/netscratch/qwang/ig_explainer_olid_explanation.json"
+    data_path = "/netscratch/offenseval_val.csv"
+    res_path = "/netscratch/ig_explainer_olid_explanation.json"
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 

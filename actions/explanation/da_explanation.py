@@ -89,15 +89,15 @@ if __name__ == "__main__":
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     store_data = True
-    data_path = "/netscratch/qwang/ig_explainer_daily_dialog_explanation.json"
+    data_path = "/netscratch/ig_explainer_daily_dialog_explanation.json"
 
     if store_data:
         json_list = []
 
     da = DANetwork()
-    da.load_state_dict(torch.load('/netscratch/qwang/5e_5e-06lr'))
+    da.load_state_dict(torch.load('/netscratch/5e_5e-06lr'))
     da.to(device=device)
-    test_dataloader = torch.load('/netscratch/qwang/test_dataloader.pth')
+    test_dataloader = torch.load('/netscratch/test_dataloader.pth')
 
     for idx_batch, b in tqdm(enumerate(test_dataloader), total=len(test_dataloader), position=0, leave=True):
         # if idx_batch % 1000 == 0:
