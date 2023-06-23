@@ -535,6 +535,9 @@ def evaluate(parser, val_data_path):
         _, decoded, _, _ = parser.compute_parse_text_adapters(input_text.strip())
         gold_parse = user_parsed_tuples[i][1]
 
+        if val_data_path.startswith("user"):
+            decoded += " [e]"
+
         predicted_and_gold.append((decoded, gold_parse))
         print("input: " + input_text)
         print("gold: " + gold_parse + " >>> decoded: " + decoded)
@@ -550,7 +553,7 @@ def evaluate(parser, val_data_path):
 
 def main():
     parser = AdapterParse()
-    val_data_path = "./experiments/parsing_interrolang_dev/dev_set_interrolang_daily_dialog.txt"
+    val_data_path = f"./experiments/parsing_interrolang_dev/user_set_interrolang_daily_dialog.txt"
     f1_per_label, macro_f1, micro_f1, intent_accuracy, accuracy = evaluate(parser, val_data_path)
     print("Exact Match Accuracy:", accuracy)
     print("Intent Accuracy:", intent_accuracy)
