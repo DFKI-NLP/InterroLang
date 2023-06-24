@@ -10,7 +10,7 @@ If there's a way to efficiently compute them on other temp_datasets, we can comb
 
 
 ## lengthfilter
-See [#52](https://github.com/nfelnlp/InterroLang/issues/52)
+See Issue #52
 
 Most prompts are adapted from TTM's `{num_features}` and `{num_values}`.
 

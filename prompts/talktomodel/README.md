@@ -11,7 +11,7 @@ These prompts from TTM are not yet fully rewritten and also need an implementati
 
 ## replace
 
-[Issue #74](https://github.com/nfelnlp/InterroLang/issues/74)
+See Issue #74
 
 ### change.txt
 ### change_comparisons.txt

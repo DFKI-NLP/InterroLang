@@ -3,12 +3,12 @@
 </p>
 
 
-[![Python application](https://github.com/nfelnlp/InterroLang/actions/workflows/github.yml/badge.svg)](https://github.com/nfelnlp/InterroLang/actions/workflows/github.yml/badge.svg)
+[![Python application](./actions/workflows/github.yml/badge.svg)](./actions/workflows/github.yml/badge.svg)
 
 # InterroLang
 
 A [TalkToModel (Slack et al., 2022)](https://github.com/dylan-slack/TalkToModel) adaptation to NLP use cases (question answering, hate speech detection, dialogue act classification).  
-The name is a word-play on [Interrobang](https://en.wikipedia.org/wiki/Interrobang), a ligature of question mark and exclamation mark, and **Lang**uage models.  
+The name is a word-play on [Interrobang](https://en.wikipedia.org/wiki/Interrobang), a ligature of question mark and exclamation mark, and the **interro**gation of **Lang**uage models.  
 Our tool offers a dialogue-based exploration of NLP interpretability methods (feature attribution, counterfactuals and perturbations, free-text rationalization) and dataset analyses (similar examples, keywords, label distribution).
 
 <p align="center">
@@ -25,9 +25,9 @@ We consider 7 categories of operations.
 - Understanding: Keyword-based analysis and retrieval of similar instances.
 - Explanation: Feature attribution methods (local-, class-, global-level) and free-text rationalization.
 - Perturbation: Methods to change some parts of an instance, e.g. such that the label of the instance would change.
-- Custom input: We not only allow instances from the dataset but also instances given by users. (More details see [below](https://github.com/nfelnlp/InterroLang#process))
+- Custom input: We not only allow instances from the dataset but also instances given by users. (More details see [below](#process))
 
-They are defined in [actions](https://github.com/nfelnlp/InterroLang/tree/main/actions) and [prompts](https://github.com/nfelnlp/InterroLang/tree/main/prompts).  
+They are defined in [actions](./actions) and [prompts](./prompts).  
 
 ### Dataset Viewer
 We provide a dataset view with which users can explore instances contained in the pre-defined dataset (in screenshot, BoolQ dataset is used). Users can search instances that include the entered string. 
@@ -117,7 +117,7 @@ sudo docker run -d -p 4000:4000 interrolang
 ```
 
 ## User Guide
-After the project is set up, we provide an optional [user guide](https://github.com/nfelnlp/InterroLang/blob/main/utils/user_guide.py) using Selenium to demonstrate how to use our system if you have a Chrome Browser available.
+After the project is set up, we provide an optional [user guide](./utils/user_guide.py) using Selenium to demonstrate how to use our system if you have a Chrome Browser available.
 
 ## How to use custom input
 ### Supported operations
@@ -141,12 +141,12 @@ After the project is set up, we provide an optional [user guide](https://github.
 ![](./static/images/result.png)
 
 ## How to use include operation
-Include operation works similar to [custom input](https://github.com/nfelnlp/InterroLang#how-to-use-custom-input)
+Include operation works similar to [custom input](#how-to-use-custom-input)
 1. Enter a single token in the text area and choose **"Include""** in the selection box. Then click the send button.
 ![](./static/images/include.png)
 2. After clicking the button, you could see your entered token in the interface.
 ![](./static/images/include_entered.png)
-3. Then you could enter a prompt (refer [here](https://github.com/nfelnlp/InterroLang/tree/main/prompts/filter))
+3. Then you could enter a prompt (refer [here](./prompts/filter))
    - Supported operations:
      - countdata
      - label
