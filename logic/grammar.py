@@ -42,8 +42,9 @@ globaltopkword: " important" (class | " all" | topk)
 
 includes: " includes"
 
-keywords: kwword ( {topkvalues} | allfeaturesword )
+keywords: kwword ( {topkvalues} | allfeaturesword ) ( reverse )
 kwword: " keywords"
+reverse: " True" | " False"
 
 label: " label"
 

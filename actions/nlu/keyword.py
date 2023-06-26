@@ -3,7 +3,7 @@ import nltk
 from timeout import timeout
 
 
-def get_frequent_words(conversation, f_names, top=5):
+def get_frequent_words(conversation, f_names, top=5, reverse=True):
     """
 
     Args:
@@ -32,7 +32,7 @@ def get_frequent_words(conversation, f_names, top=5):
 
     word_dict = dict(nltk.FreqDist(words_ne))
 
-    frequent_words = sorted(word_dict.items(), key=lambda x: x[1], reverse=True)[:top]
+    frequent_words = sorted(word_dict.items(), key=lambda x: x[1], reverse=reverse)[:top]
 
     text = "<table style='border: 1px solid black;'>"
     text += "<tr style='border: 1px solid black;'>"
@@ -58,20 +58,34 @@ def keyword_operation(conversation, parse_text, i, **kwargs):
     # List out the feature names
     f_names = list(df.columns)
 
+    reverse = True
+
     # Extract topk value
     if "keywords all" in " ".join(parse_text):
         top = 25
+        if parse_text[i+2] == "True" or parse_text[i+2] == "False":
+            reverse = eval(parse_text[i+2])
     else:
-        num_list = []
-        for item in parse_text:
-            try:
-                if int(item):
-                    num_list.append(int(item))
-            except ValueError:
-                pass
-        top = num_list[-1]
+        top = None
+        try:
+            if int(parse_text[i+1]):
+                top = int(parse_text[i+1])
+        except ValueError:
+            pass
 
-    return_s = f"The {top} most frequent words in the dataset are: <br>"
-    return_s += get_frequent_words(conversation, f_names=f_names, top=top)
+        if top is None:
+            top = 25
+
+            if parse_text[i+1] == "True" or parse_text[i+1] == "False":
+                reverse = eval(parse_text[i+1])
+        else:
+            if parse_text[i+2] == "True" or parse_text[i+2] == "False":
+                reverse = eval(parse_text[i+2])
+
+    if reverse:
+        return_s = f"The {top} most frequent word(s) in the dataset: <br>"
+    else:
+        return_s = f"The {top} least frequent word(s) in the dataset: <br>"
+    return_s += get_frequent_words(conversation, f_names=f_names, top=top, reverse=reverse)
 
     return return_s, 1
