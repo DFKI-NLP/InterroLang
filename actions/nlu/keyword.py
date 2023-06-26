@@ -3,6 +3,9 @@ import nltk
 from timeout import timeout
 
 
+flag2bool = {"least": False, "most": True}
+
+
 def get_frequent_words(conversation, f_names, top=5, reverse=True):
     """
 
@@ -63,8 +66,8 @@ def keyword_operation(conversation, parse_text, i, **kwargs):
     # Extract topk value
     if "keywords all" in " ".join(parse_text):
         top = 25
-        if parse_text[i+2] == "True" or parse_text[i+2] == "False":
-            reverse = eval(parse_text[i+2])
+        if parse_text[i+2] in flag2bool.keys():
+            reverse = flag2bool[parse_text[i+2]]
     else:
         top = None
         try:
@@ -76,11 +79,11 @@ def keyword_operation(conversation, parse_text, i, **kwargs):
         if top is None:
             top = 25
 
-            if parse_text[i+1] == "True" or parse_text[i+1] == "False":
-                reverse = eval(parse_text[i+1])
+            if parse_text[i+1] in flag2bool.keys():
+                reverse = flag2bool[parse_text[i+1]]
         else:
-            if parse_text[i+2] == "True" or parse_text[i+2] == "False":
-                reverse = eval(parse_text[i+2])
+            if parse_text[i+2] in flag2bool.keys():
+                reverse = flag2bool[parse_text[i+2]]
 
     if reverse:
         return_s = f"The {top} most frequent word(s) in the dataset: <br>"

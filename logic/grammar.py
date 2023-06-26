@@ -44,7 +44,7 @@ includes: " includes"
 
 keywords: kwword ( {topkvalues} | allfeaturesword ) ( reverse )
 kwword: " keywords"
-reverse: " True" | " False"
+reverse: " most" | " least"
 
 label: " label"
 
