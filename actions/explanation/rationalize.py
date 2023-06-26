@@ -101,13 +101,15 @@ def rationalize_operation(conversation, parse_text, i, simulation, data_path="./
         raise NotImplementedError(f"Dataset {dataset_name} is not supported!")
 
     if conversation.custom_input is not None and conversation.used is False:
-        print("rationale")
+        if not conversation.decoder.gpt_parser_initialized:
+            return f"Rationalize operation not enabled for {conversation.decoder.parser_name}"
+
         few_shot_str = get_few_shot_str(gpt_rationales)
 
         res = prediction_with_custom_input(conversation)
         df = pd.read_csv(f"./cache/{dataset_name}/{dataset_name}_custom_input.csv")
         prediction = df["Prediction"][df['Prediction'].index.to_list()[-1]]
-        print(prediction)
+
         pred_str = conversation.class_names[prediction]
 
         if dataset_name == "boolq":
