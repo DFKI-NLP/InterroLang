@@ -89,7 +89,6 @@ def get_few_shot_result(few_shot_str, text, intro, instruction, conversation, pr
 
 # @timeout(60)
 def rationalize_operation(conversation, parse_text, i, simulation, data_path="./cache/", **kwargs):
-    # TODO: Custom input – if conversation.used and conversation.custom_input:
     dataset_name = conversation.describe.get_dataset_name()
 
     if dataset_name == "boolq":
