@@ -20,8 +20,10 @@ def augment_operation(conversation, parse_text, i, **kwargs):
     dataset = conversation.describe.get_dataset_name()
     if dataset == "boolq":
         instance = conversation.get_var("dataset").contents["X"].iloc[id_val]["passage"]
-    else:
+    elif dataset == "olid":
         instance = conversation.get_var("dataset").contents["X"].iloc[id_val]["text"]
+    else:
+        instance = conversation.get_var("dataset").contents["X"].iloc[id_val]["dialog"]
 
     word_aug_instance = word_aug.augment(instance, n=1)
 
