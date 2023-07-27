@@ -182,6 +182,71 @@
                         </span>
                     </div>
                 </div>
+                <!--include buttons-->
+                <div class="rowc" id="include_btns" style="display: none">
+                    <div class="control" style="display: table-cell; text-align: right; padding: 10px;"><b>Include</b></div>
+                    <div class="tooltip-wrapper">
+                        <button id="i_pred" class="idea-button" style="background: rgba(253, 186, 54, 0.96);"
+                                onclick="sampleIncludePrediction()">
+                            Dataset prediction
+                        </button>
+                        <span class="tooltip-text">
+                            Lets the model predict the <b>filtered dataset</b> or any subset with <b>multiple instances</b>.
+                        </span>
+                    </div>
+                    <div class="tooltip-wrapper">
+                        <button id="i_label" class="idea-button" style="background: rgba(253, 186, 54, 0.96);"
+                                onclick="sampleIncludeLabel()">
+                            True label
+                        </button>
+                        <span class="tooltip-text">
+                            Shows the <b>distribution</b> of the <b>true labels</b> in the <b>filtered</b> dataset
+                        </span>
+                    </div>
+                    <div class="tooltip-wrapper">
+                        <button id="i_mistake" class="idea-button"
+                                style="background: rgba(253, 186, 54, 0.96);"
+                                onclick="sampleIncludeMistake()">
+                            Count mistake
+                        </button>
+                        <span class="tooltip-text">
+                            Shows <b>how many</b> examples the model predicts a <b>wrong label</b> for.
+                        </span>
+                    </div>
+                    <div class="tooltip-wrapper">
+                        <button id="i_countdata" class="idea-button"
+                                style="background: rgba(253, 186, 54, 0.96);"
+                                onclick="sampleIncludeCountdata()">
+                            Count data
+                        </button>
+                        <span class="tooltip-text">
+                            Shows <b>how many</b> examples there are in the <b>filtered</b> data and what the range of <b>IDs</b> is.
+                        </span>
+                    </div>
+
+                    <div class="tooltip-wrapper">
+                        <button id="i_score" class="idea-button"
+                                style="background: rgba(253, 186, 54, 0.96);"
+                                onclick="sampleIncludeScore()">
+                            Performance
+                        </button>
+                        <span class="tooltip-text">
+                            Gets an overall <b>score</b> for the model performance on the <b>filtered </b> dataset (Accuracy, Precision, Recall, F1).
+                        </span>
+                    </div>
+
+                    <div class="tooltip-wrapper">
+                        <button id="i_show" class="idea-button"
+                                style="background: rgba(253, 186, 54, 0.96);"
+                                onclick="sampleIncludeShow()">
+                            Show example
+                        </button>
+                        <span class="tooltip-text">
+                            Displays a <b>single example</b> from the <b>filtered</b> dataset based on the <b>ID</b> you specify.
+                        </span>
+                    </div>
+                </div>
+
                 <div class="row row1" data-sort="abt_" style="display: table-row;">
                     <div class="control" style="display: table-cell; text-align: right; padding: 10px;"><b>About</b>
                     </div>
@@ -456,11 +521,19 @@
 </script>
 
 <script>
-    function disableBtn(flag) {
+    function disableBtn(flag, type) {
         if (!flag) {
-            document.getElementById("custom_input_btns").style.display = "table-row";
+            if(type === "custom_input"){
+                document.getElementById("custom_input_btns").style.display = "table-row";
+            } else{
+                document.getElementById("include_btns").style.display = "table-row";
+            }
         } else {
-            document.getElementById("custom_input_btns").style.display = "none";
+            if(type === "custom_input"){
+                document.getElementById("custom_input_btns").style.display = "none";
+            } else{
+                document.getElementById("include_btns").style.display = "none";
+            }
         }
     }
 
@@ -497,6 +570,29 @@
                 ttmInput.value = data;
             }
         });
+    }
+    function sampleIncludeCountdata(){
+        doSample("include_countdata")
+    }
+
+    function sampleIncludeMistake(){
+        doSample("include_mistake")
+    }
+
+    function sampleIncludeLabel(){
+        doSample("include_label")
+    }
+
+    function sampleIncludeScore(){
+        doSample("include_score")
+    }
+
+    function sampleIncludeShow(){
+        doSample("include_show")
+    }
+
+    function sampleIncludePrediction(){
+        doSample("include_prediction")
     }
 
     function sampleKeyword() {
@@ -683,21 +779,23 @@
 
             if (msgText == "quit") {
                 changeBtnColor(false);
-                disableBtn(true);
+                disableBtn(true, "custom_input");
             }
         } else if (document.getElementsByTagName("option")[idx].value === '1') {
             selectBox.selectedIndex = "0";
             botResponse(msgText, custom_input = '1');
             changeBtnColor(true);
-            disableBtn(false);
+            disableBtn(false, "custom_input");
         } else {
             selectBox.selectedIndex = "0";
             botResponse(msgText, custom_input = '2');
+            changeBtnColor(true);
+            disableBtn(false, "include");
         }
     });
 
     function changeBtnColor(flag) {
-        let ids = ["c_feat-sent", "c_feat", "c_pred"]
+        let ids = ["c_feat-sent", "c_feat", "c_pred", "i_pred", "i_label", "i_mistake", "i_countdata", "i_score", "i_show"]
 
         if (flag) {
             ids.forEach(id => {
