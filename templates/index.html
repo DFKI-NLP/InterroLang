@@ -762,10 +762,12 @@
             </div>
           `
         ttmChat.insertAdjacentHTML("beforeend", msgHTML);
+        document.getElementById("ttm-send-btn-id").disabled = true;
     }
 
     function deleteLoadingDots() {
         document.getElementById("current-dots").outerHTML = "";
+        document.getElementById("ttm-send-btn-id").disabled = false;
     }
 
     function pinMessage(text) {

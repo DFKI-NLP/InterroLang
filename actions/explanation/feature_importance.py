@@ -1,19 +1,19 @@
 import json
 
+import pandas as pd
 import torch
 from captum.attr import LayerIntegratedGradients
 from tqdm import tqdm
-from transformers import AutoTokenizer, AutoModelForSequenceClassification
 
 from explained_models.Explainer.explainer import Explainer
 import numpy as np
 
-from explained_models.ModelABC.DANetwork import DANetwork
 from explained_models.Tokenizer.tokenizer import HFTokenizer
 from actions.custom_input import generate_explanation
 
 from nltk.tokenize import sent_tokenize
 
+from actions.prediction.predict import prediction_with_custom_input, prediction_with_id
 from timeout import timeout
 
 
@@ -159,7 +159,7 @@ def explanation_with_custom_input(conversation, topk):
 
     dataset_name = conversation.describe.get_dataset_name()
 
-    res_list = get_explanation(dataset_name, inputs, conversation)
+    res_list = get_explanation(dataset_name, inputs, conversation, file_name="custom_input")
     return_s = ""
     for res in res_list:
         original_text = res["text"]
@@ -306,6 +306,8 @@ def feature_attribution_with_id(conversation, topk, id_list):
                 return_s += get_visualization(attr[:idx], topk, converted_text[:idx], conversation)
             except ValueError:
                 return_s += get_visualization(attr, topk, converted_text, conversation)
+            return_s += "<br>"
+            return_s += prediction_with_id(conversation.get_var('model').contents, conversation.temp_dataset.contents['X'], conversation, id_list[0])
         else:
             return_s = ""
             for num in id_list:
@@ -322,6 +324,8 @@ def feature_attribution_with_id(conversation, topk, id_list):
                     return_s += get_visualization(attr, topk, converted_text, conversation)
 
                 return_s += "<br>"
+                return_s += prediction_with_id(conversation.get_var('model').contents,
+                                               conversation.temp_dataset.contents['X'], conversation, id_list[num])
     return return_s
 
 
@@ -346,7 +350,7 @@ def feature_importance_operation(conversation, parse_text, i, simulation, **kwar
     if topk is None:
         topk = 5
 
-    # If id is not given
+    dataset_name = conversation.describe.get_dataset_name()
 
     if conversation.used is False and conversation.custom_input is not None:
         if "sentence" in parse_text:
@@ -354,6 +358,13 @@ def feature_importance_operation(conversation, parse_text, i, simulation, **kwar
             return return_s, 1
         else:
             explanation = explanation_with_custom_input(conversation, topk)
+            temp = prediction_with_custom_input(conversation)
+            cache_path = f"./cache/{dataset_name}/{dataset_name}_custom_input.csv"
+            df = pd.read_csv(cache_path)
+            pred = list(df["Prediction"])[-1]
+
+            explanation += f"The prediction is: <span style=\"background-color: #6CB4EE\">{conversation.class_names[pred]}</span>"
+
             return explanation, 1
 
     if topk == -1:

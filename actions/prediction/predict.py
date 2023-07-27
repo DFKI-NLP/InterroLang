@@ -12,6 +12,7 @@ from explained_models.ModelABC.DANetwork import DANetwork
 from explained_models.Tokenizer.tokenizer import HFTokenizer
 from timeout import timeout
 
+device = "cuda" if torch.cuda.is_available() else "cpu"
 
 def handle_input(parse_text):
     num = None
@@ -112,6 +113,10 @@ def prediction_with_custom_input(conversation):
                     encoding = tokenizer.encode_plus(string, return_tensors='pt')
                     input_ids = encoding["input_ids"]
                     attention_mask = encoding["attention_mask"]
+
+                    input_ids = input_ids.to(device)
+                    attention_mask = attention_mask.to(device)
+
                     input_model = {
                         'input_ids': input_ids.long(),
                         'attention_mask': attention_mask.long(),
@@ -126,6 +131,10 @@ def prediction_with_custom_input(conversation):
                 encoding = tokenizer.encode_plus(string, return_tensors='pt')
                 input_ids = encoding["input_ids"]
                 attention_mask = encoding["attention_mask"]
+
+                input_ids = input_ids.to(device)
+                attention_mask = attention_mask.to(device)
+
                 input_model = {
                     'input_ids': input_ids.long(),
                     'attention_mask': attention_mask.long(),
@@ -158,6 +167,10 @@ def prediction_with_custom_input(conversation):
                     encoding = tokenizer.encode_plus(string, return_tensors='pt')
                     input_ids = encoding["input_ids"]
                     attention_mask = encoding["attention_mask"]
+
+                    input_ids = input_ids.to(device)
+                    attention_mask = attention_mask.to(device)
+
                     input_model = {
                         'input_ids': input_ids.long(),
                         'input_mask': attention_mask.long(),
@@ -173,6 +186,10 @@ def prediction_with_custom_input(conversation):
                 encoding = tokenizer.encode_plus(string, return_tensors='pt')
                 input_ids = encoding["input_ids"]
                 attention_mask = encoding["attention_mask"]
+
+                input_ids = input_ids.to(device)
+                attention_mask = attention_mask.to(device)
+
                 input_model = {
                     'input_ids': input_ids.long(),
                     'input_mask': attention_mask.long(),
@@ -206,6 +223,10 @@ def prediction_with_custom_input(conversation):
                     encoding = tokenizer.encode_plus(string, return_tensors='pt')
                     input_ids = encoding["input_ids"]
                     attention_mask = encoding["attention_mask"]
+
+                    input_ids = input_ids.to(device)
+                    attention_mask = attention_mask.to(device)
+
                     input_model = {
                         'input_ids': input_ids.long(),
                         'attention_mask': attention_mask.long(),
@@ -220,6 +241,10 @@ def prediction_with_custom_input(conversation):
                 encoding = tokenizer.encode_plus(string, return_tensors='pt')
                 input_ids = encoding["input_ids"]
                 attention_mask = encoding["attention_mask"]
+
+                input_ids = input_ids.to(device)
+                attention_mask = attention_mask.to(device)
+
                 input_model = {
                     'input_ids': input_ids.long(),
                     'attention_mask': attention_mask.long(),
