@@ -27,7 +27,7 @@ defineword: " define"
 featureattribution: featureattributionword (allfeaturenames | allfeaturesword | topk | attrsentence)
 featureattributionword: " nlpattribute"
 allfeaturesword: " all"
-topk: topkword ( {topkvalues} )
+topk: topkword ( {topkvalues} ) ( reverse )
 topkword: " topk"
 attrsentence: " sentence" 
 
