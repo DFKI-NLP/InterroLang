@@ -9,7 +9,8 @@
 
 A [TalkToModel (Slack et al., 2022)](https://github.com/dylan-slack/TalkToModel) adaptation to NLP use cases (question answering, hate speech detection, dialogue act classification).  
 The name is a word-play on [Interrobang](https://en.wikipedia.org/wiki/Interrobang), a ligature of question mark and exclamation mark, and the **interro**gation of **Lang**uage models.  
-Our tool offers a dialogue-based exploration of NLP interpretability methods (feature attribution, counterfactuals and perturbations, free-text rationalization) and dataset analyses (similar examples, keywords, label distribution).
+Our tool offers a dialogue-based exploration of NLP interpretability methods (feature attribution, counterfactuals and perturbations, free-text rationalization) and dataset analyses (similar examples, keywords, label distribution).  
+Our accompanying [paper](https://arxiv.org/abs/2310.05592) is accepted at [EMNLP 2023 Findings](https://2023.emnlp.org/).  
 
 <p align="center">
 &nbsp;&nbsp;&nbsp;
@@ -154,3 +155,20 @@ Include operation works similar to [custom input](#how-to-use-custom-input)
      - predict
      - score
      - show
+
+---
+
+# Cite InterroLang
+
+```
+@inproceedings{feldhus-etal-2023-interrolang,
+    title = "{I}nterro{L}ang: Exploring {NLP} Models and Datasets through Dialogue-based Explanations",
+    author = {Feldhus, Nils and Wang, Qianli and Anikina, Tatiana and Chopra, Sahil and Oguz, Cennet and M{\"o}ller, Sebastian},
+    booktitle = "Findings of the Association for Computational Linguistics: EMNLP 2023",
+    month = dec,
+    year = "2023",
+    address = "Singapore, Singapore",
+    publisher = "Association for Computational Linguistics",
+    url = "https://arxiv.org/abs/2310.05592",
+}
+```
