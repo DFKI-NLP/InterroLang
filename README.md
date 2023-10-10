@@ -3,7 +3,7 @@
 </p>
 
 
-[![Python application](./actions/workflows/github.yml/badge.svg)](./actions/workflows/github.yml/badge.svg)
+[![Python application](https://github.com/DFKI-NLP/InterroLang/actions/workflows/github.yml/badge.svg)](https://github.com/DFKI-NLP/InterroLang/actions/workflows/github.yml/badge.svg)
 
 # InterroLang
 
