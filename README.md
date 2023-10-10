@@ -143,7 +143,7 @@ After the project is set up, we provide an optional [user guide](./utils/user_gu
 
 ## How to use include operation
 Include operation works similar to [custom input](#how-to-use-custom-input)
-1. Enter a single token in the text area and choose **"Include""** in the selection box. Then click the send button.
+1. Enter a single token in the text area and choose **"Include"** in the selection box. Then click the send button.
 ![](./static/images/include.png)
 2. After clicking the button, you could see your entered token in the interface.
 ![](./static/images/include_entered.png)
