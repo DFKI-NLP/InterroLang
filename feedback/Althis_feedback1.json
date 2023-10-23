@@ -1,0 +1,1362 @@
+[
+    {
+        "id": "244fd984295c37c1ff724cc66ae3cfd91e8b8008122427109683edbbea51",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "For the data with id equal to 1503, the features are\n\ndialog: two stops after this one.",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 1503 and show",
+        "user_text": "could you show me data point number 1503",
+        "timestamp": "18-06-2023, 16:46:29"
+    },
+    {
+        "id": "244fd984295c37c1ff724cc66ae3cfd91e8b8008122427109683edbbea51",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "For the data with id equal to 1503, the features are\n\ndialog: two stops after this one.",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 1503 and show",
+        "user_text": "could you show me data point number 1503",
+        "timestamp": "18-06-2023, 16:46:31"
+    },
+    {
+        "id": "244fd984295c37c1ff724cc66ae3cfd91e8b8008122427109683edbbea51",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "For the data with id equal to 1503, the features are\n\ndialog: two stops after this one.",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 1503 and show",
+        "user_text": "could you show me data point number 1503",
+        "timestamp": "18-06-2023, 16:46:34"
+    },
+    {
+        "id": "0e3a44855731797fd727085ddf7072c66aa35e464311db3c658610fa7685",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "For the data with id equal to 1503, the features are\n\ndialog: two stops after this one.",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 1503 and show",
+        "user_text": "What is the label for instance 1503",
+        "timestamp": "18-06-2023, 16:47:00"
+    },
+    {
+        "id": "0e3a44855731797fd727085ddf7072c66aa35e464311db3c658610fa7685",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "For the data with id equal to 1503, the features are\n\ndialog: two stops after this one.",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 1503 and show",
+        "user_text": "What is the label for instance 1503",
+        "timestamp": "18-06-2023, 16:47:02"
+    },
+    {
+        "id": "0e3a44855731797fd727085ddf7072c66aa35e464311db3c658610fa7685",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "For the data with id equal to 1503, the features are\n\ndialog: two stops after this one.",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 1503 and show",
+        "user_text": "What is the label for instance 1503",
+        "timestamp": "18-06-2023, 16:47:05"
+    },
+    {
+        "id": "0e3a44855731797fd727085ddf7072c66aa35e464311db3c658610fa7685",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "For the data with id equal to 1503, the features are\n\ndialog: two stops after this one.",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 1503 and show",
+        "user_text": "What is the label for instance 1503",
+        "timestamp": "18-06-2023, 16:47:23"
+    },
+    {
+        "id": "0e3a44855731797fd727085ddf7072c66aa35e464311db3c658610fa7685",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "For the data with id equal to 1503, the features are\n\ndialog: two stops after this one.",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 1503 and show",
+        "user_text": "What is the label for instance 1503",
+        "timestamp": "18-06-2023, 16:47:25"
+    },
+    {
+        "id": "0e3a44855731797fd727085ddf7072c66aa35e464311db3c658610fa7685",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "For the data with id equal to 1503, the features are\n\ndialog: two stops after this one.",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 1503 and show",
+        "user_text": "What is the label for instance 1503",
+        "timestamp": "18-06-2023, 16:47:28"
+    },
+    {
+        "id": "658f6f8beb75b9e319046483509ba5929045e8aa967ae1b8a5a1e03e745b",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "The instance with id equal to 1503 is predicted inform.",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 1503 and predict",
+        "user_text": "What is the prediction for id 1503",
+        "timestamp": "18-06-2023, 16:47:45"
+    },
+    {
+        "id": "658f6f8beb75b9e319046483509ba5929045e8aa967ae1b8a5a1e03e745b",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "The instance with id equal to 1503 is predicted inform.",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 1503 and predict",
+        "user_text": "What is the prediction for id 1503",
+        "timestamp": "18-06-2023, 16:47:47"
+    },
+    {
+        "id": "658f6f8beb75b9e319046483509ba5929045e8aa967ae1b8a5a1e03e745b",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "The instance with id equal to 1503 is predicted inform.",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 1503 and predict",
+        "user_text": "What is the prediction for id 1503",
+        "timestamp": "18-06-2023, 16:47:50"
+    },
+    {
+        "id": "ff47a4b8e38a4cbf3efe835dbffee2e97a851f5e0a86d38bb08f8861d32b",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "For instance with id 1503:\nThe likelihood of class dummy is 2.682%\nThe likelihood of class inform is 54.574%\nThe likelihood of class question is 14.7%\nThe likelihood of class directive is 18.039%\nThe likelihood of class commissive is 10.005%",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 1503 and likelihood inform",
+        "user_text": "What is the likelihood of id 1503 being classified as inform?",
+        "timestamp": "18-06-2023, 16:48:05"
+    },
+    {
+        "id": "ff47a4b8e38a4cbf3efe835dbffee2e97a851f5e0a86d38bb08f8861d32b",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "For instance with id 1503:\nThe likelihood of class dummy is 2.682%\nThe likelihood of class inform is 54.574%\nThe likelihood of class question is 14.7%\nThe likelihood of class directive is 18.039%\nThe likelihood of class commissive is 10.005%",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 1503 and likelihood inform",
+        "user_text": "What is the likelihood of id 1503 being classified as inform?",
+        "timestamp": "18-06-2023, 16:48:08"
+    },
+    {
+        "id": "ff47a4b8e38a4cbf3efe835dbffee2e97a851f5e0a86d38bb08f8861d32b",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "For instance with id 1503:\nThe likelihood of class dummy is 2.682%\nThe likelihood of class inform is 54.574%\nThe likelihood of class question is 14.7%\nThe likelihood of class directive is 18.039%\nThe likelihood of class commissive is 10.005%",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 1503 and likelihood inform",
+        "user_text": "What is the likelihood of id 1503 being classified as inform?",
+        "timestamp": "18-06-2023, 16:48:11"
+    },
+    {
+        "id": "4e387eea42bce5e3e6bef7346b65f12eb90d35cd0bf0c920d77adab93c2f",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "There are 2387 items in the data.\n\nLet me know if you want to see their ids.",
+        "dataset": "daily_dialog",
+        "parsed_text": "countdata",
+        "user_text": "Of the entire data, how many instances are classified as inform?",
+        "timestamp": "18-06-2023, 16:48:23"
+    },
+    {
+        "id": "4e387eea42bce5e3e6bef7346b65f12eb90d35cd0bf0c920d77adab93c2f",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "There are 2387 items in the data.\n\nLet me know if you want to see their ids.",
+        "dataset": "daily_dialog",
+        "parsed_text": "countdata",
+        "user_text": "Of the entire data, how many instances are classified as inform?",
+        "timestamp": "18-06-2023, 16:48:27"
+    },
+    {
+        "id": "4e387eea42bce5e3e6bef7346b65f12eb90d35cd0bf0c920d77adab93c2f",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "There are 2387 items in the data.\n\nLet me know if you want to see their ids.",
+        "dataset": "daily_dialog",
+        "parsed_text": "countdata",
+        "user_text": "Of the entire data, how many instances are classified as inform?",
+        "timestamp": "18-06-2023, 16:48:29"
+    },
+    {
+        "id": "a14fa2a4264e11a36e5b9c9070f88064a9eadf0734840221aad2e27a3e50",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "Training Data Details:\n\n\nName\tContent\ntrain_data_name\tDailyDialog Dataset: multi-turn dialog\ntrain_data_source\tdialog\ntrain_data_language\tEnglish\ntrain_data_number\t11118\n\nThe data contains information related to reflect the daily communication way and cover various topics about the daily life.\nThe exact feature names in the data are listed as follows:\ndialog\n\nThe dataset has following labels:\ndummy\ninform\nquestion\ndirective\ncommissive\n\nThe model scores 0.0% accuracy on the data.",
+        "dataset": "daily_dialog",
+        "parsed_text": "data train_data_source",
+        "user_text": "training dataset",
+        "timestamp": "18-06-2023, 16:58:11"
+    },
+    {
+        "id": "a14fa2a4264e11a36e5b9c9070f88064a9eadf0734840221aad2e27a3e50",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "Training Data Details:\n\n\nName\tContent\ntrain_data_name\tDailyDialog Dataset: multi-turn dialog\ntrain_data_source\tdialog\ntrain_data_language\tEnglish\ntrain_data_number\t11118\n\nThe data contains information related to reflect the daily communication way and cover various topics about the daily life.\nThe exact feature names in the data are listed as follows:\ndialog\n\nThe dataset has following labels:\ndummy\ninform\nquestion\ndirective\ncommissive\n\nThe model scores 0.0% accuracy on the data.",
+        "dataset": "daily_dialog",
+        "parsed_text": "data train_data_source",
+        "user_text": "training dataset",
+        "timestamp": "18-06-2023, 16:58:14"
+    },
+    {
+        "id": "9ce02c08c8306f77928001f1d5d048ece71dffbbda1160c0e214a50fdd74",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "The model scores 73.565% accuracy on all the instances in the data,.",
+        "dataset": "daily_dialog",
+        "parsed_text": "score default",
+        "user_text": "test partition languages",
+        "timestamp": "18-06-2023, 16:59:39"
+    },
+    {
+        "id": "9ce02c08c8306f77928001f1d5d048ece71dffbbda1160c0e214a50fdd74",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "The model scores 73.565% accuracy on all the instances in the data,.",
+        "dataset": "daily_dialog",
+        "parsed_text": "score default",
+        "user_text": "test partition languages",
+        "timestamp": "18-06-2023, 16:59:41"
+    },
+    {
+        "id": "9ce02c08c8306f77928001f1d5d048ece71dffbbda1160c0e214a50fdd74",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "The model scores 73.565% accuracy on all the instances in the data,.",
+        "dataset": "daily_dialog",
+        "parsed_text": "score default",
+        "user_text": "test partition languages",
+        "timestamp": "18-06-2023, 16:59:44"
+    },
+    {
+        "id": "8396eba043fa6714145413a2fba230c22dc9cf9e5ae70f2f5faeb565b437",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "Testing Data Details:\n\n\nName\tContent\ntest_data_name\tDailyDialog Dataset: multi-turn dialog\ntest_data_source\tdialog\ntest_data_language\tEnglish\ntest_data_number\t1000\n\n\nThe data contains information related to reflect the daily communication way and cover various topics about the daily life.\nThe exact feature names in the data are listed as follows:\ndialog\n\nThe dataset has following labels:\ndummy\ninform\nquestion\ndirective\ncommissive\n\nThe model scores 0.0% accuracy on the data.",
+        "dataset": "daily_dialog",
+        "parsed_text": "data test_data_name",
+        "user_text": "show me the test data",
+        "timestamp": "18-06-2023, 17:00:48"
+    },
+    {
+        "id": "8396eba043fa6714145413a2fba230c22dc9cf9e5ae70f2f5faeb565b437",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "Testing Data Details:\n\n\nName\tContent\ntest_data_name\tDailyDialog Dataset: multi-turn dialog\ntest_data_source\tdialog\ntest_data_language\tEnglish\ntest_data_number\t1000\n\n\nThe data contains information related to reflect the daily communication way and cover various topics about the daily life.\nThe exact feature names in the data are listed as follows:\ndialog\n\nThe dataset has following labels:\ndummy\ninform\nquestion\ndirective\ncommissive\n\nThe model scores 0.0% accuracy on the data.",
+        "dataset": "daily_dialog",
+        "parsed_text": "data test_data_name",
+        "user_text": "show me the test data",
+        "timestamp": "18-06-2023, 17:00:51"
+    },
+    {
+        "id": "8396eba043fa6714145413a2fba230c22dc9cf9e5ae70f2f5faeb565b437",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "Testing Data Details:\n\n\nName\tContent\ntest_data_name\tDailyDialog Dataset: multi-turn dialog\ntest_data_source\tdialog\ntest_data_language\tEnglish\ntest_data_number\t1000\n\n\nThe data contains information related to reflect the daily communication way and cover various topics about the daily life.\nThe exact feature names in the data are listed as follows:\ndialog\n\nThe dataset has following labels:\ndummy\ninform\nquestion\ndirective\ncommissive\n\nThe model scores 0.0% accuracy on the data.",
+        "dataset": "daily_dialog",
+        "parsed_text": "data test_data_name",
+        "user_text": "show me the test data",
+        "timestamp": "18-06-2023, 17:00:53"
+    },
+    {
+        "id": "8396eba043fa6714145413a2fba230c22dc9cf9e5ae70f2f5faeb565b437",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "Testing Data Details:\n\n\nName\tContent\ntest_data_name\tDailyDialog Dataset: multi-turn dialog\ntest_data_source\tdialog\ntest_data_language\tEnglish\ntest_data_number\t1000\n\n\nThe data contains information related to reflect the daily communication way and cover various topics about the daily life.\nThe exact feature names in the data are listed as follows:\ndialog\n\nThe dataset has following labels:\ndummy\ninform\nquestion\ndirective\ncommissive\n\nThe model scores 0.0% accuracy on the data.",
+        "dataset": "daily_dialog",
+        "parsed_text": "data test_data_name",
+        "user_text": "show me the test data",
+        "timestamp": "18-06-2023, 17:00:56"
+    },
+    {
+        "id": "be26ccfb0b08b8acbfc19ac2db913ac38b00d597391e0d8cedd7cdd631aa",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "There are 2387 items in the data.\n\nLet me know if you want to see their ids.",
+        "dataset": "daily_dialog",
+        "parsed_text": "countdata",
+        "user_text": "How many datapoints are there?",
+        "timestamp": "18-06-2023, 17:03:02"
+    },
+    {
+        "id": "be26ccfb0b08b8acbfc19ac2db913ac38b00d597391e0d8cedd7cdd631aa",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "There are 2387 items in the data.\n\nLet me know if you want to see their ids.",
+        "dataset": "daily_dialog",
+        "parsed_text": "countdata",
+        "user_text": "How many datapoints are there?",
+        "timestamp": "18-06-2023, 17:03:05"
+    },
+    {
+        "id": "be26ccfb0b08b8acbfc19ac2db913ac38b00d597391e0d8cedd7cdd631aa",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "There are 2387 items in the data.\n\nLet me know if you want to see their ids.",
+        "dataset": "daily_dialog",
+        "parsed_text": "countdata",
+        "user_text": "How many datapoints are there?",
+        "timestamp": "18-06-2023, 17:03:07"
+    },
+    {
+        "id": "3c0c20d9cd2a1f005c7f5a9f5a03743a92260c0a0f22f0d697fe6b6c1cbf",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "There are 2387 items in the data.\n\nLet me know if you want to see their ids.",
+        "dataset": "daily_dialog",
+        "parsed_text": "countdata",
+        "user_text": "how many data points are there?",
+        "timestamp": "18-06-2023, 17:03:47"
+    },
+    {
+        "id": "3c0c20d9cd2a1f005c7f5a9f5a03743a92260c0a0f22f0d697fe6b6c1cbf",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "There are 2387 items in the data.\n\nLet me know if you want to see their ids.",
+        "dataset": "daily_dialog",
+        "parsed_text": "countdata",
+        "user_text": "how many data points are there?",
+        "timestamp": "18-06-2023, 17:03:49"
+    },
+    {
+        "id": "3c0c20d9cd2a1f005c7f5a9f5a03743a92260c0a0f22f0d697fe6b6c1cbf",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "There are 2387 items in the data.\n\nLet me know if you want to see their ids.",
+        "dataset": "daily_dialog",
+        "parsed_text": "countdata",
+        "user_text": "how many data points are there?",
+        "timestamp": "18-06-2023, 17:03:52"
+    },
+    {
+        "id": "763a77a3a4f29e7fea0c13799c511a5fb25ef360d4ef7c817efcfe0c7de1",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "For all the instances in the data,\n\n\n0.0% of instances have label dummy\n38.542% of instances have label inform\n28.907% of instances have label question\n20.989% of instances have label directive\n11.563% of instances have label commissive",
+        "dataset": "daily_dialog",
+        "parsed_text": "label",
+        "user_text": "what are the labels for all the data",
+        "timestamp": "18-06-2023, 17:06:53"
+    },
+    {
+        "id": "763a77a3a4f29e7fea0c13799c511a5fb25ef360d4ef7c817efcfe0c7de1",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "For all the instances in the data,\n\n\n0.0% of instances have label dummy\n38.542% of instances have label inform\n28.907% of instances have label question\n20.989% of instances have label directive\n11.563% of instances have label commissive",
+        "dataset": "daily_dialog",
+        "parsed_text": "label",
+        "user_text": "what are the labels for all the data",
+        "timestamp": "18-06-2023, 17:06:56"
+    },
+    {
+        "id": "763a77a3a4f29e7fea0c13799c511a5fb25ef360d4ef7c817efcfe0c7de1",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "For all the instances in the data,\n\n\n0.0% of instances have label dummy\n38.542% of instances have label inform\n28.907% of instances have label question\n20.989% of instances have label directive\n11.563% of instances have label commissive",
+        "dataset": "daily_dialog",
+        "parsed_text": "label",
+        "user_text": "what are the labels for all the data",
+        "timestamp": "18-06-2023, 17:06:59"
+    },
+    {
+        "id": "fe3c3bac5cd25c2ad9d3999ab0f0fd77b633119e00ccf2460dd82e5a8362",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "The 25 most frequent words in the dataset are:\n\nWord\tFrequence\n\u2019\t341\nlike\t145\n-\t134\nyes,\t128\ni'm\t126\nwould\t125\nget\t102\ngood\t102\nthink\t95\ntake\t90\nyou.\t86\nthank\t81\nthat's\t79\nwell,\t76\nwant\t75\none\t75\ngo\t74\ni'll\t74\ncould\t70\nneed\t66\nknow\t64\noh,\t63\nyou?\t58\nmake\t55\nit.\t55",
+        "dataset": "daily_dialog",
+        "parsed_text": "keywords all",
+        "user_text": "what are the true labels in the dataset and how often do they occur?",
+        "timestamp": "18-06-2023, 17:09:47"
+    },
+    {
+        "id": "fe3c3bac5cd25c2ad9d3999ab0f0fd77b633119e00ccf2460dd82e5a8362",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "The 25 most frequent words in the dataset are:\n\nWord\tFrequence\n\u2019\t341\nlike\t145\n-\t134\nyes,\t128\ni'm\t126\nwould\t125\nget\t102\ngood\t102\nthink\t95\ntake\t90\nyou.\t86\nthank\t81\nthat's\t79\nwell,\t76\nwant\t75\none\t75\ngo\t74\ni'll\t74\ncould\t70\nneed\t66\nknow\t64\noh,\t63\nyou?\t58\nmake\t55\nit.\t55",
+        "dataset": "daily_dialog",
+        "parsed_text": "keywords all",
+        "user_text": "what are the true labels in the dataset and how often do they occur?",
+        "timestamp": "18-06-2023, 17:09:50"
+    },
+    {
+        "id": "fe3c3bac5cd25c2ad9d3999ab0f0fd77b633119e00ccf2460dd82e5a8362",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "The 25 most frequent words in the dataset are:\n\nWord\tFrequence\n\u2019\t341\nlike\t145\n-\t134\nyes,\t128\ni'm\t126\nwould\t125\nget\t102\ngood\t102\nthink\t95\ntake\t90\nyou.\t86\nthank\t81\nthat's\t79\nwell,\t76\nwant\t75\none\t75\ngo\t74\ni'll\t74\ncould\t70\nneed\t66\nknow\t64\noh,\t63\nyou?\t58\nmake\t55\nit.\t55",
+        "dataset": "daily_dialog",
+        "parsed_text": "keywords all",
+        "user_text": "what are the true labels in the dataset and how often do they occur?",
+        "timestamp": "18-06-2023, 17:09:52"
+    },
+    {
+        "id": "1eea021201dd734b964e28ff354ebf58c66dab8de2e07f574e710aed8107",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "The instance with id equal to 2129 is predicted directive.",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 2129 and predict",
+        "user_text": "return prediction id 2129",
+        "timestamp": "18-06-2023, 17:09:58"
+    },
+    {
+        "id": "1eea021201dd734b964e28ff354ebf58c66dab8de2e07f574e710aed8107",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "The instance with id equal to 2129 is predicted directive.",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 2129 and predict",
+        "user_text": "return prediction id 2129",
+        "timestamp": "18-06-2023, 17:10:01"
+    },
+    {
+        "id": "1eea021201dd734b964e28ff354ebf58c66dab8de2e07f574e710aed8107",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "The instance with id equal to 2129 is predicted directive.",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 2129 and predict",
+        "user_text": "return prediction id 2129",
+        "timestamp": "18-06-2023, 17:10:04"
+    },
+    {
+        "id": "7d657ec4c258d7ddd088d1460748bd671085449f0f4e8fea35f11b993bf2",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "General Information:\n\n\nName\tContent\nmodel_name\tBertForSequenceClassification\nmodel_summary\tBert Model transformer with a sequence classification/regression head on top (a linear layer on top of the pooled output) e.g. for GLUE tasks.\ntask\tDialog Act Classification",
+        "dataset": "daily_dialog",
+        "parsed_text": "model model_summary",
+        "user_text": "what is the true label for id 2129",
+        "timestamp": "18-06-2023, 17:10:19"
+    },
+    {
+        "id": "7d657ec4c258d7ddd088d1460748bd671085449f0f4e8fea35f11b993bf2",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "General Information:\n\n\nName\tContent\nmodel_name\tBertForSequenceClassification\nmodel_summary\tBert Model transformer with a sequence classification/regression head on top (a linear layer on top of the pooled output) e.g. for GLUE tasks.\ntask\tDialog Act Classification",
+        "dataset": "daily_dialog",
+        "parsed_text": "model model_summary",
+        "user_text": "what is the true label for id 2129",
+        "timestamp": "18-06-2023, 17:10:22"
+    },
+    {
+        "id": "7d657ec4c258d7ddd088d1460748bd671085449f0f4e8fea35f11b993bf2",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "General Information:\n\n\nName\tContent\nmodel_name\tBertForSequenceClassification\nmodel_summary\tBert Model transformer with a sequence classification/regression head on top (a linear layer on top of the pooled output) e.g. for GLUE tasks.\ntask\tDialog Act Classification",
+        "dataset": "daily_dialog",
+        "parsed_text": "model model_summary",
+        "user_text": "what is the true label for id 2129",
+        "timestamp": "18-06-2023, 17:10:26"
+    },
+    {
+        "id": "d8c8313f12a7e14e632a84a392ace65375c130c2159a2899c8eb5566136a",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "The instance with id equal to 2129 is predicted directive.",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 2129 and predict",
+        "user_text": "what is the prediction for instance 2129",
+        "timestamp": "18-06-2023, 17:10:39"
+    },
+    {
+        "id": "d8c8313f12a7e14e632a84a392ace65375c130c2159a2899c8eb5566136a",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "The instance with id equal to 2129 is predicted directive.",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 2129 and predict",
+        "user_text": "what is the prediction for instance 2129",
+        "timestamp": "18-06-2023, 17:10:42"
+    },
+    {
+        "id": "d8c8313f12a7e14e632a84a392ace65375c130c2159a2899c8eb5566136a",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "The instance with id equal to 2129 is predicted directive.",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 2129 and predict",
+        "user_text": "what is the prediction for instance 2129",
+        "timestamp": "18-06-2023, 17:10:45"
+    },
+    {
+        "id": "bb0422d762bacd397e2aacbbc88e4517e738494da081413e372209068128",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "The random text is with id 394:\n\n\nThe text is: it takes about 3 minutes per person, so it \u2019 ll probably be about an hour \u2019 s wait.\nThe prediction is inform.",
+        "dataset": "daily_dialog",
+        "parsed_text": "randompredict",
+        "user_text": "Show me 3 random predictions",
+        "timestamp": "18-06-2023, 17:11:23"
+    },
+    {
+        "id": "bb0422d762bacd397e2aacbbc88e4517e738494da081413e372209068128",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "The random text is with id 394:\n\n\nThe text is: it takes about 3 minutes per person, so it \u2019 ll probably be about an hour \u2019 s wait.\nThe prediction is inform.",
+        "dataset": "daily_dialog",
+        "parsed_text": "randompredict",
+        "user_text": "Show me 3 random predictions",
+        "timestamp": "18-06-2023, 17:11:27"
+    },
+    {
+        "id": "bb0422d762bacd397e2aacbbc88e4517e738494da081413e372209068128",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "The random text is with id 394:\n\n\nThe text is: it takes about 3 minutes per person, so it \u2019 ll probably be about an hour \u2019 s wait.\nThe prediction is inform.",
+        "dataset": "daily_dialog",
+        "parsed_text": "randompredict",
+        "user_text": "Show me 3 random predictions",
+        "timestamp": "18-06-2023, 17:11:30"
+    },
+    {
+        "id": "3ffab8d5ed4f08e15dedb48c7ddc105470266d12204fce69c693e685acc7",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "For instance with id 2129:\nThe likelihood of class dummy is 1.636%\nThe likelihood of class inform is 22.518%\nThe likelihood of class question is 6.225%\nThe likelihood of class directive is 54.317%\nThe likelihood of class commissive is 15.304%",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 2129 and likelihood directive",
+        "user_text": "What is the probability of id 2129 being predicted as directive?",
+        "timestamp": "18-06-2023, 17:16:36"
+    },
+    {
+        "id": "3ffab8d5ed4f08e15dedb48c7ddc105470266d12204fce69c693e685acc7",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "For instance with id 2129:\nThe likelihood of class dummy is 1.636%\nThe likelihood of class inform is 22.518%\nThe likelihood of class question is 6.225%\nThe likelihood of class directive is 54.317%\nThe likelihood of class commissive is 15.304%",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 2129 and likelihood directive",
+        "user_text": "What is the probability of id 2129 being predicted as directive?",
+        "timestamp": "18-06-2023, 17:16:39"
+    },
+    {
+        "id": "3ffab8d5ed4f08e15dedb48c7ddc105470266d12204fce69c693e685acc7",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "For instance with id 2129:\nThe likelihood of class dummy is 1.636%\nThe likelihood of class inform is 22.518%\nThe likelihood of class question is 6.225%\nThe likelihood of class directive is 54.317%\nThe likelihood of class commissive is 15.304%",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 2129 and likelihood directive",
+        "user_text": "What is the probability of id 2129 being predicted as directive?",
+        "timestamp": "18-06-2023, 17:16:42"
+    },
+    {
+        "id": "3ffab8d5ed4f08e15dedb48c7ddc105470266d12204fce69c693e685acc7",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "For instance with id 2129:\nThe likelihood of class dummy is 1.636%\nThe likelihood of class inform is 22.518%\nThe likelihood of class question is 6.225%\nThe likelihood of class directive is 54.317%\nThe likelihood of class commissive is 15.304%",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 2129 and likelihood directive",
+        "user_text": "What is the probability of id 2129 being predicted as directive?",
+        "timestamp": "18-06-2023, 17:16:45"
+    },
+    {
+        "id": "77f65c7b12decef227d74555de07af562c619578c7f66636614720024b96",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "The random text is with id 82:\n\n\nThe text is: i'll use ginger, garlic scallion, hot pepper and vinegar.\nThe prediction is inform.",
+        "dataset": "daily_dialog",
+        "parsed_text": "randompredict",
+        "user_text": "give me a random prediction",
+        "timestamp": "18-06-2023, 17:18:41"
+    },
+    {
+        "id": "77f65c7b12decef227d74555de07af562c619578c7f66636614720024b96",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "The random text is with id 82:\n\n\nThe text is: i'll use ginger, garlic scallion, hot pepper and vinegar.\nThe prediction is inform.",
+        "dataset": "daily_dialog",
+        "parsed_text": "randompredict",
+        "user_text": "give me a random prediction",
+        "timestamp": "18-06-2023, 17:18:45"
+    },
+    {
+        "id": "77f65c7b12decef227d74555de07af562c619578c7f66636614720024b96",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "The random text is with id 82:\n\n\nThe text is: i'll use ginger, garlic scallion, hot pepper and vinegar.\nThe prediction is inform.",
+        "dataset": "daily_dialog",
+        "parsed_text": "randompredict",
+        "user_text": "give me a random prediction",
+        "timestamp": "18-06-2023, 17:18:48"
+    },
+    {
+        "id": "75fcd94c7c60b7ca766df51077b2ea471f982a1c039f261f485dbab3ac69",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "For instance with id 2129:\nThe likelihood of class dummy is 1.636%\nThe likelihood of class inform is 22.518%\nThe likelihood of class question is 6.225%\nThe likelihood of class directive is 54.317%\nThe likelihood of class commissive is 15.304%",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 2129 and likelihood",
+        "user_text": "what is the likelihood of id 2129 being wrongly classified?",
+        "timestamp": "18-06-2023, 17:19:57"
+    },
+    {
+        "id": "75fcd94c7c60b7ca766df51077b2ea471f982a1c039f261f485dbab3ac69",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "For instance with id 2129:\nThe likelihood of class dummy is 1.636%\nThe likelihood of class inform is 22.518%\nThe likelihood of class question is 6.225%\nThe likelihood of class directive is 54.317%\nThe likelihood of class commissive is 15.304%",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 2129 and likelihood",
+        "user_text": "what is the likelihood of id 2129 being wrongly classified?",
+        "timestamp": "18-06-2023, 17:19:59"
+    },
+    {
+        "id": "75fcd94c7c60b7ca766df51077b2ea471f982a1c039f261f485dbab3ac69",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "For instance with id 2129:\nThe likelihood of class dummy is 1.636%\nThe likelihood of class inform is 22.518%\nThe likelihood of class question is 6.225%\nThe likelihood of class directive is 54.317%\nThe likelihood of class commissive is 15.304%",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 2129 and likelihood",
+        "user_text": "what is the likelihood of id 2129 being wrongly classified?",
+        "timestamp": "18-06-2023, 17:20:06"
+    },
+    {
+        "id": "8108ca603e591e12a808144504b9f1d71b7f4ec88042c156b33506af292f",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "The model scores 0.585 f1 on all the instances in the data,.",
+        "dataset": "daily_dialog",
+        "parsed_text": "score f1",
+        "user_text": "testing f1",
+        "timestamp": "18-06-2023, 17:20:58"
+    },
+    {
+        "id": "8108ca603e591e12a808144504b9f1d71b7f4ec88042c156b33506af292f",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "The model scores 0.585 f1 on all the instances in the data,.",
+        "dataset": "daily_dialog",
+        "parsed_text": "score f1",
+        "user_text": "testing f1",
+        "timestamp": "18-06-2023, 17:21:01"
+    },
+    {
+        "id": "8108ca603e591e12a808144504b9f1d71b7f4ec88042c156b33506af292f",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "The model scores 0.585 f1 on all the instances in the data,.",
+        "dataset": "daily_dialog",
+        "parsed_text": "score f1",
+        "user_text": "testing f1",
+        "timestamp": "18-06-2023, 17:21:03"
+    },
+    {
+        "id": "7a152ddd7bf7a5210981623c0304a30e85714d1913248c554f30fdecbee9",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "The model scores 0.557 recall on all the instances in the data,.",
+        "dataset": "daily_dialog",
+        "parsed_text": "score recall",
+        "user_text": "What is the recall of the model?",
+        "timestamp": "18-06-2023, 17:21:13"
+    },
+    {
+        "id": "7a152ddd7bf7a5210981623c0304a30e85714d1913248c554f30fdecbee9",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "The model scores 0.557 recall on all the instances in the data,.",
+        "dataset": "daily_dialog",
+        "parsed_text": "score recall",
+        "user_text": "What is the recall of the model?",
+        "timestamp": "18-06-2023, 17:21:16"
+    },
+    {
+        "id": "7a152ddd7bf7a5210981623c0304a30e85714d1913248c554f30fdecbee9",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "The model scores 0.557 recall on all the instances in the data,.",
+        "dataset": "daily_dialog",
+        "parsed_text": "score recall",
+        "user_text": "What is the recall of the model?",
+        "timestamp": "18-06-2023, 17:21:18"
+    },
+    {
+        "id": "bfc7a52d09a70f3c9fd6b91718c984b7e386fdab8e02328000bd9deb90cb",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "General Information:\n\n\nName\tContent\nmodel_name\tBertForSequenceClassification\nmodel_summary\tBert Model transformer with a sequence classification/regression head on top (a linear layer on top of the pooled output) e.g. for GLUE tasks.\ntask\tDialog Act Classification",
+        "dataset": "daily_dialog",
+        "parsed_text": "model model_summary",
+        "user_text": "How well does the model perform?",
+        "timestamp": "18-06-2023, 17:21:32"
+    },
+    {
+        "id": "bfc7a52d09a70f3c9fd6b91718c984b7e386fdab8e02328000bd9deb90cb",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "General Information:\n\n\nName\tContent\nmodel_name\tBertForSequenceClassification\nmodel_summary\tBert Model transformer with a sequence classification/regression head on top (a linear layer on top of the pooled output) e.g. for GLUE tasks.\ntask\tDialog Act Classification",
+        "dataset": "daily_dialog",
+        "parsed_text": "model model_summary",
+        "user_text": "How well does the model perform?",
+        "timestamp": "18-06-2023, 17:21:35"
+    },
+    {
+        "id": "bfc7a52d09a70f3c9fd6b91718c984b7e386fdab8e02328000bd9deb90cb",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "General Information:\n\n\nName\tContent\nmodel_name\tBertForSequenceClassification\nmodel_summary\tBert Model transformer with a sequence classification/regression head on top (a linear layer on top of the pooled output) e.g. for GLUE tasks.\ntask\tDialog Act Classification",
+        "dataset": "daily_dialog",
+        "parsed_text": "model model_summary",
+        "user_text": "How well does the model perform?",
+        "timestamp": "18-06-2023, 17:21:37"
+    },
+    {
+        "id": "2313a8666432bd30a68b2a48fa9faf395c9e1bbc7a16eb332e19399f058d",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "The model scores 73.565% accuracy on all the instances in the data,.",
+        "dataset": "daily_dialog",
+        "parsed_text": "score default",
+        "user_text": "How accurate is the model?",
+        "timestamp": "18-06-2023, 17:21:54"
+    },
+    {
+        "id": "2313a8666432bd30a68b2a48fa9faf395c9e1bbc7a16eb332e19399f058d",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "The model scores 73.565% accuracy on all the instances in the data,.",
+        "dataset": "daily_dialog",
+        "parsed_text": "score default",
+        "user_text": "How accurate is the model?",
+        "timestamp": "18-06-2023, 17:21:57"
+    },
+    {
+        "id": "2313a8666432bd30a68b2a48fa9faf395c9e1bbc7a16eb332e19399f058d",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "The model scores 73.565% accuracy on all the instances in the data,.",
+        "dataset": "daily_dialog",
+        "parsed_text": "score default",
+        "user_text": "How accurate is the model?",
+        "timestamp": "18-06-2023, 17:21:59"
+    },
+    {
+        "id": "9ad353a83dc0dba1cb904f133eb8dab1d684ff04c581f162fbfb4cc5b5fb",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "The model scores 73.565% accuracy on all the instances in the data,.",
+        "dataset": "daily_dialog",
+        "parsed_text": "score default",
+        "user_text": "How precise is the system?",
+        "timestamp": "18-06-2023, 17:23:09"
+    },
+    {
+        "id": "9ad353a83dc0dba1cb904f133eb8dab1d684ff04c581f162fbfb4cc5b5fb",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "The model scores 73.565% accuracy on all the instances in the data,.",
+        "dataset": "daily_dialog",
+        "parsed_text": "score default",
+        "user_text": "How precise is the system?",
+        "timestamp": "18-06-2023, 17:23:33"
+    },
+    {
+        "id": "cd8011ee141b98cc342bd644f4e2c61d90c106a1c9af82b2e9dcf4aa661c",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "The model scores 0.628 precision on all the instances in the data,.",
+        "dataset": "daily_dialog",
+        "parsed_text": "score precision",
+        "user_text": "what is the precision of the system?",
+        "timestamp": "18-06-2023, 17:26:25"
+    },
+    {
+        "id": "cadb75f1b5a09e6eb71c231654732d26d06f49761757b5fcdcb8d69ede9d",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "For all the instances in the data, the model is incorrect 631 out of 2387 times (error rate 0.264).",
+        "dataset": "daily_dialog",
+        "parsed_text": "mistake count",
+        "user_text": "show me the number of data points the model forecasts inaccurately?",
+        "timestamp": "18-06-2023, 17:28:00"
+    },
+    {
+        "id": "cadb75f1b5a09e6eb71c231654732d26d06f49761757b5fcdcb8d69ede9d",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "For all the instances in the data, the model is incorrect 631 out of 2387 times (error rate 0.264).",
+        "dataset": "daily_dialog",
+        "parsed_text": "mistake count",
+        "user_text": "show me the number of data points the model forecasts inaccurately?",
+        "timestamp": "18-06-2023, 17:28:04"
+    },
+    {
+        "id": "cadb75f1b5a09e6eb71c231654732d26d06f49761757b5fcdcb8d69ede9d",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "For all the instances in the data, the model is incorrect 631 out of 2387 times (error rate 0.264).",
+        "dataset": "daily_dialog",
+        "parsed_text": "mistake count",
+        "user_text": "show me the number of data points the model forecasts inaccurately?",
+        "timestamp": "18-06-2023, 17:28:06"
+    },
+    {
+        "id": "cadb75f1b5a09e6eb71c231654732d26d06f49761757b5fcdcb8d69ede9d",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "For all the instances in the data, the model is incorrect 631 out of 2387 times (error rate 0.264).",
+        "dataset": "daily_dialog",
+        "parsed_text": "mistake count",
+        "user_text": "show me the number of data points the model forecasts inaccurately?",
+        "timestamp": "18-06-2023, 17:28:09"
+    },
+    {
+        "id": "9b3e610154bd88453a32aa286f14ab0942536513fff7ea694ef2d6586349",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "For all the instances in the data, the model is incorrect 631 out of 2387 times (error rate 0.264).",
+        "dataset": "daily_dialog",
+        "parsed_text": "mistake count",
+        "user_text": "How many data points does the model get wrong?",
+        "timestamp": "18-06-2023, 17:28:14"
+    },
+    {
+        "id": "9b3e610154bd88453a32aa286f14ab0942536513fff7ea694ef2d6586349",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "For all the instances in the data, the model is incorrect 631 out of 2387 times (error rate 0.264).",
+        "dataset": "daily_dialog",
+        "parsed_text": "mistake count",
+        "user_text": "How many data points does the model get wrong?",
+        "timestamp": "18-06-2023, 17:28:16"
+    },
+    {
+        "id": "9b3e610154bd88453a32aa286f14ab0942536513fff7ea694ef2d6586349",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "For all the instances in the data, the model is incorrect 631 out of 2387 times (error rate 0.264).",
+        "dataset": "daily_dialog",
+        "parsed_text": "mistake count",
+        "user_text": "How many data points does the model get wrong?",
+        "timestamp": "18-06-2023, 17:28:19"
+    },
+    {
+        "id": "c022e365c0f38ddb1f1046696f03ec02d46b6e4c6087d028b76e4b198747",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "For all the instances in the data, the model is incorrect 631 out of 2387 times (error rate 0.264).",
+        "dataset": "daily_dialog",
+        "parsed_text": "mistake count",
+        "user_text": "how many times does the model get it wrong?",
+        "timestamp": "18-06-2023, 17:30:23"
+    },
+    {
+        "id": "c022e365c0f38ddb1f1046696f03ec02d46b6e4c6087d028b76e4b198747",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "For all the instances in the data, the model is incorrect 631 out of 2387 times (error rate 0.264).",
+        "dataset": "daily_dialog",
+        "parsed_text": "mistake count",
+        "user_text": "how many times does the model get it wrong?",
+        "timestamp": "18-06-2023, 17:30:38"
+    },
+    {
+        "id": "c022e365c0f38ddb1f1046696f03ec02d46b6e4c6087d028b76e4b198747",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "For all the instances in the data, the model is incorrect 631 out of 2387 times (error rate 0.264).",
+        "dataset": "daily_dialog",
+        "parsed_text": "mistake count",
+        "user_text": "how many times does the model get it wrong?",
+        "timestamp": "18-06-2023, 17:30:43"
+    },
+    {
+        "id": "c022e365c0f38ddb1f1046696f03ec02d46b6e4c6087d028b76e4b198747",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "For all the instances in the data, the model is incorrect 631 out of 2387 times (error rate 0.264).",
+        "dataset": "daily_dialog",
+        "parsed_text": "mistake count",
+        "user_text": "how many times does the model get it wrong?",
+        "timestamp": "18-06-2023, 17:30:46"
+    },
+    {
+        "id": "c022e365c0f38ddb1f1046696f03ec02d46b6e4c6087d028b76e4b198747",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "For all the instances in the data, the model is incorrect 631 out of 2387 times (error rate 0.264).",
+        "dataset": "daily_dialog",
+        "parsed_text": "mistake count",
+        "user_text": "how many times does the model get it wrong?",
+        "timestamp": "18-06-2023, 17:30:48"
+    },
+    {
+        "id": "fd41d6ae7b2d772f29de14b48b232181664fa1b4617a7f72ce5310a42bc4",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "The 25 most frequent words in the dataset are:\n\nWord\tFrequence\n\u2019\t341\nlike\t145\n-\t134\nyes,\t128\ni'm\t126\nwould\t125\nget\t102\ngood\t102\nthink\t95\ntake\t90\nyou.\t86\nthank\t81\nthat's\t79\nwell,\t76\nwant\t75\none\t75\ngo\t74\ni'll\t74\ncould\t70\nneed\t66\nknow\t64\noh,\t63\nyou?\t58\nmake\t55\nit.\t55",
+        "dataset": "daily_dialog",
+        "parsed_text": "keywords all",
+        "user_text": "What are the words that show up the most in the dataset?",
+        "timestamp": "18-06-2023, 18:30:19"
+    },
+    {
+        "id": "fd41d6ae7b2d772f29de14b48b232181664fa1b4617a7f72ce5310a42bc4",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "The 25 most frequent words in the dataset are:\n\nWord\tFrequence\n\u2019\t341\nlike\t145\n-\t134\nyes,\t128\ni'm\t126\nwould\t125\nget\t102\ngood\t102\nthink\t95\ntake\t90\nyou.\t86\nthank\t81\nthat's\t79\nwell,\t76\nwant\t75\none\t75\ngo\t74\ni'll\t74\ncould\t70\nneed\t66\nknow\t64\noh,\t63\nyou?\t58\nmake\t55\nit.\t55",
+        "dataset": "daily_dialog",
+        "parsed_text": "keywords all",
+        "user_text": "What are the words that show up the most in the dataset?",
+        "timestamp": "18-06-2023, 18:30:21"
+    },
+    {
+        "id": "fd41d6ae7b2d772f29de14b48b232181664fa1b4617a7f72ce5310a42bc4",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "The 25 most frequent words in the dataset are:\n\nWord\tFrequence\n\u2019\t341\nlike\t145\n-\t134\nyes,\t128\ni'm\t126\nwould\t125\nget\t102\ngood\t102\nthink\t95\ntake\t90\nyou.\t86\nthank\t81\nthat's\t79\nwell,\t76\nwant\t75\none\t75\ngo\t74\ni'll\t74\ncould\t70\nneed\t66\nknow\t64\noh,\t63\nyou?\t58\nmake\t55\nit.\t55",
+        "dataset": "daily_dialog",
+        "parsed_text": "keywords all",
+        "user_text": "What are the words that show up the most in the dataset?",
+        "timestamp": "18-06-2023, 18:30:24"
+    },
+    {
+        "id": "f833a96e9b0c8f8c2ef42436bd1a3680a65baf6a6c450ff6017f7bb02fe5",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "The 6 most frequent words in the dataset are:\n\nWord\tFrequence\n\u2019\t341\nlike\t145\n-\t134\nyes,\t128\ni'm\t126\nwould\t125",
+        "dataset": "daily_dialog",
+        "parsed_text": "keywords 6",
+        "user_text": "What are the 6 keywords that are the most relevant?",
+        "timestamp": "18-06-2023, 18:30:45"
+    },
+    {
+        "id": "f833a96e9b0c8f8c2ef42436bd1a3680a65baf6a6c450ff6017f7bb02fe5",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "The 6 most frequent words in the dataset are:\n\nWord\tFrequence\n\u2019\t341\nlike\t145\n-\t134\nyes,\t128\ni'm\t126\nwould\t125",
+        "dataset": "daily_dialog",
+        "parsed_text": "keywords 6",
+        "user_text": "What are the 6 keywords that are the most relevant?",
+        "timestamp": "18-06-2023, 18:30:48"
+    },
+    {
+        "id": "f833a96e9b0c8f8c2ef42436bd1a3680a65baf6a6c450ff6017f7bb02fe5",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "The 6 most frequent words in the dataset are:\n\nWord\tFrequence\n\u2019\t341\nlike\t145\n-\t134\nyes,\t128\ni'm\t126\nwould\t125",
+        "dataset": "daily_dialog",
+        "parsed_text": "keywords 6",
+        "user_text": "What are the 6 keywords that are the most relevant?",
+        "timestamp": "18-06-2023, 18:30:50"
+    },
+    {
+        "id": "165276d0d2e44e8b2fee9d6ad3343a42b2677f179668f6ee9bac08f4c7e2",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "Dialog: i actually like the food there.\n\nTop 5 token(s): actually . like there food\n\nThe visualization:\ni actually like the food there .",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 1117 and nlpattribute all",
+        "user_text": "i was wondering what are the most important features for instance 1117",
+        "timestamp": "18-06-2023, 18:31:49"
+    },
+    {
+        "id": "165276d0d2e44e8b2fee9d6ad3343a42b2677f179668f6ee9bac08f4c7e2",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "Dialog: i actually like the food there.\n\nTop 5 token(s): actually . like there food\n\nThe visualization:\ni actually like the food there .",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 1117 and nlpattribute all",
+        "user_text": "i was wondering what are the most important features for instance 1117",
+        "timestamp": "18-06-2023, 18:31:52"
+    },
+    {
+        "id": "165276d0d2e44e8b2fee9d6ad3343a42b2677f179668f6ee9bac08f4c7e2",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "Dialog: i actually like the food there.\n\nTop 5 token(s): actually . like there food\n\nThe visualization:\ni actually like the food there .",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 1117 and nlpattribute all",
+        "user_text": "i was wondering what are the most important features for instance 1117",
+        "timestamp": "18-06-2023, 18:31:56"
+    },
+    {
+        "id": "fe683e5794fb88790dfa879c2bd60a9b6dcd32e1110a5722445f6fb6112b",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "For the data with id equal to 8, the features are\n\ndialog: i got my connections! just tell me what you want and i \u2019 ll even give you one ounce for free.",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 8 and show",
+        "user_text": "what are the words in id 8 that make it being classified as it is?",
+        "timestamp": "18-06-2023, 18:36:02"
+    },
+    {
+        "id": "fe683e5794fb88790dfa879c2bd60a9b6dcd32e1110a5722445f6fb6112b",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "For the data with id equal to 8, the features are\n\ndialog: i got my connections! just tell me what you want and i \u2019 ll even give you one ounce for free.",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 8 and show",
+        "user_text": "what are the words in id 8 that make it being classified as it is?",
+        "timestamp": "18-06-2023, 18:36:06"
+    },
+    {
+        "id": "fe683e5794fb88790dfa879c2bd60a9b6dcd32e1110a5722445f6fb6112b",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "For the data with id equal to 8, the features are\n\ndialog: i got my connections! just tell me what you want and i \u2019 ll even give you one ounce for free.",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 8 and show",
+        "user_text": "what are the words in id 8 that make it being classified as it is?",
+        "timestamp": "18-06-2023, 18:36:08"
+    },
+    {
+        "id": "b718a18f0e0ca21766c9fe29d941fdca62c6de68ce6853171fd411add499",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "Dialog: i got my connections! just tell me what you want and i \u2019 ll even give you one ounce for free.\n\nTop 5 token(s): want tell free . give\n\nThe visualization:\ni got my connections ! just tell me what you want and i \u2019 ll even give you one ounce for free .",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 8 and nlpattribute all",
+        "user_text": "What are the most salient words in id 8 for the model to make a decision?",
+        "timestamp": "18-06-2023, 18:36:35"
+    },
+    {
+        "id": "b718a18f0e0ca21766c9fe29d941fdca62c6de68ce6853171fd411add499",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "Dialog: i got my connections! just tell me what you want and i \u2019 ll even give you one ounce for free.\n\nTop 5 token(s): want tell free . give\n\nThe visualization:\ni got my connections ! just tell me what you want and i \u2019 ll even give you one ounce for free .",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 8 and nlpattribute all",
+        "user_text": "What are the most salient words in id 8 for the model to make a decision?",
+        "timestamp": "18-06-2023, 18:36:39"
+    },
+    {
+        "id": "b718a18f0e0ca21766c9fe29d941fdca62c6de68ce6853171fd411add499",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "Dialog: i got my connections! just tell me what you want and i \u2019 ll even give you one ounce for free.\n\nTop 5 token(s): want tell free . give\n\nThe visualization:\ni got my connections ! just tell me what you want and i \u2019 ll even give you one ounce for free .",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 8 and nlpattribute all",
+        "user_text": "What are the most salient words in id 8 for the model to make a decision?",
+        "timestamp": "18-06-2023, 18:36:42"
+    },
+    {
+        "id": "8b3bde19719e288a31986d83cd760fd21f3e8cf18cc2342246d4494643f4",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "Dialog: hello, i am going to the store to buy some fruit.\n\nTop 5 token(s): am some i going .\n\nThe visualization:\nhello , i am going to the store to buy some fruit .",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 504 and nlpattribute all",
+        "user_text": "please explain id 504 based on which sentences were the most salient",
+        "timestamp": "18-06-2023, 18:39:10"
+    },
+    {
+        "id": "8b3bde19719e288a31986d83cd760fd21f3e8cf18cc2342246d4494643f4",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "Dialog: hello, i am going to the store to buy some fruit.\n\nTop 5 token(s): am some i going .\n\nThe visualization:\nhello , i am going to the store to buy some fruit .",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 504 and nlpattribute all",
+        "user_text": "please explain id 504 based on which sentences were the most salient",
+        "timestamp": "18-06-2023, 18:39:13"
+    },
+    {
+        "id": "8b3bde19719e288a31986d83cd760fd21f3e8cf18cc2342246d4494643f4",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "Dialog: hello, i am going to the store to buy some fruit.\n\nTop 5 token(s): am some i going .\n\nThe visualization:\nhello , i am going to the store to buy some fruit .",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 504 and nlpattribute all",
+        "user_text": "please explain id 504 based on which sentences were the most salient",
+        "timestamp": "18-06-2023, 18:39:16"
+    },
+    {
+        "id": "e1b582ff47287e115db16c05067100c3307a626b17238eb7d85cad6157a3",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "fired., and dry are the most attributed.",
+        "dataset": "daily_dialog",
+        "parsed_text": "important topk 2",
+        "user_text": "what are the 2 most important features for the model making a decision?",
+        "timestamp": "18-06-2023, 18:41:41"
+    },
+    {
+        "id": "e1b582ff47287e115db16c05067100c3307a626b17238eb7d85cad6157a3",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "fired., and dry are the most attributed.",
+        "dataset": "daily_dialog",
+        "parsed_text": "important topk 2",
+        "user_text": "what are the 2 most important features for the model making a decision?",
+        "timestamp": "18-06-2023, 18:41:44"
+    },
+    {
+        "id": "e1b582ff47287e115db16c05067100c3307a626b17238eb7d85cad6157a3",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "fired., and dry are the most attributed.",
+        "dataset": "daily_dialog",
+        "parsed_text": "important topk 2",
+        "user_text": "what are the 2 most important features for the model making a decision?",
+        "timestamp": "18-06-2023, 18:41:46"
+    },
+    {
+        "id": "381c0bba34a2beb55601bb9697ed29a4bcdf027f79b10eb9b3df49e2a291",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "occur, preference, tibet, safe, salty, gate, jimmy, drivers, building, and happened are the most attributed.",
+        "dataset": "daily_dialog",
+        "parsed_text": "important question",
+        "user_text": "how do you decide whether some text is question",
+        "timestamp": "18-06-2023, 18:42:48"
+    },
+    {
+        "id": "381c0bba34a2beb55601bb9697ed29a4bcdf027f79b10eb9b3df49e2a291",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "occur, preference, tibet, safe, salty, gate, jimmy, drivers, building, and happened are the most attributed.",
+        "dataset": "daily_dialog",
+        "parsed_text": "important question",
+        "user_text": "how do you decide whether some text is question",
+        "timestamp": "18-06-2023, 18:42:51"
+    },
+    {
+        "id": "381c0bba34a2beb55601bb9697ed29a4bcdf027f79b10eb9b3df49e2a291",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "occur, preference, tibet, safe, salty, gate, jimmy, drivers, building, and happened are the most attributed.",
+        "dataset": "daily_dialog",
+        "parsed_text": "important question",
+        "user_text": "how do you decide whether some text is question",
+        "timestamp": "18-06-2023, 18:42:54"
+    },
+    {
+        "id": "a6c1693c6ee3c871bfd948bcb9006bb302c369d8841e8446b87b524f5d80",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "occur, preference, tibet, safe, salty, gate, jimmy, drivers, building, and happened are the most attributed.",
+        "dataset": "daily_dialog",
+        "parsed_text": "important question",
+        "user_text": "How do you decide if an instance is a question?",
+        "timestamp": "18-06-2023, 18:45:40"
+    },
+    {
+        "id": "a6c1693c6ee3c871bfd948bcb9006bb302c369d8841e8446b87b524f5d80",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "occur, preference, tibet, safe, salty, gate, jimmy, drivers, building, and happened are the most attributed.",
+        "dataset": "daily_dialog",
+        "parsed_text": "important question",
+        "user_text": "How do you decide if an instance is a question?",
+        "timestamp": "18-06-2023, 18:45:44"
+    },
+    {
+        "id": "555bbc462a9a3f6e552cffb2947873272299fe503b15d7a6c613771aef9e",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "karen, fired, and apologize are the most attributed.",
+        "dataset": "daily_dialog",
+        "parsed_text": "important inform topk 3",
+        "user_text": "What are the 3 most important words in deciding whether an id is inform?",
+        "timestamp": "18-06-2023, 18:46:09"
+    },
+    {
+        "id": "555bbc462a9a3f6e552cffb2947873272299fe503b15d7a6c613771aef9e",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "karen, fired, and apologize are the most attributed.",
+        "dataset": "daily_dialog",
+        "parsed_text": "important inform topk 3",
+        "user_text": "What are the 3 most important words in deciding whether an id is inform?",
+        "timestamp": "18-06-2023, 18:46:13"
+    },
+    {
+        "id": "555bbc462a9a3f6e552cffb2947873272299fe503b15d7a6c613771aef9e",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "karen, fired, and apologize are the most attributed.",
+        "dataset": "daily_dialog",
+        "parsed_text": "important inform topk 3",
+        "user_text": "What are the 3 most important words in deciding whether an id is inform?",
+        "timestamp": "18-06-2023, 18:46:16"
+    },
+    {
+        "id": "d994c74eaea9093a8c65fbda22ebc60816f13c10eeec3582623fbfc4ea3d",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "Dialog: 'we've never expected that shanghai is such a big metropolis, same as new york city. david, would it be a good idea to rent a car here? i've got an international driver's license with a pretty good record in the states.'\n\nPrediction: directive\n\nExplanation: This text is likely making a request or recommendation. The Shanghai metropolit is big, so it would be good to get a rental car. However, it is also likely that the Shanghai is a metropole is being referred to in an affirmative way. David, Shanghai seems like a very big city to me. I've been to many cities in China, but Shanghai might be the biggest one to date.",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 951 and rationalize",
+        "user_text": "simplify the explanation for id 951",
+        "timestamp": "18-06-2023, 18:47:37"
+    },
+    {
+        "id": "d994c74eaea9093a8c65fbda22ebc60816f13c10eeec3582623fbfc4ea3d",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "Dialog: 'we've never expected that shanghai is such a big metropolis, same as new york city. david, would it be a good idea to rent a car here? i've got an international driver's license with a pretty good record in the states.'\n\nPrediction: directive\n\nExplanation: This text is likely making a request or recommendation. The Shanghai metropolit is big, so it would be good to get a rental car. However, it is also likely that the Shanghai is a metropole is being referred to in an affirmative way. David, Shanghai seems like a very big city to me. I've been to many cities in China, but Shanghai might be the biggest one to date.",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 951 and rationalize",
+        "user_text": "simplify the explanation for id 951",
+        "timestamp": "18-06-2023, 18:47:40"
+    },
+    {
+        "id": "d994c74eaea9093a8c65fbda22ebc60816f13c10eeec3582623fbfc4ea3d",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "Dialog: 'we've never expected that shanghai is such a big metropolis, same as new york city. david, would it be a good idea to rent a car here? i've got an international driver's license with a pretty good record in the states.'\n\nPrediction: directive\n\nExplanation: This text is likely making a request or recommendation. The Shanghai metropolit is big, so it would be good to get a rental car. However, it is also likely that the Shanghai is a metropole is being referred to in an affirmative way. David, Shanghai seems like a very big city to me. I've been to many cities in China, but Shanghai might be the biggest one to date.",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 951 and rationalize",
+        "user_text": "simplify the explanation for id 951",
+        "timestamp": "18-06-2023, 18:47:43"
+    },
+    {
+        "id": "8172d89ae93d0df6e834c80a5d5da9c23cb65ea614b493a5f41676a5ecdd",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "Dialog: 'sure. do you want it to be registered?'\n\nPrediction: question\n\nExplanation: Question dialogue acts are used to ask questions. The question here is whether the sender wants the information to get registered. Based on their response 'yes', the question is answered and the dialogue ends. Overinform dialogue Acts are similar to questions, but they are more general and are often used when the other options are not applicable. For example, if I ask you how your day was, you might respond with a detailed account of your activities. This is an overinform act, because there are many other ways to respond to this question. However, it would be more appropriate to use a commissIVE dialogue action, such as 'tell me about your days', which would provide a more succinct account. Direct dialogue Act is used by the speaker to communicate a request or order to the listener. In this case, 'do you have any questions for me?'. If the receiver does have a follow up question after the initial request, then the order is followed and a direct dialogue is concluded. Otherwise, a non-directive dialogue would conclude the conversation. In this example the request is for the questions to follow, so a command is the most appropriate dialogue label.",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 508 and rationalize",
+        "user_text": "Rationalize the prediction for id 508 for me",
+        "timestamp": "18-06-2023, 18:49:59"
+    },
+    {
+        "id": "8172d89ae93d0df6e834c80a5d5da9c23cb65ea614b493a5f41676a5ecdd",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "Dialog: 'sure. do you want it to be registered?'\n\nPrediction: question\n\nExplanation: Question dialogue acts are used to ask questions. The question here is whether the sender wants the information to get registered. Based on their response 'yes', the question is answered and the dialogue ends. Overinform dialogue Acts are similar to questions, but they are more general and are often used when the other options are not applicable. For example, if I ask you how your day was, you might respond with a detailed account of your activities. This is an overinform act, because there are many other ways to respond to this question. However, it would be more appropriate to use a commissIVE dialogue action, such as 'tell me about your days', which would provide a more succinct account. Direct dialogue Act is used by the speaker to communicate a request or order to the listener. In this case, 'do you have any questions for me?'. If the receiver does have a follow up question after the initial request, then the order is followed and a direct dialogue is concluded. Otherwise, a non-directive dialogue would conclude the conversation. In this example the request is for the questions to follow, so a command is the most appropriate dialogue label.",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 508 and rationalize",
+        "user_text": "Rationalize the prediction for id 508 for me",
+        "timestamp": "18-06-2023, 18:50:03"
+    },
+    {
+        "id": "8172d89ae93d0df6e834c80a5d5da9c23cb65ea614b493a5f41676a5ecdd",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "Dialog: 'sure. do you want it to be registered?'\n\nPrediction: question\n\nExplanation: Question dialogue acts are used to ask questions. The question here is whether the sender wants the information to get registered. Based on their response 'yes', the question is answered and the dialogue ends. Overinform dialogue Acts are similar to questions, but they are more general and are often used when the other options are not applicable. For example, if I ask you how your day was, you might respond with a detailed account of your activities. This is an overinform act, because there are many other ways to respond to this question. However, it would be more appropriate to use a commissIVE dialogue action, such as 'tell me about your days', which would provide a more succinct account. Direct dialogue Act is used by the speaker to communicate a request or order to the listener. In this case, 'do you have any questions for me?'. If the receiver does have a follow up question after the initial request, then the order is followed and a direct dialogue is concluded. Otherwise, a non-directive dialogue would conclude the conversation. In this example the request is for the questions to follow, so a command is the most appropriate dialogue label.",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 508 and rationalize",
+        "user_text": "Rationalize the prediction for id 508 for me",
+        "timestamp": "18-06-2023, 18:50:06"
+    },
+    {
+        "id": "87af85be55c60ad6dd62ee66c683f3b64cbd8cd505c9687eb52a80de084f",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "Label directive (75.635%) --> inform (64.618%)\n\ni got my connections ! just tell me what you want and i \u2019 ll even give you one ounce for free .\ni develop my connections ! just distinguish me what you want and i \u2019 ll even give you one ounce for free .\n\n",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 8 and adversarial",
+        "user_text": "How could I rewrite id 8 to make it into a question?",
+        "timestamp": "18-06-2023, 18:53:32"
+    },
+    {
+        "id": "87af85be55c60ad6dd62ee66c683f3b64cbd8cd505c9687eb52a80de084f",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "Label directive (75.635%) --> inform (64.618%)\n\ni got my connections ! just tell me what you want and i \u2019 ll even give you one ounce for free .\ni develop my connections ! just distinguish me what you want and i \u2019 ll even give you one ounce for free .\n\n",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 8 and adversarial",
+        "user_text": "How could I rewrite id 8 to make it into a question?",
+        "timestamp": "18-06-2023, 18:53:35"
+    },
+    {
+        "id": "87af85be55c60ad6dd62ee66c683f3b64cbd8cd505c9687eb52a80de084f",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "Label directive (75.635%) --> inform (64.618%)\n\ni got my connections ! just tell me what you want and i \u2019 ll even give you one ounce for free .\ni develop my connections ! just distinguish me what you want and i \u2019 ll even give you one ounce for free .\n\n",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 8 and adversarial",
+        "user_text": "How could I rewrite id 8 to make it into a question?",
+        "timestamp": "18-06-2023, 18:53:38"
+    },
+    {
+        "id": "d2462258c6d2fb8b9e9e628fdb1fe89cc84bcd7a533ea20d19e213dcc703",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "[The original text]: l'm sorry. all the black of that size are sold out. would you like a red one?\n[Counterfactual 1]: it's my fault.\n\nthe predicted label directive changes to inform.",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 204 and cfe",
+        "user_text": "How could we change instance 204 from a directive into a question?",
+        "timestamp": "18-06-2023, 18:57:35"
+    },
+    {
+        "id": "d2462258c6d2fb8b9e9e628fdb1fe89cc84bcd7a533ea20d19e213dcc703",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "[The original text]: l'm sorry. all the black of that size are sold out. would you like a red one?\n[Counterfactual 1]: it's my fault.\n\nthe predicted label directive changes to inform.",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 204 and cfe",
+        "user_text": "How could we change instance 204 from a directive into a question?",
+        "timestamp": "18-06-2023, 18:57:39"
+    },
+    {
+        "id": "d2462258c6d2fb8b9e9e628fdb1fe89cc84bcd7a533ea20d19e213dcc703",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "[The original text]: l'm sorry. all the black of that size are sold out. would you like a red one?\n[Counterfactual 1]: it's my fault.\n\nthe predicted label directive changes to inform.",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 204 and cfe",
+        "user_text": "How could we change instance 204 from a directive into a question?",
+        "timestamp": "18-06-2023, 18:57:42"
+    },
+    {
+        "id": "d2462258c6d2fb8b9e9e628fdb1fe89cc84bcd7a533ea20d19e213dcc703",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "[The original text]: l'm sorry. all the black of that size are sold out. would you like a red one?\n[Counterfactual 1]: it's my fault.\n\nthe predicted label directive changes to inform.",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 204 and cfe",
+        "user_text": "How could we change instance 204 from a directive into a question?",
+        "timestamp": "18-06-2023, 18:57:46"
+    },
+    {
+        "id": "6f2cd00f2e21126d79c10b5ed180fe7f1f3c395877dcf885f40acf083991",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "Label directive (65.313%) --> question (72.103%)\n\nl ' m sorry . all the black of that size are sold out . would you like a red one ?\nl ' m sorry . all the black of that size are sold out . would you like a violent one ?\n\n",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 204 and adversarial",
+        "user_text": "How could instance 204 be changed to deceive the model?",
+        "timestamp": "18-06-2023, 19:01:52"
+    },
+    {
+        "id": "6f2cd00f2e21126d79c10b5ed180fe7f1f3c395877dcf885f40acf083991",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "Label directive (65.313%) --> question (72.103%)\n\nl ' m sorry . all the black of that size are sold out . would you like a red one ?\nl ' m sorry . all the black of that size are sold out . would you like a violent one ?\n\n",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 204 and adversarial",
+        "user_text": "How could instance 204 be changed to deceive the model?",
+        "timestamp": "18-06-2023, 19:01:55"
+    },
+    {
+        "id": "6f2cd00f2e21126d79c10b5ed180fe7f1f3c395877dcf885f40acf083991",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "Label directive (65.313%) --> question (72.103%)\n\nl ' m sorry . all the black of that size are sold out . would you like a red one ?\nl ' m sorry . all the black of that size are sold out . would you like a violent one ?\n\n",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 204 and adversarial",
+        "user_text": "How could instance 204 be changed to deceive the model?",
+        "timestamp": "18-06-2023, 19:01:58"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "Sorry! I couldn't understand that. Could you please try to rephrase?",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 204 and adversarial",
+        "user_text": "please create a new instance based on id 1211",
+        "timestamp": "18-06-2023, 19:02:44"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "Sorry! I couldn't understand that. Could you please try to rephrase?",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 204 and adversarial",
+        "user_text": "please create a new instance based on id 1211",
+        "timestamp": "18-06-2023, 19:02:47"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "Sorry! I couldn't understand that. Could you please try to rephrase?",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 204 and adversarial",
+        "user_text": "please create a new instance based on id 1211",
+        "timestamp": "18-06-2023, 19:02:51"
+    }
+]

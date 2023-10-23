@@ -1,0 +1,702 @@
+[
+    {
+        "id": "a140f0652aa74e198c7ff18ae55b8cac14a7f9db8535b8d8c2212f37589d",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "I'm a machine learning model trained to predict to answer yes/no questions based on text passages. I was trained on a Boolean question answering (yes/no) dataset.",
+        "dataset": "boolq",
+        "parsed_text": "self",
+        "user_text": "Could you tell me a bit more about what this is?",
+        "timestamp": "15-06-2023, 19:33:09"
+    },
+    {
+        "id": "a140f0652aa74e198c7ff18ae55b8cac14a7f9db8535b8d8c2212f37589d",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "I'm a machine learning model trained to predict to answer yes/no questions based on text passages. I was trained on a Boolean question answering (yes/no) dataset.",
+        "dataset": "boolq",
+        "parsed_text": "self",
+        "user_text": "Could you tell me a bit more about what this is?",
+        "timestamp": "15-06-2023, 19:33:11"
+    },
+    {
+        "id": "a140f0652aa74e198c7ff18ae55b8cac14a7f9db8535b8d8c2212f37589d",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "I'm a machine learning model trained to predict to answer yes/no questions based on text passages. I was trained on a Boolean question answering (yes/no) dataset.",
+        "dataset": "boolq",
+        "parsed_text": "self",
+        "user_text": "Could you tell me a bit more about what this is?",
+        "timestamp": "15-06-2023, 19:33:12"
+    },
+    {
+        "id": "437e0c8bab030980b418ebfd239b3912adb4492bffe03f83012da06a2865",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "I can answer questions about the model's predictions on the data. For example, I could tell you why certain predictions were made, how likely different outcomes are, what needs to happen to get different predictions, or what would happen to the predictions if the features changed in a particular way.\n\nI can perform these analyses on individual instances (i.e., using the instance id) or entire subgroups in the data.\n\nIf you want to see whether I can do something, try asking it!",
+        "dataset": "boolq",
+        "parsed_text": "function",
+        "user_text": "What can you do?",
+        "timestamp": "15-06-2023, 19:33:17"
+    },
+    {
+        "id": "437e0c8bab030980b418ebfd239b3912adb4492bffe03f83012da06a2865",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "I can answer questions about the model's predictions on the data. For example, I could tell you why certain predictions were made, how likely different outcomes are, what needs to happen to get different predictions, or what would happen to the predictions if the features changed in a particular way.\n\nI can perform these analyses on individual instances (i.e., using the instance id) or entire subgroups in the data.\n\nIf you want to see whether I can do something, try asking it!",
+        "dataset": "boolq",
+        "parsed_text": "function",
+        "user_text": "What can you do?",
+        "timestamp": "15-06-2023, 19:33:18"
+    },
+    {
+        "id": "437e0c8bab030980b418ebfd239b3912adb4492bffe03f83012da06a2865",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "I can answer questions about the model's predictions on the data. For example, I could tell you why certain predictions were made, how likely different outcomes are, what needs to happen to get different predictions, or what would happen to the predictions if the features changed in a particular way.\n\nI can perform these analyses on individual instances (i.e., using the instance id) or entire subgroups in the data.\n\nIf you want to see whether I can do something, try asking it!",
+        "dataset": "boolq",
+        "parsed_text": "function",
+        "user_text": "What can you do?",
+        "timestamp": "15-06-2023, 19:33:19"
+    },
+    {
+        "id": "6e745c12a96f96ca8463b45c80245748e02e1043954a4d2a66af00ae44a4",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "For the data with id equal to 165, the features are\n\nquestion: is it 5 portions of fruit and 5 of vegetables\npassage: 5 A Day -- 5 A Day is any of various national campaigns in countries such as the United States, the United Kingdom, France, and Germany, to encourage the consumption of at least five portions of fruit and vegetables each day, following a recommendation by the World Health Organization that individuals consume ``a minimum of 400g of fruit and vegetables per day (excluding potatoes and other starchy tubers).'' A meta-analysis of the many studies of this issue was published in 2017 and found that consumption of double the minimum recommendation -- 800g or 10 a day -- provided an increased protection against all forms of mortality.",
+        "dataset": "boolq",
+        "parsed_text": "filter id 165 and show",
+        "user_text": "could you show me data point number 165",
+        "timestamp": "15-06-2023, 19:33:26"
+    },
+    {
+        "id": "6e745c12a96f96ca8463b45c80245748e02e1043954a4d2a66af00ae44a4",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "For the data with id equal to 165, the features are\n\nquestion: is it 5 portions of fruit and 5 of vegetables\npassage: 5 A Day -- 5 A Day is any of various national campaigns in countries such as the United States, the United Kingdom, France, and Germany, to encourage the consumption of at least five portions of fruit and vegetables each day, following a recommendation by the World Health Organization that individuals consume ``a minimum of 400g of fruit and vegetables per day (excluding potatoes and other starchy tubers).'' A meta-analysis of the many studies of this issue was published in 2017 and found that consumption of double the minimum recommendation -- 800g or 10 a day -- provided an increased protection against all forms of mortality.",
+        "dataset": "boolq",
+        "parsed_text": "filter id 165 and show",
+        "user_text": "could you show me data point number 165",
+        "timestamp": "15-06-2023, 19:33:28"
+    },
+    {
+        "id": "6e745c12a96f96ca8463b45c80245748e02e1043954a4d2a66af00ae44a4",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "For the data with id equal to 165, the features are\n\nquestion: is it 5 portions of fruit and 5 of vegetables\npassage: 5 A Day -- 5 A Day is any of various national campaigns in countries such as the United States, the United Kingdom, France, and Germany, to encourage the consumption of at least five portions of fruit and vegetables each day, following a recommendation by the World Health Organization that individuals consume ``a minimum of 400g of fruit and vegetables per day (excluding potatoes and other starchy tubers).'' A meta-analysis of the many studies of this issue was published in 2017 and found that consumption of double the minimum recommendation -- 800g or 10 a day -- provided an increased protection against all forms of mortality.",
+        "dataset": "boolq",
+        "parsed_text": "filter id 165 and show",
+        "user_text": "could you show me data point number 165",
+        "timestamp": "15-06-2023, 19:33:29"
+    },
+    {
+        "id": "4edfaf1d2e1cf4a8ab33abf94197bc47305ffc25323b51a990e6b2528e85",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "Training Data Details:\n\n\nName\tContent\ntrain_data_name\tBoolQ Dataset: a question answering dataset for yes/no questions\ntrain_data_source\tplain text\ntrain_data_language\tEnglish\ntrain_data_number\t9427\n\nThe data contains information related to Boolean question answering (yes/no).\nThe exact feature names in the data are listed as follows:\nquestion\npassage\n\nThe dataset has following labels:\nTrue\nFalse\n\nThe model scores 72.11% accuracy on the data.",
+        "dataset": "boolq",
+        "parsed_text": "data train_data_source",
+        "user_text": "how much training data is used",
+        "timestamp": "15-06-2023, 19:33:39"
+    },
+    {
+        "id": "4edfaf1d2e1cf4a8ab33abf94197bc47305ffc25323b51a990e6b2528e85",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "Training Data Details:\n\n\nName\tContent\ntrain_data_name\tBoolQ Dataset: a question answering dataset for yes/no questions\ntrain_data_source\tplain text\ntrain_data_language\tEnglish\ntrain_data_number\t9427\n\nThe data contains information related to Boolean question answering (yes/no).\nThe exact feature names in the data are listed as follows:\nquestion\npassage\n\nThe dataset has following labels:\nTrue\nFalse\n\nThe model scores 72.11% accuracy on the data.",
+        "dataset": "boolq",
+        "parsed_text": "data train_data_source",
+        "user_text": "how much training data is used",
+        "timestamp": "15-06-2023, 19:33:42"
+    },
+    {
+        "id": "4edfaf1d2e1cf4a8ab33abf94197bc47305ffc25323b51a990e6b2528e85",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "Training Data Details:\n\n\nName\tContent\ntrain_data_name\tBoolQ Dataset: a question answering dataset for yes/no questions\ntrain_data_source\tplain text\ntrain_data_language\tEnglish\ntrain_data_number\t9427\n\nThe data contains information related to Boolean question answering (yes/no).\nThe exact feature names in the data are listed as follows:\nquestion\npassage\n\nThe dataset has following labels:\nTrue\nFalse\n\nThe model scores 72.11% accuracy on the data.",
+        "dataset": "boolq",
+        "parsed_text": "data train_data_source",
+        "user_text": "how much training data is used",
+        "timestamp": "15-06-2023, 19:33:44"
+    },
+    {
+        "id": "cf7efd4461a67888b00cf2482eed2314dd5008fae0844a236134901dc9a3",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "Testing Data Details:\n\n\nName\tContent\ntest_data_name\tBoolQ Dataset: a question answering dataset for yes/no questions\ntest_data_source\tplain text\ntest_data_language\tEnglish\ntest_data_number\t3270\n\n\nThe data contains information related to Boolean question answering (yes/no).\nThe exact feature names in the data are listed as follows:\nquestion\npassage\n\nThe dataset has following labels:\nTrue\nFalse\n\nThe model scores 72.11% accuracy on the data.",
+        "dataset": "boolq",
+        "parsed_text": "data test_data_source",
+        "user_text": "could you please tell me the sources of the test data?",
+        "timestamp": "15-06-2023, 19:33:56"
+    },
+    {
+        "id": "cf7efd4461a67888b00cf2482eed2314dd5008fae0844a236134901dc9a3",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "Testing Data Details:\n\n\nName\tContent\ntest_data_name\tBoolQ Dataset: a question answering dataset for yes/no questions\ntest_data_source\tplain text\ntest_data_language\tEnglish\ntest_data_number\t3270\n\n\nThe data contains information related to Boolean question answering (yes/no).\nThe exact feature names in the data are listed as follows:\nquestion\npassage\n\nThe dataset has following labels:\nTrue\nFalse\n\nThe model scores 72.11% accuracy on the data.",
+        "dataset": "boolq",
+        "parsed_text": "data test_data_source",
+        "user_text": "could you please tell me the sources of the test data?",
+        "timestamp": "15-06-2023, 19:33:57"
+    },
+    {
+        "id": "cf7efd4461a67888b00cf2482eed2314dd5008fae0844a236134901dc9a3",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "Testing Data Details:\n\n\nName\tContent\ntest_data_name\tBoolQ Dataset: a question answering dataset for yes/no questions\ntest_data_source\tplain text\ntest_data_language\tEnglish\ntest_data_number\t3270\n\n\nThe data contains information related to Boolean question answering (yes/no).\nThe exact feature names in the data are listed as follows:\nquestion\npassage\n\nThe dataset has following labels:\nTrue\nFalse\n\nThe model scores 72.11% accuracy on the data.",
+        "dataset": "boolq",
+        "parsed_text": "data test_data_source",
+        "user_text": "could you please tell me the sources of the test data?",
+        "timestamp": "15-06-2023, 19:33:59"
+    },
+    {
+        "id": "a708dbe9be3beea2f466fa96ee60255f50ddd1a54bb306a8e2cfb6af031a",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "There are 3270 items in the data.\n\nLet me know if you want to see their ids.",
+        "dataset": "boolq",
+        "parsed_text": "countdata",
+        "user_text": "number of rows in the data",
+        "timestamp": "15-06-2023, 19:34:05"
+    },
+    {
+        "id": "a708dbe9be3beea2f466fa96ee60255f50ddd1a54bb306a8e2cfb6af031a",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "There are 3270 items in the data.\n\nLet me know if you want to see their ids.",
+        "dataset": "boolq",
+        "parsed_text": "countdata",
+        "user_text": "number of rows in the data",
+        "timestamp": "15-06-2023, 19:34:07"
+    },
+    {
+        "id": "a708dbe9be3beea2f466fa96ee60255f50ddd1a54bb306a8e2cfb6af031a",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "There are 3270 items in the data.\n\nLet me know if you want to see their ids.",
+        "dataset": "boolq",
+        "parsed_text": "countdata",
+        "user_text": "number of rows in the data",
+        "timestamp": "15-06-2023, 19:34:09"
+    },
+    {
+        "id": "8c09942e46767ccc398b9a51898710b28eb412dbbd931b1b6fbe554f3943",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "There are 3270 items in the data.\n\nLet me know if you want to see their ids.",
+        "dataset": "boolq",
+        "parsed_text": "countdata",
+        "user_text": "total number of training items in the data",
+        "timestamp": "15-06-2023, 19:34:17"
+    },
+    {
+        "id": "8c09942e46767ccc398b9a51898710b28eb412dbbd931b1b6fbe554f3943",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "There are 3270 items in the data.\n\nLet me know if you want to see their ids.",
+        "dataset": "boolq",
+        "parsed_text": "countdata",
+        "user_text": "total number of training items in the data",
+        "timestamp": "15-06-2023, 19:34:19"
+    },
+    {
+        "id": "8c09942e46767ccc398b9a51898710b28eb412dbbd931b1b6fbe554f3943",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "There are 3270 items in the data.\n\nLet me know if you want to see their ids.",
+        "dataset": "boolq",
+        "parsed_text": "countdata",
+        "user_text": "total number of training items in the data",
+        "timestamp": "15-06-2023, 19:34:20"
+    },
+    {
+        "id": "5d4d10b5165d11ba31dbfbbabc7fd0b7bb93a4f27d687f7a7e78a21e9d32",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "There are 3270 items in the data.\n\nLet me know if you want to see their ids.",
+        "dataset": "boolq",
+        "parsed_text": "countdata",
+        "user_text": "show how often which target label appears in the entire dataset",
+        "timestamp": "15-06-2023, 19:34:32"
+    },
+    {
+        "id": "5d4d10b5165d11ba31dbfbbabc7fd0b7bb93a4f27d687f7a7e78a21e9d32",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "There are 3270 items in the data.\n\nLet me know if you want to see their ids.",
+        "dataset": "boolq",
+        "parsed_text": "countdata",
+        "user_text": "show how often which target label appears in the entire dataset",
+        "timestamp": "15-06-2023, 19:34:34"
+    },
+    {
+        "id": "5d4d10b5165d11ba31dbfbbabc7fd0b7bb93a4f27d687f7a7e78a21e9d32",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "There are 3270 items in the data.\n\nLet me know if you want to see their ids.",
+        "dataset": "boolq",
+        "parsed_text": "countdata",
+        "user_text": "show how often which target label appears in the entire dataset",
+        "timestamp": "15-06-2023, 19:34:35"
+    },
+    {
+        "id": "f6f0c9b4156a7bac08b5232a1b3100d4686df4d2f09b700401d877086d0f",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "The 25 most frequent words in the dataset are:\n\nWord\tFrequence\nThe\t3814\n--\t3393\nIn\t961\nUnited\t882\nIt\t814\nalso\t787\nfirst\t635\none\t610\nseries\t583\nA\t559\nStates\t542\ntwo\t527\nseason\t507\nWorld\t500\nused\t487\nfilm\t475\nAmerican\t452\nmay\t437\nNew\t414\nknown\t379\ntime\t325\npart\t312\nThis\t304\nstate\t298\nU.S.\t287",
+        "dataset": "boolq",
+        "parsed_text": "keywords all",
+        "user_text": "what are the true labels in the dataset and how often do they occur?",
+        "timestamp": "15-06-2023, 19:34:45"
+    },
+    {
+        "id": "f6f0c9b4156a7bac08b5232a1b3100d4686df4d2f09b700401d877086d0f",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "The 25 most frequent words in the dataset are:\n\nWord\tFrequence\nThe\t3814\n--\t3393\nIn\t961\nUnited\t882\nIt\t814\nalso\t787\nfirst\t635\none\t610\nseries\t583\nA\t559\nStates\t542\ntwo\t527\nseason\t507\nWorld\t500\nused\t487\nfilm\t475\nAmerican\t452\nmay\t437\nNew\t414\nknown\t379\ntime\t325\npart\t312\nThis\t304\nstate\t298\nU.S.\t287",
+        "dataset": "boolq",
+        "parsed_text": "keywords all",
+        "user_text": "what are the true labels in the dataset and how often do they occur?",
+        "timestamp": "15-06-2023, 19:34:46"
+    },
+    {
+        "id": "f6f0c9b4156a7bac08b5232a1b3100d4686df4d2f09b700401d877086d0f",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "The 25 most frequent words in the dataset are:\n\nWord\tFrequence\nThe\t3814\n--\t3393\nIn\t961\nUnited\t882\nIt\t814\nalso\t787\nfirst\t635\none\t610\nseries\t583\nA\t559\nStates\t542\ntwo\t527\nseason\t507\nWorld\t500\nused\t487\nfilm\t475\nAmerican\t452\nmay\t437\nNew\t414\nknown\t379\ntime\t325\npart\t312\nThis\t304\nstate\t298\nU.S.\t287",
+        "dataset": "boolq",
+        "parsed_text": "keywords all",
+        "user_text": "what are the true labels in the dataset and how often do they occur?",
+        "timestamp": "15-06-2023, 19:34:48"
+    },
+    {
+        "id": "403fcf2fc816e66af4c1d753da38f6cd94038633835561f7a1ac7273ff3b",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "The 25 most frequent words in the dataset are:\n\nWord\tFrequence\nThe\t3814\n--\t3393\nIn\t961\nUnited\t882\nIt\t814\nalso\t787\nfirst\t635\none\t610\nseries\t583\nA\t559\nStates\t542\ntwo\t527\nseason\t507\nWorld\t500\nused\t487\nfilm\t475\nAmerican\t452\nmay\t437\nNew\t414\nknown\t379\ntime\t325\npart\t312\nThis\t304\nstate\t298\nU.S.\t287",
+        "dataset": "boolq",
+        "parsed_text": "keywords all",
+        "user_text": "what are the true labels in the dataset and how often do they occur?",
+        "timestamp": "15-06-2023, 19:34:54"
+    },
+    {
+        "id": "403fcf2fc816e66af4c1d753da38f6cd94038633835561f7a1ac7273ff3b",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "The 25 most frequent words in the dataset are:\n\nWord\tFrequence\nThe\t3814\n--\t3393\nIn\t961\nUnited\t882\nIt\t814\nalso\t787\nfirst\t635\none\t610\nseries\t583\nA\t559\nStates\t542\ntwo\t527\nseason\t507\nWorld\t500\nused\t487\nfilm\t475\nAmerican\t452\nmay\t437\nNew\t414\nknown\t379\ntime\t325\npart\t312\nThis\t304\nstate\t298\nU.S.\t287",
+        "dataset": "boolq",
+        "parsed_text": "keywords all",
+        "user_text": "what are the true labels in the dataset and how often do they occur?",
+        "timestamp": "15-06-2023, 19:34:55"
+    },
+    {
+        "id": "403fcf2fc816e66af4c1d753da38f6cd94038633835561f7a1ac7273ff3b",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "The 25 most frequent words in the dataset are:\n\nWord\tFrequence\nThe\t3814\n--\t3393\nIn\t961\nUnited\t882\nIt\t814\nalso\t787\nfirst\t635\none\t610\nseries\t583\nA\t559\nStates\t542\ntwo\t527\nseason\t507\nWorld\t500\nused\t487\nfilm\t475\nAmerican\t452\nmay\t437\nNew\t414\nknown\t379\ntime\t325\npart\t312\nThis\t304\nstate\t298\nU.S.\t287",
+        "dataset": "boolq",
+        "parsed_text": "keywords all",
+        "user_text": "what are the true labels in the dataset and how often do they occur?",
+        "timestamp": "15-06-2023, 19:34:58"
+    },
+    {
+        "id": "090bd3ff397580b6c6b686b58af1c7a12c760b2d1024d70a16350fb5885b",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "For all the instances in the data,\n\n\n37.829% of instances have label False\n62.171% of instances have label True",
+        "dataset": "boolq",
+        "parsed_text": "label",
+        "user_text": "what are the labels for all the data",
+        "timestamp": "15-06-2023, 19:35:25"
+    },
+    {
+        "id": "090bd3ff397580b6c6b686b58af1c7a12c760b2d1024d70a16350fb5885b",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "For all the instances in the data,\n\n\n37.829% of instances have label False\n62.171% of instances have label True",
+        "dataset": "boolq",
+        "parsed_text": "label",
+        "user_text": "what are the labels for all the data",
+        "timestamp": "15-06-2023, 19:35:27"
+    },
+    {
+        "id": "090bd3ff397580b6c6b686b58af1c7a12c760b2d1024d70a16350fb5885b",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "For all the instances in the data,\n\n\n37.829% of instances have label False\n62.171% of instances have label True",
+        "dataset": "boolq",
+        "parsed_text": "label",
+        "user_text": "what are the labels for all the data",
+        "timestamp": "15-06-2023, 19:35:29"
+    },
+    {
+        "id": "33e89cb1d86037b6826dee85af8d0e061d03c733b44c5cae5e32b9bd63b7",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "The random text is with id 2466:\n\n\nThe text is: can i watch ireland's got talent in england Ireland's Got Talent -- After the first series aired, the show began airing in the United Kingdom on 5Star.\nThe prediction is True.",
+        "dataset": "boolq",
+        "parsed_text": "randompredict",
+        "user_text": "give me an output for a randomly picked input",
+        "timestamp": "15-06-2023, 19:35:51"
+    },
+    {
+        "id": "33e89cb1d86037b6826dee85af8d0e061d03c733b44c5cae5e32b9bd63b7",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "The random text is with id 2466:\n\n\nThe text is: can i watch ireland's got talent in england Ireland's Got Talent -- After the first series aired, the show began airing in the United Kingdom on 5Star.\nThe prediction is True.",
+        "dataset": "boolq",
+        "parsed_text": "randompredict",
+        "user_text": "give me an output for a randomly picked input",
+        "timestamp": "15-06-2023, 19:35:53"
+    },
+    {
+        "id": "33e89cb1d86037b6826dee85af8d0e061d03c733b44c5cae5e32b9bd63b7",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "The random text is with id 2466:\n\n\nThe text is: can i watch ireland's got talent in england Ireland's Got Talent -- After the first series aired, the show began airing in the United Kingdom on 5Star.\nThe prediction is True.",
+        "dataset": "boolq",
+        "parsed_text": "randompredict",
+        "user_text": "give me an output for a randomly picked input",
+        "timestamp": "15-06-2023, 19:35:55"
+    },
+    {
+        "id": "e68246cedfd128c12612dd77d36fb7861b3e12bad533115d1884787e6ec7",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "For instance with id 163:\nThe likelihood of class False is 0.264%\nThe likelihood of class True is 99.736%",
+        "dataset": "boolq",
+        "parsed_text": "filter id 163 and likelihood False",
+        "user_text": "probability of id 163 predicted False?",
+        "timestamp": "15-06-2023, 19:36:22"
+    },
+    {
+        "id": "e68246cedfd128c12612dd77d36fb7861b3e12bad533115d1884787e6ec7",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "For instance with id 163:\nThe likelihood of class False is 0.264%\nThe likelihood of class True is 99.736%",
+        "dataset": "boolq",
+        "parsed_text": "filter id 163 and likelihood False",
+        "user_text": "probability of id 163 predicted False?",
+        "timestamp": "15-06-2023, 19:36:24"
+    },
+    {
+        "id": "e68246cedfd128c12612dd77d36fb7861b3e12bad533115d1884787e6ec7",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "For instance with id 163:\nThe likelihood of class False is 0.264%\nThe likelihood of class True is 99.736%",
+        "dataset": "boolq",
+        "parsed_text": "filter id 163 and likelihood False",
+        "user_text": "probability of id 163 predicted False?",
+        "timestamp": "15-06-2023, 19:36:25"
+    },
+    {
+        "id": "58ca582d987f71051e715b88d117c9f95d6126ece45dcd47a568a829ae03",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "The model scores 0.781 f1 on all the instances in the data,.",
+        "dataset": "boolq",
+        "parsed_text": "score f1 evaluation",
+        "user_text": "i meant what is the f1 score on the evaluation data",
+        "timestamp": "15-06-2023, 19:36:33"
+    },
+    {
+        "id": "58ca582d987f71051e715b88d117c9f95d6126ece45dcd47a568a829ae03",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "The model scores 0.781 f1 on all the instances in the data,.",
+        "dataset": "boolq",
+        "parsed_text": "score f1 evaluation",
+        "user_text": "i meant what is the f1 score on the evaluation data",
+        "timestamp": "15-06-2023, 19:36:34"
+    },
+    {
+        "id": "58ca582d987f71051e715b88d117c9f95d6126ece45dcd47a568a829ae03",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "The model scores 0.781 f1 on all the instances in the data,.",
+        "dataset": "boolq",
+        "parsed_text": "score f1 evaluation",
+        "user_text": "i meant what is the f1 score on the evaluation data",
+        "timestamp": "15-06-2023, 19:36:36"
+    },
+    {
+        "id": "fe703340fe0c25e0ec0615949df882553107bdabb8a7865e611bdd167150",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "For all the instances in the data, the model is incorrect 912 out of 3270 times (error rate 0.279).\nHere is the confusion matrix:\n",
+        "dataset": "boolq",
+        "parsed_text": "mistake count",
+        "user_text": "can you show me how much data the model predicts incorrectly?",
+        "timestamp": "15-06-2023, 19:36:45"
+    },
+    {
+        "id": "fe703340fe0c25e0ec0615949df882553107bdabb8a7865e611bdd167150",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "For all the instances in the data, the model is incorrect 912 out of 3270 times (error rate 0.279).\nHere is the confusion matrix:\n",
+        "dataset": "boolq",
+        "parsed_text": "mistake count",
+        "user_text": "can you show me how much data the model predicts incorrectly?",
+        "timestamp": "15-06-2023, 19:36:47"
+    },
+    {
+        "id": "fe703340fe0c25e0ec0615949df882553107bdabb8a7865e611bdd167150",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "For all the instances in the data, the model is incorrect 912 out of 3270 times (error rate 0.279).\nHere is the confusion matrix:\n",
+        "dataset": "boolq",
+        "parsed_text": "mistake count",
+        "user_text": "can you show me how much data the model predicts incorrectly?",
+        "timestamp": "15-06-2023, 19:36:50"
+    },
+    {
+        "id": "d3b6aa89702a16723d31650f456e32d8231a4f8157058accb74e13a8171e",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "For all the instances in the data, the model is incorrect 912 out of 3270 times (error rate 0.279).\n\nHere are the ids of instances the model predicts incorrectly:",
+        "dataset": "boolq",
+        "parsed_text": "mistake sample",
+        "user_text": "could you show me a few examples of data that you get wrong?",
+        "timestamp": "15-06-2023, 19:37:02"
+    },
+    {
+        "id": "d3b6aa89702a16723d31650f456e32d8231a4f8157058accb74e13a8171e",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "For all the instances in the data, the model is incorrect 912 out of 3270 times (error rate 0.279).\n\nHere are the ids of instances the model predicts incorrectly:",
+        "dataset": "boolq",
+        "parsed_text": "mistake sample",
+        "user_text": "could you show me a few examples of data that you get wrong?",
+        "timestamp": "15-06-2023, 19:37:04"
+    },
+    {
+        "id": "d3b6aa89702a16723d31650f456e32d8231a4f8157058accb74e13a8171e",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "For all the instances in the data, the model is incorrect 912 out of 3270 times (error rate 0.279).\n\nHere are the ids of instances the model predicts incorrectly:",
+        "dataset": "boolq",
+        "parsed_text": "mistake sample",
+        "user_text": "could you show me a few examples of data that you get wrong?",
+        "timestamp": "15-06-2023, 19:37:06"
+    },
+    {
+        "id": "314592cd04431b61708f93001edce7f19ea0c58c9270540736ed167835b3",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "The original text for id 0:\n\nIs socrates dead ? Socrates (/\u02c8s\u0252kr\u0259ti\u02d0z/;[1] Greek: \u03a3\u03c9\u03ba\u03c1\u03ac\u03c4\u03b7\u03c2; c. 470\u2013399 BC) was a Greek philosopher from...\n\nHere are some instances similar to id 0:\nid 465 (cossim 0.281):\nwas turkey a part of the roman empire History of Turkey -- The Persian Achaemenid Empire...\n\nid 943 (cossim 0.265):\nwere greece and rome around at the same time Greece in the Roman era -- Greece...\n\nid 2313 (cossim 0.257):\nis it possible for someone to die of laughter Death from laughter -- Death from laughter...",
+        "dataset": "boolq",
+        "parsed_text": "filter id 1860 and similar 2",
+        "user_text": "is it possible to show me 2 data points that are similar to id 1860",
+        "timestamp": "15-06-2023, 19:37:54"
+    },
+    {
+        "id": "314592cd04431b61708f93001edce7f19ea0c58c9270540736ed167835b3",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "The original text for id 0:\n\nIs socrates dead ? Socrates (/\u02c8s\u0252kr\u0259ti\u02d0z/;[1] Greek: \u03a3\u03c9\u03ba\u03c1\u03ac\u03c4\u03b7\u03c2; c. 470\u2013399 BC) was a Greek philosopher from...\n\nHere are some instances similar to id 0:\nid 465 (cossim 0.281):\nwas turkey a part of the roman empire History of Turkey -- The Persian Achaemenid Empire...\n\nid 943 (cossim 0.265):\nwere greece and rome around at the same time Greece in the Roman era -- Greece...\n\nid 2313 (cossim 0.257):\nis it possible for someone to die of laughter Death from laughter -- Death from laughter...",
+        "dataset": "boolq",
+        "parsed_text": "filter id 1860 and similar 2",
+        "user_text": "is it possible to show me 2 data points that are similar to id 1860",
+        "timestamp": "15-06-2023, 19:37:56"
+    },
+    {
+        "id": "314592cd04431b61708f93001edce7f19ea0c58c9270540736ed167835b3",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "The original text for id 0:\n\nIs socrates dead ? Socrates (/\u02c8s\u0252kr\u0259ti\u02d0z/;[1] Greek: \u03a3\u03c9\u03ba\u03c1\u03ac\u03c4\u03b7\u03c2; c. 470\u2013399 BC) was a Greek philosopher from...\n\nHere are some instances similar to id 0:\nid 465 (cossim 0.281):\nwas turkey a part of the roman empire History of Turkey -- The Persian Achaemenid Empire...\n\nid 943 (cossim 0.265):\nwere greece and rome around at the same time Greece in the Roman era -- Greece...\n\nid 2313 (cossim 0.257):\nis it possible for someone to die of laughter Death from laughter -- Death from laughter...",
+        "dataset": "boolq",
+        "parsed_text": "filter id 1860 and similar 2",
+        "user_text": "is it possible to show me 2 data points that are similar to id 1860",
+        "timestamp": "15-06-2023, 19:37:57"
+    },
+    {
+        "id": "5771b63eab39b867052e1164e05f437b1f237625fd79eef33151cdd39a9f",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "The 25 most frequent words in the dataset are:\n\nWord\tFrequence\nThe\t3814\n--\t3393\nIn\t961\nUnited\t882\nIt\t814\nalso\t787\nfirst\t635\none\t610\nseries\t583\nA\t559\nStates\t542\ntwo\t527\nseason\t507\nWorld\t500\nused\t487\nfilm\t475\nAmerican\t452\nmay\t437\nNew\t414\nknown\t379\ntime\t325\npart\t312\nThis\t304\nstate\t298\nU.S.\t287",
+        "dataset": "boolq",
+        "parsed_text": "keywords all",
+        "user_text": "what are the most frequent keywords in the data?",
+        "timestamp": "15-06-2023, 19:38:06"
+    },
+    {
+        "id": "5771b63eab39b867052e1164e05f437b1f237625fd79eef33151cdd39a9f",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "The 25 most frequent words in the dataset are:\n\nWord\tFrequence\nThe\t3814\n--\t3393\nIn\t961\nUnited\t882\nIt\t814\nalso\t787\nfirst\t635\none\t610\nseries\t583\nA\t559\nStates\t542\ntwo\t527\nseason\t507\nWorld\t500\nused\t487\nfilm\t475\nAmerican\t452\nmay\t437\nNew\t414\nknown\t379\ntime\t325\npart\t312\nThis\t304\nstate\t298\nU.S.\t287",
+        "dataset": "boolq",
+        "parsed_text": "keywords all",
+        "user_text": "what are the most frequent keywords in the data?",
+        "timestamp": "15-06-2023, 19:38:08"
+    },
+    {
+        "id": "5771b63eab39b867052e1164e05f437b1f237625fd79eef33151cdd39a9f",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "The 25 most frequent words in the dataset are:\n\nWord\tFrequence\nThe\t3814\n--\t3393\nIn\t961\nUnited\t882\nIt\t814\nalso\t787\nfirst\t635\none\t610\nseries\t583\nA\t559\nStates\t542\ntwo\t527\nseason\t507\nWorld\t500\nused\t487\nfilm\t475\nAmerican\t452\nmay\t437\nNew\t414\nknown\t379\ntime\t325\npart\t312\nThis\t304\nstate\t298\nU.S.\t287",
+        "dataset": "boolq",
+        "parsed_text": "keywords all",
+        "user_text": "what are the most frequent keywords in the data?",
+        "timestamp": "15-06-2023, 19:38:09"
+    },
+    {
+        "id": "5b74e9d3d8f4ba3529f117055ce067ddc08b3e9affd739954e4b16724e56",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "hypothetical, metaphor, and avoided are the most attributed.",
+        "dataset": "boolq",
+        "parsed_text": "important topk 3",
+        "user_text": "top three most important features",
+        "timestamp": "15-06-2023, 19:38:34"
+    },
+    {
+        "id": "5b74e9d3d8f4ba3529f117055ce067ddc08b3e9affd739954e4b16724e56",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "hypothetical, metaphor, and avoided are the most attributed.",
+        "dataset": "boolq",
+        "parsed_text": "important topk 3",
+        "user_text": "top three most important features",
+        "timestamp": "15-06-2023, 19:38:38"
+    },
+    {
+        "id": "5b74e9d3d8f4ba3529f117055ce067ddc08b3e9affd739954e4b16724e56",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "hypothetical, metaphor, and avoided are the most attributed.",
+        "dataset": "boolq",
+        "parsed_text": "important topk 3",
+        "user_text": "top three most important features",
+        "timestamp": "15-06-2023, 19:38:40"
+    },
+    {
+        "id": "b6b221edc16bffa9e1b60b6d919ddf61c0e3eb6e93518ff646431d3acb45",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "hypothetical, metaphor, avoided, problematic, unsuitable, shepard, limitation, dubious, ##utable, and scout are the most attributed.",
+        "dataset": "boolq",
+        "parsed_text": "important False",
+        "user_text": "in what ways do you determine if data will be predicted False?",
+        "timestamp": "15-06-2023, 19:38:56"
+    },
+    {
+        "id": "b6b221edc16bffa9e1b60b6d919ddf61c0e3eb6e93518ff646431d3acb45",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "hypothetical, metaphor, avoided, problematic, unsuitable, shepard, limitation, dubious, ##utable, and scout are the most attributed.",
+        "dataset": "boolq",
+        "parsed_text": "important False",
+        "user_text": "in what ways do you determine if data will be predicted False?",
+        "timestamp": "15-06-2023, 19:38:57"
+    },
+    {
+        "id": "b6b221edc16bffa9e1b60b6d919ddf61c0e3eb6e93518ff646431d3acb45",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "hypothetical, metaphor, avoided, problematic, unsuitable, shepard, limitation, dubious, ##utable, and scout are the most attributed.",
+        "dataset": "boolq",
+        "parsed_text": "important False",
+        "user_text": "in what ways do you determine if data will be predicted False?",
+        "timestamp": "15-06-2023, 19:38:58"
+    },
+    {
+        "id": "bbc9a4947583f8070e3ed187e7463ba6b83809ab59b310e3a5eac1fe78fb",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "Original text: Question: is why don't we still a band Passage: Why Don't We -- The band originally formed on September 27, 2016, and announced it the next day via their YouTube account. Since then, the band has released three EPs and five singles.\nPrediction: true\nExplanation: The band initially formed because they were a part of the 2016 election.",
+        "dataset": "boolq",
+        "parsed_text": "filter id 2042 and rationalize",
+        "user_text": "generate a natural language explanation for id 2042",
+        "timestamp": "15-06-2023, 19:41:38"
+    },
+    {
+        "id": "bbc9a4947583f8070e3ed187e7463ba6b83809ab59b310e3a5eac1fe78fb",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "Original text: Question: is why don't we still a band Passage: Why Don't We -- The band originally formed on September 27, 2016, and announced it the next day via their YouTube account. Since then, the band has released three EPs and five singles.\nPrediction: true\nExplanation: The band initially formed because they were a part of the 2016 election.",
+        "dataset": "boolq",
+        "parsed_text": "filter id 2042 and rationalize",
+        "user_text": "generate a natural language explanation for id 2042",
+        "timestamp": "15-06-2023, 19:41:40"
+    },
+    {
+        "id": "bbc9a4947583f8070e3ed187e7463ba6b83809ab59b310e3a5eac1fe78fb",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "Original text: Question: is why don't we still a band Passage: Why Don't We -- The band originally formed on September 27, 2016, and announced it the next day via their YouTube account. Since then, the band has released three EPs and five singles.\nPrediction: true\nExplanation: The band initially formed because they were a part of the 2016 election.",
+        "dataset": "boolq",
+        "parsed_text": "filter id 2042 and rationalize",
+        "user_text": "generate a natural language explanation for id 2042",
+        "timestamp": "15-06-2023, 19:41:42"
+    },
+    {
+        "id": "bbc9a4947583f8070e3ed187e7463ba6b83809ab59b310e3a5eac1fe78fb",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "Original text: Question: is why don't we still a band Passage: Why Don't We -- The band originally formed on September 27, 2016, and announced it the next day via their YouTube account. Since then, the band has released three EPs and five singles.\nPrediction: true\nExplanation: The band initially formed because they were a part of the 2016 election.",
+        "dataset": "boolq",
+        "parsed_text": "filter id 2042 and rationalize",
+        "user_text": "generate a natural language explanation for id 2042",
+        "timestamp": "15-06-2023, 19:41:44"
+    },
+    {
+        "id": "f1190722b1f4a55176cfe6501081f1a1f789f0aad55bc7417542bb0733ae",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "This sentence is always classified as False!",
+        "dataset": "boolq",
+        "parsed_text": "filter id 1436 and cfe",
+        "user_text": "hmm... i was wondering what it would take to flip the prediction of instance with id 1436",
+        "timestamp": "15-06-2023, 19:42:44"
+    },
+    {
+        "id": "f1190722b1f4a55176cfe6501081f1a1f789f0aad55bc7417542bb0733ae",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "This sentence is always classified as False!",
+        "dataset": "boolq",
+        "parsed_text": "filter id 1436 and cfe",
+        "user_text": "hmm... i was wondering what it would take to flip the prediction of instance with id 1436",
+        "timestamp": "15-06-2023, 19:42:46"
+    },
+    {
+        "id": "f1190722b1f4a55176cfe6501081f1a1f789f0aad55bc7417542bb0733ae",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "This sentence is always classified as False!",
+        "dataset": "boolq",
+        "parsed_text": "filter id 1436 and cfe",
+        "user_text": "hmm... i was wondering what it would take to flip the prediction of instance with id 1436",
+        "timestamp": "15-06-2023, 19:42:48"
+    },
+    {
+        "id": "5562dc4938c0a9c2368ab6b28f1467408f3bdde09ac0157700be6be0d9ff",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "Label False (92.857%) --> True (87.669%)\n\nare there any w ##w ##1 veterans still alive 2018 list of last world war i veterans by country - - this is a list of the last world war i veterans to die by country . the last living veteran\nare there any w ##w ##1 veterans still alive 2018 list of last - place world war i veterans by country - - this is a list of the last world war i veterans to die by country . the last living veteran\n\n\nof world war i ( 4 february 1914 - - 11 november 1918 ) was florence green , a british citizen who served in the allied armed forces , and who died 4 february 2012 , aged 110 . the last combat\n\nof world war i ( 4 february 1914 - - 11 november 1918 ) was florence green , a british citizen who served in the allied armed forces , and who died 4 february 2012 , aged 110 . the last combat\n\n\nveteran was claude cho ##ules who served in the british royal navy ( and later the royal australian navy ) and died 5 may 2011 , aged 110 . the last veteran who served in the trenches was harry patch\nveteran was claude cho ##ules who served in the british royal navy ( and later the royal australian navy ) and died 5 may 2011 , aged 110 . the last veteran who served in the trenches was harry patch\n\n\n( british army ) who died on 25 july 2009 , aged 111 . the last central powers veteran , franz kunst ##ler of austria - hungary , died on 27 may 2008 at the age of 107 .\n\n( british army ) who died on 25 july 2009 , aged 111 . the last central powers veteran , franz kunst ##ler of austria - hungary , died on 27 may 2008 at the age of 107 .\n",
+        "dataset": "boolq",
+        "parsed_text": "filter id 849 and adversarial",
+        "user_text": "how does instance with id 849 have to change in order to fool the model?",
+        "timestamp": "15-06-2023, 19:44:40"
+    },
+    {
+        "id": "5562dc4938c0a9c2368ab6b28f1467408f3bdde09ac0157700be6be0d9ff",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "Label False (92.857%) --> True (87.669%)\n\nare there any w ##w ##1 veterans still alive 2018 list of last world war i veterans by country - - this is a list of the last world war i veterans to die by country . the last living veteran\nare there any w ##w ##1 veterans still alive 2018 list of last - place world war i veterans by country - - this is a list of the last world war i veterans to die by country . the last living veteran\n\n\nof world war i ( 4 february 1914 - - 11 november 1918 ) was florence green , a british citizen who served in the allied armed forces , and who died 4 february 2012 , aged 110 . the last combat\n\nof world war i ( 4 february 1914 - - 11 november 1918 ) was florence green , a british citizen who served in the allied armed forces , and who died 4 february 2012 , aged 110 . the last combat\n\n\nveteran was claude cho ##ules who served in the british royal navy ( and later the royal australian navy ) and died 5 may 2011 , aged 110 . the last veteran who served in the trenches was harry patch\nveteran was claude cho ##ules who served in the british royal navy ( and later the royal australian navy ) and died 5 may 2011 , aged 110 . the last veteran who served in the trenches was harry patch\n\n\n( british army ) who died on 25 july 2009 , aged 111 . the last central powers veteran , franz kunst ##ler of austria - hungary , died on 27 may 2008 at the age of 107 .\n\n( british army ) who died on 25 july 2009 , aged 111 . the last central powers veteran , franz kunst ##ler of austria - hungary , died on 27 may 2008 at the age of 107 .\n",
+        "dataset": "boolq",
+        "parsed_text": "filter id 849 and adversarial",
+        "user_text": "how does instance with id 849 have to change in order to fool the model?",
+        "timestamp": "15-06-2023, 19:44:42"
+    },
+    {
+        "id": "5562dc4938c0a9c2368ab6b28f1467408f3bdde09ac0157700be6be0d9ff",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "Label False (92.857%) --> True (87.669%)\n\nare there any w ##w ##1 veterans still alive 2018 list of last world war i veterans by country - - this is a list of the last world war i veterans to die by country . the last living veteran\nare there any w ##w ##1 veterans still alive 2018 list of last - place world war i veterans by country - - this is a list of the last world war i veterans to die by country . the last living veteran\n\n\nof world war i ( 4 february 1914 - - 11 november 1918 ) was florence green , a british citizen who served in the allied armed forces , and who died 4 february 2012 , aged 110 . the last combat\n\nof world war i ( 4 february 1914 - - 11 november 1918 ) was florence green , a british citizen who served in the allied armed forces , and who died 4 february 2012 , aged 110 . the last combat\n\n\nveteran was claude cho ##ules who served in the british royal navy ( and later the royal australian navy ) and died 5 may 2011 , aged 110 . the last veteran who served in the trenches was harry patch\nveteran was claude cho ##ules who served in the british royal navy ( and later the royal australian navy ) and died 5 may 2011 , aged 110 . the last veteran who served in the trenches was harry patch\n\n\n( british army ) who died on 25 july 2009 , aged 111 . the last central powers veteran , franz kunst ##ler of austria - hungary , died on 27 may 2008 at the age of 107 .\n\n( british army ) who died on 25 july 2009 , aged 111 . the last central powers veteran , franz kunst ##ler of austria - hungary , died on 27 may 2008 at the age of 107 .\n",
+        "dataset": "boolq",
+        "parsed_text": "filter id 849 and adversarial",
+        "user_text": "how does instance with id 849 have to change in order to fool the model?",
+        "timestamp": "15-06-2023, 19:44:44"
+    }
+]

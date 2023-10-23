@@ -1,0 +1,1052 @@
+[
+    {
+        "id": "fc701ce430a0bae86d4c158dca67f0222ab1a2b4cbb62287e35cc4ac0ade",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "I'm a machine learning model trained to predict to answer yes/no questions based on text passages. I was trained on a Boolean question answering (yes/no) dataset.",
+        "dataset": "boolq",
+        "parsed_text": "self",
+        "user_text": "Could you tell me a bit more about what this is?",
+        "timestamp": "16-06-2023, 13:20:28"
+    },
+    {
+        "id": "fc701ce430a0bae86d4c158dca67f0222ab1a2b4cbb62287e35cc4ac0ade",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "I'm a machine learning model trained to predict to answer yes/no questions based on text passages. I was trained on a Boolean question answering (yes/no) dataset.",
+        "dataset": "boolq",
+        "parsed_text": "self",
+        "user_text": "Could you tell me a bit more about what this is?",
+        "timestamp": "16-06-2023, 13:20:36"
+    },
+    {
+        "id": "fc701ce430a0bae86d4c158dca67f0222ab1a2b4cbb62287e35cc4ac0ade",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "I'm a machine learning model trained to predict to answer yes/no questions based on text passages. I was trained on a Boolean question answering (yes/no) dataset.",
+        "dataset": "boolq",
+        "parsed_text": "self",
+        "user_text": "Could you tell me a bit more about what this is?",
+        "timestamp": "16-06-2023, 13:20:39"
+    },
+    {
+        "id": "099ea8237965798d6ec3a185beac1fc5070cd7a0471f8750f6fec7e54e43",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "I can answer questions about the model's predictions on the data. For example, I could tell you why certain predictions were made, how likely different outcomes are, what needs to happen to get different predictions, or what would happen to the predictions if the features changed in a particular way.\n\nI can perform these analyses on individual instances (i.e., using the instance id) or entire subgroups in the data.\n\nIf you want to see whether I can do something, try asking it!",
+        "dataset": "boolq",
+        "parsed_text": "function",
+        "user_text": "What can you do?",
+        "timestamp": "16-06-2023, 13:21:25"
+    },
+    {
+        "id": "099ea8237965798d6ec3a185beac1fc5070cd7a0471f8750f6fec7e54e43",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "I can answer questions about the model's predictions on the data. For example, I could tell you why certain predictions were made, how likely different outcomes are, what needs to happen to get different predictions, or what would happen to the predictions if the features changed in a particular way.\n\nI can perform these analyses on individual instances (i.e., using the instance id) or entire subgroups in the data.\n\nIf you want to see whether I can do something, try asking it!",
+        "dataset": "boolq",
+        "parsed_text": "function",
+        "user_text": "What can you do?",
+        "timestamp": "16-06-2023, 13:21:28"
+    },
+    {
+        "id": "099ea8237965798d6ec3a185beac1fc5070cd7a0471f8750f6fec7e54e43",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "I can answer questions about the model's predictions on the data. For example, I could tell you why certain predictions were made, how likely different outcomes are, what needs to happen to get different predictions, or what would happen to the predictions if the features changed in a particular way.\n\nI can perform these analyses on individual instances (i.e., using the instance id) or entire subgroups in the data.\n\nIf you want to see whether I can do something, try asking it!",
+        "dataset": "boolq",
+        "parsed_text": "function",
+        "user_text": "What can you do?",
+        "timestamp": "16-06-2023, 13:21:31"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "Let's try another option. I'm afraid I don't have an answer for this.",
+        "dataset": "boolq",
+        "parsed_text": "function",
+        "user_text": "Can you explain a prediction?",
+        "timestamp": "16-06-2023, 13:21:52"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "Let's try another option. I'm afraid I don't have an answer for this.",
+        "dataset": "boolq",
+        "parsed_text": "function",
+        "user_text": "Can you explain a prediction?",
+        "timestamp": "16-06-2023, 13:21:55"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "Let's try another option. I'm afraid I don't have an answer for this.",
+        "dataset": "boolq",
+        "parsed_text": "function",
+        "user_text": "Can you explain a prediction?",
+        "timestamp": "16-06-2023, 13:21:58"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "The separate character '|' is not included!",
+        "dataset": "boolq",
+        "parsed_text": "function",
+        "user_text": "Can you explain a prediction?",
+        "timestamp": "16-06-2023, 13:22:31"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "The separate character '|' is not included!",
+        "dataset": "boolq",
+        "parsed_text": "function",
+        "user_text": "Can you explain a prediction?",
+        "timestamp": "16-06-2023, 13:22:33"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "The separate character '|' is not included!",
+        "dataset": "boolq",
+        "parsed_text": "function",
+        "user_text": "Can you explain a prediction?",
+        "timestamp": "16-06-2023, 13:22:36"
+    },
+    {
+        "id": "8251ed3cbe1583b9459920e0ad91e160011ce309179488738fa8d9cb427b",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "For the data with id equal to 0, the features are\n\nquestion: does ethanol take more energy make that produces\npassage: Ethanol fuel -- All biomass goes through at least some of these steps: it needs to be grown, collected, dried, fermented, distilled, and burned. All of these steps require resources and an infrastructure. The total amount of energy input into the process compared to the energy released by burning the resulting ethanol fuel is known as the energy balance (or ``energy returned on energy invested''). Figures compiled in a 2007 report by National Geographic Magazine point to modest results for corn ethanol produced in the US: one unit of fossil-fuel energy is required to create 1.3 energy units from the resulting ethanol. The energy balance for sugarcane ethanol produced in Brazil is more favorable, with one unit of fossil-fuel energy required to create 8 from the ethanol. Energy balance estimates are not easily produced, thus numerous such reports have been generated that are contradictory. For instance, a separate survey reports that production of ethanol from sugarcane, which requires a tropical climate to grow productively, returns from 8 to 9 units of energy for each unit expended, as compared to corn, which only returns about 1.34 units of fuel energy for each unit of energy expended. A 2006 University of California Berkeley study, after analyzing six separate studies, concluded that producing ethanol from corn uses much less petroleum than producing gasoline.",
+        "dataset": "boolq",
+        "parsed_text": "filter id 0 and show",
+        "user_text": "could you show me data point number 0?",
+        "timestamp": "16-06-2023, 13:24:22"
+    },
+    {
+        "id": "8251ed3cbe1583b9459920e0ad91e160011ce309179488738fa8d9cb427b",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "For the data with id equal to 0, the features are\n\nquestion: does ethanol take more energy make that produces\npassage: Ethanol fuel -- All biomass goes through at least some of these steps: it needs to be grown, collected, dried, fermented, distilled, and burned. All of these steps require resources and an infrastructure. The total amount of energy input into the process compared to the energy released by burning the resulting ethanol fuel is known as the energy balance (or ``energy returned on energy invested''). Figures compiled in a 2007 report by National Geographic Magazine point to modest results for corn ethanol produced in the US: one unit of fossil-fuel energy is required to create 1.3 energy units from the resulting ethanol. The energy balance for sugarcane ethanol produced in Brazil is more favorable, with one unit of fossil-fuel energy required to create 8 from the ethanol. Energy balance estimates are not easily produced, thus numerous such reports have been generated that are contradictory. For instance, a separate survey reports that production of ethanol from sugarcane, which requires a tropical climate to grow productively, returns from 8 to 9 units of energy for each unit expended, as compared to corn, which only returns about 1.34 units of fuel energy for each unit of energy expended. A 2006 University of California Berkeley study, after analyzing six separate studies, concluded that producing ethanol from corn uses much less petroleum than producing gasoline.",
+        "dataset": "boolq",
+        "parsed_text": "filter id 0 and show",
+        "user_text": "could you show me data point number 0?",
+        "timestamp": "16-06-2023, 13:24:25"
+    },
+    {
+        "id": "8251ed3cbe1583b9459920e0ad91e160011ce309179488738fa8d9cb427b",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "For the data with id equal to 0, the features are\n\nquestion: does ethanol take more energy make that produces\npassage: Ethanol fuel -- All biomass goes through at least some of these steps: it needs to be grown, collected, dried, fermented, distilled, and burned. All of these steps require resources and an infrastructure. The total amount of energy input into the process compared to the energy released by burning the resulting ethanol fuel is known as the energy balance (or ``energy returned on energy invested''). Figures compiled in a 2007 report by National Geographic Magazine point to modest results for corn ethanol produced in the US: one unit of fossil-fuel energy is required to create 1.3 energy units from the resulting ethanol. The energy balance for sugarcane ethanol produced in Brazil is more favorable, with one unit of fossil-fuel energy required to create 8 from the ethanol. Energy balance estimates are not easily produced, thus numerous such reports have been generated that are contradictory. For instance, a separate survey reports that production of ethanol from sugarcane, which requires a tropical climate to grow productively, returns from 8 to 9 units of energy for each unit expended, as compared to corn, which only returns about 1.34 units of fuel energy for each unit of energy expended. A 2006 University of California Berkeley study, after analyzing six separate studies, concluded that producing ethanol from corn uses much less petroleum than producing gasoline.",
+        "dataset": "boolq",
+        "parsed_text": "filter id 0 and show",
+        "user_text": "could you show me data point number 0?",
+        "timestamp": "16-06-2023, 13:24:28"
+    },
+    {
+        "id": "ee77f5cef86a8f3e4962e00f7d2fc8f1ef83a988e292a9eb22663338cdb6",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "Training Data Details:\n\n\nName\tContent\ntrain_data_name\tBoolQ Dataset: a question answering dataset for yes/no questions\ntrain_data_source\tplain text\ntrain_data_language\tEnglish\ntrain_data_number\t9427\n\nThe data contains information related to Boolean question answering (yes/no).\nThe exact feature names in the data are listed as follows:\nquestion\npassage\n\nThe dataset has following labels:\nTrue\nFalse\n\nThe model scores 72.11% accuracy on the data.",
+        "dataset": "boolq",
+        "parsed_text": "data train_data_language",
+        "user_text": "show me the language of training data",
+        "timestamp": "16-06-2023, 13:24:58"
+    },
+    {
+        "id": "ee77f5cef86a8f3e4962e00f7d2fc8f1ef83a988e292a9eb22663338cdb6",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "Training Data Details:\n\n\nName\tContent\ntrain_data_name\tBoolQ Dataset: a question answering dataset for yes/no questions\ntrain_data_source\tplain text\ntrain_data_language\tEnglish\ntrain_data_number\t9427\n\nThe data contains information related to Boolean question answering (yes/no).\nThe exact feature names in the data are listed as follows:\nquestion\npassage\n\nThe dataset has following labels:\nTrue\nFalse\n\nThe model scores 72.11% accuracy on the data.",
+        "dataset": "boolq",
+        "parsed_text": "data train_data_language",
+        "user_text": "show me the language of training data",
+        "timestamp": "16-06-2023, 13:25:01"
+    },
+    {
+        "id": "ee77f5cef86a8f3e4962e00f7d2fc8f1ef83a988e292a9eb22663338cdb6",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "Training Data Details:\n\n\nName\tContent\ntrain_data_name\tBoolQ Dataset: a question answering dataset for yes/no questions\ntrain_data_source\tplain text\ntrain_data_language\tEnglish\ntrain_data_number\t9427\n\nThe data contains information related to Boolean question answering (yes/no).\nThe exact feature names in the data are listed as follows:\nquestion\npassage\n\nThe dataset has following labels:\nTrue\nFalse\n\nThe model scores 72.11% accuracy on the data.",
+        "dataset": "boolq",
+        "parsed_text": "data train_data_language",
+        "user_text": "show me the language of training data",
+        "timestamp": "16-06-2023, 13:25:04"
+    },
+    {
+        "id": "62f98a1fe6a187d22597bc6e907de6636e5dd1877a5e7a9fcdd32be5d8af",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "Testing Data Details:\n\n\nName\tContent\ntest_data_name\tBoolQ Dataset: a question answering dataset for yes/no questions\ntest_data_source\tplain text\ntest_data_language\tEnglish\ntest_data_number\t3270\n\n\nThe data contains information related to Boolean question answering (yes/no).\nThe exact feature names in the data are listed as follows:\nquestion\npassage\n\nThe dataset has following labels:\nTrue\nFalse\n\nThe model scores 72.11% accuracy on the data.",
+        "dataset": "boolq",
+        "parsed_text": "data test_data_name",
+        "user_text": "inform me about the test data",
+        "timestamp": "16-06-2023, 13:25:46"
+    },
+    {
+        "id": "62f98a1fe6a187d22597bc6e907de6636e5dd1877a5e7a9fcdd32be5d8af",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "Testing Data Details:\n\n\nName\tContent\ntest_data_name\tBoolQ Dataset: a question answering dataset for yes/no questions\ntest_data_source\tplain text\ntest_data_language\tEnglish\ntest_data_number\t3270\n\n\nThe data contains information related to Boolean question answering (yes/no).\nThe exact feature names in the data are listed as follows:\nquestion\npassage\n\nThe dataset has following labels:\nTrue\nFalse\n\nThe model scores 72.11% accuracy on the data.",
+        "dataset": "boolq",
+        "parsed_text": "data test_data_name",
+        "user_text": "inform me about the test data",
+        "timestamp": "16-06-2023, 13:25:50"
+    },
+    {
+        "id": "62f98a1fe6a187d22597bc6e907de6636e5dd1877a5e7a9fcdd32be5d8af",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "Testing Data Details:\n\n\nName\tContent\ntest_data_name\tBoolQ Dataset: a question answering dataset for yes/no questions\ntest_data_source\tplain text\ntest_data_language\tEnglish\ntest_data_number\t3270\n\n\nThe data contains information related to Boolean question answering (yes/no).\nThe exact feature names in the data are listed as follows:\nquestion\npassage\n\nThe dataset has following labels:\nTrue\nFalse\n\nThe model scores 72.11% accuracy on the data.",
+        "dataset": "boolq",
+        "parsed_text": "data test_data_name",
+        "user_text": "inform me about the test data",
+        "timestamp": "16-06-2023, 13:25:53"
+    },
+    {
+        "id": "7e243bbb3e455f2a0a0da9d76e36d6034a9b5e9ef74fc9081fa7bfcaf5f9",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "There are 3270 items in the data.\n\nLet me know if you want to see their ids.",
+        "dataset": "boolq",
+        "parsed_text": "countdata",
+        "user_text": "what are the id's of all the items",
+        "timestamp": "16-06-2023, 13:26:17"
+    },
+    {
+        "id": "7e243bbb3e455f2a0a0da9d76e36d6034a9b5e9ef74fc9081fa7bfcaf5f9",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "There are 3270 items in the data.\n\nLet me know if you want to see their ids.",
+        "dataset": "boolq",
+        "parsed_text": "countdata",
+        "user_text": "what are the id's of all the items",
+        "timestamp": "16-06-2023, 13:26:22"
+    },
+    {
+        "id": "7e243bbb3e455f2a0a0da9d76e36d6034a9b5e9ef74fc9081fa7bfcaf5f9",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "There are 3270 items in the data.\n\nLet me know if you want to see their ids.",
+        "dataset": "boolq",
+        "parsed_text": "countdata",
+        "user_text": "what are the id's of all the items",
+        "timestamp": "16-06-2023, 13:26:24"
+    },
+    {
+        "id": "0e955eb238dfba124a37bc818f38f6d96b832d0ebf936cb50c954516e188",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "There are 3270 items in the data.\n\nLet me know if you want to see their ids.",
+        "dataset": "boolq",
+        "parsed_text": "countdata",
+        "user_text": "How many instances are there in the dataset?",
+        "timestamp": "16-06-2023, 13:26:53"
+    },
+    {
+        "id": "0e955eb238dfba124a37bc818f38f6d96b832d0ebf936cb50c954516e188",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "There are 3270 items in the data.\n\nLet me know if you want to see their ids.",
+        "dataset": "boolq",
+        "parsed_text": "countdata",
+        "user_text": "How many instances are there in the dataset?",
+        "timestamp": "16-06-2023, 13:26:55"
+    },
+    {
+        "id": "0e955eb238dfba124a37bc818f38f6d96b832d0ebf936cb50c954516e188",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "There are 3270 items in the data.\n\nLet me know if you want to see their ids.",
+        "dataset": "boolq",
+        "parsed_text": "countdata",
+        "user_text": "How many instances are there in the dataset?",
+        "timestamp": "16-06-2023, 13:26:58"
+    },
+    {
+        "id": "b2cba40b3713618abf5ab605ba221ec2a1957ef9c3919f59ac23dbefe3ad",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "There are 3270 items in the data.\n\nLet me know if you want to see their ids.",
+        "dataset": "boolq",
+        "parsed_text": "countdata",
+        "user_text": "show how often which target label appears in the entire dataset",
+        "timestamp": "16-06-2023, 13:27:24"
+    },
+    {
+        "id": "b2cba40b3713618abf5ab605ba221ec2a1957ef9c3919f59ac23dbefe3ad",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "There are 3270 items in the data.\n\nLet me know if you want to see their ids.",
+        "dataset": "boolq",
+        "parsed_text": "countdata",
+        "user_text": "show how often which target label appears in the entire dataset",
+        "timestamp": "16-06-2023, 13:27:29"
+    },
+    {
+        "id": "b2cba40b3713618abf5ab605ba221ec2a1957ef9c3919f59ac23dbefe3ad",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "There are 3270 items in the data.\n\nLet me know if you want to see their ids.",
+        "dataset": "boolq",
+        "parsed_text": "countdata",
+        "user_text": "show how often which target label appears in the entire dataset",
+        "timestamp": "16-06-2023, 13:27:32"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "This was a bit unclear. Could you rephrase it, please?",
+        "dataset": "boolq",
+        "parsed_text": "countdata",
+        "user_text": "show how often positive label appears in the entire dataset",
+        "timestamp": "16-06-2023, 13:27:59"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "This was a bit unclear. Could you rephrase it, please?",
+        "dataset": "boolq",
+        "parsed_text": "countdata",
+        "user_text": "show how often positive label appears in the entire dataset",
+        "timestamp": "16-06-2023, 13:28:03"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "This was a bit unclear. Could you rephrase it, please?",
+        "dataset": "boolq",
+        "parsed_text": "countdata",
+        "user_text": "show how often positive label appears in the entire dataset",
+        "timestamp": "16-06-2023, 13:28:05"
+    },
+    {
+        "id": "58e255bb0e19ae27841bfcd09ee4177bf77d7b91ce66e0a0ecf509694ff9",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "The 25 most frequent words in the dataset are:\n\nWord\tFrequence\nThe\t3814\n--\t3393\nIn\t961\nUnited\t882\nIt\t814\nalso\t787\nfirst\t635\none\t610\nseries\t583\nA\t559\nStates\t542\ntwo\t527\nseason\t507\nWorld\t500\nused\t487\nfilm\t475\nAmerican\t452\nmay\t437\nNew\t414\nknown\t379\ntime\t325\npart\t312\nThis\t304\nstate\t298\nU.S.\t287",
+        "dataset": "boolq",
+        "parsed_text": "keywords all",
+        "user_text": "what are the true labels in the dataset and how often do they occur?",
+        "timestamp": "16-06-2023, 13:29:06"
+    },
+    {
+        "id": "58e255bb0e19ae27841bfcd09ee4177bf77d7b91ce66e0a0ecf509694ff9",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "The 25 most frequent words in the dataset are:\n\nWord\tFrequence\nThe\t3814\n--\t3393\nIn\t961\nUnited\t882\nIt\t814\nalso\t787\nfirst\t635\none\t610\nseries\t583\nA\t559\nStates\t542\ntwo\t527\nseason\t507\nWorld\t500\nused\t487\nfilm\t475\nAmerican\t452\nmay\t437\nNew\t414\nknown\t379\ntime\t325\npart\t312\nThis\t304\nstate\t298\nU.S.\t287",
+        "dataset": "boolq",
+        "parsed_text": "keywords all",
+        "user_text": "what are the true labels in the dataset and how often do they occur?",
+        "timestamp": "16-06-2023, 13:29:09"
+    },
+    {
+        "id": "58e255bb0e19ae27841bfcd09ee4177bf77d7b91ce66e0a0ecf509694ff9",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "The 25 most frequent words in the dataset are:\n\nWord\tFrequence\nThe\t3814\n--\t3393\nIn\t961\nUnited\t882\nIt\t814\nalso\t787\nfirst\t635\none\t610\nseries\t583\nA\t559\nStates\t542\ntwo\t527\nseason\t507\nWorld\t500\nused\t487\nfilm\t475\nAmerican\t452\nmay\t437\nNew\t414\nknown\t379\ntime\t325\npart\t312\nThis\t304\nstate\t298\nU.S.\t287",
+        "dataset": "boolq",
+        "parsed_text": "keywords all",
+        "user_text": "what are the true labels in the dataset and how often do they occur?",
+        "timestamp": "16-06-2023, 13:29:11"
+    },
+    {
+        "id": "fd3615b000ca3c92c471f7070e2eeffb9d4fd5f2d97b0caca4508e24af9b",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "For all the instances in the data,\n\n\n37.829% of instances have label False\n62.171% of instances have label True",
+        "dataset": "boolq",
+        "parsed_text": "label",
+        "user_text": "How many true labels are there?",
+        "timestamp": "16-06-2023, 13:29:46"
+    },
+    {
+        "id": "fd3615b000ca3c92c471f7070e2eeffb9d4fd5f2d97b0caca4508e24af9b",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "For all the instances in the data,\n\n\n37.829% of instances have label False\n62.171% of instances have label True",
+        "dataset": "boolq",
+        "parsed_text": "label",
+        "user_text": "How many true labels are there?",
+        "timestamp": "16-06-2023, 13:29:48"
+    },
+    {
+        "id": "fd3615b000ca3c92c471f7070e2eeffb9d4fd5f2d97b0caca4508e24af9b",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "For all the instances in the data,\n\n\n37.829% of instances have label False\n62.171% of instances have label True",
+        "dataset": "boolq",
+        "parsed_text": "label",
+        "user_text": "How many true labels are there?",
+        "timestamp": "16-06-2023, 13:29:51"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "Let's try another option. I'm afraid I don't have an answer for this.",
+        "dataset": "boolq",
+        "parsed_text": "label",
+        "user_text": "what do you predict for 0",
+        "timestamp": "16-06-2023, 13:30:15"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "Let's try another option. I'm afraid I don't have an answer for this.",
+        "dataset": "boolq",
+        "parsed_text": "label",
+        "user_text": "what do you predict for 0",
+        "timestamp": "16-06-2023, 13:30:18"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "Let's try another option. I'm afraid I don't have an answer for this.",
+        "dataset": "boolq",
+        "parsed_text": "label",
+        "user_text": "what do you predict for 0",
+        "timestamp": "16-06-2023, 13:30:21"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "I'm not sure I can do this. Maybe you have another request for me?",
+        "dataset": "boolq",
+        "parsed_text": "label",
+        "user_text": "what is the prediction for data point number 2117",
+        "timestamp": "16-06-2023, 13:30:32"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "I'm not sure I can do this. Maybe you have another request for me?",
+        "dataset": "boolq",
+        "parsed_text": "label",
+        "user_text": "what is the prediction for data point number 2117",
+        "timestamp": "16-06-2023, 13:30:35"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "I'm not sure I can do this. Maybe you have another request for me?",
+        "dataset": "boolq",
+        "parsed_text": "label",
+        "user_text": "what is the prediction for data point number 2117",
+        "timestamp": "16-06-2023, 13:30:37"
+    },
+    {
+        "id": "6ab9f3ec203379abb400b62addbda4ba1d23ec9cad5f46d614ce55b54238",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "The random text is with id 73:\n\n\nThe text is: did to kill a mockingbird win an academy award To Kill a Mockingbird (film) -- The film received overwhelmingly positive reviews from critics and was a box-office success, earning more than six times its budget. The film won three Academy Awards, including Best Actor for Peck, and was nominated for eight, including Best Picture.\nThe prediction is True.",
+        "dataset": "boolq",
+        "parsed_text": "randompredict",
+        "user_text": "show me a random prediction",
+        "timestamp": "16-06-2023, 13:31:15"
+    },
+    {
+        "id": "6ab9f3ec203379abb400b62addbda4ba1d23ec9cad5f46d614ce55b54238",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "The random text is with id 73:\n\n\nThe text is: did to kill a mockingbird win an academy award To Kill a Mockingbird (film) -- The film received overwhelmingly positive reviews from critics and was a box-office success, earning more than six times its budget. The film won three Academy Awards, including Best Actor for Peck, and was nominated for eight, including Best Picture.\nThe prediction is True.",
+        "dataset": "boolq",
+        "parsed_text": "randompredict",
+        "user_text": "show me a random prediction",
+        "timestamp": "16-06-2023, 13:31:18"
+    },
+    {
+        "id": "6ab9f3ec203379abb400b62addbda4ba1d23ec9cad5f46d614ce55b54238",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "The random text is with id 73:\n\n\nThe text is: did to kill a mockingbird win an academy award To Kill a Mockingbird (film) -- The film received overwhelmingly positive reviews from critics and was a box-office success, earning more than six times its budget. The film won three Academy Awards, including Best Actor for Peck, and was nominated for eight, including Best Picture.\nThe prediction is True.",
+        "dataset": "boolq",
+        "parsed_text": "randompredict",
+        "user_text": "show me a random prediction",
+        "timestamp": "16-06-2023, 13:31:21"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "This is likely out of my expertise, can I help you with something else?",
+        "dataset": "boolq",
+        "parsed_text": "randompredict",
+        "user_text": "super cool system you got here.... could you show me the predictions across all the data?",
+        "timestamp": "16-06-2023, 13:31:42"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "This is likely out of my expertise, can I help you with something else?",
+        "dataset": "boolq",
+        "parsed_text": "randompredict",
+        "user_text": "super cool system you got here.... could you show me the predictions across all the data?",
+        "timestamp": "16-06-2023, 13:31:45"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "This is likely out of my expertise, can I help you with something else?",
+        "dataset": "boolq",
+        "parsed_text": "randompredict",
+        "user_text": "super cool system you got here.... could you show me the predictions across all the data?",
+        "timestamp": "16-06-2023, 13:31:47"
+    },
+    {
+        "id": "e16e16f7ab511c0597541b54d85182359b2607399b91c648b689b3f48e68",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "For instance with id 73:\nThe likelihood of class False is 0.144%\nThe likelihood of class True is 99.856%",
+        "dataset": "boolq",
+        "parsed_text": "filter id 73 and likelihood",
+        "user_text": "i want you to tell me the probability of the instance with id 73 being predicted in the \"False\" class by the model",
+        "timestamp": "16-06-2023, 13:34:50"
+    },
+    {
+        "id": "e16e16f7ab511c0597541b54d85182359b2607399b91c648b689b3f48e68",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "For instance with id 73:\nThe likelihood of class False is 0.144%\nThe likelihood of class True is 99.856%",
+        "dataset": "boolq",
+        "parsed_text": "filter id 73 and likelihood",
+        "user_text": "i want you to tell me the probability of the instance with id 73 being predicted in the \"False\" class by the model",
+        "timestamp": "16-06-2023, 13:34:53"
+    },
+    {
+        "id": "e16e16f7ab511c0597541b54d85182359b2607399b91c648b689b3f48e68",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "For instance with id 73:\nThe likelihood of class False is 0.144%\nThe likelihood of class True is 99.856%",
+        "dataset": "boolq",
+        "parsed_text": "filter id 73 and likelihood",
+        "user_text": "i want you to tell me the probability of the instance with id 73 being predicted in the \"False\" class by the model",
+        "timestamp": "16-06-2023, 13:34:55"
+    },
+    {
+        "id": "f18560d0b3fabe44696167b0f999d2cb1217aab256472176bb2e85bdc1ea",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "The model scores 0.801 precision on all the instances in the data,.",
+        "dataset": "boolq",
+        "parsed_text": "score precision",
+        "user_text": "can you show me the precision on the data?",
+        "timestamp": "16-06-2023, 13:35:17"
+    },
+    {
+        "id": "f18560d0b3fabe44696167b0f999d2cb1217aab256472176bb2e85bdc1ea",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "The model scores 0.801 precision on all the instances in the data,.",
+        "dataset": "boolq",
+        "parsed_text": "score precision",
+        "user_text": "can you show me the precision on the data?",
+        "timestamp": "16-06-2023, 13:35:19"
+    },
+    {
+        "id": "f18560d0b3fabe44696167b0f999d2cb1217aab256472176bb2e85bdc1ea",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "The model scores 0.801 precision on all the instances in the data,.",
+        "dataset": "boolq",
+        "parsed_text": "score precision",
+        "user_text": "can you show me the precision on the data?",
+        "timestamp": "16-06-2023, 13:35:22"
+    },
+    {
+        "id": "3937086f851b4cf0d0157fef487d767c87a14480033a8254c72f65880483",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "The model scores 0.781 f1 on all the instances in the data,.",
+        "dataset": "boolq",
+        "parsed_text": "score f1 evaluation",
+        "user_text": "i meant what is the f1 score on the evaluation data",
+        "timestamp": "16-06-2023, 13:35:40"
+    },
+    {
+        "id": "3937086f851b4cf0d0157fef487d767c87a14480033a8254c72f65880483",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "The model scores 0.781 f1 on all the instances in the data,.",
+        "dataset": "boolq",
+        "parsed_text": "score f1 evaluation",
+        "user_text": "i meant what is the f1 score on the evaluation data",
+        "timestamp": "16-06-2023, 13:35:42"
+    },
+    {
+        "id": "3937086f851b4cf0d0157fef487d767c87a14480033a8254c72f65880483",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "The model scores 0.781 f1 on all the instances in the data,.",
+        "dataset": "boolq",
+        "parsed_text": "score f1 evaluation",
+        "user_text": "i meant what is the f1 score on the evaluation data",
+        "timestamp": "16-06-2023, 13:35:45"
+    },
+    {
+        "id": "3b8da5d7265c434e186fb038f5f0fb14981be545d2baece056d60f2fef57",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "For all the instances in the data, the model is incorrect 912 out of 3270 times (error rate 0.279).\nHere is the confusion matrix:\n",
+        "dataset": "boolq",
+        "parsed_text": "mistake count",
+        "user_text": "show me the number of data points the model forecasts inaccurately?",
+        "timestamp": "16-06-2023, 13:36:29"
+    },
+    {
+        "id": "3b8da5d7265c434e186fb038f5f0fb14981be545d2baece056d60f2fef57",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "For all the instances in the data, the model is incorrect 912 out of 3270 times (error rate 0.279).\nHere is the confusion matrix:\n",
+        "dataset": "boolq",
+        "parsed_text": "mistake count",
+        "user_text": "show me the number of data points the model forecasts inaccurately?",
+        "timestamp": "16-06-2023, 13:36:32"
+    },
+    {
+        "id": "3b8da5d7265c434e186fb038f5f0fb14981be545d2baece056d60f2fef57",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "For all the instances in the data, the model is incorrect 912 out of 3270 times (error rate 0.279).\nHere is the confusion matrix:\n",
+        "dataset": "boolq",
+        "parsed_text": "mistake count",
+        "user_text": "show me the number of data points the model forecasts inaccurately?",
+        "timestamp": "16-06-2023, 13:36:35"
+    },
+    {
+        "id": "a41863dede8c14a6ca2208bb147d96741a0b08020fe9bcfb384c54612354",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "For all the instances in the data, the model is incorrect 912 out of 3270 times (error rate 0.279).\n\nHere are the ids of instances the model predicts incorrectly:",
+        "dataset": "boolq",
+        "parsed_text": "mistake sample",
+        "user_text": "show me some data you predict incorrectly",
+        "timestamp": "16-06-2023, 13:37:11"
+    },
+    {
+        "id": "a41863dede8c14a6ca2208bb147d96741a0b08020fe9bcfb384c54612354",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "For all the instances in the data, the model is incorrect 912 out of 3270 times (error rate 0.279).\n\nHere are the ids of instances the model predicts incorrectly:",
+        "dataset": "boolq",
+        "parsed_text": "mistake sample",
+        "user_text": "show me some data you predict incorrectly",
+        "timestamp": "16-06-2023, 13:37:18"
+    },
+    {
+        "id": "a41863dede8c14a6ca2208bb147d96741a0b08020fe9bcfb384c54612354",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "For all the instances in the data, the model is incorrect 912 out of 3270 times (error rate 0.279).\n\nHere are the ids of instances the model predicts incorrectly:",
+        "dataset": "boolq",
+        "parsed_text": "mistake sample",
+        "user_text": "show me some data you predict incorrectly",
+        "timestamp": "16-06-2023, 13:37:24"
+    },
+    {
+        "id": "95be02e3f02124ec8a340916c4aebbaa36cb808e2d59002758ea1d193a2f",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "For all the instances in the data, the model is incorrect 912 out of 3270 times (error rate 0.279).\n\nHere are the ids of instances the model predicts incorrectly:",
+        "dataset": "boolq",
+        "parsed_text": "mistake sample",
+        "user_text": "show me 3 examples you predict incorrectly",
+        "timestamp": "16-06-2023, 13:38:03"
+    },
+    {
+        "id": "95be02e3f02124ec8a340916c4aebbaa36cb808e2d59002758ea1d193a2f",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "For all the instances in the data, the model is incorrect 912 out of 3270 times (error rate 0.279).\n\nHere are the ids of instances the model predicts incorrectly:",
+        "dataset": "boolq",
+        "parsed_text": "mistake sample",
+        "user_text": "show me 3 examples you predict incorrectly",
+        "timestamp": "16-06-2023, 13:38:09"
+    },
+    {
+        "id": "95be02e3f02124ec8a340916c4aebbaa36cb808e2d59002758ea1d193a2f",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "For all the instances in the data, the model is incorrect 912 out of 3270 times (error rate 0.279).\n\nHere are the ids of instances the model predicts incorrectly:",
+        "dataset": "boolq",
+        "parsed_text": "mistake sample",
+        "user_text": "show me 3 examples you predict incorrectly",
+        "timestamp": "16-06-2023, 13:38:16"
+    },
+    {
+        "id": "cf8272126b9748228e70e80c7dd65fb71c41ca344c40fd67e73d0dbf589c",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "The original text for id 0:\n\nIs socrates dead ? Socrates (/\u02c8s\u0252kr\u0259ti\u02d0z/;[1] Greek: \u03a3\u03c9\u03ba\u03c1\u03ac\u03c4\u03b7\u03c2; c. 470\u2013399 BC) was a Greek philosopher from...\n\nHere are some instances similar to id 0:\nid 465 (cossim 0.281):\nwas turkey a part of the roman empire History of Turkey -- The Persian Achaemenid Empire...\n\nid 943 (cossim 0.265):\nwere greece and rome around at the same time Greece in the Roman era -- Greece...\n\nid 2313 (cossim 0.257):\nis it possible for someone to die of laughter Death from laughter -- Death from laughter...",
+        "dataset": "boolq",
+        "parsed_text": "filter id 73 and similar",
+        "user_text": "can you provide me an instance that is analogous to id 73",
+        "timestamp": "16-06-2023, 13:40:47"
+    },
+    {
+        "id": "cf8272126b9748228e70e80c7dd65fb71c41ca344c40fd67e73d0dbf589c",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "The original text for id 0:\n\nIs socrates dead ? Socrates (/\u02c8s\u0252kr\u0259ti\u02d0z/;[1] Greek: \u03a3\u03c9\u03ba\u03c1\u03ac\u03c4\u03b7\u03c2; c. 470\u2013399 BC) was a Greek philosopher from...\n\nHere are some instances similar to id 0:\nid 465 (cossim 0.281):\nwas turkey a part of the roman empire History of Turkey -- The Persian Achaemenid Empire...\n\nid 943 (cossim 0.265):\nwere greece and rome around at the same time Greece in the Roman era -- Greece...\n\nid 2313 (cossim 0.257):\nis it possible for someone to die of laughter Death from laughter -- Death from laughter...",
+        "dataset": "boolq",
+        "parsed_text": "filter id 73 and similar",
+        "user_text": "can you provide me an instance that is analogous to id 73",
+        "timestamp": "16-06-2023, 13:40:54"
+    },
+    {
+        "id": "cf8272126b9748228e70e80c7dd65fb71c41ca344c40fd67e73d0dbf589c",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "The original text for id 0:\n\nIs socrates dead ? Socrates (/\u02c8s\u0252kr\u0259ti\u02d0z/;[1] Greek: \u03a3\u03c9\u03ba\u03c1\u03ac\u03c4\u03b7\u03c2; c. 470\u2013399 BC) was a Greek philosopher from...\n\nHere are some instances similar to id 0:\nid 465 (cossim 0.281):\nwas turkey a part of the roman empire History of Turkey -- The Persian Achaemenid Empire...\n\nid 943 (cossim 0.265):\nwere greece and rome around at the same time Greece in the Roman era -- Greece...\n\nid 2313 (cossim 0.257):\nis it possible for someone to die of laughter Death from laughter -- Death from laughter...",
+        "dataset": "boolq",
+        "parsed_text": "filter id 73 and similar",
+        "user_text": "can you provide me an instance that is analogous to id 73",
+        "timestamp": "16-06-2023, 13:41:00"
+    },
+    {
+        "id": "45299afe791f24ec86028a91ecffd8371b8e38cedb41487ac42ebcdd5ac8",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "The 3 most frequent words in the dataset are:\n\nWord\tFrequence\nThe\t3814\n--\t3393\nIn\t961",
+        "dataset": "boolq",
+        "parsed_text": "keywords 3",
+        "user_text": "what are the three most frequent keywords?",
+        "timestamp": "16-06-2023, 13:41:29"
+    },
+    {
+        "id": "45299afe791f24ec86028a91ecffd8371b8e38cedb41487ac42ebcdd5ac8",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "The 3 most frequent words in the dataset are:\n\nWord\tFrequence\nThe\t3814\n--\t3393\nIn\t961",
+        "dataset": "boolq",
+        "parsed_text": "keywords 3",
+        "user_text": "what are the three most frequent keywords?",
+        "timestamp": "16-06-2023, 13:41:35"
+    },
+    {
+        "id": "45299afe791f24ec86028a91ecffd8371b8e38cedb41487ac42ebcdd5ac8",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "The 3 most frequent words in the dataset are:\n\nWord\tFrequence\nThe\t3814\n--\t3393\nIn\t961",
+        "dataset": "boolq",
+        "parsed_text": "keywords 3",
+        "user_text": "what are the three most frequent keywords?",
+        "timestamp": "16-06-2023, 13:41:41"
+    },
+    {
+        "id": "830dcc2d79cdd87c28a415e6b1d4801d739949e17278f40991c2d765f92e",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "The 3 most frequent words in the dataset are:\n\nWord\tFrequence\nThe\t3814\n--\t3393\nIn\t961",
+        "dataset": "boolq",
+        "parsed_text": "keywords 3",
+        "user_text": "what are the three least frequent keywords?",
+        "timestamp": "16-06-2023, 13:42:02"
+    },
+    {
+        "id": "830dcc2d79cdd87c28a415e6b1d4801d739949e17278f40991c2d765f92e",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "The 3 most frequent words in the dataset are:\n\nWord\tFrequence\nThe\t3814\n--\t3393\nIn\t961",
+        "dataset": "boolq",
+        "parsed_text": "keywords 3",
+        "user_text": "what are the three least frequent keywords?",
+        "timestamp": "16-06-2023, 13:42:06"
+    },
+    {
+        "id": "830dcc2d79cdd87c28a415e6b1d4801d739949e17278f40991c2d765f92e",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "The 3 most frequent words in the dataset are:\n\nWord\tFrequence\nThe\t3814\n--\t3393\nIn\t961",
+        "dataset": "boolq",
+        "parsed_text": "keywords 3",
+        "user_text": "what are the three least frequent keywords?",
+        "timestamp": "16-06-2023, 13:42:13"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "Let's try another option. I'm afraid I don't have an answer for this.",
+        "dataset": "boolq",
+        "parsed_text": "keywords 3",
+        "user_text": "could you show top 3 most important features for the data point 73",
+        "timestamp": "16-06-2023, 13:42:33"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "Let's try another option. I'm afraid I don't have an answer for this.",
+        "dataset": "boolq",
+        "parsed_text": "keywords 3",
+        "user_text": "could you show top 3 most important features for the data point 73",
+        "timestamp": "16-06-2023, 13:42:36"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "Let's try another option. I'm afraid I don't have an answer for this.",
+        "dataset": "boolq",
+        "parsed_text": "keywords 3",
+        "user_text": "could you show top 3 most important features for the data point 73",
+        "timestamp": "16-06-2023, 13:42:40"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "I'm not sure I can do this. Maybe you have another request for me?",
+        "dataset": "boolq",
+        "parsed_text": "keywords 3",
+        "user_text": "what are the most important sentences for id 3202",
+        "timestamp": "16-06-2023, 13:42:50"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "I'm not sure I can do this. Maybe you have another request for me?",
+        "dataset": "boolq",
+        "parsed_text": "keywords 3",
+        "user_text": "what are the most important sentences for id 3202",
+        "timestamp": "16-06-2023, 13:42:53"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "I'm not sure I can do this. Maybe you have another request for me?",
+        "dataset": "boolq",
+        "parsed_text": "keywords 3",
+        "user_text": "what are the most important sentences for id 3202",
+        "timestamp": "16-06-2023, 13:42:56"
+    },
+    {
+        "id": "6f46028f5c98023f79a0d129c0a9fbbdb5430bd94424cd07ff882ab7106c",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "hypothetical, and metaphor are the most attributed.",
+        "dataset": "boolq",
+        "parsed_text": "important topk 2",
+        "user_text": "what are the top 2 most important features",
+        "timestamp": "16-06-2023, 13:43:43"
+    },
+    {
+        "id": "6f46028f5c98023f79a0d129c0a9fbbdb5430bd94424cd07ff882ab7106c",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "hypothetical, and metaphor are the most attributed.",
+        "dataset": "boolq",
+        "parsed_text": "important topk 2",
+        "user_text": "what are the top 2 most important features",
+        "timestamp": "16-06-2023, 13:43:50"
+    },
+    {
+        "id": "6f46028f5c98023f79a0d129c0a9fbbdb5430bd94424cd07ff882ab7106c",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "hypothetical, and metaphor are the most attributed.",
+        "dataset": "boolq",
+        "parsed_text": "important topk 2",
+        "user_text": "what are the top 2 most important features",
+        "timestamp": "16-06-2023, 13:43:53"
+    },
+    {
+        "id": "9ad1b3c0ef0228ed63353e1888151835b9d693ba3f2cec2f7974d9206959",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "hypothetical, metaphor, avoided, problematic, unsuitable, shepard, limitation, dubious, ##utable, and scout are the most attributed.",
+        "dataset": "boolq",
+        "parsed_text": "important True",
+        "user_text": "please show me the most contributing words with label True.",
+        "timestamp": "16-06-2023, 13:44:25"
+    },
+    {
+        "id": "9ad1b3c0ef0228ed63353e1888151835b9d693ba3f2cec2f7974d9206959",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "hypothetical, metaphor, avoided, problematic, unsuitable, shepard, limitation, dubious, ##utable, and scout are the most attributed.",
+        "dataset": "boolq",
+        "parsed_text": "important True",
+        "user_text": "please show me the most contributing words with label True.",
+        "timestamp": "16-06-2023, 13:44:31"
+    },
+    {
+        "id": "9ad1b3c0ef0228ed63353e1888151835b9d693ba3f2cec2f7974d9206959",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "hypothetical, metaphor, avoided, problematic, unsuitable, shepard, limitation, dubious, ##utable, and scout are the most attributed.",
+        "dataset": "boolq",
+        "parsed_text": "important True",
+        "user_text": "please show me the most contributing words with label True.",
+        "timestamp": "16-06-2023, 13:44:36"
+    },
+    {
+        "id": "6c056c1abd1861aec8b9b3b1e0695f98503d5955b69157dbd44ed8732675",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "hypothetical, metaphor, avoided, problematic, unsuitable, shepard, limitation, dubious, ##utable, and scout are the most attributed.",
+        "dataset": "boolq",
+        "parsed_text": "important False",
+        "user_text": "please show me the most contributing words with label False.",
+        "timestamp": "16-06-2023, 13:45:05"
+    },
+    {
+        "id": "6c056c1abd1861aec8b9b3b1e0695f98503d5955b69157dbd44ed8732675",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "hypothetical, metaphor, avoided, problematic, unsuitable, shepard, limitation, dubious, ##utable, and scout are the most attributed.",
+        "dataset": "boolq",
+        "parsed_text": "important False",
+        "user_text": "please show me the most contributing words with label False.",
+        "timestamp": "16-06-2023, 13:45:08"
+    },
+    {
+        "id": "6c056c1abd1861aec8b9b3b1e0695f98503d5955b69157dbd44ed8732675",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "hypothetical, metaphor, avoided, problematic, unsuitable, shepard, limitation, dubious, ##utable, and scout are the most attributed.",
+        "dataset": "boolq",
+        "parsed_text": "important False",
+        "user_text": "please show me the most contributing words with label False.",
+        "timestamp": "16-06-2023, 13:45:10"
+    },
+    {
+        "id": "8b557901919f90b9778a3ac14b6518fde62783991cc7417ea9ca3fa6e62a",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "Original text: Question: did to kill a mockingbird win an academy award Passage: To Kill a Mockingbird (film) -- The film received overwhelmingly positive reviews from critics and was a box-office success, earning more than six times its budget. The film won three Academy Awards, including Best Actor for Peck, and was nominated for eight, including Best Picture.\nPrediction: true\nExplanation: To Kill A MockINGBIRD won an Academy Award for Best Actress (Gloria Stuart). It was also nominated in the other categories, but did not win.",
+        "dataset": "boolq",
+        "parsed_text": "filter id 73 and rationalize",
+        "user_text": "present a comprehensible explanation for id 73",
+        "timestamp": "16-06-2023, 13:46:23"
+    },
+    {
+        "id": "8b557901919f90b9778a3ac14b6518fde62783991cc7417ea9ca3fa6e62a",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "Original text: Question: did to kill a mockingbird win an academy award Passage: To Kill a Mockingbird (film) -- The film received overwhelmingly positive reviews from critics and was a box-office success, earning more than six times its budget. The film won three Academy Awards, including Best Actor for Peck, and was nominated for eight, including Best Picture.\nPrediction: true\nExplanation: To Kill A MockINGBIRD won an Academy Award for Best Actress (Gloria Stuart). It was also nominated in the other categories, but did not win.",
+        "dataset": "boolq",
+        "parsed_text": "filter id 73 and rationalize",
+        "user_text": "present a comprehensible explanation for id 73",
+        "timestamp": "16-06-2023, 13:46:26"
+    },
+    {
+        "id": "8b557901919f90b9778a3ac14b6518fde62783991cc7417ea9ca3fa6e62a",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "Original text: Question: did to kill a mockingbird win an academy award Passage: To Kill a Mockingbird (film) -- The film received overwhelmingly positive reviews from critics and was a box-office success, earning more than six times its budget. The film won three Academy Awards, including Best Actor for Peck, and was nominated for eight, including Best Picture.\nPrediction: true\nExplanation: To Kill A MockINGBIRD won an Academy Award for Best Actress (Gloria Stuart). It was also nominated in the other categories, but did not win.",
+        "dataset": "boolq",
+        "parsed_text": "filter id 73 and rationalize",
+        "user_text": "present a comprehensible explanation for id 73",
+        "timestamp": "16-06-2023, 13:46:29"
+    },
+    {
+        "id": "b39a07211c19775417114d5a69f92d67d165b52aa01eaf512ab0d18fe0e8",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "hypothetical, metaphor, avoided, problematic, unsuitable, shepard, limitation, dubious, ##utable, and scout are the most attributed.",
+        "dataset": "boolq",
+        "parsed_text": "important False",
+        "user_text": "how do you decide whether some text is False",
+        "timestamp": "16-06-2023, 13:47:10"
+    },
+    {
+        "id": "b39a07211c19775417114d5a69f92d67d165b52aa01eaf512ab0d18fe0e8",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "hypothetical, metaphor, avoided, problematic, unsuitable, shepard, limitation, dubious, ##utable, and scout are the most attributed.",
+        "dataset": "boolq",
+        "parsed_text": "important False",
+        "user_text": "how do you decide whether some text is False",
+        "timestamp": "16-06-2023, 13:47:12"
+    },
+    {
+        "id": "b39a07211c19775417114d5a69f92d67d165b52aa01eaf512ab0d18fe0e8",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "hypothetical, metaphor, avoided, problematic, unsuitable, shepard, limitation, dubious, ##utable, and scout are the most attributed.",
+        "dataset": "boolq",
+        "parsed_text": "important False",
+        "user_text": "how do you decide whether some text is False",
+        "timestamp": "16-06-2023, 13:47:15"
+    },
+    {
+        "id": "362a9c657786d3c37635f3654c6790b8a34016503bdd13985a2d956e2240",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "This sentence is always classified as True!",
+        "dataset": "boolq",
+        "parsed_text": "filter id 73 and cfe",
+        "user_text": "how can i change the prediction for the data point with an id of 73?",
+        "timestamp": "16-06-2023, 13:48:32"
+    },
+    {
+        "id": "362a9c657786d3c37635f3654c6790b8a34016503bdd13985a2d956e2240",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "This sentence is always classified as True!",
+        "dataset": "boolq",
+        "parsed_text": "filter id 73 and cfe",
+        "user_text": "how can i change the prediction for the data point with an id of 73?",
+        "timestamp": "16-06-2023, 13:48:35"
+    },
+    {
+        "id": "362a9c657786d3c37635f3654c6790b8a34016503bdd13985a2d956e2240",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "This sentence is always classified as True!",
+        "dataset": "boolq",
+        "parsed_text": "filter id 73 and cfe",
+        "user_text": "how can i change the prediction for the data point with an id of 73?",
+        "timestamp": "16-06-2023, 13:48:37"
+    },
+    {
+        "id": "bdee66a7c3c209e42a20a7238eab8c9d8b620ca40ded541114196f89c54c",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "Label True (99.863%) --> False (92.864%)\n\ndid to kill a mocking ##bird win an academy award to kill a mocking ##bird ( film ) - - the film received overwhelmingly positive reviews from critics and was a box - office success , earning more\ndid to stamp a mocking ##bird win an academy award to defeat a mocking ##bird ( film ) - - the film received overwhelmingly positive reviews from critics and was a box - office success , earning more\n\n\nthan six times its budget . the film won three academy awards , including best actor for peck , and was nominated for eight , including best picture .\n\nthan six times its budget . the film won three academy awards , including best actor for peck , and was nominated for eight , including best picture .\n",
+        "dataset": "boolq",
+        "parsed_text": "filter id 73 and adversarial",
+        "user_text": "how can the model be tricked by id 73",
+        "timestamp": "16-06-2023, 13:49:50"
+    },
+    {
+        "id": "bdee66a7c3c209e42a20a7238eab8c9d8b620ca40ded541114196f89c54c",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "Label True (99.863%) --> False (92.864%)\n\ndid to kill a mocking ##bird win an academy award to kill a mocking ##bird ( film ) - - the film received overwhelmingly positive reviews from critics and was a box - office success , earning more\ndid to stamp a mocking ##bird win an academy award to defeat a mocking ##bird ( film ) - - the film received overwhelmingly positive reviews from critics and was a box - office success , earning more\n\n\nthan six times its budget . the film won three academy awards , including best actor for peck , and was nominated for eight , including best picture .\n\nthan six times its budget . the film won three academy awards , including best actor for peck , and was nominated for eight , including best picture .\n",
+        "dataset": "boolq",
+        "parsed_text": "filter id 73 and adversarial",
+        "user_text": "how can the model be tricked by id 73",
+        "timestamp": "16-06-2023, 13:49:54"
+    },
+    {
+        "id": "bdee66a7c3c209e42a20a7238eab8c9d8b620ca40ded541114196f89c54c",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "Label True (99.863%) --> False (92.864%)\n\ndid to kill a mocking ##bird win an academy award to kill a mocking ##bird ( film ) - - the film received overwhelmingly positive reviews from critics and was a box - office success , earning more\ndid to stamp a mocking ##bird win an academy award to defeat a mocking ##bird ( film ) - - the film received overwhelmingly positive reviews from critics and was a box - office success , earning more\n\n\nthan six times its budget . the film won three academy awards , including best actor for peck , and was nominated for eight , including best picture .\n\nthan six times its budget . the film won three academy awards , including best actor for peck , and was nominated for eight , including best picture .\n",
+        "dataset": "boolq",
+        "parsed_text": "filter id 73 and adversarial",
+        "user_text": "how can the model be tricked by id 73",
+        "timestamp": "16-06-2023, 13:49:57"
+    }
+]

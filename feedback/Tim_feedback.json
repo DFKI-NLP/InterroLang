@@ -1,0 +1,512 @@
+[
+    {
+        "id": "1404daf06d99816515cfb0828b4c8ae75e27c34f23fa4dc5a131fc46bc54",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "I'm a machine learning model trained to predict to answer yes/no questions based on text passages. I was trained on a Boolean question answering (yes/no) dataset.",
+        "dataset": "boolq",
+        "parsed_text": "self",
+        "user_text": "Could you tell me a bit more about what this is?",
+        "timestamp": "16-06-2023, 15:00:32"
+    },
+    {
+        "id": "1404daf06d99816515cfb0828b4c8ae75e27c34f23fa4dc5a131fc46bc54",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "I'm a machine learning model trained to predict to answer yes/no questions based on text passages. I was trained on a Boolean question answering (yes/no) dataset.",
+        "dataset": "boolq",
+        "parsed_text": "self",
+        "user_text": "Could you tell me a bit more about what this is?",
+        "timestamp": "16-06-2023, 15:00:35"
+    },
+    {
+        "id": "1404daf06d99816515cfb0828b4c8ae75e27c34f23fa4dc5a131fc46bc54",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "I'm a machine learning model trained to predict to answer yes/no questions based on text passages. I was trained on a Boolean question answering (yes/no) dataset.",
+        "dataset": "boolq",
+        "parsed_text": "self",
+        "user_text": "Could you tell me a bit more about what this is?",
+        "timestamp": "16-06-2023, 15:00:37"
+    },
+    {
+        "id": "2383c3fec4382d24b5bf84eddef97b4b7edd1ecd1acd48ba12a73056b5bd",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "I can answer questions about the model's predictions on the data. For example, I could tell you why certain predictions were made, how likely different outcomes are, what needs to happen to get different predictions, or what would happen to the predictions if the features changed in a particular way.\n\nI can perform these analyses on individual instances (i.e., using the instance id) or entire subgroups in the data.\n\nIf you want to see whether I can do something, try asking it!",
+        "dataset": "boolq",
+        "parsed_text": "function",
+        "user_text": "What can you do?",
+        "timestamp": "16-06-2023, 15:00:50"
+    },
+    {
+        "id": "2383c3fec4382d24b5bf84eddef97b4b7edd1ecd1acd48ba12a73056b5bd",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "I can answer questions about the model's predictions on the data. For example, I could tell you why certain predictions were made, how likely different outcomes are, what needs to happen to get different predictions, or what would happen to the predictions if the features changed in a particular way.\n\nI can perform these analyses on individual instances (i.e., using the instance id) or entire subgroups in the data.\n\nIf you want to see whether I can do something, try asking it!",
+        "dataset": "boolq",
+        "parsed_text": "function",
+        "user_text": "What can you do?",
+        "timestamp": "16-06-2023, 15:00:53"
+    },
+    {
+        "id": "2383c3fec4382d24b5bf84eddef97b4b7edd1ecd1acd48ba12a73056b5bd",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "I can answer questions about the model's predictions on the data. For example, I could tell you why certain predictions were made, how likely different outcomes are, what needs to happen to get different predictions, or what would happen to the predictions if the features changed in a particular way.\n\nI can perform these analyses on individual instances (i.e., using the instance id) or entire subgroups in the data.\n\nIf you want to see whether I can do something, try asking it!",
+        "dataset": "boolq",
+        "parsed_text": "function",
+        "user_text": "What can you do?",
+        "timestamp": "16-06-2023, 15:00:55"
+    },
+    {
+        "id": "efef6fbc4519c575670db1fe73b6f75fd264f0a68dc0a20c6ba86478f29b",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "For the data with id equal to 1996, the features are\n\nquestion: does the alphabet song and twinkle twinkle have the same tune\npassage: Alphabet song -- The song was first copyrighted in 1835 by the Boston-based music publisher Charles Bradlee, and given the title ``The A.B.C., a German air with variations for the flute with an easy accompaniment for the piano forte''. The musical arrangement was attributed to Louis Le Maire (sometimes Lemaire), an 18th-century composer. This was ``Entered according to act of Congress, in the year 1835, by C. Bradlee, in the clerk's office of the District Court of Massachusetts'', according to the Newberry Library, which also says, ``The theme is that used by Mozart for his piano variations, Ah, vous dirai-je, maman.'' This tune is the same as the tune for ``Twinkle, Twinkle, Little Star'' and ``Baa, Baa, Black Sheep''.",
+        "dataset": "boolq",
+        "parsed_text": "filter id 1996 and show",
+        "user_text": "please display id 1996\n",
+        "timestamp": "16-06-2023, 15:01:28"
+    },
+    {
+        "id": "efef6fbc4519c575670db1fe73b6f75fd264f0a68dc0a20c6ba86478f29b",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "For the data with id equal to 1996, the features are\n\nquestion: does the alphabet song and twinkle twinkle have the same tune\npassage: Alphabet song -- The song was first copyrighted in 1835 by the Boston-based music publisher Charles Bradlee, and given the title ``The A.B.C., a German air with variations for the flute with an easy accompaniment for the piano forte''. The musical arrangement was attributed to Louis Le Maire (sometimes Lemaire), an 18th-century composer. This was ``Entered according to act of Congress, in the year 1835, by C. Bradlee, in the clerk's office of the District Court of Massachusetts'', according to the Newberry Library, which also says, ``The theme is that used by Mozart for his piano variations, Ah, vous dirai-je, maman.'' This tune is the same as the tune for ``Twinkle, Twinkle, Little Star'' and ``Baa, Baa, Black Sheep''.",
+        "dataset": "boolq",
+        "parsed_text": "filter id 1996 and show",
+        "user_text": "please display id 1996\n",
+        "timestamp": "16-06-2023, 15:01:30"
+    },
+    {
+        "id": "efef6fbc4519c575670db1fe73b6f75fd264f0a68dc0a20c6ba86478f29b",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "For the data with id equal to 1996, the features are\n\nquestion: does the alphabet song and twinkle twinkle have the same tune\npassage: Alphabet song -- The song was first copyrighted in 1835 by the Boston-based music publisher Charles Bradlee, and given the title ``The A.B.C., a German air with variations for the flute with an easy accompaniment for the piano forte''. The musical arrangement was attributed to Louis Le Maire (sometimes Lemaire), an 18th-century composer. This was ``Entered according to act of Congress, in the year 1835, by C. Bradlee, in the clerk's office of the District Court of Massachusetts'', according to the Newberry Library, which also says, ``The theme is that used by Mozart for his piano variations, Ah, vous dirai-je, maman.'' This tune is the same as the tune for ``Twinkle, Twinkle, Little Star'' and ``Baa, Baa, Black Sheep''.",
+        "dataset": "boolq",
+        "parsed_text": "filter id 1996 and show",
+        "user_text": "please display id 1996\n",
+        "timestamp": "16-06-2023, 15:01:32"
+    },
+    {
+        "id": "0d7b807538e662bbab9a409a84c0def0151f996003dd8b0d6f068412c65e",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "Training Data Details:\n\n\nName\tContent\ntrain_data_name\tBoolQ Dataset: a question answering dataset for yes/no questions\ntrain_data_source\tplain text\ntrain_data_language\tEnglish\ntrain_data_number\t9427\n\nThe data contains information related to Boolean question answering (yes/no).\nThe exact feature names in the data are listed as follows:\nquestion\npassage\n\nThe dataset has following labels:\nTrue\nFalse\n\nThe model scores 72.11% accuracy on the data.",
+        "dataset": "boolq",
+        "parsed_text": "data train_data_source",
+        "user_text": "where does training data come from",
+        "timestamp": "16-06-2023, 15:01:56"
+    },
+    {
+        "id": "0d7b807538e662bbab9a409a84c0def0151f996003dd8b0d6f068412c65e",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "Training Data Details:\n\n\nName\tContent\ntrain_data_name\tBoolQ Dataset: a question answering dataset for yes/no questions\ntrain_data_source\tplain text\ntrain_data_language\tEnglish\ntrain_data_number\t9427\n\nThe data contains information related to Boolean question answering (yes/no).\nThe exact feature names in the data are listed as follows:\nquestion\npassage\n\nThe dataset has following labels:\nTrue\nFalse\n\nThe model scores 72.11% accuracy on the data.",
+        "dataset": "boolq",
+        "parsed_text": "data train_data_source",
+        "user_text": "where does training data come from",
+        "timestamp": "16-06-2023, 15:01:58"
+    },
+    {
+        "id": "0d7b807538e662bbab9a409a84c0def0151f996003dd8b0d6f068412c65e",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "Training Data Details:\n\n\nName\tContent\ntrain_data_name\tBoolQ Dataset: a question answering dataset for yes/no questions\ntrain_data_source\tplain text\ntrain_data_language\tEnglish\ntrain_data_number\t9427\n\nThe data contains information related to Boolean question answering (yes/no).\nThe exact feature names in the data are listed as follows:\nquestion\npassage\n\nThe dataset has following labels:\nTrue\nFalse\n\nThe model scores 72.11% accuracy on the data.",
+        "dataset": "boolq",
+        "parsed_text": "data train_data_source",
+        "user_text": "where does training data come from",
+        "timestamp": "16-06-2023, 15:01:59"
+    },
+    {
+        "id": "92e5c50b08ca5ca544d755aaf01c9f11906b60559d3c1d126e63bf903b2b",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "For all the instances in the data,\n\n\n37.829% of instances have label False\n62.171% of instances have label True",
+        "dataset": "boolq",
+        "parsed_text": "label",
+        "user_text": "please show what the gold labels are",
+        "timestamp": "16-06-2023, 15:03:05"
+    },
+    {
+        "id": "92e5c50b08ca5ca544d755aaf01c9f11906b60559d3c1d126e63bf903b2b",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "For all the instances in the data,\n\n\n37.829% of instances have label False\n62.171% of instances have label True",
+        "dataset": "boolq",
+        "parsed_text": "label",
+        "user_text": "please show what the gold labels are",
+        "timestamp": "16-06-2023, 15:03:07"
+    },
+    {
+        "id": "92e5c50b08ca5ca544d755aaf01c9f11906b60559d3c1d126e63bf903b2b",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "For all the instances in the data,\n\n\n37.829% of instances have label False\n62.171% of instances have label True",
+        "dataset": "boolq",
+        "parsed_text": "label",
+        "user_text": "please show what the gold labels are",
+        "timestamp": "16-06-2023, 15:03:09"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "I'm not sure I can do this. Maybe you have another request for me?",
+        "dataset": "boolq",
+        "parsed_text": "label",
+        "user_text": "return prediction id 2581",
+        "timestamp": "16-06-2023, 15:03:16"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "I'm not sure I can do this. Maybe you have another request for me?",
+        "dataset": "boolq",
+        "parsed_text": "label",
+        "user_text": "return prediction id 2581",
+        "timestamp": "16-06-2023, 15:03:19"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "I'm not sure I can do this. Maybe you have another request for me?",
+        "dataset": "boolq",
+        "parsed_text": "label",
+        "user_text": "return prediction id 2581",
+        "timestamp": "16-06-2023, 15:03:21"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "I'm sorry but could you rephrase the message, please?",
+        "dataset": "boolq",
+        "parsed_text": "label",
+        "user_text": "return prediction id 44\n",
+        "timestamp": "16-06-2023, 15:03:32"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "I'm sorry but could you rephrase the message, please?",
+        "dataset": "boolq",
+        "parsed_text": "label",
+        "user_text": "return prediction id 44\n",
+        "timestamp": "16-06-2023, 15:03:35"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "I'm sorry but could you rephrase the message, please?",
+        "dataset": "boolq",
+        "parsed_text": "label",
+        "user_text": "return prediction id 44\n",
+        "timestamp": "16-06-2023, 15:03:37"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "I'm sorry, I am not sure whether I understood you correctly. Did you mean that you want me to show the labels?",
+        "dataset": "boolq",
+        "parsed_text": "label",
+        "user_text": "what is the mean word length in id 1\n",
+        "timestamp": "16-06-2023, 15:04:14"
+    },
+    {
+        "id": "318dc32493985f29bdab8f195cc344214cee1a53d5d72d4da40668a23fda",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "The model scores 72.11% accuracy on all the instances in the data,.",
+        "dataset": "boolq",
+        "parsed_text": "score default",
+        "user_text": "no\n",
+        "timestamp": "16-06-2023, 15:04:20"
+    },
+    {
+        "id": "318dc32493985f29bdab8f195cc344214cee1a53d5d72d4da40668a23fda",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "The model scores 72.11% accuracy on all the instances in the data,.",
+        "dataset": "boolq",
+        "parsed_text": "score default",
+        "user_text": "no\n",
+        "timestamp": "16-06-2023, 15:04:22"
+    },
+    {
+        "id": "88fc80a100260162b345d276ac12d3dd016cb7b892e7998235ea847017bf",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "The 5 most frequent words in the dataset are:\n\nWord\tFrequence\nThe\t3814\n--\t3393\nIn\t961\nUnited\t882\nIt\t814",
+        "dataset": "boolq",
+        "parsed_text": "keywords 5",
+        "user_text": "which five words occur the most in the data?",
+        "timestamp": "16-06-2023, 15:05:16"
+    },
+    {
+        "id": "88fc80a100260162b345d276ac12d3dd016cb7b892e7998235ea847017bf",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "The 5 most frequent words in the dataset are:\n\nWord\tFrequence\nThe\t3814\n--\t3393\nIn\t961\nUnited\t882\nIt\t814",
+        "dataset": "boolq",
+        "parsed_text": "keywords 5",
+        "user_text": "which five words occur the most in the data?",
+        "timestamp": "16-06-2023, 15:05:18"
+    },
+    {
+        "id": "88fc80a100260162b345d276ac12d3dd016cb7b892e7998235ea847017bf",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "The 5 most frequent words in the dataset are:\n\nWord\tFrequence\nThe\t3814\n--\t3393\nIn\t961\nUnited\t882\nIt\t814",
+        "dataset": "boolq",
+        "parsed_text": "keywords 5",
+        "user_text": "which five words occur the most in the data?",
+        "timestamp": "16-06-2023, 15:05:19"
+    },
+    {
+        "id": "c40824cac0be543e55af215e1f0a59c2681c96197d3d824bdbd3fb6d4e48",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "The original text for id 0:\n\nIs socrates dead ? Socrates (/\u02c8s\u0252kr\u0259ti\u02d0z/;[1] Greek: \u03a3\u03c9\u03ba\u03c1\u03ac\u03c4\u03b7\u03c2; c. 470\u2013399 BC) was a Greek philosopher from...\n\nHere are some instances similar to id 0:\nid 465 (cossim 0.281):\nwas turkey a part of the roman empire History of Turkey -- The Persian Achaemenid Empire...\n\nid 943 (cossim 0.265):\nwere greece and rome around at the same time Greece in the Roman era -- Greece...\n\nid 2313 (cossim 0.257):\nis it possible for someone to die of laughter Death from laughter -- Death from laughter...",
+        "dataset": "boolq",
+        "parsed_text": "filter id 1339 and similar",
+        "user_text": "i'm looking for a case that is akin to id 1339 could you help me with that?",
+        "timestamp": "16-06-2023, 15:06:49"
+    },
+    {
+        "id": "c40824cac0be543e55af215e1f0a59c2681c96197d3d824bdbd3fb6d4e48",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "The original text for id 0:\n\nIs socrates dead ? Socrates (/\u02c8s\u0252kr\u0259ti\u02d0z/;[1] Greek: \u03a3\u03c9\u03ba\u03c1\u03ac\u03c4\u03b7\u03c2; c. 470\u2013399 BC) was a Greek philosopher from...\n\nHere are some instances similar to id 0:\nid 465 (cossim 0.281):\nwas turkey a part of the roman empire History of Turkey -- The Persian Achaemenid Empire...\n\nid 943 (cossim 0.265):\nwere greece and rome around at the same time Greece in the Roman era -- Greece...\n\nid 2313 (cossim 0.257):\nis it possible for someone to die of laughter Death from laughter -- Death from laughter...",
+        "dataset": "boolq",
+        "parsed_text": "filter id 1339 and similar",
+        "user_text": "i'm looking for a case that is akin to id 1339 could you help me with that?",
+        "timestamp": "16-06-2023, 15:06:51"
+    },
+    {
+        "id": "c40824cac0be543e55af215e1f0a59c2681c96197d3d824bdbd3fb6d4e48",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "The original text for id 0:\n\nIs socrates dead ? Socrates (/\u02c8s\u0252kr\u0259ti\u02d0z/;[1] Greek: \u03a3\u03c9\u03ba\u03c1\u03ac\u03c4\u03b7\u03c2; c. 470\u2013399 BC) was a Greek philosopher from...\n\nHere are some instances similar to id 0:\nid 465 (cossim 0.281):\nwas turkey a part of the roman empire History of Turkey -- The Persian Achaemenid Empire...\n\nid 943 (cossim 0.265):\nwere greece and rome around at the same time Greece in the Roman era -- Greece...\n\nid 2313 (cossim 0.257):\nis it possible for someone to die of laughter Death from laughter -- Death from laughter...",
+        "dataset": "boolq",
+        "parsed_text": "filter id 1339 and similar",
+        "user_text": "i'm looking for a case that is akin to id 1339 could you help me with that?",
+        "timestamp": "16-06-2023, 15:06:53"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "Sorry! I couldn't understand that. Could you please try to rephrase?",
+        "dataset": "boolq",
+        "parsed_text": "filter id 1339 and similar",
+        "user_text": "most important phrases in id 2621",
+        "timestamp": "16-06-2023, 15:07:08"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "Sorry! I couldn't understand that. Could you please try to rephrase?",
+        "dataset": "boolq",
+        "parsed_text": "filter id 1339 and similar",
+        "user_text": "most important phrases in id 2621",
+        "timestamp": "16-06-2023, 15:07:10"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "Sorry! I couldn't understand that. Could you please try to rephrase?",
+        "dataset": "boolq",
+        "parsed_text": "filter id 1339 and similar",
+        "user_text": "most important phrases in id 2621",
+        "timestamp": "16-06-2023, 15:07:12"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "I'm not sure I can do this. Maybe you have another request for me?",
+        "dataset": "boolq",
+        "parsed_text": "filter id 1339 and similar",
+        "user_text": "least important features for id 190\n",
+        "timestamp": "16-06-2023, 15:07:23"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "I'm not sure I can do this. Maybe you have another request for me?",
+        "dataset": "boolq",
+        "parsed_text": "filter id 1339 and similar",
+        "user_text": "least important features for id 190\n",
+        "timestamp": "16-06-2023, 15:07:25"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "I'm not sure I can do this. Maybe you have another request for me?",
+        "dataset": "boolq",
+        "parsed_text": "filter id 1339 and similar",
+        "user_text": "least important features for id 190\n",
+        "timestamp": "16-06-2023, 15:07:27"
+    },
+    {
+        "id": "0a637525c985a5d77629553020f0693e0d20e191093ab69be500b372c08f",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "hypothetical, metaphor, avoided, problematic, unsuitable, shepard, limitation, dubious, ##utable, and scout are the most attributed.",
+        "dataset": "boolq",
+        "parsed_text": "important False",
+        "user_text": "how do you decide whether some text is False",
+        "timestamp": "16-06-2023, 15:07:40"
+    },
+    {
+        "id": "0a637525c985a5d77629553020f0693e0d20e191093ab69be500b372c08f",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "hypothetical, metaphor, avoided, problematic, unsuitable, shepard, limitation, dubious, ##utable, and scout are the most attributed.",
+        "dataset": "boolq",
+        "parsed_text": "important False",
+        "user_text": "how do you decide whether some text is False",
+        "timestamp": "16-06-2023, 15:07:45"
+    },
+    {
+        "id": "0a637525c985a5d77629553020f0693e0d20e191093ab69be500b372c08f",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "hypothetical, metaphor, avoided, problematic, unsuitable, shepard, limitation, dubious, ##utable, and scout are the most attributed.",
+        "dataset": "boolq",
+        "parsed_text": "important False",
+        "user_text": "how do you decide whether some text is False",
+        "timestamp": "16-06-2023, 15:07:47"
+    },
+    {
+        "id": "2934eca7afa673a3704653101bd34730d809068966e98589717027defe02",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "Original text: Question: did kristen bell sing all the voices of anna Passage: Anna (Frozen) -- Princess Anna of Arendelle is a fictional character who appears in Walt Disney Animation Studios' 53rd animated film Frozen. She is voiced by Kristen Bell as an adult. At the beginning of the film, Livvy Stubenrauch and Katie Lopez provided her speaking and singing voice as a young child, respectively. Agatha Lee Monn portrayed her as a nine-year-old (singing).\nPrediction: true\nExplanation: Kristin Bell provided Anna's speaking voice in the movie Frozone as a young Child. The passage states that Anna was portrayed as as nine year old in a movie. Therefore, Kristin bell provided the singing as Anna in Froze as well.",
+        "dataset": "boolq",
+        "parsed_text": "filter id 1938 and rationalize",
+        "user_text": "generate a natural language explanation for id 1938",
+        "timestamp": "16-06-2023, 15:08:12"
+    },
+    {
+        "id": "2934eca7afa673a3704653101bd34730d809068966e98589717027defe02",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "Original text: Question: did kristen bell sing all the voices of anna Passage: Anna (Frozen) -- Princess Anna of Arendelle is a fictional character who appears in Walt Disney Animation Studios' 53rd animated film Frozen. She is voiced by Kristen Bell as an adult. At the beginning of the film, Livvy Stubenrauch and Katie Lopez provided her speaking and singing voice as a young child, respectively. Agatha Lee Monn portrayed her as a nine-year-old (singing).\nPrediction: true\nExplanation: Kristin Bell provided Anna's speaking voice in the movie Frozone as a young Child. The passage states that Anna was portrayed as as nine year old in a movie. Therefore, Kristin bell provided the singing as Anna in Froze as well.",
+        "dataset": "boolq",
+        "parsed_text": "filter id 1938 and rationalize",
+        "user_text": "generate a natural language explanation for id 1938",
+        "timestamp": "16-06-2023, 15:08:14"
+    },
+    {
+        "id": "2934eca7afa673a3704653101bd34730d809068966e98589717027defe02",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "Original text: Question: did kristen bell sing all the voices of anna Passage: Anna (Frozen) -- Princess Anna of Arendelle is a fictional character who appears in Walt Disney Animation Studios' 53rd animated film Frozen. She is voiced by Kristen Bell as an adult. At the beginning of the film, Livvy Stubenrauch and Katie Lopez provided her speaking and singing voice as a young child, respectively. Agatha Lee Monn portrayed her as a nine-year-old (singing).\nPrediction: true\nExplanation: Kristin Bell provided Anna's speaking voice in the movie Frozone as a young Child. The passage states that Anna was portrayed as as nine year old in a movie. Therefore, Kristin bell provided the singing as Anna in Froze as well.",
+        "dataset": "boolq",
+        "parsed_text": "filter id 1938 and rationalize",
+        "user_text": "generate a natural language explanation for id 1938",
+        "timestamp": "16-06-2023, 15:08:16"
+    },
+    {
+        "id": "db65844d90bb7aed2f6f40522acde2fc192d57aa93e8a7f6a70ebb52a0d8",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "[The original text]: did kristen bell sing all the voices of anna Anna (Frozen) -- Princess Anna of Arendelle is a fictional character who appears in Walt Disney Animation Studios' 53rd animated film Frozen. She is voiced by Kristen Bell as an adult. At the beginning of the film, Livvy Stubenrauch and Katie Lopez provided her speaking and singing voice as a young child, respectively. Agatha Lee Monn portrayed her as a nine-year-old (singing).\n[Counterfactual 1]: As for the acting, Tanya Koratkowski and Katherine Fishel were awful as Ms. Maggie.\n\nthe predicted label True changes to False.",
+        "dataset": "boolq",
+        "parsed_text": "filter id 1938 and cfe",
+        "user_text": "how would you flip the prediction for id 1938\n",
+        "timestamp": "16-06-2023, 15:12:59"
+    },
+    {
+        "id": "db65844d90bb7aed2f6f40522acde2fc192d57aa93e8a7f6a70ebb52a0d8",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "[The original text]: did kristen bell sing all the voices of anna Anna (Frozen) -- Princess Anna of Arendelle is a fictional character who appears in Walt Disney Animation Studios' 53rd animated film Frozen. She is voiced by Kristen Bell as an adult. At the beginning of the film, Livvy Stubenrauch and Katie Lopez provided her speaking and singing voice as a young child, respectively. Agatha Lee Monn portrayed her as a nine-year-old (singing).\n[Counterfactual 1]: As for the acting, Tanya Koratkowski and Katherine Fishel were awful as Ms. Maggie.\n\nthe predicted label True changes to False.",
+        "dataset": "boolq",
+        "parsed_text": "filter id 1938 and cfe",
+        "user_text": "how would you flip the prediction for id 1938\n",
+        "timestamp": "16-06-2023, 15:13:01"
+    },
+    {
+        "id": "db65844d90bb7aed2f6f40522acde2fc192d57aa93e8a7f6a70ebb52a0d8",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "[The original text]: did kristen bell sing all the voices of anna Anna (Frozen) -- Princess Anna of Arendelle is a fictional character who appears in Walt Disney Animation Studios' 53rd animated film Frozen. She is voiced by Kristen Bell as an adult. At the beginning of the film, Livvy Stubenrauch and Katie Lopez provided her speaking and singing voice as a young child, respectively. Agatha Lee Monn portrayed her as a nine-year-old (singing).\n[Counterfactual 1]: As for the acting, Tanya Koratkowski and Katherine Fishel were awful as Ms. Maggie.\n\nthe predicted label True changes to False.",
+        "dataset": "boolq",
+        "parsed_text": "filter id 1938 and cfe",
+        "user_text": "how would you flip the prediction for id 1938\n",
+        "timestamp": "16-06-2023, 15:13:03"
+    },
+    {
+        "id": "141ec36e4cca352f82a8fad54f081847da8af1daf34b17688f3261343638",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "Label True (99.644%) --> False (99.718%)\n\ndid michael and pam date on the office pam bees ##ly - - in the series pilot , michael is over ##tly rude to pam and at one point fake ##s her firing , leaving her in tears . he often makes\ndid michael and pam engagement on the office pam bees ##ly - - in the series pilot , michael is over ##tly rude to pam and at one point fake ##s her firing , leaving her in tears . he often makes\n\n\nsuggest ##ive if harmless remarks about her beauty and general appearance , and at one point lies to the camera that they used to date ( inspiring a horrified ` ` what ? ? ? ' ' from pam when an\n\nsuggest ##ive if harmless remarks about her beauty and general appearance , and at one point lies to the camera that they used to date ( inspiring a horrified ` ` what ? ? ? ' ' from pam when an\n\n\ninterview ##er relay ##s the message to her ) . however , his imp ##ulsive attempt to kiss her during di ##wal ##i is shot down and marked the end of any romantic dreams for michael with pam . over\ninterview ##er relay ##s the message to her ) . however , his imp ##ulsive attempt to kiss her during di ##wal ##i is shot down and marked the end of any romantic dreams for michael with pam . over\n\n\ntime , the combination of michael being supportive of her goals , her transition from a bad relationship with roy to a great one with jim as well as her finding a job she not only enjoys but is\n\ntime , the combination of michael being supportive of her goals , her transition from a bad relationship with roy to a great one with jim as well as her finding a job she not only enjoys but is\n\n\neffective at in the office administrator position and michael finding his own soul ##mate in holly fl ##ax made pam soft ##en her stance towards michael , and the experience at the michael scott\neffective at in the office administrator position and michael finding his own soul ##mate in holly fl ##ax made pam soft ##en her stance towards michael , and the experience at the michael scott\n\n\npaper company further bonded them ( as did michael ' s decision to choose pam instead of ryan howard as the only ms ##pc salesman to keep that job when michael returned as branch manager ) . pam was\n\npaper company further bonded them ( as did michael ' s decision to choose pam instead of ryan howard as the only ms ##pc salesman to keep that job when michael returned as branch manager ) . pam was\n\n\nfurious at michael for dating her mom helene , and ex ##cor ##iated him at length during ` ` the lover ' ' before eventually slapping him in ` ` double date ' ' , but they once again were able to be\nfurious at michael for dating her mom helene , and ex ##cor ##iated him at length during ` ` the lover ' ' before eventually slapping him in ` ` double date ' ' , but they once again were able to be\n\n\ncivil to each other afterward . pam does set up boundaries around her personal life that michael can ' t cross , like telling him that he wasn ' t ce ##ce ' s godfather . by season 7 , pam acts as\n\ncivil to each other afterward . pam does set up boundaries around her personal life that michael can ' t cross , like telling him that he wasn ' t ce ##ce ' s godfather . by season 7 , pam acts as\n\n\nsomething of a guardian angel for michael , steering him away from ( numerous ) bad ideas and towards his ( fewer but real ) good ones , such as his successful efforts to propose to holly . in\nsomething of a guardian angel for michael , steering him away from ( numerous ) bad ideas and towards his ( fewer but real ) good ones , such as his successful efforts to propose to holly . in\n\n\nmichael ' s finale ` ` goodbye , michael ' ' , pam spends the whole day looking for a sh ##red ##der , believing that the next day michael was leaving . as michael takes off his microphone and heads\n\nmichael ' s finale ` ` goodbye , michael ' ' , pam spends the whole day looking for a sh ##red ##der , believing that the next day michael was leaving . as michael takes off his microphone and heads\n\n\ndown the airport concourse , pam runs to him with no shoes and hugs him as he kisses her cheek . the two have a nice moment and he walks off , leaving her holding her shoes . she then tells the\ndown the airport concourse , pam runs to him with no shoes and hugs him as he kisses her cheek . the two have a nice moment and he walks off , leaving her holding her shoes . she then tells the\n\n\ncamera that he was happy , wanting to be an advanced rewards member , and was glad to be going home to see holly . she then is there to watch michael ' s plane take off . in a deleted scene from ` `\n\ncamera that he was happy , wanting to be an advanced rewards member , and was glad to be going home to see holly . she then is there to watch michael ' s plane take off . in a deleted scene from ` `\n\n\nthe inner circle ' ' , we learn pam is flat ##tered that michael named his new puppy ` ` pamela bea ##gs ##ley ' ' , and in ` ` the list ' ' she playfully tease ##s jim by calling their second child\nthe inner circle ' ' , we learn pam is flat ##tered that michael named his new puppy ` ` pamela bea ##gs ##ley ' ' , and in ` ` the list ' ' she playfully tease ##s jim by calling their second child\n\n\n` ` little michael scott ' ' , further proving that the two have developed a genuine friendship .\n\n` ` little michael scott ' ' , further proving that the two have developed a genuine friendship .\n",
+        "dataset": "boolq",
+        "parsed_text": "filter id 276 and adversarial",
+        "user_text": "generate an adversarial instance for id 276",
+        "timestamp": "16-06-2023, 15:14:04"
+    },
+    {
+        "id": "141ec36e4cca352f82a8fad54f081847da8af1daf34b17688f3261343638",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "Label True (99.644%) --> False (99.718%)\n\ndid michael and pam date on the office pam bees ##ly - - in the series pilot , michael is over ##tly rude to pam and at one point fake ##s her firing , leaving her in tears . he often makes\ndid michael and pam engagement on the office pam bees ##ly - - in the series pilot , michael is over ##tly rude to pam and at one point fake ##s her firing , leaving her in tears . he often makes\n\n\nsuggest ##ive if harmless remarks about her beauty and general appearance , and at one point lies to the camera that they used to date ( inspiring a horrified ` ` what ? ? ? ' ' from pam when an\n\nsuggest ##ive if harmless remarks about her beauty and general appearance , and at one point lies to the camera that they used to date ( inspiring a horrified ` ` what ? ? ? ' ' from pam when an\n\n\ninterview ##er relay ##s the message to her ) . however , his imp ##ulsive attempt to kiss her during di ##wal ##i is shot down and marked the end of any romantic dreams for michael with pam . over\ninterview ##er relay ##s the message to her ) . however , his imp ##ulsive attempt to kiss her during di ##wal ##i is shot down and marked the end of any romantic dreams for michael with pam . over\n\n\ntime , the combination of michael being supportive of her goals , her transition from a bad relationship with roy to a great one with jim as well as her finding a job she not only enjoys but is\n\ntime , the combination of michael being supportive of her goals , her transition from a bad relationship with roy to a great one with jim as well as her finding a job she not only enjoys but is\n\n\neffective at in the office administrator position and michael finding his own soul ##mate in holly fl ##ax made pam soft ##en her stance towards michael , and the experience at the michael scott\neffective at in the office administrator position and michael finding his own soul ##mate in holly fl ##ax made pam soft ##en her stance towards michael , and the experience at the michael scott\n\n\npaper company further bonded them ( as did michael ' s decision to choose pam instead of ryan howard as the only ms ##pc salesman to keep that job when michael returned as branch manager ) . pam was\n\npaper company further bonded them ( as did michael ' s decision to choose pam instead of ryan howard as the only ms ##pc salesman to keep that job when michael returned as branch manager ) . pam was\n\n\nfurious at michael for dating her mom helene , and ex ##cor ##iated him at length during ` ` the lover ' ' before eventually slapping him in ` ` double date ' ' , but they once again were able to be\nfurious at michael for dating her mom helene , and ex ##cor ##iated him at length during ` ` the lover ' ' before eventually slapping him in ` ` double date ' ' , but they once again were able to be\n\n\ncivil to each other afterward . pam does set up boundaries around her personal life that michael can ' t cross , like telling him that he wasn ' t ce ##ce ' s godfather . by season 7 , pam acts as\n\ncivil to each other afterward . pam does set up boundaries around her personal life that michael can ' t cross , like telling him that he wasn ' t ce ##ce ' s godfather . by season 7 , pam acts as\n\n\nsomething of a guardian angel for michael , steering him away from ( numerous ) bad ideas and towards his ( fewer but real ) good ones , such as his successful efforts to propose to holly . in\nsomething of a guardian angel for michael , steering him away from ( numerous ) bad ideas and towards his ( fewer but real ) good ones , such as his successful efforts to propose to holly . in\n\n\nmichael ' s finale ` ` goodbye , michael ' ' , pam spends the whole day looking for a sh ##red ##der , believing that the next day michael was leaving . as michael takes off his microphone and heads\n\nmichael ' s finale ` ` goodbye , michael ' ' , pam spends the whole day looking for a sh ##red ##der , believing that the next day michael was leaving . as michael takes off his microphone and heads\n\n\ndown the airport concourse , pam runs to him with no shoes and hugs him as he kisses her cheek . the two have a nice moment and he walks off , leaving her holding her shoes . she then tells the\ndown the airport concourse , pam runs to him with no shoes and hugs him as he kisses her cheek . the two have a nice moment and he walks off , leaving her holding her shoes . she then tells the\n\n\ncamera that he was happy , wanting to be an advanced rewards member , and was glad to be going home to see holly . she then is there to watch michael ' s plane take off . in a deleted scene from ` `\n\ncamera that he was happy , wanting to be an advanced rewards member , and was glad to be going home to see holly . she then is there to watch michael ' s plane take off . in a deleted scene from ` `\n\n\nthe inner circle ' ' , we learn pam is flat ##tered that michael named his new puppy ` ` pamela bea ##gs ##ley ' ' , and in ` ` the list ' ' she playfully tease ##s jim by calling their second child\nthe inner circle ' ' , we learn pam is flat ##tered that michael named his new puppy ` ` pamela bea ##gs ##ley ' ' , and in ` ` the list ' ' she playfully tease ##s jim by calling their second child\n\n\n` ` little michael scott ' ' , further proving that the two have developed a genuine friendship .\n\n` ` little michael scott ' ' , further proving that the two have developed a genuine friendship .\n",
+        "dataset": "boolq",
+        "parsed_text": "filter id 276 and adversarial",
+        "user_text": "generate an adversarial instance for id 276",
+        "timestamp": "16-06-2023, 15:14:06"
+    },
+    {
+        "id": "141ec36e4cca352f82a8fad54f081847da8af1daf34b17688f3261343638",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "Label True (99.644%) --> False (99.718%)\n\ndid michael and pam date on the office pam bees ##ly - - in the series pilot , michael is over ##tly rude to pam and at one point fake ##s her firing , leaving her in tears . he often makes\ndid michael and pam engagement on the office pam bees ##ly - - in the series pilot , michael is over ##tly rude to pam and at one point fake ##s her firing , leaving her in tears . he often makes\n\n\nsuggest ##ive if harmless remarks about her beauty and general appearance , and at one point lies to the camera that they used to date ( inspiring a horrified ` ` what ? ? ? ' ' from pam when an\n\nsuggest ##ive if harmless remarks about her beauty and general appearance , and at one point lies to the camera that they used to date ( inspiring a horrified ` ` what ? ? ? ' ' from pam when an\n\n\ninterview ##er relay ##s the message to her ) . however , his imp ##ulsive attempt to kiss her during di ##wal ##i is shot down and marked the end of any romantic dreams for michael with pam . over\ninterview ##er relay ##s the message to her ) . however , his imp ##ulsive attempt to kiss her during di ##wal ##i is shot down and marked the end of any romantic dreams for michael with pam . over\n\n\ntime , the combination of michael being supportive of her goals , her transition from a bad relationship with roy to a great one with jim as well as her finding a job she not only enjoys but is\n\ntime , the combination of michael being supportive of her goals , her transition from a bad relationship with roy to a great one with jim as well as her finding a job she not only enjoys but is\n\n\neffective at in the office administrator position and michael finding his own soul ##mate in holly fl ##ax made pam soft ##en her stance towards michael , and the experience at the michael scott\neffective at in the office administrator position and michael finding his own soul ##mate in holly fl ##ax made pam soft ##en her stance towards michael , and the experience at the michael scott\n\n\npaper company further bonded them ( as did michael ' s decision to choose pam instead of ryan howard as the only ms ##pc salesman to keep that job when michael returned as branch manager ) . pam was\n\npaper company further bonded them ( as did michael ' s decision to choose pam instead of ryan howard as the only ms ##pc salesman to keep that job when michael returned as branch manager ) . pam was\n\n\nfurious at michael for dating her mom helene , and ex ##cor ##iated him at length during ` ` the lover ' ' before eventually slapping him in ` ` double date ' ' , but they once again were able to be\nfurious at michael for dating her mom helene , and ex ##cor ##iated him at length during ` ` the lover ' ' before eventually slapping him in ` ` double date ' ' , but they once again were able to be\n\n\ncivil to each other afterward . pam does set up boundaries around her personal life that michael can ' t cross , like telling him that he wasn ' t ce ##ce ' s godfather . by season 7 , pam acts as\n\ncivil to each other afterward . pam does set up boundaries around her personal life that michael can ' t cross , like telling him that he wasn ' t ce ##ce ' s godfather . by season 7 , pam acts as\n\n\nsomething of a guardian angel for michael , steering him away from ( numerous ) bad ideas and towards his ( fewer but real ) good ones , such as his successful efforts to propose to holly . in\nsomething of a guardian angel for michael , steering him away from ( numerous ) bad ideas and towards his ( fewer but real ) good ones , such as his successful efforts to propose to holly . in\n\n\nmichael ' s finale ` ` goodbye , michael ' ' , pam spends the whole day looking for a sh ##red ##der , believing that the next day michael was leaving . as michael takes off his microphone and heads\n\nmichael ' s finale ` ` goodbye , michael ' ' , pam spends the whole day looking for a sh ##red ##der , believing that the next day michael was leaving . as michael takes off his microphone and heads\n\n\ndown the airport concourse , pam runs to him with no shoes and hugs him as he kisses her cheek . the two have a nice moment and he walks off , leaving her holding her shoes . she then tells the\ndown the airport concourse , pam runs to him with no shoes and hugs him as he kisses her cheek . the two have a nice moment and he walks off , leaving her holding her shoes . she then tells the\n\n\ncamera that he was happy , wanting to be an advanced rewards member , and was glad to be going home to see holly . she then is there to watch michael ' s plane take off . in a deleted scene from ` `\n\ncamera that he was happy , wanting to be an advanced rewards member , and was glad to be going home to see holly . she then is there to watch michael ' s plane take off . in a deleted scene from ` `\n\n\nthe inner circle ' ' , we learn pam is flat ##tered that michael named his new puppy ` ` pamela bea ##gs ##ley ' ' , and in ` ` the list ' ' she playfully tease ##s jim by calling their second child\nthe inner circle ' ' , we learn pam is flat ##tered that michael named his new puppy ` ` pamela bea ##gs ##ley ' ' , and in ` ` the list ' ' she playfully tease ##s jim by calling their second child\n\n\n` ` little michael scott ' ' , further proving that the two have developed a genuine friendship .\n\n` ` little michael scott ' ' , further proving that the two have developed a genuine friendship .\n",
+        "dataset": "boolq",
+        "parsed_text": "filter id 276 and adversarial",
+        "user_text": "generate an adversarial instance for id 276",
+        "timestamp": "16-06-2023, 15:14:08"
+    },
+    {
+        "id": "da02c7e07e6a5d43cd92f9163fcebf1e43ce048d0dfe8034923f4b57b6e2",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "Original text: (ID 280)\nInterstate 70 in Kansas -- In Topeka, I-70 intersects a child route, I-470, twice. The second time it is intersected, the Kansas Turnpike merges, making I-70 into a toll road. This is one of only two sections of I-70 that are tolled (the other is along the Pennsylvania Turnpike), with the maximum toll distance costing $17.50 as of 2016. I-70 carries this designation from Topeka to Bonner Springs. It is the eastern terminus of the turnpike, and from there to 18th Street and extending on to the Kansas eastern border, the highway is free.\nAugmentation by word replacements:\nInterstate 70 in Kansas - - In Topeka, US - 60 intersects a child route, I - 470, twice. The second time it is intersected, the Kansas route merges, making I - 70 into a toll road. This is one of only two sections of Interstate - 70 that are paid (the other is along the Pennsylvania Turnpike), with the maximum toll distance costing $ 17. 50 for May 2016. I - 70 carries this designation from Topeka to Bonner Springs. It is an eastern terminus of the turnpike, and from there to 18th City and extending on to the Kansas eastern border, the roadway is free.",
+        "dataset": "boolq",
+        "parsed_text": "filter id 280 and augment",
+        "user_text": "starting from id 2800 how would a new instance look like?",
+        "timestamp": "16-06-2023, 15:14:23"
+    },
+    {
+        "id": "da02c7e07e6a5d43cd92f9163fcebf1e43ce048d0dfe8034923f4b57b6e2",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "Original text: (ID 280)\nInterstate 70 in Kansas -- In Topeka, I-70 intersects a child route, I-470, twice. The second time it is intersected, the Kansas Turnpike merges, making I-70 into a toll road. This is one of only two sections of I-70 that are tolled (the other is along the Pennsylvania Turnpike), with the maximum toll distance costing $17.50 as of 2016. I-70 carries this designation from Topeka to Bonner Springs. It is the eastern terminus of the turnpike, and from there to 18th Street and extending on to the Kansas eastern border, the highway is free.\nAugmentation by word replacements:\nInterstate 70 in Kansas - - In Topeka, US - 60 intersects a child route, I - 470, twice. The second time it is intersected, the Kansas route merges, making I - 70 into a toll road. This is one of only two sections of Interstate - 70 that are paid (the other is along the Pennsylvania Turnpike), with the maximum toll distance costing $ 17. 50 for May 2016. I - 70 carries this designation from Topeka to Bonner Springs. It is an eastern terminus of the turnpike, and from there to 18th City and extending on to the Kansas eastern border, the roadway is free.",
+        "dataset": "boolq",
+        "parsed_text": "filter id 280 and augment",
+        "user_text": "starting from id 2800 how would a new instance look like?",
+        "timestamp": "16-06-2023, 15:14:25"
+    },
+    {
+        "id": "da02c7e07e6a5d43cd92f9163fcebf1e43ce048d0dfe8034923f4b57b6e2",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "Original text: (ID 280)\nInterstate 70 in Kansas -- In Topeka, I-70 intersects a child route, I-470, twice. The second time it is intersected, the Kansas Turnpike merges, making I-70 into a toll road. This is one of only two sections of I-70 that are tolled (the other is along the Pennsylvania Turnpike), with the maximum toll distance costing $17.50 as of 2016. I-70 carries this designation from Topeka to Bonner Springs. It is the eastern terminus of the turnpike, and from there to 18th Street and extending on to the Kansas eastern border, the highway is free.\nAugmentation by word replacements:\nInterstate 70 in Kansas - - In Topeka, US - 60 intersects a child route, I - 470, twice. The second time it is intersected, the Kansas route merges, making I - 70 into a toll road. This is one of only two sections of Interstate - 70 that are paid (the other is along the Pennsylvania Turnpike), with the maximum toll distance costing $ 17. 50 for May 2016. I - 70 carries this designation from Topeka to Bonner Springs. It is an eastern terminus of the turnpike, and from there to 18th City and extending on to the Kansas eastern border, the roadway is free.",
+        "dataset": "boolq",
+        "parsed_text": "filter id 280 and augment",
+        "user_text": "starting from id 2800 how would a new instance look like?",
+        "timestamp": "16-06-2023, 15:14:27"
+    }
+]

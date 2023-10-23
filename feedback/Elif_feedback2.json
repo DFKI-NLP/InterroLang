@@ -1,0 +1,56 @@
+[
+    {
+        "id": "5383a4214de1becbec19e695dff6b37f39c01b4ea8c59b6df3440b8ce850",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "I'm a machine learning model trained to predict to answer offensive/non-offensive attitude based on tweets. I was trained on a identify the type and the target of offensive texts in social media dataset.",
+        "dataset": "olid",
+        "parsed_text": "self",
+        "timestamp": "13-06-2023, 10:34:19"
+    },
+    {
+        "id": "5383a4214de1becbec19e695dff6b37f39c01b4ea8c59b6df3440b8ce850",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "I'm a machine learning model trained to predict to answer offensive/non-offensive attitude based on tweets. I was trained on a identify the type and the target of offensive texts in social media dataset.",
+        "dataset": "olid",
+        "parsed_text": "self",
+        "timestamp": "13-06-2023, 10:34:21"
+    },
+    {
+        "id": "5383a4214de1becbec19e695dff6b37f39c01b4ea8c59b6df3440b8ce850",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "I'm a machine learning model trained to predict to answer offensive/non-offensive attitude based on tweets. I was trained on a identify the type and the target of offensive texts in social media dataset.",
+        "dataset": "olid",
+        "parsed_text": "self",
+        "timestamp": "13-06-2023, 10:34:23"
+    },
+    {
+        "id": "eee9af22499713fcac863cd6e815266e70287d666755cbe38fe44aaa2855",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "Your input is: @USER They are Antifa democrats disguised as GOP looking to infiltrate the party. Don't worry though it doesn't take long to figure them out.\nThe prediction is: non-offensive",
+        "dataset": "olid",
+        "parsed_text": "filter id 85 and predict",
+        "timestamp": "13-06-2023, 10:37:03"
+    },
+    {
+        "id": "eee9af22499713fcac863cd6e815266e70287d666755cbe38fe44aaa2855",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "Your input is: @USER They are Antifa democrats disguised as GOP looking to infiltrate the party. Don't worry though it doesn't take long to figure them out.\nThe prediction is: non-offensive",
+        "dataset": "olid",
+        "parsed_text": "filter id 85 and predict",
+        "timestamp": "13-06-2023, 10:37:05"
+    },
+    {
+        "id": "eee9af22499713fcac863cd6e815266e70287d666755cbe38fe44aaa2855",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "Your input is: @USER They are Antifa democrats disguised as GOP looking to infiltrate the party. Don't worry though it doesn't take long to figure them out.\nThe prediction is: non-offensive",
+        "dataset": "olid",
+        "parsed_text": "filter id 85 and predict",
+        "timestamp": "13-06-2023, 10:37:15"
+    }
+]

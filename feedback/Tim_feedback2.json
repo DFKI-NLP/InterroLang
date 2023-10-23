@@ -1,0 +1,317 @@
+[
+    {
+        "id": "0076bbd87442d441d71c36bdae98d7959c97fc9093f27b949102becae8f5",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "I'm a machine learning model trained to predict to answer offensive/non-offensive attitude based on tweets. I was trained on a identify the type and the target of offensive texts in social media dataset.",
+        "dataset": "olid",
+        "parsed_text": "self",
+        "timestamp": "16-06-2023, 14:39:28"
+    },
+    {
+        "id": "0076bbd87442d441d71c36bdae98d7959c97fc9093f27b949102becae8f5",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "I'm a machine learning model trained to predict to answer offensive/non-offensive attitude based on tweets. I was trained on a identify the type and the target of offensive texts in social media dataset.",
+        "dataset": "olid",
+        "parsed_text": "self",
+        "timestamp": "16-06-2023, 14:39:30"
+    },
+    {
+        "id": "c860b975dc086cb754236f20a9b3654cd3967a052cd7f1cc2a3c5725a635",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "The 25 most frequent words in the dataset are:\n\nWord\tFrequence\n@USER\t6491\nI\t561\nURL\t392\nYou\t234\ngun\t221\nlike\t208\nHe\t206\n\t186\n\"@USER\t176\nShe\t171\npeople\t163\nMAGA\t162\ncontrol\t156\n&\t150\nThe\t150\nliberals\t148\n:face_with_tears_of_joy:\t128\nwould\t114\none\t113\nget\t113\nAntifa\t103\nthink\t102\nLiberals\t96\nknow\t96\nAnd\t94",
+        "dataset": "olid",
+        "parsed_text": "keywords all",
+        "timestamp": "16-06-2023, 14:43:21"
+    },
+    {
+        "id": "c860b975dc086cb754236f20a9b3654cd3967a052cd7f1cc2a3c5725a635",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "The 25 most frequent words in the dataset are:\n\nWord\tFrequence\n@USER\t6491\nI\t561\nURL\t392\nYou\t234\ngun\t221\nlike\t208\nHe\t206\n\t186\n\"@USER\t176\nShe\t171\npeople\t163\nMAGA\t162\ncontrol\t156\n&\t150\nThe\t150\nliberals\t148\n:face_with_tears_of_joy:\t128\nwould\t114\none\t113\nget\t113\nAntifa\t103\nthink\t102\nLiberals\t96\nknow\t96\nAnd\t94",
+        "dataset": "olid",
+        "parsed_text": "keywords all",
+        "timestamp": "16-06-2023, 14:43:29"
+    },
+    {
+        "id": "c860b975dc086cb754236f20a9b3654cd3967a052cd7f1cc2a3c5725a635",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "The 25 most frequent words in the dataset are:\n\nWord\tFrequence\n@USER\t6491\nI\t561\nURL\t392\nYou\t234\ngun\t221\nlike\t208\nHe\t206\n\t186\n\"@USER\t176\nShe\t171\npeople\t163\nMAGA\t162\ncontrol\t156\n&\t150\nThe\t150\nliberals\t148\n:face_with_tears_of_joy:\t128\nwould\t114\none\t113\nget\t113\nAntifa\t103\nthink\t102\nLiberals\t96\nknow\t96\nAnd\t94",
+        "dataset": "olid",
+        "parsed_text": "keywords all",
+        "timestamp": "16-06-2023, 14:43:32"
+    },
+    {
+        "id": "346e606556236a453956321a64ee74195f641fa1dcefd5d3d7c5239b5afb",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "Your input is: What are the main features in ID 9?\nThe prediction is: non-offensive",
+        "dataset": "olid",
+        "parsed_text": "filter id 82 and predict",
+        "timestamp": "16-06-2023, 14:44:04"
+    },
+    {
+        "id": "346e606556236a453956321a64ee74195f641fa1dcefd5d3d7c5239b5afb",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "Your input is: What are the main features in ID 9?\nThe prediction is: non-offensive",
+        "dataset": "olid",
+        "parsed_text": "filter id 82 and predict",
+        "timestamp": "16-06-2023, 14:44:08"
+    },
+    {
+        "id": "346e606556236a453956321a64ee74195f641fa1dcefd5d3d7c5239b5afb",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "Your input is: What are the main features in ID 9?\nThe prediction is: non-offensive",
+        "dataset": "olid",
+        "parsed_text": "filter id 82 and predict",
+        "timestamp": "16-06-2023, 14:44:10"
+    },
+    {
+        "id": "a2e6effd754062829be8453cbde6fa838e8858594615224062f1e930cd9e",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "The original text for id 0:\n\nWhat are the main features in ID 9?...\n\nHere are some instances similar to id 0:\nid 1201 (cossim 0.35):\n6 Reason? There are more. URL...\n\nid 877 (cossim 0.321):\n@USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER...\n@USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER I guess you didn\u2019t see the 9/11 ad that replaced DB. Glad you are up on things.\n\nid 123 (cossim 0.251):\n@USER @USER We? So you are going to help like you did at the 911 site?...\n@USER @USER We? So you are going to help like you did at the 911 site? Pictures pleaz. :lying_face:",
+        "dataset": "olid",
+        "parsed_text": "filter id 1 and similar 5",
+        "timestamp": "16-06-2023, 14:45:48"
+    },
+    {
+        "id": "a2e6effd754062829be8453cbde6fa838e8858594615224062f1e930cd9e",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "The original text for id 0:\n\nWhat are the main features in ID 9?...\n\nHere are some instances similar to id 0:\nid 1201 (cossim 0.35):\n6 Reason? There are more. URL...\n\nid 877 (cossim 0.321):\n@USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER...\n@USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER I guess you didn\u2019t see the 9/11 ad that replaced DB. Glad you are up on things.\n\nid 123 (cossim 0.251):\n@USER @USER We? So you are going to help like you did at the 911 site?...\n@USER @USER We? So you are going to help like you did at the 911 site? Pictures pleaz. :lying_face:",
+        "dataset": "olid",
+        "parsed_text": "filter id 1 and similar 5",
+        "timestamp": "16-06-2023, 14:45:49"
+    },
+    {
+        "id": "a2e6effd754062829be8453cbde6fa838e8858594615224062f1e930cd9e",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "The original text for id 0:\n\nWhat are the main features in ID 9?...\n\nHere are some instances similar to id 0:\nid 1201 (cossim 0.35):\n6 Reason? There are more. URL...\n\nid 877 (cossim 0.321):\n@USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER...\n@USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER I guess you didn\u2019t see the 9/11 ad that replaced DB. Glad you are up on things.\n\nid 123 (cossim 0.251):\n@USER @USER We? So you are going to help like you did at the 911 site?...\n@USER @USER We? So you are going to help like you did at the 911 site? Pictures pleaz. :lying_face:",
+        "dataset": "olid",
+        "parsed_text": "filter id 1 and similar 5",
+        "timestamp": "16-06-2023, 14:45:51"
+    },
+    {
+        "id": "f0fc71b5449941fc68b4aa380d4c3937c4c5ab5aae1bf91d6426c57d13dc",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "The original text is: What are the main features in ID 9?\n\n\nSentence 1: What are the main features in ID 9?\nAverage saliency score: 0.084\nPrediction: non-offensive",
+        "dataset": "olid",
+        "parsed_text": "filter id 1 and nlpattribute sentence",
+        "timestamp": "16-06-2023, 14:47:58"
+    },
+    {
+        "id": "f0fc71b5449941fc68b4aa380d4c3937c4c5ab5aae1bf91d6426c57d13dc",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "The original text is: What are the main features in ID 9?\n\n\nSentence 1: What are the main features in ID 9?\nAverage saliency score: 0.084\nPrediction: non-offensive",
+        "dataset": "olid",
+        "parsed_text": "filter id 1 and nlpattribute sentence",
+        "timestamp": "16-06-2023, 14:48:01"
+    },
+    {
+        "id": "f0fc71b5449941fc68b4aa380d4c3937c4c5ab5aae1bf91d6426c57d13dc",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "The original text is: What are the main features in ID 9?\n\n\nSentence 1: What are the main features in ID 9?\nAverage saliency score: 0.084\nPrediction: non-offensive",
+        "dataset": "olid",
+        "parsed_text": "filter id 1 and nlpattribute sentence",
+        "timestamp": "16-06-2023, 14:48:02"
+    },
+    {
+        "id": "79148510182a6e3d135e3a9c3d7713da0d67ce789a7c782b3253a0d9cb03",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "The original text is: What are the main features in ID 9?\n\n\nSentence 1: What are the main features in ID 9?\nAverage saliency score: 0.084\nPrediction: non-offensive",
+        "dataset": "olid",
+        "parsed_text": "filter id 2 and nlpattribute sentence",
+        "timestamp": "16-06-2023, 14:48:16"
+    },
+    {
+        "id": "79148510182a6e3d135e3a9c3d7713da0d67ce789a7c782b3253a0d9cb03",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "The original text is: What are the main features in ID 9?\n\n\nSentence 1: What are the main features in ID 9?\nAverage saliency score: 0.084\nPrediction: non-offensive",
+        "dataset": "olid",
+        "parsed_text": "filter id 2 and nlpattribute sentence",
+        "timestamp": "16-06-2023, 14:48:18"
+    },
+    {
+        "id": "79148510182a6e3d135e3a9c3d7713da0d67ce789a7c782b3253a0d9cb03",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "The original text is: What are the main features in ID 9?\n\n\nSentence 1: What are the main features in ID 9?\nAverage saliency score: 0.084\nPrediction: non-offensive",
+        "dataset": "olid",
+        "parsed_text": "filter id 2 and nlpattribute sentence",
+        "timestamp": "16-06-2023, 14:48:20"
+    },
+    {
+        "id": "d82070746a065f9ff55ef596a8ef828da3f48c7bf985f8c272d0bb9fb55d",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "idi, shi, gross, ##ching, ##rook, ##ches, fu, bit, ass, and vile are the most attributed.",
+        "dataset": "olid",
+        "parsed_text": "important non-offensive",
+        "timestamp": "16-06-2023, 14:52:42"
+    },
+    {
+        "id": "d82070746a065f9ff55ef596a8ef828da3f48c7bf985f8c272d0bb9fb55d",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "idi, shi, gross, ##ching, ##rook, ##ches, fu, bit, ass, and vile are the most attributed.",
+        "dataset": "olid",
+        "parsed_text": "important non-offensive",
+        "timestamp": "16-06-2023, 14:52:44"
+    },
+    {
+        "id": "d82070746a065f9ff55ef596a8ef828da3f48c7bf985f8c272d0bb9fb55d",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "idi, shi, gross, ##ching, ##rook, ##ches, fu, bit, ass, and vile are the most attributed.",
+        "dataset": "olid",
+        "parsed_text": "important non-offensive",
+        "timestamp": "16-06-2023, 14:52:46"
+    },
+    {
+        "id": "31507c354f9743d6cb3133252d8dcebd0951b94e288ac876bcd2d148916c",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "The original text for id 0:\n\nWhat are the main features in ID 9?...\n\nHere are some instances similar to id 0:\nid 1201 (cossim 0.35):\n6 Reason? There are more. URL...\n\nid 877 (cossim 0.321):\n@USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER...\n\nid 123 (cossim 0.251):\n@USER @USER We? So you are going to help like you did at the 911 site?...",
+        "dataset": "olid",
+        "parsed_text": "filter id 9 and similar",
+        "timestamp": "16-06-2023, 14:54:47"
+    },
+    {
+        "id": "31507c354f9743d6cb3133252d8dcebd0951b94e288ac876bcd2d148916c",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "The original text for id 0:\n\nWhat are the main features in ID 9?...\n\nHere are some instances similar to id 0:\nid 1201 (cossim 0.35):\n6 Reason? There are more. URL...\n\nid 877 (cossim 0.321):\n@USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER...\n\nid 123 (cossim 0.251):\n@USER @USER We? So you are going to help like you did at the 911 site?...",
+        "dataset": "olid",
+        "parsed_text": "filter id 9 and similar",
+        "timestamp": "16-06-2023, 14:54:48"
+    },
+    {
+        "id": "31507c354f9743d6cb3133252d8dcebd0951b94e288ac876bcd2d148916c",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "The original text for id 0:\n\nWhat are the main features in ID 9?...\n\nHere are some instances similar to id 0:\nid 1201 (cossim 0.35):\n6 Reason? There are more. URL...\n\nid 877 (cossim 0.321):\n@USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER...\n\nid 123 (cossim 0.251):\n@USER @USER We? So you are going to help like you did at the 911 site?...",
+        "dataset": "olid",
+        "parsed_text": "filter id 9 and similar",
+        "timestamp": "16-06-2023, 14:54:50"
+    },
+    {
+        "id": "61e67624ecd51247e5bf730108ed506ba20e176313f38b9b23692d419b9a",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "Original text: Tweet: '@USER @USER Gun control anyone? DisarmHate'\nPrediction: non-offensive\nExplanation: In the first tweet the user states that someone is Republican. This is not a derisive or negative statement, and the intent is to express that fact. Secondly, in this tweet a third party user is thanked for their support of America. Again, this is an expression of gratitude, not an insult or attack. Finally, there is the third tweet which simply expresses a friendly opinion of something being hot.",
+        "dataset": "olid",
+        "parsed_text": "filter id 1 and rationalize",
+        "timestamp": "16-06-2023, 14:55:05"
+    },
+    {
+        "id": "61e67624ecd51247e5bf730108ed506ba20e176313f38b9b23692d419b9a",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "Original text: Tweet: '@USER @USER Gun control anyone? DisarmHate'\nPrediction: non-offensive\nExplanation: In the first tweet the user states that someone is Republican. This is not a derisive or negative statement, and the intent is to express that fact. Secondly, in this tweet a third party user is thanked for their support of America. Again, this is an expression of gratitude, not an insult or attack. Finally, there is the third tweet which simply expresses a friendly opinion of something being hot.",
+        "dataset": "olid",
+        "parsed_text": "filter id 1 and rationalize",
+        "timestamp": "16-06-2023, 14:55:08"
+    },
+    {
+        "id": "61e67624ecd51247e5bf730108ed506ba20e176313f38b9b23692d419b9a",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "Original text: Tweet: '@USER @USER Gun control anyone? DisarmHate'\nPrediction: non-offensive\nExplanation: In the first tweet the user states that someone is Republican. This is not a derisive or negative statement, and the intent is to express that fact. Secondly, in this tweet a third party user is thanked for their support of America. Again, this is an expression of gratitude, not an insult or attack. Finally, there is the third tweet which simply expresses a friendly opinion of something being hot.",
+        "dataset": "olid",
+        "parsed_text": "filter id 1 and rationalize",
+        "timestamp": "16-06-2023, 14:55:10"
+    },
+    {
+        "id": "0b51c0c4978b1acb12661d34943827b2cf6bbf46b89cc7b9d19114840c1a",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "[The original text]: @USER @USER Gun control anyone? DisarmHate\n[Counterfactual 1]: Kill anyone?\n\nthe predicted label False changes to True.",
+        "dataset": "olid",
+        "parsed_text": "filter id 1 and cfe",
+        "timestamp": "16-06-2023, 14:56:22"
+    },
+    {
+        "id": "0b51c0c4978b1acb12661d34943827b2cf6bbf46b89cc7b9d19114840c1a",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "[The original text]: @USER @USER Gun control anyone? DisarmHate\n[Counterfactual 1]: Kill anyone?\n\nthe predicted label False changes to True.",
+        "dataset": "olid",
+        "parsed_text": "filter id 1 and cfe",
+        "timestamp": "16-06-2023, 14:56:24"
+    },
+    {
+        "id": "0b51c0c4978b1acb12661d34943827b2cf6bbf46b89cc7b9d19114840c1a",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "[The original text]: @USER @USER Gun control anyone? DisarmHate\n[Counterfactual 1]: Kill anyone?\n\nthe predicted label False changes to True.",
+        "dataset": "olid",
+        "parsed_text": "filter id 1 and cfe",
+        "timestamp": "16-06-2023, 14:56:34"
+    },
+    {
+        "id": "370b8dd85bcd1a59a181ab4efa985fa2cd9905c5db2ef43954ea3e30cee9",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "Label non-offensive (86.43%) --> offensive (55.483%)\n\n@ US ##ER @ US ##ER Gun control anyone ? Dis ##arm ##H ##ate\n@ user @ drug guns ##linger control anyone ? disa ##rm ##hat ##e\n\n",
+        "dataset": "olid",
+        "parsed_text": "filter id 1 and adversarial",
+        "timestamp": "16-06-2023, 14:58:14"
+    },
+    {
+        "id": "370b8dd85bcd1a59a181ab4efa985fa2cd9905c5db2ef43954ea3e30cee9",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "Label non-offensive (86.43%) --> offensive (55.483%)\n\n@ US ##ER @ US ##ER Gun control anyone ? Dis ##arm ##H ##ate\n@ user @ drug guns ##linger control anyone ? disa ##rm ##hat ##e\n\n",
+        "dataset": "olid",
+        "parsed_text": "filter id 1 and adversarial",
+        "timestamp": "16-06-2023, 14:58:15"
+    },
+    {
+        "id": "370b8dd85bcd1a59a181ab4efa985fa2cd9905c5db2ef43954ea3e30cee9",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "Label non-offensive (86.43%) --> offensive (55.483%)\n\n@ US ##ER @ US ##ER Gun control anyone ? Dis ##arm ##H ##ate\n@ user @ drug guns ##linger control anyone ? disa ##rm ##hat ##e\n\n",
+        "dataset": "olid",
+        "parsed_text": "filter id 1 and adversarial",
+        "timestamp": "16-06-2023, 14:58:16"
+    },
+    {
+        "id": "93185fc3bd284fd88f671f587858e80dabb1bada4408a2ae2a8b47a10fe6",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "Original text: (ID 1)\n@USER @USER Gun control anyone? DisarmHate\nAugmentation by word replacements:\n@ USER @ Would you use manual? 1",
+        "dataset": "olid",
+        "parsed_text": "filter id 1 and augment",
+        "timestamp": "16-06-2023, 14:58:31"
+    },
+    {
+        "id": "93185fc3bd284fd88f671f587858e80dabb1bada4408a2ae2a8b47a10fe6",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "Original text: (ID 1)\n@USER @USER Gun control anyone? DisarmHate\nAugmentation by word replacements:\n@ USER @ Would you use manual? 1",
+        "dataset": "olid",
+        "parsed_text": "filter id 1 and augment",
+        "timestamp": "16-06-2023, 14:58:32"
+    },
+    {
+        "id": "93185fc3bd284fd88f671f587858e80dabb1bada4408a2ae2a8b47a10fe6",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "Original text: (ID 1)\n@USER @USER Gun control anyone? DisarmHate\nAugmentation by word replacements:\n@ USER @ Would you use manual? 1",
+        "dataset": "olid",
+        "parsed_text": "filter id 1 and augment",
+        "timestamp": "16-06-2023, 14:58:34"
+    }
+]

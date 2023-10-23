@@ -1,0 +1,802 @@
+[
+    {
+        "id": "undefined",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "This was a bit unclear. Could you rephrase it, please?",
+        "dataset": "boolq",
+        "parsed_text": "filter id 3236 and show",
+        "user_text": "For id 8, what is the label predicted?",
+        "timestamp": "15-06-2023, 16:21:28"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "This was a bit unclear. Could you rephrase it, please?",
+        "dataset": "boolq",
+        "parsed_text": "filter id 3236 and show",
+        "user_text": "For id 8, what is the label predicted?",
+        "timestamp": "15-06-2023, 16:21:31"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "This was a bit unclear. Could you rephrase it, please?",
+        "dataset": "boolq",
+        "parsed_text": "filter id 3236 and show",
+        "user_text": "For id 8, what is the label predicted?",
+        "timestamp": "15-06-2023, 16:21:33"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "Let's try another option. I'm afraid I don't have an answer for this.",
+        "dataset": "boolq",
+        "parsed_text": "filter id 3236 and show",
+        "user_text": "What is the answer predicted for id 8?\n",
+        "timestamp": "15-06-2023, 16:23:02"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "Let's try another option. I'm afraid I don't have an answer for this.",
+        "dataset": "boolq",
+        "parsed_text": "filter id 3236 and show",
+        "user_text": "What is the answer predicted for id 8?\n",
+        "timestamp": "15-06-2023, 16:23:07"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "Let's try another option. I'm afraid I don't have an answer for this.",
+        "dataset": "boolq",
+        "parsed_text": "filter id 3236 and show",
+        "user_text": "What is the answer predicted for id 8?\n",
+        "timestamp": "15-06-2023, 16:23:10"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "Let's try another option. I'm afraid I don't have an answer for this.",
+        "dataset": "boolq",
+        "parsed_text": "filter id 3236 and show",
+        "user_text": "please display the prediction of instance with id 203",
+        "timestamp": "15-06-2023, 16:25:06"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "Let's try another option. I'm afraid I don't have an answer for this.",
+        "dataset": "boolq",
+        "parsed_text": "filter id 3236 and show",
+        "user_text": "please display the prediction of instance with id 203",
+        "timestamp": "15-06-2023, 16:25:08"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "Let's try another option. I'm afraid I don't have an answer for this.",
+        "dataset": "boolq",
+        "parsed_text": "filter id 3236 and show",
+        "user_text": "please display the prediction of instance with id 203",
+        "timestamp": "15-06-2023, 16:25:11"
+    },
+    {
+        "id": "9e1d9c48a3f1a86828cba8c9aa8e0cd5dfb0d58bc95f9b416eb01e5b5e58",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "General Information:\n\n\nName\tContent\nmodel_name\tDistilbert-base-uncased-qa-boolq\nmodel_summary\tThis model is a distilled version of the BERT base model. It was introduced in this paper. The code for the distillation process can be found here. This model is uncased: it does not make a difference between english and English.\ntask\tQuestion Answering",
+        "dataset": "boolq",
+        "parsed_text": "model model_summary",
+        "user_text": "8\n",
+        "timestamp": "15-06-2023, 16:27:20"
+    },
+    {
+        "id": "9e1d9c48a3f1a86828cba8c9aa8e0cd5dfb0d58bc95f9b416eb01e5b5e58",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "General Information:\n\n\nName\tContent\nmodel_name\tDistilbert-base-uncased-qa-boolq\nmodel_summary\tThis model is a distilled version of the BERT base model. It was introduced in this paper. The code for the distillation process can be found here. This model is uncased: it does not make a difference between english and English.\ntask\tQuestion Answering",
+        "dataset": "boolq",
+        "parsed_text": "model model_summary",
+        "user_text": "8\n",
+        "timestamp": "15-06-2023, 16:27:24"
+    },
+    {
+        "id": "9e1d9c48a3f1a86828cba8c9aa8e0cd5dfb0d58bc95f9b416eb01e5b5e58",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "General Information:\n\n\nName\tContent\nmodel_name\tDistilbert-base-uncased-qa-boolq\nmodel_summary\tThis model is a distilled version of the BERT base model. It was introduced in this paper. The code for the distillation process can be found here. This model is uncased: it does not make a difference between english and English.\ntask\tQuestion Answering",
+        "dataset": "boolq",
+        "parsed_text": "model model_summary",
+        "user_text": "8\n",
+        "timestamp": "15-06-2023, 16:27:26"
+    },
+    {
+        "id": "1aacde0968089b2c19ec715d11fc3bfb6b2009edb54915ab1e266740dc59",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "I can answer questions about the model's predictions on the data. For example, I could tell you why certain predictions were made, how likely different outcomes are, what needs to happen to get different predictions, or what would happen to the predictions if the features changed in a particular way.\n\nI can perform these analyses on individual instances (i.e., using the instance id) or entire subgroups in the data.\n\nIf you want to see whether I can do something, try asking it!",
+        "dataset": "boolq",
+        "parsed_text": "function",
+        "user_text": "How should I interpret the training data given the test data?\n",
+        "timestamp": "15-06-2023, 16:33:35"
+    },
+    {
+        "id": "1aacde0968089b2c19ec715d11fc3bfb6b2009edb54915ab1e266740dc59",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "I can answer questions about the model's predictions on the data. For example, I could tell you why certain predictions were made, how likely different outcomes are, what needs to happen to get different predictions, or what would happen to the predictions if the features changed in a particular way.\n\nI can perform these analyses on individual instances (i.e., using the instance id) or entire subgroups in the data.\n\nIf you want to see whether I can do something, try asking it!",
+        "dataset": "boolq",
+        "parsed_text": "function",
+        "user_text": "How should I interpret the training data given the test data?\n",
+        "timestamp": "15-06-2023, 16:33:39"
+    },
+    {
+        "id": "1aacde0968089b2c19ec715d11fc3bfb6b2009edb54915ab1e266740dc59",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "I can answer questions about the model's predictions on the data. For example, I could tell you why certain predictions were made, how likely different outcomes are, what needs to happen to get different predictions, or what would happen to the predictions if the features changed in a particular way.\n\nI can perform these analyses on individual instances (i.e., using the instance id) or entire subgroups in the data.\n\nIf you want to see whether I can do something, try asking it!",
+        "dataset": "boolq",
+        "parsed_text": "function",
+        "user_text": "How should I interpret the training data given the test data?\n",
+        "timestamp": "15-06-2023, 16:33:42"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "This is likely out of my expertise, can I help you with something else?",
+        "dataset": "boolq",
+        "parsed_text": "countdata",
+        "user_text": "how big is the dataset?\n",
+        "timestamp": "15-06-2023, 16:36:59"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "This is likely out of my expertise, can I help you with something else?",
+        "dataset": "boolq",
+        "parsed_text": "countdata",
+        "user_text": "how big is the dataset?\n",
+        "timestamp": "15-06-2023, 16:37:02"
+    },
+    {
+        "id": "2cf2dd4f9e4b29123795df05814faa7b5bea08919522a590490e499a917d",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "For all the instances in the data,\n\n\n37.829% of instances have label False\n62.171% of instances have label True",
+        "dataset": "boolq",
+        "parsed_text": "label",
+        "user_text": "what are the labels for all the data",
+        "timestamp": "15-06-2023, 16:37:37"
+    },
+    {
+        "id": "2cf2dd4f9e4b29123795df05814faa7b5bea08919522a590490e499a917d",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "For all the instances in the data,\n\n\n37.829% of instances have label False\n62.171% of instances have label True",
+        "dataset": "boolq",
+        "parsed_text": "label",
+        "user_text": "what are the labels for all the data",
+        "timestamp": "15-06-2023, 16:37:41"
+    },
+    {
+        "id": "2cf2dd4f9e4b29123795df05814faa7b5bea08919522a590490e499a917d",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "For all the instances in the data,\n\n\n37.829% of instances have label False\n62.171% of instances have label True",
+        "dataset": "boolq",
+        "parsed_text": "label",
+        "user_text": "what are the labels for all the data",
+        "timestamp": "15-06-2023, 16:37:44"
+    },
+    {
+        "id": "9931c08361afc64cfcc37ecf8376eeecab719a08fd7fb75427cb9d822ec0",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "problematic, unsuitable, implicit, shepard, ##utable, wnba, ##gol, beyonce, metaphor, and ceased are the most attributed.",
+        "dataset": "boolq",
+        "parsed_text": "important true",
+        "user_text": "Why is it predicted true?\n",
+        "timestamp": "15-06-2023, 16:41:33"
+    },
+    {
+        "id": "9931c08361afc64cfcc37ecf8376eeecab719a08fd7fb75427cb9d822ec0",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "problematic, unsuitable, implicit, shepard, ##utable, wnba, ##gol, beyonce, metaphor, and ceased are the most attributed.",
+        "dataset": "boolq",
+        "parsed_text": "important true",
+        "user_text": "Why is it predicted true?\n",
+        "timestamp": "15-06-2023, 16:41:38"
+    },
+    {
+        "id": "9931c08361afc64cfcc37ecf8376eeecab719a08fd7fb75427cb9d822ec0",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "problematic, unsuitable, implicit, shepard, ##utable, wnba, ##gol, beyonce, metaphor, and ceased are the most attributed.",
+        "dataset": "boolq",
+        "parsed_text": "important true",
+        "user_text": "Why is it predicted true?\n",
+        "timestamp": "15-06-2023, 16:41:41"
+    },
+    {
+        "id": "aa526c0f9119761b232813e3d37e14338386f5e57180fed1bd9b055f7f86",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "The model scores 0.801 precision on all the instances in the data,.",
+        "dataset": "boolq",
+        "parsed_text": "score precision",
+        "user_text": "what is the model precision over all data?\n",
+        "timestamp": "15-06-2023, 16:47:52"
+    },
+    {
+        "id": "aa526c0f9119761b232813e3d37e14338386f5e57180fed1bd9b055f7f86",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "The model scores 0.801 precision on all the instances in the data,.",
+        "dataset": "boolq",
+        "parsed_text": "score precision",
+        "user_text": "what is the model precision over all data?\n",
+        "timestamp": "15-06-2023, 16:47:55"
+    },
+    {
+        "id": "aa526c0f9119761b232813e3d37e14338386f5e57180fed1bd9b055f7f86",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "The model scores 0.801 precision on all the instances in the data,.",
+        "dataset": "boolq",
+        "parsed_text": "score precision",
+        "user_text": "what is the model precision over all data?\n",
+        "timestamp": "15-06-2023, 16:47:58"
+    },
+    {
+        "id": "6d0f83f5bd6b88ceeb5cb822da735a19be2cfddadeadb11051f3c2f7d962",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "For all the instances in the data, the model is incorrect 912 out of 3270 times (error rate 0.279).\nHere is the confusion matrix:\n",
+        "dataset": "boolq",
+        "parsed_text": "mistake count",
+        "user_text": "can you demonstrate how many data points are predicted wrongly?",
+        "timestamp": "15-06-2023, 16:56:19"
+    },
+    {
+        "id": "6d0f83f5bd6b88ceeb5cb822da735a19be2cfddadeadb11051f3c2f7d962",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "For all the instances in the data, the model is incorrect 912 out of 3270 times (error rate 0.279).\nHere is the confusion matrix:\n",
+        "dataset": "boolq",
+        "parsed_text": "mistake count",
+        "user_text": "can you demonstrate how many data points are predicted wrongly?",
+        "timestamp": "15-06-2023, 16:56:24"
+    },
+    {
+        "id": "6d0f83f5bd6b88ceeb5cb822da735a19be2cfddadeadb11051f3c2f7d962",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "For all the instances in the data, the model is incorrect 912 out of 3270 times (error rate 0.279).\nHere is the confusion matrix:\n",
+        "dataset": "boolq",
+        "parsed_text": "mistake count",
+        "user_text": "can you demonstrate how many data points are predicted wrongly?",
+        "timestamp": "15-06-2023, 16:56:27"
+    },
+    {
+        "id": "91a82f0fa0a561c0e12f42e9e50e39f613a3a59a034a03709234ae22a08b",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "For all the instances in the data, the model is incorrect 912 out of 3270 times (error rate 0.279).\nHere is the confusion matrix:\n",
+        "dataset": "boolq",
+        "parsed_text": "mistake count",
+        "user_text": "Can you demonstrate how many of the filtered data points are classified wrongly?\n",
+        "timestamp": "15-06-2023, 16:58:18"
+    },
+    {
+        "id": "91a82f0fa0a561c0e12f42e9e50e39f613a3a59a034a03709234ae22a08b",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "For all the instances in the data, the model is incorrect 912 out of 3270 times (error rate 0.279).\nHere is the confusion matrix:\n",
+        "dataset": "boolq",
+        "parsed_text": "mistake count",
+        "user_text": "Can you demonstrate how many of the filtered data points are classified wrongly?\n",
+        "timestamp": "15-06-2023, 16:58:21"
+    },
+    {
+        "id": "91a82f0fa0a561c0e12f42e9e50e39f613a3a59a034a03709234ae22a08b",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "For all the instances in the data, the model is incorrect 912 out of 3270 times (error rate 0.279).\nHere is the confusion matrix:\n",
+        "dataset": "boolq",
+        "parsed_text": "mistake count",
+        "user_text": "Can you demonstrate how many of the filtered data points are classified wrongly?\n",
+        "timestamp": "15-06-2023, 16:58:24"
+    },
+    {
+        "id": "77ee4f0ea87a09d75cf787a745e76bc1f2d8b0c392949a442fdb2cff6fb7",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "For all the instances in the data, the model is incorrect 912 out of 3270 times (error rate 0.279).\nHere is the confusion matrix:\n",
+        "dataset": "boolq",
+        "parsed_text": "mistake count",
+        "user_text": "Can you list all the ids that have been classified incorrectly?\n",
+        "timestamp": "15-06-2023, 17:03:24"
+    },
+    {
+        "id": "77ee4f0ea87a09d75cf787a745e76bc1f2d8b0c392949a442fdb2cff6fb7",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "For all the instances in the data, the model is incorrect 912 out of 3270 times (error rate 0.279).\nHere is the confusion matrix:\n",
+        "dataset": "boolq",
+        "parsed_text": "mistake count",
+        "user_text": "Can you list all the ids that have been classified incorrectly?\n",
+        "timestamp": "15-06-2023, 17:03:35"
+    },
+    {
+        "id": "77ee4f0ea87a09d75cf787a745e76bc1f2d8b0c392949a442fdb2cff6fb7",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "For all the instances in the data, the model is incorrect 912 out of 3270 times (error rate 0.279).\nHere is the confusion matrix:\n",
+        "dataset": "boolq",
+        "parsed_text": "mistake count",
+        "user_text": "Can you list all the ids that have been classified incorrectly?\n",
+        "timestamp": "15-06-2023, 17:03:38"
+    },
+    {
+        "id": "77ee4f0ea87a09d75cf787a745e76bc1f2d8b0c392949a442fdb2cff6fb7",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "For all the instances in the data, the model is incorrect 912 out of 3270 times (error rate 0.279).\nHere is the confusion matrix:\n",
+        "dataset": "boolq",
+        "parsed_text": "mistake count",
+        "user_text": "Can you list all the ids that have been classified incorrectly?\n",
+        "timestamp": "15-06-2023, 17:03:43"
+    },
+    {
+        "id": "215f11dc590a5388e4b12f53ebb4957f6492b993f6d2cf602dad7b6365a9",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "For all the instances in the data, the model is incorrect 912 out of 3270 times (error rate 0.279).\n\nHere are the ids of instances the model predicts incorrectly:",
+        "dataset": "boolq",
+        "parsed_text": "mistake sample",
+        "user_text": "what are some data points you get incorrect?",
+        "timestamp": "15-06-2023, 17:04:05"
+    },
+    {
+        "id": "215f11dc590a5388e4b12f53ebb4957f6492b993f6d2cf602dad7b6365a9",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "For all the instances in the data, the model is incorrect 912 out of 3270 times (error rate 0.279).\n\nHere are the ids of instances the model predicts incorrectly:",
+        "dataset": "boolq",
+        "parsed_text": "mistake sample",
+        "user_text": "what are some data points you get incorrect?",
+        "timestamp": "15-06-2023, 17:04:09"
+    },
+    {
+        "id": "215f11dc590a5388e4b12f53ebb4957f6492b993f6d2cf602dad7b6365a9",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "For all the instances in the data, the model is incorrect 912 out of 3270 times (error rate 0.279).\n\nHere are the ids of instances the model predicts incorrectly:",
+        "dataset": "boolq",
+        "parsed_text": "mistake sample",
+        "user_text": "what are some data points you get incorrect?",
+        "timestamp": "15-06-2023, 17:04:12"
+    },
+    {
+        "id": "7d18b8cc832ec8767435becc2a887b0bc9d1e2cc6b8e4516ac553773742f",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "The original text for id 0:\n\ncan an even number be divided by an odd number? saliency...\n\nHere are some instances similar to id 0:\nid 6 (cossim 0.751):\ncan an odd number be divided by an even number Parity (mathematics) -- In mathematics, parity...\n\nid 1536 (cossim 0.33):\ndoes it matter which number comes first in a ratio Ratio -- In mathematics, a ratio...\n\nid 1293 (cossim 0.323):\ncan a terminating decimal be written as a recurring decimal Repeating decimal -- The infinitely-repeated digit...",
+        "dataset": "boolq",
+        "parsed_text": "filter id 8 and similar",
+        "user_text": "could you show me an instance that is similar to id 8",
+        "timestamp": "15-06-2023, 17:06:09"
+    },
+    {
+        "id": "7d18b8cc832ec8767435becc2a887b0bc9d1e2cc6b8e4516ac553773742f",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "The original text for id 0:\n\ncan an even number be divided by an odd number? saliency...\n\nHere are some instances similar to id 0:\nid 6 (cossim 0.751):\ncan an odd number be divided by an even number Parity (mathematics) -- In mathematics, parity...\n\nid 1536 (cossim 0.33):\ndoes it matter which number comes first in a ratio Ratio -- In mathematics, a ratio...\n\nid 1293 (cossim 0.323):\ncan a terminating decimal be written as a recurring decimal Repeating decimal -- The infinitely-repeated digit...",
+        "dataset": "boolq",
+        "parsed_text": "filter id 8 and similar",
+        "user_text": "could you show me an instance that is similar to id 8",
+        "timestamp": "15-06-2023, 17:06:13"
+    },
+    {
+        "id": "7d18b8cc832ec8767435becc2a887b0bc9d1e2cc6b8e4516ac553773742f",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "The original text for id 0:\n\ncan an even number be divided by an odd number? saliency...\n\nHere are some instances similar to id 0:\nid 6 (cossim 0.751):\ncan an odd number be divided by an even number Parity (mathematics) -- In mathematics, parity...\n\nid 1536 (cossim 0.33):\ndoes it matter which number comes first in a ratio Ratio -- In mathematics, a ratio...\n\nid 1293 (cossim 0.323):\ncan a terminating decimal be written as a recurring decimal Repeating decimal -- The infinitely-repeated digit...",
+        "dataset": "boolq",
+        "parsed_text": "filter id 8 and similar",
+        "user_text": "could you show me an instance that is similar to id 8",
+        "timestamp": "15-06-2023, 17:06:15"
+    },
+    {
+        "id": "6546a589d59995a40dbd635d3d90b4f1ac22fe85442220a9345145ab289e",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "The original text for id 0:\n\ncan an even number be divided by an odd number? saliency...\n\nHere are some instances similar to id 0:\nid 6 (cossim 0.751):\ncan an odd number be divided by an even number Parity (mathematics) -- In mathematics, parity...\n\nid 1536 (cossim 0.33):\ndoes it matter which number comes first in a ratio Ratio -- In mathematics, a ratio...\n\nid 1293 (cossim 0.323):\ncan a terminating decimal be written as a recurring decimal Repeating decimal -- The infinitely-repeated digit...",
+        "dataset": "boolq",
+        "parsed_text": "filter id 203 and similar",
+        "user_text": "please show me an instance that is similar to id 203",
+        "timestamp": "15-06-2023, 17:06:56"
+    },
+    {
+        "id": "6546a589d59995a40dbd635d3d90b4f1ac22fe85442220a9345145ab289e",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "The original text for id 0:\n\ncan an even number be divided by an odd number? saliency...\n\nHere are some instances similar to id 0:\nid 6 (cossim 0.751):\ncan an odd number be divided by an even number Parity (mathematics) -- In mathematics, parity...\n\nid 1536 (cossim 0.33):\ndoes it matter which number comes first in a ratio Ratio -- In mathematics, a ratio...\n\nid 1293 (cossim 0.323):\ncan a terminating decimal be written as a recurring decimal Repeating decimal -- The infinitely-repeated digit...",
+        "dataset": "boolq",
+        "parsed_text": "filter id 203 and similar",
+        "user_text": "please show me an instance that is similar to id 203",
+        "timestamp": "15-06-2023, 17:07:00"
+    },
+    {
+        "id": "6546a589d59995a40dbd635d3d90b4f1ac22fe85442220a9345145ab289e",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "The original text for id 0:\n\ncan an even number be divided by an odd number? saliency...\n\nHere are some instances similar to id 0:\nid 6 (cossim 0.751):\ncan an odd number be divided by an even number Parity (mathematics) -- In mathematics, parity...\n\nid 1536 (cossim 0.33):\ndoes it matter which number comes first in a ratio Ratio -- In mathematics, a ratio...\n\nid 1293 (cossim 0.323):\ncan a terminating decimal be written as a recurring decimal Repeating decimal -- The infinitely-repeated digit...",
+        "dataset": "boolq",
+        "parsed_text": "filter id 203 and similar",
+        "user_text": "please show me an instance that is similar to id 203",
+        "timestamp": "15-06-2023, 17:07:03"
+    },
+    {
+        "id": "5609d5032c23d2ddc94082461a696cf0c23817da0bdf93dd02353366d3fe",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "The 25 most frequent words in the dataset are:\n\nWord\tFrequence\nThe\t3814\n--\t3393\nIn\t961\nUnited\t882\nIt\t814\nalso\t787\nfirst\t635\none\t610\nseries\t583\nA\t559\nStates\t542\ntwo\t527\nseason\t507\nWorld\t500\nused\t487\nfilm\t475\nAmerican\t452\nmay\t437\nNew\t414\nknown\t379\ntime\t325\npart\t312\nThis\t304\nstate\t298\nU.S.\t287",
+        "dataset": "boolq",
+        "parsed_text": "keywords all",
+        "user_text": "what are the most frequent keywords in the data?",
+        "timestamp": "15-06-2023, 17:07:42"
+    },
+    {
+        "id": "5609d5032c23d2ddc94082461a696cf0c23817da0bdf93dd02353366d3fe",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "The 25 most frequent words in the dataset are:\n\nWord\tFrequence\nThe\t3814\n--\t3393\nIn\t961\nUnited\t882\nIt\t814\nalso\t787\nfirst\t635\none\t610\nseries\t583\nA\t559\nStates\t542\ntwo\t527\nseason\t507\nWorld\t500\nused\t487\nfilm\t475\nAmerican\t452\nmay\t437\nNew\t414\nknown\t379\ntime\t325\npart\t312\nThis\t304\nstate\t298\nU.S.\t287",
+        "dataset": "boolq",
+        "parsed_text": "keywords all",
+        "user_text": "what are the most frequent keywords in the data?",
+        "timestamp": "15-06-2023, 17:07:45"
+    },
+    {
+        "id": "5609d5032c23d2ddc94082461a696cf0c23817da0bdf93dd02353366d3fe",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "The 25 most frequent words in the dataset are:\n\nWord\tFrequence\nThe\t3814\n--\t3393\nIn\t961\nUnited\t882\nIt\t814\nalso\t787\nfirst\t635\none\t610\nseries\t583\nA\t559\nStates\t542\ntwo\t527\nseason\t507\nWorld\t500\nused\t487\nfilm\t475\nAmerican\t452\nmay\t437\nNew\t414\nknown\t379\ntime\t325\npart\t312\nThis\t304\nstate\t298\nU.S.\t287",
+        "dataset": "boolq",
+        "parsed_text": "keywords all",
+        "user_text": "what are the most frequent keywords in the data?",
+        "timestamp": "15-06-2023, 17:07:48"
+    },
+    {
+        "id": "328ce744c420bc5b9046966e42827134726b48682fdc4ed74da217629260",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "The 25 most frequent words in the dataset are:\n\nWord\tFrequence\nThe\t3814\n--\t3393\nIn\t961\nUnited\t882\nIt\t814\nalso\t787\nfirst\t635\none\t610\nseries\t583\nA\t559\nStates\t542\ntwo\t527\nseason\t507\nWorld\t500\nused\t487\nfilm\t475\nAmerican\t452\nmay\t437\nNew\t414\nknown\t379\ntime\t325\npart\t312\nThis\t304\nstate\t298\nU.S.\t287",
+        "dataset": "boolq",
+        "parsed_text": "keywords all",
+        "user_text": "What is the prevalence of the word \"New\" in the data\n",
+        "timestamp": "15-06-2023, 17:09:03"
+    },
+    {
+        "id": "328ce744c420bc5b9046966e42827134726b48682fdc4ed74da217629260",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "The 25 most frequent words in the dataset are:\n\nWord\tFrequence\nThe\t3814\n--\t3393\nIn\t961\nUnited\t882\nIt\t814\nalso\t787\nfirst\t635\none\t610\nseries\t583\nA\t559\nStates\t542\ntwo\t527\nseason\t507\nWorld\t500\nused\t487\nfilm\t475\nAmerican\t452\nmay\t437\nNew\t414\nknown\t379\ntime\t325\npart\t312\nThis\t304\nstate\t298\nU.S.\t287",
+        "dataset": "boolq",
+        "parsed_text": "keywords all",
+        "user_text": "What is the prevalence of the word \"New\" in the data\n",
+        "timestamp": "15-06-2023, 17:09:07"
+    },
+    {
+        "id": "328ce744c420bc5b9046966e42827134726b48682fdc4ed74da217629260",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "The 25 most frequent words in the dataset are:\n\nWord\tFrequence\nThe\t3814\n--\t3393\nIn\t961\nUnited\t882\nIt\t814\nalso\t787\nfirst\t635\none\t610\nseries\t583\nA\t559\nStates\t542\ntwo\t527\nseason\t507\nWorld\t500\nused\t487\nfilm\t475\nAmerican\t452\nmay\t437\nNew\t414\nknown\t379\ntime\t325\npart\t312\nThis\t304\nstate\t298\nU.S.\t287",
+        "dataset": "boolq",
+        "parsed_text": "keywords all",
+        "user_text": "What is the prevalence of the word \"New\" in the data\n",
+        "timestamp": "15-06-2023, 17:09:10"
+    },
+    {
+        "id": "ac77b21c34c402e4a73fa62c110cb6a9150c2335b3c45b1548e643f0da9c",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "There are 3270 items in the data.\n\nLet me know if you want to see their ids.",
+        "dataset": "boolq",
+        "parsed_text": "countdata",
+        "user_text": "How often does the word \"this\" come up in the data?\n",
+        "timestamp": "15-06-2023, 17:09:52"
+    },
+    {
+        "id": "ac77b21c34c402e4a73fa62c110cb6a9150c2335b3c45b1548e643f0da9c",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "There are 3270 items in the data.\n\nLet me know if you want to see their ids.",
+        "dataset": "boolq",
+        "parsed_text": "countdata",
+        "user_text": "How often does the word \"this\" come up in the data?\n",
+        "timestamp": "15-06-2023, 17:09:56"
+    },
+    {
+        "id": "ac77b21c34c402e4a73fa62c110cb6a9150c2335b3c45b1548e643f0da9c",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "There are 3270 items in the data.\n\nLet me know if you want to see their ids.",
+        "dataset": "boolq",
+        "parsed_text": "countdata",
+        "user_text": "How often does the word \"this\" come up in the data?\n",
+        "timestamp": "15-06-2023, 17:09:58"
+    },
+    {
+        "id": "5e0143a4de413c425d8e70062b95d8ab5d7a11d8f3804f234982d7ab1f75",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "hypothetical, metaphor, avoided, problematic, unsuitable, shepard, limitation, dubious, ##utable, and scout are the most attributed.",
+        "dataset": "boolq",
+        "parsed_text": "important all",
+        "user_text": "feature importance",
+        "timestamp": "15-06-2023, 17:15:30"
+    },
+    {
+        "id": "5e0143a4de413c425d8e70062b95d8ab5d7a11d8f3804f234982d7ab1f75",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "hypothetical, metaphor, avoided, problematic, unsuitable, shepard, limitation, dubious, ##utable, and scout are the most attributed.",
+        "dataset": "boolq",
+        "parsed_text": "important all",
+        "user_text": "feature importance",
+        "timestamp": "15-06-2023, 17:15:34"
+    },
+    {
+        "id": "5e0143a4de413c425d8e70062b95d8ab5d7a11d8f3804f234982d7ab1f75",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "hypothetical, metaphor, avoided, problematic, unsuitable, shepard, limitation, dubious, ##utable, and scout are the most attributed.",
+        "dataset": "boolq",
+        "parsed_text": "important all",
+        "user_text": "feature importance",
+        "timestamp": "15-06-2023, 17:15:37"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "This is likely out of my expertise, can I help you with something else?",
+        "dataset": "boolq",
+        "parsed_text": "important all",
+        "user_text": "Could you show me feature importance across the entire dataset",
+        "timestamp": "15-06-2023, 17:16:06"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "This is likely out of my expertise, can I help you with something else?",
+        "dataset": "boolq",
+        "parsed_text": "important all",
+        "user_text": "Could you show me feature importance across the entire dataset",
+        "timestamp": "15-06-2023, 17:16:11"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "This is likely out of my expertise, can I help you with something else?",
+        "dataset": "boolq",
+        "parsed_text": "important all",
+        "user_text": "Could you show me feature importance across the entire dataset",
+        "timestamp": "15-06-2023, 17:16:14"
+    },
+    {
+        "id": "254188d2e68f806d5a31aa597e55ee40bc5fa6ba0bda02e47224bf39e8cf",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "Original text: Question: can u drive in canada with us license Passage: American entry into Canada by land -- Persons driving into Canada must have their vehicle's registration document and proof of insurance.\nPrediction: true\nExplanation: The American government must prove that the person driving the vehicle into canadian is authorized to do so. This is because canadians are required to have a drivers license and insurance to drive a vehicle in Canada.",
+        "dataset": "boolq",
+        "parsed_text": "filter id 8 and rationalize",
+        "user_text": "interpret id 8 in plain language",
+        "timestamp": "15-06-2023, 17:20:34"
+    },
+    {
+        "id": "254188d2e68f806d5a31aa597e55ee40bc5fa6ba0bda02e47224bf39e8cf",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "Original text: Question: can u drive in canada with us license Passage: American entry into Canada by land -- Persons driving into Canada must have their vehicle's registration document and proof of insurance.\nPrediction: true\nExplanation: The American government must prove that the person driving the vehicle into canadian is authorized to do so. This is because canadians are required to have a drivers license and insurance to drive a vehicle in Canada.",
+        "dataset": "boolq",
+        "parsed_text": "filter id 8 and rationalize",
+        "user_text": "interpret id 8 in plain language",
+        "timestamp": "15-06-2023, 17:20:38"
+    },
+    {
+        "id": "7662aa2cf3e0754ab65b726573330c28b4ae00862309547fc1f7f21f3b52",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "Original text: Question: is the tv show the resident over for the season Passage: The Resident (TV series) -- The Resident is an American medical drama television series aired by Fox Broadcasting Company that premiered on January 21, 2018, as a mid-season replacement entry in the 2017--18 television season. The fictional series focuses on the lives and duties of staff members at Chastain Park Memorial Hospital, while delving into the bureaucratic practices of the hospital industry. Formerly called The City, the show was purchased by Fox from Showtime in 2017. It was created by created by Amy Holden Jones, Hayley Schore, and Roshan Sethi. On May 10, 2017, Fox ordered a full 14-episode season and renewed the series for a second season on May 7, 2018. The first season officially concluded on May 14, 2018.\nPrediction: true\nExplanation: The Residents (tv show) is a medical show that airs on Fox.",
+        "dataset": "boolq",
+        "parsed_text": "filter id 18 and rationalize",
+        "user_text": "please interpret id 18\n",
+        "timestamp": "15-06-2023, 17:22:44"
+    },
+    {
+        "id": "7662aa2cf3e0754ab65b726573330c28b4ae00862309547fc1f7f21f3b52",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "Original text: Question: is the tv show the resident over for the season Passage: The Resident (TV series) -- The Resident is an American medical drama television series aired by Fox Broadcasting Company that premiered on January 21, 2018, as a mid-season replacement entry in the 2017--18 television season. The fictional series focuses on the lives and duties of staff members at Chastain Park Memorial Hospital, while delving into the bureaucratic practices of the hospital industry. Formerly called The City, the show was purchased by Fox from Showtime in 2017. It was created by created by Amy Holden Jones, Hayley Schore, and Roshan Sethi. On May 10, 2017, Fox ordered a full 14-episode season and renewed the series for a second season on May 7, 2018. The first season officially concluded on May 14, 2018.\nPrediction: true\nExplanation: The Residents (tv show) is a medical show that airs on Fox.",
+        "dataset": "boolq",
+        "parsed_text": "filter id 18 and rationalize",
+        "user_text": "please interpret id 18\n",
+        "timestamp": "15-06-2023, 17:22:49"
+    },
+    {
+        "id": "7662aa2cf3e0754ab65b726573330c28b4ae00862309547fc1f7f21f3b52",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "Original text: Question: is the tv show the resident over for the season Passage: The Resident (TV series) -- The Resident is an American medical drama television series aired by Fox Broadcasting Company that premiered on January 21, 2018, as a mid-season replacement entry in the 2017--18 television season. The fictional series focuses on the lives and duties of staff members at Chastain Park Memorial Hospital, while delving into the bureaucratic practices of the hospital industry. Formerly called The City, the show was purchased by Fox from Showtime in 2017. It was created by created by Amy Holden Jones, Hayley Schore, and Roshan Sethi. On May 10, 2017, Fox ordered a full 14-episode season and renewed the series for a second season on May 7, 2018. The first season officially concluded on May 14, 2018.\nPrediction: true\nExplanation: The Residents (tv show) is a medical show that airs on Fox.",
+        "dataset": "boolq",
+        "parsed_text": "filter id 18 and rationalize",
+        "user_text": "please interpret id 18\n",
+        "timestamp": "15-06-2023, 17:22:52"
+    },
+    {
+        "id": "e10665585d9768597dad41252f029a4905869fb7958be7b680690c2b113f",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "Original text: Question: can carbon form polar covalent bonds with hydrogen Passage: Carbon\u2013hydrogen bond -- The carbon-hydrogen bond (C--H bond) is a bond between carbon and hydrogen atoms that can be found in many organic compounds. This bond is a covalent bond meaning that carbon shares its outer valence electrons with up to four hydrogens. This completes both of their outer shells making them stable. Carbon--hydrogen bonds have a bond length of about 1.09 \u00c5 (1.09 \u00d7 10 m) and a bond energy of about 413 kJ/mol (see table below). Using Pauling's scale--C (2.55) and H (2.2)--the electronegativity difference between these two atoms is 0.35. Because of this small difference in electronegativities, the C\u2212H bond is generally regarded as being non-polar. In structural formulas of molecules, the hydrogen atoms are often omitted. Compound classes consisting solely of C--H bonds and C--C bonds are alkanes, alkenes, alkynes, and aromatic hydrocarbons. Collectively they are known as hydrocarbons.\nPrediction: true\nExplanation: The carbon\u2013 hydrogen bond has a length around 1 \u00c5 and has an energy around 413 KJ mol-1, which makes it non polar. The bond angle between the two hydrogen and carbon atoms in the bond are around 120 degrees, this makes the carbon hydrogen non covalently bound.",
+        "dataset": "boolq",
+        "parsed_text": "filter id 38 and rationalize",
+        "user_text": "please interpret prediction 38\n",
+        "timestamp": "15-06-2023, 17:27:00"
+    },
+    {
+        "id": "e10665585d9768597dad41252f029a4905869fb7958be7b680690c2b113f",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "Original text: Question: can carbon form polar covalent bonds with hydrogen Passage: Carbon\u2013hydrogen bond -- The carbon-hydrogen bond (C--H bond) is a bond between carbon and hydrogen atoms that can be found in many organic compounds. This bond is a covalent bond meaning that carbon shares its outer valence electrons with up to four hydrogens. This completes both of their outer shells making them stable. Carbon--hydrogen bonds have a bond length of about 1.09 \u00c5 (1.09 \u00d7 10 m) and a bond energy of about 413 kJ/mol (see table below). Using Pauling's scale--C (2.55) and H (2.2)--the electronegativity difference between these two atoms is 0.35. Because of this small difference in electronegativities, the C\u2212H bond is generally regarded as being non-polar. In structural formulas of molecules, the hydrogen atoms are often omitted. Compound classes consisting solely of C--H bonds and C--C bonds are alkanes, alkenes, alkynes, and aromatic hydrocarbons. Collectively they are known as hydrocarbons.\nPrediction: true\nExplanation: The carbon\u2013 hydrogen bond has a length around 1 \u00c5 and has an energy around 413 KJ mol-1, which makes it non polar. The bond angle between the two hydrogen and carbon atoms in the bond are around 120 degrees, this makes the carbon hydrogen non covalently bound.",
+        "dataset": "boolq",
+        "parsed_text": "filter id 38 and rationalize",
+        "user_text": "please interpret prediction 38\n",
+        "timestamp": "15-06-2023, 17:27:05"
+    },
+    {
+        "id": "e10665585d9768597dad41252f029a4905869fb7958be7b680690c2b113f",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "Original text: Question: can carbon form polar covalent bonds with hydrogen Passage: Carbon\u2013hydrogen bond -- The carbon-hydrogen bond (C--H bond) is a bond between carbon and hydrogen atoms that can be found in many organic compounds. This bond is a covalent bond meaning that carbon shares its outer valence electrons with up to four hydrogens. This completes both of their outer shells making them stable. Carbon--hydrogen bonds have a bond length of about 1.09 \u00c5 (1.09 \u00d7 10 m) and a bond energy of about 413 kJ/mol (see table below). Using Pauling's scale--C (2.55) and H (2.2)--the electronegativity difference between these two atoms is 0.35. Because of this small difference in electronegativities, the C\u2212H bond is generally regarded as being non-polar. In structural formulas of molecules, the hydrogen atoms are often omitted. Compound classes consisting solely of C--H bonds and C--C bonds are alkanes, alkenes, alkynes, and aromatic hydrocarbons. Collectively they are known as hydrocarbons.\nPrediction: true\nExplanation: The carbon\u2013 hydrogen bond has a length around 1 \u00c5 and has an energy around 413 KJ mol-1, which makes it non polar. The bond angle between the two hydrogen and carbon atoms in the bond are around 120 degrees, this makes the carbon hydrogen non covalently bound.",
+        "dataset": "boolq",
+        "parsed_text": "filter id 38 and rationalize",
+        "user_text": "please interpret prediction 38\n",
+        "timestamp": "15-06-2023, 17:27:22"
+    },
+    {
+        "id": "e10665585d9768597dad41252f029a4905869fb7958be7b680690c2b113f",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "Original text: Question: can carbon form polar covalent bonds with hydrogen Passage: Carbon\u2013hydrogen bond -- The carbon-hydrogen bond (C--H bond) is a bond between carbon and hydrogen atoms that can be found in many organic compounds. This bond is a covalent bond meaning that carbon shares its outer valence electrons with up to four hydrogens. This completes both of their outer shells making them stable. Carbon--hydrogen bonds have a bond length of about 1.09 \u00c5 (1.09 \u00d7 10 m) and a bond energy of about 413 kJ/mol (see table below). Using Pauling's scale--C (2.55) and H (2.2)--the electronegativity difference between these two atoms is 0.35. Because of this small difference in electronegativities, the C\u2212H bond is generally regarded as being non-polar. In structural formulas of molecules, the hydrogen atoms are often omitted. Compound classes consisting solely of C--H bonds and C--C bonds are alkanes, alkenes, alkynes, and aromatic hydrocarbons. Collectively they are known as hydrocarbons.\nPrediction: true\nExplanation: The carbon\u2013 hydrogen bond has a length around 1 \u00c5 and has an energy around 413 KJ mol-1, which makes it non polar. The bond angle between the two hydrogen and carbon atoms in the bond are around 120 degrees, this makes the carbon hydrogen non covalently bound.",
+        "dataset": "boolq",
+        "parsed_text": "filter id 38 and rationalize",
+        "user_text": "please interpret prediction 38\n",
+        "timestamp": "15-06-2023, 17:27:26"
+    },
+    {
+        "id": "e10665585d9768597dad41252f029a4905869fb7958be7b680690c2b113f",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "Original text: Question: can carbon form polar covalent bonds with hydrogen Passage: Carbon\u2013hydrogen bond -- The carbon-hydrogen bond (C--H bond) is a bond between carbon and hydrogen atoms that can be found in many organic compounds. This bond is a covalent bond meaning that carbon shares its outer valence electrons with up to four hydrogens. This completes both of their outer shells making them stable. Carbon--hydrogen bonds have a bond length of about 1.09 \u00c5 (1.09 \u00d7 10 m) and a bond energy of about 413 kJ/mol (see table below). Using Pauling's scale--C (2.55) and H (2.2)--the electronegativity difference between these two atoms is 0.35. Because of this small difference in electronegativities, the C\u2212H bond is generally regarded as being non-polar. In structural formulas of molecules, the hydrogen atoms are often omitted. Compound classes consisting solely of C--H bonds and C--C bonds are alkanes, alkenes, alkynes, and aromatic hydrocarbons. Collectively they are known as hydrocarbons.\nPrediction: true\nExplanation: The carbon\u2013 hydrogen bond has a length around 1 \u00c5 and has an energy around 413 KJ mol-1, which makes it non polar. The bond angle between the two hydrogen and carbon atoms in the bond are around 120 degrees, this makes the carbon hydrogen non covalently bound.",
+        "dataset": "boolq",
+        "parsed_text": "filter id 38 and rationalize",
+        "user_text": "please interpret prediction 38\n",
+        "timestamp": "15-06-2023, 17:27:31"
+    },
+    {
+        "id": "315298c472f3c223c5b7e4db84d2ab3f6052dbb244281a2d2c8cb6f47d25",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "This sentence is always classified as True!",
+        "dataset": "boolq",
+        "parsed_text": "filter id 7 and cfe",
+        "user_text": "for data point id 7 how would i change the prediction?",
+        "timestamp": "15-06-2023, 17:28:54"
+    },
+    {
+        "id": "0ab4521f1b5b4eeb1d0d38498674f4904b9648c3305e338467e7b23ada79",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "Label True (82.548%) --> False (93.948%)\n\nis the tv show the resident over for the season the resident ( tv series ) - - the resident is an american medical drama television series aired by fox broadcasting company that premiered on\nis the tv evidence the resident over for the season the resident ( tv series ) - - the resident is an american medical drama television series aired by fox broadcasting company that premiered on\n\n\njanuary 21 , 2018 , as a mid - season replacement entry in the 2017 - - 18 television season . the fictional series focuses on the lives and duties of staff members at cha ##sta ##in park memorial\n\njanuary 21 , 2018 , as a mid - season replacement entry in the 2017 - - 18 television season . the fictional series focuses on the lives and duties of staff members at cha ##sta ##in park memorial\n\n\nhospital , while del ##ving into the bureau ##cratic practices of the hospital industry . formerly called the city , the show was purchased by fox from showtime in 2017 . it was created by created by\nhospital , while del ##ving into the bureau ##cratic practices of the hospital industry . formerly called the city , the show was purchased by fox from showtime in 2017 . it was created by created by\n\n\namy holden jones , hay ##ley sc ##hore , and ro ##shan seth ##i . on may 10 , 2017 , fox ordered a full 14 - episode season and renewed the series for a second season on may 7 , 2018 . the first\n\namy holden jones , hay ##ley sc ##hore , and ro ##shan seth ##i . on may 10 , 2017 , fox ordered a full 14 - episode season and renewed the series for a second season on may 7 , 2018 . the first\n\n\nseason officially concluded on may 14 , 2018 .\nseason officially concluded on may 14 , 2018 .\n\n",
+        "dataset": "boolq",
+        "parsed_text": "filter id 18 and adversarial",
+        "user_text": "show me an adversarial attack on id 18\n",
+        "timestamp": "15-06-2023, 17:34:06"
+    },
+    {
+        "id": "0ab4521f1b5b4eeb1d0d38498674f4904b9648c3305e338467e7b23ada79",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "Label True (82.548%) --> False (93.948%)\n\nis the tv show the resident over for the season the resident ( tv series ) - - the resident is an american medical drama television series aired by fox broadcasting company that premiered on\nis the tv evidence the resident over for the season the resident ( tv series ) - - the resident is an american medical drama television series aired by fox broadcasting company that premiered on\n\n\njanuary 21 , 2018 , as a mid - season replacement entry in the 2017 - - 18 television season . the fictional series focuses on the lives and duties of staff members at cha ##sta ##in park memorial\n\njanuary 21 , 2018 , as a mid - season replacement entry in the 2017 - - 18 television season . the fictional series focuses on the lives and duties of staff members at cha ##sta ##in park memorial\n\n\nhospital , while del ##ving into the bureau ##cratic practices of the hospital industry . formerly called the city , the show was purchased by fox from showtime in 2017 . it was created by created by\nhospital , while del ##ving into the bureau ##cratic practices of the hospital industry . formerly called the city , the show was purchased by fox from showtime in 2017 . it was created by created by\n\n\namy holden jones , hay ##ley sc ##hore , and ro ##shan seth ##i . on may 10 , 2017 , fox ordered a full 14 - episode season and renewed the series for a second season on may 7 , 2018 . the first\n\namy holden jones , hay ##ley sc ##hore , and ro ##shan seth ##i . on may 10 , 2017 , fox ordered a full 14 - episode season and renewed the series for a second season on may 7 , 2018 . the first\n\n\nseason officially concluded on may 14 , 2018 .\nseason officially concluded on may 14 , 2018 .\n\n",
+        "dataset": "boolq",
+        "parsed_text": "filter id 18 and adversarial",
+        "user_text": "show me an adversarial attack on id 18\n",
+        "timestamp": "15-06-2023, 17:34:10"
+    },
+    {
+        "id": "0ab4521f1b5b4eeb1d0d38498674f4904b9648c3305e338467e7b23ada79",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "Label True (82.548%) --> False (93.948%)\n\nis the tv show the resident over for the season the resident ( tv series ) - - the resident is an american medical drama television series aired by fox broadcasting company that premiered on\nis the tv evidence the resident over for the season the resident ( tv series ) - - the resident is an american medical drama television series aired by fox broadcasting company that premiered on\n\n\njanuary 21 , 2018 , as a mid - season replacement entry in the 2017 - - 18 television season . the fictional series focuses on the lives and duties of staff members at cha ##sta ##in park memorial\n\njanuary 21 , 2018 , as a mid - season replacement entry in the 2017 - - 18 television season . the fictional series focuses on the lives and duties of staff members at cha ##sta ##in park memorial\n\n\nhospital , while del ##ving into the bureau ##cratic practices of the hospital industry . formerly called the city , the show was purchased by fox from showtime in 2017 . it was created by created by\nhospital , while del ##ving into the bureau ##cratic practices of the hospital industry . formerly called the city , the show was purchased by fox from showtime in 2017 . it was created by created by\n\n\namy holden jones , hay ##ley sc ##hore , and ro ##shan seth ##i . on may 10 , 2017 , fox ordered a full 14 - episode season and renewed the series for a second season on may 7 , 2018 . the first\n\namy holden jones , hay ##ley sc ##hore , and ro ##shan seth ##i . on may 10 , 2017 , fox ordered a full 14 - episode season and renewed the series for a second season on may 7 , 2018 . the first\n\n\nseason officially concluded on may 14 , 2018 .\nseason officially concluded on may 14 , 2018 .\n\n",
+        "dataset": "boolq",
+        "parsed_text": "filter id 18 and adversarial",
+        "user_text": "show me an adversarial attack on id 18\n",
+        "timestamp": "15-06-2023, 17:34:14"
+    },
+    {
+        "id": "a6ad2dcb2874d07dfe46378a175bb95ab2b7b27d47fa46eee321ab694803",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "Label True (99.853%) --> False (74.594%)\n\ncan carbon form polar co ##valent bonds with hydrogen carbon \u2013 hydrogen bond - - the carbon - hydrogen bond ( c - - h bond ) is a bond between carbon and hydrogen atoms that can be found in many\ncan carbon mo ##uld polar co ##valent james with hydrogen carbon \u2013 hydrogen bond - - the carbon - hydrogen bond ( c - - h bond ) is a bond between carbon and hydrogen atoms that can be found in many\n\n\norganic compounds . this bond is a co ##valent bond meaning that carbon shares its outer vale ##nce electrons with up to four hydrogen ##s . this completes both of their outer shells making them\n\norganic compounds . this julian is a co ##valent bond meaning that carbon shares its outer vale ##nce electrons with up to four hydrogen ##s . this completes both of their outer shells making them\n\n\nstable . carbon - - hydrogen bonds have a bond length of about 1 . 09 a ( 1 . 09 \u00d7 10 m ) and a bond energy of about 41 ##3 k ##j / mo ##l ( see table below ) . using paul ##ing ' s scale - - c ( 2 .\nstable . carbon - - hydrogen bonds have a bond length of about 1 . 09 a ( 1 . 09 \u00d7 10 m ) and a bond energy of about 41 ##3 k ##j / mo ##l ( see table below ) . using paul ##ing ' s scale - - c ( 2 .\n\n\n55 ) and h ( 2 . 2 ) - - the electron ##ega ##tiv ##ity difference between these two atoms is 0 . 35 . because of this small difference in electron ##ega ##tiv ##ities , the c ##\u2212 ##h bond is\n\n55 ) and h ( 2 . 2 ) - - the electron ##ega ##tiv ##ity difference between these two atoms is 0 . 35 . because of this small difference in electron ##ega ##tiv ##ities , the c \u2212 h bond is\n\n\ngenerally regarded as being non - polar . in structural formulas of molecules , the hydrogen atoms are often omitted . compound classes consisting solely of c - - h bonds and c - - c bonds are al\ngenerally regarded as being non - polar . in structural formulas of molecules , the hydrogen atoms are often omitted . compound classes consisting solely of c - - h bonds and c - - c bonds are al\n\n\n##kan ##es , al ##ken ##es , al ##ky ##nes , and aromatic hydro ##carbon ##s . collectively they are known as hydro ##carbon ##s .\n\n##kan ##es , al ##ken ##es , al ##ky ##nes , and aromatic hydro ##carbon ##s . collectively they are known as hydro ##carbon ##s .\n",
+        "dataset": "boolq",
+        "parsed_text": "filter id 38 and adversarial",
+        "user_text": "show me a case where the model would be confused by instance 38\n",
+        "timestamp": "15-06-2023, 17:35:08"
+    },
+    {
+        "id": "a6ad2dcb2874d07dfe46378a175bb95ab2b7b27d47fa46eee321ab694803",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "Label True (99.853%) --> False (74.594%)\n\ncan carbon form polar co ##valent bonds with hydrogen carbon \u2013 hydrogen bond - - the carbon - hydrogen bond ( c - - h bond ) is a bond between carbon and hydrogen atoms that can be found in many\ncan carbon mo ##uld polar co ##valent james with hydrogen carbon \u2013 hydrogen bond - - the carbon - hydrogen bond ( c - - h bond ) is a bond between carbon and hydrogen atoms that can be found in many\n\n\norganic compounds . this bond is a co ##valent bond meaning that carbon shares its outer vale ##nce electrons with up to four hydrogen ##s . this completes both of their outer shells making them\n\norganic compounds . this julian is a co ##valent bond meaning that carbon shares its outer vale ##nce electrons with up to four hydrogen ##s . this completes both of their outer shells making them\n\n\nstable . carbon - - hydrogen bonds have a bond length of about 1 . 09 a ( 1 . 09 \u00d7 10 m ) and a bond energy of about 41 ##3 k ##j / mo ##l ( see table below ) . using paul ##ing ' s scale - - c ( 2 .\nstable . carbon - - hydrogen bonds have a bond length of about 1 . 09 a ( 1 . 09 \u00d7 10 m ) and a bond energy of about 41 ##3 k ##j / mo ##l ( see table below ) . using paul ##ing ' s scale - - c ( 2 .\n\n\n55 ) and h ( 2 . 2 ) - - the electron ##ega ##tiv ##ity difference between these two atoms is 0 . 35 . because of this small difference in electron ##ega ##tiv ##ities , the c ##\u2212 ##h bond is\n\n55 ) and h ( 2 . 2 ) - - the electron ##ega ##tiv ##ity difference between these two atoms is 0 . 35 . because of this small difference in electron ##ega ##tiv ##ities , the c \u2212 h bond is\n\n\ngenerally regarded as being non - polar . in structural formulas of molecules , the hydrogen atoms are often omitted . compound classes consisting solely of c - - h bonds and c - - c bonds are al\ngenerally regarded as being non - polar . in structural formulas of molecules , the hydrogen atoms are often omitted . compound classes consisting solely of c - - h bonds and c - - c bonds are al\n\n\n##kan ##es , al ##ken ##es , al ##ky ##nes , and aromatic hydro ##carbon ##s . collectively they are known as hydro ##carbon ##s .\n\n##kan ##es , al ##ken ##es , al ##ky ##nes , and aromatic hydro ##carbon ##s . collectively they are known as hydro ##carbon ##s .\n",
+        "dataset": "boolq",
+        "parsed_text": "filter id 38 and adversarial",
+        "user_text": "show me a case where the model would be confused by instance 38\n",
+        "timestamp": "15-06-2023, 17:35:13"
+    },
+    {
+        "id": "a6ad2dcb2874d07dfe46378a175bb95ab2b7b27d47fa46eee321ab694803",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "Label True (99.853%) --> False (74.594%)\n\ncan carbon form polar co ##valent bonds with hydrogen carbon \u2013 hydrogen bond - - the carbon - hydrogen bond ( c - - h bond ) is a bond between carbon and hydrogen atoms that can be found in many\ncan carbon mo ##uld polar co ##valent james with hydrogen carbon \u2013 hydrogen bond - - the carbon - hydrogen bond ( c - - h bond ) is a bond between carbon and hydrogen atoms that can be found in many\n\n\norganic compounds . this bond is a co ##valent bond meaning that carbon shares its outer vale ##nce electrons with up to four hydrogen ##s . this completes both of their outer shells making them\n\norganic compounds . this julian is a co ##valent bond meaning that carbon shares its outer vale ##nce electrons with up to four hydrogen ##s . this completes both of their outer shells making them\n\n\nstable . carbon - - hydrogen bonds have a bond length of about 1 . 09 a ( 1 . 09 \u00d7 10 m ) and a bond energy of about 41 ##3 k ##j / mo ##l ( see table below ) . using paul ##ing ' s scale - - c ( 2 .\nstable . carbon - - hydrogen bonds have a bond length of about 1 . 09 a ( 1 . 09 \u00d7 10 m ) and a bond energy of about 41 ##3 k ##j / mo ##l ( see table below ) . using paul ##ing ' s scale - - c ( 2 .\n\n\n55 ) and h ( 2 . 2 ) - - the electron ##ega ##tiv ##ity difference between these two atoms is 0 . 35 . because of this small difference in electron ##ega ##tiv ##ities , the c ##\u2212 ##h bond is\n\n55 ) and h ( 2 . 2 ) - - the electron ##ega ##tiv ##ity difference between these two atoms is 0 . 35 . because of this small difference in electron ##ega ##tiv ##ities , the c \u2212 h bond is\n\n\ngenerally regarded as being non - polar . in structural formulas of molecules , the hydrogen atoms are often omitted . compound classes consisting solely of c - - h bonds and c - - c bonds are al\ngenerally regarded as being non - polar . in structural formulas of molecules , the hydrogen atoms are often omitted . compound classes consisting solely of c - - h bonds and c - - c bonds are al\n\n\n##kan ##es , al ##ken ##es , al ##ky ##nes , and aromatic hydro ##carbon ##s . collectively they are known as hydro ##carbon ##s .\n\n##kan ##es , al ##ken ##es , al ##ky ##nes , and aromatic hydro ##carbon ##s . collectively they are known as hydro ##carbon ##s .\n",
+        "dataset": "boolq",
+        "parsed_text": "filter id 38 and adversarial",
+        "user_text": "show me a case where the model would be confused by instance 38\n",
+        "timestamp": "15-06-2023, 17:35:25"
+    },
+    {
+        "id": "e8f6dcfa8b7bd3ccc8f56ac6aa0db226dfd755c26d591230ba8f203f4c97",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "Original text: (ID 8)\nAmerican entry into Canada by land -- Persons driving into Canada must have their vehicle's registration document and proof of insurance.\nAugmentation by word replacements:\nUpon entry into Canada via land - - Persons driving it there must show their parents'a licence document and proof of insurance.",
+        "dataset": "boolq",
+        "parsed_text": "filter id 8 and augment",
+        "user_text": "starting from id 8 how would a new instance look like?",
+        "timestamp": "15-06-2023, 17:37:58"
+    },
+    {
+        "id": "e8f6dcfa8b7bd3ccc8f56ac6aa0db226dfd755c26d591230ba8f203f4c97",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "Original text: (ID 8)\nAmerican entry into Canada by land -- Persons driving into Canada must have their vehicle's registration document and proof of insurance.\nAugmentation by word replacements:\nUpon entry into Canada via land - - Persons driving it there must show their parents'a licence document and proof of insurance.",
+        "dataset": "boolq",
+        "parsed_text": "filter id 8 and augment",
+        "user_text": "starting from id 8 how would a new instance look like?",
+        "timestamp": "15-06-2023, 17:38:05"
+    },
+    {
+        "id": "e8f6dcfa8b7bd3ccc8f56ac6aa0db226dfd755c26d591230ba8f203f4c97",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "Original text: (ID 8)\nAmerican entry into Canada by land -- Persons driving into Canada must have their vehicle's registration document and proof of insurance.\nAugmentation by word replacements:\nUpon entry into Canada via land - - Persons driving it there must show their parents'a licence document and proof of insurance.",
+        "dataset": "boolq",
+        "parsed_text": "filter id 8 and augment",
+        "user_text": "starting from id 8 how would a new instance look like?",
+        "timestamp": "15-06-2023, 17:38:09"
+    }
+]

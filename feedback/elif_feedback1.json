@@ -1,0 +1,506 @@
+[
+    {
+        "id": "236230a3b0bff7d3e7dcc797ebd5f1205c8d4fd021311cd2229df80851ab",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "The 25 most frequent words in the dataset are:\n\nWord\tFrequence\n\u2019\t341\nlike\t145\n-\t134\nyes,\t128\ni'm\t126\nwould\t125\nget\t102\ngood\t102\nthink\t95\ntake\t90\nyou.\t86\nthank\t81\nthat's\t79\nwell,\t76\nwant\t75\none\t75\ngo\t74\ni'll\t74\ncould\t70\nneed\t66\nknow\t64\noh,\t63\nyou?\t58\nmake\t55\nit.\t55",
+        "dataset": "daily_dialog",
+        "parsed_text": "keywords all",
+        "timestamp": "15-06-2023, 12:38:43"
+    },
+    {
+        "id": "236230a3b0bff7d3e7dcc797ebd5f1205c8d4fd021311cd2229df80851ab",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "The 25 most frequent words in the dataset are:\n\nWord\tFrequence\n\u2019\t341\nlike\t145\n-\t134\nyes,\t128\ni'm\t126\nwould\t125\nget\t102\ngood\t102\nthink\t95\ntake\t90\nyou.\t86\nthank\t81\nthat's\t79\nwell,\t76\nwant\t75\none\t75\ngo\t74\ni'll\t74\ncould\t70\nneed\t66\nknow\t64\noh,\t63\nyou?\t58\nmake\t55\nit.\t55",
+        "dataset": "daily_dialog",
+        "parsed_text": "keywords all",
+        "timestamp": "15-06-2023, 12:38:46"
+    },
+    {
+        "id": "236230a3b0bff7d3e7dcc797ebd5f1205c8d4fd021311cd2229df80851ab",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "The 25 most frequent words in the dataset are:\n\nWord\tFrequence\n\u2019\t341\nlike\t145\n-\t134\nyes,\t128\ni'm\t126\nwould\t125\nget\t102\ngood\t102\nthink\t95\ntake\t90\nyou.\t86\nthank\t81\nthat's\t79\nwell,\t76\nwant\t75\none\t75\ngo\t74\ni'll\t74\ncould\t70\nneed\t66\nknow\t64\noh,\t63\nyou?\t58\nmake\t55\nit.\t55",
+        "dataset": "daily_dialog",
+        "parsed_text": "keywords all",
+        "timestamp": "15-06-2023, 12:38:48"
+    },
+    {
+        "id": "be2e47fe3313f81ec1dc0de92376a063bc9c75c2b50ddfb811cfd7a5aa7c",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "Your input is: change 0 to a commissive\nThe prediction is: inform",
+        "dataset": "daily_dialog",
+        "parsed_text": "predict",
+        "timestamp": "15-06-2023, 12:39:01"
+    },
+    {
+        "id": "be2e47fe3313f81ec1dc0de92376a063bc9c75c2b50ddfb811cfd7a5aa7c",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "Your input is: change 0 to a commissive\nThe prediction is: inform",
+        "dataset": "daily_dialog",
+        "parsed_text": "predict",
+        "timestamp": "15-06-2023, 12:39:04"
+    },
+    {
+        "id": "be2e47fe3313f81ec1dc0de92376a063bc9c75c2b50ddfb811cfd7a5aa7c",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "Your input is: change 0 to a commissive\nThe prediction is: inform",
+        "dataset": "daily_dialog",
+        "parsed_text": "predict",
+        "timestamp": "15-06-2023, 12:39:06"
+    },
+    {
+        "id": "b8734e2a8b364e594e2341559ad42caf1b52ebe2712f262f20cc3c13a362",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "Your input is: change 0 to a commissive\nThe prediction is: inform",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 6 and predict",
+        "timestamp": "15-06-2023, 12:40:19"
+    },
+    {
+        "id": "b8734e2a8b364e594e2341559ad42caf1b52ebe2712f262f20cc3c13a362",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "Your input is: change 0 to a commissive\nThe prediction is: inform",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 6 and predict",
+        "timestamp": "15-06-2023, 12:40:20"
+    },
+    {
+        "id": "b8734e2a8b364e594e2341559ad42caf1b52ebe2712f262f20cc3c13a362",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "Your input is: change 0 to a commissive\nThe prediction is: inform",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 6 and predict",
+        "timestamp": "15-06-2023, 12:40:23"
+    },
+    {
+        "id": "d10cea861d69cbe518908772fedfd4d5a88eb5cfe8869344e72e7bc4b182",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "Original text: Text: 'come on man! i even got dope and acid! try some!'\nPrediction: directive\nExplanation: directive is a directive dialogueact, where the speaker is trying to get the listener to do something. In this case, it's the subject of the sentence, \"try some!\". The directive act can also be used as a general purpose act, to express a request or order. overinform: the information provided is not particularly useful or helpful. This is because the provided information is either not true, does not apply to the situation, is too general, etc. Overinform is used when the actual information that is needed is provided later in the conversation. For example, if I ask you where a car is, and you tell me that the car you are looking for is in a nearby parking lot, I would consider this overinform, because I already know where your car resides. I need to know more about the specifics of your situation to provide the needed information. question: this act describes a conversation where two people are communicating with each other. One person is asking a direct question to another person. They are not necessarily trying get a response from the other person, but they are just trying make sense of something, find an answer, understand something better. So, in this example the question act. The question is \"where is the parking?\". And the answer is given by the person who is looking in their car for the parked car. \"In a nearby parking.\". Here the direct answer was given, so the act was classified out of question. However, this is an example of a dialogue where there is no promise or command given. If the same conversation was about a pizza place, then the command act might be more appropriate. But in general the promise act and command acts are used in conjunction with questions. inform (question): this acts describes the first person asking the second person a specific question or making a statement. Then the inform act takes place. After the ask or statement, there might or might not be a follow up question from second. Sometimes the followup question might even be from third person or someone else. Like in example 1, after the \"Where is it?\" the inquirer might get another answer \"in a parking\". Inform is also used to describe a situation where someone is giving information to someone. Example 2. A person might say \"I am going to a party tomorrow and I will bring some alcohol. Please don't tell anyone\". This act could also describe the action of someone giving a gift to other, like a present.",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 6 and rationalize",
+        "timestamp": "15-06-2023, 12:40:51"
+    },
+    {
+        "id": "d10cea861d69cbe518908772fedfd4d5a88eb5cfe8869344e72e7bc4b182",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "Original text: Text: 'come on man! i even got dope and acid! try some!'\nPrediction: directive\nExplanation: directive is a directive dialogueact, where the speaker is trying to get the listener to do something. In this case, it's the subject of the sentence, \"try some!\". The directive act can also be used as a general purpose act, to express a request or order. overinform: the information provided is not particularly useful or helpful. This is because the provided information is either not true, does not apply to the situation, is too general, etc. Overinform is used when the actual information that is needed is provided later in the conversation. For example, if I ask you where a car is, and you tell me that the car you are looking for is in a nearby parking lot, I would consider this overinform, because I already know where your car resides. I need to know more about the specifics of your situation to provide the needed information. question: this act describes a conversation where two people are communicating with each other. One person is asking a direct question to another person. They are not necessarily trying get a response from the other person, but they are just trying make sense of something, find an answer, understand something better. So, in this example the question act. The question is \"where is the parking?\". And the answer is given by the person who is looking in their car for the parked car. \"In a nearby parking.\". Here the direct answer was given, so the act was classified out of question. However, this is an example of a dialogue where there is no promise or command given. If the same conversation was about a pizza place, then the command act might be more appropriate. But in general the promise act and command acts are used in conjunction with questions. inform (question): this acts describes the first person asking the second person a specific question or making a statement. Then the inform act takes place. After the ask or statement, there might or might not be a follow up question from second. Sometimes the followup question might even be from third person or someone else. Like in example 1, after the \"Where is it?\" the inquirer might get another answer \"in a parking\". Inform is also used to describe a situation where someone is giving information to someone. Example 2. A person might say \"I am going to a party tomorrow and I will bring some alcohol. Please don't tell anyone\". This act could also describe the action of someone giving a gift to other, like a present.",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 6 and rationalize",
+        "timestamp": "15-06-2023, 12:40:53"
+    },
+    {
+        "id": "d10cea861d69cbe518908772fedfd4d5a88eb5cfe8869344e72e7bc4b182",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "Original text: Text: 'come on man! i even got dope and acid! try some!'\nPrediction: directive\nExplanation: directive is a directive dialogueact, where the speaker is trying to get the listener to do something. In this case, it's the subject of the sentence, \"try some!\". The directive act can also be used as a general purpose act, to express a request or order. overinform: the information provided is not particularly useful or helpful. This is because the provided information is either not true, does not apply to the situation, is too general, etc. Overinform is used when the actual information that is needed is provided later in the conversation. For example, if I ask you where a car is, and you tell me that the car you are looking for is in a nearby parking lot, I would consider this overinform, because I already know where your car resides. I need to know more about the specifics of your situation to provide the needed information. question: this act describes a conversation where two people are communicating with each other. One person is asking a direct question to another person. They are not necessarily trying get a response from the other person, but they are just trying make sense of something, find an answer, understand something better. So, in this example the question act. The question is \"where is the parking?\". And the answer is given by the person who is looking in their car for the parked car. \"In a nearby parking.\". Here the direct answer was given, so the act was classified out of question. However, this is an example of a dialogue where there is no promise or command given. If the same conversation was about a pizza place, then the command act might be more appropriate. But in general the promise act and command acts are used in conjunction with questions. inform (question): this acts describes the first person asking the second person a specific question or making a statement. Then the inform act takes place. After the ask or statement, there might or might not be a follow up question from second. Sometimes the followup question might even be from third person or someone else. Like in example 1, after the \"Where is it?\" the inquirer might get another answer \"in a parking\". Inform is also used to describe a situation where someone is giving information to someone. Example 2. A person might say \"I am going to a party tomorrow and I will bring some alcohol. Please don't tell anyone\". This act could also describe the action of someone giving a gift to other, like a present.",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 6 and rationalize",
+        "timestamp": "15-06-2023, 12:40:55"
+    },
+    {
+        "id": "349d43f1207f06d05aef7c55458359584af91073130f39f734e7184e976c",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "The original text for id 0:\n\nchange 0 to a commissive...\n\nHere are some instances similar to id 0:\nid 1481 (cossim 0.29):\nfirst you must check in at counter no. 4....\n\nid 1987 (cossim 0.262):\nwhat am i supposed to do?...\n\nid 285 (cossim 0.252):\ni can handle them without any trouble...",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 6 and similar 2",
+        "timestamp": "15-06-2023, 12:41:49"
+    },
+    {
+        "id": "349d43f1207f06d05aef7c55458359584af91073130f39f734e7184e976c",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "The original text for id 0:\n\nchange 0 to a commissive...\n\nHere are some instances similar to id 0:\nid 1481 (cossim 0.29):\nfirst you must check in at counter no. 4....\n\nid 1987 (cossim 0.262):\nwhat am i supposed to do?...\n\nid 285 (cossim 0.252):\ni can handle them without any trouble...",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 6 and similar 2",
+        "timestamp": "15-06-2023, 12:41:52"
+    },
+    {
+        "id": "349d43f1207f06d05aef7c55458359584af91073130f39f734e7184e976c",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "The original text for id 0:\n\nchange 0 to a commissive...\n\nHere are some instances similar to id 0:\nid 1481 (cossim 0.29):\nfirst you must check in at counter no. 4....\n\nid 1987 (cossim 0.262):\nwhat am i supposed to do?...\n\nid 285 (cossim 0.252):\ni can handle them without any trouble...",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 6 and similar 2",
+        "timestamp": "15-06-2023, 12:41:54"
+    },
+    {
+        "id": "6e71e95ab8ed7a077c88cbe3f5b01e4e0a01e9da5e7164e1ccd2d77ea8a6",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "The original text for id 0:\n\nchange 0 to a commissive...\n\nHere are some instances similar to id 0:\nid 1481 (cossim 0.29):\nfirst you must check in at counter no. 4....\n\nid 1987 (cossim 0.262):\nwhat am i supposed to do?...\n\nid 285 (cossim 0.252):\ni can handle them without any trouble...",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 6 and similar",
+        "timestamp": "15-06-2023, 12:42:37"
+    },
+    {
+        "id": "6e71e95ab8ed7a077c88cbe3f5b01e4e0a01e9da5e7164e1ccd2d77ea8a6",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "The original text for id 0:\n\nchange 0 to a commissive...\n\nHere are some instances similar to id 0:\nid 1481 (cossim 0.29):\nfirst you must check in at counter no. 4....\n\nid 1987 (cossim 0.262):\nwhat am i supposed to do?...\n\nid 285 (cossim 0.252):\ni can handle them without any trouble...",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 6 and similar",
+        "timestamp": "15-06-2023, 12:42:38"
+    },
+    {
+        "id": "6e71e95ab8ed7a077c88cbe3f5b01e4e0a01e9da5e7164e1ccd2d77ea8a6",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "The original text for id 0:\n\nchange 0 to a commissive...\n\nHere are some instances similar to id 0:\nid 1481 (cossim 0.29):\nfirst you must check in at counter no. 4....\n\nid 1987 (cossim 0.262):\nwhat am i supposed to do?...\n\nid 285 (cossim 0.252):\ni can handle them without any trouble...",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 6 and similar",
+        "timestamp": "15-06-2023, 12:42:40"
+    },
+    {
+        "id": "8b924670f0f7cbd44fe6c8aded27f405d9b2fa53cc1d06903a3488ae660b",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "The original text for id 0:\n\nchange 0 to a commissive...\n\nHere are some instances similar to id 0:\nid 1481 (cossim 0.29):\nfirst you must check in at counter no. 4....\n\nid 1987 (cossim 0.262):\nwhat am i supposed to do?...\n\nid 285 (cossim 0.252):\ni can handle them without any trouble...",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 6 and similar",
+        "timestamp": "15-06-2023, 12:43:04"
+    },
+    {
+        "id": "8b924670f0f7cbd44fe6c8aded27f405d9b2fa53cc1d06903a3488ae660b",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "The original text for id 0:\n\nchange 0 to a commissive...\n\nHere are some instances similar to id 0:\nid 1481 (cossim 0.29):\nfirst you must check in at counter no. 4....\n\nid 1987 (cossim 0.262):\nwhat am i supposed to do?...\n\nid 285 (cossim 0.252):\ni can handle them without any trouble...",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 6 and similar",
+        "timestamp": "15-06-2023, 12:43:06"
+    },
+    {
+        "id": "8b924670f0f7cbd44fe6c8aded27f405d9b2fa53cc1d06903a3488ae660b",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "The original text for id 0:\n\nchange 0 to a commissive...\n\nHere are some instances similar to id 0:\nid 1481 (cossim 0.29):\nfirst you must check in at counter no. 4....\n\nid 1987 (cossim 0.262):\nwhat am i supposed to do?...\n\nid 285 (cossim 0.252):\ni can handle them without any trouble...",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 6 and similar",
+        "timestamp": "15-06-2023, 12:43:09"
+    },
+    {
+        "id": "32f0b25f93a7f59c730835a45ac16c673b9e5c44507ea6d47728e3964e84",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "The original text is:\nchange 0 to a commissive\n\nTop 5 token(s): [SEP] to [CLS] ##missive com\n\nThe visualization:",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 6 and nlpattribute all",
+        "timestamp": "15-06-2023, 12:43:40"
+    },
+    {
+        "id": "32f0b25f93a7f59c730835a45ac16c673b9e5c44507ea6d47728e3964e84",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "The original text is:\nchange 0 to a commissive\n\nTop 5 token(s): [SEP] to [CLS] ##missive com\n\nThe visualization:",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 6 and nlpattribute all",
+        "timestamp": "15-06-2023, 12:43:42"
+    },
+    {
+        "id": "32f0b25f93a7f59c730835a45ac16c673b9e5c44507ea6d47728e3964e84",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "The original text is:\nchange 0 to a commissive\n\nTop 5 token(s): [SEP] to [CLS] ##missive com\n\nThe visualization:",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 6 and nlpattribute all",
+        "timestamp": "15-06-2023, 12:43:45"
+    },
+    {
+        "id": "192fbb4d357e1b97f1c4bfe1667aec53e49dc05b3faf1e6bfab7024130ae",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "Your input is: Open the window.\nThe prediction is: directive",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 0 and predict",
+        "timestamp": "15-06-2023, 12:46:50"
+    },
+    {
+        "id": "192fbb4d357e1b97f1c4bfe1667aec53e49dc05b3faf1e6bfab7024130ae",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "Your input is: Open the window.\nThe prediction is: directive",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 0 and predict",
+        "timestamp": "15-06-2023, 12:46:53"
+    },
+    {
+        "id": "192fbb4d357e1b97f1c4bfe1667aec53e49dc05b3faf1e6bfab7024130ae",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "Your input is: Open the window.\nThe prediction is: directive",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 0 and predict",
+        "timestamp": "15-06-2023, 12:46:54"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "This was a bit unclear. Could you rephrase it, please?",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 0 and predict",
+        "timestamp": "15-06-2023, 12:47:51"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "This was a bit unclear. Could you rephrase it, please?",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 0 and predict",
+        "timestamp": "15-06-2023, 12:47:52"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "This was a bit unclear. Could you rephrase it, please?",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 0 and predict",
+        "timestamp": "15-06-2023, 12:47:54"
+    },
+    {
+        "id": "d653b0733e01532233b5150d3560aa3e15b2c3a6bd8455df4a76a670e13e",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "For the data with id equal to 0, the features are\n\ndialog: hey man, you wanna buy some weed?",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 0 and show",
+        "timestamp": "15-06-2023, 12:48:31"
+    },
+    {
+        "id": "d653b0733e01532233b5150d3560aa3e15b2c3a6bd8455df4a76a670e13e",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "For the data with id equal to 0, the features are\n\ndialog: hey man, you wanna buy some weed?",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 0 and show",
+        "timestamp": "15-06-2023, 12:48:33"
+    },
+    {
+        "id": "d653b0733e01532233b5150d3560aa3e15b2c3a6bd8455df4a76a670e13e",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "For the data with id equal to 0, the features are\n\ndialog: hey man, you wanna buy some weed?",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 0 and show",
+        "timestamp": "15-06-2023, 12:48:34"
+    },
+    {
+        "id": "b1c629fee9f4bbd4b9fb8c1d9ad4fb949723ef9fe98fce6baa66aae3f1b7",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "Original text: Text: 'hey man, you wanna buy some weed?'\nPrediction: directive\nExplanation: Question is the most likely dialogueact, because the request for information is made by the sender of the message. In this case, man. The sender is seeking information about the identity of a person, and is therefore using the question word.",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 0 and rationalize",
+        "timestamp": "15-06-2023, 12:49:23"
+    },
+    {
+        "id": "b1c629fee9f4bbd4b9fb8c1d9ad4fb949723ef9fe98fce6baa66aae3f1b7",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "Original text: Text: 'hey man, you wanna buy some weed?'\nPrediction: directive\nExplanation: Question is the most likely dialogueact, because the request for information is made by the sender of the message. In this case, man. The sender is seeking information about the identity of a person, and is therefore using the question word.",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 0 and rationalize",
+        "timestamp": "15-06-2023, 12:49:25"
+    },
+    {
+        "id": "b1c629fee9f4bbd4b9fb8c1d9ad4fb949723ef9fe98fce6baa66aae3f1b7",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "Original text: Text: 'hey man, you wanna buy some weed?'\nPrediction: directive\nExplanation: Question is the most likely dialogueact, because the request for information is made by the sender of the message. In this case, man. The sender is seeking information about the identity of a person, and is therefore using the question word.",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 0 and rationalize",
+        "timestamp": "15-06-2023, 12:49:27"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "This was a bit unclear. Could you rephrase it, please?",
+        "dataset": "daily_dialog",
+        "parsed_text": "model model_summary",
+        "timestamp": "15-06-2023, 12:50:59"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "This was a bit unclear. Could you rephrase it, please?",
+        "dataset": "daily_dialog",
+        "parsed_text": "model model_summary",
+        "timestamp": "15-06-2023, 12:51:01"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "This was a bit unclear. Could you rephrase it, please?",
+        "dataset": "daily_dialog",
+        "parsed_text": "model model_summary",
+        "timestamp": "15-06-2023, 12:51:03"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "Sorry! I couldn't understand that. Could you please try to rephrase?",
+        "dataset": "daily_dialog",
+        "parsed_text": "show",
+        "timestamp": "15-06-2023, 12:51:25"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "Sorry! I couldn't understand that. Could you please try to rephrase?",
+        "dataset": "daily_dialog",
+        "parsed_text": "show",
+        "timestamp": "15-06-2023, 12:51:27"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "Sorry! I couldn't understand that. Could you please try to rephrase?",
+        "dataset": "daily_dialog",
+        "parsed_text": "show",
+        "timestamp": "15-06-2023, 12:51:30"
+    },
+    {
+        "id": "1b1934da8fd8aa237c1de844da6ade2f906f9c271571e682ec7ac7b26b99",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "For all the instances in the data, the instance id's are:\n\n0-2386\n\nWhich one do you want to see?",
+        "dataset": "daily_dialog",
+        "parsed_text": "show",
+        "timestamp": "15-06-2023, 12:51:53"
+    },
+    {
+        "id": "1b1934da8fd8aa237c1de844da6ade2f906f9c271571e682ec7ac7b26b99",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "For all the instances in the data, the instance id's are:\n\n0-2386\n\nWhich one do you want to see?",
+        "dataset": "daily_dialog",
+        "parsed_text": "show",
+        "timestamp": "15-06-2023, 12:51:55"
+    },
+    {
+        "id": "1b1934da8fd8aa237c1de844da6ade2f906f9c271571e682ec7ac7b26b99",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "For all the instances in the data, the instance id's are:\n\n0-2386\n\nWhich one do you want to see?",
+        "dataset": "daily_dialog",
+        "parsed_text": "show",
+        "timestamp": "15-06-2023, 12:51:57"
+    },
+    {
+        "id": "48f7860981acaa58c84e2a8b6761bebe34f6916c061aa4a676519bc971d7",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "The model scores 73.565% accuracy on all the instances in the data,.",
+        "dataset": "daily_dialog",
+        "parsed_text": "score default inform",
+        "timestamp": "15-06-2023, 12:52:14"
+    },
+    {
+        "id": "48f7860981acaa58c84e2a8b6761bebe34f6916c061aa4a676519bc971d7",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "The model scores 73.565% accuracy on all the instances in the data,.",
+        "dataset": "daily_dialog",
+        "parsed_text": "score default inform",
+        "timestamp": "15-06-2023, 12:52:16"
+    },
+    {
+        "id": "48f7860981acaa58c84e2a8b6761bebe34f6916c061aa4a676519bc971d7",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "The model scores 73.565% accuracy on all the instances in the data,.",
+        "dataset": "daily_dialog",
+        "parsed_text": "score default inform",
+        "timestamp": "15-06-2023, 12:52:19"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "I'm sorry, I am not sure whether I understood you correctly. Did you mean that you want me to show you some statistics for the dataset?",
+        "dataset": "daily_dialog",
+        "parsed_text": "score default inform",
+        "timestamp": "15-06-2023, 12:52:44"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "I'm sorry, I am not sure whether I understood you correctly. Did you mean that you want me to show you some statistics for the dataset?",
+        "dataset": "daily_dialog",
+        "parsed_text": "score default inform",
+        "timestamp": "15-06-2023, 12:52:46"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "I'm sorry, I am not sure whether I understood you correctly. Did you mean that you want me to show you some statistics for the dataset?",
+        "dataset": "daily_dialog",
+        "parsed_text": "score default inform",
+        "timestamp": "15-06-2023, 12:52:48"
+    },
+    {
+        "id": "ade43d60ceb6fc02f5362d3177f5ce7138ddf2ed40c1f5b9ff92a97fd24d",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "For the data with id equal to 0, the features are\n\ndialog: hey man, you wanna buy some weed?",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 0 and show",
+        "timestamp": "15-06-2023, 12:52:59"
+    },
+    {
+        "id": "ade43d60ceb6fc02f5362d3177f5ce7138ddf2ed40c1f5b9ff92a97fd24d",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "For the data with id equal to 0, the features are\n\ndialog: hey man, you wanna buy some weed?",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 0 and show",
+        "timestamp": "15-06-2023, 12:53:01"
+    },
+    {
+        "id": "ade43d60ceb6fc02f5362d3177f5ce7138ddf2ed40c1f5b9ff92a97fd24d",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "For the data with id equal to 0, the features are\n\ndialog: hey man, you wanna buy some weed?",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 0 and show",
+        "timestamp": "15-06-2023, 12:53:03"
+    },
+    {
+        "id": "27efb5780c56baa0f9fb8dcbefb7c0ca0308fec8ae7fe78324994a4c3685",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "The original text is:\nFeed the cat.\n\nTop 5 token(s): feed . the [SEP] [CLS]\n\nThe visualization:\nfeed the cat .",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 0 and nlpattribute all",
+        "timestamp": "15-06-2023, 12:53:56"
+    },
+    {
+        "id": "27efb5780c56baa0f9fb8dcbefb7c0ca0308fec8ae7fe78324994a4c3685",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "The original text is:\nFeed the cat.\n\nTop 5 token(s): feed . the [SEP] [CLS]\n\nThe visualization:\nfeed the cat .",
+        "dataset": "daily_dialog",
+        "parsed_text": "filter id 0 and nlpattribute all",
+        "timestamp": "15-06-2023, 12:53:59"
+    }
+]

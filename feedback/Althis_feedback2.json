@@ -1,0 +1,1222 @@
+[
+    {
+        "id": "undefined",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "This is likely out of my expertise, can I help you with something else?",
+        "dataset": "olid",
+        "parsed_text": "filter id 1782 and show",
+        "user_text": "What is the prediction for id 1782?\n",
+        "timestamp": "17-06-2023, 16:41:44"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "This is likely out of my expertise, can I help you with something else?",
+        "dataset": "olid",
+        "parsed_text": "filter id 1782 and show",
+        "user_text": "What is the prediction for id 1782?\n",
+        "timestamp": "17-06-2023, 16:41:47"
+    },
+    {
+        "id": "79595c1b7812f5a9a48ec791a02ab019804204ba1cddaa3b4539dc6e13a4",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "For the data with id equal to 8, the features are\n\ntext: @USER Lmao what a joke he is.",
+        "dataset": "olid",
+        "parsed_text": "filter id 8 and show",
+        "user_text": "What does row 8 look like?\n",
+        "timestamp": "17-06-2023, 16:43:56"
+    },
+    {
+        "id": "79595c1b7812f5a9a48ec791a02ab019804204ba1cddaa3b4539dc6e13a4",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "For the data with id equal to 8, the features are\n\ntext: @USER Lmao what a joke he is.",
+        "dataset": "olid",
+        "parsed_text": "filter id 8 and show",
+        "user_text": "What does row 8 look like?\n",
+        "timestamp": "17-06-2023, 16:43:59"
+    },
+    {
+        "id": "79595c1b7812f5a9a48ec791a02ab019804204ba1cddaa3b4539dc6e13a4",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "For the data with id equal to 8, the features are\n\ntext: @USER Lmao what a joke he is.",
+        "dataset": "olid",
+        "parsed_text": "filter id 8 and show",
+        "user_text": "What does row 8 look like?\n",
+        "timestamp": "17-06-2023, 16:44:02"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "I'm sorry but could you rephrase the message, please?",
+        "dataset": "olid",
+        "parsed_text": "filter id 8 and show",
+        "user_text": "What is the prediction for id 8?\n",
+        "timestamp": "17-06-2023, 16:44:16"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "This was a bit unclear. Could you rephrase it, please?",
+        "dataset": "olid",
+        "parsed_text": "randompredict",
+        "user_text": "predict id 8\n",
+        "timestamp": "17-06-2023, 16:46:29"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "This was a bit unclear. Could you rephrase it, please?",
+        "dataset": "olid",
+        "parsed_text": "randompredict",
+        "user_text": "predict id 8\n",
+        "timestamp": "17-06-2023, 16:46:33"
+    },
+    {
+        "id": "2e8c160a21a2e48956c767b772186a3980f993fcfac189cbc50b07bd9692",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "Training Data Details:\n\n\nName\tContent\ntrain_data_name\tOLID Dataset: Offensive Language Identification Dataset\ntrain_data_source\ttweet\ntrain_data_language\tEnglish\ntrain_data_number\t2000\n\nThe data contains information related to identify the type and the target of offensive texts in social media.\nThe exact feature names in the data are listed as follows:\ntext\n\nThe dataset has following labels:\noffensive\nnon-offensive\n\nThe model scores 80.816% accuracy on the data.",
+        "dataset": "olid",
+        "parsed_text": "data train_data_language",
+        "user_text": "show me the language of training data",
+        "timestamp": "17-06-2023, 16:48:22"
+    },
+    {
+        "id": "2e8c160a21a2e48956c767b772186a3980f993fcfac189cbc50b07bd9692",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "Training Data Details:\n\n\nName\tContent\ntrain_data_name\tOLID Dataset: Offensive Language Identification Dataset\ntrain_data_source\ttweet\ntrain_data_language\tEnglish\ntrain_data_number\t2000\n\nThe data contains information related to identify the type and the target of offensive texts in social media.\nThe exact feature names in the data are listed as follows:\ntext\n\nThe dataset has following labels:\noffensive\nnon-offensive\n\nThe model scores 80.816% accuracy on the data.",
+        "dataset": "olid",
+        "parsed_text": "data train_data_language",
+        "user_text": "show me the language of training data",
+        "timestamp": "17-06-2023, 16:48:26"
+    },
+    {
+        "id": "2e8c160a21a2e48956c767b772186a3980f993fcfac189cbc50b07bd9692",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "Training Data Details:\n\n\nName\tContent\ntrain_data_name\tOLID Dataset: Offensive Language Identification Dataset\ntrain_data_source\ttweet\ntrain_data_language\tEnglish\ntrain_data_number\t2000\n\nThe data contains information related to identify the type and the target of offensive texts in social media.\nThe exact feature names in the data are listed as follows:\ntext\n\nThe dataset has following labels:\noffensive\nnon-offensive\n\nThe model scores 80.816% accuracy on the data.",
+        "dataset": "olid",
+        "parsed_text": "data train_data_language",
+        "user_text": "show me the language of training data",
+        "timestamp": "17-06-2023, 16:48:28"
+    },
+    {
+        "id": "b0f6da40dac09233cf4c3780d005513f87fa0d0e0db6198c062c8b06e8aa",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "Training Data Details:\n\n\nName\tContent\ntrain_data_name\tOLID Dataset: Offensive Language Identification Dataset\ntrain_data_source\ttweet\ntrain_data_language\tEnglish\ntrain_data_number\t2000\n\nThe data contains information related to identify the type and the target of offensive texts in social media.\nThe exact feature names in the data are listed as follows:\ntext\n\nThe dataset has following labels:\noffensive\nnon-offensive\n\nThe model scores 80.816% accuracy on the data.",
+        "dataset": "olid",
+        "parsed_text": "data train_data_source",
+        "user_text": "Training data\n",
+        "timestamp": "17-06-2023, 16:49:52"
+    },
+    {
+        "id": "b0f6da40dac09233cf4c3780d005513f87fa0d0e0db6198c062c8b06e8aa",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "Training Data Details:\n\n\nName\tContent\ntrain_data_name\tOLID Dataset: Offensive Language Identification Dataset\ntrain_data_source\ttweet\ntrain_data_language\tEnglish\ntrain_data_number\t2000\n\nThe data contains information related to identify the type and the target of offensive texts in social media.\nThe exact feature names in the data are listed as follows:\ntext\n\nThe dataset has following labels:\noffensive\nnon-offensive\n\nThe model scores 80.816% accuracy on the data.",
+        "dataset": "olid",
+        "parsed_text": "data train_data_source",
+        "user_text": "Training data\n",
+        "timestamp": "17-06-2023, 16:49:57"
+    },
+    {
+        "id": "b0f6da40dac09233cf4c3780d005513f87fa0d0e0db6198c062c8b06e8aa",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "Training Data Details:\n\n\nName\tContent\ntrain_data_name\tOLID Dataset: Offensive Language Identification Dataset\ntrain_data_source\ttweet\ntrain_data_language\tEnglish\ntrain_data_number\t2000\n\nThe data contains information related to identify the type and the target of offensive texts in social media.\nThe exact feature names in the data are listed as follows:\ntext\n\nThe dataset has following labels:\noffensive\nnon-offensive\n\nThe model scores 80.816% accuracy on the data.",
+        "dataset": "olid",
+        "parsed_text": "data train_data_source",
+        "user_text": "Training data\n",
+        "timestamp": "17-06-2023, 16:50:00"
+    },
+    {
+        "id": "b8dad34dac545454eff9d54ef2d08fc94744a774adac66e28013bd6ed793",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "Training Data Details:\n\n\nName\tContent\ntrain_data_name\tOLID Dataset: Offensive Language Identification Dataset\ntrain_data_source\ttweet\ntrain_data_language\tEnglish\ntrain_data_number\t2000\n\nThe data contains information related to identify the type and the target of offensive texts in social media.\nThe exact feature names in the data are listed as follows:\ntext\n\nThe dataset has following labels:\noffensive\nnon-offensive\n\nThe model scores 80.816% accuracy on the data.",
+        "dataset": "olid",
+        "parsed_text": "data train_data_source",
+        "user_text": "How big is the training data?\n",
+        "timestamp": "17-06-2023, 16:54:12"
+    },
+    {
+        "id": "b8dad34dac545454eff9d54ef2d08fc94744a774adac66e28013bd6ed793",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "Training Data Details:\n\n\nName\tContent\ntrain_data_name\tOLID Dataset: Offensive Language Identification Dataset\ntrain_data_source\ttweet\ntrain_data_language\tEnglish\ntrain_data_number\t2000\n\nThe data contains information related to identify the type and the target of offensive texts in social media.\nThe exact feature names in the data are listed as follows:\ntext\n\nThe dataset has following labels:\noffensive\nnon-offensive\n\nThe model scores 80.816% accuracy on the data.",
+        "dataset": "olid",
+        "parsed_text": "data train_data_source",
+        "user_text": "How big is the training data?\n",
+        "timestamp": "17-06-2023, 16:54:18"
+    },
+    {
+        "id": "b8dad34dac545454eff9d54ef2d08fc94744a774adac66e28013bd6ed793",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "Training Data Details:\n\n\nName\tContent\ntrain_data_name\tOLID Dataset: Offensive Language Identification Dataset\ntrain_data_source\ttweet\ntrain_data_language\tEnglish\ntrain_data_number\t2000\n\nThe data contains information related to identify the type and the target of offensive texts in social media.\nThe exact feature names in the data are listed as follows:\ntext\n\nThe dataset has following labels:\noffensive\nnon-offensive\n\nThe model scores 80.816% accuracy on the data.",
+        "dataset": "olid",
+        "parsed_text": "data train_data_source",
+        "user_text": "How big is the training data?\n",
+        "timestamp": "17-06-2023, 16:54:20"
+    },
+    {
+        "id": "b8dad34dac545454eff9d54ef2d08fc94744a774adac66e28013bd6ed793",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "Training Data Details:\n\n\nName\tContent\ntrain_data_name\tOLID Dataset: Offensive Language Identification Dataset\ntrain_data_source\ttweet\ntrain_data_language\tEnglish\ntrain_data_number\t2000\n\nThe data contains information related to identify the type and the target of offensive texts in social media.\nThe exact feature names in the data are listed as follows:\ntext\n\nThe dataset has following labels:\noffensive\nnon-offensive\n\nThe model scores 80.816% accuracy on the data.",
+        "dataset": "olid",
+        "parsed_text": "data train_data_source",
+        "user_text": "How big is the training data?\n",
+        "timestamp": "17-06-2023, 16:56:43"
+    },
+    {
+        "id": "b8dad34dac545454eff9d54ef2d08fc94744a774adac66e28013bd6ed793",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "Training Data Details:\n\n\nName\tContent\ntrain_data_name\tOLID Dataset: Offensive Language Identification Dataset\ntrain_data_source\ttweet\ntrain_data_language\tEnglish\ntrain_data_number\t2000\n\nThe data contains information related to identify the type and the target of offensive texts in social media.\nThe exact feature names in the data are listed as follows:\ntext\n\nThe dataset has following labels:\noffensive\nnon-offensive\n\nThe model scores 80.816% accuracy on the data.",
+        "dataset": "olid",
+        "parsed_text": "data train_data_source",
+        "user_text": "How big is the training data?\n",
+        "timestamp": "17-06-2023, 16:56:46"
+    },
+    {
+        "id": "690156579fc80dfacd8ad74575f20e162ad4c7f15b29a495a58969f1ceb4",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "General Information:\n\n\nName\tContent\nmodel_name\tBertForSequenceClassification\nmodel_summary\tBert Model transformer with a sequence classification/regression head on top (a linear layer on top of the pooled output) e.g. for GLUE tasks.\ntask\tHate Speech Detection",
+        "dataset": "olid",
+        "parsed_text": "model model_summary",
+        "user_text": "What is the split between offensive and non-offensive?\n",
+        "timestamp": "17-06-2023, 16:57:08"
+    },
+    {
+        "id": "690156579fc80dfacd8ad74575f20e162ad4c7f15b29a495a58969f1ceb4",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "General Information:\n\n\nName\tContent\nmodel_name\tBertForSequenceClassification\nmodel_summary\tBert Model transformer with a sequence classification/regression head on top (a linear layer on top of the pooled output) e.g. for GLUE tasks.\ntask\tHate Speech Detection",
+        "dataset": "olid",
+        "parsed_text": "model model_summary",
+        "user_text": "What is the split between offensive and non-offensive?\n",
+        "timestamp": "17-06-2023, 16:57:11"
+    },
+    {
+        "id": "690156579fc80dfacd8ad74575f20e162ad4c7f15b29a495a58969f1ceb4",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "General Information:\n\n\nName\tContent\nmodel_name\tBertForSequenceClassification\nmodel_summary\tBert Model transformer with a sequence classification/regression head on top (a linear layer on top of the pooled output) e.g. for GLUE tasks.\ntask\tHate Speech Detection",
+        "dataset": "olid",
+        "parsed_text": "model model_summary",
+        "user_text": "What is the split between offensive and non-offensive?\n",
+        "timestamp": "17-06-2023, 16:57:14"
+    },
+    {
+        "id": "9639092a3a2ab5062d1dc502c7b667e50dd2ccbbefefef2b9f7e43a6b5de",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "There are 2648 items in the data.\n\nLet me know if you want to see their ids.",
+        "dataset": "olid",
+        "parsed_text": "countdata",
+        "user_text": "count the total number of data points",
+        "timestamp": "17-06-2023, 16:57:36"
+    },
+    {
+        "id": "9639092a3a2ab5062d1dc502c7b667e50dd2ccbbefefef2b9f7e43a6b5de",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "There are 2648 items in the data.\n\nLet me know if you want to see their ids.",
+        "dataset": "olid",
+        "parsed_text": "countdata",
+        "user_text": "count the total number of data points",
+        "timestamp": "17-06-2023, 16:57:39"
+    },
+    {
+        "id": "9639092a3a2ab5062d1dc502c7b667e50dd2ccbbefefef2b9f7e43a6b5de",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "There are 2648 items in the data.\n\nLet me know if you want to see their ids.",
+        "dataset": "olid",
+        "parsed_text": "countdata",
+        "user_text": "count the total number of data points",
+        "timestamp": "17-06-2023, 16:57:42"
+    },
+    {
+        "id": "446451ebbebf1c8f32775d811fe420a944a5c1271c72a7abea018b8d3c4b",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "There are 2648 items in the data.\n\nLet me know if you want to see their ids.",
+        "dataset": "olid",
+        "parsed_text": "countdata",
+        "user_text": "How many data points?\n",
+        "timestamp": "17-06-2023, 16:58:27"
+    },
+    {
+        "id": "446451ebbebf1c8f32775d811fe420a944a5c1271c72a7abea018b8d3c4b",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "There are 2648 items in the data.\n\nLet me know if you want to see their ids.",
+        "dataset": "olid",
+        "parsed_text": "countdata",
+        "user_text": "How many data points?\n",
+        "timestamp": "17-06-2023, 16:58:30"
+    },
+    {
+        "id": "446451ebbebf1c8f32775d811fe420a944a5c1271c72a7abea018b8d3c4b",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "There are 2648 items in the data.\n\nLet me know if you want to see their ids.",
+        "dataset": "olid",
+        "parsed_text": "countdata",
+        "user_text": "How many data points?\n",
+        "timestamp": "17-06-2023, 16:58:32"
+    },
+    {
+        "id": "2f78aa759abcac80676d2aad0d30512dcec46fe3868ba70a140b13ece0fc",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "There are 2648 items in the data.\n\nLet me know if you want to see their ids.",
+        "dataset": "olid",
+        "parsed_text": "countdata",
+        "user_text": "How many datapoints in the test data?\n",
+        "timestamp": "17-06-2023, 16:59:04"
+    },
+    {
+        "id": "f802598394b661d183e4a9ca93d333a6f37bedcbfd5abacab05edfc9eb52",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "There are 2648 items in the data.\n\nLet me know if you want to see their ids.",
+        "dataset": "olid",
+        "parsed_text": "countdata",
+        "user_text": "How many data points in the test data?\n",
+        "timestamp": "17-06-2023, 16:59:16"
+    },
+    {
+        "id": "94625b1f360935740a2783b096d5398628190d39d9db48feabe158ecacb2",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "There are 2648 items in the data.\n\nLet me know if you want to see their ids.",
+        "dataset": "olid",
+        "parsed_text": "countdata",
+        "user_text": "How many data points were classified as \"offensive\"?\n",
+        "timestamp": "17-06-2023, 17:06:26"
+    },
+    {
+        "id": "94625b1f360935740a2783b096d5398628190d39d9db48feabe158ecacb2",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "There are 2648 items in the data.\n\nLet me know if you want to see their ids.",
+        "dataset": "olid",
+        "parsed_text": "countdata",
+        "user_text": "How many data points were classified as \"offensive\"?\n",
+        "timestamp": "17-06-2023, 17:06:30"
+    },
+    {
+        "id": "94625b1f360935740a2783b096d5398628190d39d9db48feabe158ecacb2",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "There are 2648 items in the data.\n\nLet me know if you want to see their ids.",
+        "dataset": "olid",
+        "parsed_text": "countdata",
+        "user_text": "How many data points were classified as \"offensive\"?\n",
+        "timestamp": "17-06-2023, 17:06:32"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "This was a bit unclear. Could you rephrase it, please?",
+        "dataset": "olid",
+        "parsed_text": "countdata",
+        "user_text": "could you show me the predictions on all the data?",
+        "timestamp": "17-06-2023, 17:07:55"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "This was a bit unclear. Could you rephrase it, please?",
+        "dataset": "olid",
+        "parsed_text": "countdata",
+        "user_text": "could you show me the predictions on all the data?",
+        "timestamp": "17-06-2023, 17:07:57"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "This was a bit unclear. Could you rephrase it, please?",
+        "dataset": "olid",
+        "parsed_text": "countdata",
+        "user_text": "could you show me the predictions on all the data?",
+        "timestamp": "17-06-2023, 17:08:00"
+    },
+    {
+        "id": "d2ce9edf73c6fd5319094d945230451015845c2f7c5a91ed728f0878a8dd",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "For instance with id 262:\nThe likelihood of class non-offensive is 93.959%\nThe likelihood of class offensive is 6.041%",
+        "dataset": "olid",
+        "parsed_text": "filter id 262 and likelihood non-offensive",
+        "user_text": "return the probability that instance 262 is predicted in the non-offensive class",
+        "timestamp": "17-06-2023, 17:08:45"
+    },
+    {
+        "id": "d2ce9edf73c6fd5319094d945230451015845c2f7c5a91ed728f0878a8dd",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "For instance with id 262:\nThe likelihood of class non-offensive is 93.959%\nThe likelihood of class offensive is 6.041%",
+        "dataset": "olid",
+        "parsed_text": "filter id 262 and likelihood non-offensive",
+        "user_text": "return the probability that instance 262 is predicted in the non-offensive class",
+        "timestamp": "17-06-2023, 17:08:48"
+    },
+    {
+        "id": "d2ce9edf73c6fd5319094d945230451015845c2f7c5a91ed728f0878a8dd",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "For instance with id 262:\nThe likelihood of class non-offensive is 93.959%\nThe likelihood of class offensive is 6.041%",
+        "dataset": "olid",
+        "parsed_text": "filter id 262 and likelihood non-offensive",
+        "user_text": "return the probability that instance 262 is predicted in the non-offensive class",
+        "timestamp": "17-06-2023, 17:08:50"
+    },
+    {
+        "id": "2902d30bd564b083a065592ac9a1ec55d2ae219fcd35080d1ba3e5915b34",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "For instance with id 8:\nThe likelihood of class non-offensive is 96.796%\nThe likelihood of class offensive is 3.204%",
+        "dataset": "olid",
+        "parsed_text": "filter id 8 and likelihood offensive",
+        "user_text": "return the probability that instance 8 is predicted to be offensive\n",
+        "timestamp": "17-06-2023, 17:09:08"
+    },
+    {
+        "id": "2902d30bd564b083a065592ac9a1ec55d2ae219fcd35080d1ba3e5915b34",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "For instance with id 8:\nThe likelihood of class non-offensive is 96.796%\nThe likelihood of class offensive is 3.204%",
+        "dataset": "olid",
+        "parsed_text": "filter id 8 and likelihood offensive",
+        "user_text": "return the probability that instance 8 is predicted to be offensive\n",
+        "timestamp": "17-06-2023, 17:09:11"
+    },
+    {
+        "id": "2902d30bd564b083a065592ac9a1ec55d2ae219fcd35080d1ba3e5915b34",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "For instance with id 8:\nThe likelihood of class non-offensive is 96.796%\nThe likelihood of class offensive is 3.204%",
+        "dataset": "olid",
+        "parsed_text": "filter id 8 and likelihood offensive",
+        "user_text": "return the probability that instance 8 is predicted to be offensive\n",
+        "timestamp": "17-06-2023, 17:09:14"
+    },
+    {
+        "id": "ad4bc4c27a6dd9077ff564e7e8bb298a991cfa8655b1c65f39b6e0d403e4",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "The model scores 80.816% accuracy on all the instances in the data,.",
+        "dataset": "olid",
+        "parsed_text": "score default",
+        "user_text": "How accurate is the model?\n",
+        "timestamp": "17-06-2023, 17:11:35"
+    },
+    {
+        "id": "ad4bc4c27a6dd9077ff564e7e8bb298a991cfa8655b1c65f39b6e0d403e4",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "The model scores 80.816% accuracy on all the instances in the data,.",
+        "dataset": "olid",
+        "parsed_text": "score default",
+        "user_text": "How accurate is the model?\n",
+        "timestamp": "17-06-2023, 17:11:38"
+    },
+    {
+        "id": "ad4bc4c27a6dd9077ff564e7e8bb298a991cfa8655b1c65f39b6e0d403e4",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "The model scores 80.816% accuracy on all the instances in the data,.",
+        "dataset": "olid",
+        "parsed_text": "score default",
+        "user_text": "How accurate is the model?\n",
+        "timestamp": "17-06-2023, 17:11:43"
+    },
+    {
+        "id": "5caa1a31403bb00828e2f512d110137028c3be6d5507cbca5c2e6f7f31f3",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "The model scores 80.816% accuracy on all the instances in the data,.",
+        "dataset": "olid",
+        "parsed_text": "score default",
+        "user_text": "How precise is the model?\n",
+        "timestamp": "17-06-2023, 17:11:57"
+    },
+    {
+        "id": "5caa1a31403bb00828e2f512d110137028c3be6d5507cbca5c2e6f7f31f3",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "The model scores 80.816% accuracy on all the instances in the data,.",
+        "dataset": "olid",
+        "parsed_text": "score default",
+        "user_text": "How precise is the model?\n",
+        "timestamp": "17-06-2023, 17:12:00"
+    },
+    {
+        "id": "5caa1a31403bb00828e2f512d110137028c3be6d5507cbca5c2e6f7f31f3",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "The model scores 80.816% accuracy on all the instances in the data,.",
+        "dataset": "olid",
+        "parsed_text": "score default",
+        "user_text": "How precise is the model?\n",
+        "timestamp": "17-06-2023, 17:12:03"
+    },
+    {
+        "id": "165cc3992ed42184c2bca6fa1d4b0ccba4759e7199845c239bcfdae2a91b",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "The model scores 0.577 precision on all the instances in the data,.",
+        "dataset": "olid",
+        "parsed_text": "score precision",
+        "user_text": "precision\n",
+        "timestamp": "17-06-2023, 17:12:09"
+    },
+    {
+        "id": "165cc3992ed42184c2bca6fa1d4b0ccba4759e7199845c239bcfdae2a91b",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "The model scores 0.577 precision on all the instances in the data,.",
+        "dataset": "olid",
+        "parsed_text": "score precision",
+        "user_text": "precision\n",
+        "timestamp": "17-06-2023, 17:12:12"
+    },
+    {
+        "id": "165cc3992ed42184c2bca6fa1d4b0ccba4759e7199845c239bcfdae2a91b",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "The model scores 0.577 precision on all the instances in the data,.",
+        "dataset": "olid",
+        "parsed_text": "score precision",
+        "user_text": "precision\n",
+        "timestamp": "17-06-2023, 17:12:15"
+    },
+    {
+        "id": "25728effd6e3404e7cea217192c0f5d6ae49cfb2ada10ea155c38b6178df",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "For all the instances in the data, the model is incorrect 508 out of 2648 times (error rate 0.192).\nHere is the confusion matrix:\n",
+        "dataset": "olid",
+        "parsed_text": "mistake count",
+        "user_text": "can you tell me how many data points is the model predicting incorrectly?",
+        "timestamp": "17-06-2023, 17:18:36"
+    },
+    {
+        "id": "25728effd6e3404e7cea217192c0f5d6ae49cfb2ada10ea155c38b6178df",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "For all the instances in the data, the model is incorrect 508 out of 2648 times (error rate 0.192).\nHere is the confusion matrix:\n",
+        "dataset": "olid",
+        "parsed_text": "mistake count",
+        "user_text": "can you tell me how many data points is the model predicting incorrectly?",
+        "timestamp": "17-06-2023, 17:18:39"
+    },
+    {
+        "id": "25728effd6e3404e7cea217192c0f5d6ae49cfb2ada10ea155c38b6178df",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "For all the instances in the data, the model is incorrect 508 out of 2648 times (error rate 0.192).\nHere is the confusion matrix:\n",
+        "dataset": "olid",
+        "parsed_text": "mistake count",
+        "user_text": "can you tell me how many data points is the model predicting incorrectly?",
+        "timestamp": "17-06-2023, 17:18:42"
+    },
+    {
+        "id": "a10580980376069056f7d471f1d23fab384d9c4b014ae71261fcf36771e6",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "General Information:\n\n\nName\tContent\nmodel_name\tBertForSequenceClassification\nmodel_summary\tBert Model transformer with a sequence classification/regression head on top (a linear layer on top of the pooled output) e.g. for GLUE tasks.\ntask\tHate Speech Detection",
+        "dataset": "olid",
+        "parsed_text": "model model_summary",
+        "user_text": "What is the performance of this model?\n",
+        "timestamp": "17-06-2023, 17:19:31"
+    },
+    {
+        "id": "a10580980376069056f7d471f1d23fab384d9c4b014ae71261fcf36771e6",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "General Information:\n\n\nName\tContent\nmodel_name\tBertForSequenceClassification\nmodel_summary\tBert Model transformer with a sequence classification/regression head on top (a linear layer on top of the pooled output) e.g. for GLUE tasks.\ntask\tHate Speech Detection",
+        "dataset": "olid",
+        "parsed_text": "model model_summary",
+        "user_text": "What is the performance of this model?\n",
+        "timestamp": "17-06-2023, 17:19:36"
+    },
+    {
+        "id": "a10580980376069056f7d471f1d23fab384d9c4b014ae71261fcf36771e6",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "General Information:\n\n\nName\tContent\nmodel_name\tBertForSequenceClassification\nmodel_summary\tBert Model transformer with a sequence classification/regression head on top (a linear layer on top of the pooled output) e.g. for GLUE tasks.\ntask\tHate Speech Detection",
+        "dataset": "olid",
+        "parsed_text": "model model_summary",
+        "user_text": "What is the performance of this model?\n",
+        "timestamp": "17-06-2023, 17:19:39"
+    },
+    {
+        "id": "59b4043e7e2b48ad21aef20053e844f5c3bb7cbd31ea642963af7e33fb03",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "For all the instances in the data, the model is incorrect 508 out of 2648 times (error rate 0.192).\n\nHere are the ids of instances the model predicts incorrectly:",
+        "dataset": "olid",
+        "parsed_text": "mistake sample",
+        "user_text": "could you show me some data the model predicts incorrectly?",
+        "timestamp": "17-06-2023, 17:21:05"
+    },
+    {
+        "id": "59b4043e7e2b48ad21aef20053e844f5c3bb7cbd31ea642963af7e33fb03",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "For all the instances in the data, the model is incorrect 508 out of 2648 times (error rate 0.192).\n\nHere are the ids of instances the model predicts incorrectly:",
+        "dataset": "olid",
+        "parsed_text": "mistake sample",
+        "user_text": "could you show me some data the model predicts incorrectly?",
+        "timestamp": "17-06-2023, 17:21:08"
+    },
+    {
+        "id": "59b4043e7e2b48ad21aef20053e844f5c3bb7cbd31ea642963af7e33fb03",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "For all the instances in the data, the model is incorrect 508 out of 2648 times (error rate 0.192).\n\nHere are the ids of instances the model predicts incorrectly:",
+        "dataset": "olid",
+        "parsed_text": "mistake sample",
+        "user_text": "could you show me some data the model predicts incorrectly?",
+        "timestamp": "17-06-2023, 17:21:12"
+    },
+    {
+        "id": "35581b176f3781e3be5695ae929cbd8be5753ccf6c340e7a1fb8bfa0f994",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "For all the instances in the data, the model is incorrect 508 out of 2648 times (error rate 0.192).\n\nHere are the ids of instances the model predicts incorrectly:",
+        "dataset": "olid",
+        "parsed_text": "mistake sample",
+        "user_text": "Could you show me an example of a wrongly categorized instance?\n",
+        "timestamp": "17-06-2023, 17:21:39"
+    },
+    {
+        "id": "35581b176f3781e3be5695ae929cbd8be5753ccf6c340e7a1fb8bfa0f994",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "For all the instances in the data, the model is incorrect 508 out of 2648 times (error rate 0.192).\n\nHere are the ids of instances the model predicts incorrectly:",
+        "dataset": "olid",
+        "parsed_text": "mistake sample",
+        "user_text": "Could you show me an example of a wrongly categorized instance?\n",
+        "timestamp": "17-06-2023, 17:21:42"
+    },
+    {
+        "id": "4df05647eff29a75e9d209a65a43502979395b9e0d43459236ea5dcb9b73",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "For all the instances in the data, the model is incorrect 508 out of 2648 times (error rate 0.192).\n\nHere are the ids of instances the model predicts incorrectly:",
+        "dataset": "olid",
+        "parsed_text": "mistake sample",
+        "user_text": "Can you show me an incorrectly labeled prediction?\n",
+        "timestamp": "17-06-2023, 17:21:59"
+    },
+    {
+        "id": "4df05647eff29a75e9d209a65a43502979395b9e0d43459236ea5dcb9b73",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "For all the instances in the data, the model is incorrect 508 out of 2648 times (error rate 0.192).\n\nHere are the ids of instances the model predicts incorrectly:",
+        "dataset": "olid",
+        "parsed_text": "mistake sample",
+        "user_text": "Can you show me an incorrectly labeled prediction?\n",
+        "timestamp": "17-06-2023, 17:22:02"
+    },
+    {
+        "id": "79cf42679727140618903778a7e800463d35735906bacc13bce70f8071b7",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "The original text for id 0:\n\nI think he is an arsehole....\n\nHere are some instances similar to id 0:\nid 1681 (cossim 0.432):\n@USER Doubtful. He's one of the least hateful people on this planet!! Maybe you're looking in...\n\nid 99 (cossim 0.42):\n@USER I believe he is one step worse according to experts- sociopath which is a malignant...\n\nid 481 (cossim 0.417):\n@USER Antifa is Israel's thug squad in America...",
+        "dataset": "olid",
+        "parsed_text": "filter id 8 and similar 2",
+        "user_text": "Could you show me 2 examples that are similar to id 8?\n",
+        "timestamp": "17-06-2023, 17:23:29"
+    },
+    {
+        "id": "79cf42679727140618903778a7e800463d35735906bacc13bce70f8071b7",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "The original text for id 0:\n\nI think he is an arsehole....\n\nHere are some instances similar to id 0:\nid 1681 (cossim 0.432):\n@USER Doubtful. He's one of the least hateful people on this planet!! Maybe you're looking in...\n\nid 99 (cossim 0.42):\n@USER I believe he is one step worse according to experts- sociopath which is a malignant...\n\nid 481 (cossim 0.417):\n@USER Antifa is Israel's thug squad in America...",
+        "dataset": "olid",
+        "parsed_text": "filter id 8 and similar 2",
+        "user_text": "Could you show me 2 examples that are similar to id 8?\n",
+        "timestamp": "17-06-2023, 17:23:35"
+    },
+    {
+        "id": "79cf42679727140618903778a7e800463d35735906bacc13bce70f8071b7",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "The original text for id 0:\n\nI think he is an arsehole....\n\nHere are some instances similar to id 0:\nid 1681 (cossim 0.432):\n@USER Doubtful. He's one of the least hateful people on this planet!! Maybe you're looking in...\n\nid 99 (cossim 0.42):\n@USER I believe he is one step worse according to experts- sociopath which is a malignant...\n\nid 481 (cossim 0.417):\n@USER Antifa is Israel's thug squad in America...",
+        "dataset": "olid",
+        "parsed_text": "filter id 8 and similar 2",
+        "user_text": "Could you show me 2 examples that are similar to id 8?\n",
+        "timestamp": "17-06-2023, 17:23:37"
+    },
+    {
+        "id": "acdd796edf4fe9c9b6726d185c9aefbc655470dde09829455461544977a8",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "The original text for id 0:\n\nI think he is an arsehole....\n\nHere are some instances similar to id 0:\nid 1681 (cossim 0.432):\n@USER Doubtful. He's one of the least hateful people on this planet!! Maybe you're looking in...\n\nid 99 (cossim 0.42):\n@USER I believe he is one step worse according to experts- sociopath which is a malignant...\n\nid 481 (cossim 0.417):\n@USER Antifa is Israel's thug squad in America...",
+        "dataset": "olid",
+        "parsed_text": "filter id 8 and similar 2",
+        "user_text": "Please show two examples similar to id 8\n",
+        "timestamp": "17-06-2023, 17:25:45"
+    },
+    {
+        "id": "acdd796edf4fe9c9b6726d185c9aefbc655470dde09829455461544977a8",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "The original text for id 0:\n\nI think he is an arsehole....\n\nHere are some instances similar to id 0:\nid 1681 (cossim 0.432):\n@USER Doubtful. He's one of the least hateful people on this planet!! Maybe you're looking in...\n\nid 99 (cossim 0.42):\n@USER I believe he is one step worse according to experts- sociopath which is a malignant...\n\nid 481 (cossim 0.417):\n@USER Antifa is Israel's thug squad in America...",
+        "dataset": "olid",
+        "parsed_text": "filter id 8 and similar 2",
+        "user_text": "Please show two examples similar to id 8\n",
+        "timestamp": "17-06-2023, 17:25:48"
+    },
+    {
+        "id": "220a557992567d3f2830fc8d847f8f0475ade7dff3c8bc71e9e9d6404261",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "The 3 most frequent words in the dataset are:\n\nWord\tFrequence\n@USER\t6491\nI\t561\nURL\t392",
+        "dataset": "olid",
+        "parsed_text": "keywords 3",
+        "user_text": "what are the three most frequent keywords?",
+        "timestamp": "17-06-2023, 17:26:41"
+    },
+    {
+        "id": "220a557992567d3f2830fc8d847f8f0475ade7dff3c8bc71e9e9d6404261",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "The 3 most frequent words in the dataset are:\n\nWord\tFrequence\n@USER\t6491\nI\t561\nURL\t392",
+        "dataset": "olid",
+        "parsed_text": "keywords 3",
+        "user_text": "what are the three most frequent keywords?",
+        "timestamp": "17-06-2023, 17:26:44"
+    },
+    {
+        "id": "220a557992567d3f2830fc8d847f8f0475ade7dff3c8bc71e9e9d6404261",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "The 3 most frequent words in the dataset are:\n\nWord\tFrequence\n@USER\t6491\nI\t561\nURL\t392",
+        "dataset": "olid",
+        "parsed_text": "keywords 3",
+        "user_text": "what are the three most frequent keywords?",
+        "timestamp": "17-06-2023, 17:26:46"
+    },
+    {
+        "id": "2c01c3efb9e91ef15a1c488be5fbf238ea22512749874b6f15d8e292bd19",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "The 4 most frequent words in the dataset are:\n\nWord\tFrequence\n@USER\t6491\nI\t561\nURL\t392\nYou\t234",
+        "dataset": "olid",
+        "parsed_text": "keywords 4",
+        "user_text": "What are the four most frequent keywords?\n",
+        "timestamp": "17-06-2023, 17:26:56"
+    },
+    {
+        "id": "2c01c3efb9e91ef15a1c488be5fbf238ea22512749874b6f15d8e292bd19",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "The 4 most frequent words in the dataset are:\n\nWord\tFrequence\n@USER\t6491\nI\t561\nURL\t392\nYou\t234",
+        "dataset": "olid",
+        "parsed_text": "keywords 4",
+        "user_text": "What are the four most frequent keywords?\n",
+        "timestamp": "17-06-2023, 17:26:59"
+    },
+    {
+        "id": "2c01c3efb9e91ef15a1c488be5fbf238ea22512749874b6f15d8e292bd19",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "The 4 most frequent words in the dataset are:\n\nWord\tFrequence\n@USER\t6491\nI\t561\nURL\t392\nYou\t234",
+        "dataset": "olid",
+        "parsed_text": "keywords 4",
+        "user_text": "What are the four most frequent keywords?\n",
+        "timestamp": "17-06-2023, 17:27:01"
+    },
+    {
+        "id": "54163251171ebdb351237a4e55c667d59428041f2e531e622e2099923965",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "The 25 most frequent words in the dataset are:\n\nWord\tFrequence\n@USER\t6491\nI\t561\nURL\t392\nYou\t234\ngun\t221\nlike\t208\nHe\t206\n\t186\n\"@USER\t176\nShe\t171\npeople\t163\nMAGA\t162\ncontrol\t156\n&\t150\nThe\t150\nliberals\t148\n:face_with_tears_of_joy:\t128\nwould\t114\none\t113\nget\t113\nAntifa\t103\nthink\t102\nLiberals\t96\nknow\t96\nAnd\t94",
+        "dataset": "olid",
+        "parsed_text": "keywords all",
+        "user_text": "What is the most frequent keyword in the model?\n",
+        "timestamp": "17-06-2023, 17:27:22"
+    },
+    {
+        "id": "54163251171ebdb351237a4e55c667d59428041f2e531e622e2099923965",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "The 25 most frequent words in the dataset are:\n\nWord\tFrequence\n@USER\t6491\nI\t561\nURL\t392\nYou\t234\ngun\t221\nlike\t208\nHe\t206\n\t186\n\"@USER\t176\nShe\t171\npeople\t163\nMAGA\t162\ncontrol\t156\n&\t150\nThe\t150\nliberals\t148\n:face_with_tears_of_joy:\t128\nwould\t114\none\t113\nget\t113\nAntifa\t103\nthink\t102\nLiberals\t96\nknow\t96\nAnd\t94",
+        "dataset": "olid",
+        "parsed_text": "keywords all",
+        "user_text": "What is the most frequent keyword in the model?\n",
+        "timestamp": "17-06-2023, 17:27:26"
+    },
+    {
+        "id": "54163251171ebdb351237a4e55c667d59428041f2e531e622e2099923965",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "The 25 most frequent words in the dataset are:\n\nWord\tFrequence\n@USER\t6491\nI\t561\nURL\t392\nYou\t234\ngun\t221\nlike\t208\nHe\t206\n\t186\n\"@USER\t176\nShe\t171\npeople\t163\nMAGA\t162\ncontrol\t156\n&\t150\nThe\t150\nliberals\t148\n:face_with_tears_of_joy:\t128\nwould\t114\none\t113\nget\t113\nAntifa\t103\nthink\t102\nLiberals\t96\nknow\t96\nAnd\t94",
+        "dataset": "olid",
+        "parsed_text": "keywords all",
+        "user_text": "What is the most frequent keyword in the model?\n",
+        "timestamp": "17-06-2023, 17:27:29"
+    },
+    {
+        "id": "4cf197662092117d3170ff92aba379bd3a29f168c0cc81fcab1a596c633d",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "The 25 most frequent words in the dataset are:\n\nWord\tFrequence\n@USER\t6491\nI\t561\nURL\t392\nYou\t234\ngun\t221\nlike\t208\nHe\t206\n\t186\n\"@USER\t176\nShe\t171\npeople\t163\nMAGA\t162\ncontrol\t156\n&\t150\nThe\t150\nliberals\t148\n:face_with_tears_of_joy:\t128\nwould\t114\none\t113\nget\t113\nAntifa\t103\nthink\t102\nLiberals\t96\nknow\t96\nAnd\t94",
+        "dataset": "olid",
+        "parsed_text": "keywords all",
+        "user_text": "What is the least frequent word in the dataset?\n",
+        "timestamp": "17-06-2023, 17:27:46"
+    },
+    {
+        "id": "4cf197662092117d3170ff92aba379bd3a29f168c0cc81fcab1a596c633d",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "The 25 most frequent words in the dataset are:\n\nWord\tFrequence\n@USER\t6491\nI\t561\nURL\t392\nYou\t234\ngun\t221\nlike\t208\nHe\t206\n\t186\n\"@USER\t176\nShe\t171\npeople\t163\nMAGA\t162\ncontrol\t156\n&\t150\nThe\t150\nliberals\t148\n:face_with_tears_of_joy:\t128\nwould\t114\none\t113\nget\t113\nAntifa\t103\nthink\t102\nLiberals\t96\nknow\t96\nAnd\t94",
+        "dataset": "olid",
+        "parsed_text": "keywords all",
+        "user_text": "What is the least frequent word in the dataset?\n",
+        "timestamp": "17-06-2023, 17:27:48"
+    },
+    {
+        "id": "4cf197662092117d3170ff92aba379bd3a29f168c0cc81fcab1a596c633d",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "The 25 most frequent words in the dataset are:\n\nWord\tFrequence\n@USER\t6491\nI\t561\nURL\t392\nYou\t234\ngun\t221\nlike\t208\nHe\t206\n\t186\n\"@USER\t176\nShe\t171\npeople\t163\nMAGA\t162\ncontrol\t156\n&\t150\nThe\t150\nliberals\t148\n:face_with_tears_of_joy:\t128\nwould\t114\none\t113\nget\t113\nAntifa\t103\nthink\t102\nLiberals\t96\nknow\t96\nAnd\t94",
+        "dataset": "olid",
+        "parsed_text": "keywords all",
+        "user_text": "What is the least frequent word in the dataset?\n",
+        "timestamp": "17-06-2023, 17:27:51"
+    },
+    {
+        "id": "bfa7868f869fe939d58e2429d1d96592cbf639937ae7028192cfac6404dd",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "There are 2648 items in the data.\n\nLet me know if you want to see their ids.",
+        "dataset": "olid",
+        "parsed_text": "countdata",
+        "user_text": "How many times does the word \"think\" show up?\n",
+        "timestamp": "17-06-2023, 17:29:04"
+    },
+    {
+        "id": "bfa7868f869fe939d58e2429d1d96592cbf639937ae7028192cfac6404dd",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "There are 2648 items in the data.\n\nLet me know if you want to see their ids.",
+        "dataset": "olid",
+        "parsed_text": "countdata",
+        "user_text": "How many times does the word \"think\" show up?\n",
+        "timestamp": "17-06-2023, 17:29:07"
+    },
+    {
+        "id": "bfa7868f869fe939d58e2429d1d96592cbf639937ae7028192cfac6404dd",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "There are 2648 items in the data.\n\nLet me know if you want to see their ids.",
+        "dataset": "olid",
+        "parsed_text": "countdata",
+        "user_text": "How many times does the word \"think\" show up?\n",
+        "timestamp": "17-06-2023, 17:29:09"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "This was a bit unclear. Could you rephrase it, please?",
+        "dataset": "olid",
+        "parsed_text": "countdata",
+        "user_text": "What is the frequency of the word \"think\"?\n",
+        "timestamp": "17-06-2023, 17:29:21"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "This was a bit unclear. Could you rephrase it, please?",
+        "dataset": "olid",
+        "parsed_text": "countdata",
+        "user_text": "What is the frequency of the word \"think\"?\n",
+        "timestamp": "17-06-2023, 17:29:24"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "This was a bit unclear. Could you rephrase it, please?",
+        "dataset": "olid",
+        "parsed_text": "countdata",
+        "user_text": "What is the frequency of the word \"think\"?\n",
+        "timestamp": "17-06-2023, 17:29:26"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "Let's try another option. I'm afraid I don't have an answer for this.",
+        "dataset": "olid",
+        "parsed_text": "countdata",
+        "user_text": "Most important words for instance 8\n",
+        "timestamp": "17-06-2023, 17:30:34"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "Let's try another option. I'm afraid I don't have an answer for this.",
+        "dataset": "olid",
+        "parsed_text": "countdata",
+        "user_text": "Most important words for instance 8\n",
+        "timestamp": "17-06-2023, 17:30:39"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "Let's try another option. I'm afraid I don't have an answer for this.",
+        "dataset": "olid",
+        "parsed_text": "countdata",
+        "user_text": "most important token in id 8\n",
+        "timestamp": "17-06-2023, 17:33:57"
+    },
+    {
+        "id": "undefined",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "Let's try another option. I'm afraid I don't have an answer for this.",
+        "dataset": "olid",
+        "parsed_text": "countdata",
+        "user_text": "most important token in id 8\n",
+        "timestamp": "17-06-2023, 17:34:00"
+    },
+    {
+        "id": "b707e508473e6955da18b9281a7a492ce9d1057efddc77db845e8b3efe6b",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "product, cola, its, difference, bar, but, coca, drug, loss, and government are the most attributed.",
+        "dataset": "olid",
+        "parsed_text": "important all",
+        "user_text": "What are the most important words for making a prediction?\n",
+        "timestamp": "17-06-2023, 17:35:26"
+    },
+    {
+        "id": "b707e508473e6955da18b9281a7a492ce9d1057efddc77db845e8b3efe6b",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "product, cola, its, difference, bar, but, coca, drug, loss, and government are the most attributed.",
+        "dataset": "olid",
+        "parsed_text": "important all",
+        "user_text": "What are the most important words for making a prediction?\n",
+        "timestamp": "17-06-2023, 17:35:29"
+    },
+    {
+        "id": "b707e508473e6955da18b9281a7a492ce9d1057efddc77db845e8b3efe6b",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "product, cola, its, difference, bar, but, coca, drug, loss, and government are the most attributed.",
+        "dataset": "olid",
+        "parsed_text": "important all",
+        "user_text": "What are the most important words for making a prediction?\n",
+        "timestamp": "17-06-2023, 17:35:32"
+    },
+    {
+        "id": "244fda5435975de2785b991d39cc15a95bb00da10e3216c4e5563de5b9e3",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "product, cola, its, difference, bar, but, coca, drug, loss, and government are the most attributed.",
+        "dataset": "olid",
+        "parsed_text": "important \"offensive",
+        "user_text": "What are the words most important for a sentence being classified as \"offensive\"?\n",
+        "timestamp": "17-06-2023, 17:35:52"
+    },
+    {
+        "id": "b236b8a98dac15f050bfa111a072b1d0a02e9829e122a808819da24ca6ad",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "Original text: Tweet: '@USER To be very honest it\u2019s also wrong to disregard stats. Hazard is an attacker and isn\u2019t pegged with any sort of defensive duties. He is always with the ball (as the main man/his\u2019 style) so if his G+A stats aren\u2019t as good as people expect they have every right to question his rating'\nPrediction: non-offensive\nExplanation: Offensive language: the term \"hazard\" is considered derisive and offensive, so the use of this term in the Tweet is offensive. Personal attacks: although the user is not personally attacking the users mentioned in this Tweep, he is making a general accusation that the people mentioned are being \"disregarding\" to his/her/their \"stats\". This is also considered a personal attack.",
+        "dataset": "olid",
+        "parsed_text": "filter id 2592 and rationalize",
+        "user_text": "give a detailed explanation of id 2592",
+        "timestamp": "17-06-2023, 18:03:52"
+    },
+    {
+        "id": "b236b8a98dac15f050bfa111a072b1d0a02e9829e122a808819da24ca6ad",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "Original text: Tweet: '@USER To be very honest it\u2019s also wrong to disregard stats. Hazard is an attacker and isn\u2019t pegged with any sort of defensive duties. He is always with the ball (as the main man/his\u2019 style) so if his G+A stats aren\u2019t as good as people expect they have every right to question his rating'\nPrediction: non-offensive\nExplanation: Offensive language: the term \"hazard\" is considered derisive and offensive, so the use of this term in the Tweet is offensive. Personal attacks: although the user is not personally attacking the users mentioned in this Tweep, he is making a general accusation that the people mentioned are being \"disregarding\" to his/her/their \"stats\". This is also considered a personal attack.",
+        "dataset": "olid",
+        "parsed_text": "filter id 2592 and rationalize",
+        "user_text": "give a detailed explanation of id 2592",
+        "timestamp": "17-06-2023, 18:03:55"
+    },
+    {
+        "id": "b236b8a98dac15f050bfa111a072b1d0a02e9829e122a808819da24ca6ad",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "Original text: Tweet: '@USER To be very honest it\u2019s also wrong to disregard stats. Hazard is an attacker and isn\u2019t pegged with any sort of defensive duties. He is always with the ball (as the main man/his\u2019 style) so if his G+A stats aren\u2019t as good as people expect they have every right to question his rating'\nPrediction: non-offensive\nExplanation: Offensive language: the term \"hazard\" is considered derisive and offensive, so the use of this term in the Tweet is offensive. Personal attacks: although the user is not personally attacking the users mentioned in this Tweep, he is making a general accusation that the people mentioned are being \"disregarding\" to his/her/their \"stats\". This is also considered a personal attack.",
+        "dataset": "olid",
+        "parsed_text": "filter id 2592 and rationalize",
+        "user_text": "give a detailed explanation of id 2592",
+        "timestamp": "17-06-2023, 18:03:58"
+    },
+    {
+        "id": "ba7c97ac6f5c6b14e9405f7a29b77f432b47ace0a38e17c6a1982ec56f80",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "Original text: Tweet: '@USER Lmao what a joke he is.'\nPrediction: non-offensive\nExplanation: Offensive: the negative assumption and implication about @user in the last tweet could potentially be offensive to some. Non-Offense: this tweet contains explicit negative language and derrogatory term.",
+        "dataset": "olid",
+        "parsed_text": "filter id 8 and rationalize",
+        "user_text": "please explain the prediction for id 8\n",
+        "timestamp": "17-06-2023, 18:08:37"
+    },
+    {
+        "id": "ba7c97ac6f5c6b14e9405f7a29b77f432b47ace0a38e17c6a1982ec56f80",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "Original text: Tweet: '@USER Lmao what a joke he is.'\nPrediction: non-offensive\nExplanation: Offensive: the negative assumption and implication about @user in the last tweet could potentially be offensive to some. Non-Offense: this tweet contains explicit negative language and derrogatory term.",
+        "dataset": "olid",
+        "parsed_text": "filter id 8 and rationalize",
+        "user_text": "please explain the prediction for id 8\n",
+        "timestamp": "17-06-2023, 18:08:39"
+    },
+    {
+        "id": "ba7c97ac6f5c6b14e9405f7a29b77f432b47ace0a38e17c6a1982ec56f80",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "Original text: Tweet: '@USER Lmao what a joke he is.'\nPrediction: non-offensive\nExplanation: Offensive: the negative assumption and implication about @user in the last tweet could potentially be offensive to some. Non-Offense: this tweet contains explicit negative language and derrogatory term.",
+        "dataset": "olid",
+        "parsed_text": "filter id 8 and rationalize",
+        "user_text": "please explain the prediction for id 8\n",
+        "timestamp": "17-06-2023, 18:08:42"
+    },
+    {
+        "id": "a159fd894103dd3019c880d3d7b8e06be99899e11d7721bd5fe87e84e999",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "Original text: Tweet: '@USER @USER We? So you are going to help like you did at the 911 site? Pictures pleaz. :lying_face: '\nPrediction: non-offensive\nExplanation: @USER is an account that is following the user. When @USertoexplain mentions a user, it is considered offensive to that user to reply to @USErtoexplai. However, @User is not following @UseRtoExplain, so it would not be considered offensve to respond to them. A: According to this article, Twitter has a \"hateful conduct\" policy. It's not clear to me if that policy is enforced, but it's worth noting.",
+        "dataset": "olid",
+        "parsed_text": "filter id 123 and rationalize",
+        "user_text": "could you interpret the prediction for id 123\n",
+        "timestamp": "17-06-2023, 18:13:48"
+    },
+    {
+        "id": "a159fd894103dd3019c880d3d7b8e06be99899e11d7721bd5fe87e84e999",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "Original text: Tweet: '@USER @USER We? So you are going to help like you did at the 911 site? Pictures pleaz. :lying_face: '\nPrediction: non-offensive\nExplanation: @USER is an account that is following the user. When @USertoexplain mentions a user, it is considered offensive to that user to reply to @USErtoexplai. However, @User is not following @UseRtoExplain, so it would not be considered offensve to respond to them. A: According to this article, Twitter has a \"hateful conduct\" policy. It's not clear to me if that policy is enforced, but it's worth noting.",
+        "dataset": "olid",
+        "parsed_text": "filter id 123 and rationalize",
+        "user_text": "could you interpret the prediction for id 123\n",
+        "timestamp": "17-06-2023, 18:13:51"
+    },
+    {
+        "id": "a159fd894103dd3019c880d3d7b8e06be99899e11d7721bd5fe87e84e999",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "Original text: Tweet: '@USER @USER We? So you are going to help like you did at the 911 site? Pictures pleaz. :lying_face: '\nPrediction: non-offensive\nExplanation: @USER is an account that is following the user. When @USertoexplain mentions a user, it is considered offensive to that user to reply to @USErtoexplai. However, @User is not following @UseRtoExplain, so it would not be considered offensve to respond to them. A: According to this article, Twitter has a \"hateful conduct\" policy. It's not clear to me if that policy is enforced, but it's worth noting.",
+        "dataset": "olid",
+        "parsed_text": "filter id 123 and rationalize",
+        "user_text": "could you interpret the prediction for id 123\n",
+        "timestamp": "17-06-2023, 18:13:53"
+    },
+    {
+        "id": "6c3433b2a0fbe596e8aced98940e4236b57ceece1971737d214625bc6906",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "[The original text]: \"@USER It's kind of like when a mean old woman says that a pretty young one is Ugly and untalented\"\" just because she is washed up and will never look like that again. For one thing it's catty, secondly, it makes her look like a jealous hater and has-been! Montel\"\"\"\n[Counterfactual 1]: \"@USER It's kind of like when a mean old woman says that it is Ugly and untalented\"\" just because she is washed up and will never look like that again. For one thing it's catty, secondly, it makes her look like a jealous hater and has-been! Montel\"\"\"\n\nthe predicted label offensive changes to False.",
+        "dataset": "olid",
+        "parsed_text": "filter id 801 and cfe",
+        "user_text": "how would you flip the prediction for id 801",
+        "timestamp": "17-06-2023, 18:17:45"
+    },
+    {
+        "id": "6c3433b2a0fbe596e8aced98940e4236b57ceece1971737d214625bc6906",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "[The original text]: \"@USER It's kind of like when a mean old woman says that a pretty young one is Ugly and untalented\"\" just because she is washed up and will never look like that again. For one thing it's catty, secondly, it makes her look like a jealous hater and has-been! Montel\"\"\"\n[Counterfactual 1]: \"@USER It's kind of like when a mean old woman says that it is Ugly and untalented\"\" just because she is washed up and will never look like that again. For one thing it's catty, secondly, it makes her look like a jealous hater and has-been! Montel\"\"\"\n\nthe predicted label offensive changes to False.",
+        "dataset": "olid",
+        "parsed_text": "filter id 801 and cfe",
+        "user_text": "how would you flip the prediction for id 801",
+        "timestamp": "17-06-2023, 18:17:49"
+    },
+    {
+        "id": "6c3433b2a0fbe596e8aced98940e4236b57ceece1971737d214625bc6906",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "[The original text]: \"@USER It's kind of like when a mean old woman says that a pretty young one is Ugly and untalented\"\" just because she is washed up and will never look like that again. For one thing it's catty, secondly, it makes her look like a jealous hater and has-been! Montel\"\"\"\n[Counterfactual 1]: \"@USER It's kind of like when a mean old woman says that it is Ugly and untalented\"\" just because she is washed up and will never look like that again. For one thing it's catty, secondly, it makes her look like a jealous hater and has-been! Montel\"\"\"\n\nthe predicted label offensive changes to False.",
+        "dataset": "olid",
+        "parsed_text": "filter id 801 and cfe",
+        "user_text": "how would you flip the prediction for id 801",
+        "timestamp": "17-06-2023, 18:17:53"
+    },
+    {
+        "id": "0c451c6e46759c7b129d8919d2e7d24a830824bd1d0a9fa7dcbd5b6e11d0",
+        "feedback_text": "Correctness Negative",
+        "username": "user",
+        "answer": "[The original text]: @USER Let\u2019s not forget the treatment of Sarah Palin by these same California liberals. And now they say Kavanaugh \u2018s accuser is being bullied?\n[Counterfactual 1]: Which is the best biography?\n\nthe predicted label True changes to False.",
+        "dataset": "olid",
+        "parsed_text": "filter id 1247 and cfe",
+        "user_text": "would it be possible for you to tell me how to change the prediction for the data point with the id number 1247",
+        "timestamp": "17-06-2023, 18:18:39"
+    },
+    {
+        "id": "0c451c6e46759c7b129d8919d2e7d24a830824bd1d0a9fa7dcbd5b6e11d0",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "[The original text]: @USER Let\u2019s not forget the treatment of Sarah Palin by these same California liberals. And now they say Kavanaugh \u2018s accuser is being bullied?\n[Counterfactual 1]: Which is the best biography?\n\nthe predicted label True changes to False.",
+        "dataset": "olid",
+        "parsed_text": "filter id 1247 and cfe",
+        "user_text": "would it be possible for you to tell me how to change the prediction for the data point with the id number 1247",
+        "timestamp": "17-06-2023, 18:18:42"
+    },
+    {
+        "id": "0c451c6e46759c7b129d8919d2e7d24a830824bd1d0a9fa7dcbd5b6e11d0",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "[The original text]: @USER Let\u2019s not forget the treatment of Sarah Palin by these same California liberals. And now they say Kavanaugh \u2018s accuser is being bullied?\n[Counterfactual 1]: Which is the best biography?\n\nthe predicted label True changes to False.",
+        "dataset": "olid",
+        "parsed_text": "filter id 1247 and cfe",
+        "user_text": "would it be possible for you to tell me how to change the prediction for the data point with the id number 1247",
+        "timestamp": "17-06-2023, 18:18:45"
+    },
+    {
+        "id": "054d84735c5115ddbc4da0052afadadaa4dab40c6a5ec7b64c277f429203",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "[The original text]: @USER Yes she is...\n[Counterfactual 1]: she's a bitch!\n\nthe predicted label False changes to True.",
+        "dataset": "olid",
+        "parsed_text": "filter id 205 and cfe",
+        "user_text": "How would you flip the prediction for id 205?\n",
+        "timestamp": "17-06-2023, 18:25:50"
+    },
+    {
+        "id": "054d84735c5115ddbc4da0052afadadaa4dab40c6a5ec7b64c277f429203",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "[The original text]: @USER Yes she is...\n[Counterfactual 1]: she's a bitch!\n\nthe predicted label False changes to True.",
+        "dataset": "olid",
+        "parsed_text": "filter id 205 and cfe",
+        "user_text": "How would you flip the prediction for id 205?\n",
+        "timestamp": "17-06-2023, 18:25:53"
+    },
+    {
+        "id": "054d84735c5115ddbc4da0052afadadaa4dab40c6a5ec7b64c277f429203",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "[The original text]: @USER Yes she is...\n[Counterfactual 1]: she's a bitch!\n\nthe predicted label False changes to True.",
+        "dataset": "olid",
+        "parsed_text": "filter id 205 and cfe",
+        "user_text": "How would you flip the prediction for id 205?\n",
+        "timestamp": "17-06-2023, 18:25:56"
+    },
+    {
+        "id": "12eb1fa42383fe67d651425df14121d1808c1aa4c681050ba20e7edfe221",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "Label non-offensive (72.43%) --> offensive (72.752%)\n\n@ US ##ER @ US ##ER OF CO ##UR ##SE H ##E IS ! THE CO ##R ##R ##UP ##T DEM ##OC ##RA ##TE PA ##RT ##Y IS AT ST ##A ##K ##E ! MA ##GA W ##W ##G ##1 ##W ##GA\n@ user @ drug of course he is ! the cor ##rupt demo ##crat ##e party is at stake ! maga w ##wg ##1 ##wg ##a\n\n",
+        "dataset": "olid",
+        "parsed_text": "filter id 2259 and adversarial",
+        "user_text": "show me an adversarial attack on id 2259",
+        "timestamp": "17-06-2023, 18:28:55"
+    },
+    {
+        "id": "12eb1fa42383fe67d651425df14121d1808c1aa4c681050ba20e7edfe221",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "Label non-offensive (72.43%) --> offensive (72.752%)\n\n@ US ##ER @ US ##ER OF CO ##UR ##SE H ##E IS ! THE CO ##R ##R ##UP ##T DEM ##OC ##RA ##TE PA ##RT ##Y IS AT ST ##A ##K ##E ! MA ##GA W ##W ##G ##1 ##W ##GA\n@ user @ drug of course he is ! the cor ##rupt demo ##crat ##e party is at stake ! maga w ##wg ##1 ##wg ##a\n\n",
+        "dataset": "olid",
+        "parsed_text": "filter id 2259 and adversarial",
+        "user_text": "show me an adversarial attack on id 2259",
+        "timestamp": "17-06-2023, 18:30:04"
+    },
+    {
+        "id": "12eb1fa42383fe67d651425df14121d1808c1aa4c681050ba20e7edfe221",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "Label non-offensive (72.43%) --> offensive (72.752%)\n\n@ US ##ER @ US ##ER OF CO ##UR ##SE H ##E IS ! THE CO ##R ##R ##UP ##T DEM ##OC ##RA ##TE PA ##RT ##Y IS AT ST ##A ##K ##E ! MA ##GA W ##W ##G ##1 ##W ##GA\n@ user @ drug of course he is ! the cor ##rupt demo ##crat ##e party is at stake ! maga w ##wg ##1 ##wg ##a\n\n",
+        "dataset": "olid",
+        "parsed_text": "filter id 2259 and adversarial",
+        "user_text": "show me an adversarial attack on id 2259",
+        "timestamp": "17-06-2023, 18:30:09"
+    },
+    {
+        "id": "2232e639997a9773a3f35dc4cba4e64b1fa05cb38a3c56bf4fe38aa9480f",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "Label offensive (67.247%) --> non-offensive (75.091%)\n\n@ US ##ER Let [UNK] s not for ##get the treatment of Sarah Pal ##in by these same California liberal ##s . And now they say Ka ##vana ##ugh [UNK] s accuse ##r is being bu ##lli\n@ user let [UNK] s not for ##get the treatment of sa ##rah pal ##in by these same cal ##if ##orn ##ia liberal ##s . and now they say ka ##vana ##ugh [UNK] s accuse ##r is being strong -\n\n\n##ed ?\n\narm ?\n",
+        "dataset": "olid",
+        "parsed_text": "filter id 1247 and adversarial",
+        "user_text": "Give me an adversarial attack on id 1247\n",
+        "timestamp": "17-06-2023, 18:31:29"
+    },
+    {
+        "id": "2232e639997a9773a3f35dc4cba4e64b1fa05cb38a3c56bf4fe38aa9480f",
+        "feedback_text": "Helpfulness Negative",
+        "username": "user",
+        "answer": "Label offensive (67.247%) --> non-offensive (75.091%)\n\n@ US ##ER Let [UNK] s not for ##get the treatment of Sarah Pal ##in by these same California liberal ##s . And now they say Ka ##vana ##ugh [UNK] s accuse ##r is being bu ##lli\n@ user let [UNK] s not for ##get the treatment of sa ##rah pal ##in by these same cal ##if ##orn ##ia liberal ##s . and now they say ka ##vana ##ugh [UNK] s accuse ##r is being strong -\n\n\n##ed ?\n\narm ?\n",
+        "dataset": "olid",
+        "parsed_text": "filter id 1247 and adversarial",
+        "user_text": "Give me an adversarial attack on id 1247\n",
+        "timestamp": "17-06-2023, 18:31:32"
+    },
+    {
+        "id": "2232e639997a9773a3f35dc4cba4e64b1fa05cb38a3c56bf4fe38aa9480f",
+        "feedback_text": "Satisfaction Negative",
+        "username": "user",
+        "answer": "Label offensive (67.247%) --> non-offensive (75.091%)\n\n@ US ##ER Let [UNK] s not for ##get the treatment of Sarah Pal ##in by these same California liberal ##s . And now they say Ka ##vana ##ugh [UNK] s accuse ##r is being bu ##lli\n@ user let [UNK] s not for ##get the treatment of sa ##rah pal ##in by these same cal ##if ##orn ##ia liberal ##s . and now they say ka ##vana ##ugh [UNK] s accuse ##r is being strong -\n\n\n##ed ?\n\narm ?\n",
+        "dataset": "olid",
+        "parsed_text": "filter id 1247 and adversarial",
+        "user_text": "Give me an adversarial attack on id 1247\n",
+        "timestamp": "17-06-2023, 18:31:34"
+    },
+    {
+        "id": "1e201adf565a92a1416ad0bd61116348c88c50912ab2ac44133116d2c377",
+        "feedback_text": "Correctness Positive",
+        "username": "user",
+        "answer": "Original text: (ID 1247)\n@USER Let\u2019s not forget the treatment of Sarah Palin by these same California liberals. And now they say Kavanaugh \u2018s accuser is being bullied?\nAugmentation by word replacements:\n@ USER Let \u2019 you ever forget the treatment at Sarah Palin by these same California criminals. So now why feel Kavanaugh \u2018 s husband should being charged?",
+        "dataset": "olid",
+        "parsed_text": "filter id 1247 and augment",
+        "user_text": "please create a new instance of id 1247\n",
+        "timestamp": "17-06-2023, 18:32:34"
+    },
+    {
+        "id": "1e201adf565a92a1416ad0bd61116348c88c50912ab2ac44133116d2c377",
+        "feedback_text": "Helpfulness Positive",
+        "username": "user",
+        "answer": "Original text: (ID 1247)\n@USER Let\u2019s not forget the treatment of Sarah Palin by these same California liberals. And now they say Kavanaugh \u2018s accuser is being bullied?\nAugmentation by word replacements:\n@ USER Let \u2019 you ever forget the treatment at Sarah Palin by these same California criminals. So now why feel Kavanaugh \u2018 s husband should being charged?",
+        "dataset": "olid",
+        "parsed_text": "filter id 1247 and augment",
+        "user_text": "please create a new instance of id 1247\n",
+        "timestamp": "17-06-2023, 18:32:37"
+    },
+    {
+        "id": "1e201adf565a92a1416ad0bd61116348c88c50912ab2ac44133116d2c377",
+        "feedback_text": "Satisfaction Positive",
+        "username": "user",
+        "answer": "Original text: (ID 1247)\n@USER Let\u2019s not forget the treatment of Sarah Palin by these same California liberals. And now they say Kavanaugh \u2018s accuser is being bullied?\nAugmentation by word replacements:\n@ USER Let \u2019 you ever forget the treatment at Sarah Palin by these same California criminals. So now why feel Kavanaugh \u2018 s husband should being charged?",
+        "dataset": "olid",
+        "parsed_text": "filter id 1247 and augment",
+        "user_text": "please create a new instance of id 1247\n",
+        "timestamp": "17-06-2023, 18:32:40"
+    }
+]
