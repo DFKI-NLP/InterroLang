@@ -1,0 +1,32 @@
+User: explain this in natural language
+Parsed: rationalize [E]
+
+User: explain this with a rationale
+Parsed: rationalize [E]
+
+User: generate a natural language explanation for this data point
+Parsed: rationalize [E]
+
+User: rationalize the prediction for it
+Parsed: rationalize [E]
+
+User: provide an explanation for this custom input text in everyday language
+Parsed: rationalize [E]
+
+User: interpret this in plain language
+Parsed: rationalize [E]
+
+User: for this new data point, deliver a natural language explanation
+Parsed: rationalize [E]
+
+User: give a rationale for the input text
+Parsed: rationalize [E]
+
+User: can you explain the model behavior on this instance in natural language?
+Parsed: rationalize [E]
+
+User: could you apply reasoning to this new id?
+Parsed: rationalize [E]
+
+User: can you simplify this for me?
+Parsed: rationalize [E]
