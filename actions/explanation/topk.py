@@ -54,7 +54,7 @@ def get_results(explainer, data_path):
     return results, model
 
 
-def results_with_pattern(results):
+def results_with_pattern(results, reverse):
     """
     Output the results with certain pattern
 
@@ -65,18 +65,24 @@ def results_with_pattern(results):
     """
     # example: dumb, fucking, and ugly are the most attributed for the hate speech label
     if len(results) == 1:
-        return results[0][0] + " is the most attributed"
+        if reverse:
+            return results[0][0] + " is the most attributed"
+        else:
+            return results[0][0] + " is the least attributed"
     else:
         string = ""
         for i in range(len(results) - 1):
             string += results[i][0] + ", "
         string += "and "
         string += results[len(results) - 1][0]
-        return string + " are the most attributed."
+        if not reverse:
+            return string + " are the least attributed."
+        else:
+            return string + " are the most attributed."
 
 
 def topk(conversation, explainer, k, threshold=-1, data_path="../../cache/boolq/ig_explainer_boolq_explanation.json",
-         res_path="../../cache/boolq/ig_explainer_boolq_attribution.json", print_with_pattern=True, class_idx=None):
+         res_path="../../cache/boolq/ig_explainer_boolq_attribution.json", print_with_pattern=True, class_idx=None, reverse=True):
     """
     The operation to get most k important tokens
 
@@ -99,15 +105,24 @@ def topk(conversation, explainer, k, threshold=-1, data_path="../../cache/boolq/
 
         if len(result_list) >= k:
             if print_with_pattern:
-                return results_with_pattern(result_list[:k])
+                if reverse:
+                    return results_with_pattern(result_list[:k], reverse)
+                else:
+                    return results_with_pattern(result_list[::-1][:k], reverse)
             else:
-                return result_list[:k]
+                if not reverse:
+                    return result_list[::-1][:k]
+                else:
+                    return result_list[:k]
         else:
             print("[Info] The length of score is smaller than k")
             if print_with_pattern:
-                return results_with_pattern(result_list)
+                return results_with_pattern(result_list, reverse)
             else:
-                return result_list
+                if not reverse:
+                    return result_list[::-1]
+                else:
+                    return result_list
 
     if "boolq" in data_path:
         results, model = get_results(explainer=explainer, data_path=data_path)
@@ -171,7 +186,7 @@ def topk(conversation, explainer, k, threshold=-1, data_path="../../cache/boolq/
             if word_counter[word] >= threshold:
                 scores[word] = (word_attributions[word] / word_counter[word])
 
-    sorted_scores = sorted(scores.items(), key=lambda x: x[1], reverse=True)
+    sorted_scores = sorted(scores.items(), key=lambda x: x[1], reverse=reverse)
 
     if not os.path.exists(res_path):
         jsonString = json.dumps(sorted_scores)
@@ -181,12 +196,12 @@ def topk(conversation, explainer, k, threshold=-1, data_path="../../cache/boolq/
 
     if len(sorted_scores) >= k:
         if print_with_pattern:
-            return results_with_pattern(sorted_scores[:k])
+            return results_with_pattern(sorted_scores[:k], reverse)
         else:
             return sorted_scores[:k]
     else:
         print("[Info] The length of score is smaller than k")
         if print_with_pattern:
-            return results_with_pattern(sorted_scores)
+            return results_with_pattern(sorted_scores, reverse)
         else:
             return sorted_scores

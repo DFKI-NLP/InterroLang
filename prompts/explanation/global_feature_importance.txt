@@ -93,3 +93,6 @@ Parsed: important topk 30 [E]
 
 User: display the 42 most important features
 Parsed: important topk 42 [E]
+
+User: 3 least important features
+Parsed: important topk 3 least [E]

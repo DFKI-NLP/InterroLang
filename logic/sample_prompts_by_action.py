@@ -38,6 +38,12 @@ ACTION_2_FILENAME = {
     "cfe": "cfe.txt",
     "augment": ["augmentation_chatgpt.txt", "augmentation.txt"],
     "adversarial": ["adversarial_chatgpt.txt", "adversarial.txt"],
+    "include_prediction": "includes_+_predict.txt",
+    "include_countdata": "includes_+_countdata.txt",
+    "include_mistake": "includes_+_mistake.txt",
+    "include_score": "includes_+_score.txt",
+    "include_show": "includes_+_show.txt",
+    "include_label": "includes_+_label.txt"
 }
 
 
